@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ReadonlySharedParameters.dll</Assembly>
+    <ClientId>36C7E003-3E4A-4BA4-896C-C53D4B9A4799</ClientId>
+    <FullClassName>Revit.SDK.Samples.ReadonlySharedParameters.CS.SetReadonlyCost1</FullClassName>
+    <Text>ReadonlySharedParameters1</Text>
+    <Description>ReadonlySharedParameters1</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ReadonlySharedParameters.dll</Assembly>
+    <ClientId>2630B66F-3DA6-4EE1-94FC-B996B91FDD40</ClientId>
+    <FullClassName>Revit.SDK.Samples.ReadonlySharedParameters.CS.SetReadonlyCost2</FullClassName>
+    <Text>ReadonlySharedParameters2</Text>
+    <Description>ReadonlySharedParameters2</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Assembly>ReadonlySharedParameters.dll</Assembly>
+    <ClientId>E420A2AE-E783-4F53-9433-195EEF6C7D1D</ClientId>
+    <FullClassName>Revit.SDK.Samples.ReadonlySharedParameters.CS.ReadonlySharedParameterApplication</FullClassName>
+    <Text>ReadonlySharedParameters</Text>
+    <Description>ReadonlySharedParameters</Description>
+    <Name>ReadonlySharedParameters</Name>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+
+</RevitAddIns>

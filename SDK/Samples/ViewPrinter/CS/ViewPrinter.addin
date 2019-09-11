@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ViewPrinter.dll</Assembly>
+    <ClientId>19cd33f6-228c-4d2d-a81a-251d3c915421</ClientId>
+    <FullClassName>Revit.SDK.Samples.ViewPrinter.CS.Command</FullClassName>
+    <Text>View Printer</Text>
+    <Description>Print user selected printable views.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

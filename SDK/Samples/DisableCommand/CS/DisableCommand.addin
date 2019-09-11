@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>DisableCommand</Name>
+    <Assembly>DisableCommand.dll</Assembly>
+    <ClientId>16091d6b-fec7-47df-9fbe-1a45b0fc92d9</ClientId>
+    <FullClassName>Revit.SDK.Samples.DisableCommand.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

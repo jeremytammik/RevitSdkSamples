@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>GenericStructuralConnection.dll</Assembly>
+    <ClientId>679f2456-d8c0-40fa-b6aa-d80c22a14af9</ClientId>
+    <FullClassName>Revit.SDK.Samples.GenericStructuralConnection.CS.Command</FullClassName>
+    <Text>Structural connection basic operations</Text>
+    <Description>Shows how to perform basic operations on a structural connection.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

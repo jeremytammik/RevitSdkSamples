@@ -1,0 +1,256 @@
+# Revit Export Layers
+# Maps Categories and Subcategories to layer names and color numbers
+# Category <tab> Subcategory <tab> Layer name <tab> Color number <tab>
+# Cut layer name <tab> Cut color number
+# Do not remove the colon (:) after certain category names.
+# -----------------------------------------------------
+Air Terminal Tags		M-ANNO-TEXT	2	M-ANNO-TEXT	2
+Air Terminals		M-HVAC-CDFF	3	M-HVAC-CDFF	3
+Area Polylines		A-AREA-BDRY	1	A-AREA-BDRY	1
+Area Tags		A-AREA-IDEN	2	A-AREA-IDEN	2
+Boundary Conditions		S-BCON	2	S-BCON	2
+Callouts		A-ANNO-SYMB	6	A-ANNO-SYMB	6
+Casework		A-FLOR-CASE	3	A-FLOR-CASE	3
+Casework Tags		I-ELEV-IDEN	5	I-ELEV-IDEN	5
+Ceiling Tags		A-CLNG-IDEN	6	A-CLNG-IDEN	6
+Ceilings		A-CLNG-SUSP	5	A-CLNG-SUSP	5
+Ceilings	Cut Pattern	A-CLNG-PATT	5	A-CLNG-PATT	5
+Ceilings	Surface Pattern	A-CLNG-GRID	1	A-CLNG-GRID	1
+Color Fill		A-AREA-IDEN	2	A-AREA-IDEN	2
+Color Fill Legends		G-ANNO	5	G-ANNO	5
+Columns		A-COLS	4	A-COLS	4
+Communication Device Tags		COMM-DEVICES	2	COMM-DEVICES	2
+Communication Devices		COMM-DEVICES	2	COMM-DEVICES	2
+Constraints		A-ANNO-NOTE	2	A-ANNO-NOTE	2
+Contour Labels		C-TOPO-MAID	2	C-TOPO-MAID	2
+Curtain Panel Tags		A-GLAZ-IDEN	6	A-GLAZ-IDEN	6
+Curtain Panels		A-GLAZ	6	A-GLAZ	6
+Curtain Wall Mullions		A-GLAZ-CWMG	3	A-GLAZ-CWMG	3
+Data Device Tags		DATA-DEVICES	2	DATA-DEVICES	2
+Data Devices		DATA-DEVICES	2	DATA-DEVICES	2
+Demolished		-DEMO	3	-DEMO	3
+Detail Item Tags		A-DETL-IDEN	3	A-DETL-IDEN	3
+Detail Items		A-DETL-GENF	3	A-DETL-GENF	3
+Dimensions		A-ANNO-DIMS	1	A-ANNO-DIMS	1
+Dimensions	Automatic Sketch Dimensions	A-ANNO-DIMS	1	A-ANNO-DIMS	1
+Door Tags		A-DOOR-IDEN	6	A-DOOR-IDEN	6
+Doors		A-DOOR	1	A-DOOR	1
+Doors	Frame/Mullion	A-DOOR-FRAM	1	A-DOOR-FRAM	1
+Doors	Glass	A-DOOR-GLAZ	1	A-DOOR-GLAZ	1
+Doors	Opening	A-DOOR-OTLN	6	A-DOOR-OTLN	6
+Doors	Panel	A-DOOR	1	A-DOOR	1
+Duct Accessories		M-HVAC-DUCT	1	M-HVAC-DUCT	1
+Duct Accessory Tags		M-ANNO-TEXT	2	M-ANNO-TEXT	2
+Duct Color Fill		M-HVAC-PATT	2	M-HVAC-PATT	2
+Duct Color Fill Legends		M-ANNO	5	M-ANNO	5
+Duct Fitting Tags		E-ANNO-TEXT	2	E-ANNO-TEXT	2
+Duct Fittings		M-HVAC-DUCT	1	M-HVAC-DUCT	1
+Duct Tags		M-ANNO-TEXT	2	M-ANNO-TEXT	2
+Ducts		M-HVAC-DUCT	1	M-HVAC-DUCT	1
+Electrical Circuit Tag		E-ANNO-TEXT	2	E-ANNO-TEXT	2
+Electrical Equipment		E-EQPM	4	E-EQPM	4
+Electrical Equipment Tags		E-EQPM-IDEN	2	E-EQPM-IDEN	2
+Electrical Fixture Tags		E-FIXT-IDEN	2	E-FIXT-IDEN	2
+Electrical Fixtures		E-FIXT	2	E-FIXT	2
+Elevations		A-ANNO-SYMB	6	A-ANNO-SYMB	6
+Entourage		A-DETL-GENF	3	A-DETL-GENF	3
+Existing		-EXST	3	-EXST	3
+Fire Alarm Device Tags		FIRE-ALARM-DEVICES	2	FIRE-ALARM-DEVICES	2
+Fire Alarm Devices		FIRE-ALARM-DEVICES	2	FIRE-ALARM-DEVICES	2
+Flex Duct Tags		M-ANNO-TEXT	2	M-ANNO-TEXT	2
+Flex Ducts		M-HVAC-DUCT	1	M-HVAC-DUCT	1
+Flex Pipe Tags		M-ANNO-TEXT	2	M-ANNO-TEXT	2
+Flex Pipes		M-PIPE	3	M-PIPE	3
+Floors		A-FLOR-OTLN	6	A-FLOR-OTLN	6
+Floors	Cut Pattern	A-FLOR-PATT	8	A-FLOR-PATT	8
+Floors	Hidden Lines	A-FLOR-HIDN	5	A-FLOR-HIDN	5
+Floors	Slab Edges	A-FLOR-OTLN	6	A-FLOR-OTLN	6
+Floors	Surface Pattern	A-FLOR-PATT	8	A-FLOR-PATT	8
+Furniture		I-FURN	2	I-FURN	2
+Furniture System Tags		I-FURN-IDEN	3	I-FURN-IDEN	3
+Furniture Systems		I-FURN-PNLS	2	I-FURN-PNLS	2
+Furniture Tags		I-FURN-IDEN	3	I-FURN-IDEN	3
+Generic Annotations		A-ANNO-NOTE	2	A-ANNO-NOTE	2
+Generic Model Tags		A-GENM-IDEN	2	A-GENM-IDEN	2
+Generic Models		A-GENM	6	A-GENM	6
+Grid Heads		S-GRID	1	S-GRID	1
+Grids		S-GRID	1	S-GRID	1
+Imports in Families		G-IMPT	1	G-IMPT	1
+Keynote Tags		A-ANNO-NOTE	2	A-ANNO-NOTE	2
+Level Heads		A-FLOR-LEVL	6	A-FLOR-LEVL	6
+Levels		A-FLOR-LEVL	6	A-FLOR-LEVL	6
+Lighting Device Tags		LIGHTING-DEVICES	2	LIGHTING-DEVICES	2
+Lighting Devices		LIGHTING-DEVICES	2	LIGHTING-DEVICES	2
+Lighting Fixture Tags		E-LITE-IDEN	1	E-LITE-IDEN	1
+Lighting Fixtures		E-LITE-EQPM	4	E-LITE-EQPM	4
+Lines		A-DETL	5	A-DETL	5
+Lines	<Area Boundary>	A-AREA-LINE	4	A-AREA-LINE	4
+Lines	<Beyond>	A-DETL-MBND	5	A-DETL-MBND	5
+Lines	<Centerline>	A-ANNO-NPLT	5	A-ANNO-NPLT	5
+Lines	<Demolished>	A-DETL-DEMO	6	A-DETL-DEMO	6
+Lines	<Hidden>	A-DETL-MBND	5	A-DETL-MBND	5
+Lines	<Overhead>	A-FLOR-OVHD	8	A-FLOR-OVHD	8
+Lines	<Revision Cloud>	A-ANNO-RVSN	5	A-ANNO-RVSN	5
+Lines	<Room Separation>	A-AREA-LINE	4	A-AREA-LINE	4
+Lines	<Sketch>	A-ANNO-NPLT	5	A-ANNO-NPLT	5
+Lines	Axis of Rotation	A-ANNO-NPLT	5	A-ANNO-NPLT	5
+Lines	Insulation Batting Lines	A-DETL-INSL	8	A-DETL-INSL	8
+Lines	Lines	A-DETL	5	A-DETL	5
+Lines	Medium Lines	A-DETL-MLIN	3	A-DETL-MLIN	3
+Lines	Thin Lines	A-DETL-LLIN	3	A-DETL-LLIN	3
+Lines	Wide Lines	A-DETL-HLIN	3	A-DETL-HLIN	3
+Mass		A-MASS	5	A-MASS	5
+Mass Tags		A-MASS-IDEN	5	A-MASS-IDEN	5
+Massing		A-MASS	5	A-MASS	5
+Matchline		A-ANNO-SYMB	6	A-ANNO-SYMB	6
+Material Tags		A-ANNO-IDEN	2	A-ANNO-IDEN	2
+Mechanical Equipment		M-EQPT	2	M-EQPT	2
+Mechanical Equipment Tags		M-EQPT-IDEN	2	M-EQPT-IDEN	2
+Multi-Category Tags		A-ANNO-IDEN	2	A-ANNO-IDEN	2
+New		-NEWW	2	-NEWW	2
+Nurse Call Device Tags		NIRSE-CALL-DEVICES	2	NIRSE-CALL-DEVICES	2
+Nurse Call Devices		NIRSE-CALL-DEVICES	2	NIRSE-CALL-DEVICES	2
+Parking		C-PKNG	1	C-PKNG	1
+Parking Tags		C-PKNG-IDEN	1	C-PKNG-IDEN	1
+Pipe Accessories		M-PIPE	3	M-PIPE	3
+Pipe Accessory Tags		M-ANNO-TEXT	2	M-ANNO-TEXT	2
+Pipe Color Fill		M-PIPE-PATT	2	M-PIPE-PATT	2
+Pipe Color Fill Legends		M-ANNO	5	M-ANNO	5
+Pipe Fitting Tags		E-ANNO-TEXT	2	E-ANNO-TEXT	2
+Pipe Fittings		M-PIPE	3	M-PIPE	3
+Pipe Tags		M-ANNO-TEXT	2	M-ANNO-TEXT	2
+Pipes		M-PIPE	3	M-PIPE	3
+Plan Region		G-ANNO-NPLT	5	G-ANNO-NPLT	5
+Planting		L-PLNT-BEDS	3	L-PLNT-BEDS	3
+Planting Tags		L-PLNT-IDEN	3	L-PLNT-IDEN	3
+Plumbing Fixture Tags		P-ANNO-IDEN	2	P-ANNO-IDEN	2
+Plumbing Fixtures		P-SANR-FIXT	6	P-SANR-FIXT	6
+Property Line Segment Tags		C-PROP-IDEN	6	C-PROP-IDEN	6
+Property Tags		C-ANNO-IDEN	0	C-ANNO-IDEN	0
+Railings		A-FLOR-HRAL	1	A-FLOR-HRAL	1
+Railings	Balusters	A-FLOR-HRAL	1	A-FLOR-HRAL	1
+Railings	Railings Beyond Cut Line	A-SECT-MBND	5	A-SECT-MBND	5
+Railings	Rails	A-FLOR-HRAL	1	A-FLOR-HRAL	1
+Ramps		A-FLOR-STRS	2	A-FLOR-STRS	2
+Ramps	Down Arrow	A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Ramps	DOWN text	A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Ramps	Incomplete ramps	A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Ramps	Ramps Beyond Cut Line	A-SECT-MBND	5	A-SECT-MBND	5
+Ramps	Stringers	A-FLOR-STRS	2	A-FLOR-STRS	2
+Ramps	Stringers Beyond Cut Line	A-SECT-MBND	5	A-SECT-MBND	5
+Ramps	Up Arrow	A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Ramps	UP text	A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Raster Images		G-ANNO-PATT	8	G-ANNO-PATT	8
+Reference Planes		G-ANNO-NPLT	5	G-ANNO-NPLT	5
+Revision Cloud Tags		G-ANNO-REVS	5	G-ANNO-REVS	5
+Revision Clouds		G-ANNO-REVS	5	G-ANNO-REVS	5
+Roads		C-ROAD	4	C-ROAD	4
+Roof Tags		A-ROOF-IDEN	6	A-ROOF-IDEN	6
+Roofs		A-ROOF	4	A-ROOF	4
+Roofs	Curtain Roof Grids	A-ROOF	4	A-ROOF	4
+Roofs	Cut Pattern	A-ROOF-PATT	8	A-ROOF-PATT	8
+Roofs	Fascias	A-ROOF-OTLN	4	A-ROOF-OTLN	4
+Roofs	Gutters	A-ROOF-OTLN	4	A-ROOF-OTLN	4
+Roofs	Roof Soffits	A-ROOF-OTLN	4	A-ROOF-OTLN	4
+Roofs	Surface Pattern	A-ROOF-PATT	8	A-ROOF-PATT	8
+Room Polylines		A-AREA-BDRY	1	A-AREA-BDRY	1
+Room Tags		A-AREA-IDEN	2	A-AREA-IDEN	2
+Rooms		A-AREA-IDEN	2	A-AREA-IDEN	2
+Schedule Graphics		A-ANNO-NPLT	5	A-ANNO-NPLT	5
+Scope Boxes		G-ANNO-NPLT	5	G-ANNO-NPLT	5
+Sections		A-ANNO-SYMB	6	A-ANNO-SYMB	6
+Security Device Tags		SECUTITY-DEVICES	2	SECUTITY-DEVICES	2
+Security Devices		SECUTITY-DEVICES	2	SECUTITY-DEVICES	2
+Site		L-SITE	6	L-SITE	6
+Site	Pads	C-BLDG	6	C-BLDG	6
+Site	Property	C-PROP	6	C-PROP	6
+Site Tags		L-ANNO-IDEN	6	L-ANNO-IDEN	6
+Span Direction Symbol		S-FLOR-SYMB	2	S-FLOR-SYMB	2
+Specialty Equipment		A-EQPM	6	A-EQPM	6
+Specialty Equipment Tags		A-EQPM-IDEN	2	A-EQPM-IDEN	2
+Spinkler Tags		F-Anno-Std-Text	2	F-Anno-Std-Text	2
+Spot Elevations		A-ANNO-DIMS	1	A-ANNO-DIMS	1
+Sprinklers		F-Sprn-Std	3	F-Sprn-Std	3
+Stair Tags		A-FLOR-IDEN	2	A-FLOR-IDEN	2
+Stairs		A-FLOR-STRS	2	A-FLOR-STRS	2
+Stairs	Down Arrow	A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Stairs	DOWN Text	A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Stairs	Incomplete Stairs	A-FLOR-STRS	2	A-FLOR-STRS	2
+Stairs	Stairs Beyond Cut Line	A-SECT-MBND	5	A-SECT-MBND	5
+Stairs	Stringers	A-FLOR-STRS	2	A-FLOR-STRS	2
+Stairs	Stringers Beyond Cut Line	A-SECT-MBND	5	A-SECT-MBND	5
+Stairs	Up Arrow	A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Stairs	UP Text	A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Structural Annotations		S-IDEN	2	S-IDEN	2
+Structural Area Reinforcement		S-RBAR-BDRY	2	S-RBAR-BDRY	2
+Structural Area Reinforcement Symbols		S-RBAR-SYMB	2	S-RBAR-SYMB	2
+Structural Area Reinforcement Tags		S-RBAR-IDEN	2	S-RBAR-IDEN	2
+Structural Beam System Tags		S-BEAM-IDEN	2	S-BEAM-IDEN	2
+Structural Beam Systems		S-ANNO-SYM	2	S-ANNO-SYM	2
+Structural Column Tags		S-COLS-IDEN	2	S-COLS-IDEN	2
+Structural Columns		S-COLS	6	S-COLS	6
+Structural Columns	Hidden Lines	S-COLS-HIDN	5	S-COLS-HIDN	5
+Structural Connection Tags		S-COLS-ANLY	2	S-COLS-ANLY	2
+Structural Connections		S-COLS-ANLY	2	S-COLS-ANLY	2
+Structural Foundation Tags		S-FNDN-IDEN	2	S-FNDN-IDEN	2
+Structural Foundations		S-FNDN-FTNG	4	S-FNDN-FTNG	4
+Structural Foundations	Hidden Lines	S-FNDN-HIDN	4	S-FNDN-HIDN	4
+Structural Framing		S-BEAM	4	S-BEAM	4
+Structural Framing	Hidden Lines	S-BEAM-HIDN	4	S-BEAM-HIDN	4
+Structural Framing Tags		S-BEAM-IDEN	2	S-BEAM-IDEN	2
+Structural Load Cases		S-LOAD-CASE	2	S-LOAD-CASE	2
+Structural Load Cases	Accidental Loads	S-LOAD-ACCI	2	S-LOAD-ACCI	2
+Structural Load Cases	Dead Loads	S-LOAD-DEAD	2	S-LOAD-DEAD	2
+Structural Load Cases	Live Loads	S-LOAD-LIVE	2	S-LOAD-LIVE	2
+Structural Load Cases	Roof Live Loads	S-LOAD-ROOF	2	S-LOAD-ROOF	2
+Structural Load Cases	Seismic Loads	S-LOAD-SEIS	2	S-LOAD-SEIS	2
+Structural Load Cases	Snow Loads	S-LOAD-SNOW	2	S-LOAD-SNOW	2
+Structural Load Cases	Temperature Loads	S-LOAD-TEMP	2	S-LOAD-TEMP	2
+Structural Load Cases	Wind Loads	S-LOAD-WIND	2	S-LOAD-WIND	2
+Structural Loads		S-LOAD	2	S-LOAD	2
+Structural Loads	Area Loads	S-LOAD-AREA	2	S-LOAD-AREA	2
+Structural Loads	Line Loads	S-LOAD-LINE	2	S-LOAD-LINE	2
+Structural Loads	Point Loads	S-LOAD-POIN	2	S-LOAD-POIN	2
+Structural Path Reinforcement		S-RBAR-BDRY	2	S-RBAR-BDRY	2
+Structural Path Reinforcement Symbols		S-RBAR-SYMB	2	S-RBAR-SYMB	2
+Structural Path Reinforcement Tags		S-RBAR-IDEN	2	S-RBAR-IDEN	2
+Structural Rebar		S-RBAR	2	S-RBAR	2
+Structural Rebar Tags		S-RBAR-IDEN	2	S-RBAR-IDEN	2
+Structural Truss Tags		S-BEAM-IDEN	2	S-BEAM-IDEN	2
+Structural Trusses		S-ANNO-SYM	2	S-ANNO-SYM	2
+Telephone Device Tags		PHONE-DEVICES	2	PHONE-DEVICES	2
+Telephone Devices		PHONE-DEVICES	2	PHONE-DEVICES	2
+Temporary		-TEMP	2	-TEMP	2
+Text Notes		A-ANNO-TEXT	2	A-ANNO-TEXT	2
+Title Blocks		G-ANNO-TTLB	6	G-ANNO-TTLB	6
+Title Blocks	Medium Lines	G-ANNO-MLIN	4	G-ANNO-MLIN	4
+Title Blocks	Thin Lines	G-ANNO-LLIN	2	G-ANNO-LLIN	2
+Title Blocks	Wide Lines	G-ANNO-HLIN	6	G-ANNO-HLIN	6
+Topography		C-TOPO	2	C-TOPO	2
+Topography	Boundary Point	C-TOPO-BKLN	3	C-TOPO-BKLN	3
+Topography	Interior Point	C-TOPO-SPOT	2	C-TOPO-SPOT	2
+Topography	Primary Contours	C-TOPO-MAJR	2	C-TOPO-MAJR	2
+Topography	Secondary Contours	C-TOPO-MINR	3	C-TOPO-MINR	3
+Topography	Triangulation Edges	C-TOPO-EDGE	3	C-TOPO-EDGE	3
+View Reference		A-ANNO-SYMB	6	A-ANNO-SYMB	6
+View Titles		G-ANNO-TTLB	6	G-ANNO-TTLB	6
+Viewports		A-ANNO-NPLT	5	A-ANNO-NPLT	5
+Wall Tags		A-WALL-IDEN	4	A-WALL-IDEN	4
+Walls		A-WALL-MBNI	2	A-WALL	2
+Walls	Curtain Wall Grids	A-GLAZ-GRID	2	A-GLAZ-GRID	2
+Walls	Cut Pattern	A-WALL-PATT	2	A-WALL-PATT	2
+Walls	Hidden Lines	A-WALL-HIDN	2	A-WALL-HIDN	2
+Walls	Surface Pattern	A-WALL-PATT	2	A-WALL-PATT	2
+Walls/Interior:1		I-WALL	2	I-WALL	2
+Walls/Exterior:2		A-WALL	2	A-WALL	2
+Walls/Foundation:3		S-FNDN	2	S-FNDN	2
+Walls/Retaining:4		SITE-WALL	2	SITE-WALL	2
+Window Tags		A-GLAZ-IDEN	6	A-GLAZ-IDEN	6
+Windows		A-GLAZ	6	A-GLAZ	6
+Windows	Frame/Mullion	A-GLAZ-FRAM	6	A-GLAZ-FRAM	6
+Windows	Glass	A-GLAZ-GLAS	6	A-GLAZ-GLAS	6
+Windows	Opening	A-GLAZ	6	A-GLAZ	6
+Windows	Sill/Head	A-GLAZ-SILL	1	A-GLAZ-SILL	1
+Wire Tag		E-ANNO-TEXT	2	E-ANNO-TEXT	2
+Wire Tick Marks		E-ANNO-TEXT	2	E-ANNO-TEXT	2
+Wires		E-POWR-WIRE	3	E-POWR-WIRE	3

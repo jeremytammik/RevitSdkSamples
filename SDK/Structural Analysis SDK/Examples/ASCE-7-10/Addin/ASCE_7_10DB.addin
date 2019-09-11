@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="DBApplication">
+    <Name>ASCE_7_10</Name>
+    <Assembly>AssemblyPath</Assembly>
+    <AddInId>0908381c-1a11-48ee-9d3d-a5ddf0152903</AddInId>
+    <FullClassName>ASCE_7_10.RevitApplicationDB</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk,www.Autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

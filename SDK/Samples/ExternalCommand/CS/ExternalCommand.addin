@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ExternalApplication</Name>
+    <Assembly>ExternalCommandRegistration.dll</Assembly>
+    <AddInId>dcfbb6cb-3a2e-4349-8b5e-76817a8a1661</AddInId>
+    <FullClassName>Revit.SDK.Samples.ExternalCommandRegistration.CS.ExternalApplicationClass</FullClassName>
+    <VendorId>adsk</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ExternalCommandRegistration.dll</Assembly>
+    <AddInId>8d9a42e0-9ff9-4054-a04e-1bbe51218633</AddInId>
+    <FullClassName>Revit.SDK.Samples.ExternalCommandRegistration.CS.ExternalCommandCreateWall</FullClassName>
+    <VendorId>adsk</VendorId>
+    <Text>@createWallText</Text>
+    <Description>A simple external command which is used to create a wall.</Description>
+    <LargeImage>@CreateWall</LargeImage>
+    <LongDescription>This command will not be visible in Revit Structure or there is no active document. And this command will be disabled if user selected a wall. </LongDescription>
+    <TooltipImage>@CreateWallTooltip</TooltipImage>
+    <AvailabilityClassName>Revit.SDK.Samples.ExternalCommandRegistration.CS.WallSelection</AvailabilityClassName>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <VisibilityMode>NotVisibleInStructure</VisibilityMode>
+    <LanguageType>English_USA</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ExternalCommandRegistration.dll</Assembly>
+    <AddInId>efd044bb-785d-4f35-8d2f-9bebe78566bb</AddInId>
+    <FullClassName>Revit.SDK.Samples.ExternalCommandRegistration.CS.ExternalCommand3DView</FullClassName>
+    <VendorId>adsk</VendorId>
+    <Text>@view3DText</Text>
+    <Description>A simple external command which show a message box.</Description>
+    <LargeImage>@View3D</LargeImage>
+    <LongDescription>This command will not be visible in Revit MEP, Family Document or no active document. And this command will be disabled if the active view is not a 3D view. </LongDescription>
+    <AvailabilityClassName>Revit.SDK.Samples.ExternalCommandRegistration.CS.View3D</AvailabilityClassName>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <LanguageType>English_USA</LanguageType>
+  </AddIn>
+</RevitAddIns>

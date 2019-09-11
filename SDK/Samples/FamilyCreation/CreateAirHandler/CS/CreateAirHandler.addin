@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateAirHandler.dll</Assembly>
+    <ClientId>624e832a-d412-4365-8060-5adb9e921128</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateAirHandler.CS.Command</FullClassName>
+    <Text>Create Air Handler</Text>
+    <Description>Create one air handler and add connectors.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

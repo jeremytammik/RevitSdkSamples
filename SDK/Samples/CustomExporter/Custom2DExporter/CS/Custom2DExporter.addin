@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Custom2DExporter.dll</Assembly>
+    <ClientId>63cff3fb-b5fd-4179-9a66-4f2f033cdf58</ClientId>
+    <FullClassName>Revit.SDK.Samples.Custom2DExporter.CS.Command</FullClassName>
+    <Text>Export 2D views with CustomExporter</Text>
+    <Description>Export 2D views with CustomExporter, using varying options of the exporter.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

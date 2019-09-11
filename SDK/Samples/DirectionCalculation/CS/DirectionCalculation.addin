@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DirectionCalculation.dll</Assembly>
+    <ClientId>214b9d5b-f3eb-4f86-a9ef-856347da3946</ClientId>
+    <FullClassName>Revit.Samples.DirectionCalculation.FindSouthFacingWallsWithoutProjectLocation</FullClassName>
+    <Text>South Facing Walls Without ProjectLocation</Text>
+    <Description>""</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DirectionCalculation.dll</Assembly>
+    <ClientId>af361301-eba1-4f0e-aaf4-3773046c13f0</ClientId>
+    <FullClassName>Revit.Samples.DirectionCalculation.FindSouthFacingWallsWithProjectLocation</FullClassName>
+    <Text>South Facing Walls With ProjectLocation</Text>
+    <Description>""</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DirectionCalculation.dll</Assembly>
+    <ClientId>1ad14d39-2212-4851-b331-1ef6af57207d</ClientId>
+    <FullClassName>Revit.Samples.DirectionCalculation.FindSouthFacingWindowsWithoutProjectLocation</FullClassName>
+    <Text>South Facing Windows Without ProjectLocation</Text>
+    <Description>""</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DirectionCalculation.dll</Assembly>
+    <ClientId>ffe2e5b6-d988-44c5-855a-c85f2bfe2f65</ClientId>
+    <FullClassName>Revit.Samples.DirectionCalculation.FindSouthFacingWindowsWithProjectLocation</FullClassName>
+    <Text>South Facing Windows With ProjectLocation</Text>
+    <Description>""</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

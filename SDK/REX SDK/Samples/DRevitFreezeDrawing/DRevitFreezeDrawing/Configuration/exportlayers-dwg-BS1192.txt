@@ -1,0 +1,212 @@
+# Revit Export Layers
+# Maps Categories and Subcategories to layer names and color numbers
+# Category <tab> Subcategory <tab> Layer name <tab> Color number <tab>
+# Cut layer name <tab> Cut color number
+# Do not remove the colon (:) after certain category names.
+# -----------------------------------------------------
+Area Polylines		F810A	1	F810A	1
+Area Tags		F810A	2	F810A	2
+Callouts		A060T	6	A060T	6
+Casework		A760	3	A760	3
+Casework Tags		A760A	5	A760A	5
+Ceiling Tags		A350A	6	A350A	6
+Ceilings		A359	5	A359	5
+Ceilings	Cut Pattern	A350H	1	A350H	1
+Ceilings	Surface Pattern	A350G	1	A350G	1
+Color Fill		F810A	2	F810A	2
+Color Fill Legends		Z010T	5	Z010T	5
+Columns		A280	4	A280	4
+Constraints		Z000	2	Z000	2
+Contour Labels		0	2	0	2
+Curtain Panel Tags		A214A	6	A214A	6
+Curtain Panels		A214	6	A214	6
+Curtain Wall Mullions		A214	3	A214	3
+Demolished		-DEMO	3	-DEMO	3
+Detail Item Tags		A060A	3	A060A	3
+Detail Items		A060G5	3	A060G5	3
+Dimensions		A010D	1	A010D	1
+Dimensions	Automatic Sketch Dimensions	A010D	1	A010D	1
+Door Tags		A300A	6	A300A	6
+Doors		A300	1	A300	1
+Doors	Frame/Mullion	A300	1	A300	1
+Doors	Glass	A300	1	A300	1
+Doors	Opening	A300	6	A300	6
+Doors	Panel	A300	1	A300	1
+Electrical Equipment		A610	4	A610	4
+Electrical Equipment Tags		A610A	2	A610A	2
+Electrical Fixture Tags		A610A	2	A610A	2
+Electrical Fixtures		A610	2	A610	2
+Elevations		A040	6	A040	6
+Entourage		A060G5	3	A060G5	3
+Existing		-EXST	3	-EXST	3
+Floors		A230	6	A230	6
+Floors	Cut Pattern	A230H	8	A230H	8
+Floors	Hidden Lines	A230H	5	A230H	5
+Floors	Slab Edges	A230	6	A230	6
+Floors	Surface Pattern	A230H	8	A230H	8
+Furniture		A700	2	A700	2
+Furniture System Tags		A723	3	A723	3
+Furniture Systems		A723	2	A723	2
+Furniture Tags		A723	3	A723	3
+Generic Annotations		Z000	2	Z000	2
+Generic Model Tags		Z000	2	Z000	2
+Generic Models		Z000	6	Z000	6
+Grid Heads		Z030G	1	Z030G	1
+Grids		Z030G	1	Z030G	1
+Imports in Families		Z000	1	Z000	1
+Keynote Tags		Z000	2	Z000	2
+Level Heads		Z000	6	Z000	6
+Levels		Z000	6	Z000	6
+Lighting Fixture Tags		A630A	1	A630A	1
+Lighting Fixtures		A630	4	A630	4
+Lines		Z000	5	Z000	5
+Lines	<Area Boundary>	F810A	4	F810A	4
+Lines	<Beyond>	Z000	5	Z000	5
+Lines	<Centerline>	Z000	5	Z000	5
+Lines	<Demolished>	Z000	6	Z000	6
+Lines	<Hidden>	Z000	5	Z000	5
+Lines	<Overhead>	A760G	8	A760G	8
+Lines	<Revision Cloud>	Z000	5	Z000	5
+Lines	<Room Separation>	F810A	4	F810A	4
+Lines	<Sketch>	Z000G	5	Z000G	5
+Lines	Axis of Rotation	Z000G	5	Z000G	5
+Lines	Insulation Batting Lines	Z000	8	Z000	8
+Lines	Lines	Z000	5	Z000	5
+Lines	Medium Lines	Z000	3	Z000	3
+Lines	Thin Lines	Z000	3	Z000	3
+Lines	Wide Lines	Z000	3	Z000	3
+Mass		Z010T	5	Z010T	5
+Mass Tags		Z010T	5	Z010T	5
+Massing		Z010T	5	Z010T	5
+Matchline		A060T	6	A060T	6
+Material Tags		Z000	2	Z000	2
+Mechanical Equipment		A700	2	A700	2
+Mechanical Equipment Tags		A700A	2	A700A	2
+Multi-Category Tags		Z000	2	Z000	2
+New		-NEW	2	-NEW	2
+Parking		C950	1	C950	1
+Parking Tags		C950A	1	C950A	1
+Plan Region		Z010T	5	Z010T	5
+Planting		L940	3	L940	3
+Planting Tags		L940	3	L940	3
+Plumbing Fixture Tags		A520A	2	A520A	2
+Plumbing Fixtures		A520	6	A520	6
+Property Line Segment Tags		A520	6	A520	6
+Property Tags		A520	0	A520	0
+Railings		A340	1	A340	1
+Railings	Balusters	A340	1	A340	1
+Railings	Railings Beyond Cut Line	A340	5	A340	5
+Railings	Rails	A340	1	A340	1
+Ramps		A241	2	A241	2
+Ramps	Down Arrow	A241	2	A241	2
+Ramps	DOWN text	A241	2	A241	2
+Ramps	Incomplete ramps	A241	2	A241	2
+Ramps	Ramps Beyond Cut Line	A241	5	A241	5
+Ramps	Stringers	A241	2	A241	2
+Ramps	Stringers Beyond Cut Line	A241	5	A241	5
+Ramps	Up Arrow	A241	2	A241	2
+Ramps	UP text	A241	2	A241	2
+Raster Images		Z010T	8	Z010T	8
+Reference Planes		Z010T	5	Z010T	5
+Revision Cloud Tags		Z010T	5	Z010T	5
+Revision Clouds		Z010T	5	Z010T	5
+Roads		C950	4	C950	4
+Roof Tags		A270A	6	A270A	6
+Roofs		A270	4	A270	4
+Roofs	Curtain Roof Grids	A270	4	A270	4
+Roofs	Cut Pattern	A270	8	A270	8
+Roofs	Fascias	A270	4	A270	4
+Roofs	Gutters	A270	4	A270	4
+Roofs	Roof Soffits	A270	4	A270	4
+Roofs	Surface Pattern	A270	8	A270	8
+Room Polylines		F810A	2	F810A	2
+Room Tags		F810A	2	F810A	2
+Rooms		F810A	2	F810A	2
+Schedule Graphics		Z000	5	Z000	5
+Scope Boxes		Z010T	5	Z010T	5
+Sections		A060T	6	A060T	6
+Site		L910	6	L910	6
+Site	Pads	L910	6	L910	6
+Site	Property	L910	6	L910	6
+Site Tags		L910	6	L910	6
+Span Direction Symbol		S280	2	S280	2
+Specialty Equipment		Z770	6	Z770	6
+Specialty Equipment Tags		Z770A	2	Z770A	2
+Spot Elevations		A010D	1	A010D	1
+Stair Tags		A240G	2	A240G	2
+Stairs		A240	2	A240	2
+Stairs	Down Arrow	A240G	2	A240G	2
+Stairs	DOWN Text	A240G	2	A240G	2
+Stairs	Incomplete Stairs	A240	2	A240	2
+Stairs	Stairs Beyond Cut Line	A240	5	A240	5
+Stairs	Stringers	A240	2	A240	2
+Stairs	Stringers Beyond Cut Line	A240	5	A240	5
+Stairs	Up Arrow	A240G	2	A240G	2
+Stairs	UP Text	A240G	2	A240G	2
+Structural Annotations		S280	2	S280	2
+Structural Area Reinforcement		S280	2	S280	2
+Structural Area Reinforcement Symbols		S280A	2	S280A	2
+Structural Area Reinforcement Tags		S280	2	S280	2
+Structural Beam System Tags		S280A	2	S280A	2
+Structural Beam Systems		S280	2	S280	2
+Structural Column Tags		S280A	2	S280A	2
+Structural Columns		S280	6	S280	6
+Structural Columns	Hidden Lines	S280H	5	S280H	5
+Structural Connection Tags		S280	2	S280	2
+Structural Connections		S280	2	S280	2
+Structural Foundation Tags		S280	2	S280	2
+Structural Foundations		S280A	4	S280A	4
+Structural Foundations	Hidden Lines	S164H	4	S164H	4
+Structural Framing		S280A	4	S280A	4
+Structural Framing	Hidden Lines	S280H	4	S280H	4
+Structural Framing Tags		S280A	2	S280A	2
+Structural Load Cases		S280	2	S280	2
+Structural Load Cases	Accidental Loads	S280	2	S280	2
+Structural Load Cases	Dead Loads	S280	2	S280	2
+Structural Load Cases	Live Loads	S280	2	S280	2
+Structural Load Cases	Roof Live Loads	S280	2	S280	2
+Structural Load Cases	Seismic Loads	S280	2	S280	2
+Structural Load Cases	Snow Loads	S280	2	S280	2
+Structural Load Cases	Temperature Loads	S280	2	S280	2
+Structural Load Cases	Wind Loads	S280	2	S280	2
+Structural Loads		S280	2	S280	2
+Structural Loads	Area Loads	S280	2	S280	2
+Structural Loads	Line Loads	S280	2	S280	2
+Structural Loads	Point Loads	S280	2	S280	2
+Structural Path Reinforcement		S280	2	S280	2
+Structural Path Reinforcement Symbols		S280A	2	S280A	2
+Structural Path Reinforcement Tags		S280	2	S280	2
+Structural Rebar		S280	2	S280	2
+Structural Rebar Tags		S280	2	S280	2
+Structural Truss Tags		S280A	2	S280A	2
+Temporary		-TEMP	2	-TEMP	2
+Text Notes		Z010T	2	Z010T	2
+Title Blocks		Z2020T	6	Z2020T	6
+Title Blocks	Medium Lines	Z2020T	4	Z2020T	4
+Title Blocks	Thin Lines	Z2020T	2	Z2020T	2
+Title Blocks	Wide Lines	Z2020T	6	Z2020T	6
+Topography		B901	2	B901	2
+Topography	Boundary Point	B903G	3	B903G	3
+Topography	Interior Point	B903G	2	B903G	2
+Topography	Primary Contours	B903G	2	B903G	2
+Topography	Secondary Contours	B903G	3	B903G	3
+Topography	Triangulation Edges	B903G	3	B903G	3
+View Reference		Z010T	6	Z010T	6
+View Titles		Z010T	6	Z010T	6
+Viewports		Z000	5	Z000	5
+Wall Tags		A210A	4	A210A	4
+Walls		A210	2	A210	2
+Walls	Curtain Wall Grids	A210	2	A210	2
+Walls	Cut Pattern	A210	2	A210	2
+Walls	Hidden Lines	A210H	2	A210H	2
+Walls	Surface Pattern	A210	2	A210	2
+Walls/Interior:1		A210	2	A210	2
+Walls/Exterior:2		A210	2	A210	2
+Walls/Foundation:3		A210	2	A210	2
+Walls/Retaining:4		A210	2	A210	2
+Window Tags		A314A	6	A314A	6
+Windows		A314A	6	A314A	6
+Windows	Frame/Mullion	A314A	6	A314A	6
+Windows	Glass	A314A	6	A314A	6
+Windows	Opening	A314	6	A314	6
+Windows	Sill/Head	A314	1	A314	1
