@@ -9,7 +9,7 @@ the [Apidocs.co API documentation pages](https://apidocs.co).
 Initial commit from Revit SDK installed from REVIT_2020_SDK.msi, 367304704 bytes, Mar 28 10:40, downloaded from
 the [Revit Developer Center](http://www.autodesk.com/developrevit).
 
-The model RVT files and some other large sample files are omitted from this repository by adding the following lines to `.gitignore`:
+The model RVT files and some other large sample files included in the full SDK are omitted from this repository by adding the following lines to `.gitignore`:
 
 ```
 *.rfa
