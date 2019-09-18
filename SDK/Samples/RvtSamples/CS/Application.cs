@@ -449,7 +449,7 @@ namespace RvtSamples
                   assembly, i, m_fileNameStem));
             }
 
-            bool testClassName = true; // jeremy
+            bool testClassName = false; // jeremy
             if (testClassName)
             {
                 Debug.Print("RvtSamples: testing command {0} in assembly '{1}'.", className, assembly);
