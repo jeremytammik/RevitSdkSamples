@@ -132,6 +132,7 @@
     <Content Include="Icons\Views.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="RvtSamples.addin" />
     <Content Include="RvtSamples.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

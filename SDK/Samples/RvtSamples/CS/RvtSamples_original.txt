@@ -24,7 +24,7 @@ Revit.SDK.Samples.CreateDimensions.CS.Command
 
 Annotation
 LeaderLineAndDimensionLineSuperposition.
-Using new dimension api to move leader end point. Make the dimension line and leader line to be superposition.
+Using new dimension api to move leader end point. Make the dimension line and leader line to be superposition. 
 LargeImage:
 Image:
 C:\a\lib\revit\2020\SDK\Samples\DimensionLeaderEnd\CS\bin\Debug\DimensionLeaderEnd.dll
@@ -32,7 +32,7 @@ Revit.SDK.Samples.DimensionLeaderEnd.CS.MoveHorizontally
 
 Annotation
 MoveToPickedPoint.
-Using new dimension api to move leader end point. Move to picked point.
+Using new dimension api to move leader end point. Move to picked point. 
 LargeImage:
 Image:
 C:\a\lib\revit\2020\SDK\Samples\DimensionLeaderEnd\CS\bin\Debug\DimensionLeaderEnd.dll
@@ -163,7 +163,7 @@ Highlight by Phase
 Highlight by Phase.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\PhaseSample\VB.NET\bin\PhaseSample.dll
+C:\a\lib\revit\2020\SDK\Samples\PhaseSample\VB.NET\bin\Debug\PhaseSample.dll
 Revit.SDK.Samples.PhaseSample.VB.NET.Command
 
 Basics
@@ -195,7 +195,7 @@ Display Options
 Display Options.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\DesignOptionReader\VB.NET\bin\DesignOptionReader.dll
+C:\a\lib\revit\2020\SDK\Samples\DesignOptionReader\VB.NET\bin\Debug\DesignOptionReader.dll
 Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
 
 Basics, Families
@@ -211,7 +211,7 @@ RvtCmd_LibraryPaths
 List the Revit library paths.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\RevitCommands.dll
+C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
 Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths
 
 Basics, Families
@@ -219,7 +219,7 @@ RvtCmd_LoadFamilySymbol
 Load a family symbol/type.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\RevitCommands.dll
+C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
 Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol
 
 Basics, Families
@@ -227,7 +227,7 @@ RvtCmd_LoadFamily
 Load a family.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\RevitCommands.dll
+C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
 Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily
 
 Basics, Families
@@ -235,7 +235,7 @@ RvtCmd_Selection
 show how to use selection set.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\RevitCommands.dll
+C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
 Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection
 
 Basics, Families
@@ -243,7 +243,7 @@ RvtCmd_ShowElementData
 show parameters in selected entities.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\RevitCommands.dll
+C:\a\lib\revit\2020\SDK\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
 Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
 
 Basics, Geometry
@@ -299,7 +299,7 @@ Arch Sample - Export to Excel
 Export data to Excel, sorted by categories
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\ArchSample\VB.NET\bin\ArchSample.dll
+C:\a\lib\revit\2020\SDK\Samples\ArchSample\VB.NET\bin\Debug\ArchSample.dll
 Revit.SDK.Samples.ArchSample.VB.NET.Command
 
 Data Exchange
@@ -391,28 +391,12 @@ C:\a\lib\revit\2020\SDK\Samples\CurtainWallGrid\CS\bin\Debug\CurtainWallGrid.dll
 Revit.SDK.Samples.CurtainWallGrid.CS.Command
 
 Elements
-Datums modification: style
-Datums modification: style
+Datumplane modification
+Datumplane modification
 LargeImage:
 Image:
 C:\a\lib\revit\2020\SDK\Samples\DatumsModification\CS\bin\Debug\DatumsModification.dll
-Revit.SDK.Samples.DatumsModification.CS.DatumStyleModification
-
-Elements
-Datums modification: alignment
-Datums modification: alignment
-LargeImage:
-Image:
-C:\a\lib\revit\2020\SDK\Samples\DatumsModification\CS\bin\Debug\DatumsModification.dll
-Revit.SDK.Samples.DatumsModification.CS.DatumAlignment
-
-Elements
-Datums modification: propagation
-Datums modification: propagation
-LargeImage:
-Image:
-C:\a\lib\revit\2020\SDK\Samples\DatumsModification\CS\bin\Debug\DatumsModification.dll
-Revit.SDK.Samples.DatumsModification.CS.DatumPropagation
+Revit.SDK.Samples.DatumsModification.CS.Command
 
 Elements
 Create and modify view filters.
@@ -707,7 +691,7 @@ Type Selector
 Retrieve all the types of the selected element, such as a wall and allow the selected element's type to be changed.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\TypeSelector\VB.NET\bin\TypeSelector.dll
+C:\a\lib\revit\2020\SDK\Samples\TypeSelector\VB.NET\bin\Debug\TypeSelector.dll
 Revit.SDK.Samples.TypeSelector.VB.NET.Command
 
 Families, Parameters
@@ -987,7 +971,7 @@ Analytical Viewer
 Display analytical model of one or more selected elements.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\Viewers\AnalyticalViewer\VB.NET\bin\AnalyticalViewer.dll
+C:\a\lib\revit\2020\SDK\Samples\Viewers\AnalyticalViewer\VB.NET\bin\Debug\AnalyticalViewer.dll
 Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
 
 Geometry
@@ -995,7 +979,7 @@ Element Viewer
 Display wireframe model of one or more selected elements.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\Viewers\ElementViewer\VB.NET\bin\debug\ElementViewer.dll
+C:\a\lib\revit\2020\SDK\Samples\Viewers\ElementViewer\VB.NET\bin\Debug\ElementViewer.dll
 Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
 
 Geometry
@@ -1003,7 +987,7 @@ Revit Viewer
 View geometry information.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\Viewers\RevitViewer\VB.NET\bin\RevitViewer.dll
+C:\a\lib\revit\2020\SDK\Samples\Viewers\RevitViewer\VB.NET\bin\Debug\RevitViewer.dll
 Revit.SDK.Samples.RevitViewer.VB.NET.RevitViewer
 
 Geometry
@@ -1011,7 +995,7 @@ Room Viewer
 Wireframe viewer for the selected room.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\Viewers\RoomViewer\VB.NET\bin\RoomViewer.dll
+C:\a\lib\revit\2020\SDK\Samples\Viewers\RoomViewer\VB.NET\bin\Debug\RoomViewer.dll
 Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
 
 Geometry, Structure
@@ -1040,7 +1024,7 @@ Revit.SDK.Samples.ParameterValuesFromImage.CS.SetParameterValueWithImageData
 
 Materials
 Edit appearance asset properties via a small control dialog
-This sample demonstrates basic usage of the AppearanceAssetEditScope and AssetProperty classes to change the value of an asset property in a given material.
+This sample demonstrates basic usage of the AppearanceAssetEditScope and AssetProperty classes to change the value of an asset property in a given material. 
 LargeImage:
 Image:
 C:\a\lib\revit\2020\SDK\Samples\AppearanceAssetEditing\CS\bin\Debug\AppearanceAssetEditing.dll
@@ -1323,7 +1307,7 @@ Browse Parameter Bindings
 Browse all the shared parameters bindings used in this project.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\BrowseBindings\VB.NET\bin\BrowseBindings.dll
+C:\a\lib\revit\2020\SDK\Samples\BrowseBindings\VB.NET\bin\Debug\BrowseBindings.dll
 Revit.SDK.Samples.BrowseBindings.VB.NET.Command
 
 Parameters
@@ -1355,7 +1339,7 @@ FireRating - Apply Parameter
 Add a new shared parameter to Revit and apply it to all doors.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\FireRating\VB.NET\bin\FireRating.dll
+C:\a\lib\revit\2020\SDK\Samples\FireRating\VB.NET\bin\Debug\FireRating.dll
 Revit.SDK.Samples.FireRating.VB.NET.ApplyParameter
 
 Parameters
@@ -1363,7 +1347,7 @@ FireRating - Export to Excel
 Export fire rating values to an Excel file.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\FireRating\VB.NET\bin\FireRating.dll
+C:\a\lib\revit\2020\SDK\Samples\FireRating\VB.NET\bin\Debug\FireRating.dll
 Revit.SDK.Samples.FireRating.VB.NET.ExportFireRating
 
 Parameters
@@ -1371,7 +1355,7 @@ FireRating - Import from Excel
 Import fire rating values from the Excel file and apply them to doors.
 LargeImage:
 Image:
-C:\a\lib\revit\2020\SDK\Samples\FireRating\VB.NET\bin\FireRating.dll
+C:\a\lib\revit\2020\SDK\Samples\FireRating\VB.NET\bin\Debug\FireRating.dll
 Revit.SDK.Samples.FireRating.VB.NET.ImportFireRating
 
 Parameters
@@ -1886,5 +1870,3 @@ Image:
 C:\a\lib\revit\2020\SDK\Samples\VisibilityControl\CS\bin\Debug\VisibilityControl.dll
 Revit.SDK.Samples.VisibilityControl.CS.Command
 
-#include C:/a/vs/AdnRevitApiLabsXtra/AdnSamples.txt
-#include C:/a/vs/the_building_coder_samples/BcSamples.txt
