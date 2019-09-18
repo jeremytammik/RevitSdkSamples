@@ -4,8 +4,16 @@ using Autodesk.Revit.DB;
 
 namespace Revit.SDK.Samples.Custom2DExporter.CS
 {
+   /// <summary>
+   /// Collection of helpful utility classes. 
+   /// </summary>
    public class Utilities
    {
+      /// <summary>
+      /// Utility to properly append points from 1 list to another. 
+      /// </summary>
+      /// <param name="to"></param>
+      /// <param name="from"></param>
       public static void addTo(IList<XYZ> to, IList<XYZ> from)
       {
          int cnt = from.Count;

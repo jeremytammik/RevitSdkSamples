@@ -270,11 +270,13 @@ namespace Revit.SDK.Samples.PathOfTravelCreation.CS
       /// currently processed.
       /// </remarks>
       /// <param name="room"></param>
-      /// <param name="targetPoints"></param>
+      /// <param name="nearCornerPoints"></param>
       /// <returns></returns>
       private static void AppendRoomNearCornerPoints(Room room, List<XYZ> nearCornerPoints)
       {
          IList<IList<BoundarySegment>> segments = room.GetBoundarySegments(new SpatialElementBoundaryOptions());
+         if (segments == null || segments.Count == 0)
+            return;
 
          // First region only
          IList<BoundarySegment> firstSegments = segments[0];
@@ -386,6 +388,7 @@ namespace Revit.SDK.Samples.PathOfTravelCreation.CS
       /// <param name="rooms"></param>
       /// <param name="endPoints"></param>
       /// <param name="resultsSummary"></param>
+      /// <param name="mapAllStartsToAllEnds"></param>
       private static void GeneratePathsOfTravelForRoomsToEndpointsManyToMany(Document doc, ViewPlan viewPlan, List<Room> rooms, List<XYZ> endPoints, ResultsSummary resultsSummary,
                                                                               bool mapAllStartsToAllEnds)
       {

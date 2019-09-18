@@ -178,7 +178,6 @@ namespace Revit.SDK.Samples.CS.PointCloudEngine
         /// </summary>
         public void Free()
         {
-            throw new NotImplementedException();
         }
         #endregion
     }

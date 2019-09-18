@@ -41,6 +41,10 @@ namespace Revit.SDK.Samples.Custom2DExporter.CS
    public class Command : IExternalCommand
    {
       #region ExportViewUtils
+      /// <summary>
+      /// Generates the list of view types supported by the Exporter. 
+      /// </summary>
+      /// <returns>List of types that are valid view types for export. </returns>
       public static ICollection<ViewType> GetExportableViewTypes()
       {
          return new ViewType[]

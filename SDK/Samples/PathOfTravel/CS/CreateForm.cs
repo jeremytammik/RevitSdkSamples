@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Revit.SDK.Samples.PathOfTravelCreation.CS
 {
+   /// <summary>
+   /// Form presented to the user to fill in the options to control the path of travel creation. 
+   /// </summary>
    public partial class CreateForm : System.Windows.Forms.Form
    {
       PathCreateOptions m_createOption;

@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Revit.SDK.Samples.Custom2DExporter.CS
 {
+   /// <summary>
+   /// UI Form presented to the user used to collection options related to the export. 
+   /// </summary>
    public partial class Export2DView : System.Windows.Forms.Form
    {
+      /// <summary>
+      /// Construct a new form. 
+      /// </summary>
       public Export2DView()
       {
          InitializeComponent();
@@ -22,6 +28,9 @@ namespace Revit.SDK.Samples.Custom2DExporter.CS
 
       ExportOptions m_exportOptions = null;
 
+      /// <summary>
+      /// Property containing the options chosen for export. 
+      /// </summary>
       public ExportOptions ViewExportOptions
       {
          get
@@ -38,7 +47,9 @@ namespace Revit.SDK.Samples.Custom2DExporter.CS
          bool m_exportAnnotationObjects;
          bool m_exportPatternLines;
 
-
+         /// <summary>
+         /// True if AnnotationObjects are to be included in the export, false otherwise. 
+         /// </summary>
          public bool ExportAnnotationObjects
          {
             get
@@ -51,6 +62,9 @@ namespace Revit.SDK.Samples.Custom2DExporter.CS
             }
          }
 
+         /// <summary>
+         /// True if Pattern Lines are to be included in the export, false otherwise. 
+         /// </summary>
          public bool ExportPatternLines
          {
             get
