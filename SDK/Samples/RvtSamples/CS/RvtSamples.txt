@@ -995,7 +995,7 @@ Element Viewer
 Display wireframe model of one or more selected elements.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Viewers\ElementViewer\VB.NET\bin\ElementViewer.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Viewers\ElementViewer\VB.NET\bin\Debug\ElementViewer.dll
 Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
 
 Geometry
@@ -1331,7 +1331,7 @@ CreateShared - Create Shared Parameter
 Create a new shared parameter and assign it to wall categories.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CreateShared\VB.NET\bin\CreateShared.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CreateShared\VB.NET\bin\Debug\CreateShared.dll
 Revit.SDK.Samples.CreateShared.VB.NET.Command1
 
 Parameters
@@ -1339,7 +1339,7 @@ CreateShared - Set Shared Parameter
 Set the shared parameter.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CreateShared\VB.NET\bin\CreateShared.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CreateShared\VB.NET\bin\Debug\CreateShared.dll
 Revit.SDK.Samples.CreateShared.VB.NET.Command2
 
 Parameters
@@ -1411,7 +1411,7 @@ Test Floor Thickness
 Show how to retrieve and modify floor thickness.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestFloorThickness\VB.NET\bin\TestFloorThickness.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestFloorThickness\VB.NET\bin\Debug\TestFloorThickness.dll
 Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
 
 Parameters
@@ -1419,7 +1419,7 @@ Test Wall Thickness
 Show how to retrieve and modify wall thickness.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestWallThickness\VB.NET\bin\TestWallThickness.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestWallThickness\VB.NET\bin\Debug\TestWallThickness.dll
 Revit.SDK.Samples.TestWallThickness.VB.NET.Command
 
 Parameters, Structure
