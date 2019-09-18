@@ -333,3 +333,6 @@ ASALocalRun/
 *.rfa
 *.rvt
 *.swf
+
+# Backed-up project files
+*.csproj.bak
