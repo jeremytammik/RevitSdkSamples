@@ -65,7 +65,7 @@ namespace SchemaWrapperTools
              //then query the field data types from the field and instantiate a new generic method with those types as parameters.
               
              //Get the "AddField" method.
-             MethodInfo addFieldmethod = typeof(SchemaWrapper).GetMethod("AddField", new Type[] { typeof(string), typeof(UnitType), typeof(SchemaWrapper) });
+             MethodInfo addFieldmethod = typeof(SchemaWrapper).GetMethod("AddField", new Type[] { typeof(string), typeof(ForgeTypeId), typeof(SchemaWrapper) });
               Type[] methodGenericParameters = null;
               
               //Get the generic type parameters.  The type will either be a single type, an IList<> of a single type, or an IDictionary<> of a key type and a value type.
@@ -87,7 +87,7 @@ namespace SchemaWrapperTools
                   swSub = SchemaWrapper.FromSchema(subSchema);  
               }
               //Invoke the "AddField" method with the generic parameters from the current field.
-              genericAddFieldMethodInstantiated.Invoke(swReturn, new object[] { currentField.FieldName, currentField.UnitType, swSub });  
+              genericAddFieldMethodInstantiated.Invoke(swReturn, new object[] { currentField.FieldName, currentField.GetSpecTypeId(), swSub });  
           }
           //Note that we don't call SchemaWrapper.FinishSchema here. 
           //The Autodesk.Revit.DB.ExtensibleStorage.Schema object already exists and is registered -- we're just populating the outer wrapper.
@@ -161,11 +161,11 @@ namespace SchemaWrapperTools
       /// </summary>
       /// <typeparam name="TypeName">Currently supported types:  int, short, float, double, bool, string, ElementId, XYZ, UV, Guid, Entity, IDictionary<>, IList<>.  IDictionary<> does not support floating point types, XYZ, UV, or Entity as Key parameters.</typeparam>
       /// <param name="name">The name of the field</param>
-      /// <param name="unit">The unit type of the field.  Defintion required for floating point, XYZ, and UV types</param>
+      /// <param name="spec">The unit type of the field.  Defintion required for floating point, XYZ, and UV types</param>
       /// <param name="subSchema">A subSchemaWrapper, if the field is of type Entity</param>
-       public void AddField<TypeName>(string name, UnitType unit, SchemaWrapper subSchema)
+       public void AddField<TypeName>(string name, ForgeTypeId spec, SchemaWrapper subSchema)
        {
-           m_SchemaDataWrapper.AddData(name, typeof(TypeName), unit, subSchema);
+           m_SchemaDataWrapper.AddData(name, typeof(TypeName), spec, subSchema);
        }
 
       /// <summary>
@@ -254,8 +254,8 @@ namespace SchemaWrapperTools
                 currentFieldData.SubSchema.FinishSchema();  //Recursively create the schema for the subSchema.
             }
 
-            if (currentFieldData.Unit != UnitType.UT_Undefined)
-               currentFieldBuilder.SetUnitType(currentFieldData.Unit);
+            if (!currentFieldData.Spec.Empty())
+               currentFieldBuilder.SetSpec(currentFieldData.Spec);
          }
 
          //Set all the top level data in the schema we are generating.
@@ -373,7 +373,7 @@ namespace SchemaWrapperTools
       {
           string fieldName = field.FieldName;
           System.Type fieldType = field.ValueType;
-          UnitType fieldUnit = field.UnitType;
+          ForgeTypeId fieldUnit = field.GetSpecTypeId();
           ContainerType fieldContainerType = field.ContainerType;
           Type[] methodGenericParameters = null;
           object[] invokeParams = null;
@@ -385,15 +385,15 @@ namespace SchemaWrapperTools
           else //map
               methodGenericParameters = new Type[] { typeof(IDictionary<int, int>).GetGenericTypeDefinition().MakeGenericType(new Type[] { field.KeyType, field.ValueType }) };
 
-          if (fieldUnit == UnitType.UT_Undefined)
+          if (fieldUnit.Empty())
           {
               methodOverloadSelectionParams = new Type[] { typeof(Field) };
               invokeParams = new object[] { field };
           }
           else
           {
-              methodOverloadSelectionParams = new Type[] { typeof(Field), typeof(DisplayUnitType) };
-              invokeParams = new object[] { field, DisplayUnitType.DUT_METERS };
+              methodOverloadSelectionParams = new Type[] { typeof(Field), typeof(ForgeTypeId) };
+              invokeParams = new object[] { field, UnitTypeId.Meters };
           }
 
           MethodInfo instantiatedGenericGetMethod = entity.GetType().GetMethod("Get", methodOverloadSelectionParams).MakeGenericMethod(methodGenericParameters);
@@ -403,13 +403,13 @@ namespace SchemaWrapperTools
               if (fieldType == typeof(Entity))
               {
                   Schema subSchema = Schema.Lookup(field.SubSchemaGUID);
-                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {SubEntity} " + ", Unit: " + field.UnitType.ToString() + ", ContainerType: " + field.ContainerType.ToString());
+                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {SubEntity} " + ", Unit: " + field.GetSpecTypeId().TypeId + ", ContainerType: " + field.ContainerType.ToString());
                   DumpAllSchemaEntityData<FieldType>(retval, subSchema, strBuilder);
               }
               else
               {
                   string sRetval = retval.ToString();
-                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + retval + ", Unit: " + field.UnitType.ToString() + ", ContainerType: " + field.ContainerType.ToString());
+                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + retval + ", Unit: " + field.GetSpecTypeId().TypeId + ", ContainerType: " + field.ContainerType.ToString());
               }
           }
           else if (field.ContainerType == ContainerType.Array)
@@ -417,7 +417,7 @@ namespace SchemaWrapperTools
               IList<FieldType> listRetval = (IList<FieldType>)instantiatedGenericGetMethod.Invoke(entity, invokeParams);
               if (fieldType == (typeof(Entity)))
               {
-                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {SubEntity} " + ", Unit: " + field.UnitType.ToString() + ", ContainerType: " + field.ContainerType.ToString());
+                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {SubEntity} " + ", Unit: " + field.GetSpecTypeId().TypeId + ", ContainerType: " + field.ContainerType.ToString());
 
                   foreach (FieldType fa in listRetval)
                   {
@@ -427,7 +427,7 @@ namespace SchemaWrapperTools
               }
               else
               {
-                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {Array} " + ", Unit: " + field.UnitType.ToString() + ", ContainerType: " + field.ContainerType.ToString());
+                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {Array} " + ", Unit: " + field.GetSpecTypeId().TypeId + ", ContainerType: " + field.ContainerType.ToString());
                   foreach (FieldType fa in listRetval)
                   {
                       strBuilder.AppendLine("  Array value: " + fa.ToString());
@@ -436,11 +436,11 @@ namespace SchemaWrapperTools
           }
           else //Map
           {
-              strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {Map} " + ", Unit: " + field.UnitType.ToString() + ", ContainerType: " + field.ContainerType.ToString());
+              strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {Map} " + ", Unit: " + field.GetSpecTypeId().TypeId + ", ContainerType: " + field.ContainerType.ToString());
               IDictionary<KeyType, FieldType> mapRetval = (IDictionary<KeyType, FieldType>)instantiatedGenericGetMethod.Invoke(entity, invokeParams);
               if (fieldType == (typeof(Entity)))
               {
-                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {SubEntity} " + ", Unit: " + field.UnitType.ToString() + ", ContainerType: " + field.ContainerType.ToString());
+                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {SubEntity} " + ", Unit: " + field.GetSpecTypeId().TypeId + ", ContainerType: " + field.ContainerType.ToString());
                   foreach (FieldType fa in mapRetval.Values)
                   {
                       strBuilder.Append("  Map Value: ");
@@ -449,7 +449,7 @@ namespace SchemaWrapperTools
               }
               else
               {
-                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {Map} " + ", Unit: " + field.UnitType.ToString() + ", ContainerType: " + field.ContainerType.ToString());
+                  strBuilder.AppendLine("Field: " + field.FieldName + ", Type: " + field.ValueType.ToString() + ", Value: " + " {Map} " + ", Unit: " + field.GetSpecTypeId().TypeId + ", ContainerType: " + field.ContainerType.ToString());
                   foreach (FieldType fa in mapRetval.Values)
                   {
                       strBuilder.AppendLine("  Map value: " + fa.ToString());

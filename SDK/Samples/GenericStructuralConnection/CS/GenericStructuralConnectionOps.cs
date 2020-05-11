@@ -58,8 +58,8 @@ namespace Revit.SDK.Samples.GenericStructuralConnection.CS
                 {
                     tran.Start();
 
-                    StructuralConnectionHandler conn = StructuralConnectionHandler.Create(activeDoc.Document, ids);
-
+                    StructuralConnectionHandler conn = StructuralConnectionHandler.CreateGenericConnection(activeDoc.Document, ids);
+               
                     TransactionStatus ts = tran.Commit();
                     if (ts != TransactionStatus.Committed)
                     {

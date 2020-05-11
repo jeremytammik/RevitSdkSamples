@@ -26,7 +26,7 @@ using Autodesk.AdvanceSteel.CADAccess;
 using Autodesk.Revit.DB.Steel;
 using Autodesk.AdvanceSteel.Geometry;
 using Autodesk.AdvanceSteel.Modelling;
-using RvtDwgAddon;
+using Autodesk.SteelConnectionsDB;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Collections.Generic;
@@ -114,9 +114,9 @@ namespace Revit.SDK.Samples.SampleCommandsSteelElements.CreateWeldPoint.CS
                if (null != weld)
                {
                   weld.WriteToDb();
-                  HashSet<FilerObject> objsToConnect = new HashSet<FilerObject>();
+                  List<FilerObject> objsToConnect = new List<FilerObject>();
                   objsToConnect.Add(filerObj);
-                  weld.Connect(objsToConnect, Autodesk.AdvanceSteel.ConstructionTypes.AtomicElement.eAssemblyLocation.kInShop);
+                  weld.Connect(objsToConnect.ToArray(), Autodesk.AdvanceSteel.ConstructionTypes.AtomicElement.eAssemblyLocation.kInShop);
                }
 
                trans.Commit();

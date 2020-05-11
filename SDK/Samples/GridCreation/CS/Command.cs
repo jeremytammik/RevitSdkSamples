@@ -78,7 +78,7 @@ namespace Revit.SDK.Samples.GridCreation.CS
                     }
 
                     ArrayList labels = GetAllLabelsOfGrids(document);
-                    DisplayUnitType dut = GetLengthUnitType(document);
+                    ForgeTypeId unit = GetLengthUnitType(document);
                     switch (gridCreationOption.CreateGridsMode)
                     {
                         case CreateMode.Select: // Create grids with selected lines/arcs
@@ -98,7 +98,7 @@ namespace Revit.SDK.Samples.GridCreation.CS
                             break;
 
                         case CreateMode.Orthogonal: // Create orthogonal grids
-                            CreateOrthogonalGridsData orthogonalData = new CreateOrthogonalGridsData(commandData.Application, dut, labels);
+                            CreateOrthogonalGridsData orthogonalData = new CreateOrthogonalGridsData(commandData.Application, unit, labels);
                             using (CreateOrthogonalGridsForm orthogonalGridForm = new CreateOrthogonalGridsForm(orthogonalData))
                             {
                                 result = orthogonalGridForm.ShowDialog();
@@ -114,7 +114,7 @@ namespace Revit.SDK.Samples.GridCreation.CS
                             break;
 
                         case CreateMode.RadialAndArc: // Create radial and arc grids
-                            CreateRadialAndArcGridsData radArcData = new CreateRadialAndArcGridsData(commandData.Application, dut, labels);
+                            CreateRadialAndArcGridsData radArcData = new CreateRadialAndArcGridsData(commandData.Application, unit, labels);
                             using (CreateRadialAndArcGridsForm radArcForm = new CreateRadialAndArcGridsForm(radArcData))
                             {
                                 result = radArcForm.ShowDialog();
@@ -216,18 +216,18 @@ namespace Revit.SDK.Samples.GridCreation.CS
         /// </summary>
         /// <param name="document">Revit's document</param>
         /// <returns>Current length display unit type</returns>
-        private static DisplayUnitType GetLengthUnitType(Document document)
+        private static ForgeTypeId GetLengthUnitType(Document document)
         {
-            UnitType unittype = UnitType.UT_Length;
+            ForgeTypeId specTypeId = SpecTypeId.Length;
             Units projectUnit = document.GetUnits();
             try
             {
-                Autodesk.Revit.DB.FormatOptions formatOption = projectUnit.GetFormatOptions(unittype);
-                return formatOption.DisplayUnits;
+                Autodesk.Revit.DB.FormatOptions formatOption = projectUnit.GetFormatOptions(specTypeId);
+                return formatOption.GetUnitTypeId();
             }
             catch (System.Exception /*e*/)
             {
-                return DisplayUnitType.DUT_DECIMAL_FEET;
+                return UnitTypeId.Feet;
             }
         }
 

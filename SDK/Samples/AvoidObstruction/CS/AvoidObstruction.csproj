@@ -9,7 +9,7 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>AvoidObstruction</AssemblyName>
     <RootNamespace>AvoidObstruction</RootNamespace>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

@@ -279,12 +279,13 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       private void WriteCoordinate(Graphics graphics, Pen pen)
       {
          PointD assistPointD = ConvertToPointD(m_wallLine2D.AssistantPoint);
-         double x = Unit.CovertFromAPI(m_myDocument.LengthUnitType, assistPointD.X);
-         double y = Unit.CovertFromAPI(m_myDocument.LengthUnitType, assistPointD.Y);
+         double x = Unit.CovertFromAPI(m_myDocument.LengthUnit, assistPointD.X);
+         double y = Unit.CovertFromAPI(m_myDocument.LengthUnit, assistPointD.Y);
 
          string xCoorString = Convert.ToString(Math.Round(x, 1));
          string yCoorString = Convert.ToString(Math.Round(y, 1));
-         string unitType = Revit.SDK.Samples.CurtainWallGrid.CS.Properties.Resources.ResourceManager.GetString(m_myDocument.LengthUnitType.ToString());
+
+         string unitType = Unit.GetUnitLabel(m_myDocument.LengthUnit);
          String coordinate = "(" + xCoorString + unitType + "," + yCoorString + unitType + ")";
          graphics.DrawString(coordinate, m_coordinateFont, Brushes.Blue,
              new PointF(m_wallLine2D.AssistantPoint.X + 2, m_wallLine2D.AssistantPoint.Y + 2));

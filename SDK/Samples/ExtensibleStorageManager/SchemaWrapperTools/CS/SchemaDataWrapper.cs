@@ -76,11 +76,11 @@ namespace SchemaWrapperTools
       /// </summary>
       /// <param name="name">the name of the field</param>
       /// <param name="typeIn">the data type of the field</param>
-      /// <param name="unit">The unit type of the Field (set to UT_Undefined for non-floating point types</param>
+      /// <param name="spec">The unit type of the Field (set to UT_Undefined for non-floating point types</param>
       /// <param name="subSchema">The SchemaWrapper of the field's subSchema, if the field is of type "Entity"</param>
-       public void AddData(string name, System.Type typeIn, UnitType unit, SchemaWrapper subSchema)
+       public void AddData(string name, System.Type typeIn, ForgeTypeId spec, SchemaWrapper subSchema)
       {
-         m_DataList.Add(new FieldData(name, typeIn.FullName, unit, subSchema));
+         m_DataList.Add(new FieldData(name, typeIn.FullName, spec, subSchema));
       }
 
       #endregion

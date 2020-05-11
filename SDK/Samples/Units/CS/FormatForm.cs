@@ -39,7 +39,7 @@ namespace Revit.SDK.Samples.Units.CS
     public partial class FormatForm : Form
     {
         //Required designer variable.
-        private Autodesk.Revit.DB.UnitType m_unittype;
+        private Autodesk.Revit.DB.ForgeTypeId m_specTypeId;
         private Autodesk.Revit.DB.FormatOptions m_formatoptions;
 
         /// <summary>
@@ -57,11 +57,11 @@ namespace Revit.SDK.Samples.Units.CS
         /// Initialize GUI with FormatData 
         /// </summary>
         ///// <param name="dataBuffer">relevant data from revit</param>
-        public FormatForm(Autodesk.Revit.DB.UnitType unittype, Autodesk.Revit.DB.FormatOptions formatoptions)
+        public FormatForm(Autodesk.Revit.DB.ForgeTypeId specTypeId, Autodesk.Revit.DB.FormatOptions formatoptions)
         {
             InitializeComponent();
-            m_unittype = unittype;
-            m_formatoptions = new Autodesk.Revit.DB.FormatOptions(formatoptions.DisplayUnits, formatoptions.UnitSymbol);
+            m_specTypeId = specTypeId;
+            m_formatoptions = new Autodesk.Revit.DB.FormatOptions(formatoptions.GetUnitTypeId(), formatoptions.GetSymbolTypeId());
             m_formatoptions.UseDefault = formatoptions.UseDefault;
             m_formatoptions.Accuracy = formatoptions.Accuracy;
             m_formatoptions.SuppressTrailingZeros = formatoptions.SuppressTrailingZeros;
@@ -86,12 +86,12 @@ namespace Revit.SDK.Samples.Units.CS
                 // Initialize the combo box and check box. 
                 this.DisplayUnitTypecomboBox.BeginUpdate();
                 this.DisplayUnitcomboBox.BeginUpdate();
-                foreach (Autodesk.Revit.DB.DisplayUnitType displayUnitType in Autodesk.Revit.DB.UnitUtils.GetValidDisplayUnits(m_unittype))
+                foreach (Autodesk.Revit.DB.ForgeTypeId unitTypeId in Autodesk.Revit.DB.UnitUtils.GetValidUnits(m_specTypeId))
                 {
-                   this.DisplayUnitTypecomboBox.Items.AddRange(new object[] { displayUnitType });
-                   this.DisplayUnitcomboBox.Items.Add(Autodesk.Revit.DB.LabelUtils.GetLabelFor(displayUnitType));
+                   this.DisplayUnitTypecomboBox.Items.AddRange(new object[] { unitTypeId });
+                   this.DisplayUnitcomboBox.Items.Add(Autodesk.Revit.DB.LabelUtils.GetLabelForUnit(unitTypeId));
                 }
-                this.DisplayUnitTypecomboBox.SelectedItem = m_formatoptions.DisplayUnits;
+                this.DisplayUnitTypecomboBox.SelectedItem = m_formatoptions.GetUnitTypeId();
                 this.DisplayUnitcomboBox.SelectedIndex = this.DisplayUnitTypecomboBox.SelectedIndex;
                 this.DisplayUnitTypecomboBox.EndUpdate();
                 this.DisplayUnitcomboBox.EndUpdate();
@@ -107,7 +107,7 @@ namespace Revit.SDK.Samples.Units.CS
                 m_formatoptions.UseDefault = isUseDefault;
                 this.UseDefaultcheckBox.Checked = m_formatoptions.UseDefault;
 
-                if (!Autodesk.Revit.DB.Units.IsModifiableUnitType(m_unittype))
+                if (!Autodesk.Revit.DB.Units.IsModifiableSpec(m_specTypeId))
                 {
                    this.Text = "This unit type is unmodifiable";
                    this.UseDefaultcheckBox.Checked = true;
@@ -151,12 +151,12 @@ namespace Revit.SDK.Samples.Units.CS
                 if (!m_formatoptions.UseDefault)
                 {
                    this.DisplayUnitTypecomboBox.SelectedIndex = this.DisplayUnitcomboBox.SelectedIndex;
-                   m_formatoptions.DisplayUnits = (Autodesk.Revit.DB.DisplayUnitType)this.DisplayUnitTypecomboBox.SelectedItem;
+                   m_formatoptions.SetUnitTypeId((Autodesk.Revit.DB.ForgeTypeId)this.DisplayUnitTypecomboBox.SelectedItem);
 
                    m_formatoptions.Accuracy = double.Parse(this.AccuracytextBox.Text);
 
                    this.UnitSymbolTypecomboBox.SelectedIndex = this.UnitSymbolcomboBox.SelectedIndex;
-                   m_formatoptions.UnitSymbol = (Autodesk.Revit.DB.UnitSymbolType)this.UnitSymbolTypecomboBox.SelectedItem;
+                   m_formatoptions.SetSymbolTypeId((Autodesk.Revit.DB.ForgeTypeId)this.UnitSymbolTypecomboBox.SelectedItem);
 
                    m_formatoptions.SuppressTrailingZeros = this.SuppressTrailingZeroscheckBox.Checked;
                    m_formatoptions.SuppressLeadingZeros = this.SuppressLeadingZeroscheckBox.Checked;
@@ -183,23 +183,23 @@ namespace Revit.SDK.Samples.Units.CS
             
             this.UnitSymbolTypecomboBox.BeginUpdate();
             this.UnitSymbolcomboBox.BeginUpdate();
-            foreach (Autodesk.Revit.DB.UnitSymbolType unitSymbolType in Autodesk.Revit.DB.FormatOptions.GetValidUnitSymbols((Autodesk.Revit.DB.DisplayUnitType)this.DisplayUnitTypecomboBox.SelectedItem))
+            foreach (Autodesk.Revit.DB.ForgeTypeId symbolTypeId in Autodesk.Revit.DB.FormatOptions.GetValidSymbols((Autodesk.Revit.DB.ForgeTypeId)this.DisplayUnitTypecomboBox.SelectedItem))
             {
-                this.UnitSymbolTypecomboBox.Items.AddRange(new object[] { unitSymbolType });
-                if (unitSymbolType == Autodesk.Revit.DB.UnitSymbolType.UST_NONE)
+                this.UnitSymbolTypecomboBox.Items.AddRange(new object[] { symbolTypeId });
+                if (symbolTypeId.Empty())
                 {
                    this.UnitSymbolcomboBox.Items.Add("");
                 }
                 else
                 {
-                   this.UnitSymbolcomboBox.Items.Add(Autodesk.Revit.DB.LabelUtils.GetLabelFor(unitSymbolType));
+                   this.UnitSymbolcomboBox.Items.Add(Autodesk.Revit.DB.LabelUtils.GetLabelForSymbol(symbolTypeId));
                 }
             }
-            this.UnitSymbolTypecomboBox.SelectedItem = m_formatoptions.UnitSymbol;
+            this.UnitSymbolTypecomboBox.SelectedItem = m_formatoptions.GetSymbolTypeId();
             if (this.UnitSymbolTypecomboBox.SelectedIndex < 0)
             {
                this.UnitSymbolTypecomboBox.SelectedIndex = 0;
-               m_formatoptions.UnitSymbol = (Autodesk.Revit.DB.UnitSymbolType)this.UnitSymbolTypecomboBox.SelectedItem;
+               m_formatoptions.SetSymbolTypeId((Autodesk.Revit.DB.ForgeTypeId)this.UnitSymbolTypecomboBox.SelectedItem);
             }
             this.UnitSymbolcomboBox.SelectedIndex = this.UnitSymbolTypecomboBox.SelectedIndex;
             this.UnitSymbolTypecomboBox.EndUpdate();

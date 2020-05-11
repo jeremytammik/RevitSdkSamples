@@ -18,7 +18,13 @@ namespace Revit.SDK.Samples.RebarFreeForm.CS
     [Autodesk.Revit.Attributes.Regeneration(Autodesk.Revit.Attributes.RegenerationOption.Manual)]
     public class AddSharedParams : IExternalCommand
     {
+        /// <summary>
+        /// Updated: is used to start the regeneration
+        /// </summary>
         public static string m_paramName = "Updated";
+        /// <summary>
+        /// CurveElementId: is used to store the id of a model curve
+        /// </summary>
         public static string m_CurveIdName = "CurveElementId";
         /// <summary>
         /// Add two shared parameters to the rebar category instance elements:

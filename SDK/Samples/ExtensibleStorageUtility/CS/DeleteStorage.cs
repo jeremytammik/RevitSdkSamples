@@ -54,7 +54,7 @@ namespace Revit.SDK.Samples.ExtensibleStorageUtility.CS
             foreach (Schema schema in schemas)
             {
                //Note-this will delete storage of this schema in *all* open documents.
-               Schema.EraseSchemaAndAllEntities(schema, true);
+               document.EraseSchemaAndAllEntities(schema);
             }
             tErase.Commit();
             message = "All storage was deleted.";

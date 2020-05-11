@@ -25,7 +25,7 @@ using Autodesk.Revit.UI.Selection;
 using Autodesk.AdvanceSteel.CADAccess;
 using Autodesk.Revit.DB.Steel;
 using Autodesk.AdvanceSteel.Modelling;
-using RvtDwgAddon;
+using Autodesk.SteelConnectionsDB;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Collections.Generic;

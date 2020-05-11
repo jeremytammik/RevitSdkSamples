@@ -115,7 +115,7 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
                 System.String lastLevelName = lastItem.Name;
                 double lastLevelElevation = lastItem.Elevation;
                 newLevelName = lastLevelName + "'";
-                newLevelElevation = lastLevelElevation + Unit.CovertFromAPI(m_objectReference.UnitType, 10);
+                newLevelElevation = lastLevelElevation + Unit.CovertFromAPI(m_objectReference.UnitTypeId, 10);
 
             }
             else

@@ -102,7 +102,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
         LineOperation m_activeOperation;
 
         // the length unit type for the active Revit document
-        DisplayUnitType m_LengthUnitType;
+        ForgeTypeId m_LengthUnit;
 
         // store the message of the sample
         private KeyValuePair<string/*msgText*/, bool/*is warningOrError*/> m_message;
@@ -199,11 +199,11 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
             }
         }
 
-        public DisplayUnitType LengthUnitType
+        public ForgeTypeId LengthUnit
         {
             get
             {
-                return m_LengthUnitType;
+                return m_LengthUnit;
             }
         }
 
@@ -271,16 +271,16 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
         /// </summary>
         private void GetLengthUnitType()
         {
-            UnitType unitType = UnitType.UT_Length;
+            ForgeTypeId specTypeId = SpecTypeId.Length;
             Units projectUnit = m_document.GetUnits();
             try
             {
-                Autodesk.Revit.DB.FormatOptions formatOption = projectUnit.GetFormatOptions(unitType);
-                m_LengthUnitType = formatOption.DisplayUnits;
+                Autodesk.Revit.DB.FormatOptions formatOption = projectUnit.GetFormatOptions(specTypeId);
+                m_LengthUnit = formatOption.GetUnitTypeId();
             }
             catch (System.Exception /*e*/)
             {
-                m_LengthUnitType = DisplayUnitType.DUT_DECIMAL_FEET;
+                m_LengthUnit = UnitTypeId.Feet;
             }
         }
 

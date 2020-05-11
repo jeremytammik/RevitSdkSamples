@@ -23,7 +23,7 @@
 
 using Autodesk.AdvanceSteel.Geometry;
 using Autodesk.AdvanceSteel.Modelling;
-using RvtDwgAddon;
+using Autodesk.SteelConnectionsDB;
 using Autodesk.AdvanceSteel.CADLink.Database;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;

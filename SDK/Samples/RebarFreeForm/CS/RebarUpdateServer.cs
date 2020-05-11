@@ -646,6 +646,7 @@ namespace Revit.SDK.Samples.RebarFreeForm.CS
       /// <param name="nbOfBars"></param>
       /// <param name="spacing"></param>
       /// <param name="curves"></param>
+      /// <param name="overrideCurve"></param>
       /// <returns></returns>
       private bool generateSet(Curve firstCurve, Curve lastCurve, RebarLayoutRule layout, int nbOfBars, double spacing, ref List<Curve> curves, Curve overrideCurve)
       {

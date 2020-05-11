@@ -25,7 +25,7 @@ using Autodesk.Revit.UI.Selection;
 using Autodesk.AdvanceSteel.CADAccess;
 using Autodesk.AdvanceSteel.Geometry;
 using Autodesk.AdvanceSteel.Modelling;
-using RvtDwgAddon;
+using Autodesk.SteelConnectionsDB;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Collections.Generic;
@@ -81,7 +81,7 @@ namespace Revit.SDK.Samples.SampleCommandsSteelElements.CreateAnchorPattern.CS
             {
                // We create the anchor pattern using Advance Steel classes and objects only.
                // for more details, please consult http://www.autodesk.com/adv-steel-api-walkthroughs-2019-enu
-               HashSet<FilerObject> filerObjectHashSet = new HashSet<FilerObject>();
+               List<FilerObject> filerObjectList= new List<FilerObject>();
                FilerObject filerObj = Utilities.Functions.GetFilerObject(doc, eRef);
 
                if (null == filerObj)
@@ -89,13 +89,13 @@ namespace Revit.SDK.Samples.SampleCommandsSteelElements.CreateAnchorPattern.CS
                   return Result.Failed;
                }
 
-               filerObjectHashSet.Add(filerObj);
+               filerObjectList.Add(filerObj);
 
                // Point of reference for the anchor pattern. We use GlobalPoint to create the pattern on the plate. GlobalPoint is the point where the plate is being hit when selected.
                Point3d p1 = new Point3d(eRef.GlobalPoint.X, eRef.GlobalPoint.Y, eRef.GlobalPoint.Z);
                Point3d p2 = new Point3d(p1.x + 0.5, p1.y + 0.5, p1.z + 0.5);
                AnchorPattern anchorPattern = new AnchorPattern(p1 * Utilities.Functions.FEET_TO_MM, p2 * Utilities.Functions.FEET_TO_MM, new Vector3d(1, 0, 0), new Vector3d(0, 1, 0));
-               anchorPattern.Connect(filerObjectHashSet, Autodesk.AdvanceSteel.ConstructionTypes.AtomicElement.eAssemblyLocation.kOnSite);
+               anchorPattern.Connect(filerObjectList.ToArray(), Autodesk.AdvanceSteel.ConstructionTypes.AtomicElement.eAssemblyLocation.kOnSite);
                anchorPattern.WriteToDb();
 
                trans.Commit();

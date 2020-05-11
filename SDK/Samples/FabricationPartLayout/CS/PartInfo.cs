@@ -139,7 +139,7 @@ namespace Revit.SDK.Samples.FabricationPartLayout.CS
             builder.AppendLine("Specification: " + spec);
 
             // centerline length
-            builder.AppendLine("Centerline Length: " + GetStringFromNumber(doc, part.CenterlineLength, UnitType.UT_Length));
+            builder.AppendLine("Centerline Length: " + GetStringFromNumber(doc, part.CenterlineLength, SpecTypeId.Length));
 
             TaskDialog.Show("Fabrication Part [" + part.Id.IntegerValue + "]", builder.ToString());
 
@@ -152,9 +152,9 @@ namespace Revit.SDK.Samples.FabricationPartLayout.CS
          }
       }
 
-      private string GetStringFromNumber(Document doc, double number, UnitType unitType)
+      private string GetStringFromNumber(Document doc, double number, ForgeTypeId specTypeId)
       {
-         return UnitFormatUtils.Format(doc.GetUnits(), unitType, number, true, false);
+         return UnitFormatUtils.Format(doc.GetUnits(), specTypeId, number, false);
       }
    }
 }

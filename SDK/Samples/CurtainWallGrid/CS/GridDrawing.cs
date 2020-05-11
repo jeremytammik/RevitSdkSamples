@@ -623,11 +623,10 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
                 Vector4 vec = new Vector4(xyz);
                 vec = m_coordinates.RestoreMatrix.Transform(vec);
                 offset = vec.Z - m_geometry.LineToBeMoved.FullCurve.GetEndPoint(0).Z;
-                offset = Unit.CovertFromAPI(m_myDocument.LengthUnitType, offset);
+                offset = Unit.CovertFromAPI(m_myDocument.LengthUnit, offset);
 
                 // showing the move offset
-                m_drawObject.Text = "Offset: " + Math.Round(offset, 1) +
-                   Revit.SDK.Samples.CurtainWallGrid.CS.Properties.Resources.ResourceManager.GetString(m_myDocument.LengthUnitType.ToString());
+                m_drawObject.Text = "Offset: " + Math.Round(offset, 1) + Unit.GetUnitLabel(m_myDocument.LengthUnit);
                 m_drawObject.TextPosition = mousePosition;
                 m_drawObject.TextPen = redPen;
                 return;
@@ -653,11 +652,10 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
                 Vector4 vec = new Vector4(xyz);
                 vec = m_coordinates.RestoreMatrix.Transform(vec);
                 offset = vec.X - m_geometry.LineToBeMoved.FullCurve.GetEndPoint(0).X;
-                offset = Unit.CovertFromAPI(m_myDocument.LengthUnitType, offset);
+                offset = Unit.CovertFromAPI(m_myDocument.LengthUnit, offset);
 
                 // showing the move offset
-                m_drawObject.Text = "Offset: " + Math.Round(offset, 1) +
-                   Revit.SDK.Samples.CurtainWallGrid.CS.Properties.Resources.ResourceManager.GetString(m_myDocument.LengthUnitType.ToString());
+                m_drawObject.Text = "Offset: " + Math.Round(offset, 1) + Unit.GetUnitLabel(m_myDocument.LengthUnit);
                 m_drawObject.TextPosition = mousePosition;
                 m_drawObject.TextPen = redPen;
             }

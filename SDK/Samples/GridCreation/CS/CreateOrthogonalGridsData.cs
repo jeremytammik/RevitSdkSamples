@@ -218,10 +218,10 @@ namespace Revit.SDK.Samples.GridCreation.CS
         /// Constructor
         /// </summary>
         /// <param name="application">Application object</param>
-        /// <param name="dut">Current length display unit type</param>
+        /// <param name="unit">Current length display unit type</param>
         /// <param name="labels">All existing labels in Revit's document</param>
-        public CreateOrthogonalGridsData(UIApplication application, DisplayUnitType dut, ArrayList labels)
-            : base(application, labels, dut)
+        public CreateOrthogonalGridsData(UIApplication application, ForgeTypeId unit, ArrayList labels)
+            : base(application, labels, unit)
         {
         }
 

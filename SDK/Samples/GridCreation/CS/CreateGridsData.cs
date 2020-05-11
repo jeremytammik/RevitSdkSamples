@@ -58,7 +58,7 @@ namespace Revit.SDK.Samples.GridCreation.CS
         /// <summary>
         /// Current display unit type
         /// </summary>
-        protected DisplayUnitType m_dut;
+        protected ForgeTypeId m_unit;
         /// <summary>
         /// Resource manager
         /// </summary>
@@ -69,11 +69,11 @@ namespace Revit.SDK.Samples.GridCreation.CS
         /// <summary>
         /// Current display unit type
         /// </summary>
-        public DisplayUnitType Dut
+        public ForgeTypeId Unit
         {
             get
             {
-                return m_dut;
+                return m_unit;
             }
         }
 
@@ -108,14 +108,14 @@ namespace Revit.SDK.Samples.GridCreation.CS
         /// </summary>
         /// <param name="application">Revit application</param>
         /// <param name="labels">All existing labels in Revit's document</param>
-        /// <param name="dut">Current length display unit type</param>
-        public CreateGridsData(UIApplication application, ArrayList labels, DisplayUnitType dut)
+        /// <param name="unit">Current length display unit type</param>
+        public CreateGridsData(UIApplication application, ArrayList labels, ForgeTypeId unit)
         {
             m_revitDoc = application.ActiveUIDocument.Document;
             m_appCreator = application.Application.Create;
             m_docCreator = application.ActiveUIDocument.Document.Create;
             m_labelsList = labels;
-            m_dut = dut;
+            m_unit = unit;
         }
 
         /// <summary>

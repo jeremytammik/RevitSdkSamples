@@ -60,8 +60,8 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
    {
       public static double ConvertValueDocumentUnits(double decimalFeet, Autodesk.Revit.DB.Document document)
       {
-         FormatOptions formatOption = document.GetUnits().GetFormatOptions(UnitType.UT_PipeSize);
-         return UnitUtils.ConvertFromInternalUnits(decimalFeet, formatOption.DisplayUnits);
+         FormatOptions formatOption = document.GetUnits().GetFormatOptions(SpecTypeId.PipeSize);
+         return UnitUtils.ConvertFromInternalUnits(decimalFeet, formatOption.GetUnitTypeId());
       }
 
 

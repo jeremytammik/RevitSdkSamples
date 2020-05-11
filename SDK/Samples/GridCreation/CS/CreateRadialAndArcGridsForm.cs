@@ -54,7 +54,7 @@ namespace Revit.SDK.Samples.GridCreation.CS
         private void InitializeControls()
         {
             // Set length unit related labels
-            String unit = Properties.Resources.ResourceManager.GetString(m_data.Dut.ToString());
+            String unit = Properties.Resources.ResourceManager.GetString(m_data.Unit.TypeId);
             labelUnitX.Text = unit;
             labelUnitY.Text = unit;
             labelUnitFirstRadius.Text = unit;
@@ -62,9 +62,9 @@ namespace Revit.SDK.Samples.GridCreation.CS
             labelYCoordUnit.Text = unit;
 
             // Set length values
-            textBoxArcSpacing.Text = Unit.CovertFromAPI(m_data.Dut, 10).ToString();
+            textBoxArcSpacing.Text = Unit.CovertFromAPI(m_data.Unit, 10).ToString();
             textBoxArcFirstRadius.Text = textBoxArcSpacing.Text;
-            textBoxLineFirstDistance.Text = Unit.CovertFromAPI(m_data.Dut, 8).ToString();
+            textBoxLineFirstDistance.Text = Unit.CovertFromAPI(m_data.Unit, 8).ToString();
 
             radioButton360.Checked = true;
             radioButtonCustomize.Checked = false;
@@ -109,8 +109,8 @@ namespace Revit.SDK.Samples.GridCreation.CS
         /// </summary>
         private void SetData()
         {
-            m_data.XOrigin = Unit.CovertToAPI(Convert.ToDouble(textBoxXCoord.Text), m_data.Dut);
-            m_data.YOrigin = Unit.CovertToAPI(Convert.ToDouble(textBoxYCoord.Text), m_data.Dut);
+            m_data.XOrigin = Unit.CovertToAPI(Convert.ToDouble(textBoxXCoord.Text), m_data.Unit);
+            m_data.YOrigin = Unit.CovertToAPI(Convert.ToDouble(textBoxYCoord.Text), m_data.Unit);
 
             if (radioButton360.Checked)
             {
@@ -129,15 +129,15 @@ namespace Revit.SDK.Samples.GridCreation.CS
 
             if (Convert.ToUInt32(textBoxArcNumber.Text) != 0)
             {
-                m_data.ArcSpacing = Unit.CovertToAPI(Convert.ToDouble(textBoxArcSpacing.Text), m_data.Dut);
-                m_data.ArcFirstRadius = Unit.CovertToAPI(Convert.ToDouble(textBoxArcFirstRadius.Text), m_data.Dut);
+                m_data.ArcSpacing = Unit.CovertToAPI(Convert.ToDouble(textBoxArcSpacing.Text), m_data.Unit);
+                m_data.ArcFirstRadius = Unit.CovertToAPI(Convert.ToDouble(textBoxArcFirstRadius.Text), m_data.Unit);
                 m_data.ArcFirstBubbleLoc = (BubbleLocation)comboBoxArcBubbleLocation.SelectedIndex;
                 m_data.ArcFirstLabel = textBoxArcFirstLabel.Text;
             }
 
             if (Convert.ToUInt32(textBoxLineNumber.Text) != 0)
             {
-                m_data.LineFirstDistance = Unit.CovertToAPI(Convert.ToDouble(textBoxLineFirstDistance.Text), m_data.Dut);
+                m_data.LineFirstDistance = Unit.CovertToAPI(Convert.ToDouble(textBoxLineFirstDistance.Text), m_data.Unit);
                 m_data.LineFirstBubbleLoc = (BubbleLocation)comboBoxLineBubbleLocation.SelectedIndex;
                 m_data.LineFirstLabel = textBoxLineFirstLabel.Text;
             }

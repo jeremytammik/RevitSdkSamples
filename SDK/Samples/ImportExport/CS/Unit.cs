@@ -37,46 +37,43 @@ namespace Revit.SDK.Samples.ImportExport.CS
     {
         #region Methods
         /// <summary>
-        /// Convert the value get from RevitAPI to the value indicated by DisplayUnitType
+        /// Convert the value get from RevitAPI to the value indicated by ForgeTypeId
         /// </summary>
-        /// <param name="to">DisplayUnitType indicates unit of target value</param>
+        /// <param name="to">ForgeTypeId indicates unit of target value</param>
         /// <param name="value">value get from RevitAPI</param>
         /// <returns>Target value</returns>
-        public static double CovertFromAPI(DisplayUnitType to, double value)
+        public static double CovertFromAPI(ForgeTypeId to, double value)
         {
             return value *= ImperialDutRatio(to);
         }
 
         /// <summary>
-        /// Convert a value indicated by DisplayUnitType to the value used by RevitAPI
+        /// Convert a value indicated by ForgeTypeId to the value used by RevitAPI
         /// </summary>
         /// <param name="value">Value to be converted</param>
-        /// <param name="from">DisplayUnitType indicates the unit of the value to be converted</param>
+        /// <param name="from">ForgeTypeId indicates the unit of the value to be converted</param>
         /// <returns>Target value</returns>
-        public static double CovertToAPI(double value, DisplayUnitType from )
+        public static double CovertToAPI(double value, ForgeTypeId from )
         {
             return value /= ImperialDutRatio(from);
         }
 
         /// <summary>
-        /// Get ratio between value in RevitAPI and value to display indicated by DisplayUnitType
+        /// Get ratio between value in RevitAPI and value to display indicated by ForgeTypeId
         /// </summary>
-        /// <param name="dut">DisplayUnitType indicates display unit type</param>
+        /// <param name="unit">ForgeTypeId indicates display unit type</param>
         /// <returns>Ratio </returns>
-        private static double ImperialDutRatio(DisplayUnitType dut) 
+        private static double ImperialDutRatio(ForgeTypeId unit) 
         {
-            switch (dut)
-            {
-                case DisplayUnitType.DUT_DECIMAL_FEET: return 1;
-                case DisplayUnitType.DUT_FEET_FRACTIONAL_INCHES: return 1;
-                case DisplayUnitType.DUT_DECIMAL_INCHES: return 12;
-                case DisplayUnitType.DUT_FRACTIONAL_INCHES: return 12;
-                case DisplayUnitType.DUT_METERS: return 0.3048;
-                case DisplayUnitType.DUT_CENTIMETERS: return 30.48;
-                case DisplayUnitType.DUT_MILLIMETERS: return 304.8;
-                case DisplayUnitType.DUT_METERS_CENTIMETERS: return 0.3048;
-                default: return 1;
-            }
+            if (unit == UnitTypeId.Feet) return 1;
+            if (unit == UnitTypeId.FeetFractionalInches) return 1;
+            if (unit == UnitTypeId.Inches) return 12;
+            if (unit == UnitTypeId.FractionalInches) return 12;
+            if (unit == UnitTypeId.Meters) return 0.3048;
+            if (unit == UnitTypeId.Centimeters) return 30.48;
+            if (unit == UnitTypeId.Millimeters) return 304.8;
+            if (unit == UnitTypeId.MetersCentimeters) return 0.3048;
+            return 1;
         }
         #endregion
     }

@@ -64,13 +64,18 @@ namespace Revit.SDK.Samples.ImportExport.CS
             t.Start();
 
             // Step 1: Create an ImageType 
-            //ImageTypeOptions specify the source of the image
-            // If the source is a PDF file then ImageTypeOptions can be used to:
-            //   - Select a specific page from the PDF
-            //   - Select a Resolution (in dots-per-inch) at which to rasterize the PDF
-            // For other image types the page number should be 1, and the resolution is only used to determine the size of the image
+            //ImageTypeOptions specifies the source of the image, and how to create the ImageType.
+            // It can be used to specify:
+            //   - The image file.  Either as a local file path, or as an ExternalResourceRef
+            //   - Whether to store the local file path as an absolute path or a relative path.
+            //   - Whether to create an Import or a Link image.
+            // In addition, if the source is a PDF file, then ImageTypeOptions can be used to specify:
+            //   - which page from the PDF to use
+            //   - the resolution (in dots-per-inch) at which to rasterize the PDF
+            // For other image types the page number should be 1 (the default),
+            // and the resolution is only used to determine the size of the image.
 
-            ImageTypeOptions typeOptions = new ImageTypeOptions(m_importFileFullName);
+            ImageTypeOptions typeOptions = new ImageTypeOptions(m_importFileFullName, true, ImageTypeSource.Import);
             ImageType imageType = ImageType.Create(m_activeDoc, typeOptions);
 
             // Step 2: Create an ImageInstance, but only if the active view is able to contain images.

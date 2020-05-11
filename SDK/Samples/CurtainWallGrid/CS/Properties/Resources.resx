@@ -112,33 +112,9 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DUT_CENTIMETERS" xml:space="preserve">
-    <value>cm</value>
-  </data>
-  <data name="DUT_DECIMAL_FEET" xml:space="preserve">
-    <value>'</value>
-  </data>
-  <data name="DUT_DECIMAL_INCHES" xml:space="preserve">
-    <value>"</value>
-  </data>
-  <data name="DUT_FEET_FRACTIONAL_INCHES" xml:space="preserve">
-    <value>'</value>
-  </data>
-  <data name="DUT_FRACTIONAL_INCHES" xml:space="preserve">
-    <value>"</value>
-  </data>
-  <data name="DUT_METERS" xml:space="preserve">
-    <value>m</value>
-  </data>
-  <data name="DUT_METERS_CENTIMETERS" xml:space="preserve">
-    <value>m</value>
-  </data>
-  <data name="DUT_MILLIMETERS" xml:space="preserve">
-    <value>mm</value>
-  </data>
 </root>

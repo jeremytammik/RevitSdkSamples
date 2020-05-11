@@ -227,7 +227,7 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
                     }
                     sBuilder.Remove(sBuilder.Length - 1, 1);
                     xSegmentNotCovered.Add(new XAttribute(XName.Get("sizes"), sBuilder.ToString()));
-                    xSegmentNotCovered.Add(new XAttribute(XName.Get("unit"), m_document.GetUnits().GetFormatOptions(UnitType.UT_PipeSize).DisplayUnits.ToString()));
+                    xSegmentNotCovered.Add(new XAttribute(XName.Get("unit"), m_document.GetUnits().GetFormatOptions(SpecTypeId.PipeSize).GetUnitTypeId().TypeId));
                     xSegmentNotCovered.Add(new XAttribute(XName.Get("groupType"), groupType.ToString()));
 
 

@@ -111,12 +111,12 @@ namespace ExtensibleStorageManager
        private static void SimpleSchemaAndData(SchemaWrapperTools.SchemaWrapper mySchemaWrapper, out Entity storageElementEntityWrite)
        {
           //Create some sample fields.
-          mySchemaWrapper.AddField<int>(int0Name, UnitType.UT_Undefined, null);
-          mySchemaWrapper.AddField<short>(short0Name, UnitType.UT_Undefined, null);
-          mySchemaWrapper.AddField<double>(double0Name, UnitType.UT_Length, null);
-          mySchemaWrapper.AddField<float>(float0Name, UnitType.UT_Length, null);
-          mySchemaWrapper.AddField<bool>(bool0Name, UnitType.UT_Undefined, null);
-          mySchemaWrapper.AddField<string>(string0Name, UnitType.UT_Undefined, null);
+          mySchemaWrapper.AddField<int>(int0Name, new ForgeTypeId(), null);
+          mySchemaWrapper.AddField<short>(short0Name, new ForgeTypeId(), null);
+          mySchemaWrapper.AddField<double>(double0Name, SpecTypeId.Length, null);
+          mySchemaWrapper.AddField<float>(float0Name, SpecTypeId.Length, null);
+          mySchemaWrapper.AddField<bool>(bool0Name, new ForgeTypeId(), null);
+          mySchemaWrapper.AddField<string>(string0Name, new ForgeTypeId(), null);
           
           //Generate the Autodesk.Revit.DB.ExtensibleStorage.Schema.
           mySchemaWrapper.FinishSchema();
@@ -137,8 +137,8 @@ namespace ExtensibleStorageManager
           //Set data in the entity.
           storageElementEntityWrite.Set<int>(fieldInt0, 5);
           storageElementEntityWrite.Set<short>(fieldShort0, 2);
-          storageElementEntityWrite.Set<double>(fieldDouble0, 7.1, DisplayUnitType.DUT_METERS);
-          storageElementEntityWrite.Set<float>(fieldFloat0, 3.1f, DisplayUnitType.DUT_METERS);
+          storageElementEntityWrite.Set<double>(fieldDouble0, 7.1, UnitTypeId.Meters);
+          storageElementEntityWrite.Set<float>(fieldFloat0, 3.1f, UnitTypeId.Meters);
           storageElementEntityWrite.Set(fieldBool0, false);
           storageElementEntityWrite.Set(fieldString0, "hello");
 
@@ -152,35 +152,35 @@ namespace ExtensibleStorageManager
        private static void ComplexSchemaAndData(SchemaWrapperTools.SchemaWrapper mySchemaWrapper, Element storageElement, string xmlPathOut, Guid schemaId, AccessLevel readAccess, AccessLevel writeAccess, string vendorId, string applicationId, string name, string documentation, out Entity storageElementEntityWrite)
        {
           #region Add Fields to the SchemaWrapper
-          mySchemaWrapper.AddField<int>(int0Name, UnitType.UT_Undefined, null);
-          mySchemaWrapper.AddField<short>(short0Name, UnitType.UT_Undefined, null);
-          mySchemaWrapper.AddField<double>(double0Name, UnitType.UT_Length, null);
-          mySchemaWrapper.AddField<float>(float0Name, UnitType.UT_Length, null);
-          mySchemaWrapper.AddField<bool>(bool0Name, UnitType.UT_Undefined, null);
-          mySchemaWrapper.AddField<string>(string0Name, UnitType.UT_Undefined, null);
-          mySchemaWrapper.AddField<ElementId>(id0Name, UnitType.UT_Undefined, null);
-          mySchemaWrapper.AddField<XYZ>(point0Name, UnitType.UT_Length, null);
-          mySchemaWrapper.AddField<UV>(uv0Name, UnitType.UT_Length, null);
-          mySchemaWrapper.AddField<Guid>(guid0Name, UnitType.UT_Undefined, null);
+          mySchemaWrapper.AddField<int>(int0Name, new ForgeTypeId(), null);
+          mySchemaWrapper.AddField<short>(short0Name, new ForgeTypeId(), null);
+          mySchemaWrapper.AddField<double>(double0Name, SpecTypeId.Length, null);
+          mySchemaWrapper.AddField<float>(float0Name, SpecTypeId.Length, null);
+          mySchemaWrapper.AddField<bool>(bool0Name, new ForgeTypeId(), null);
+          mySchemaWrapper.AddField<string>(string0Name, new ForgeTypeId(), null);
+          mySchemaWrapper.AddField<ElementId>(id0Name, new ForgeTypeId(), null);
+          mySchemaWrapper.AddField<XYZ>(point0Name, SpecTypeId.Length, null);
+          mySchemaWrapper.AddField<UV>(uv0Name, SpecTypeId.Length, null);
+          mySchemaWrapper.AddField<Guid>(guid0Name, new ForgeTypeId(), null);
 
           //Note that we use IDictionary<> for map types and IList<> for array types
-          mySchemaWrapper.AddField<IDictionary<string, string>>(map0Name, UnitType.UT_Undefined, null);
-          mySchemaWrapper.AddField<IList<bool>>(array0Name, UnitType.UT_Undefined, null);
+          mySchemaWrapper.AddField<IDictionary<string, string>>(map0Name, new ForgeTypeId(), null);
+          mySchemaWrapper.AddField<IList<bool>>(array0Name, new ForgeTypeId(), null);
 
           //Create a sample subEntity
           SchemaWrapperTools.SchemaWrapper mySubSchemaWrapper0 = SchemaWrapperTools.SchemaWrapper.NewSchema(subEntityGuid0, readAccess, writeAccess, vendorId, applicationId, entity0Name, "A sub entity");
-          mySubSchemaWrapper0.AddField<int>("subInt0", UnitType.UT_Undefined, null);
+          mySubSchemaWrapper0.AddField<int>("subInt0", new ForgeTypeId(), null);
           mySubSchemaWrapper0.FinishSchema();
           Entity subEnt0 = new Entity(mySubSchemaWrapper0.GetSchema());
           subEnt0.Set<int>(mySubSchemaWrapper0.GetSchema().GetField("subInt0"), 11);
-          mySchemaWrapper.AddField<Entity>(entity0Name, UnitType.UT_Undefined, mySubSchemaWrapper0);
+          mySchemaWrapper.AddField<Entity>(entity0Name, new ForgeTypeId(), mySubSchemaWrapper0);
 
           //
           //Create a sample map of subEntities (An IDictionary<> with key type "int" and value type "Entity")
           //
             //Create a new sample schema.
             SchemaWrapperTools.SchemaWrapper mySubSchemaWrapper1_Map = SchemaWrapperTools.SchemaWrapper.NewSchema(subEntityGuid_Map1, readAccess, writeAccess, vendorId, applicationId, map1Name, "A map of int to Entity");
-            mySubSchemaWrapper1_Map.AddField<int>("subInt1", UnitType.UT_Undefined, null);
+            mySubSchemaWrapper1_Map.AddField<int>("subInt1", new ForgeTypeId(), null);
             mySubSchemaWrapper1_Map.FinishSchema();
             //Create a new sample Entity.
             Entity subEnt1 = new Entity(mySubSchemaWrapper1_Map.GetSchema());
@@ -188,7 +188,7 @@ namespace ExtensibleStorageManager
             subEnt1.Set<int>(mySubSchemaWrapper1_Map.GetSchema().GetField("subInt1"), 22);
             //Add a new map field to the top-level Schema.  We will add the entity we just created after all top-level
             //fields are created.
-            mySchemaWrapper.AddField<IDictionary<int, Entity>>(map1Name, UnitType.UT_Undefined, mySubSchemaWrapper1_Map);
+            mySchemaWrapper.AddField<IDictionary<int, Entity>>(map1Name, new ForgeTypeId(), mySubSchemaWrapper1_Map);
 
 
 
@@ -198,7 +198,7 @@ namespace ExtensibleStorageManager
           //
            //Create a new sample schema
             SchemaWrapperTools.SchemaWrapper mySubSchemaWrapper2_Array = SchemaWrapperTools.SchemaWrapper.NewSchema(subEntityGuid_Array2, readAccess, writeAccess, vendorId, applicationId, array1Name, "An array of Entities");
-            mySubSchemaWrapper2_Array.AddField<int>("subInt2", UnitType.UT_Undefined, null);
+            mySubSchemaWrapper2_Array.AddField<int>("subInt2", new ForgeTypeId(), null);
             mySubSchemaWrapper2_Array.FinishSchema();
             //Create a new sample Entity.
             Entity subEnt2 = new Entity(mySubSchemaWrapper2_Array.GetSchema());
@@ -206,7 +206,7 @@ namespace ExtensibleStorageManager
             subEnt2.Set<int>(mySubSchemaWrapper2_Array.GetSchema().GetField("subInt2"), 33);
             //Add a new array field to the top-level Schema We will add the entity we just crated after all top-level fields
             //are created.
-            mySchemaWrapper.AddField<IList<Entity>>(array1Name, UnitType.UT_Undefined, mySubSchemaWrapper2_Array);
+            mySchemaWrapper.AddField<IList<Entity>>(array1Name, new ForgeTypeId(), mySubSchemaWrapper2_Array);
           
           
           #endregion
@@ -251,15 +251,15 @@ namespace ExtensibleStorageManager
           storageElementEntityWrite.Set<int>(fieldInt0, 5);
           storageElementEntityWrite.Set<short>(fieldShort0, 2);
 
-          storageElementEntityWrite.Set<double>(fieldDouble0, 7.1, DisplayUnitType.DUT_METERS);
-          storageElementEntityWrite.Set<float>(fieldFloat0, 3.1f, DisplayUnitType.DUT_METERS);
+          storageElementEntityWrite.Set<double>(fieldDouble0, 7.1, UnitTypeId.Meters);
+          storageElementEntityWrite.Set<float>(fieldFloat0, 3.1f, UnitTypeId.Meters);
 
 
           storageElementEntityWrite.Set(fieldBool0, false);
           storageElementEntityWrite.Set(fieldString0, "hello");
           storageElementEntityWrite.Set(fieldId0, storageElement.Id);
-          storageElementEntityWrite.Set(fieldPoint0, new XYZ(1, 2, 3), DisplayUnitType.DUT_METERS);
-          storageElementEntityWrite.Set(fieldUv0, new UV(1, 2), DisplayUnitType.DUT_METERS);
+          storageElementEntityWrite.Set(fieldPoint0, new XYZ(1, 2, 3), UnitTypeId.Meters);
+          storageElementEntityWrite.Set(fieldUv0, new UV(1, 2), UnitTypeId.Meters);
           storageElementEntityWrite.Set(fieldGuid0, new Guid("D8301329-F207-43B8-8AA1-634FD344F350"));
 
           //Note that we must pass an IDictionary<>, not a Dictionary<> to Set().
@@ -361,8 +361,8 @@ namespace ExtensibleStorageManager
 
            storageElementEntityWrite.Set<int>(fieldInt0, 10);
            storageElementEntityWrite.Set<short>(fieldShort0, 20);
-           storageElementEntityWrite.Set<double>(fieldDouble0, 14.2, DisplayUnitType.DUT_METERS);
-           storageElementEntityWrite.Set<float>(fieldFloat0, 6.12f, DisplayUnitType.DUT_METERS);
+           storageElementEntityWrite.Set<double>(fieldDouble0, 14.2, UnitTypeId.Meters);
+           storageElementEntityWrite.Set<float>(fieldFloat0, 6.12f, UnitTypeId.Meters);
            storageElementEntityWrite.Set(fieldBool0, true);
            storageElementEntityWrite.Set(fieldString0, "goodbye");
            //Set the entity back into the storage element.

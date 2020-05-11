@@ -60,7 +60,7 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
         public Autodesk.Revit.UI.Result Execute(ExternalCommandData revit, ref String message, Autodesk.Revit.DB.ElementSet elements)
         {
             m_revit = revit;
-            UnitType = m_revit.Application.ActiveUIDocument.Document.GetUnits().GetFormatOptions(Autodesk.Revit.DB.UnitType.UT_Length).DisplayUnits;
+            UnitTypeId = m_revit.Application.ActiveUIDocument.Document.GetUnits().GetFormatOptions(Autodesk.Revit.DB.SpecTypeId.Length).GetUnitTypeId();
             Transaction documentTransaction = new Transaction(revit.Application.ActiveUIDocument.Document, "Document");
             documentTransaction.Start();
             try
@@ -79,7 +79,7 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
 
                      Parameter elevationPara = systemLevel.get_Parameter(BuiltInParameter.LEVEL_ELEV);
                      
-                     double temValue = Unit.CovertFromAPI(UnitType, elevationPara.AsDouble());
+                     double temValue = Unit.CovertFromAPI(UnitTypeId, elevationPara.AsDouble());
                      double temValue2 = double.Parse(temValue.ToString("#.0"));
                      
                      levelsDataSourceRow.Elevation = temValue2;
@@ -103,7 +103,7 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
         }
 
         ExternalCommandData m_revit;
-        public Autodesk.Revit.DB.DisplayUnitType UnitType;
+        public Autodesk.Revit.DB.ForgeTypeId UnitTypeId;
         System.Collections.Generic.List<LevelsDataSource> systemLevelsDatum;
         /// <summary>
         /// Store all levels' datum in system

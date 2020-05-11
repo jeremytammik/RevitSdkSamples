@@ -81,7 +81,7 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
         /// <summary>
         /// All electrical systems contain selected element
         /// </summary>
-        private ElectricalSystemSet m_electricalSystemSet;
+        private ISet<ElectricalSystem> m_electricalSystemSet;
 
         /// <summary>
         /// All electrical system items which will be displayed in circuit selecting form
@@ -184,7 +184,7 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
         {
             get
             {
-                return m_electricalSystemSet.Size;
+                return m_electricalSystemSet.Count;
             }
         }
         #endregion
@@ -199,7 +199,7 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
             m_revitDoc = commandData.Application.ActiveUIDocument;
             m_selection = m_revitDoc.Selection;
 
-            m_electricalSystemSet = new ElectricalSystemSet();
+            m_electricalSystemSet = new HashSet<ElectricalSystem>();
             m_electricalSystemItems = new List<ElectricalSystemItem>();
 
             CollectConnectorInfo();
@@ -303,7 +303,7 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
                Element element = m_revitDoc.Document.GetElement(elementId);
                 FamilyInstance fi = element as FamilyInstance;
                 MEPModel mepModel;
-                ElectricalSystemSet ess;
+                ISet<ElectricalSystem> ess;
 
                 if (fi != null && (mepModel = fi.MEPModel) != null)
                 {
@@ -315,7 +315,7 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
                     //
 
                     // Get all electrical systems
-                    ess = mepModel.ElectricalSystems;
+                    ess = mepModel.GetElectricalSystems();
                     if (null == ess)
                     {
                         m_hasCircuit = false;
@@ -328,11 +328,11 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
                     {
                         if (es.SystemType != ElectricalSystemType.PowerCircuit)
                         {
-                            ess.Erase(es);
+                            ess.Remove(es);
                         }
                     }
 
-                    if (ess.IsEmpty)
+                    if (ess.Count == 0)
                     {
                         m_hasCircuit = false;
                         m_hasPanel = false;
@@ -354,11 +354,11 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
                         {
                             if (!ess.Contains(es))
                             {
-                                m_electricalSystemSet.Erase(es);
+                                m_electricalSystemSet.Remove(es);
                             }
                         }
 
-                        if (m_electricalSystemSet.IsEmpty)
+                        if (m_electricalSystemSet.Count == 0)
                         {
                             m_hasCircuit = false;
                             m_hasPanel = false;
@@ -386,7 +386,7 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
                     // to get the common ones 
                     if (!bInitilzedElectricalSystemSet)
                     {
-                        m_electricalSystemSet.Insert(tempElectricalSystem);
+                        m_electricalSystemSet.Add(tempElectricalSystem);
                         bInitilzedElectricalSystemSet = true;
                         continue;
                     }
@@ -399,7 +399,7 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
                     }
 
                     m_electricalSystemSet.Clear();
-                    m_electricalSystemSet.Insert(tempElectricalSystem);
+                    m_electricalSystemSet.Add(tempElectricalSystem);
                 }
                 else
                 {
@@ -410,10 +410,10 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
             }
 
             // Verify if there is any common power circuit
-            if (!m_electricalSystemSet.IsEmpty)
+            if (m_electricalSystemSet.Count != 0)
             {
                 m_hasCircuit = true;
-                if (m_electricalSystemSet.Size == 1)
+                if (m_electricalSystemSet.Count == 1)
                 {
                     foreach (ElectricalSystem es in m_electricalSystemSet)
                     {
@@ -642,7 +642,7 @@ namespace Revit.SDK.Samples.PowerCircuit.CS
         static private bool IsElementBelongsToCircuit(MEPModel mepModel,
             ElectricalSystem selectedElectricalSystem)
         {
-            ElectricalSystemSet ess = mepModel.ElectricalSystems;
+            ISet<ElectricalSystem> ess = mepModel.GetElectricalSystems();
             if (null == ess || !ess.Contains(selectedElectricalSystem))
             {
                 return false;

@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Revit.SDK.Samples.CurtainWallGrid.CS.Properties
-{
+namespace CurtainWallGrid.Properties {
     using System;
     
     
@@ -20,7 +19,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -58,78 +57,6 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS.Properties
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to cm.
-        /// </summary>
-        internal static string DUT_CENTIMETERS {
-            get {
-                return ResourceManager.GetString("DUT_CENTIMETERS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &apos;.
-        /// </summary>
-        internal static string DUT_DECIMAL_FEET {
-            get {
-                return ResourceManager.GetString("DUT_DECIMAL_FEET", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &quot;.
-        /// </summary>
-        internal static string DUT_DECIMAL_INCHES {
-            get {
-                return ResourceManager.GetString("DUT_DECIMAL_INCHES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &apos;.
-        /// </summary>
-        internal static string DUT_FEET_FRACTIONAL_INCHES {
-            get {
-                return ResourceManager.GetString("DUT_FEET_FRACTIONAL_INCHES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &quot;.
-        /// </summary>
-        internal static string DUT_FRACTIONAL_INCHES {
-            get {
-                return ResourceManager.GetString("DUT_FRACTIONAL_INCHES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to m.
-        /// </summary>
-        internal static string DUT_METERS {
-            get {
-                return ResourceManager.GetString("DUT_METERS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to m.
-        /// </summary>
-        internal static string DUT_METERS_CENTIMETERS {
-            get {
-                return ResourceManager.GetString("DUT_METERS_CENTIMETERS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to mm.
-        /// </summary>
-        internal static string DUT_MILLIMETERS {
-            get {
-                return ResourceManager.GetString("DUT_MILLIMETERS", resourceCulture);
             }
         }
     }

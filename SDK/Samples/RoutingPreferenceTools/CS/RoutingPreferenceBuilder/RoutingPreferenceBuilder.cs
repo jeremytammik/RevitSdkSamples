@@ -71,17 +71,17 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
                 throw new RoutingPreferenceDataException("No pipe pipes defined in this project.  At least one must be defined.");
 
 
-            FormatOptions formatOptionPipeSize = m_document.GetUnits().GetFormatOptions(UnitType.UT_PipeSize);
+            FormatOptions formatOptionPipeSize = m_document.GetUnits().GetFormatOptions(SpecTypeId.PipeSize);
 
-            string docPipeSizeUnit = formatOptionPipeSize.DisplayUnits.ToString();
+            string docPipeSizeUnit = formatOptionPipeSize.GetUnitTypeId().TypeId;
             string xmlPipeSizeUnit = xDoc.Root.Attribute("pipeSizeUnits").Value;
             if (docPipeSizeUnit != xmlPipeSizeUnit)
                 throw new RoutingPreferenceDataException("Units from XML do not match current pipe size units.");
 
 
-            FormatOptions formatOptionRoughness = m_document.GetUnits().GetFormatOptions(UnitType.UT_Piping_Roughness);
+            FormatOptions formatOptionRoughness = m_document.GetUnits().GetFormatOptions(SpecTypeId.PipingRoughness);
 
-            string docRoughnessUnit = formatOptionRoughness.DisplayUnits.ToString();
+            string docRoughnessUnit = formatOptionRoughness.GetUnitTypeId().TypeId;
             string xmlRoughnessUnit = xDoc.Root.Attribute("pipeRoughnessUnits").Value;
             if (docRoughnessUnit != xmlRoughnessUnit)
                 throw new RoutingPreferenceDataException("Units from XML do not match current pipe roughness units.");
@@ -186,12 +186,12 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
          XDocument routingPreferenceBuilderDoc = new XDocument();
          XElement xroot = new XElement(XName.Get("RoutingPreferenceBuilder"));
 
-         FormatOptions formatOptionPipeSize = m_document.GetUnits().GetFormatOptions(UnitType.UT_PipeSize);
-         string unitStringPipeSize = formatOptionPipeSize.DisplayUnits.ToString();
+         FormatOptions formatOptionPipeSize = m_document.GetUnits().GetFormatOptions(SpecTypeId.PipeSize);
+         string unitStringPipeSize = formatOptionPipeSize.GetUnitTypeId().TypeId;
          xroot.Add(new XAttribute(XName.Get("pipeSizeUnits"), unitStringPipeSize));
 
-         FormatOptions formatOptionRoughness = m_document.GetUnits().GetFormatOptions(UnitType.UT_Piping_Roughness);
-         string unitStringRoughness = formatOptionRoughness.DisplayUnits.ToString();
+         FormatOptions formatOptionRoughness = m_document.GetUnits().GetFormatOptions(SpecTypeId.PipingRoughness);
+         string unitStringRoughness = formatOptionRoughness.GetUnitTypeId().TypeId;
          xroot.Add(new XAttribute(XName.Get("pipeRoughnessUnits"), unitStringRoughness));
 
          foreach (FamilySymbol familySymbol in this.m_fittings)

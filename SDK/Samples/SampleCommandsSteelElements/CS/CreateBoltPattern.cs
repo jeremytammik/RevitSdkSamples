@@ -25,7 +25,7 @@ using Autodesk.Revit.UI.Selection;
 using Autodesk.AdvanceSteel.CADAccess;
 using Autodesk.AdvanceSteel.Geometry;
 using Autodesk.AdvanceSteel.Modelling;
-using RvtDwgAddon;
+using Autodesk.SteelConnectionsDB;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Collections.Generic;
@@ -83,17 +83,17 @@ namespace Revit.SDK.Samples.SampleCommandsSteelElements.CreateBoltPattern.CS
             {
                // Creating the bolt pattern using AdvanceSteel's classes and objects.
                // for more details, please consult http://www.autodesk.com/adv-steel-api-walkthroughs-2019-enu
-               HashSet<FilerObject> filerObjectHashSet = new HashSet<FilerObject>();
+               List<FilerObject> filerObjectList = new List<FilerObject>();
                FilerObject filerObj = Utilities.Functions.GetFilerObject(doc, eRef);
                if (null == filerObj)
                {
                   return Result.Failed;
                }
 
-               filerObjectHashSet.Add(filerObj);
+               filerObjectList.Add(filerObj);
 
                FinitRectScrewBoltPattern boltPattern = new FinitRectScrewBoltPattern(p1 * Utilities.Functions.FEET_TO_MM, p2 * Utilities.Functions.FEET_TO_MM, new Vector3d(1, 0, 0), new Vector3d(0, 1, 0));
-               boltPattern.Connect(filerObjectHashSet, Autodesk.AdvanceSteel.ConstructionTypes.AtomicElement.eAssemblyLocation.kOnSite);
+               boltPattern.Connect(filerObjectList.ToArray(), Autodesk.AdvanceSteel.ConstructionTypes.AtomicElement.eAssemblyLocation.kOnSite);
                boltPattern.WriteToDb();
 
                trans.Commit();

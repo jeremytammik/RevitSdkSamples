@@ -119,15 +119,15 @@ namespace Revit.SDK.Samples.Units.CS
             {
                 // using the static example value 1234.56789
                 int count = 0;
-                foreach (Autodesk.Revit.DB.UnitType unittype in Autodesk.Revit.DB.UnitUtils.GetValidUnitTypes())
+                foreach (Autodesk.Revit.DB.ForgeTypeId specTypeId in Autodesk.Revit.DB.UnitUtils.GetAllSpecs())
                 {
-                    if (Autodesk.Revit.DB.UnitUtils.GetUnitGroup(unittype).ToString() == this.disciplineCombox.SelectedItem.ToString())
+                    if (Autodesk.Revit.DB.UnitUtils.GetUnitGroup(specTypeId).ToString() == this.disciplineCombox.SelectedItem.ToString())
                     {
                         this.dataGridView.Rows.Add();
-                        this.dataGridView["UnitType", count].Value = unittype;
-                        this.dataGridView["Label_UnitType", count].Value = Autodesk.Revit.DB.LabelUtils.GetLabelFor(unittype);
+                        this.dataGridView["UnitType", count].Value = specTypeId;
+                        this.dataGridView["Label_UnitType", count].Value = Autodesk.Revit.DB.LabelUtils.GetLabelForSpec(specTypeId);
                         this.dataGridView["FormatOptions", count].Value =
-                           Autodesk.Revit.DB.UnitFormatUtils.Format(m_units, unittype, 1234.56789, false, false);
+                           Autodesk.Revit.DB.UnitFormatUtils.Format(m_units, specTypeId, 1234.56789, false);
                         count++;
                     }
                 }
@@ -144,8 +144,8 @@ namespace Revit.SDK.Samples.Units.CS
             if (e.ColumnIndex == 2)
             {
                 // show UI
-                Autodesk.Revit.DB.UnitType unittype = (Autodesk.Revit.DB.UnitType)this.dataGridView["UnitType", e.RowIndex].Value;
-                using (FormatForm displayForm = new FormatForm(unittype, m_units.GetFormatOptions(unittype)))
+                Autodesk.Revit.DB.ForgeTypeId specTypeId = (Autodesk.Revit.DB.ForgeTypeId)this.dataGridView["UnitType", e.RowIndex].Value;
+                using (FormatForm displayForm = new FormatForm(specTypeId, m_units.GetFormatOptions(specTypeId)))
                 {
                     DialogResult result;
                     while (DialogResult.Cancel != (result = displayForm.ShowDialog()))
@@ -154,9 +154,9 @@ namespace Revit.SDK.Samples.Units.CS
                         {
                             try
                             {
-                                this.m_units.SetFormatOptions((Autodesk.Revit.DB.UnitType)this.dataGridView["UnitType", e.RowIndex].Value, displayForm.FormatOptions);
+                                this.m_units.SetFormatOptions((Autodesk.Revit.DB.ForgeTypeId)this.dataGridView["UnitType", e.RowIndex].Value, displayForm.FormatOptions);
                                 this.dataGridView["FormatOptions", e.RowIndex].Value =
-                                   Autodesk.Revit.DB.UnitFormatUtils.Format(m_units, (Autodesk.Revit.DB.UnitType)this.dataGridView["UnitType", e.RowIndex].Value, 1234.56789, false, false);
+                                   Autodesk.Revit.DB.UnitFormatUtils.Format(m_units, (Autodesk.Revit.DB.ForgeTypeId)this.dataGridView["UnitType", e.RowIndex].Value, 1234.56789, false);
                                 break;
                             }
                             catch (System.Exception ex)
@@ -174,10 +174,10 @@ namespace Revit.SDK.Samples.Units.CS
             Autodesk.Revit.DB.FormatValueOptions formatvalueoptions = new Autodesk.Revit.DB.FormatValueOptions();
             formatvalueoptions.AppendUnitSymbol = false;
 
-            Autodesk.Revit.DB.FormatOptions formatoptions = new Autodesk.Revit.DB.FormatOptions(Autodesk.Revit.DB.DisplayUnitType.DUT_CURRENCY, Autodesk.Revit.DB.UnitSymbolType.UST_NONE);
+            Autodesk.Revit.DB.FormatOptions formatoptions = new Autodesk.Revit.DB.FormatOptions(Autodesk.Revit.DB.UnitTypeId.Currency, new Autodesk.Revit.DB.ForgeTypeId());
             formatoptions.UseDefault = false;
-            formatoptions.DisplayUnits = Autodesk.Revit.DB.DisplayUnitType.DUT_CURRENCY;
-            formatoptions.UnitSymbol = Autodesk.Revit.DB.UnitSymbolType.UST_NONE;
+            formatoptions.SetUnitTypeId(Autodesk.Revit.DB.UnitTypeId.Currency);
+            formatoptions.SetSymbolTypeId(new Autodesk.Revit.DB.ForgeTypeId());
             formatoptions.Accuracy = 0.01;
             //formatoptions.SuppressLeadingZeros = true;
             formatoptions.SuppressSpaces = false;
@@ -187,7 +187,7 @@ namespace Revit.SDK.Samples.Units.CS
 
             formatvalueoptions.SetFormatOptions(formatoptions);
 
-            return Autodesk.Revit.DB.UnitFormatUtils.Format(m_units, Autodesk.Revit.DB.UnitType.UT_Number, 123456789.0, false, false, formatvalueoptions);
+            return Autodesk.Revit.DB.UnitFormatUtils.Format(m_units, Autodesk.Revit.DB.SpecTypeId.Number, 123456789.0, false, formatvalueoptions);
             
         }
 

@@ -52,8 +52,8 @@ namespace SchemaWrapperTools
       /// </summary>
       /// <param name="name">The name of the field</param>
       /// <param name="typeIn">The AssemblyQualifiedName of the Field's data type</param>
-      /// <param name="unit">The unit type of the Field (set to UT_Undefined for non-floating point types</param>
-      public FieldData(string name, string typeIn, UnitType unit) : this(name, typeIn, unit, null)
+      /// <param name="spec">The unit type of the Field (set to UT_Undefined for non-floating point types</param>
+      public FieldData(string name, string typeIn, ForgeTypeId spec) : this(name, typeIn, spec, null)
       {
           
       }
@@ -63,13 +63,13 @@ namespace SchemaWrapperTools
       /// </summary>
       /// <param name="name">The name of the field</param>
       /// <param name="typeIn">The AssemblyQualifiedName of the Field's data type</param>
-      /// <param name="unit">The unit type of the Field (set to UT_Undefined for non-floating point types</param>
+      /// <param name="spec">The unit type of the Field (set to UT_Undefined for non-floating point types</param>
       /// <param name="subSchema">The SchemaWrapper of the field's subSchema, if the field is of type "Entity"</param>
-      public FieldData(string name, string typeIn, UnitType unit, SchemaWrapper subSchema) 
+      public FieldData(string name, string typeIn, ForgeTypeId spec, SchemaWrapper subSchema) 
       { 
          m_Name = name; 
          m_Type = typeIn;
-         m_Unit = unit;
+         m_Spec = spec;
          m_SubSchema = subSchema;
       }
       #endregion
@@ -83,7 +83,7 @@ namespace SchemaWrapperTools
           strBuilder.Append(", ");
           strBuilder.Append(Type);
           strBuilder.Append(", ");
-          strBuilder.Append(Unit.ToString());
+          strBuilder.Append(Spec.TypeId);
 
 
           if (SubSchema != null)
@@ -116,10 +116,10 @@ namespace SchemaWrapperTools
        /// <summary>
        /// The Unit type of the field
        /// </summary>
-      public UnitType Unit
+      public ForgeTypeId Spec
       {
-         get { return m_Unit; }
-         set { m_Unit = value; }
+         get { return m_Spec; }
+         set { m_Spec = value; }
       }
 
        /// <summary>
@@ -136,7 +136,7 @@ namespace SchemaWrapperTools
       private SchemaWrapper m_SubSchema;
       private string m_Name;
       private string m_Type;
-      private UnitType m_Unit;
+      private ForgeTypeId m_Spec;
       #endregion
 
    }
