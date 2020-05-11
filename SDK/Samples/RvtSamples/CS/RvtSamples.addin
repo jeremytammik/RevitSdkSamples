@@ -2,7 +2,7 @@
 <RevitAddIns>
   <AddIn Type="Application">
     <Name>External Tool</Name>
-    <Assembly>Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/CS/bin/Debug/RvtSamples.dll</Assembly>
+    <Assembly>Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\RvtSamples\CS\bin\Debug\RvtSamples.dll</Assembly>
     <ClientId>42cb0a70-2ee7-4e64-a42d-87b9cdcc41c8</ClientId>
     <FullClassName>RvtSamples.Application</FullClassName>
     <VendorId>ADSK</VendorId>
