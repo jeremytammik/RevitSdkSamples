@@ -86,7 +86,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="RvtSamples.addin" />
+    <None Include="RvtSamples.addin">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\Analysis.ico">
