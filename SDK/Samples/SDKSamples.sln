@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticalSupportData_Info", "AnalyticalSupportData_Info\CS\AnalyticalSupportData_Info.csproj", "{F2A2735F-CE2A-4F76-89E2-A358122F5B02}"
 EndProject
@@ -432,6 +432,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom2DExporter", "CustomExporter\Custom2DExporter\CS\Custom2DExporter.csproj", "{4DB30086-DE87-4205-8A8E-E2A61BBA681B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewTemplateCreation", "ViewTemplateCreation\CS\ViewTemplateCreation.csproj", "{C447128E-26AC-4552-8F17-B40B8DC6C3CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivilAlignments", "CivilAlignments\CS\CivilAlignments.csproj", "{E2B377C6-1B67-4777-9532-EE37BA4E84DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1961,6 +1963,14 @@ Global
 		{C447128E-26AC-4552-8F17-B40B8DC6C3CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C447128E-26AC-4552-8F17-B40B8DC6C3CC}.Release|x64.ActiveCfg = Release|x64
 		{C447128E-26AC-4552-8F17-B40B8DC6C3CC}.Release|x64.Build.0 = Release|x64
+		{E2B377C6-1B67-4777-9532-EE37BA4E84DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B377C6-1B67-4777-9532-EE37BA4E84DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B377C6-1B67-4777-9532-EE37BA4E84DA}.Debug|x64.ActiveCfg = Debug|x64
+		{E2B377C6-1B67-4777-9532-EE37BA4E84DA}.Debug|x64.Build.0 = Debug|x64
+		{E2B377C6-1B67-4777-9532-EE37BA4E84DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B377C6-1B67-4777-9532-EE37BA4E84DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2B377C6-1B67-4777-9532-EE37BA4E84DA}.Release|x64.ActiveCfg = Release|x64
+		{E2B377C6-1B67-4777-9532-EE37BA4E84DA}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2010,5 +2020,8 @@ Global
 		{02A9B46A-9B61-43D7-87D9-4176CC730997} = {B1E03BF7-C7EF-4906-8964-2469D9178680}
 		{4FCBF0C9-EC78-426F-8563-C81EF2541DF7} = {1054F3C7-43DB-472D-9E8B-BD91EB41F8FC}
 		{0FFDC8F7-AE63-4792-9FBC-B2A55FB9CF5A} = {D9E45FC5-5A58-4BB6-8929-17E89295BF97}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A4F7AFF-DCE6-4E51-9E42-B28BC76819EF}
 	EndGlobalSection
 EndGlobal

@@ -254,8 +254,8 @@ namespace SchemaWrapperTools
                 currentFieldData.SubSchema.FinishSchema();  //Recursively create the schema for the subSchema.
             }
 
-            if (!currentFieldData.Spec.Empty())
-               currentFieldBuilder.SetSpec(currentFieldData.Spec);
+            if (!string.IsNullOrEmpty(currentFieldData.Spec))
+               currentFieldBuilder.SetSpec(new ForgeTypeId(currentFieldData.Spec));
          }
 
          //Set all the top level data in the schema we are generating.

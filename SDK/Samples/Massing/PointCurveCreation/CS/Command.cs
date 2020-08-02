@@ -25,7 +25,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using Microsoft.Office.Interop.Excel;
 using Autodesk.Revit;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
@@ -139,61 +138,6 @@ namespace Revit.SDK.Samples.PointCurveCreation.CS
                 PointOnEdge poe = app.Create.NewPointOnEdge(modelcurve.GeometryCurve.Reference, locationOnCurve);
                 ReferencePoint rp2 = doc.FamilyCreate.NewReferencePoint(poe);
             }
-            transaction.Commit();
-
-            return Result.Succeeded;
-        }
-    }
-
-    /// <summary>
-    /// A class inherits IExternalCommand interface.
-    /// This class used to create reference points based on XYZ data in an Excel file
-    /// </summary>
-    [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
-    [Autodesk.Revit.Attributes.Regeneration(Autodesk.Revit.Attributes.RegenerationOption.Manual)]
-    public class PointsFromExcel : IExternalCommand
-    {
-        static AddInId appId = new AddInId(new Guid("58BA1D48-79C6-4804-A133-806DF642B67E"));
-        /// <summary>
-        /// Implement this method as an external command for Revit.
-        /// </summary>
-        /// <param name="commandData">An object that is passed to the external application 
-        /// which contains data related to the command, 
-        /// such as the application object and active view.</param>
-        /// <param name="message">A message that can be set by the external application 
-        /// which will be displayed if a failure or cancellation is returned by 
-        /// the external command.</param>
-        /// <param name="elements">A set of elements to which the external application 
-        /// can add elements that are to be highlighted in case of failure or cancellation.</param>
-        /// <returns>Return the status of the external command. 
-        /// A result of Succeeded means that the API external method functioned as expected. 
-        /// Cancelled can be used to signify that the user cancelled the external operation 
-        /// at some point. Failure should be returned if the application is unable to proceed with 
-        /// the operation.</returns>
-        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
-        {
-            Autodesk.Revit.ApplicationServices.Application app = commandData.Application.Application;
-            Document doc = commandData.Application.ActiveUIDocument.Document;
-
-            Transaction transaction = new Transaction(doc, "PointsFromExcel");
-            transaction.Start();
-            string excelFile = "helix.xlsx";
-            string filepath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
-            Workbook workbook = excelApp.Workbooks.Open(filepath + "\\" + excelFile,
-               Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-               Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-               Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-               Type.Missing, Type.Missing);
-
-            Worksheet sheet = (Worksheet)workbook.Sheets[1];
-            Range excelRange = sheet.UsedRange; object[,] valueArray = (object[,])excelRange.get_Value(XlRangeValueDataType.xlRangeValueDefault);
-            for (int i = 1; i <= excelRange.Rows.Count; i++)
-            {
-                XYZ xyz = new XYZ(Convert.ToDouble(valueArray[i, 1]), Convert.ToDouble(valueArray[i, 2]), Convert.ToDouble(valueArray[i, 3]));
-                ReferencePoint rp = doc.FamilyCreate.NewReferencePoint(xyz);
-            }
-            workbook.Close(false, excelFile, null);
             transaction.Commit();
 
             return Result.Succeeded;

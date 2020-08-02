@@ -17,14 +17,6 @@
     <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
    </AddIn>
    <AddIn Type="Command">
-      <Text>Points From Excel</Text>
-      <Assembly>PointCurveCreation.dll</Assembly>
-      <ClientId>58BA1D48-79C6-4804-A133-806DF642B67E</ClientId>
-      <FullClassName>Revit.SDK.Samples.PointCurveCreation.CS.PointsFromExcel</FullClassName>
-    <VendorId>ADSK</VendorId>
-    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
-   </AddIn>
-   <AddIn Type="Command">
       <Text>Points From Text File</Text>
       <Assembly>PointCurveCreation.dll</Assembly>
       <ClientId>C6D0F4DB-81C3-4927-9D68-8936D6EE67DD</ClientId>

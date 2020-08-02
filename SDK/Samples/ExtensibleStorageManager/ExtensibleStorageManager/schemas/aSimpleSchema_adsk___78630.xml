@@ -5,32 +5,32 @@
       <FieldData>
         <Name>int0Name</Name>
         <Type>System.Int32</Type>
-        <Unit>UT_Undefined</Unit>
+        <Spec></Spec>
       </FieldData>
       <FieldData>
         <Name>short0Name</Name>
         <Type>System.Int16</Type>
-        <Unit>UT_Undefined</Unit>
+        <Spec></Spec>
       </FieldData>
       <FieldData>
         <Name>double0Name</Name>
         <Type>System.Double</Type>
-        <Unit>UT_Length</Unit>
+        <Spec>autodesk.spec.aec:length-1.0.0</Spec>
       </FieldData>
       <FieldData>
         <Name>float0Name</Name>
         <Type>System.Single</Type>
-        <Unit>UT_Length</Unit>
+        <Spec>autodesk.spec.aec:length-1.0.0</Spec>
       </FieldData>
       <FieldData>
         <Name>bool0Name</Name>
         <Type>System.Boolean</Type>
-        <Unit>UT_Undefined</Unit>
+        <Spec></Spec>
       </FieldData>
       <FieldData>
         <Name>string0Name</Name>
         <Type>System.String</Type>
-        <Unit>UT_Undefined</Unit>
+        <Spec></Spec>
       </FieldData>
     </DataList>
     <SchemaId>d07961c1-6958-9ecc-4ebf-6ba84b378630</SchemaId>

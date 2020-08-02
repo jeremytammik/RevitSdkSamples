@@ -80,7 +80,7 @@ namespace SchemaWrapperTools
       /// <param name="subSchema">The SchemaWrapper of the field's subSchema, if the field is of type "Entity"</param>
        public void AddData(string name, System.Type typeIn, ForgeTypeId spec, SchemaWrapper subSchema)
       {
-         m_DataList.Add(new FieldData(name, typeIn.FullName, spec, subSchema));
+         m_DataList.Add(new FieldData(name, typeIn.FullName, spec.TypeId, subSchema));
       }
 
       #endregion

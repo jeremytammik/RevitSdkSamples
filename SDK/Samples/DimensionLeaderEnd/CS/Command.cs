@@ -174,7 +174,7 @@ namespace Revit.SDK.Samples.DimensionLeaderEnd.CS
                foreach (ElementId id in selectedIds)
                {
                   Dimension dim = doc.GetElement(id) as Dimension;
-                  if (dim != null)
+                  if (null != dim)
                   {
                      XYZ startPoint = selection.PickPoint(ObjectSnapTypes.None, "Pick start");
                       _transaction_.Start("Set leader end point");

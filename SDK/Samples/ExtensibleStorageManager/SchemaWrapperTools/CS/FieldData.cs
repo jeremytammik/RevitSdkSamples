@@ -53,7 +53,7 @@ namespace SchemaWrapperTools
       /// <param name="name">The name of the field</param>
       /// <param name="typeIn">The AssemblyQualifiedName of the Field's data type</param>
       /// <param name="spec">The unit type of the Field (set to UT_Undefined for non-floating point types</param>
-      public FieldData(string name, string typeIn, ForgeTypeId spec) : this(name, typeIn, spec, null)
+      public FieldData(string name, string typeIn, string spec) : this(name, typeIn, spec, null)
       {
           
       }
@@ -65,7 +65,7 @@ namespace SchemaWrapperTools
       /// <param name="typeIn">The AssemblyQualifiedName of the Field's data type</param>
       /// <param name="spec">The unit type of the Field (set to UT_Undefined for non-floating point types</param>
       /// <param name="subSchema">The SchemaWrapper of the field's subSchema, if the field is of type "Entity"</param>
-      public FieldData(string name, string typeIn, ForgeTypeId spec, SchemaWrapper subSchema) 
+      public FieldData(string name, string typeIn, string spec, SchemaWrapper subSchema) 
       { 
          m_Name = name; 
          m_Type = typeIn;
@@ -83,7 +83,7 @@ namespace SchemaWrapperTools
           strBuilder.Append(", ");
           strBuilder.Append(Type);
           strBuilder.Append(", ");
-          strBuilder.Append(Spec.TypeId);
+          strBuilder.Append(Spec);
 
 
           if (SubSchema != null)
@@ -116,7 +116,7 @@ namespace SchemaWrapperTools
        /// <summary>
        /// The Unit type of the field
        /// </summary>
-      public ForgeTypeId Spec
+      public string Spec
       {
          get { return m_Spec; }
          set { m_Spec = value; }
@@ -136,7 +136,7 @@ namespace SchemaWrapperTools
       private SchemaWrapper m_SubSchema;
       private string m_Name;
       private string m_Type;
-      private ForgeTypeId m_Spec;
+      private string m_Spec;
       #endregion
 
    }
