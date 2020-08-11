@@ -886,13 +886,13 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Massing\PointCurveCreation\CS\bin\Debug\PointCurveCreation.dll
 Revit.SDK.Samples.PointCurveCreation.CS.PointsOnCurve
 
-Geometry
-Points From Excel
-Points From Excel
-LargeImage:
-Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Massing\PointCurveCreation\CS\bin\Debug\PointCurveCreation.dll
-Revit.SDK.Samples.PointCurveCreation.CS.PointsFromExcel
+#Geometry
+#Points From Excel
+#Points From Excel
+#LargeImage:
+#Image:
+#Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Massing\PointCurveCreation\CS\bin\Debug\PointCurveCreation.dll
+#Revit.SDK.Samples.PointCurveCreation.CS.PointsFromExcel
 
 Geometry
 Points From Text File
