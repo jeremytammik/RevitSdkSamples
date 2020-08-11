@@ -443,13 +443,13 @@ namespace RvtSamples
             string assembly = lines[i++].Trim();
             string className = lines[i++].Trim();
 
-            if (!File.Exists(assembly)) // jeremy  
+            if (!File.Exists(assembly)) // jeremy
             {
                 ErrorMsg(string.Format("Assembly '{0}' specified in line {1} of {2} not found",
                   assembly, i, m_fileNameStem));
             }
 
-            bool testClassName = false; // jeremy  
+            bool testClassName = false; // jeremy
             if (testClassName)
             {
                 Debug.Print("RvtSamples: testing command {0} in assembly '{1}'.", className, assembly);
