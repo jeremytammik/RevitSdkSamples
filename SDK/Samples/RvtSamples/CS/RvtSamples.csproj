@@ -89,7 +89,9 @@
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="RvtSamples.addin" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\Analysis.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
