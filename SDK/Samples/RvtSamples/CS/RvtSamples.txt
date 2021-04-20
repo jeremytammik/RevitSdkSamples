@@ -103,7 +103,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\InCanvasControlAPI\CS\bin\Debug\InCanva
 Revit.SDK.Samples.InCanvasControlAPI.CS.Command
 
 Annotation, Elements
-Infrastructure alignments
+Infrastructure alignment station labels
 Demonstrates the use of API for finding and labeling an infrastructure alignment element.
 LargeImage:
 Image:
@@ -111,7 +111,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CivilAlignments\CS\bin\Debug\CivilAlign
 Revit.SDK.Samples.CivilAlignments.CS.CreateAlignmentStationLabelsCmd
 
 Annotation, Elements
-Infrastructure alignments
+Infrastructure alignment properties
 Demonstrates the use of API for listing properties of an infrastructure alignment element and its labels.
 LargeImage:
 Image:
@@ -119,7 +119,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CivilAlignments\CS\bin\Debug\CivilAlign
 Revit.SDK.Samples.CivilAlignments.CS.ShowPropertiesCmd
 
 Annotation, Elements, Views
-Create PathOfTravel.
+Create PathOfTravel
 This sample demonstrated how to create PathOfTravel elements from room(s) to door(s) in a plan view.
 LargeImage:
 Image:
@@ -1909,4 +1909,3 @@ LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\VisibilityControl\CS\bin\Debug\VisibilityControl.dll
 Revit.SDK.Samples.VisibilityControl.CS.Command
-
