@@ -1,0 +1,31 @@
+﻿<Window x:Class="Revit.SDK.Samples.RoutingPreferenceTools.CS.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="325" Width="500" Title="Routing Preference Analysis">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Name="label_SelectPipeType">Select a pipe type.</Label>
+        <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"  Name="comboBox_PipeTypes" SelectionChanged="comboBox_PipeTypes_SelectionChanged"></ComboBox>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Name="button_CheckWarnings" Click="button_CheckWarnings_Click">Check All Routing Preferences</Button>
+        <Button Grid.Row="2" Grid.Column="2" Name="button_CheckSpecificSize" Click="button_CheckSpecificSize_Click">Check Specific Size</Button>
+        <ComboBox Grid.Row="2" Grid.Column="3" Name="comboBox_Sizes"></ComboBox>
+        <Label Grid.Row="3" Name="label_Warnings">Output</Label>
+        <TextBox Grid.Row="4" Grid.ColumnSpan="4" Grid.RowSpan="2" Name="textBox_output"></TextBox>   
+    </Grid>
+</Window>

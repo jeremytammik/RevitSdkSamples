@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Openings.dll</Assembly>
+    <ClientId>de05fe52-13ed-4cdb-9c84-62e5eee3ac08</ClientId>
+    <FullClassName>Revit.SDK.Samples.Openings.CS.Command</FullClassName>
+    <Text>Openings</Text>
+    <Description>Display openings in project, and create model lines along its edges.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

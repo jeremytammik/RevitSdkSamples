@@ -1,0 +1,55 @@
+﻿<Window x:Class="SectionPropertiesExplorer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:myCtrls="clr-namespace:SectionPropertiesExplorer"
+        Title="CodeChecking.Engineering library runtime test"
+        mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        d:DesignHeight="540" d:DesignWidth="720" SizeToContent="WidthAndHeight">
+    <StackPanel>
+        <DockPanel Margin="0 5 0 0" LastChildFill="True">
+            <Label Content="Element:" Height="26" Width="102" Margin="4 0 0 0"  DockPanel.Dock="Left"/>
+            <Button Name="previous" Height="22" Width="22" Margin="2 0 5 0" DockPanel.Dock="Left" Click="previous_Click">
+                <Image Name="previous_" Source="/SectionPropertiesExplorer;component/Resources/Images/previous_disabled.png" />
+            </Button>
+            <Button Name="next" Height="22" Width="22" Margin="5 0 5 0" DockPanel.Dock="Right" Click="next_Click">
+                <Image Name="next_" Source="/SectionPropertiesExplorer;component/Resources/Images/next_disabled.png" />
+            </Button>
+            <ComboBox Name="elements" Height="22" SelectedIndex="0"
+                      ItemsSource="{Binding Path=ElementEntries}"
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="Name"
+                      SelectedValue="{Binding Path=ElementEntry}" SelectionChanged="elements_SelectionChanged">
+            </ComboBox>
+        </DockPanel>
+        <DockPanel Margin="0 2 0 0" LastChildFill="False">
+            <Label Name="elementSizeLabel" Content="elementSize:" Height="26" Margin="4 0 5 0" DockPanel.Dock="Left"/>
+            <Label Name="elementSizeValue" Content="100 ft" Height="26" Width="200" DockPanel.Dock="Left"/>
+            <StackPanel Orientation="Horizontal" Width="340" Margin="0 2 0 2" DockPanel.Dock="Right">
+                <Label Content="Units system:" Height="26" Width="100" />
+                <RadioButton Name="radioRevit" Content="Revit" Width="80" Margin="0 5 0 0" IsChecked="True" Checked="radioRevit_Checked" />
+                <RadioButton Name="radioImperial" Content="Imperial" Width="80" Margin="0 5 0 0" IsChecked="False" Checked="radioImperial_Checked" />
+                <RadioButton Name="radioMetric" Content="Metric" Width="80" Margin="0 5 0 0" IsChecked="False" Checked="radioMetric_Checked" />
+            </StackPanel>
+        </DockPanel>
+        <TabControl Height="432" Name="tabControl" Margin="0 5 0 0" SelectionChanged="tabControl_SelectionChanged">
+            <TabItem Header="Profile" Name="tabProfile">
+                <StackPanel Height="400" Orientation="Horizontal">
+                    <myCtrls:SectionParametersControl x:Name="sectionParameters" />
+                    <myCtrls:SectionDescriptionControl x:Name="sectionDescription" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Slab" Name="tabSlab">
+                <myCtrls:SlabDescriptionControl x:Name="slabDescription" Height="400"/>
+            </TabItem>
+            <TabItem Header="Wall" Name="tabWall">
+                <myCtrls:WallDescriptionControl x:Name="wallDescription" Height="400"/>
+            </TabItem>
+            <TabItem Header="Material" Name="tabMaterial">
+                <myCtrls:MaterialParametersControl x:Name="materialParameters" />
+            </TabItem>
+            <TabItem Header="T-Section" Name="tabTSection">
+                <myCtrls:SlabDescriptionControl x:Name="tSectionDescription" Height="400"/>
+            </TabItem>
+        </TabControl>
+    </StackPanel>
+</Window>

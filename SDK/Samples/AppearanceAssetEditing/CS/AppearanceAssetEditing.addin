@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AppearanceAssetEditing.dll</Assembly>
+    <ClientId>3be6963c-7de3-4e6b-ae9f-3b1e2f357d6f</ClientId>
+    <FullClassName>Revit.SDK.Samples.AppearanceAssetEditing.CS.Command</FullClassName>
+    <Text>Edit appearance asset properties via a small control dialog</Text>
+    <Description>This sample demonstrates basic usage of the AppearanceAssetEditScope and AssetProperty classes to change the value of an asset property in a given material. </Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>C#</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>  
+  <AddIn Type="Application">
+    <Name>AppearanceAssetEditing</Name>
+    <Assembly>AppearanceAssetEditing.dll</Assembly>
+    <ClientId>3BA2F4F8-EA23-4ACD-AFA3-E527D761A409</ClientId>
+    <FullClassName>Revit.SDK.Samples.AppearanceAssetEditing.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

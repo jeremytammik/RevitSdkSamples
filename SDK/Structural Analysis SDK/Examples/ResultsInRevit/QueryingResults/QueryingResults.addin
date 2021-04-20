@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AssemblyPath</Assembly>
+    <ClientId>7ead6750-de24-4ca4-b063-ba40226e8d53</ClientId>
+    <FullClassName>Revit.SDK.Samples.QueryingResults.CS.QueryResults</FullClassName>
+    <Text>Query analitycal results in Revit</Text>
+    <Description>Read analitycal results from Revit and output them to text file</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

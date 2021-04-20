@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ROXML version="1.0">
+  <header>
+    <contents type="configuration" version="1.5"/>
+    <product type="component" category="library" technology=".net" name="REX" />
+  </header>
+
+   <settings>
+       <control>
+           <!-- 
+              version name 
+              
+              name = "", "2010", ....
+           -->
+           <version name="2012"/>
+           
+           <!-- 
+              multi language architecture
+              
+              suported = "true", "false" 
+           -->
+           <languages supported="false"/>
+           
+           <!-- 
+              user interface
+              
+              supported = "true", "false"
+           -->
+           <userinterface supported="true" form="modal"/>         
+           
+           <!-- 
+               context settings
+               
+               suported = "true", "false"
+               version = "", "2010", ....
+               optionlist = "subscription;..."
+               architecture = "x86", "x64"
+               parameters = "true", "false"
+               subname = "", some sub-product name
+               form = "modal" (""), "control", "non-modal"      
+            -->
+           <context name="Civil3D" supported="false" form="non-modal" version="" optionlist="" architecture="" parameters="false"/>
+           <context name="Robot"   supported="false" form="non-modal" version="" optionlist="" architecture="" parameters="false"/>
+           <context name="RCad"    supported="false" form="non-modal" version="" optionlist="" architecture="" parameters="false"/>
+           
+           <context name="Revit" subname="Structure" optionlist="" supported="true" version="" parameters="true"/>
+           <context name="Revit" subname="Architecture" optionlist="" supported="true" version="" parameters="true"/>
+           <context name="Revit" subname="MEP" optionlist="" supported="true" version="" parameters="true"/>
+           <context name="Revit" supported="true" form="modal" version="" optionlist="" architecture="" parameters="true"/>
+       </control>
+   </settings>
+</ROXML>

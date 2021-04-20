@@ -1,0 +1,409 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+/********** Empty base panel.css style sheet to address problem that if a referenced .css does not exist, page doesn't work on Safari browser *******************************/
+
+/********** Default page style *******************************/
+body, p, td, input, textarea, select {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+a:link, a:active {color: #00289C; text-decoration: none;}
+a:visited {color: #00289C; text-decoration: none;}
+a:hover {color: #CE9E08; text-decoration: underline;}
+
+.content_htmlbody {margin: 0pt;}
+
+.index_htmlbody {margin: 0pt;}
+
+.search_htmlbody {margin: 0pt;}
+
+.contentTable {background: #fff; width: 100%; height: 100%;}
+
+.tdTOC {background: #fff;}
+
+.tdContent {width: 75%; background: #fff;}
+
+.iframeHeader {width: 100%; height: 25pt;}
+
+.iframeTOC {
+    width: 100%;
+    height: 100%;
+}
+
+.hidennFrame {
+    position:absolute;
+    left:0%;
+    width: 100%;
+    height: 100%;
+}
+
+.iframeContent {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+/************** Button class *************************/
+.button {
+	border-right: #828282 1px outset;
+	border-top: #fff 0px;
+	border-left: #fff 1px;
+	width: 0px;
+	border-bottom: #828282 1px outset;
+	background-color: #959595;
+	padding: 2pt 10pt;
+	white-space: nowrap;
+	display: table-cell;
+}
+.button:hover {
+	border-right: #828282 1px outset;
+	border-top: #fff 0px;
+	border-left: #fff 1px;
+	width: 0px;
+	border-bottom: #828282 1px outset;
+	background-color: #3f3f3f;
+	padding: 2pt 10pt;
+	color: #ce9e08;
+}
+a.button {
+	font-weight: bold;
+	/*font-size: 9pt;*/
+	color: #fff;
+	text-align: center;
+	text-decoration: none
+}
+
+a.button:hover {
+	font-weight: bold;
+	/*font-size: 9pt;*/
+	color: #ce9e08;
+	text-align: center;
+	text-decoration: none
+}
+
+
+/* -----------------------------------------------------------------------------------------------
+								contents, index, search buttons
+ ----------------------------------------------------------------------------------------------- */
+
+
+.tab_active {
+	border-right: #fff 1px solid;
+	padding: 6px 20px;
+	background-image: url(../images/tab.active.jpg);
+	cursor:pointer;
+}
+
+.tab_inactive {
+	border-right: #fff 1px solid;
+   padding: 0 20px;
+   background-image: url(../images/tab.inactive.jpg);
+   cursor:pointer;
+}
+
+.tabLink {
+   color: #fff;
+   font-weight: bold;
+	text-decoration:none;
+
+}
+
+.tablink:hover {
+	color: #ce9e08;
+	text-decoration:none;
+}
+
+.book-title {
+    padding:5pt;
+	font-size: 9pt;
+    font-weight:bold;
+    background-color:white;
+}
+
+#searchingMessage {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left:0px;
+	top:0px;
+	text-align: center;
+	display: none;
+	margin:0px;
+	padding:0px;
+}
+#searchingMessage div {
+	border: 1px solid #000;
+	padding:10px;
+	margin: auto;
+	text-align: center;
+	width: 300px;
+	top:200px;
+	position: relative;
+	background-color: #fff;
+	color: #333;
+	font-weight: bold;
+}
+
+/* -----------------------------------------------------------------------------------------------
+								Favorites
+ ----------------------------------------------------------------------------------------------- */
+div#navigationMenuitemNext {
+    padding:5pt;
+}
+
+.navigationLink {
+	color: #4A597B;
+	text-decoration: none;
+}
+
+.navigationLink:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+div.favoritesList {
+    padding: 10pt;
+    font-weight:bold;
+}
+
+a.favoritesLink, a.favoritesLink:visited {
+    color: #00289C;
+}
+
+a.favoritesLink:hover, a.favoritesLink.normalLink:hover, a.favoritesLink.selectedLink:hover {
+    background: #ccc;
+	 color: #CE9E08; 
+	 text-decoration: underline;
+}
+
+a.favoritesLink.selectedLink {
+    background: #333;
+    color: #fff;
+}
+
+a.favoritesLink.normalLink {
+    background: #fff;
+    color: #000;
+}
+
+
+/* TOC classes */
+.topic_opened_toc_image {
+	background: transparent url(../images/book-opened.gif) no-repeat top left;
+	padding: 1px 10px;
+	height: 14px;
+}
+
+.topic_closed_toc_image {
+	background:transparent url(../images/book-closed.gif) no-repeat top left;
+	padding: 1px 10px;
+	height: 14px;
+}
+
+.topic_toc_image {
+	background:transparent url(../images/page.gif) no-repeat top left;
+	padding: 1px 9px;
+	height: 14px;
+}
+
+.empty_toc_image {
+	/*background:transparent url(../images/void.gif) no-repeat center left;*/
+	padding: 1px 9px;
+	height: 14px;
+}
+
+.plus_toc_image {
+	background:transparent url(../images/plus.gif) no-repeat top left;
+	padding: 1px 8px;
+	height: 14px;
+}
+
+.minus_toc_image {
+	background:transparent url(../images/minus.gif) no-repeat top left;
+	padding: 1px 8px;
+	height: 12px;
+}
+
+.toc_entry {
+	padding: 2px;
+	line-height: 15px;
+	float: none;
+}
+
+.tree_entry_title {
+}
+
+/* Loading indicator*/
+.loading-indicator {
+    font-size:11px;
+    background-image:url(../images/loading.gif);
+    background-repeat: no-repeat;
+    background-position:top left;
+    padding-left:20px;
+	height:18px;
+	text-align:left;
+}
+#loading-mask{
+	position:absolute;
+	left:0;
+	top:0;
+    width:100%;
+    height:100%;
+    z-index:20000;
+    background-color:transparent;
+}
+#loading{
+	position:absolute;
+	left:45%;
+	top:40%;
+	padding:2px;
+	z-index:20001;
+    height:auto;
+}
+#loading img {
+    margin-bottom:5px;
+}
+#loading .loading-indicator{
+	background:white;
+	color:#555;
+	font:bold 13px tahoma,arial,helvetica;
+	padding:10px;
+	margin:0;
+    text-align:center;
+    height:auto;
+}
+
+/********** contents.css *******************************/
+
+.treeitem {text-decoration:none;}
+
+.toc_normal {}
+
+.toc_selected {font-weight: bold;}
+
+/********** indexes.css *******************************/
+
+.indexesForm { display:inline; height: 100%;}
+
+.iframeIndexes {width: 100%; height: 100%;}
+
+.tableIndexes {width: 100%; height: 100%;}
+
+.tdIframeContainer {height: 98%;}
+
+.tdSeacrchNextButton {width: 20%; height: 1%;}
+
+.index__entry_text {color: #00289C; text-decoration: none;}
+
+a.highlighted:link, a.highlighted:active, a.highlighted:visited, a.highlighted:hover {background-color: #7B8EB5; color: white;}
+
+a.unhighlighted:link, a.unhighlighted:active, a.unhighlighted:visited {text-decoration: none; color: #00289C;}
+
+a.unhighlighted:hover {color: #CE9E08; text-decoration: none;}
+
+.index__letter_group {
+	background-color: #959595;
+	font-weight: bold;
+	color: #fff;
+	margin: 5pt 0 5pt -2px;
+	padding-left: 2pt;
+	
+}
+
+.index_entry {color: red;}
+
+.index_entry__content {margin-left: 0.25in;}
+
+.index_indents {color: black; font-style: italic;}
+
+.index_indents a.unhighlighted:link, .index_indents a.unhighlighted:active, .index_indents a.unhighlighted:visited {text-decoration: none;}
+
+.index_indents a {color: #00289C;}
+
+/********** search.css *******************************/
+
+#iframeSearch {
+    background: #CCC;
+}
+
+.searchPhrase {text-align: left; font-weight:bold;}
+
+.tdSearchMethodField {font-weight: bold;}
+
+.searchField {width: 100%;}
+
+.searchResultList {display:block; width: 100%; height: 100%;}
+
+.searchResultListWrapper {
+    height: 100%;
+    background-color: white;
+}
+
+ul.searchResultList {
+    padding: 0;
+}
+
+ul.searchResultList > li {
+    list-style-type: none;
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #c3c3c3;
+    padding-left: 10px;
+}
+
+.seacrchButton {width: 100%;}
+
+.searchForm {display: inline; height: auto;}
+
+.tableSearch {width: 100%; height: 100%;}
+
+.tdSearchPhrase {height: 1%;}
+
+.tdSearchField {width: 60%; height: 1%;}
+
+.tdSeacrchButton {width: 30%; height: 1%;}
+
+.tdSearchList {height: 98%;}
+
+.tdSearchWarnings {height: 1%;}
+
+.tdSearchWarningsBlock {color: gray;}
+
+.search_accordion_title {
+    color: white;
+    background-color: gray;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.collapsible_search_panel {
+    padding-top: 2px;
+}
+
+/*Custom toc items*/
+.custom_tree_entry_title{
+	display: block;
+}
+
+.custom_tree_entry_description{
+	font-style: italic;
+}
+
+.custom_tree_entry_image{
+    background: url("../images/book-closed.gif") no-repeat scroll left top transparent;
+    height: 14px;
+    padding: 1px 10px;
+	float: left;
+	margin-left: 20px;
+}
+
+#beehiveSearchPanel .ui-button {
+    background: #E6E6E6 url(../images/submitbutton.png) 50% 50% repeat-x;
+}
+
+#beehiveSearchPanel .ui-button .ui-icon {
+    width: 18px;
+}

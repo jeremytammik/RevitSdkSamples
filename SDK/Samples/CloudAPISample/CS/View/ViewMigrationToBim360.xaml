@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="Revit.SDK.Samples.CloudAPISample.CS.View.ViewMigrationToBim360"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+   <Grid Background="#FFE5E5E5">
+      <Grid.Resources>
+         <Style TargetType="{x:Type Control}" x:Key="Space">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Background" Value="Transparent" />
+         </Style>
+         <Style TargetType="Button">
+            <Setter Property="Margin" Value="0,5,0,5" />
+         </Style>
+         <Style TargetType="TextBox">
+            <Setter Property="Height" Value="24" />
+         </Style>
+      </Grid.Resources>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="*" />
+         <ColumnDefinition Width="*" />
+         <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <StackPanel Margin="10" Grid.Column="0">
+         <Label Content="Step 1. Download" HorizontalAlignment="Left" VerticalAlignment="Top" />
+         <Label Content="Models" />
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Name="tbLocalFolder" />
+            <Button Width="20" Grid.Column="1" Click="OnBtnBrowseDirectory_Click">...</Button>
+         </Grid>
+         <Button Click="OnBtnReveal_Click">Reveal in explorer</Button>
+         <TextBlock  Margin="10" TextWrapping="Wrap">
+            1. Manually download cloud models from anywhere, such as BIM 360 Team via eTransmit package.<LineBreak /><LineBreak />
+            2. Click “...” to select a folder location. 
+         </TextBlock>
+      </StackPanel>
+      <StackPanel Margin="10" Grid.Column="1">
+         <Label Content="Step 2. Config" HorizontalAlignment="Left" VerticalAlignment="Top" />
+         <Button Click="OnBtnConfig_Click">Configuration</Button>
+         <Grid>
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="*" />
+               <ColumnDefinition Width="Auto" />
+               <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Rules" />
+            <Button Width="20" Grid.Column="2" Click="OnBtnRemoveRule_Click">-</Button>
+            <Button Width="20" Grid.Column="3" Click="OnBtnAddRule_Click">+</Button>
+         </Grid>
+         <ListView MinHeight="120" Name="lvRules"
+                   ItemsSource="{Binding Path=DataContext.Model.Rules, RelativeSource={RelativeSource AncestorType={x:Type UserControl }}}">
+            <ListView.View>
+               <GridView>
+                  <GridViewColumn Header="Pattern" Width="100">
+                     <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                           <TextBox Text="{Binding Pattern}" />
+                        </DataTemplate>
+                     </GridViewColumn.CellTemplate>
+                  </GridViewColumn>
+                  <GridViewColumn Header="Target Folder" Width="130">
+                     <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                           <ComboBox
+                              ItemsSource="{Binding Path=DataContext.Model.AvailableFolders,
+                              RelativeSource={RelativeSource AncestorType={x:Type UserControl }}}"
+                              DisplayMemberPath="Name"
+                              SelectedValue="{Binding Target}" />
+                        </DataTemplate>
+                     </GridViewColumn.CellTemplate>
+                  </GridViewColumn>
+               </GridView>
+            </ListView.View>
+         </ListView>
+         <TextBlock Margin="10" TextWrapping="Wrap">
+            1. Click “Configuration” to input target cloud information.<LineBreak /><LineBreak />
+            2. Click “+” to add rules to the target folder for models with a specific pattern. The first rule is assigned the highest priority.
+            <LineBreak /><LineBreak />
+            3. A model with no matching pattern will be uploaded to the folder specified by the last rule in the list.
+         </TextBlock>
+      </StackPanel>
+      <Grid Margin="10" Grid.Column="2">
+         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+         </Grid.RowDefinitions>
+         <StackPanel Grid.Row="0">
+            <Label Content="Step 3. Upload" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Button Click="OnBtnUpload_Click">Upload</Button>
+            <Label Content="Progress" Name="lbUploadStatus" />
+            <ProgressBar Height="20" Name="pbUploading" />
+            <TextBlock Margin="10" TextWrapping="Wrap">
+               1. Ensure you are logged in to your Autodesk Account.<LineBreak /><LineBreak />
+               2. Click “Upload” to upload models to the target cloud folder.
+            </TextBlock>
+         </StackPanel>
+         <StackPanel Grid.Row="1">
+            <Label Content="Step 4. Reload" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Button Click="OnBtnRefresh_Click">Refresh</Button>
+            <Label Content="Progress" Name="lbReloadStatus" />
+            <ProgressBar Height="20" Name="pbReloading" />
+            <TextBlock Margin="10" TextWrapping="Wrap">
+               1. Click “Refresh” to direct links to the correct model in the cloud.
+            </TextBlock>
+         </StackPanel>
+      </Grid>
+   </Grid>
+</UserControl>

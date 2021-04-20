@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>StairsAutomation.dll</Assembly>
+    <ClientId>4ce08562-a2e1-4cbf-816d-4923e1363a21</ClientId>
+    <FullClassName>Revit.SDK.Samples.StairsAutomation.CS.Command</FullClassName>
+    <Text>Stairs automation</Text>
+    <Description>A utility sample that creates a series of stairs, stairs runs and stairs landings configurations based upon predefined rules and parameters.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

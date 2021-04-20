@@ -1,0 +1,29 @@
+﻿<Window x:Class="Revit.SDK.Samples.ProgressNotifier.CS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="370" Width="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+
+        <Button Name="button_Open" Grid.Row="0" Grid.Column="0" Click="Button_Open_Click">Open Document</Button>
+        <Label Name="label_FileName"  Grid.Row="0" Grid.Column="1" >FileName</Label>
+        <Button Name="button_Cancel" Grid.Row="1" Grid.Column="0" Click="button_Cancel_Click">Cancel</Button>
+        <Label Name="label_ProgressStack" Grid.Row="2" Grid.Column="0">Progress Information Stack</Label>
+        <StackPanel Name="stackPanel_ProgressData" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></StackPanel>
+        <Label Name="label_log" Grid.Row="4" Grid.Column="0" Content="Log"></Label>
+        <TextBox Name="textBox_log" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible"></TextBox>
+    </Grid>
+</Window>
