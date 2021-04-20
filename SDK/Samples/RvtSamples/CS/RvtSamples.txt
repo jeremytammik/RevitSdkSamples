@@ -1419,7 +1419,7 @@ Test Floor Thickness
 Show how to retrieve and modify floor thickness.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestFloorThickness\VB.NET\bin\TestFloorThickness.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestFloorThickness\VB.NET\bin\Debug\TestFloorThickness.dll
 Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
 
 Parameters
@@ -1427,7 +1427,7 @@ Test Wall Thickness
 Show how to retrieve and modify wall thickness.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestWallThickness\VB.NET\bin\TestWallThickness.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestWallThickness\VB.NET\bin\Debug\TestWallThickness.dll
 Revit.SDK.Samples.TestWallThickness.VB.NET.Command
 
 Parameters, Structure
