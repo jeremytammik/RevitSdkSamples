@@ -1909,3 +1909,6 @@ LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\VisibilityControl\CS\bin\Debug\VisibilityControl.dll
 Revit.SDK.Samples.VisibilityControl.CS.Command
+
+##include Y:\a\src\rvt\AdnRevitApiLabsXtra/AdnSamples.txt
+#include Y:\a\src\rvt\the_building_coder_samples\BcSamples.txt
