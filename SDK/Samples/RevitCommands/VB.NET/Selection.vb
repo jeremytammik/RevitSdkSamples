@@ -93,9 +93,9 @@ Public Class RvtCmd_Selection
          End If
 
          i += 1
-         str += "  " & i.ToString & _
-          ". id=" & elem.Id.IntegerValue.ToString & _
-          " Cat=" & catName & _
+         str += "  " & i.ToString &
+          ". id=" & elem.Id.ToString &
+          " Cat=" & catName &
           " Type=" & elem.Name & vbCrLf
       Next
       MsgBox(str)

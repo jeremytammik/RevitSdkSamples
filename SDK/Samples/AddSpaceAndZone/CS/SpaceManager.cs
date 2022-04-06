@@ -37,14 +37,14 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
     class SpaceManager
     {
         ExternalCommandData m_commandData;
-        Dictionary<int, List<Space>> m_spaceDictionary;
+        Dictionary<ElementId, List<Space>> m_spaceDictionary;
 
         /// <summary>
         /// The constructor of SpaceManager class.
         /// </summary>
         /// <param name="data">The ExternalCommandData</param>
         /// <param name="spaceData">The spaceData contains all the Space elements in different level.</param>
-        public SpaceManager(ExternalCommandData data, Dictionary<int,List<Space>> spaceData)
+        public SpaceManager(ExternalCommandData data, Dictionary<ElementId,List<Space>> spaceData)
         {
             m_commandData = data;
             m_spaceDictionary = spaceData;
@@ -57,7 +57,7 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
         /// <returns>Return a space list</returns>
         public List<Space> GetSpaces(Level level)
         {
-            return m_spaceDictionary[level.Id.IntegerValue];
+            return m_spaceDictionary[level.Id];
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
                     Space space = m_commandData.Application.ActiveUIDocument.Document.GetElement(elem) as Space;
                     if (space != null)
                     {
-                        m_spaceDictionary[level.Id.IntegerValue].Add(space);
+                        m_spaceDictionary[level.Id].Add(space);
                     }
                 }
                 if (elements == null || elements.Count == 0)

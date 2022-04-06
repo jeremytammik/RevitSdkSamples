@@ -188,6 +188,10 @@ namespace Revit.SDK.Samples.EventsMonitor.CS
                case "ProgressChanged":
                     m_app.ControlledApplication.ProgressChanged += new EventHandler<ProgressChangedEventArgs>(app_eventsHandlerMethod);
                     break;
+               case "SelectionChanged":
+                    m_app.SelectionChanged += new EventHandler<SelectionChangedEventArgs>(app_eventsHandlerMethod);
+                    break;
+
             }
         }
 
@@ -268,8 +272,10 @@ namespace Revit.SDK.Samples.EventsMonitor.CS
                case "ProgressChanged":
                     m_app.ControlledApplication.ProgressChanged -= app_eventsHandlerMethod;
                     break;
-
-            }
+               case "SelectionChanged":
+                    m_app.SelectionChanged -= app_eventsHandlerMethod;
+                    break;
+         }
         }
 
         /// <summary>

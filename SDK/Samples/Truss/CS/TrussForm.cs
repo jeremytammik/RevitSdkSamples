@@ -275,46 +275,57 @@ namespace Revit.SDK.Samples.Truss.CS
             this.ViewComboBox.Enabled = false;
         }
 
-        /// <summary>
-        /// create truss in Revit
-        /// </summary>
-        /// <returns>new created truss</returns>
-        public Autodesk.Revit.DB.Structure.Truss CreateTruss()
-        {
-            Autodesk.Revit.DB.Document document = m_commandData.Application.ActiveUIDocument.Document;
-            Autodesk.Revit.Creation.Document createDoc = document.Create;
-            Autodesk.Revit.Creation.Application createApp = m_commandData.Application.Application.Create;
-            //sketchPlane
-            Autodesk.Revit.DB.XYZ origin = new Autodesk.Revit.DB.XYZ(0, 0, 0);
-            Autodesk.Revit.DB.XYZ xDirection = new Autodesk.Revit.DB.XYZ(1, 0, 0);
-            Autodesk.Revit.DB.XYZ yDirection = new Autodesk.Revit.DB.XYZ(0, 1, 0);
-            Plane plane = Plane.CreateByOriginAndBasis(xDirection, yDirection, origin);
-            SketchPlane sketchPlane = SketchPlane.Create(document, plane);
-            //new base Line
-            AnalyticalModel frame1 = column1.GetAnalyticalModel();
-            Autodesk.Revit.DB.XYZ centerPoint1 = (frame1.GetCurve() as Line).GetEndPoint(0);
-            AnalyticalModel frame2 = column2.GetAnalyticalModel();
-            Autodesk.Revit.DB.XYZ centerPoint2 = (frame2.GetCurve() as Line).GetEndPoint(0);
-            Autodesk.Revit.DB.XYZ startPoint = new Autodesk.Revit.DB.XYZ(centerPoint1.X, centerPoint1.Y, 0);
-            Autodesk.Revit.DB.XYZ endPoint = new Autodesk.Revit.DB.XYZ(centerPoint2.X, centerPoint2.Y, 0);
-            Autodesk.Revit.DB.Line baseLine = null;
+      /// <summary>
+      /// create truss in Revit
+      /// </summary>
+      /// <returns>new created truss</returns>
+      public Autodesk.Revit.DB.Structure.Truss CreateTruss()
+      {
+         Autodesk.Revit.DB.Document document = m_commandData.Application.ActiveUIDocument.Document;
+         Autodesk.Revit.Creation.Document createDoc = document.Create;
+         Autodesk.Revit.Creation.Application createApp = m_commandData.Application.Application.Create;
+         //sketchPlane
+         Autodesk.Revit.DB.XYZ origin = new Autodesk.Revit.DB.XYZ(0, 0, 0);
+         Autodesk.Revit.DB.XYZ xDirection = new Autodesk.Revit.DB.XYZ(1, 0, 0);
+         Autodesk.Revit.DB.XYZ yDirection = new Autodesk.Revit.DB.XYZ(0, 1, 0);
+         Plane plane = Plane.CreateByOriginAndBasis(xDirection, yDirection, origin);
+         SketchPlane sketchPlane = SketchPlane.Create(document, plane);
+         //new base Line
+         Curve frame1Curve = null;
+         Curve frame2Curve = null;
+         if (column1.Location is LocationCurve)
+         {
+            frame1Curve = (column1.Location as LocationCurve).Curve;
+         }
+         if (column2.Location is LocationCurve)
+         {
+            frame2Curve = (column2.Location as LocationCurve).Curve;
+         }
+         
+         Autodesk.Revit.DB.XYZ centerPoint1 = (frame1Curve as Line).GetEndPoint(0);
+         
 
-            try
-            { baseLine = Line.CreateBound(startPoint, endPoint); }
-            catch (System.ArgumentException)
-            {
-                TaskDialog.Show("Argument Exception", "Two column you selected are too close to create truss.");
-            }
+         Autodesk.Revit.DB.XYZ centerPoint2 = (frame2Curve as Line).GetEndPoint(0);
+         Autodesk.Revit.DB.XYZ startPoint = new Autodesk.Revit.DB.XYZ(centerPoint1.X, centerPoint1.Y, 0);
+         Autodesk.Revit.DB.XYZ endPoint = new Autodesk.Revit.DB.XYZ(centerPoint2.X, centerPoint2.Y, 0);
+         Autodesk.Revit.DB.Line baseLine = null;
 
-            return Autodesk.Revit.DB.Structure.Truss.Create(document, m_selectedTrussType.Id, sketchPlane.Id, baseLine);
-        }
+         try
+         { baseLine = Line.CreateBound(startPoint, endPoint); }
+         catch (System.ArgumentException)
+         {
+            TaskDialog.Show("Argument Exception", "Two column you selected are too close to create truss.");
+         }
 
-        /// <summary>
-        /// draw profile, top chord and bottom of truss
-        /// </summary>
-        /// <param name="sender">object who sent this event</param>
-        /// <param name="e">event args</param>
-        private void ProfileEditPictureBox_Paint(object sender, PaintEventArgs e)
+         return Autodesk.Revit.DB.Structure.Truss.Create(document, m_selectedTrussType.Id, sketchPlane.Id, baseLine);
+      }
+
+      /// <summary>
+      /// draw profile, top chord and bottom of truss
+      /// </summary>
+      /// <param name="sender">object who sent this event</param>
+      /// <param name="e">event args</param>
+      private void ProfileEditPictureBox_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 

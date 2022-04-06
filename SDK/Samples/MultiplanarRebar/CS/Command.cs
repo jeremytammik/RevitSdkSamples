@@ -160,7 +160,7 @@ namespace Revit.SDK.Samples.MultiplanarRebar.CS
             // •Hosting Rebar.
             // •Autojoining to columns and walls.
             // •Manual joining to other concrete elements.
-            return (corbel.Category.Id.IntegerValue == (int)BuiltInCategory.OST_StructConnections &&
+            return (corbel.Category.BuiltInCategory == BuiltInCategory.OST_StructConnections &&
                     (corbel.StructuralMaterialType == StructuralMaterialType.Concrete ||
                     corbel.StructuralMaterialType == StructuralMaterialType.PrecastConcrete));
         }

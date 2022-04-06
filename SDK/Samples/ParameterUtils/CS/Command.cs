@@ -119,7 +119,7 @@ namespace Revit.SDK.Samples.ParameterUtils.CS
 
                             // using ActiveDocument.GetElement(the element id) to 
                             // retrieve the element from the active document
-                            Autodesk.Revit.DB.ElementId elemId = new ElementId(param.AsElementId().IntegerValue);
+                            Autodesk.Revit.DB.ElementId elemId = param.AsElementId();
                             Element elem = app.ActiveUIDocument.Document.GetElement(elemId);
 
                             // if there is an element then display its name, 

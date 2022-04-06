@@ -37,7 +37,7 @@ namespace Revit.SDK.Samples.UIAPI.CS
             DBViewItem activeItem = null;
             foreach (Autodesk.Revit.DB.View dbView in secs)
             {
-                if (viewId == null || viewId.IntegerValue < 0)
+                if (viewId == null || viewId == ElementId.InvalidElementId)
                 {
                     activeItem = new DBViewItem(dbView, _dbDocument);
                     viewId = dbView.Id;

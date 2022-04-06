@@ -151,7 +151,7 @@ namespace Revit.SDK.Samples.AutoJoin.CS
 
                     for (int ii = 0; ii < joinedElements.Size; ii++)
                     {
-                        if (aElement.Id.IntegerValue == joinedElements.get_Item(ii).Id.IntegerValue)
+                        if (aElement.Id == joinedElements.get_Item(ii).Id)
                         {
                             isContained = true;
                             break;
@@ -184,7 +184,7 @@ namespace Revit.SDK.Samples.AutoJoin.CS
         /// <returns>return true if A and B are overlapped, or else return false.</returns>
         public bool IsOverlapped(CombinableElement elementA, CombinableElement elementB)
         {
-            if (elementA.Id.IntegerValue == elementB.Id.IntegerValue)
+            if (elementA.Id == elementB.Id)
             {
                 return false;
             }

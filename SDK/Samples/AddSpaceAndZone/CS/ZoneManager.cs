@@ -36,7 +36,7 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
     class ZoneManager
     {
         ExternalCommandData m_commandData;
-        Dictionary<int, List<Zone>> m_zoneDictionary;
+        Dictionary<ElementId, List<Zone>> m_zoneDictionary;
         Level m_currentLevel;
         Zone m_currentZone;
 
@@ -45,7 +45,7 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
         /// </summary>
         /// <param name="commandData">The ExternalCommandData</param>
         /// <param name="zoneData">The spaceData contains all the Zone elements in different level.</param>
-        public ZoneManager(ExternalCommandData commandData, Dictionary<int, List<Zone>>  zoneData)
+        public ZoneManager(ExternalCommandData commandData, Dictionary<ElementId, List<Zone>>  zoneData)
         {
             m_commandData = commandData;
             m_zoneDictionary = zoneData;
@@ -61,7 +61,7 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
             Zone zone = m_commandData.Application.ActiveUIDocument.Document.Create.NewZone(level, phase);
             if (zone != null)
             {
-                this.m_zoneDictionary[level.Id.IntegerValue].Add(zone);
+                this.m_zoneDictionary[level.Id].Add(zone);
             }
         }
 
@@ -91,7 +91,7 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
         public List<Zone> GetZones(Level level)
         {
             m_currentLevel = level;
-            return m_zoneDictionary[level.Id.IntegerValue];
+            return m_zoneDictionary[level.Id];
         }
 
         /// <summary>

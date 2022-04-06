@@ -173,9 +173,8 @@ Public Class TypeSelectorWindow
          Dim familySymbolId As Autodesk.Revit.DB.ElementId
          For Each familySymbolId In family.GetFamilySymbolIds()
             familySymbol = m_document.GetElement(familySymbolId)
-            Me.TypeList.Items.Add(New Mylist(familySymbol.Name, familySymbol.Id.IntegerValue))
-            'Me.TypeList.ItemData(Me.TypeList.ListCount - 1) = familySymbol.Id.IntegerValue
-            If (component.Symbol.Id.IntegerValue = familySymbol.Id.IntegerValue) Then
+            Me.TypeList.Items.Add(New Mylist(familySymbol.Name, familySymbol.Id))
+            If (component.Symbol.Id = familySymbol.Id) Then
                Me.TypeList.SelectedIndex = Me.TypeList.Items.Count - 1
             End If
          Next
@@ -198,8 +197,8 @@ Public Class TypeSelectorWindow
 
             For Each wallTypeElement In filteredElementCollector
                 otherWallType = TryCast(wallTypeElement, Autodesk.Revit.DB.WallType)
-                Me.TypeList.Items.Add(New Mylist(otherWallType.Name, otherWallType.Id.IntegerValue))
-                If (wallType.Id.IntegerValue = otherWallType.Id.IntegerValue) Then
+                Me.TypeList.Items.Add(New Mylist(otherWallType.Name, otherWallType.Id))
+                If (wallType.Id = otherWallType.Id) Then
                     Me.TypeList.SelectedIndex = Me.TypeList.Items.Count - 1
                 End If
             Next
@@ -220,7 +219,7 @@ Public Class TypeSelectorWindow
         ' Get the selected item. 
         mList = Me.TypeList.Items(Me.TypeList.SelectedIndex)
 
-        Dim typeId As Autodesk.Revit.DB.ElementId = New Autodesk.Revit.DB.ElementId(mList.ItemData)
+        Dim typeId As Autodesk.Revit.DB.ElementId = mList.ItemData
 
         Dim element As Autodesk.Revit.DB.Element
         element = m_document.GetElement(m_elementId)
@@ -275,7 +274,7 @@ End Class
 ''' <remarks></remarks>
 Public Class Mylist
     Private sName As String ' type name
-    Private iID As Integer ' id of type
+    Private iID As Autodesk.Revit.DB.ElementId ' id of type
 
     ''' <summary>
     ''' new a type list item
@@ -283,7 +282,8 @@ Public Class Mylist
     ''' <remarks></remarks>
     Public Sub New()
         sName = ""
-        iID = 0
+        iID = New Autodesk.Revit.DB.ElementId(0)
+
     End Sub
 
     ''' <summary>
@@ -292,7 +292,7 @@ Public Class Mylist
     ''' <param name="Name">type name</param>
     ''' <param name="ID">index of one item in all types</param>
     ''' <remarks></remarks>
-    Public Sub New(ByVal Name As String, ByVal ID As Integer)
+    Public Sub New(ByVal Name As String, ByVal ID As Autodesk.Revit.DB.ElementId)
         sName = Name
         iID = ID
     End Sub
@@ -315,11 +315,11 @@ Public Class Mylist
     ''' get the selected type item index
     ''' </summary>
     ''' <remarks></remarks>
-    Public Property ItemData() As Integer
+    Public Property ItemData() As Autodesk.Revit.DB.ElementId
         Get
             Return iID
         End Get
-        Set(ByVal iValue As Integer)
+        Set(ByVal iValue As Autodesk.Revit.DB.ElementId)
             iID = iValue
         End Set
     End Property

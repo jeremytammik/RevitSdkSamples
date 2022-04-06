@@ -123,7 +123,7 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
         public void Update()
         {
             if (SymbolChanged != null && m_backUpSymbol != null &&
-                m_backUpSymbol.Id.IntegerValue != m_symbol.Id.IntegerValue)
+                m_backUpSymbol.Id != m_symbol.Id)
                 SymbolChanged(m_symbol);
 
             if (EdgeRemoved != null)

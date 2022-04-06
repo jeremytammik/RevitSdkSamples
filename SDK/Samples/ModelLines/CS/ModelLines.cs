@@ -77,7 +77,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
             // Add all ModelEllipses' id information into the list
             foreach (ModelCurve ellipse in m_ellipseArray)
             {
-               IdInfo info = new IdInfo("ModelEllipse", ellipse.Id.IntegerValue);
+               IdInfo info = new IdInfo("ModelEllipse", ellipse.Id);
                idArray.Add(info);
             }
             // return a read only list
@@ -98,7 +98,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
             // Add all ModelHermiteSplines' id information into the list
             foreach (ModelCurve hermite in m_hermiteArray)
             {
-               IdInfo info = new IdInfo("ModelHermiteSpline", hermite.Id.IntegerValue);
+               IdInfo info = new IdInfo("ModelHermiteSpline", hermite.Id);
                idArray.Add(info);
             }
             // return a read only list
@@ -120,7 +120,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
             // Add all ModelNurbSplines' id information into the list
             foreach (ModelCurve nurb in m_nurbArray)
             {
-               IdInfo info = new IdInfo("ModelNurbSpline", nurb.Id.IntegerValue);
+               IdInfo info = new IdInfo("ModelNurbSpline", nurb.Id);
                idArray.Add(info);
             }
             // return a read only list
@@ -140,7 +140,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
             // Add all SketchPlane' id information into the list
             foreach (SketchPlane sketch in m_sketchArray)
             {
-               IdInfo info = new IdInfo("SketchPlane", sketch.Id.IntegerValue);
+               IdInfo info = new IdInfo("SketchPlane", sketch.Id);
                idArray.Add(info);
             }
             // return a read only list
@@ -238,7 +238,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
       /// <param name="sketchId">the id of the sketch plane</param>
       /// <param name="startPoint">the start point of the line</param>
       /// <param name="endPoint">the end point of the line</param>
-      public void CreateLine(int sketchId, Autodesk.Revit.DB.XYZ startPoint, Autodesk.Revit.DB.XYZ endPoint)
+      public void CreateLine(ElementId sketchId, Autodesk.Revit.DB.XYZ startPoint, Autodesk.Revit.DB.XYZ endPoint)
       {
          try
          {
@@ -284,7 +284,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
       /// <param name="startPoint">the start point of the arc</param>
       /// <param name="endPoint">the end point of the arc</param>
       /// <param name="thirdPoint">the third point which is on the arc</param>
-      public void CreateArc(int sketchId, Autodesk.Revit.DB.XYZ startPoint, Autodesk.Revit.DB.XYZ endPoint, Autodesk.Revit.DB.XYZ thirdPoint)
+      public void CreateArc(ElementId sketchId, Autodesk.Revit.DB.XYZ startPoint, Autodesk.Revit.DB.XYZ endPoint, Autodesk.Revit.DB.XYZ thirdPoint)
       {
          try
          {
@@ -329,7 +329,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
       /// <param name="sketchId">the id of the sketch plane</param>
       /// <param name="elementId">the element id which copy the curve from</param>
       /// <param name="offsetPoint">the offset direction from the copied line</param>
-      public void CreateOthers(int sketchId, int elementId, Autodesk.Revit.DB.XYZ offsetPoint)
+      public void CreateOthers(ElementId sketchId, ElementId elementId, Autodesk.Revit.DB.XYZ offsetPoint)
       {
          // First get the sketch plane by the giving element id.
          SketchPlane workPlane = GetSketchPlaneById(sketchId);
@@ -502,13 +502,10 @@ namespace Revit.SDK.Samples.ModelLines.CS
       /// </summary>
       /// <param name="id">the element id value</param>
       /// <returns>the corresponding element</returns>
-      Autodesk.Revit.DB.Element GetElementById(int id)
+      Autodesk.Revit.DB.Element GetElementById(ElementId id)
       {
-         // Create a Autodesk.Revit.DB.ElementId data
-         Autodesk.Revit.DB.ElementId elementId = new Autodesk.Revit.DB.ElementId(id);
-
          // Get the corresponding element
-         return m_revit.ActiveUIDocument.Document.GetElement(elementId);
+         return m_revit.ActiveUIDocument.Document.GetElement(id);
       }
 
 
@@ -517,7 +514,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
       /// </summary>
       /// <param name="id">the element id value</param>
       /// <returns>the corresponding sketch plane</returns>
-      SketchPlane GetSketchPlaneById(int id)
+      SketchPlane GetSketchPlaneById(ElementId id)
       {
          // First get the sketch plane by the giving element id.
          SketchPlane workPlane = GetElementById(id) as SketchPlane;

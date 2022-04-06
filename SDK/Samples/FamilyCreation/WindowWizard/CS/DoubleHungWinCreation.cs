@@ -139,12 +139,12 @@ namespace Revit.SDK.Samples.WindowWizard.CS
         /// <summary>
         /// store the glass material ID
         /// </summary>
-        int m_glassMatID;
+        ElementId m_glassMatID;
 
         /// <summary>
         /// store the sash material ID
         /// </summary>
-        int m_sashMatID;
+        ElementId m_sashMatID;
         #endregion
 
         /// <summary>
@@ -350,7 +350,7 @@ namespace Revit.SDK.Samples.WindowWizard.CS
                 sash1.Subcategory = m_frameCat;
                 sash2.Subcategory = m_frameCat;
             }
-            Autodesk.Revit.DB.ElementId id = new ElementId(m_sashMatID);
+            Autodesk.Revit.DB.ElementId id = m_sashMatID;
             sash1.get_Parameter(BuiltInParameter.MATERIAL_ID_PARAM).Set(id);
             sash2.get_Parameter(BuiltInParameter.MATERIAL_ID_PARAM).Set(id);
             subTransaction.Commit();
@@ -408,7 +408,7 @@ namespace Revit.SDK.Samples.WindowWizard.CS
                 glass1.Subcategory = m_glassCat;
                 glass2.Subcategory = m_glassCat;
             }
-            Autodesk.Revit.DB.ElementId id = new ElementId(m_glassMatID);
+            Autodesk.Revit.DB.ElementId id = m_glassMatID;
 
             glass1.get_Parameter(BuiltInParameter.MATERIAL_ID_PARAM).Set(id);
             glass2.get_Parameter(BuiltInParameter.MATERIAL_ID_PARAM).Set(id);
@@ -432,12 +432,12 @@ namespace Revit.SDK.Samples.WindowWizard.CS
                 Material material = materialElement as Material;
                 if (0 == material.Name.CompareTo(m_para.SashMat))
                 {
-                    m_sashMatID = material.Id.IntegerValue;
+                    m_sashMatID = material.Id;
                 }
 
                 if (0 == material.Name.CompareTo(m_para.GlassMat))
                 {
-                    m_glassMatID = material.Id.IntegerValue;
+                    m_glassMatID = material.Id;
                 }
             }
             subTransaction.Commit();

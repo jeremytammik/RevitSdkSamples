@@ -206,7 +206,7 @@ namespace Revit.SDK.Samples.RoomSchedule
             foreach (Room room in m_rooms)
             {
                 // check whether room is located at specified level 
-                if ((null == level) || (m_activeDocument.GetElement(room.LevelId) != null && room.LevelId.IntegerValue == level.Id.IntegerValue))
+                if ((null == level) || (m_activeDocument.GetElement(room.LevelId) != null && room.LevelId == level.Id))
                 {
                     DataRow dataRow = newTable.NewRow();
                     for (int i = 0; i < m_parameters.Count; i++)

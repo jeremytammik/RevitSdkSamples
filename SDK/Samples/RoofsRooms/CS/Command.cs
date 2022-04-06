@@ -208,7 +208,7 @@ namespace Revit.SDK.Samples.RoofsRooms.CS
                     if (roofs.Count == 1)
                     {
                         Element roof = m_document.GetElement(roofs[0]);
-                        roofsString = String.Format("Roof: Id = {0}, Name = {1}", roof.Id.IntegerValue, roof.Name);
+                        roofsString = String.Format("Roof: Id = {0}, Name = {1}", roof.Id.ToString(), roof.Name);
                     }
                     // Multiple roofs
                     else
@@ -219,7 +219,7 @@ namespace Revit.SDK.Samples.RoofsRooms.CS
                     // Save results
                     logs = String.Format(
                         "  Room: Id = {0}, Name = {1} --> {2}",
-                        kvp.Key.Id.IntegerValue, kvp.Key.Name, roofsString);
+                        kvp.Key.Id.ToString(), kvp.Key.Name, roofsString);
                     message += logs + "\t\r\n";
                     Trace.WriteLine(logs);
                 }
@@ -236,7 +236,7 @@ namespace Revit.SDK.Samples.RoofsRooms.CS
                 {
                     elements.Insert(room);
                     logs = String.Format("  Room Id: {0}, Room Name: {1}",
-                        room.Id.IntegerValue, room.Name);
+                        room.Id.ToString(), room.Name);
                     message += logs + "\t\r\n";
                     Trace.WriteLine(logs);
                 }

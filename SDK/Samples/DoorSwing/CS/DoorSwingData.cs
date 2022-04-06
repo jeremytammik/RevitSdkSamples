@@ -427,7 +427,7 @@ namespace Revit.SDK.Samples.DoorSwing.CS
             else if ((null != door.Room) && (null != door.FromRoom))
             {
                 // door.Room are consistent with door.FromRoom, so need update.
-                if (door.Room.Id.IntegerValue.Equals(door.FromRoom.Id.IntegerValue))
+                if (door.Room.Id == door.FromRoom.Id)
                 {
                     if (updateGeo) // update geometry
                     {

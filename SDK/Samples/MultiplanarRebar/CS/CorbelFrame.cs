@@ -426,7 +426,6 @@ namespace Revit.SDK.Samples.MultiplanarRebar.CS
 
             bars.GetShapeDrivenAccessor().SetLayoutAsFixedNumber(options.TopBarCount + 2,
                 m_extrusionLine.Length - 2 * offset, true, false, false);
-            ShowRebar3d(bars);
         }
 
         /// <summary>
@@ -466,7 +465,6 @@ namespace Revit.SDK.Samples.MultiplanarRebar.CS
 
             newRebar.GetShapeDrivenAccessor().ScaleToBoxFor3D(origin + extruDir * (m_extrusionLine.Length - offset),
                 vx, vy, m_extrusionLine.Length - 2 * offset);
-            ShowRebar3d(newRebar);
         }
 
         /// <summary>
@@ -509,7 +507,6 @@ namespace Revit.SDK.Samples.MultiplanarRebar.CS
 
             stirrupBars.GetShapeDrivenAccessor().SetLayoutAsFixedNumber(options.StirrupBarCount + 1, profileCopy.Top.Length, false, false, true);
             stirrupBars.GetShapeDrivenAccessor().ScaleToBox(origin, xAxis * xLength, yAxis * yLength);
-            ShowRebar3d(stirrupBars);
 
             double space = profileCopy.Top.Length / options.StirrupBarCount;
             double step = space * m_profile.Vertical.Length / (m_profile.Bottom.Length - m_profile.Top.Length);
@@ -527,7 +524,6 @@ namespace Revit.SDK.Samples.MultiplanarRebar.CS
                     options.StirrupBarType, m_corbel, origin, xAxis, yAxis);
 
                 stirrupBars2.GetShapeDrivenAccessor().ScaleToBox(origin, xAxis * xLength, yAxis * (yLength - i * step));
-                ShowRebar3d(stirrupBars2);
             }
         }
 
@@ -562,24 +558,6 @@ namespace Revit.SDK.Samples.MultiplanarRebar.CS
                 RebarHookOrientation.Left, RebarHookOrientation.Left, true, true);
 
             bars.GetShapeDrivenAccessor().SetLayoutAsFixedNumber(2, m_extrusionLine.Length - 2 * offset, true, true, true);
-
-            ShowRebar3d(bars);
-        }
-
-        /// <summary>
-        /// Show the given rebar as solid in 3d view.
-        /// </summary>
-        /// <param name="rebar">Rebar to show in 3d view as solid</param>
-        private void ShowRebar3d(Rebar rebar)
-        {
-            var filter = new FilteredElementCollector(rebar.Document)
-                .OfClass(typeof(View3D));
-
-            foreach (View3D view in filter)
-            {
-                rebar.IsUnobscuredInView(view);
-                rebar.SetSolidInView(view, true);
-            }
         }
     }
 }

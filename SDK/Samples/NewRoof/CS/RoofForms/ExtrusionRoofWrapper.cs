@@ -122,14 +122,14 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
             get
             {
                 Parameter para = m_roof.get_Parameter(BuiltInParameter.ROOF_CONSTRAINT_LEVEL_PARAM);
-                return LevelConverter.GetLevelByID(para.AsElementId().IntegerValue);
+                return LevelConverter.GetLevelByID(para.AsElementId());
             }
             set
             {
                 // update reference level
                 Parameter para = m_roof.get_Parameter(BuiltInParameter.ROOF_CONSTRAINT_LEVEL_PARAM);
                 Autodesk.Revit.DB.ElementId id = new Autodesk.Revit.DB.ElementId(value.Id.IntegerValue);
-                para.Set(id);
+                para.Set(value.Id);
             }
         }
 

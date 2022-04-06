@@ -193,7 +193,7 @@ Public Class Command
         For Each element In elementSet
 
             ' first column is the element id - display it as an integer
-            worksheet.Cells(row, 1).Value = element.Id.IntegerValue
+            worksheet.Cells(row, 1).Value = element.Id.ToString()
 
             ' retrieve all the values, in string form for the common properties of the element
             Dim values As System.Collections.Generic.Dictionary(Of String, String) = GetValuesOfNamedProperties(application, element, propertyNames)

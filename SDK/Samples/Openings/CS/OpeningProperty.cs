@@ -60,7 +60,7 @@ namespace Revit.SDK.Samples.Openings.CS
                 if (null != opening.Host.Category)
                     m_hostName = opening.Host.Category.Name;
 
-                m_hostElementId = opening.Host.Id.IntegerValue.ToString();
+                m_hostElementId = opening.Host.Id.ToString();
             }
 
             if (null != opening.Category)

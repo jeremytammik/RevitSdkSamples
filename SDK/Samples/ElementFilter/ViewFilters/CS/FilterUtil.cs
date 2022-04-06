@@ -74,7 +74,7 @@ namespace Revit.SDK.Samples.ViewFilters.CS
          {
             FilterStringRule strRule = innerRule as FilterStringRule;
             FilterStringRuleEvaluator evaluator = strRule.GetEvaluator();
-            return new FilterRuleBuilder(param, GetEvaluatorCriteriaName(evaluator, inverted), strRule.RuleString, strRule.RuleString.ToLower() == strRule.RuleString ? false : true);
+            return new FilterRuleBuilder(param, GetEvaluatorCriteriaName(evaluator, inverted), strRule.RuleString);
          }
          else if (innerRule is FilterDoubleRule)
          {

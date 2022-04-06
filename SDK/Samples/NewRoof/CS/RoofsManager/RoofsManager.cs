@@ -153,7 +153,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
                 {
                     if (plane.Name == "Reference Plane")
                     {
-                        plane.Name = "Reference Plane" + "(" + plane.Id.IntegerValue.ToString() + ")";
+                        plane.Name = "Reference Plane" + "(" + plane.Id.ToString() + ")";
                     }
                     m_referencePlanes.Add(plane);
                 }

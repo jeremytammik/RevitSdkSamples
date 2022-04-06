@@ -174,7 +174,7 @@ namespace Revit.SDK.Samples.FabricationPartLayout.CS
       /// <returns>True if the part is fabrication ductwork.</returns>
       private bool IsADuct(FabricationPart fabPart)
       {
-         return (fabPart != null && (fabPart.Category.Id.IntegerValue == (int)BuiltInCategory.OST_FabricationDuctwork));
+         return (fabPart != null && (fabPart.Category.BuiltInCategory == BuiltInCategory.OST_FabricationDuctwork));
       }
 
       /// <summary>
@@ -184,7 +184,7 @@ namespace Revit.SDK.Samples.FabricationPartLayout.CS
       /// <returns>True if the part is fabrication pipework.</returns>
       private bool IsAPipe(FabricationPart fabPart)
       {
-         return (fabPart != null && (fabPart.Category.Id.IntegerValue == (int)BuiltInCategory.OST_FabricationPipework));
+         return (fabPart != null && (fabPart.Category.BuiltInCategory == BuiltInCategory.OST_FabricationPipework));
       }
 
       /// <summary>

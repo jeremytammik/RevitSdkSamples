@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 using Autodesk.Revit;
 using Autodesk.Revit.DB;
@@ -127,32 +128,44 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
             }
         }
 
-        /// <summary>
-        /// the selected element must be a structural Column/brace/Beam/Wall/Wall Foundation/Slab/Foundation Slab.
-        /// </summary>
-        /// <returns></returns>
-        private bool IsExpectedElement(Element element)
-        {
-
-            // judge the element's type. If it is any type of FamilyInstance, Wall, Floor or 
-            // WallFoundation, then get judge if it has a AnalyticalModel.
-            if (null == element.GetAnalyticalModel())
+      /// <summary>
+      /// the selected element must be a structural Column/brace/Beam/Wall/Wall Foundation/Slab/Foundation Slab.
+      /// </summary>
+      /// <returns></returns>
+      private bool IsExpectedElement(Element element)
+      {
+         // judge the element's type. If it is any type of FamilyInstance, Wall, Floor or 
+         // WallFoundation, then get judge if it has a AnalyticalModel.
+         AnalyticalToPhysicalAssociationManager assocManager = AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(element.Document);
+         AnalyticalElement elemAnalytical = null;
+         if (assocManager != null)
+         {
+            ElementId associatedElementId = assocManager.GetAssociatedElementId(element.Id);
+            if (associatedElementId != ElementId.InvalidElementId)
             {
-                return false;
+               Element associatedElement = element.Document.GetElement(associatedElementId);
+               if (associatedElement != null && associatedElement is AnalyticalElement)
+               {
+                  elemAnalytical = associatedElement as AnalyticalElement;
+               }
             }
-
-            FamilyInstance familyInstance = element as FamilyInstance;
-            if ((null != familyInstance) && (StructuralType.Footing == familyInstance.StructuralType))
-            {
-                return false; // if selected a isolated foundation not create BC
-            }
-
-            if (element is FamilyInstance || element is Wall || element is Floor || element is WallFoundation)
-            {
-                return true;
-            }
-
+         }
+         if (null == elemAnalytical)
+         {
             return false;
-        }
-    }
+         }
+         FamilyInstance familyInstance = element as FamilyInstance;
+         if ((null != familyInstance) && (StructuralType.Footing == familyInstance.StructuralType))
+         {
+            return false; // if selected a isolated foundation not create BC
+         }
+
+         if (element is FamilyInstance || element is Wall || element is Floor || element is WallFoundation)
+         {
+            return true;
+         }
+
+         return false;
+      }
+   }
 }

@@ -22,6 +22,7 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports System.Linq
 
 Imports Autodesk.Revit
 Imports Autodesk.Revit.DB
@@ -90,7 +91,7 @@ Public Class AnalyticalViewer
          mViewer.Draw()
          mViewer.ShowModal()
       Else
-            TaskDialog.Show("Revit", "No analytical model to represent.")
+         TaskDialog.Show("Revit", "No analytical model to represent.")
       End If
 
       mViewer = Nothing
@@ -98,7 +99,6 @@ Public Class AnalyticalViewer
 
       Return Autodesk.Revit.UI.Result.Succeeded
    End Function
-
    ''' <summary>
    ''' distribute analytical model to its corresponding method to be draw.
    ''' </summary>
@@ -106,11 +106,22 @@ Public Class AnalyticalViewer
    ''' <remarks></remarks>
    Private Sub DrawAnalyticalModel(ByVal element As Autodesk.Revit.DB.Element)
 
-      Dim analyticalModel As Autodesk.Revit.DB.Structure.AnalyticalModel = Nothing
+      Dim analyticalModel As Autodesk.Revit.DB.Structure.AnalyticalElement = Nothing
+      Dim document As Document = element.Document
+        Dim assocManager As Autodesk.Revit.DB.Structure.AnalyticalToPhysicalAssociationManager = Autodesk.Revit.DB.Structure.AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(document)
 
-      analyticalModel = element.GetAnalyticalModel()
+        If (assocManager Is Nothing) Then
+            Exit Sub
+        End If
 
-      If (analyticalModel Is Nothing) Then
+        Dim associatedElementId As ElementId = assocManager.GetAssociatedElementId(element.Id)
+        If (associatedElementId Is Nothing) Then
+            Exit Sub
+        End If
+
+        analyticalModel = document.GetElement(associatedElementId)
+
+        If (analyticalModel Is Nothing) Then
          Exit Sub
       End If
 
@@ -118,17 +129,20 @@ Public Class AnalyticalViewer
          mViewer = New RevitViewer.VB.NET.Wireframe
       End If
 
-      If TypeOf element Is Autodesk.Revit.DB.FamilyInstance Then
-         Dim familyInstance As Autodesk.Revit.DB.FamilyInstance = element
+      Dim curves As IList(Of Curve) = New List(Of Curve)
+      If TypeOf analyticalModel Is Autodesk.Revit.DB.Structure.AnalyticalMember Then
+         Dim analyticalMember As Autodesk.Revit.DB.Structure.AnalyticalMember = analyticalModel
 
-         If familyInstance.StructuralType.Equals(Autodesk.Revit.DB.Structure.StructuralType.Footing) Then
-            DrawAnalyticalModelLocation(analyticalModel)
-            Return
-         End If
-
+         curves.Add(analyticalMember.GetCurve)
       End If
 
-      DrawAnalyticalModelCurves(analyticalModel.GetCurves([Structure].AnalyticalCurveType.ActiveCurves))
+      If TypeOf analyticalModel Is Autodesk.Revit.DB.Structure.AnalyticalPanel Then
+         Dim analyticalPanel As Autodesk.Revit.DB.Structure.AnalyticalPanel = analyticalModel
+
+         curves = analyticalPanel.GetOuterContour.ToList
+      End If
+
+      DrawAnalyticalModelCurves(curves)
 
 
    End Sub
@@ -187,57 +201,5 @@ Public Class AnalyticalViewer
       Next
 
    End Sub
-
-
-   ''' <summary>
-   ''' draw analytical location model
-   ''' </summary>
-   ''' <param name="analyticalModel"></param>
-   ''' <remarks></remarks>
-   Private Sub DrawAnalyticalModelLocation(ByVal analyticalModel As Autodesk.Revit.DB.Structure.AnalyticalModel)
-
-      'draw a square
-
-      Dim location As Autodesk.Revit.DB.XYZ
-      location = analyticalModel.GetPoint()
-
-      Dim curves As IList(Of Curve) = New List(Of Curve)()
-
-      Dim point1 As Autodesk.Revit.DB.XYZ
-      point1 = New Autodesk.Revit.DB.XYZ
-      Dim point2 As Autodesk.Revit.DB.XYZ
-      point2 = New Autodesk.Revit.DB.XYZ
-      Dim point3 As Autodesk.Revit.DB.XYZ
-      point3 = New Autodesk.Revit.DB.XYZ
-      Dim point4 As Autodesk.Revit.DB.XYZ
-      point4 = New Autodesk.Revit.DB.XYZ
-
-      point1 = New Autodesk.Revit.DB.XYZ(location.X - 2, location.Y - 2, location.Z)
-
-      point2 = New Autodesk.Revit.DB.XYZ(location.X - 2, location.Y + 2, location.Z)
-
-      point3 = New Autodesk.Revit.DB.XYZ(location.X + 2, location.Y + 2, location.Z)
-
-      point4 = New Autodesk.Revit.DB.XYZ(location.X + 2, location.Y - 2, location.Z)
-
-      Dim line1 As Autodesk.Revit.DB.Line
-      Dim line2 As Autodesk.Revit.DB.Line
-      Dim line3 As Autodesk.Revit.DB.Line
-      Dim line4 As Autodesk.Revit.DB.Line
-
-      line1 = Autodesk.Revit.DB.Line.CreateBound(point1, point2)
-      line2 = Autodesk.Revit.DB.Line.CreateBound(point2, point3)
-      line3 = Autodesk.Revit.DB.Line.CreateBound(point3, point4)
-      line4 = Autodesk.Revit.DB.Line.CreateBound(point4, point1)
-
-      curves.Add(line1)
-      curves.Add(line2)
-      curves.Add(line3)
-      curves.Add(line4)
-
-      DrawAnalyticalModelCurves(curves)
-
-   End Sub
-
 End Class
 

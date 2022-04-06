@@ -22,7 +22,6 @@
 
 using Autodesk.AdvanceSteel.ApplicabilityRanges;
 using Autodesk.AdvanceSteel.ConstructionTypes;
-using Autodesk.AdvanceSteel.DotNetRoots.Units;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.DB.Structure.StructuralSections;
@@ -165,7 +164,6 @@ namespace Revit.SDK.Samples.SampleCommandsSteelElements.AddRangesToConnectionTyp
             MinVal = new RuleApplicabilityData(0.0), // 0 KN
             MaxVal = new RuleApplicabilityData(5.0), // 5 KN
             ObjectId = connectionObjectIdx,
-            Unit = Unit.eUnitType.kForce,
             PropertyId = RuleApplicabilityPropertyId.kFx
          };
 
@@ -203,7 +201,6 @@ namespace Revit.SDK.Samples.SampleCommandsSteelElements.AddRangesToConnectionTyp
             MinVal = new RuleApplicabilityData(0.0), // 0 KN-M
             MaxVal = new RuleApplicabilityData(5.0), // 5 KN-M
             ObjectId = connectionObjectIdx,
-            Unit = Unit.eUnitType.kMoment,
             PropertyId = RuleApplicabilityPropertyId.kMx
          };
 
@@ -223,7 +220,6 @@ namespace Revit.SDK.Samples.SampleCommandsSteelElements.AddRangesToConnectionTyp
             MinVal = new RuleApplicabilityData(10.0), // 10 mm
             MaxVal = new RuleApplicabilityData(20.0), // 20 mm
             ObjectId = connectionObjectIdx,
-            Unit = Unit.eUnitType.kDistance,
             PropertyId = RuleApplicabilityPropertyId.kSection_FlangeThickness
          };
 

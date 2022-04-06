@@ -201,7 +201,7 @@ namespace Revit.SDK.Samples.RayTraceBounce.CS
                {
                   MakeLine(startpt, endpt, m_direction, "bounce");
                   m_RayCount = m_RayCount + 1;
-                  string info = "Intersected Element Type: [" + referenceElement.GetType().ToString() + "] ElementId: [" + referenceElement.Id.IntegerValue.ToString();
+                  string info = "Intersected Element Type: [" + referenceElement.GetType().ToString() + "] ElementId: [" + referenceElement.Id.ToString();
                   m_face = referenceObject as Face;
                   if (m_face.MaterialElementId != ElementId.InvalidElementId)
                   {

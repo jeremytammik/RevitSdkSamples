@@ -67,7 +67,7 @@ namespace Revit.SDK.Samples.RebarContainerAnyShapeType.CS
             if (new FilteredElementCollector(m_commandData.Application.ActiveUIDocument.Document)
                 .OfClass(typeof(Rebar))
                 .Cast<Rebar>()
-                .Where(x => x.GetHostId().IntegerValue == m_hostObject.Id.IntegerValue).Count() > 0)
+                .Where(x => x.GetHostId() == m_hostObject.Id).Count() > 0)
                 return false;
             
             return true;

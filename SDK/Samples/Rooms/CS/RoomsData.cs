@@ -195,7 +195,7 @@ namespace Revit.SDK.Samples.Rooms.CS
                     LocationPoint locPoint = tmpRoom.Location as LocationPoint;
                     if (null == locPoint)
                     {
-                        String roomId = "Room Id:  " + tmpRoom.Id.IntegerValue.ToString();
+                        String roomId = "Room Id:  " + tmpRoom.Id.ToString();
                         String errMsg = roomId + "\r\nFault to create room tag," +
                                                    "can't get the location point!";
                         throw new Exception(errMsg);
@@ -426,13 +426,13 @@ namespace Revit.SDK.Samples.Rooms.CS
             // add it to the list RoomWithTag and delete it from list RoomWithoutTag
             foreach (RoomTag tmpTag in m_roomTags)
             {
-                int idValue = tmpTag.Room.Id.IntegerValue;
+                ElementId idValue = tmpTag.Room.Id;
                 m_roomsWithTag.Add(tmpTag.Room);
 
                 // search the id for list RoomWithoutTag
                 foreach (Room tmpRoom in m_rooms)
                 {
-                    if (idValue == tmpRoom.Id.IntegerValue)
+                    if (idValue == tmpRoom.Id)
                     {
                         m_roomsWithoutTag.Remove(tmpRoom);
                     }

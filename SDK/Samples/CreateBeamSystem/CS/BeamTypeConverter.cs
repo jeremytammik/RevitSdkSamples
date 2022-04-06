@@ -119,7 +119,7 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
 
                 foreach (KeyValuePair<string, FamilySymbol> kvp in m_hash)
                 {
-                    if (kvp.Value.Id.IntegerValue == symbol.Id.IntegerValue)
+                    if (kvp.Value.Id == symbol.Id)
                     {
                         return kvp.Key;
                     }

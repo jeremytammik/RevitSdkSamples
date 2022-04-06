@@ -196,7 +196,7 @@ namespace Revit.SDK.Samples.TraverseSystem.CS
                 }
 
                 writer.WriteAttributeString("Name", element.Name);
-                writer.WriteAttributeString("Id", element.Id.IntegerValue.ToString());
+                writer.WriteAttributeString("Id", element.Id.ToString());
                 writer.WriteAttributeString("Direction", m_direction.ToString());
                 writer.WriteEndElement();
             }
@@ -206,7 +206,7 @@ namespace Revit.SDK.Samples.TraverseSystem.CS
 
                 writer.WriteStartElement(type);
                 writer.WriteAttributeString("Name", element.Name);
-                writer.WriteAttributeString("Id", element.Id.IntegerValue.ToString());
+                writer.WriteAttributeString("Id", element.Id.ToString());
                 writer.WriteAttributeString("Direction", m_direction.ToString());
                 writer.WriteEndElement();
             }
@@ -349,7 +349,7 @@ namespace Revit.SDK.Samples.TraverseSystem.CS
             foreach (Connector conn in cm.Connectors)
             {
                 // Ignore the connector does not belong to any MEP System or belongs to another different MEP system
-                if (conn.MEPSystem == null || !conn.MEPSystem.Id.IntegerValue.Equals(m_system.Id.IntegerValue))
+                if (conn.MEPSystem == null || conn.MEPSystem.Id != m_system.Id)
                 {
                     continue;
                 }
@@ -373,13 +373,13 @@ namespace Revit.SDK.Samples.TraverseSystem.CS
                 {
                     // Ignore non-EndConn connectors and connectors of the current element
                     if (refConnector.ConnectorType != ConnectorType.End ||
-                        refConnector.Owner.Id.IntegerValue.Equals(conn.Owner.Id.IntegerValue))
+                        refConnector.Owner.Id == conn.Owner.Id)
                     {
                         continue;
                     }
 
                     // Ignore connectors of the previous element
-                    if (inputConnector != null && refConnector.Owner.Id.IntegerValue.Equals(inputConnector.Owner.Id.IntegerValue))
+                    if (inputConnector != null && refConnector.Owner.Id == inputConnector.Owner.Id)
                     {
                         continue;
                     }
@@ -437,7 +437,7 @@ namespace Revit.SDK.Samples.TraverseSystem.CS
             {
                 MEPSystem mepSystem = connector.MEPSystem;
                 // Ignore the connector does not belong to any MEP System or belongs to another different MEP system
-                if (mepSystem == null || !mepSystem.Id.IntegerValue.Equals(m_system.Id.IntegerValue))
+                if (mepSystem == null || mepSystem.Id != m_system.Id)
                 {
                     continue;
                 }
@@ -475,7 +475,7 @@ namespace Revit.SDK.Samples.TraverseSystem.CS
 
             nodes.Sort(delegate(TreeNode t1, TreeNode t2)
                        {
-                           return t1.Id.IntegerValue > t2.Id.IntegerValue ? 1 : (t1.Id.IntegerValue < t2.Id.IntegerValue ? -1 : 0);
+                           return t1.Id > t2.Id ? 1 : (t1.Id < t2.Id ? -1 : 0);
                        }
             );
         }
@@ -493,7 +493,7 @@ namespace Revit.SDK.Samples.TraverseSystem.CS
             {
                 // Ignore non-EndConn connectors and connectors of the current element
                 if (conn.ConnectorType != ConnectorType.End ||
-                    conn.Owner.Id.IntegerValue.Equals(connector.Owner.Id.IntegerValue))
+                    conn.Owner.Id == connector.Owner.Id)
                 {
                     continue;
                 }
@@ -568,7 +568,7 @@ namespace Revit.SDK.Samples.TraverseSystem.CS
 
             // Write Id property
             writer.WriteStartElement("Id");
-            writer.WriteValue(m_system.Id.IntegerValue);
+            writer.WriteValue(m_system.Id.ToString());
             writer.WriteEndElement();
 
             // Write UniqueId property
@@ -590,7 +590,7 @@ namespace Revit.SDK.Samples.TraverseSystem.CS
 
             // Write Category property
             writer.WriteStartElement("Category");
-            writer.WriteAttributeString("Id", m_system.Category.Id.IntegerValue.ToString());
+            writer.WriteAttributeString("Id", m_system.Category.Id.ToString());
             writer.WriteAttributeString("Name", m_system.Category.Name);
             writer.WriteEndElement();
 

@@ -164,7 +164,7 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
         {
             Element eType = elem.Document.GetElement(elem.GetTypeId());
 
-            return eType.Name.Substring(0, 2) + elem.Id.IntegerValue;
+            return eType.Name.Substring(0, 2) + elem.Id.ToString();
         }
 
         public static void SetReadonlyIds1(Document doc)

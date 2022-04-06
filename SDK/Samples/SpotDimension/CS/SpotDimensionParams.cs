@@ -118,7 +118,7 @@ namespace Revit.SDK.Samples.SpotDimension.CS
                     dimensionType.get_Parameter(BuiltInParameter.SPOT_ELEV_LEADER_ARROWHEAD);
                 Autodesk.Revit.DB.ElementId elementId = temporaryParam.AsElementId();
                 //if not found that element, add string "None" to DataTable
-                if (-1 == elementId.IntegerValue)
+                if (Autodesk.Revit.DB.ElementId.InvalidElementId == elementId)
                 {
                     temporaryValue = "None";
                 }
@@ -143,7 +143,7 @@ namespace Revit.SDK.Samples.SpotDimension.CS
                 temporaryParam = dimensionType.get_Parameter(BuiltInParameter.SPOT_ELEV_SYMBOL);
                 elementId = temporaryParam.AsElementId();
                 //if not found that element, add string "None" to DataTable
-                if (-1 == elementId.IntegerValue)
+                if (Autodesk.Revit.DB.ElementId.InvalidElementId == elementId)
                 {
                     temporaryValue = "None";
                 }

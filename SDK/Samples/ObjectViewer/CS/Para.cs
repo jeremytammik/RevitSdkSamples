@@ -99,7 +99,7 @@ namespace Revit.SDK.Samples.ObjectViewer.CS
                     //get value with unit, AsDouble() can get value without unit
                     return parameter.AsValueString();
                 case StorageType.ElementId:
-                    return parameter.AsElementId().IntegerValue.ToString();
+                    return parameter.AsElementId().ToString();
                 case StorageType.Integer:
                     //get value with unit, AsInteger() can get value without unit
                     return parameter.AsValueString();

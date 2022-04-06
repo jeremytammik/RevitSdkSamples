@@ -314,8 +314,8 @@ namespace Revit.SDK.Samples.FindColumns.CS
                         FamilyInstance familyInstance = (FamilyInstance)referenceElement;
                         ElementId familyInstanceId = familyInstance.Id;
                         ElementId wallId = wall.Id;
-                        int categoryIdValue = referenceElement.Category.Id.IntegerValue;
-                        if (categoryIdValue == (int)BuiltInCategory.OST_Columns || categoryIdValue == (int)BuiltInCategory.OST_StructuralColumns)
+                        BuiltInCategory categoryValue = referenceElement.Category.BuiltInCategory;
+                        if (categoryValue == BuiltInCategory.OST_Columns || categoryValue == BuiltInCategory.OST_StructuralColumns)
                         {
                             // Add the column to the map of wall->columns
                             if (m_columnsOnWall.ContainsKey(wallId))

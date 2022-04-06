@@ -67,7 +67,7 @@ namespace Revit.SDK.Samples.GetSetDefaultTypes.CS
 
          _dataGrid_DefaultFamilyTypes.Items.Clear();
 
-         List<int> categories = GetAllFamilyCateogries(_document);
+         List<BuiltInCategory> categories = GetAllFamilyCateogries(_document);
          if (categories.Count < 1)
             return;
 
@@ -95,7 +95,7 @@ namespace Revit.SDK.Samples.GetSetDefaultTypes.CS
                   CateogryId = new ElementId(cid)
                };
                defaultFamilyTypeCandidates.Add(item);
-               if (t.Id.IntegerValue == defaultFamilyTypeId.IntegerValue)
+               if (t.Id == defaultFamilyTypeId)
                   record.DefaultFamilyType = item;
             }
             record.DefaultFamilyTypeCandidates = defaultFamilyTypeCandidates;
@@ -106,23 +106,23 @@ namespace Revit.SDK.Samples.GetSetDefaultTypes.CS
          }
       }
 
-      private List<int> GetAllFamilyCateogries(Document document)
+      private List<BuiltInCategory> GetAllFamilyCateogries(Document document)
       {
          FilteredElementCollector collector = new FilteredElementCollector(document);
          collector = collector.OfClass(typeof(Family));
          var query = collector.ToElements();
 
-         List<int> categoryids = new List<int>();
+         List<BuiltInCategory> categoryids = new List<BuiltInCategory>();
 
          // The corresponding UI for OST_MatchModel is "Architecture->Build->Component"
-         categoryids.Add((int)BuiltInCategory.OST_MatchModel);
+         categoryids.Add(BuiltInCategory.OST_MatchModel);
 
          // The corresponding UI for OST_MatchModel is "Annotate->Detail->Component"
-         categoryids.Add((int)BuiltInCategory.OST_MatchDetail);
+         categoryids.Add(BuiltInCategory.OST_MatchDetail);
 
          foreach (Family t in query)
-            if (!categoryids.Contains(t.FamilyCategory.Id.IntegerValue))
-               categoryids.Add(t.FamilyCategory.Id.IntegerValue);
+            if (!categoryids.Contains(t.FamilyCategory.BuiltInCategory))
+               categoryids.Add(t.FamilyCategory.BuiltInCategory);
 
 
          return categoryids;

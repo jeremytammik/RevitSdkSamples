@@ -331,7 +331,7 @@ namespace Revit.SDK.Samples.RotateFramingObjects.CS
                      break;
                   case StorageType.ElementId:
                      //get Autodesk.Revit.DB.ElementId as string 
-                     valueOfParameter = familyAttribute.AsElementId().IntegerValue.ToString();
+                     valueOfParameter = familyAttribute.AsElementId().ToString();
                      break;
                   case StorageType.Integer:
                      //get Integer as string

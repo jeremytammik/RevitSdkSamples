@@ -52,7 +52,7 @@ namespace Revit.SDK.Samples.CivilAlignments.CS
       /// <returns></returns>
       public bool AllowElement(Element element)
       {
-         return element.Category.Id.IntegerValue == (int)BuiltInCategory.OST_Alignments;
+         return element.Category.BuiltInCategory == BuiltInCategory.OST_Alignments;
       }
 
       /// <summary>

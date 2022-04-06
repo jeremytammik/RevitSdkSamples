@@ -81,8 +81,7 @@ namespace Revit.SDK.Samples.Rooms.CS
                     continue;
                 }
 
-                int idValue = tmpRoom.Id.IntegerValue;
-                string roomId = idValue.ToString();
+                string roomId = tmpRoom.Id.ToString();
 
                 // create a list view Item
                 ListViewItem tmpItem = new ListViewItem(roomId);

@@ -247,7 +247,7 @@ namespace Revit.Samples.MaterialQuantities
                 // material quantities are not extracted for curtain systems.
                 if (e.Category != null)
                 {
-                    if (e.Category.Id.IntegerValue == (int)BuiltInCategory.OST_Doors)
+                    if (e.Category.BuiltInCategory == BuiltInCategory.OST_Doors)
                     {
                         FamilyInstance door = e as FamilyInstance;
                         Wall host = door.Host as Wall;
@@ -377,7 +377,7 @@ namespace Revit.Samples.MaterialQuantities
                 writer.WriteLine(String.Format("Totals for {0} element {1} (id {2}),{3}",
                     GetElementTypeName(),
                     e.Name.Replace(',', ':'), // Element names may have ',' in them
-                    id.IntegerValue, legendLine));
+                    id.ToString(), legendLine));
 
                 Dictionary<ElementId, MaterialQuantities> quantities = m_quantitiesPerElement[id];
 

@@ -34,7 +34,7 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
     {
         String m_levelName;
         double m_levelElevation;
-        int m_levelIDValue;
+        Autodesk.Revit.DB.ElementId m_levelIDValue;
 
         /// <summary>
         /// First column used to store Level's Name
@@ -70,7 +70,7 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
         /// <summary>
         /// Record Level's ID
         /// </summary>
-        public int LevelIDValue
+        public Autodesk.Revit.DB.ElementId LevelIDValue
         {
             get
             {

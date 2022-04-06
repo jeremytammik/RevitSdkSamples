@@ -187,7 +187,7 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
         {
             get
             {
-                String result = "[Id:" + m_elemToModify.Id.IntegerValue + "] ";
+                String result = "[Id:" + m_elemToModify.Id.ToString() + "] ";
                 return result + m_elemToModify.Name;
             }
         }

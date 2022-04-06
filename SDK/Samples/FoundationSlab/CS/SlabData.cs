@@ -24,6 +24,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 using Autodesk.Revit;
 using Autodesk.Revit.DB;
@@ -250,7 +251,7 @@ namespace Revit.SDK.Samples.FoundationSlab.CS
          // Get all slabs at the base of the building.
          foreach (Floor floor in m_floorList)
          {
-            if (floor.LevelId.IntegerValue == m_levelList.Values[0].Id.IntegerValue)
+            if (floor.LevelId == m_levelList.Values[0].Id)
             {
                BoundingBoxXYZ bbXYZ = floor.get_BoundingBox(baseView);   // Get the slab's bounding box.
 
@@ -304,12 +305,28 @@ namespace Revit.SDK.Samples.FoundationSlab.CS
       /// <returns>The profile of the floor.</returns>
       private CurveArray GetFloorProfile(Floor floor)
       {
+
          CurveArray floorProfile = new CurveArray();
-         // Structural slab's profile can be found in it's AnalyticalModel.
-         if (null != floor.GetAnalyticalModel())
+         // Structural slab's profile can be found in it's analytical element.
+         Document document = floor.Document;
+         AnalyticalPanel analyticalModel = null;
+         AnalyticalToPhysicalAssociationManager relManager = AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(document);
+         if (relManager != null)
          {
-            AnalyticalModel analyticalModel = floor.GetAnalyticalModel();
-            IList<Curve> curveList = analyticalModel.GetCurves(AnalyticalCurveType.ActiveCurves);
+            ElementId associatedElementId = relManager.GetAssociatedElementId(floor.Id);
+            if (associatedElementId != ElementId.InvalidElementId)
+            {
+               Element associatedElement = document.GetElement(associatedElementId);
+               if (associatedElement != null && associatedElement is AnalyticalPanel)
+               {
+                  analyticalModel = associatedElement as AnalyticalPanel;
+               }
+            }
+         }
+         if (null != analyticalModel)
+         {
+            IList<Curve> curveList = analyticalModel.GetOuterContour().ToList();
+
             for (int i = 0; i < curveList.Count; i++)
             {
                floorProfile.Append(curveList[i]);

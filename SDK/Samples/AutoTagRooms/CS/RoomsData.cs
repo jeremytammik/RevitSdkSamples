@@ -49,7 +49,7 @@ namespace Revit.SDK.Samples.AutoTagRooms.CS
         // Store all the RoomTagTypes
         List<RoomTagType> m_roomTagTypes = new List<RoomTagType>();
         // Store the room ID and all the tags which tagged to that room
-        Dictionary<int, List<RoomTag>> m_roomWithTags = new Dictionary<int, List<RoomTag>>();
+        Dictionary<ElementId, List<RoomTag>> m_roomWithTags = new Dictionary<ElementId, List<RoomTag>>();
 
         /// <summary>
         /// Constructor of RoomsData
@@ -111,10 +111,10 @@ namespace Revit.SDK.Samples.AutoTagRooms.CS
                     {
                         Room tmpRoom = document.GetElement(eid) as Room;
 
-                        if (document.GetElement(tmpRoom.LevelId) != null && m_roomWithTags.ContainsKey(tmpRoom.Id.IntegerValue) == false)
+                        if (document.GetElement(tmpRoom.LevelId) != null && m_roomWithTags.ContainsKey(tmpRoom.Id) == false)
                         {
                             m_rooms.Add(tmpRoom);
-                            m_roomWithTags.Add(tmpRoom.Id.IntegerValue, new List<RoomTag>());
+                            m_roomWithTags.Add(tmpRoom.Id, new List<RoomTag>());
                         }
                     }
                 }
@@ -145,9 +145,9 @@ namespace Revit.SDK.Samples.AutoTagRooms.CS
 
             foreach (RoomTag roomTag in roomTags)
             {
-                if (m_roomWithTags.ContainsKey(roomTag.Room.Id.IntegerValue))
+                if (m_roomWithTags.ContainsKey(roomTag.Room.Id))
                 {
-                    List<RoomTag> tmpList = m_roomWithTags[roomTag.Room.Id.IntegerValue];
+                    List<RoomTag> tmpList = m_roomWithTags[roomTag.Room.Id];
                     tmpList.Add(roomTag);
                 }
             }
@@ -176,7 +176,7 @@ namespace Revit.SDK.Samples.AutoTagRooms.CS
                     RoomTag newTag = m_revit.ActiveUIDocument.Document.Create.NewRoomTag(new LinkElementId(tmpRoom.Id), point, null);
                     newTag.RoomTagType = tagType;
 
-                    List<RoomTag> tagListInTheRoom = m_roomWithTags[newTag.Room.Id.IntegerValue];
+                    List<RoomTag> tagListInTheRoom = m_roomWithTags[newTag.Room.Id];
                     tagListInTheRoom.Add(newTag);
                 }
 
@@ -193,10 +193,10 @@ namespace Revit.SDK.Samples.AutoTagRooms.CS
         public int GetTagNumber(Room room, RoomTagType tagType)
         {
             int count = 0;
-            List<RoomTag> tagListInTheRoom = m_roomWithTags[room.Id.IntegerValue];
+            List<RoomTag> tagListInTheRoom = m_roomWithTags[room.Id];
             foreach (RoomTag roomTag in tagListInTheRoom)
             {
-                if (roomTag.RoomTagType.Id.IntegerValue == tagType.Id.IntegerValue)
+                if (roomTag.RoomTagType.Id == tagType.Id)
                 {
                     count++;
                 }

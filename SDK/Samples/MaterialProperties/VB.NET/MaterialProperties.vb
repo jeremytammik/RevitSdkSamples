@@ -74,13 +74,14 @@ Public Class MaterialProperties
 
    ReadOnly Property CurrentType() As StructuralAssetClass
       Get
-         Dim materialId As Integer = 0
+         Dim materialId As Autodesk.Revit.DB.ElementId = New Autodesk.Revit.DB.ElementId(0)
+
 
          If Not m_currentMaterial Is Nothing Then
-            materialId = m_currentMaterial.AsElementId().IntegerValue
+            materialId = m_currentMaterial.AsElementId()
          End If
 
-         If materialId <= 0 Then
+         If materialId.IntegerValue <= 0 Then
             Return StructuralAssetClass.Generic
          End If
 
@@ -366,14 +367,14 @@ Public Class MaterialProperties
     'get current material of selected component
     Private Function GetCurrentMaterial() As Autodesk.Revit.DB.Material
       'get the value of current material's ElementId
-        Dim identityValue As Integer = 0
+        Dim identityValue As Autodesk.Revit.DB.ElementId = New Autodesk.Revit.DB.ElementId(0)
 
         If Not m_currentMaterial Is Nothing Then
-            identityValue = m_currentMaterial.AsElementId().IntegerValue
+            identityValue = m_currentMaterial.AsElementId()
         End If
 
         'material has no value
-        If (identityValue <= 0) Then
+        If (identityValue.IntegerValue <= 0) Then
             Return Nothing
         End If
         Dim material As Autodesk.Revit.DB.Material = _
@@ -467,7 +468,7 @@ Public Class MaterialProperties
                     Case Else
                 End Select
                 'map between materials and their elementId
-                m_allMaterialMap.Add(material.Id.IntegerValue, material)
+                m_allMaterialMap.Add(material.Id, material)
             End If
             moreValue = i.MoveNext()
         End While

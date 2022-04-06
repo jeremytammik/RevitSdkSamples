@@ -93,7 +93,7 @@ namespace Revit.SDK.Samples.CreateTruss.CS
 
             // it can support in truss family document only
             if (!m_document.IsFamilyDocument
-                || m_document.OwnerFamily.FamilyCategory.Id.IntegerValue != (int)BuiltInCategory.OST_Truss)
+                || m_document.OwnerFamily.FamilyCategory.BuiltInCategory != BuiltInCategory.OST_Truss)
             {
                message = "Cannot execute truss creation in non-truss family document";
                return Autodesk.Revit.UI.Result.Failed;

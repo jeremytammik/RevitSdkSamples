@@ -142,7 +142,7 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
                     Autodesk.Revit.DB.ElementId tmpId = (Autodesk.Revit.DB.ElementId)de.Value;
                     Autodesk.Revit.DB.ElementId cmpId = (Autodesk.Revit.DB.ElementId)v;
 
-                    if (tmpId.IntegerValue == cmpId.IntegerValue)
+                    if (tmpId == cmpId)
                     {
                         return de.Key.ToString();
                     }

@@ -25,6 +25,7 @@ using System;
 using System.Data;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 using Autodesk.Revit;
 using Autodesk.Revit.DB;
@@ -95,80 +96,94 @@ namespace Revit.SDK.Samples.AnalyticalSupportData_Info.CS
             return Autodesk.Revit.UI.Result.Succeeded;
         }
 
-        /// <summary>
-        /// get all the required information of selected elements and store them in a data table
-        /// </summary>
-        /// <param name="selectedElements">
-        /// all selected elements in Revit main program
-        /// </param>
-        /// <returns>
-        /// a data table which store all the required information
-        /// </returns>
-        private DataTable StoreInformationInDataTable(ElementSet selectedElements)
-        {
-            DataTable informationTable = CreatDataTable();
-            
-            foreach (Element element in selectedElements)
+      /// <summary>
+      /// get all the required information of selected elements and store them in a data table
+      /// </summary>
+      /// <param name="selectedElements">
+      /// all selected elements in Revit main program
+      /// </param>
+      /// <returns>
+      /// a data table which store all the required information
+      /// </returns>
+      private DataTable StoreInformationInDataTable(ElementSet selectedElements)
+      {
+         DataTable informationTable = CreatDataTable();
+
+         foreach (Element element in selectedElements)
+         {
+            // Get  
+            AnalyticalElement analyticalModel = null;
+            Document document = element.Document;
+            AnalyticalToPhysicalAssociationManager assocManager = AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(document);
+            if (assocManager != null)
             {
-                // Get  
-                AnalyticalModel analyticalModel = element.GetAnalyticalModel();
-                if (null == analyticalModel) // skip no AnalyticalModel element
-                {
-                    continue;
-                }
-
-                DataRow newRow              = informationTable.NewRow(); 
-                string idValue              = element.Id.IntegerValue.ToString();// store element Id value             
-                string typeName             = "";                      // store element type name
-                string[] supportInformation = GetSupportInformation(analyticalModel);// store support information
-   
-                // get element type information
-                switch (element.GetType().Name)
-                {
-                case "WallFoundation":
-                    WallFoundation wallFound = element as WallFoundation;  
-                    ElementType wallFootSymbol =m_revit.Application.ActiveUIDocument.Document.GetElement(wallFound.GetTypeId()) as ElementType;// get element Type
-                    typeName              = wallFootSymbol.Category.Name + ": " + wallFootSymbol.Name;
-                    break;
-
-                case "FamilyInstance":
-                    FamilyInstance familyInstance = element as FamilyInstance;
-                    FamilySymbol symbol = m_revit.Application.ActiveUIDocument.Document.GetElement(familyInstance.GetTypeId()) as FamilySymbol;
-                    typeName                      = symbol.Family.Name + ": " + symbol.Name;
-                    break;
-
-                case "Floor":
-                    Floor slab         = element as Floor;                    
-                    FloorType slabType = m_revit.Application.ActiveUIDocument.Document.GetElement(slab.GetTypeId()) as FloorType; // get element type
-                    typeName           = slabType.Category.Name + ": " + slabType.Name;
-                    break;
-
-                case "Wall":
-                    Wall wall         = element as Wall;  
-                    WallType wallType = m_revit.Application.ActiveUIDocument.Document.GetElement(wall.GetTypeId()) as WallType; // get element type
-                    typeName          = wallType.Kind.ToString() + ": " + wallType.Name;
-                    break;
-
-                default:
-                    break;
-                }
-
-                // set the relative information of current element into the table.
-                newRow["Id"] = idValue;
-                newRow["Element Type"] = typeName;
-                newRow["Support Type"] = supportInformation[0];
-                newRow["Remark"] = supportInformation[1];
-                informationTable.Rows.Add(newRow);
+               ElementId associatedElementId = assocManager.GetAssociatedElementId(element.Id);
+               if (associatedElementId != ElementId.InvalidElementId)
+               {
+                  Element associatedElement = document.GetElement(associatedElementId);
+                  if (associatedElement != null && associatedElement is AnalyticalElement)
+                  {
+                     analyticalModel = associatedElement as AnalyticalElement;
+                  }
+               }
+            }
+            if (null == analyticalModel) // skip no AnalyticalModel element
+            {
+               continue;
             }
 
-            return informationTable;
-        }
+            DataRow newRow = informationTable.NewRow();
+            string idValue = element.Id.ToString();// store element Id value             
+            string typeName = "";                      // store element type name
+            string[] supportInformation = GetSupportInformation(analyticalModel);// store support information
 
-        /// <summary>
-        /// create a empty DataTable
-        /// </summary>
-        /// <returns></returns>
-        private DataTable CreatDataTable()
+            // get element type information
+            switch (element.GetType().Name)
+            {
+               case "WallFoundation":
+                  WallFoundation wallFound = element as WallFoundation;
+                  ElementType wallFootSymbol = m_revit.Application.ActiveUIDocument.Document.GetElement(wallFound.GetTypeId()) as ElementType;// get element Type
+                  typeName = wallFootSymbol.Category.Name + ": " + wallFootSymbol.Name;
+                  break;
+
+               case "FamilyInstance":
+                  FamilyInstance familyInstance = element as FamilyInstance;
+                  FamilySymbol symbol = m_revit.Application.ActiveUIDocument.Document.GetElement(familyInstance.GetTypeId()) as FamilySymbol;
+                  typeName = symbol.Family.Name + ": " + symbol.Name;
+                  break;
+
+               case "Floor":
+                  Floor slab = element as Floor;
+                  FloorType slabType = m_revit.Application.ActiveUIDocument.Document.GetElement(slab.GetTypeId()) as FloorType; // get element type
+                  typeName = slabType.Category.Name + ": " + slabType.Name;
+                  break;
+
+               case "Wall":
+                  Wall wall = element as Wall;
+                  WallType wallType = m_revit.Application.ActiveUIDocument.Document.GetElement(wall.GetTypeId()) as WallType; // get element type
+                  typeName = wallType.Kind.ToString() + ": " + wallType.Name;
+                  break;
+
+               default:
+                  break;
+            }
+
+            // set the relative information of current element into the table.
+            newRow["Id"] = idValue;
+            newRow["Element Type"] = typeName;
+            newRow["Support Type"] = supportInformation[0];
+            newRow["Remark"] = supportInformation[1];
+            informationTable.Rows.Add(newRow);
+         }
+
+         return informationTable;
+      }
+
+      /// <summary>
+      /// create a empty DataTable
+      /// </summary>
+      /// <returns></returns>
+      private DataTable CreatDataTable()
         {
             // Create a new DataTable.
             DataTable elementInformationTable = new DataTable("ElementInformationTable");
@@ -207,54 +222,21 @@ namespace Revit.SDK.Samples.AnalyticalSupportData_Info.CS
           
             return elementInformationTable;
         }
+      /// <summary>
+      /// get element's support information
+      /// </summary>
+      /// <param name="analyticalModel"> element's analytical model</param>
+      /// <returns></returns>
+      private string[] GetSupportInformation(AnalyticalElement analyticalModel)
+      {
+         // supportInformation[0] store supportType
+         // supportInformation[1] store other informations
+         string[] supportInformations = new string[2] { "", "" };
+         // "Supported" flag indicates if the Element is completely supported.
+         // AnalyticalModel Support list keeps track of all supports.
+         supportInformations[0] = "not supported";
 
-        /// <summary>
-        /// get element's support information
-        /// </summary>
-        /// <param name="analyticalModel"> element's analytical model</param>
-        /// <returns></returns>
-        private string[] GetSupportInformation(AnalyticalModel analyticalModel)
-        {
-            // supportInformation[0] store supportType
-            // supportInformation[1] store other informations
-            string[] supportInformations = new string[2] { "", "" };
-
-            IList<AnalyticalModelSupport> supports = analyticalModel.GetAnalyticalModelSupports();
-
-            // "Supported" flag indicates if the Element is completely supported.
-            // AnalyticalModel Support list keeps track of all supports.
-            if (!analyticalModel.IsElementFullySupported())// judge if supported
-            {
-                if (0 == supports.Count)
-                {
-                    supportInformations[0] = "not supported";
-                }
-                else
-                {
-                    foreach (AnalyticalModelSupport support in supports)
-                    {
-                        supportInformations[0] = supportInformations[0] +
-                                                             support.GetSupportType().ToString() + ", ";
-                    }
-               }
-            }
-            else
-            {
-                if (0 == supports.Count)
-                {
-                    supportInformations[1] = "supported but no more information";
-                }
-                else
-                {
-                    foreach (AnalyticalModelSupport support in supports)
-                    {
-                        supportInformations[0] = supportInformations[0] +
-                                                 support.GetSupportType().ToString() + ", ";
-                    }
-                }
-            }
-
-            return supportInformations;
-        }
-    }
+         return supportInformations;
+      }
+   }
 }

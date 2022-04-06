@@ -70,10 +70,6 @@ namespace Revit.SDK.Samples.ViewFilters.CS
         /// </summary>
         public double Epsilon { get; private set; }
 
-        /// <summary>
-        /// Indicates if string comparison is case sensitive, valid only when ParamType is String
-        /// </summary>
-        public bool CaseSensitive { get; private set; }
         #endregion
 
         #region Class Public Properties
@@ -94,8 +90,7 @@ namespace Revit.SDK.Samples.ViewFilters.CS
         /// <param name="param">Parameter of FilterRule.</param>
         /// <param name="ruleCriteria">Rule criteria.</param>
         /// <param name="ruleValue">Rule value.</param>
-        /// <param name="caseSensitive">Indicates if rule value is case sensitive.</param>
-        public FilterRuleBuilder(BuiltInParameter param, String ruleCriteria, String ruleValue, bool caseSensitive)
+        public FilterRuleBuilder(BuiltInParameter param, String ruleCriteria, String ruleValue)
         {
             InitializeMemebers();
             //
@@ -104,7 +99,6 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             Parameter = param;
             RuleCriteria = ruleCriteria;
             RuleValue = ruleValue;
-            CaseSensitive = caseSensitive;
         }
 
         /// <summary>
@@ -172,29 +166,29 @@ namespace Revit.SDK.Samples.ViewFilters.CS
                 switch(RuleCriteria)
                 {
                     case RuleCriteraNames.BeginWith:
-                        return PFRF.CreateBeginsWithRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateBeginsWithRule(paramId, RuleValue);
                     case RuleCriteraNames.Contains:
-                        return PFRF.CreateContainsRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateContainsRule(paramId, RuleValue);
                     case RuleCriteraNames.EndsWith: 
-                        return PFRF.CreateEndsWithRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateEndsWithRule(paramId, RuleValue);
                     case RuleCriteraNames.Equals_:
-                        return PFRF.CreateEqualsRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateEqualsRule(paramId, RuleValue);
                     case RuleCriteraNames.Greater:
-                        return PFRF.CreateGreaterRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateGreaterRule(paramId, RuleValue);
                     case RuleCriteraNames.GreaterOrEqual:
-                        return PFRF.CreateGreaterOrEqualRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateGreaterOrEqualRule(paramId, RuleValue);
                     case RuleCriteraNames.Less:
-                        return PFRF.CreateLessRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateLessRule(paramId, RuleValue);
                     case RuleCriteraNames.LessOrEqual:
-                        return PFRF.CreateLessOrEqualRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateLessOrEqualRule(paramId, RuleValue);
                     case RuleCriteraNames.NotBeginWith:
-                        return PFRF.CreateNotBeginsWithRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateNotBeginsWithRule(paramId, RuleValue);
                     case RuleCriteraNames.NotContains:
-                        return PFRF.CreateNotContainsRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateNotContainsRule(paramId, RuleValue);
                     case RuleCriteraNames.NotEndsWith:
-                        return PFRF.CreateNotEndsWithRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateNotEndsWithRule(paramId, RuleValue);
                     case RuleCriteraNames.NotEquals:
-                        return PFRF.CreateNotEqualsRule(paramId, RuleValue, CaseSensitive);
+                        return PFRF.CreateNotEqualsRule(paramId, RuleValue);
                 }
             }
             else if (ParamType == StorageType.Double)
@@ -238,17 +232,17 @@ namespace Revit.SDK.Samples.ViewFilters.CS
                  switch(RuleCriteria)
                  {
                      case RuleCriteraNames.Equals_:
-                         return PFRF.CreateEqualsRule(paramId, new ElementId(int.Parse(RuleValue)));
+                         return PFRF.CreateEqualsRule(paramId, ElementId.Parse(RuleValue));
                      case RuleCriteraNames.Greater:
-                         return PFRF.CreateGreaterRule(paramId, new ElementId(int.Parse(RuleValue)));
+                         return PFRF.CreateGreaterRule(paramId, ElementId.Parse(RuleValue));
                      case RuleCriteraNames.GreaterOrEqual:
-                         return PFRF.CreateGreaterOrEqualRule(paramId, new ElementId(int.Parse(RuleValue)));
+                         return PFRF.CreateGreaterOrEqualRule(paramId, ElementId.Parse(RuleValue));
                      case RuleCriteraNames.Less:
-                         return PFRF.CreateLessRule(paramId, new ElementId(int.Parse(RuleValue)));
+                         return PFRF.CreateLessRule(paramId, ElementId.Parse(RuleValue));
                      case RuleCriteraNames.LessOrEqual:
-                         return PFRF.CreateLessOrEqualRule(paramId, new ElementId(int.Parse(RuleValue)));
+                         return PFRF.CreateLessOrEqualRule(paramId, ElementId.Parse(RuleValue));
                      case RuleCriteraNames.NotEquals:
-                         return PFRF.CreateNotEqualsRule(paramId, new ElementId(int.Parse(RuleValue)));
+                         return PFRF.CreateNotEqualsRule(paramId, ElementId.Parse(RuleValue));
                  }
             }
             //
@@ -263,12 +257,11 @@ namespace Revit.SDK.Samples.ViewFilters.CS
         /// </summary>
         private void InitializeMemebers()
         {
-            Parameter = (BuiltInParameter)(ElementId.InvalidElementId.IntegerValue);
+            Parameter = BuiltInParameter.INVALID;
             RuleCriteria = String.Empty;
             RuleValue = String.Empty;
             ParamType = StorageType.None;
             Epsilon = 0.0f;
-            CaseSensitive = false;
         }
         #endregion
     }
@@ -325,15 +318,18 @@ namespace Revit.SDK.Samples.ViewFilters.CS
         /// If someone parameter of criteria cannot be supported by new categories, 
         /// the old criteria will be cleaned and set to empty
         /// </remarks>
-        public bool SetNewCategories(ICollection<ElementId> newCatIds)
+        public bool SetNewCategories(List<BuiltInCategory> newCats)
         {
             // do nothing if new categories are equals to old categories
-            List<BuiltInCategory> newCats = new List<BuiltInCategory>();
-            foreach (ElementId catId in newCatIds)
-                newCats.Add((BuiltInCategory)catId.IntegerValue);
             if (ListCompareUtility<BuiltInCategory>.Equals(newCats, m_filterCategories))
                 return false;
             m_filterCategories = newCats; // update categories
+
+            List<ElementId> newCatIds = new List<ElementId>();
+            foreach (BuiltInCategory cat in newCats)
+            {
+                newCatIds.Add(new ElementId(cat));
+            }
             //
             // Check if need to update file rules:
             // . if filer rule is empty, do nothing
