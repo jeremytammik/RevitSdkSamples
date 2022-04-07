@@ -42,6 +42,10 @@ namespace Revit.SDK.Samples.ImportExport.CS
       /// </summary>
       private ExportPDFData m_data;
 
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="data"></param>
       public ExportPDFOptionsForm(ExportPDFData data)
       {
          m_data = data;
