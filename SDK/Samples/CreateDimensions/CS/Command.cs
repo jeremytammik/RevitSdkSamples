@@ -26,6 +26,7 @@ using System.Collections;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 using Autodesk;
 using Autodesk.Revit;
@@ -140,93 +141,108 @@ namespace Revit.SDK.Samples.CreateDimensions.CS
             return true;
         }
 
-        /// <summary>
-        /// find out every wall in the selection and add a dimension from the start of the wall to its end
-        /// </summary>
-        /// <returns>if add successfully, true will be returned, else false will be returned</returns>
-        public bool AddDimension()
-        {
-            if (!initialize())
+      /// <summary>
+      /// find out every wall in the selection and add a dimension from the start of the wall to its end
+      /// </summary>
+      /// <returns>if add successfully, true will be returned, else false will be returned</returns>
+      public bool AddDimension()
+      {
+         if (!initialize())
+         {
+            return false;
+         }
+
+         Transaction transaction = new Transaction(m_revit.Application.ActiveUIDocument.Document, "Add Dimensions");
+         transaction.Start();
+         //get out all the walls in this array, and create a dimension from its start to its end
+         for (int i = 0; i < m_walls.Count; i++)
+         {
+            Wall wallTemp = m_walls[i] as Wall;
+            if (null == wallTemp)
             {
-                return false;
+               continue;
             }
 
-            Transaction transaction = new Transaction(m_revit.Application.ActiveUIDocument.Document, "Add Dimensions");
-            transaction.Start();
-            //get out all the walls in this array, and create a dimension from its start to its end
-            for (int i = 0; i < m_walls.Count; i++)
+            //get location curve
+            Location location = wallTemp.Location;
+            LocationCurve locationline = location as LocationCurve;
+            if (null == locationline)
             {
-                Wall wallTemp = m_walls[i] as Wall;
-                if (null == wallTemp)
-                {
-                    continue;
-                }
-
-                //get location curve
-                Location location = wallTemp.Location;
-                LocationCurve locationline = location as LocationCurve;
-                if (null == locationline)
-                {
-                    continue;
-                }
-
-                //New Line
-
-                Line newLine = null;
-
-                //get reference
-                ReferenceArray referenceArray = new ReferenceArray();
-
-                AnalyticalModel analyticalModel = wallTemp.GetAnalyticalModel();
-                IList<Curve> activeCurveList = analyticalModel.GetCurves(AnalyticalCurveType.ActiveCurves);
-                foreach (Curve aCurve in activeCurveList)
-                {
-                    // find non-vertical curve from analytical model
-                    if (aCurve.GetEndPoint(0).Z == aCurve.GetEndPoint(1).Z)
-                        newLine = aCurve as Line;
-                    if (aCurve.GetEndPoint(0).Z != aCurve.GetEndPoint(1).Z)
-                    {
-                        AnalyticalModelSelector amSelector = new AnalyticalModelSelector(aCurve);
-                        amSelector.CurveSelector = AnalyticalCurveSelector.StartPoint;
-                        referenceArray.Append(analyticalModel.GetReference(amSelector));
-                    }
-                    if (2 == referenceArray.Size)
-                        break;
-                }
-                if (referenceArray.Size != 2)
-                {
-                    m_errorMessage += "Did not find two references";
-                    return false;
-                }
-                try
-                {
-                    //try to add new a dimension
-                    Autodesk.Revit.UI.UIApplication app = m_revit.Application;
-                    Document doc = app.ActiveUIDocument.Document;
-
-                    Autodesk.Revit.DB.XYZ p1 = new XYZ(
-                        newLine.GetEndPoint(0).X + 5,
-                        newLine.GetEndPoint(0).Y + 5,
-                        newLine.GetEndPoint(0).Z);
-                    Autodesk.Revit.DB.XYZ p2 = new XYZ(
-                        newLine.GetEndPoint(1).X + 5,
-                        newLine.GetEndPoint(1).Y + 5,
-                        newLine.GetEndPoint(1).Z);
-
-                    Line newLine2 = Line.CreateBound(p1, p2);
-                    Dimension newDimension = doc.Create.NewDimension(
-                      doc.ActiveView, newLine2, referenceArray);
-                }
-                // catch the exceptions
-                catch (Exception ex)
-                {
-                    m_errorMessage += ex.ToString();
-                    return false;
-                }
+               continue;
             }
-            transaction.Commit();
-            return true;
-        }
 
-    }
+            //New Line
+
+            Line newLine = null;
+
+            //get reference
+            ReferenceArray referenceArray = new ReferenceArray();
+
+            AnalyticalPanel analyticalModel = null;
+            Document document = wallTemp.Document;
+            AnalyticalToPhysicalAssociationManager assocManager = AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(document);
+            if (assocManager != null)
+            {
+               ElementId associatedElementId = assocManager.GetAssociatedElementId(wallTemp.Id);
+               if (associatedElementId != ElementId.InvalidElementId)
+               {
+                  Element associatedElement = document.GetElement(associatedElementId);
+                  if (associatedElement != null && associatedElement is AnalyticalPanel)
+                  {
+                     analyticalModel = associatedElement as AnalyticalPanel;
+                  }
+               }
+            }
+            IList<Curve> activeCurveList = analyticalModel.GetOuterContour().ToList();
+            foreach (Curve aCurve in activeCurveList)
+            {
+               // find non-vertical curve from analytical model
+               if (aCurve.GetEndPoint(0).Z == aCurve.GetEndPoint(1).Z)
+                  newLine = aCurve as Line;
+               if (aCurve.GetEndPoint(0).Z != aCurve.GetEndPoint(1).Z)
+               {
+                  AnalyticalModelSelector amSelector = new AnalyticalModelSelector(aCurve);
+                  amSelector.CurveSelector = AnalyticalCurveSelector.StartPoint;
+
+                  referenceArray.Append(analyticalModel.GetReference(amSelector));
+               }
+               if (2 == referenceArray.Size)
+                  break;
+            }
+            if (referenceArray.Size != 2)
+            {
+               m_errorMessage += "Did not find two references";
+               return false;
+            }
+            try
+            {
+               //try to add new a dimension
+               Autodesk.Revit.UI.UIApplication app = m_revit.Application;
+               Document doc = app.ActiveUIDocument.Document;
+
+               Autodesk.Revit.DB.XYZ p1 = new XYZ(
+                   newLine.GetEndPoint(0).X + 5,
+                   newLine.GetEndPoint(0).Y + 5,
+                   newLine.GetEndPoint(0).Z);
+               Autodesk.Revit.DB.XYZ p2 = new XYZ(
+                   newLine.GetEndPoint(1).X + 5,
+                   newLine.GetEndPoint(1).Y + 5,
+                   newLine.GetEndPoint(1).Z);
+
+               Line newLine2 = Line.CreateBound(p1, p2);
+               Dimension newDimension = doc.Create.NewDimension(
+                 doc.ActiveView, newLine2, referenceArray);
+            }
+            // catch the exceptions
+            catch (Exception ex)
+            {
+               m_errorMessage += ex.ToString();
+               return false;
+            }
+         }
+         transaction.Commit();
+         return true;
+      }
+
+   }
 }

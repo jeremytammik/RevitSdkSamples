@@ -85,7 +85,7 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
             m_changedItemsFlag = new int[m_systemLevelsTotal];
 
             //Record deleted items
-            m_deleteExistLevelIDValue = new int[m_systemLevelsTotal];
+            m_deleteExistLevelIDValue = new Autodesk.Revit.DB.ElementId[m_systemLevelsTotal];
             m_deleteExistLevelTotal = 0;
         }
 
@@ -186,7 +186,7 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
             }
         }
 
-        int[] m_deleteExistLevelIDValue;
+        Autodesk.Revit.DB.ElementId[] m_deleteExistLevelIDValue;
         int m_deleteExistLevelTotal;
         #endregion
 

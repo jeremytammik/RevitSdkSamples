@@ -99,7 +99,7 @@ namespace Revit.SDK.Samples.CreateFillPattern.CS
          for (int i = 0; i < lstLinePatterns.Count; i++)
          {
             TreeNode node = new TreeNode(lstLinePatterns[i].Name);
-            node.Name = lstLinePatterns[i].Id.IntegerValue.ToString();
+            node.Name = lstLinePatterns[i].Id.ToString();
             iniNode2.Nodes.Add(node);
          }
 
@@ -418,7 +418,7 @@ namespace Revit.SDK.Samples.CreateFillPattern.CS
                 "Before applying a LinePattern to Grids, you must first select a LinePattern.");
             return;
          }
-         ElementId eid = new ElementId(int.Parse(treeViewLinePattern.SelectedNode.Name));
+         ElementId eid = ElementId.Parse(treeViewLinePattern.SelectedNode.Name);
          foreach (ElementId typeId in lstGridTypeIds)
          {
             Element gridType = doc.GetElement(typeId);

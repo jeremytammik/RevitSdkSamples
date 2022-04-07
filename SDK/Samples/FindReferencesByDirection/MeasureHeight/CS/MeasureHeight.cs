@@ -108,8 +108,8 @@ namespace Revit.SDK.Samples.MeasureHeight.CS
                     if (e is FamilyInstance)
                     {
                         FamilyInstance instance = e as FamilyInstance;
-                        bool isWindow = (instance.Category.Id.IntegerValue == (int)BuiltInCategory.OST_Windows);
-                        bool isHostedByRoof = (instance.Host.Category.Id.IntegerValue == (int)BuiltInCategory.OST_Roofs);
+                        bool isWindow = (instance.Category.BuiltInCategory == BuiltInCategory.OST_Windows);
+                        bool isHostedByRoof = (instance.Host.Category.BuiltInCategory == BuiltInCategory.OST_Roofs);
 
                         if (isWindow && isHostedByRoof)
                             m_skylight = instance;

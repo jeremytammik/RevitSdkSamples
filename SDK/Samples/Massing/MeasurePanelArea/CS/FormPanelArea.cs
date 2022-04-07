@@ -271,7 +271,7 @@ namespace Revit.SDK.Samples.MeasurePanelArea.CS
             foreach (Face face in solid.Faces)
             {
                panelArea = face.Area;
-               m_writeFile.WriteLine(familyinstance.Id.IntegerValue + " : " + panelArea);
+               m_writeFile.WriteLine(familyinstance.Id.ToString() + " : " + panelArea);
             }
          }
          return panelArea;

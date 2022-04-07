@@ -117,11 +117,11 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
         /// Get the id value of the model curve.
         /// </summary>
         [Browsable(false)]
-        public int Id
+        public ElementId Id
         {
             get
             {
-                return m_curve.Id.IntegerValue;
+                return m_curve.Id;
             }
         }
 
@@ -300,7 +300,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
             get
             {
                 Parameter para = m_roof.get_Parameter(BuiltInParameter.ROOF_BASE_LEVEL_PARAM);
-                return LevelConverter.GetLevelByID(para.AsElementId().IntegerValue);
+                return LevelConverter.GetLevelByID(para.AsElementId());
             }
             set
             {

@@ -49,8 +49,8 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
 
         // store all the corresponding BCs of the current selected host element 
         // and use the BC Id value as the key
-        private Dictionary<int, Autodesk.Revit.DB.Structure.BoundaryConditions> m_bCsDictionary =
-                new Dictionary<int, Autodesk.Revit.DB.Structure.BoundaryConditions>();
+        private Dictionary<Autodesk.Revit.DB.ElementId, Autodesk.Revit.DB.Structure.BoundaryConditions> m_bCsDictionary =
+                new Dictionary<Autodesk.Revit.DB.ElementId, Autodesk.Revit.DB.Structure.BoundaryConditions>();
 
         // the object for which the grid in UI displays.
         private BCProperties m_bCProperties;
@@ -88,7 +88,7 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         /// <summary>
         /// get all the BCs correspond with current host
         /// </summary>
-        public Dictionary<int, Autodesk.Revit.DB.Structure.BoundaryConditions> BCs
+        public Dictionary<Autodesk.Revit.DB.ElementId, Autodesk.Revit.DB.Structure.BoundaryConditions> BCs
         {
             get
             {
@@ -177,7 +177,7 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
             }
 
             // add the created Boundary Conditions into m_bCsDictionary
-            m_bCsDictionary.Add(NewBC.Id.IntegerValue, NewBC);
+            m_bCsDictionary.Add(NewBC.Id, NewBC);
             return true;
         }
 
@@ -195,84 +195,101 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
             IEnumerable<Autodesk.Revit.DB.Structure.BoundaryConditions> boundaryConditions = from elem in
                                                                                        new FilteredElementCollector(doc).OfClass(typeof(Autodesk.Revit.DB.Structure.BoundaryConditions)).ToElements()
                                                                                    let bC = elem as Autodesk.Revit.DB.Structure.BoundaryConditions
-                                                                                   where bC != null && m_hostElement.Id.IntegerValue == bC.HostElement.Id.IntegerValue
+                                                                                   where bC != null && m_hostElement.Id == bC.HostElementId
                                                                                    select bC;
             foreach (Autodesk.Revit.DB.Structure.BoundaryConditions bC in boundaryConditions)
             {
-                m_bCsDictionary.Add(bC.Id.IntegerValue, bC);
+                m_bCsDictionary.Add(bC.Id, bC);
             }
         }
 
-        /// <summary>
-        /// Create a new Point BoundaryConditions Element. 
-        /// All the parameter default as Fixed.
-        /// </summary>
-        /// <param name="hostElement"> 
-        /// structural element which provide the analytical line end reference
-        /// </param>
-        /// <returns> the created Point BoundaryConditions Element</returns>
-        private Autodesk.Revit.DB.Structure.BoundaryConditions CreatePointBC(Autodesk.Revit.DB.Element hostElement)
+      AnalyticalElement GetAnalyticalElement(Autodesk.Revit.DB.Element element)
+      {
+         AnalyticalElement analyticalModel = null;
+         Document document = element.Document;
+         AnalyticalToPhysicalAssociationManager assocManager = AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(document);
+         if (assocManager != null)
+         {
+            ElementId associatedElementId = assocManager.GetAssociatedElementId(element.Id);
+            if (associatedElementId != ElementId.InvalidElementId)
+            {
+               Element associatedElement = document.GetElement(associatedElementId);
+               if (associatedElement != null && associatedElement is AnalyticalElement)
+               {
+                  analyticalModel = associatedElement as AnalyticalElement;
+               }
+            }
+         }
+         return analyticalModel;
+      }
+
+      /// <summary>
+      /// Create a new Point BoundaryConditions Element. 
+      /// All the parameter default as Fixed.
+      /// </summary>
+      /// <param name="hostElement"> 
+      /// structural element which provide the analytical line end reference
+      /// </param>
+      /// <returns> the created Point BoundaryConditions Element</returns>
+      private Autodesk.Revit.DB.Structure.BoundaryConditions CreatePointBC(Autodesk.Revit.DB.Element hostElement)
+      {
+         if (!(hostElement is FamilyInstance))
+         {
+            return null;
+         }
+         FamilyInstance familyInstance = hostElement as FamilyInstance;
+         AnalyticalElement analyticalModel = GetAnalyticalElement(hostElement);
+         Reference endReference = null;
+
+         Curve refCurve = analyticalModel.GetCurve();
+         if (null != refCurve)
+         {
+
+            endReference = analyticalModel.GetReference(new AnalyticalModelSelector(refCurve, AnalyticalCurveSelector.EndPoint));
+         }
+         else
+         {
+            return null;
+         }
+
+         Autodesk.Revit.Creation.Document createDoc = hostElement.Document.Create;
+
+         // invoke Document.NewPointBoundaryConditions Method 
+         Autodesk.Revit.DB.Structure.BoundaryConditions createdBC =
+                 createDoc.NewPointBoundaryConditions(endReference, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+         return createdBC;
+      }
+
+      /// <summary>
+      /// Create a new Line BoundaryConditions Element. 
+      /// All the parameter default as Fixed.
+      /// </summary>
+      /// <param name="hostElement">structural element which provide the hostElementId</param>
+      /// <returns>the created Point BoundaryConditions Element</returns>
+      private Autodesk.Revit.DB.Structure.BoundaryConditions CreateLineBC(Autodesk.Revit.DB.Element hostElement)
+      {
+         Autodesk.Revit.Creation.Document createDoc = hostElement.Document.Create;
+         // invoke Document.NewLineBoundaryConditions Method
+         AnalyticalElement analyticalModel = GetAnalyticalElement(hostElement);
+         Autodesk.Revit.DB.Structure.BoundaryConditions createdBC =
+                    createDoc.NewLineBoundaryConditions(analyticalModel, 0, 0, 0, 0, 0, 0, 0, 0);
+         return createdBC;
+      }
+
+      /// <summary>
+      /// Create a new Area BoundaryConditions Element. 
+      /// All the parameter default as Fixed.
+      /// </summary>
+      /// <param name="hostElement">structural element which provide the hostElementId</param>
+      /// <returns>the created Point BoundaryConditions Element</returns>
+      private Autodesk.Revit.DB.Structure.BoundaryConditions CreateAreaBC(Autodesk.Revit.DB.Element hostElement)
         {
-            if (!(hostElement is FamilyInstance))
-            {
-                return null;
-            }
-
-            FamilyInstance familyInstance   = hostElement as FamilyInstance;
-            AnalyticalModel analyticalModel = familyInstance.GetAnalyticalModel();
-            Reference endReference          = null;
-
-            Curve refCurve = analyticalModel.GetCurve();
-            if (null != refCurve)
-            {
-
-                endReference = analyticalModel.GetReference(new AnalyticalModelSelector(refCurve,AnalyticalCurveSelector.EndPoint));
-            }
-            else
-            {
-                return null;
-            }
-
             Autodesk.Revit.Creation.Document createDoc = hostElement.Document.Create;
 
-            // invoke Document.NewPointBoundaryConditions Method 
-            Autodesk.Revit.DB.Structure.BoundaryConditions createdBC = 
-                    createDoc.NewPointBoundaryConditions(endReference, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-            return createdBC;
-        }
-
-        /// <summary>
-        /// Create a new Line BoundaryConditions Element. 
-        /// All the parameter default as Fixed.
-        /// </summary>
-        /// <param name="hostElement">structural element which provide the hostElementId</param>
-        /// <returns>the created Point BoundaryConditions Element</returns>
-        private Autodesk.Revit.DB.Structure.BoundaryConditions CreateLineBC(Autodesk.Revit.DB.Element hostElement)
-        {
-            Autodesk.Revit.Creation.Document createDoc = hostElement.Document.Create;
-
-            // invoke Document.NewLineBoundaryConditions Method
-            Autodesk.Revit.DB.Structure.BoundaryConditions createdBC = 
-                    createDoc.NewLineBoundaryConditions(hostElement.GetAnalyticalModel(), 0, 0, 0, 0, 0, 0, 0, 0);
-
-            return createdBC;
-        }
-
-        /// <summary>
-        /// Create a new Area BoundaryConditions Element. 
-        /// All the parameter default as Fixed.
-        /// </summary>
-        /// <param name="hostElement">structural element which provide the hostElementId</param>
-        /// <returns>the created Point BoundaryConditions Element</returns>
-        private Autodesk.Revit.DB.Structure.BoundaryConditions CreateAreaBC(Autodesk.Revit.DB.Element hostElement)
-        {
-            Autodesk.Revit.Creation.Document createDoc = hostElement.Document.Create;
-
-            // invoke Document.NewAreaBoundaryConditions Method
-            Autodesk.Revit.DB.Structure.BoundaryConditions createdBC =
-                    createDoc.NewAreaBoundaryConditions(hostElement.GetAnalyticalModel(), 0, 0, 0, 0, 0, 0);
-
-            return createdBC;
+         // invoke Document.NewAreaBoundaryConditions Method
+         Autodesk.Revit.DB.Structure.BoundaryConditions createdBC =
+                    createDoc.NewAreaBoundaryConditions(GetAnalyticalElement(hostElement), 0, 0, 0, 0, 0, 0);
+         return createdBC;
         } 
 
         #endregion

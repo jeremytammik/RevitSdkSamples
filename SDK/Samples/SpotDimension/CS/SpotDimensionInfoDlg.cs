@@ -107,7 +107,7 @@ namespace Revit.SDK.Samples.SpotDimension.CS
                 if (tmpSpotDimension.View.Name == viewName)
                 {
                      //create a list view Item
-                    ListViewItem tmpItem = new ListViewItem(tmpSpotDimension.Id.IntegerValue.ToString());
+                    ListViewItem tmpItem = new ListViewItem(tmpSpotDimension.Id.ToString());
                     tmpItem.Tag = tmpSpotDimension;
 
                     //add the item to the listview

@@ -309,13 +309,13 @@ namespace Revit.SDK.Samples.RoomSchedule
 
                 // get all existing rooms which have mapped to spreadsheet rooms.
                 // we should skip the creation for those spreadsheet rooms which have been mapped by Revit rooms.
-                Dictionary<int, string> existingRooms = new Dictionary<int, string>();
+                Dictionary<ElementId, string> existingRooms = new Dictionary<ElementId, string>();
                 foreach (Room room in m_roomData.Rooms)
                 {
                    Parameter sharedParameter = room.LookupParameter(RoomsData.SharedParam);
                     if (null != sharedParameter && false == String.IsNullOrEmpty(sharedParameter.AsString()))
                     {
-                        existingRooms.Add(room.Id.IntegerValue, sharedParameter.AsString());
+                        existingRooms.Add(room.Id, sharedParameter.AsString());
                     }
                 }
 

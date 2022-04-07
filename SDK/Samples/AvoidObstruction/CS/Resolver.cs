@@ -254,7 +254,7 @@ namespace Revit.SDK.Samples.AvoidObstruction.CS
             Element curElem = m_rvtDoc.GetElement(cur);
             if (curElem.Id == pipe.Id ||
             (!(curElem is Pipe) && !(curElem is Duct) &&
-            curElem.Category.Id.IntegerValue != (int)BuiltInCategory.OST_StructuralFraming))
+            curElem.Category.BuiltInCategory != BuiltInCategory.OST_StructuralFraming))
             {
                refs.RemoveAt(i);
             }
@@ -522,7 +522,7 @@ namespace Revit.SDK.Samples.AvoidObstruction.CS
          ConnectorSet connSet = connItself.AllRefs;
          foreach (Connector conn in connSet)
          {
-            if (conn.Owner.Id.IntegerValue != pipe.Id.IntegerValue &&
+            if (conn.Owner.Id != pipe.Id &&
                 conn.ConnectorType == ConnectorType.End)
             {
                return conn;

@@ -188,18 +188,18 @@ namespace Revit.SDK.Samples.AutoRoute.CS
                     Element element = m_document.GetElement(ids[i]);
                     if (null == element)
                     {
-                        message = "Element " + ids[i].IntegerValue + " can't be found.";
+                        message = "Element " + ids[i].ToString() + " can't be found.";
                         return Autodesk.Revit.UI.Result.Failed;
                     }
                     instances[i] = element as FamilyInstance;
-                    csi = ConnectorInfo.GetConnectors(ids[i].IntegerValue).ForwardIterator();
+                    csi = ConnectorInfo.GetConnectors(ids[i]).ForwardIterator();
                     csi.MoveNext();
                     conns[i] = csi.Current as Connector;
                     boxes[i] = instances[i].get_BoundingBox(m_document.ActiveView);
                 }
 
                 //Find the "Out" and "SupplyAir" connector on the base equipment
-                csi = ConnectorInfo.GetConnectors(ids[0].IntegerValue).ForwardIterator();
+                csi = ConnectorInfo.GetConnectors(ids[0]).ForwardIterator();
                 while (csi.MoveNext())
                 {
                     Connector conn = csi.Current as Connector;
@@ -212,12 +212,12 @@ namespace Revit.SDK.Samples.AutoRoute.CS
                 //Create a mechanical system with a base air supply equipment and 2 terminals.
                 m_mechanicalSystem = CreateMechanicalSystem(
                     //[378728][SupplyAir][Out][RectProfile][OST_MechanicalEquipment]
-                        new ConnectorInfo(378728, conns[0].Origin.X, conns[0].Origin.Y, conns[0].Origin.Z),
+                        new ConnectorInfo(new ElementId(378728), conns[0].Origin.X, conns[0].Origin.Y, conns[0].Origin.Z),
                     new ConnectorInfo[]{
                         //[378707][SupplyAir][In][RectProfile]
-                        new ConnectorInfo(378707, conns[1].Origin.X, conns[1].Origin.Y, conns[1].Origin.Z),
+                        new ConnectorInfo(new ElementId(378707), conns[1].Origin.X, conns[1].Origin.Y, conns[1].Origin.Z),
                         //[378716][SupplyAir][In][RectProfile]
-                        new ConnectorInfo(378716, conns[2].Origin.X, conns[2].Origin.Y, conns[2].Origin.Z)
+                        new ConnectorInfo(new ElementId(378716), conns[2].Origin.X, conns[2].Origin.Y, conns[2].Origin.Z)
                     },
                     DuctSystemType.SupplyAir
                 );
@@ -283,9 +283,9 @@ namespace Revit.SDK.Samples.AutoRoute.CS
 
 
                 ducts.Add(Duct.Create(m_document, systemTypeId, ductTypeId, lvl.Id, points[1], points[2]));
-                connectors.Add(ConnectorInfo.GetConnector(ducts[0].Id.IntegerValue, points[0]));
-                connectors.Add(ConnectorInfo.GetConnector(ducts[1].Id.IntegerValue, points[1]));
-                connectors.Add(ConnectorInfo.GetConnector(ducts[1].Id.IntegerValue, points[2]));
+                connectors.Add(ConnectorInfo.GetConnector(ducts[0].Id, points[0]));
+                connectors.Add(ConnectorInfo.GetConnector(ducts[1].Id, points[1]));
+                connectors.Add(ConnectorInfo.GetConnector(ducts[1].Id, points[2]));
                 connectors[0].ConnectTo(connectors[1]);
                 m_document.Create.NewElbowFitting(connectors[0], connectors[1]);
                 baseConnectors.Add(connectors[2]);
@@ -298,8 +298,8 @@ namespace Revit.SDK.Samples.AutoRoute.CS
                 points.Add(new GXYZ(conns[2].Origin.X, conns[2].Origin.Y, maxZ + verticalTrunkOffset - min1FittingLength));
                 ducts.Add(Duct.Create(m_document, ductTypeId, lvl.Id, conns[1], points[0]));
                 ducts.Add(Duct.Create(m_document, ductTypeId, lvl.Id, conns[2], points[1]));
-                baseConnectors.Add(ConnectorInfo.GetConnector(ducts[0].Id.IntegerValue, points[0]));
-                baseConnectors.Add(ConnectorInfo.GetConnector(ducts[1].Id.IntegerValue, points[1]));
+                baseConnectors.Add(ConnectorInfo.GetConnector(ducts[0].Id, points[0]));
+                baseConnectors.Add(ConnectorInfo.GetConnector(ducts[1].Id, points[1]));
 
                 //Connect the system by creating the trunk line of ducts and connect them to the base connectors
                 SortConnectorsByX(baseConnectors);
@@ -805,8 +805,8 @@ namespace Revit.SDK.Samples.AutoRoute.CS
 
             Duct duct = Duct.Create(m_document, systemTypeId, ductTypeId, lvl.Id, point1, point2);
 
-            connectors.Add(ConnectorInfo.GetConnector(duct.Id.IntegerValue, point1));
-            connectors.Add(ConnectorInfo.GetConnector(duct.Id.IntegerValue, point2));
+            connectors.Add(ConnectorInfo.GetConnector(duct.Id, point1));
+            connectors.Add(ConnectorInfo.GetConnector(duct.Id, point2));
 
             return connectors;
         }
@@ -841,7 +841,7 @@ namespace Revit.SDK.Samples.AutoRoute.CS
             /// <summary>
             /// The owner's element ID
             /// </summary>
-            int m_ownerId;
+            ElementId m_ownerId;
 
             /// <summary>
             /// The origin of the connector
@@ -865,7 +865,7 @@ namespace Revit.SDK.Samples.AutoRoute.CS
             /// <summary>
             /// The owner ID of the connector
             /// </summary>
-            public int OwnerId
+            public ElementId OwnerId
             {
                 get { return m_ownerId; }
                 set { m_ownerId = value; }
@@ -885,7 +885,7 @@ namespace Revit.SDK.Samples.AutoRoute.CS
             /// </summary>
             /// <param name="ownerId">the ownerID of the connector</param>
             /// <param name="origin">the origin of the connector</param>
-            public ConnectorInfo(int ownerId, GXYZ origin)
+            public ConnectorInfo(ElementId ownerId, GXYZ origin)
             {
                 m_ownerId = ownerId;
                 m_origin = origin;
@@ -899,7 +899,7 @@ namespace Revit.SDK.Samples.AutoRoute.CS
             /// <param name="x">the X value of the connector</param>
             /// <param name="y">the Y value of the connector</param>
             /// <param name="z">the Z value of the connector</param>
-            public ConnectorInfo(int ownerId, double x, double y, double z)
+            public ConnectorInfo(ElementId ownerId, double x, double y, double z)
                 : this(ownerId, new GXYZ(x, y, z))
             {
             }
@@ -910,7 +910,7 @@ namespace Revit.SDK.Samples.AutoRoute.CS
             /// <param name="ownerId">the owner ID of the connector</param>
             /// <param name="connectorOrigin">the origin of the connector</param>
             /// <returns>if found, return the connector, or else return null</returns>
-            public static Connector GetConnector(int ownerId, GXYZ connectorOrigin)
+            public static Connector GetConnector(ElementId ownerId, GXYZ connectorOrigin)
             {
                 ConnectorSet connectors = GetConnectors(ownerId);
                 foreach (Connector conn in connectors)
@@ -928,10 +928,9 @@ namespace Revit.SDK.Samples.AutoRoute.CS
             /// </summary>
             /// <param name="ownerId">the owner ID of the connector</param>
             /// <returns>the connector set which includes all the connectors found</returns>
-            public static ConnectorSet GetConnectors(int ownerId)
+            public static ConnectorSet GetConnectors(ElementId ownerId)
             {
-                Autodesk.Revit.DB.ElementId elementId = new ElementId(ownerId);
-                Element element = m_document.GetElement(elementId);
+                Element element = m_document.GetElement(ownerId);
                 return GetConnectors(element);
             }
 
@@ -1016,8 +1015,8 @@ namespace Revit.SDK.Samples.AutoRoute.CS
             {
                 Trace.WriteLine("null"); return;
             }
-            int elementId = element.Id.IntegerValue;
-            int familyId = element.get_Parameter(BuiltInParameter.ELEM_FAMILY_PARAM).AsElementId().IntegerValue;
+            ElementId elementId = element.Id;
+            ElementId familyId = element.get_Parameter(BuiltInParameter.ELEM_FAMILY_PARAM).AsElementId();
             string familyName = LogUtility.InvalidString;
             Element objectType = GetElement<Element>(element.Document, familyId);
             string elementName = LogUtility.InvalidString;
@@ -1029,13 +1028,13 @@ namespace Revit.SDK.Samples.AutoRoute.CS
                 if (familyNameParameter != null)
                     familyName = familyNameParameter.AsString();
             }
-            BuiltInCategory category = (BuiltInCategory)(element.get_Parameter(BuiltInParameter.ELEM_CATEGORY_PARAM).AsElementId().IntegerValue);
+            BuiltInCategory category = element.Category.BuiltInCategory;
 
             Trace.WriteLine("Type: " + element.GetType().FullName);
             Trace.WriteLine("Name: " + familyName + ":" + elementName);
-            if (writeId) Trace.WriteLine("Id: " + elementId);
+            if (writeId) Trace.WriteLine("Id: " + elementId.ToString());
             Trace.WriteLine("Category: " + category);
-            Trace.WriteLine("FamilyId: " + familyId);
+            Trace.WriteLine("FamilyId: " + familyId.ToString());
         }
 
         /// <summary>
@@ -1068,10 +1067,9 @@ namespace Revit.SDK.Samples.AutoRoute.CS
         /// <param name="document">the owner document of the element</param>
         /// <param name="eid">the id of the element</param>
         /// <returns>the element of the specified type</returns>
-        public static T GetElement<T>(Document document, int eid) where T : Autodesk.Revit.DB.Element
+        public static T GetElement<T>(Document document, ElementId eid) where T : Autodesk.Revit.DB.Element
         {
-            Autodesk.Revit.DB.ElementId elementId = new ElementId(eid);
-            return document.GetElement(elementId) as T;
+            return document.GetElement(eid) as T;
         }
 
         /// <summary>
@@ -1177,9 +1175,9 @@ namespace Revit.SDK.Samples.AutoRoute.CS
             {
                 return "null";
             }
-            int ownerId = connector.Owner.Id.IntegerValue;
+            ElementId ownerId = connector.Owner.Id;
             string systemId = InvalidString;
-            try { systemId = connector.MEPSystem.Id.IntegerValue.ToString(); }
+            try { systemId = connector.MEPSystem.Id.ToString(); }
             catch { }
             object connType = InvalidString;
             object connDirection = InvalidString;
@@ -1213,7 +1211,7 @@ namespace Revit.SDK.Samples.AutoRoute.CS
                     break;
             }
             return string.Format("[{0}]\t[{1}]\t[{2}]\t[{3}]\t[{4}]\t[{5}]\t[{6}]\t[{7}]\t[{8}]\t",
-                ownerId, connType, connDirection, connShape, connSize, connLocation,
+                ownerId.ToString(), connType, connDirection, connShape, connSize, connLocation,
                 connAType, connIsConnected, systemId);
         }
 

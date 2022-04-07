@@ -293,7 +293,7 @@ namespace Revit.SDK.Samples.Journaling.CS
 
             // Begin to add the support data
             dataMap.Add("Wall Type Name", m_createType.Name);    // add wall type name
-            dataMap.Add("Level Id", m_createlevel.Id.IntegerValue.ToString());  // add level id
+            dataMap.Add("Level Id", m_createlevel.Id.ToString());  // add level id
             dataMap.Add("Start Point", XYZToString(m_startPoint));   // add start point
             dataMap.Add("End Point", XYZToString(m_endPoint));   // add end point
         }

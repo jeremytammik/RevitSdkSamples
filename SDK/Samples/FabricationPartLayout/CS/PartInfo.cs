@@ -141,7 +141,7 @@ namespace Revit.SDK.Samples.FabricationPartLayout.CS
             // centerline length
             builder.AppendLine("Centerline Length: " + GetStringFromNumber(doc, part.CenterlineLength, SpecTypeId.Length));
 
-            TaskDialog.Show("Fabrication Part [" + part.Id.IntegerValue + "]", builder.ToString());
+            TaskDialog.Show("Fabrication Part [" + part.Id.ToString() + "]", builder.ToString());
 
             return Result.Succeeded;
          }

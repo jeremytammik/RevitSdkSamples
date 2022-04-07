@@ -26,6 +26,7 @@ using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 using Autodesk.Revit;
 using Autodesk.Revit.DB;
@@ -78,8 +79,8 @@ namespace Revit.SDK.Samples.ObjectViewer.CS
         {
             try
             {
-                AnalyticalModel analyticalMode = GetAnalyticalModel(element);
-                View currentView = Command.CommandData.Application.ActiveUIDocument.Document.ActiveView;
+               AnalyticalElement analyticalMode = GetAnalyticalElement(element);
+               View currentView = Command.CommandData.Application.ActiveUIDocument.Document.ActiveView;
                 m_bbox = element.get_BoundingBox(currentView);
 
                 if (null == analyticalMode)
@@ -95,34 +96,57 @@ namespace Revit.SDK.Samples.ObjectViewer.CS
             {
             }
         }
-
-        /// <summary>
-        /// Get the analytical model object from an element.
-        /// </summary>
-        /// <param name="element">The selected element maybe has analytical model lines</param>
-        /// <returns>Return analytical model object, or else return null.</returns>
-        private AnalyticalModel GetAnalyticalModel(Element element)
-        {
-            return element.GetAnalyticalModel();
-        }
-
-        /// <summary>
-        /// create GraphicsData of give AnalyticalModel
-        /// </summary>
-        /// <param name="model">AnalyticalModel contains geometry data</param>
-        /// <returns>A graphics data object appropriate for GDI.</returns>
-        private void GetModelData(AnalyticalModel model)
-        {
-            foreach (Curve curve in model.GetCurves(AnalyticalCurveType.RawCurves))
+      /// <summary>
+      /// Get the analytical model object from an element.
+      /// </summary>
+      /// <param name="element">The selected element maybe has analytical model lines</param>
+      /// <returns>Return analytical model object, or else return null.</returns>
+      private AnalyticalElement GetAnalyticalElement(Element element)
+      {
+         Document document = element.Document;
+         AnalyticalElement analyticalElement = null;
+         AnalyticalToPhysicalAssociationManager assocManager = AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(document);
+         if (assocManager != null)
+         {
+            ElementId associatedElementId = assocManager.GetAssociatedElementId(element.Id);
+            if (associatedElementId != ElementId.InvalidElementId)
             {
-                try
-                {
-                    m_curve3Ds.Add(curve.Tessellate() as List<XYZ>);
-                }
-                catch
-                {
-                }
+               Element associatedElement = document.GetElement(associatedElementId);
+               if (associatedElement != null && associatedElement is AnalyticalElement)
+               {
+                  analyticalElement = associatedElement as AnalyticalElement;
+               }
             }
-        }
-    }
+         }
+         return analyticalElement;
+      }
+
+      /// <summary>
+      /// create GraphicsData of give AnalyticalElement
+      /// </summary>
+      /// <param name="model">AnalyticalElement contains geometry data</param>
+      /// <returns>A graphics data object appropriate for GDI.</returns>
+      private void GetModelData(AnalyticalElement model)
+      {
+         if (model == null)
+            return;
+         if (model is AnalyticalMember)
+         {
+            m_curve3Ds.Add(model.GetCurve().Tessellate() as List<XYZ>);
+         }
+         else if (model is AnalyticalPanel)
+         {
+            foreach (Curve curve in (model as AnalyticalPanel).GetOuterContour())
+            {
+               try
+               {
+                  m_curve3Ds.Add(curve.Tessellate() as List<XYZ>);
+               }
+               catch
+               {
+               }
+            }
+         }
+      }
+   }
 }

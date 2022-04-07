@@ -158,7 +158,7 @@ namespace Revit.SDK.Samples.GetSetDefaultTypes.CS
                   ElementTypeGroup = etg
                };
                defaultElementTypeCandidates.Add(item);
-               if (t.Id.IntegerValue == defaultElementTypeId.IntegerValue)
+               if (t.Id == defaultElementTypeId)
                   record.DefaultElementType = item;
             }
             record.DefaultElementTypeCandidates = defaultElementTypeCandidates;

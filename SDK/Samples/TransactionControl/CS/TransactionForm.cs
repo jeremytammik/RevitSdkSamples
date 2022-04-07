@@ -250,7 +250,7 @@ namespace Revit.SDK.Samples.TransactionControl.CS
                                 if (subTransaction.Commit() == TransactionStatus.Committed)
                                 {
                                     m_lastCreatedWall = createWallForm.CreatedWall;
-                                    AddNode(OperationType.ObjectModification, "Created wall " + m_lastCreatedWall.Id.IntegerValue.ToString());
+                                    AddNode(OperationType.ObjectModification, "Created wall " + m_lastCreatedWall.Id.ToString());
                                     UpdateButtonsStatus();
                                     return;
                                 }
@@ -296,7 +296,7 @@ namespace Revit.SDK.Samples.TransactionControl.CS
 
                         if (subTransaction.Commit() == TransactionStatus.Committed)
                         {
-                            AddNode(OperationType.ObjectModification, "Moved wall " + m_lastCreatedWall.Id.IntegerValue.ToString());
+                            AddNode(OperationType.ObjectModification, "Moved wall " + m_lastCreatedWall.Id.ToString());
                             return;
                         }
                     }
@@ -326,7 +326,7 @@ namespace Revit.SDK.Samples.TransactionControl.CS
                 // if not handled explicitly, the sub-transaction will be rolled back when leaving this block
                 try
                 {
-                    String wallId = m_lastCreatedWall.Id.IntegerValue.ToString();
+                    String wallId = m_lastCreatedWall.Id.ToString();
 
                     if (TaskDialogResult.No ==
                         TaskDialog.Show("Warning", "Do you really want to delete wall with id " + wallId + "?",

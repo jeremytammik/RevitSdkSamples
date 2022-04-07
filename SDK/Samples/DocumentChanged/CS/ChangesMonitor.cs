@@ -185,7 +185,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
             {
                 // this branch is for deleted element due to the deleted element cannot be retrieve from the document.
                 newRow["ChangeType"] = changeType;
-                newRow["Id"] = id.IntegerValue.ToString();
+                newRow["Id"] = id.ToString();
                 newRow["Name"] = "";
                 newRow["Category"] = "";
                 newRow["Document"] = "";
@@ -193,7 +193,7 @@ namespace Revit.SDK.Samples.ChangesMonitor.CS
             else
             {
                 newRow["ChangeType"] = changeType;
-                newRow["Id"] = id.IntegerValue.ToString();
+                newRow["Id"] = id.ToString();
                 newRow["Name"] = elem.Name;
                 newRow["Category"] = elem.Category.Name;
                 newRow["Document"] = doc.Title;

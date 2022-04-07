@@ -121,7 +121,7 @@ namespace Revit.SDK.Samples.DeckProperties.CS
         /// <param name="slab"></param>
         private void DumpSlab(Floor slab)
         {
-            m_displayForm.WriteLine("Dumping Slab" + slab.Id.IntegerValue.ToString());
+            m_displayForm.WriteLine("Dumping Slab" + slab.Id.ToString());
 
             Autodesk.Revit.DB.FloorType slabType = slab.FloorType;
 
@@ -191,7 +191,7 @@ namespace Revit.SDK.Samples.DeckProperties.CS
                         value = parameter.AsDouble().ToString();
                         break;
                     case Autodesk.Revit.DB.StorageType.ElementId:
-                        value = parameter.AsElementId().IntegerValue.ToString();
+                        value = parameter.AsElementId().ToString();
                         break;
                     case Autodesk.Revit.DB.StorageType.String:
                         value = parameter.AsString();

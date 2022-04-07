@@ -36,7 +36,6 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
 			public String Name { get; set; }
 			public ForgeTypeId Type { get; set; }
 			public bool UserModifiable  { get; set; }
-			public bool UserVisible { get; set; }
 			public String Description { get; set; }
 			public bool Instance { get; set; }
 			public Definition Definition { get; set; }
@@ -47,7 +46,6 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
 				Name = "Invalid";
             Type = new ForgeTypeId { };
 				UserModifiable = true;
-				UserVisible = true;
 				Description = "";
 				Instance = true;
 				Definition = null;
@@ -60,7 +58,6 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
 			{
 				ExternalDefinitionCreationOptions options = new ExternalDefinitionCreationOptions	(Name, Type);
 				options.UserModifiable = UserModifiable;
-				options.Visible = UserVisible;
 				options.Description = Description;
 				return options;
 			}

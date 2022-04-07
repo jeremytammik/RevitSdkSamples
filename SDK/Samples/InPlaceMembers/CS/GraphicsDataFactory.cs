@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 
 using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.DB;
@@ -38,43 +39,51 @@ namespace Revit.SDK.Samples.InPlaceMembers.CS
     /// </summary>
     public class GraphicsDataFactory
     {
-        /// <summary>
-        /// create GraphicsData of given AnalyticalModel3D
-        /// </summary>
-        /// <param name="model">AnalyticalModel3D contains geometry data</param>
-        /// <returns></returns>
-        public static GraphicsData CreateGraphicsData(AnalyticalModel model)
-        {
-            IList<Curve> curveList = model.GetCurves(AnalyticalCurveType.ActiveCurves);
+      /// <summary>
+      /// create GraphicsData of given AnalyticalModel3D
+      /// </summary>
+      /// <param name="model">AnalyticalModel3D contains geometry data</param>
+      /// <returns></returns>
+      public static GraphicsData CreateGraphicsData(AnalyticalElement model)
+      {
+         IList<Curve> curveList = new List<Curve>();
+         if (model is AnalyticalMember)
+         {
+            curveList.Add(model.GetCurve());
+         }
+         else if (model is AnalyticalPanel)
+         {
+            curveList = (model as AnalyticalPanel).GetOuterContour().ToList();
+         }
+             
+         if (curveList.Count > 0)
+         {
+            GraphicsData data = new GraphicsData();
 
-            if (curveList.Count > 0)
+            IEnumerator<Curve> curves = curveList.GetEnumerator();
+            curves.Reset();
+            while (curves.MoveNext())
             {
-                GraphicsData data = new GraphicsData();
+               Curve curve = curves.Current as Curve;
 
-                IEnumerator<Curve> curves = curveList.GetEnumerator();
-                curves.Reset();
-                while (curves.MoveNext())
-                {
-                    Curve curve = curves.Current as Curve;
-
-                    try
-                    {
-                        List<XYZ> points = curve.Tessellate() as List<XYZ>;
-                        data.InsertCurve(points);
-                    }
-                    catch
-                    {
-                    }
-                }
-
-                data.UpdataData();
-
-                return data;
+               try
+               {
+                  List<XYZ> points = curve.Tessellate() as List<XYZ>;
+                  data.InsertCurve(points);
+               }
+               catch
+               {
+               }
             }
-            else
-            {
-                throw new Exception("Can't get curves.");
-            }
-        }
-    }
+
+            data.UpdataData();
+
+            return data;
+         }
+         else
+         {
+            throw new Exception("Can't get curves.");
+         }
+      }
+   }
 }

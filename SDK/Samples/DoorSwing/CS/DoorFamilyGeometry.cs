@@ -113,7 +113,7 @@ namespace Revit.SDK.Samples.DoorSwing.CS
          IEnumerable<ViewPlan> viewPlans = from elem in
                                               new FilteredElementCollector(door.Document).OfClass(typeof(ViewPlan)).ToElements()
                                            let viewPlan = elem as ViewPlan
-                                           where viewPlan != null && !viewPlan.IsTemplate && viewPlan.GenLevel.Id.IntegerValue == door.LevelId.IntegerValue
+                                           where viewPlan != null && !viewPlan.IsTemplate && viewPlan.GenLevel.Id == door.LevelId
                                            select viewPlan;
          if (viewPlans.Count() > 0)
          {

@@ -14,6 +14,7 @@
 {\pntext\f2\'B7\tab}loading and unloading of item files\par
 {\pntext\f2\'B7\tab}exporting fabrication parts to PCF and MAJ\par
 {\pntext\f2\'B7\tab}accessing fabrication part mesh geometry.\par
+{\pntext\f2\'B7\tab}flip a fabrication part\par
 
 \pard\nowidctlpar\kerning0\f1\par
 \b\f0 Classes:\b0  \par
@@ -122,6 +123,11 @@ SaveAsFabricationJob.cs\par
     It contains the class ExportToMAJ which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to export a selection of fabrication parts to a MAJ file.\par
 \par
 
+\pard\nowidctlpar FlipPart.cs\par
+
+\pard\nowidctlpar\li360 It contains the class FlipPart which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to flip a fabrication part to the opposite direction.\par
+\par
+
 \pard\nowidctlpar\li360\par
 
 \pard\nowidctlpar\b Description:\b0  \par
@@ -151,7 +157,8 @@ This sample provides the following functionalities.\par
 -\tab Load and place additional parts\par
 -\tab Unload unused additional parts\par
 -\tab Export a selection of fabrication parts to a MAJ file\par
--\tab Access fabrication part mesh geometry.\line\par
+-\tab Access fabrication part mesh geometry.\par
+-\tab Flip a fabrication part to the opposite direction.\line\par
 
 \pard\nowidctlpar\b Instructions:\cf1\b0  \f1\par
 \cf0\f0 Open Revit application.\par
@@ -332,5 +339,11 @@ Expected result: The unused loaded item files will be unloaded from the configur
 \par
 \tab Expected result: Mesh triangle face geometry will be exported to CSV files.\par
 \par
+22. Flip Fabrication Part\par
+\tab a. Select a fabrication part\par
+\tab b. Execute the command\par
+\par
+\tab Expected result: The fabrication part will to the opposite direction.\par
+\par
 }
- 
+ 

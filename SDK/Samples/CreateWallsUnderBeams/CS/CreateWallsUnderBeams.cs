@@ -178,90 +178,89 @@ namespace Revit.SDK.Samples.CreateWallsUnderBeams.CS
             // If everything goes right, return succeeded.
             return Autodesk.Revit.UI.Result.Succeeded;
         }
-        #endregion IExternalCommand Members Implementation
+      #endregion IExternalCommand Members Implementation
 
-        /// <summary>
-        /// Create the walls which along and under the path of the selected beams
-        /// </summary>
-        /// <param name="project"> A reference of current document</param>
-        /// <returns>true if there is no error in process; otherwise, false.</returns>
-        Boolean BeginCreate(Autodesk.Revit.DB.Document project)
-        {
-            // Begin to create walls along and under each beam
-            for (int i = 0; i < m_beamCollection.Count; i++)
+      /// <summary>
+      /// Create the walls which along and under the path of the selected beams
+      /// </summary>
+      /// <param name="project"> A reference of current document</param>
+      /// <returns>true if there is no error in process; otherwise, false.</returns>
+      Boolean BeginCreate(Autodesk.Revit.DB.Document project)
+      {
+         // Begin to create walls along and under each beam
+         for (int i = 0; i < m_beamCollection.Count; i++)
+         {
+            // Get each selected beam.
+            FamilyInstance m = m_beamCollection[i] as FamilyInstance;
+            if (null == m)
             {
-                // Get each selected beam.
-                FamilyInstance m = m_beamCollection[i] as FamilyInstance;
-                if (null == m)
-                {
-                    m_errorInformation = "The program should not go here.";
-                    return false;
-                }
-
-                // Get the analytical model of the beam, 
-                // the wall will be created using this model line as path.            
-                AnalyticalModel model = m.GetAnalyticalModel();
-                if (null == model)
-                {
-                    m_errorInformation = "The beam should have analytical model.";
-                    return false;
-                }
-
-                // Get the level using the beam's reference level
-                Autodesk.Revit.DB.ElementId levelId = m.get_Parameter(BuiltInParameter.INSTANCE_REFERENCE_LEVEL_PARAM).AsElementId();
-                m_level = project.GetElement(levelId) as Level;
-                if (null == m_level)
-                {
-                    m_errorInformation = "The program should not go here.";
-                    return false;
-                }
-
-                Transaction t = new Transaction(project, Guid.NewGuid().GetHashCode().ToString());
-                t.Start();
-                Wall createdWall = Wall.Create(project, model.GetCurve(), m_selectedWallType.Id,
-                                                m_level.Id, 10, 0, true, m_isStructural);
-                if (null == createdWall)
-                {
-                    m_errorInformation = "Can not create the walls";
-                    return false;
-                }
-
-                // Modify some parameters of the created wall to make it look better.
-                Double offset = model.GetCurve().GetEndPoint(0).Z - m_level.Elevation;
-                createdWall.get_Parameter(BuiltInParameter.WALL_BASE_CONSTRAINT).Set(levelId);
-                createdWall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET).Set(offset - 3000 / 304.8);
-                createdWall.get_Parameter(BuiltInParameter.WALL_HEIGHT_TYPE).Set(levelId);
-                t.Commit();
+               m_errorInformation = "The program should not go here.";
+               return false;
             }
-            return true;
-        }
 
-
-        /// <summary>
-        /// Check whether all the beams have horizontal analytical line 
-        /// </summary>
-        /// <returns>true if each beam has horizontal analytical line; otherwise, false.</returns>
-        Boolean CheckBeamHorizontal()
-        {
-            for (int i = 0; i < m_beamCollection.Count; i++)
+            // the wall will be created using beam's model line as path.   
+            if (!(m.Location is LocationCurve))
             {
-                // Get the analytical curve of each selected beam.
-                // And check if Z coordinate of start point and end point of the curve are same.
-                FamilyInstance m = m_beamCollection[i] as FamilyInstance;
-                AnalyticalModel model = m.GetAnalyticalModel();
-                if (null == model)
-                {
-                    m_errorInformation = "The beam should have analytical model.";
-                    return false;
-                }
-                else if ((PRECISION <= model.GetCurve().GetEndPoint(0).Z - model.GetCurve().GetEndPoint(1).Z)
-                    || (-PRECISION >= model.GetCurve().GetEndPoint(0).Z - model.GetCurve().GetEndPoint(1).Z))
-                {
-                    m_errorInformation = "Please only select horizontal beams.";
-                    return false;
-                }
+               m_errorInformation = "The beam should have location curve.";
+               return false;
             }
-            return true;
-        }
-    }
+            Curve beamCurve = (m.Location as LocationCurve).Curve;
+
+            // Get the level using the beam's reference level
+            Autodesk.Revit.DB.ElementId levelId = m.get_Parameter(BuiltInParameter.INSTANCE_REFERENCE_LEVEL_PARAM).AsElementId();
+            m_level = project.GetElement(levelId) as Level;
+            if (null == m_level)
+            {
+               m_errorInformation = "The program should not go here.";
+               return false;
+            }
+
+            Transaction t = new Transaction(project, Guid.NewGuid().GetHashCode().ToString());
+            t.Start();
+            Wall createdWall = Wall.Create(project, beamCurve, m_selectedWallType.Id,
+                                            m_level.Id, 10, 0, true, m_isStructural);
+            if (null == createdWall)
+            {
+               m_errorInformation = "Can not create the walls";
+               return false;
+            }
+
+            // Modify some parameters of the created wall to make it look better.
+            Double offset = beamCurve.GetEndPoint(0).Z - m_level.Elevation;
+            createdWall.get_Parameter(BuiltInParameter.WALL_BASE_CONSTRAINT).Set(levelId);
+            createdWall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET).Set(offset - 3000 / 304.8);
+            createdWall.get_Parameter(BuiltInParameter.WALL_HEIGHT_TYPE).Set(levelId);
+            t.Commit();
+         }
+         return true;
+      }
+
+
+      /// <summary>
+      /// Check whether all the beams have horizontal analytical line 
+      /// </summary>
+      /// <returns>true if each beam has horizontal analytical line; otherwise, false.</returns>
+      Boolean CheckBeamHorizontal()
+      {
+         for (int i = 0; i < m_beamCollection.Count; i++)
+         {
+            // Get the analytical curve of each selected beam.
+            // And check if Z coordinate of start point and end point of the curve are same.
+            FamilyInstance m = m_beamCollection[i] as FamilyInstance;
+            Curve beamCurve = m.Location is LocationCurve ? (m.Location as LocationCurve).Curve : null;
+            if (null == beamCurve)
+            {
+               m_errorInformation = "The beam should have location curve.";
+               return false;
+            }
+            else if ((PRECISION <= beamCurve.GetEndPoint(0).Z - beamCurve.GetEndPoint(1).Z)
+                || (-PRECISION >= beamCurve.GetEndPoint(0).Z - beamCurve.GetEndPoint(1).Z))
+            {
+               m_errorInformation = "Please only select horizontal beams.";
+               return false;
+            }
+         }
+         return true;
+      }
+   }
 }

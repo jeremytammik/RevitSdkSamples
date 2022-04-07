@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 using Autodesk;
 using Autodesk.Revit;
@@ -313,111 +314,123 @@ namespace Revit.SDK.Samples.CreateViewSection.CS
         }
 
 
-        /// <summary>
-        /// Generate a Transform instance which as Transform property of BoundingBoxXYZ, 
-        /// when the user select a beam, this method will be called
-        /// </summary>
-        /// <returns>the reference of Transform, return null if it can't be generated</returns>
-        Transform GenerateBeamTransform()
-        {
-            Transform transform = null;
-            FamilyInstance instance = m_currentComponent as FamilyInstance;
+      /// <summary>
+      /// Generate a Transform instance which as Transform property of BoundingBoxXYZ, 
+      /// when the user select a beam, this method will be called
+      /// </summary>
+      /// <returns>the reference of Transform, return null if it can't be generated</returns>
+      Transform GenerateBeamTransform()
+      {
+         Transform transform = null;
+         FamilyInstance instance = m_currentComponent as FamilyInstance;
 
-            // First check whether the beam is horizontal.
-            // In order to predigest the calculation, only allow it to be horizontal
-            double startOffset = instance.get_Parameter(BuiltInParameter.STRUCTURAL_BEAM_END0_ELEVATION).AsDouble();
-            double endOffset = instance.get_Parameter(BuiltInParameter.STRUCTURAL_BEAM_END1_ELEVATION).AsDouble();
-            if (-PRECISION > startOffset - endOffset || PRECISION < startOffset - endOffset)
-            {
-                m_errorInformation = "Please select a horizontal beam.";
-                return transform;
-            }
-
-            // Second get the Analytical Model line.
-            AnalyticalModel model = instance.GetAnalyticalModel();
-            if (null == model)
-            {
-                m_errorInformation = "The selected beam doesn't have Analytical Model line.";
-                return transform;
-            }
-            Curve curve = model.GetCurve();
-            if (null == curve)
-            {
-                m_errorInformation = "The program should never go here.";
-                return transform;
-            }
-
-            // Now I am sure I can create a transform instance.
-            transform = Transform.Identity;
-
-            // Third find the middle point of the line and set it as Origin property.
-            Autodesk.Revit.DB.XYZ startPoint = curve.GetEndPoint(0);
-            Autodesk.Revit.DB.XYZ endPoint = curve.GetEndPoint(1);
-            Autodesk.Revit.DB.XYZ midPoint = XYZMath.FindMidPoint(startPoint, endPoint);
-            transform.Origin = midPoint;
-
-            // At last find out the directions of the created view, and set it as Basis property.   
-            Autodesk.Revit.DB.XYZ basisZ = XYZMath.FindDirection(startPoint, endPoint);
-            Autodesk.Revit.DB.XYZ basisX = XYZMath.FindRightDirection(basisZ);
-            Autodesk.Revit.DB.XYZ basisY = XYZMath.FindUpDirection(basisZ);
-
-            transform.set_Basis(0, basisX);
-            transform.set_Basis(1, basisY);
-            transform.set_Basis(2, basisZ);
+         // First check whether the beam is horizontal.
+         // In order to predigest the calculation, only allow it to be horizontal
+         double startOffset = instance.get_Parameter(BuiltInParameter.STRUCTURAL_BEAM_END0_ELEVATION).AsDouble();
+         double endOffset = instance.get_Parameter(BuiltInParameter.STRUCTURAL_BEAM_END1_ELEVATION).AsDouble();
+         if (-PRECISION > startOffset - endOffset || PRECISION < startOffset - endOffset)
+         {
+            m_errorInformation = "Please select a horizontal beam.";
             return transform;
-        }
+         }
 
-
-        /// <summary>
-        /// Generate a Transform instance which as Transform property of BoundingBoxXYZ, 
-        /// when the user select a floor, this method will be called
-        /// </summary>
-        /// <returns>the reference of Transform, return null if it can't be generated</returns>
-        Transform GenerateFloorTransform()
-        {
-            Transform transform = null;
-            Floor floor = m_currentComponent as Floor;
-
-            // First get the Analytical Model lines
-            AnalyticalModel model = floor.GetAnalyticalModel();
-            if (null == model)
-            {
-                m_errorInformation = "Please select a structural floor.";
-                return transform;
-            }
-
-            CurveArray curves = m_project.Document.Application.Create.NewCurveArray();
-            IList<Curve> curveList = model.GetCurves(AnalyticalCurveType.ActiveCurves);
-            foreach (Curve curve in curveList)
-            {
-                curves.Append(curve);
-            }
-
-            if (null == curves || true == curves.IsEmpty)
-            {
-                m_errorInformation = "The program should never go here.";
-                return transform;
-            }
-
-            // Now I am sure I can create a transform instance.
-            transform = Transform.Identity;
-
-            // Third find the middle point of the floor and set it as Origin property.
-            Autodesk.Revit.DB.XYZ midPoint = XYZMath.FindMiddlePoint(curves);
-            transform.Origin = midPoint;
-
-            // At last find out the directions of the created view, and set it as Basis property.
-            Autodesk.Revit.DB.XYZ basisZ = XYZMath.FindFloorViewDirection(curves);
-            Autodesk.Revit.DB.XYZ basisX = XYZMath.FindRightDirection(basisZ);
-            Autodesk.Revit.DB.XYZ basisY = XYZMath.FindUpDirection(basisZ);
-
-            transform.set_Basis(0, basisX);
-            transform.set_Basis(1, basisY);
-            transform.set_Basis(2, basisZ);
+         if (!(instance.Location is LocationCurve))
+         {
+            m_errorInformation = "The program should never go here.";
             return transform;
-        }
+         }
+         Curve curve = (instance.Location as LocationCurve).Curve;
+         if (null == curve)
+         {
+            m_errorInformation = "The program should never go here.";
+            return transform;
+         }
 
-        Double GetWallMidOffsetFromLocation(Wall wall)
+         // Now I am sure I can create a transform instance.
+         transform = Transform.Identity;
+
+         // Third find the middle point of the line and set it as Origin property.
+         Autodesk.Revit.DB.XYZ startPoint = curve.GetEndPoint(0);
+         Autodesk.Revit.DB.XYZ endPoint = curve.GetEndPoint(1);
+         Autodesk.Revit.DB.XYZ midPoint = XYZMath.FindMidPoint(startPoint, endPoint);
+         transform.Origin = midPoint;
+
+         // At last find out the directions of the created view, and set it as Basis property.   
+         Autodesk.Revit.DB.XYZ basisZ = XYZMath.FindDirection(startPoint, endPoint);
+         Autodesk.Revit.DB.XYZ basisX = XYZMath.FindRightDirection(basisZ);
+         Autodesk.Revit.DB.XYZ basisY = XYZMath.FindUpDirection(basisZ);
+
+         transform.set_Basis(0, basisX);
+         transform.set_Basis(1, basisY);
+         transform.set_Basis(2, basisZ);
+         return transform;
+      }
+
+
+      /// <summary>
+      /// Generate a Transform instance which as Transform property of BoundingBoxXYZ, 
+      /// when the user select a floor, this method will be called
+      /// </summary>
+      /// <returns>the reference of Transform, return null if it can't be generated</returns>
+      Transform GenerateFloorTransform()
+      {
+         Transform transform = null;
+         Floor floor = m_currentComponent as Floor;
+
+         // First get the Analytical Model lines
+         AnalyticalPanel model = null;
+         Document document = floor.Document;
+         AnalyticalToPhysicalAssociationManager assocManager = AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(document);
+         if (assocManager != null)
+         {
+            ElementId associatedElementId = assocManager.GetAssociatedElementId(floor.Id);
+            if (associatedElementId != ElementId.InvalidElementId)
+            {
+               Element associatedElement = document.GetElement(associatedElementId);
+               if (associatedElement != null && associatedElement is AnalyticalPanel)
+               {
+                  model = associatedElement as AnalyticalPanel;
+               }
+            }
+         }
+         if (null == model)
+         {
+            m_errorInformation = "Please select a structural floor.";
+            return transform;
+         }
+
+         CurveArray curves = m_project.Document.Application.Create.NewCurveArray();
+         IList<Curve> curveList = model.GetOuterContour().ToList();
+         foreach (Curve curve in curveList)
+         {
+            curves.Append(curve);
+         }
+
+         if (null == curves || true == curves.IsEmpty)
+         {
+            m_errorInformation = "The program should never go here.";
+            return transform;
+         }
+
+         // Now I am sure I can create a transform instance.
+         transform = Transform.Identity;
+
+         // Third find the middle point of the floor and set it as Origin property.
+         Autodesk.Revit.DB.XYZ midPoint = XYZMath.FindMiddlePoint(curves);
+         transform.Origin = midPoint;
+
+         // At last find out the directions of the created view, and set it as Basis property.
+         Autodesk.Revit.DB.XYZ basisZ = XYZMath.FindFloorViewDirection(curves);
+         Autodesk.Revit.DB.XYZ basisX = XYZMath.FindRightDirection(basisZ);
+         Autodesk.Revit.DB.XYZ basisY = XYZMath.FindUpDirection(basisZ);
+
+         transform.set_Basis(0, basisX);
+         transform.set_Basis(1, basisY);
+         transform.set_Basis(2, basisZ);
+         return transform;
+      }
+
+      Double GetWallMidOffsetFromLocation(Wall wall)
         {
             // First get the "Base Offset" property.
             Double baseOffset = wall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET).AsDouble();

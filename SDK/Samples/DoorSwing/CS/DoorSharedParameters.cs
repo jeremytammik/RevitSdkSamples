@@ -187,7 +187,7 @@ namespace Revit.SDK.Samples.DoorSwing.CS
 
                   foreach (Category category in categories)
                   {
-                     if (category.Id.IntegerValue.Equals((int)boundCategory))
+                     if (category.BuiltInCategory == boundCategory)
                      {
                         return true;
                      }

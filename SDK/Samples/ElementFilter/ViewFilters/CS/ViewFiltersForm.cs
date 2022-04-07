@@ -190,7 +190,6 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             //
             // Get all selected categories, include one which is going to be checked
             List<BuiltInCategory> selCats = new List<BuiltInCategory>();
-            List<ElementId> selCatIds = new List<ElementId>();
             int itemCount = categoryCheckedListBox.Items.Count;
             for (int ii = 0; ii < itemCount; ii++)
             {
@@ -210,12 +209,11 @@ namespace Revit.SDK.Samples.ViewFilters.CS
                     String curCat = categoryCheckedListBox.GetItemText(categoryCheckedListBox.Items[ii]);
                     BuiltInCategory param = EnumParseUtility<BuiltInCategory>.Parse(curCat);
                     selCats.Add(param);
-                    selCatIds.Add(new ElementId(param));
                 }
             }
             //
             // Reset accordingly controls
-            bool changed = m_currentFilterData.SetNewCategories(selCatIds);
+            bool changed = m_currentFilterData.SetNewCategories(selCats);
             if (!changed)
                 return;
             //
@@ -330,7 +328,6 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             {
                 criteriaComboBox.SelectedItem = currentRule.RuleCriteria;
                 ruleValueComboBox.Text = currentRule.RuleValue;
-                caseSensitiveCheckBox.Checked = currentRule.CaseSensitive;
                 epsilonTextBox.Text = String.Format("{0:N6}", currentRule.Epsilon);
             }
             else
@@ -338,7 +335,6 @@ namespace Revit.SDK.Samples.ViewFilters.CS
                 // set with default value
                 criteriaComboBox.SelectedIndex = 0;
                 ruleValueComboBox.Text = String.Empty;
-                caseSensitiveCheckBox.Checked = false;
                 epsilonTextBox.Text = "0.0";
             }
         }
@@ -690,7 +686,6 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             paramerComboBox.Enabled = false;
             criteriaComboBox.Enabled = false;
             ruleValueComboBox.Enabled = false;
-            caseSensitiveCheckBox.Visible = false;
             epsilonLabel.Visible = false;
             epsilonTextBox.Visible = false;
             newRuleButton.Enabled = false;
@@ -717,7 +712,6 @@ namespace Revit.SDK.Samples.ViewFilters.CS
         {
             criteriaComboBox.Enabled = false;
             ruleValueComboBox.Enabled = false;
-            caseSensitiveCheckBox.Enabled = false;
             newRuleButton.Enabled = false;
             deleRuleButton.Enabled = false;
         }
@@ -759,19 +753,15 @@ namespace Revit.SDK.Samples.ViewFilters.CS
         {
             if (paramType == StorageType.String)
             {
-                caseSensitiveCheckBox.Visible = true;
-                caseSensitiveCheckBox.Enabled = true;
                 epsilonLabel.Visible = epsilonTextBox.Visible = false;
             }
             else if (paramType == StorageType.Double)
             {
-                caseSensitiveCheckBox.Visible = false;
                 epsilonLabel.Visible = epsilonTextBox.Visible = true;
                 epsilonLabel.Enabled = epsilonTextBox.Enabled = true;
             }
             else
             {
-                caseSensitiveCheckBox.Visible = false;
                 epsilonLabel.Visible = epsilonTextBox.Visible = false;
             }
         }
@@ -887,8 +877,7 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             String criteria = criteriaComboBox.SelectedItem as String;
             if (paramType == StorageType.String)
             {
-                return new FilterRuleBuilder(curParam, criteria,
-                    ruleValueComboBox.Text, caseSensitiveCheckBox.Checked);
+                return new FilterRuleBuilder(curParam, criteria, ruleValueComboBox.Text);
             }
             else if (paramType == StorageType.Double)
             {

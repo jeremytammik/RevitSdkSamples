@@ -119,41 +119,47 @@ namespace Revit.SDK.Samples.Truss.CS
             CreateGraphicsPath();
         }
 
-        /// <summary>
-        /// Get points of the truss
-        /// </summary>
-        /// <returns>points array stores all the points on truss</returns>
-        public List<XYZ> GetTrussPoints()
-        {
-            List<XYZ> xyzArray = new List<XYZ>();
-            try
+      /// <summary>
+      /// Get points of the truss
+      /// </summary>
+      /// <returns>points array stores all the points on truss</returns>
+      public List<XYZ> GetTrussPoints()
+      {
+         List<XYZ> xyzArray = new List<XYZ>();
+         try
+         {
+            IEnumerator iter = m_truss.Members.GetEnumerator();
+            iter.Reset();
+            while (iter.MoveNext())
             {
-                IEnumerator iter = m_truss.Members.GetEnumerator();
-                iter.Reset();
-                while (iter.MoveNext())
-                {
-                    Autodesk.Revit.DB.ElementId id = (Autodesk.Revit.DB.ElementId)(iter.Current);
-                    Autodesk.Revit.DB.Element elem =
-                        m_commandData.Application.ActiveUIDocument.Document.GetElement(id);
-                    FamilyInstance familyInstace = (FamilyInstance)(elem);
-                    AnalyticalModel frame = familyInstace.GetAnalyticalModel();
-                    Line line = (Line)(frame.GetCurve());
-                    xyzArray.Add(line.GetEndPoint(0));
-                    xyzArray.Add(line.GetEndPoint(1));
-                }
-            }
-            catch (System.ArgumentException)
-            {
-                TaskDialog.Show("Revit", "The start point and the end point of the line are too close, please re-draw it.");
-            }
-            return xyzArray;
-        }
+               Autodesk.Revit.DB.ElementId id = (Autodesk.Revit.DB.ElementId)(iter.Current);
+               Autodesk.Revit.DB.Element elem =
+                   m_commandData.Application.ActiveUIDocument.Document.GetElement(id);
+               FamilyInstance familyInstace = (FamilyInstance)(elem);
+               Curve frame1Curve = null;
+               
+               if (familyInstace.Location is LocationCurve)
+               {
+                  frame1Curve = (familyInstace.Location as LocationCurve).Curve;
+               }
 
-        /// <summary>
-        /// Get a matrix which can transform points to 2D
-        /// </summary>
-        /// <returns>matrix which can transform points to 2D</returns>
-        public Matrix4 GetTo2DMatrix()
+               Line line = (Line)(frame1Curve);
+               xyzArray.Add(line.GetEndPoint(0));
+               xyzArray.Add(line.GetEndPoint(1));
+            }
+         }
+         catch (System.ArgumentException)
+         {
+            TaskDialog.Show("Revit", "The start point and the end point of the line are too close, please re-draw it.");
+         }
+         return xyzArray;
+      }
+
+      /// <summary>
+      /// Get a matrix which can transform points to 2D
+      /// </summary>
+      /// <returns>matrix which can transform points to 2D</returns>
+      public Matrix4 GetTo2DMatrix()
         {
             Line trussLocation = (m_truss.Location as LocationCurve).Curve as Line;
             startLocation = trussLocation.GetEndPoint(0);

@@ -325,7 +325,7 @@ namespace Revit.SDK.Samples.RoomSchedule
                     }
 
                     // create update SQL clause, 
-                    // when filtering row to be updated, use Room.Id.IntegerValue if "External Room ID" is null.
+                    // when filtering row to be updated, use Room.Id if "External Room ID" is null.
                     String updateStr = String.Format(
                         "Update [{0}$] SET [{1}] = '{2}', [{3}] = '{4}', [{5}] = '{6}', [{7}] = '{8:N3}' Where [{9}] = {10}",
                         mappedXlsAndTable.SheetName, // mapped table name
@@ -333,7 +333,7 @@ namespace Revit.SDK.Samples.RoomSchedule
                         RoomsData.RoomNumber, room.Number,
                         RoomsData.RoomComments, comments,
                         RoomsData.RoomArea, roomArea,
-                        RoomsData.RoomID, String.IsNullOrEmpty(externalId) ? room.Id.IntegerValue.ToString() : externalId);
+                        RoomsData.RoomID, String.IsNullOrEmpty(externalId) ? room.Id.ToString() : externalId);
 
                     // execute the command and check the size of updated rows 
                     int afftectedRows = dbConnector.ExecuteCommnand(updateStr);
@@ -348,8 +348,8 @@ namespace Revit.SDK.Samples.RoomSchedule
                         updatedRows += afftectedRows;
 
                         // if "External Room ID" is null but update successfully, which means:
-                        // in spreadsheet there is existing row whose "ID" value equals to room.Id.IntegerValue, so we should
-                        // set Revit room's "External Room ID" value to Room.Id.IntegerValue for consistence after update .
+                        // in spreadsheet there is existing row whose "ID" value equals to room.Id, so we should
+                        // set Revit room's "External Room ID" value to Room.Id for consistence after update .
                         if (String.IsNullOrEmpty(externalId))
                         {
                             SetExternalRoomIdToRoomId(room);
@@ -373,7 +373,7 @@ namespace Revit.SDK.Samples.RoomSchedule
                             String.Format("Insert Into [{0}$] ([{1}], [{2}], [{3}], [{4}], [{5}]) Values('{6}', '{7}', '{8}', '{9}', '{10:N3}')",
                             mappedXlsAndTable.SheetName, // mapped table name
                             RoomsData.RoomID, RoomsData.RoomComments, RoomsData.RoomName, RoomsData.RoomNumber, RoomsData.RoomArea,
-                            (String.IsNullOrEmpty(externalId)) ? (room.Id.IntegerValue.ToString()) : (externalId), // Room id
+                            (String.IsNullOrEmpty(externalId)) ? (room.Id.ToString()) : (externalId), // Room id
                             (bCommnetIsNull || String.IsNullOrEmpty(comments)) ? ("<Added from Revit>") : (comments),
                             room.Name, room.Number, roomArea);
 
@@ -388,8 +388,8 @@ namespace Revit.SDK.Samples.RoomSchedule
                             newRows += afftectedRows;
 
                             // if the Revit room doesn't have external id value(may be a room created manually)
-                            // set its "External Room ID" value to Room.Id.IntegerValue, because the room was added/mapped to spreadsheet, 
-                            // and the value of ID column in sheet is just the Room.Id.IntegerValue, we should keep this consistence.
+                            // set its "External Room ID" value to Room.Id, because the room was added/mapped to spreadsheet, 
+                            // and the value of ID column in sheet is just the Room.Id, we should keep this consistence.
                             if (String.IsNullOrEmpty(externalId))
                             {
                                 SetExternalRoomIdToRoomId(room);
@@ -476,7 +476,7 @@ namespace Revit.SDK.Samples.RoomSchedule
         }
 
         /// <summary>
-        /// Set shared parameter (whose name is "External Room ID") value to Room.Id.IntegerValue
+        /// Set shared parameter (whose name is "External Room ID") value to Room.Id
         /// </summary>
         /// <param name="room">The room used to get the room which to be updated</param>
         private static bool SetExternalRoomIdToRoomId(Room room)
@@ -486,7 +486,7 @@ namespace Revit.SDK.Samples.RoomSchedule
                 Parameter shareParam = room.LookupParameter(RoomsData.SharedParam);
                 if (null != shareParam)
                 {
-                    return shareParam.Set(room.Id.IntegerValue.ToString());
+                    return shareParam.Set(room.Id.ToString());
                 } 
             }
             catch

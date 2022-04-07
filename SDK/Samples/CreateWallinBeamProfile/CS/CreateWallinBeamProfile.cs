@@ -46,7 +46,7 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
         // Private Members
         IList<WallType> m_wallTypeCollection;         // Store all the wall types in current document
         ArrayList m_beamCollection;             // Store the selection of beams in Revit
-        ArrayList m_analyticalLineCollection;   // Store the analytical line of all the beams
+        ArrayList m_lineCollection;   // Store the lines of all the beams
         WallType m_selectedWallType;            // Store the selected wall type
         Level m_level;                          // Store the level which wall create on
         Boolean m_isStructural;                 // Indicate whether create structural walls
@@ -100,7 +100,7 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
         {
             m_wallTypeCollection = new List<WallType>();
             m_beamCollection = new ArrayList();
-            m_analyticalLineCollection = new ArrayList();
+         m_lineCollection = new ArrayList();
             m_isStructural = true;
         }
         #region IExternalCommand Members Implementation
@@ -171,15 +171,15 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
             //CurveArray curveArray = new CurveArray();   // store the curves used to create wall
             List<Curve> curveArray = new List<Curve>();
             Autodesk.Revit.DB.XYZ point;      // used to store the end point of the curve temporarily
-            Curve curve = m_analyticalLineCollection[0] as Curve;
+            Curve curve = m_lineCollection[0] as Curve;
             curveArray.Add(curve);
             point = curve.GetEndPoint(1);
 
             // Sort the curves of analytical model and then add to curveArray.
             // API asks for the curves should be in a sequence, deasil or anticlockwise
-            for (int i = 1; i < m_analyticalLineCollection.Count; i++)
+            for (int i = 1; i < m_lineCollection.Count; i++)
             {
-                foreach (Object o in m_analyticalLineCollection)
+                foreach (Object o in m_lineCollection)
                 {
                     Boolean isInclude = false;
                     foreach (Curve j in curveArray)
@@ -222,7 +222,7 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
             }
 
             // If the program goes here, it means the beams can't form a profile.
-            if (curveArray.Count != m_analyticalLineCollection.Count)
+            if (curveArray.Count != m_lineCollection.Count)
             {
                 m_errorInformation = "There are more than one closed profile.";
                 return false;
@@ -254,61 +254,59 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
             return true;
         }
 
-        /// <summary>
-        /// Get necessary data from revit.such as selected beams, wall types and level information
-        /// </summary>
-        /// <param name="project">A reference of current document</param>
-        /// <returns>true if no error happens; otherwise, false.</returns>
-        Boolean PrepareData(Autodesk.Revit.UI.UIDocument project)
-        {
-            // Search all the wall types in the Revit
-            FilteredElementCollector filteredElementCollector = new FilteredElementCollector(project.Document);
-            filteredElementCollector.OfClass(typeof(WallType));
-            m_wallTypeCollection = filteredElementCollector.Cast<WallType>().ToList<WallType>();
+      /// <summary>
+      /// Get necessary data from revit.such as selected beams, wall types and level information
+      /// </summary>
+      /// <param name="project">A reference of current document</param>
+      /// <returns>true if no error happens; otherwise, false.</returns>
+      Boolean PrepareData(Autodesk.Revit.UI.UIDocument project)
+      {
+         // Search all the wall types in the Revit
+         FilteredElementCollector filteredElementCollector = new FilteredElementCollector(project.Document);
+         filteredElementCollector.OfClass(typeof(WallType));
+         m_wallTypeCollection = filteredElementCollector.Cast<WallType>().ToList<WallType>();
 
-            // Find the selection of beams in Revit
-            ElementSet selection = new ElementSet();
-            foreach (ElementId elementId in project.Selection.GetElementIds())
+         // Find the selection of beams in Revit
+         ElementSet selection = new ElementSet();
+         foreach (ElementId elementId in project.Selection.GetElementIds())
+         {
+            selection.Insert(project.Document.GetElement(elementId));
+         }
+
+         foreach (Autodesk.Revit.DB.Element e in selection)
+         {
+            FamilyInstance m = e as FamilyInstance;
+
+            // Use StructuralType property can judge whether it is a beam.
+            if (null != m && StructuralType.Beam == m.StructuralType)
             {
-               selection.Insert(project.Document.GetElement(elementId));
+               m_beamCollection.Add(e);    // store the beams
+
+               if (!(m.Location is LocationCurve))
+               {
+                  m_errorInformation = "The beam should have location curve.";
+                  return false;
+               }
+               m_lineCollection.Add((m.Location as LocationCurve).Curve);
             }
-            AnalyticalModel model;     // store the AnalyticalModel of the beam.
-            foreach (Autodesk.Revit.DB.Element e in selection)
-            {
-                FamilyInstance m = e as FamilyInstance;
+         }
+         if (0 == m_beamCollection.Count)
+         {
+            m_errorInformation = "Can not find any beams.";
+            return false;
+         }
 
-                // Use StructuralType property can judge whether it is a beam.
-                if (null != m && StructuralType.Beam == m.StructuralType)
-                {
-                    m_beamCollection.Add(e);    // store the beams
+         // Get the level which will be used in create method
+         FilteredElementCollector collector = new FilteredElementCollector(project.Document);
+         m_level = collector.OfClass(typeof(Level)).FirstElement() as Level;
+         return true;
+      }
 
-                    // Get the curve of beam's AnalyticalModel.
-                    model = m.GetAnalyticalModel();
-                    if (null == model)
-                    {
-                        m_errorInformation = "The beam should have analytical model.";
-                        return false;
-                    }
-                    m_analyticalLineCollection.Add(model.GetCurve());
-                }
-            }
-            if (0 == m_beamCollection.Count)
-            {
-                m_errorInformation = "Can not find any beams.";
-                return false;
-            }
-
-            // Get the level which will be used in create method
-            FilteredElementCollector collector = new FilteredElementCollector(project.Document);
-            m_level = collector.OfClass(typeof(Level)).FirstElement() as Level;
-            return true;
-        }
-
-        /// <summary>
-        /// Check whether the selected beams can make a a vertical profile.
-        /// </summary>
-        /// <returns>true if selected beams create a vertical profile; otherwise, false.</returns>
-        Boolean IsVerticalProfile()
+      /// <summary>
+      /// Check whether the selected beams can make a a vertical profile.
+      /// </summary>
+      /// <returns>true if selected beams create a vertical profile; otherwise, false.</returns>
+      Boolean IsVerticalProfile()
         {
             // First check whether all the beams are in a same vertical plane
             if (!IsInVerticalPlane())
@@ -372,7 +370,7 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
 
             // When all the beams in the X-Z plane or Y-Z plane, the deal is especial
             // So I use 3 ways to judge whether all the beams are in same vertical plane
-            Curve curve = m_analyticalLineCollection[0] as Curve;
+            Curve curve = m_lineCollection[0] as Curve;
             startPoint = curve.GetEndPoint(0);
             endPoint = curve.GetEndPoint(1);
             if (EqualDouble(startPoint.X, endPoint.X))
@@ -389,9 +387,9 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
             }
 
             // Begin to compare each analytical line and judge whether they are in same vertical plane
-            for (int i = 1; i < m_analyticalLineCollection.Count; i++)
+            for (int i = 1; i < m_lineCollection.Count; i++)
             {
-                curve = m_analyticalLineCollection[i] as Curve;
+                curve = m_lineCollection[i] as Curve;
                 startPoint = curve.GetEndPoint(0);
                 endPoint = curve.GetEndPoint(1);
 
@@ -442,9 +440,9 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
             bool hasEndPoint;        // indicate whether end point is in the array
 
             // Find out all the points in the curves, the same point only count once.
-            for (int i = 0; i < m_analyticalLineCollection.Count; i++)
+            for (int i = 0; i < m_lineCollection.Count; i++)
             {
-                curve = m_analyticalLineCollection[i] as Curve;
+                curve = m_lineCollection[i] as Curve;
                 startPoint = curve.GetEndPoint(0);
                 endPoint = curve.GetEndPoint(1);
                 hasStartpoint = false;  // Judge whether start point has been counted.
@@ -482,7 +480,7 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
                 }
             }
 
-            if (pointArray.Count != m_analyticalLineCollection.Count)
+            if (pointArray.Count != m_lineCollection.Count)
             {
                 return false;
             }
@@ -499,11 +497,11 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
             // Initialize the data.
             Double baseOffset = 0;  // the offset from the m_level's elevation
             Double lowestElevation = 0; // the elevation of the lowest point
-            Curve curve = m_analyticalLineCollection[0] as Curve;
+            Curve curve = m_lineCollection[0] as Curve;
             lowestElevation = curve.GetEndPoint(0).Z;
 
             // Find out the elevation of the lowest point.
-            foreach (Curve c in m_analyticalLineCollection)
+            foreach (Curve c in m_lineCollection)
             {
                 if (c.GetEndPoint(0).Z < lowestElevation)
                 {
@@ -529,11 +527,11 @@ namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
             // Initialize the data
             Double topOffset = 0;   // the offset from the m_level's elevation
             Double highestElevation = 0;    // the elevation of the highest point
-            Curve curve = m_analyticalLineCollection[0] as Curve;
+            Curve curve = m_lineCollection[0] as Curve;
             highestElevation = curve.GetEndPoint(0).Z;
 
             // Find out the elevation of the highest point.
-            foreach (Curve c in m_analyticalLineCollection)
+            foreach (Curve c in m_lineCollection)
             {
                 if (c.GetEndPoint(0).Z > highestElevation)
                 {

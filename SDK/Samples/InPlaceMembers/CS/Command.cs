@@ -24,6 +24,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 using Autodesk.Revit;
 using Autodesk.Revit.DB;
@@ -67,7 +68,9 @@ namespace Revit.SDK.Samples.InPlaceMembers.CS
             Transaction transaction = new Transaction(commandData.Application.ActiveUIDocument.Document, "External Tool");
 
             FamilyInstance inPlace = null;
-            AnalyticalModel model = null; 
+
+            AnalyticalElement model = null;
+
             try
             {
                 transaction.Start();
@@ -97,44 +100,55 @@ namespace Revit.SDK.Samples.InPlaceMembers.CS
                 transaction.Commit();
             }
         }
+      /// <summary>
+      /// Search for the In-Place family instance's properties data to be listed
+      /// and graphics data to be drawn.
+      /// </summary>
+      /// <param name="inPlaceMember">properties data to be listed</param>
+      /// <param name="model">graphics data to be draw</param>
+      /// <returns>Returns true if retrieved this data</returns>
+      private bool PrepareData(ref FamilyInstance inPlaceMember, ref AnalyticalElement model)
+      {
+         ElementSet selected = new ElementSet();
+         foreach (ElementId elementId in m_commandData.Application.ActiveUIDocument.Selection.GetElementIds())
+         {
+            selected.Insert(m_commandData.Application.ActiveUIDocument.Document.GetElement(elementId));
+         }
 
-        /// <summary>
-        /// Search for the In-Place family instance's properties data to be listed
-        /// and graphics data to be drawn.
-        /// </summary>
-        /// <param name="inPlaceMember">properties data to be listed</param>
-        /// <param name="model">graphics data to be draw</param>
-        /// <returns>Returns true if retrieved this data</returns>
-        private bool PrepareData(ref FamilyInstance inPlaceMember, ref AnalyticalModel model)
-        {
-           ElementSet selected = new ElementSet();
-            foreach (ElementId elementId in m_commandData.Application.ActiveUIDocument.Selection.GetElementIds())
+         if (selected.Size != 1)
+         {
+            return false;
+         }
+
+         foreach (object o in selected)
+         {
+            inPlaceMember = o as FamilyInstance;
+            if (null == inPlaceMember)
             {
-               selected.Insert(m_commandData.Application.ActiveUIDocument.Document.GetElement(elementId));
+               return false;
             }
-
-            if (selected.Size != 1)
+         }
+         Document document = inPlaceMember.Document;
+         AnalyticalToPhysicalAssociationManager relManager = AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(document);
+         if (relManager != null)
+         {
+            ElementId associatedElementId = relManager.GetAssociatedElementId(inPlaceMember.Id);
+            if (associatedElementId != ElementId.InvalidElementId)
             {
-                return false;
+               Element associatedElement = document.GetElement(associatedElementId);
+               if (associatedElement != null && associatedElement is AnalyticalElement)
+               {
+                  model = associatedElement as AnalyticalElement;
+               }
             }
+         }
 
-            foreach (object o in selected)
-            {
-                inPlaceMember = o as FamilyInstance;
-                if (null == inPlaceMember)
-                {
-                    return false;
-                }
-            }
+         if (null == model)
+         {
+            return false;
+         }
 
-            model = inPlaceMember.GetAnalyticalModel();
-
-            if (null==model)
-            {
-                return false;
-            }
-
-            return true;
-        }
-    }
+         return true;
+      }
+   }
 }

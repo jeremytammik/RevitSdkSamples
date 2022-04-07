@@ -58,7 +58,7 @@
   <AddIn Type="Command">
     <Assembly>FabricationPartLayout.dll</Assembly>
     <AddInId>b083fe9b-dd69-43f9-b4ba-71d83e783825</AddInId>
-    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.Ancillaries</FullClassName> 
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.Ancillaries</FullClassName>
     <VendorId>ADSK</VendorId>
     <Text>Ancillaries</Text>
     <Description>Discover the Ancillaries Associated with a Fabrication Part</Description>
@@ -260,6 +260,17 @@
     <VendorId>ADSK</VendorId>
     <Text>Apply Change</Text>
     <Description>Apply change to the service and the size of a selection of Fabrication Parts</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>0170D9E3-DFA3-4320-B53F-EC3A80DDE514</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.FlipPart</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Flip Part</Text>
+    <Description>Flips a Fabrication Part to the opposite direction</Description>
     <VisibilityMode>AlwaysVisible</VisibilityMode>
     <Discipline>Any</Discipline>
     <LanguageType>Unknown</LanguageType>

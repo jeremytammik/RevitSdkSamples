@@ -74,7 +74,7 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
                      Level systemLevel = element as Level;
                      LevelsDataSource levelsDataSourceRow = new LevelsDataSource();
 
-                     levelsDataSourceRow.LevelIDValue = systemLevel.Id.IntegerValue;
+                     levelsDataSourceRow.LevelIDValue = systemLevel.Id;
                      levelsDataSourceRow.Name = systemLevel.Name;
 
                      Parameter elevationPara = systemLevel.get_Parameter(BuiltInParameter.LEVEL_ELEV);
@@ -127,15 +127,14 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
         /// <summary>
         /// Set Level
         /// </summary>
-        /// <param name="levelIDValue">Pass a Level's ID value</param>
+        /// <param name="levelID">Pass a Level's ID value</param>
         /// <param name="levelName">Pass a Level's Name</param>
         /// <param name="levelElevation">Pass a Level's Elevation</param>
         /// <returns>True if succeed, else return false</returns>
-        public bool SetLevel(int levelIDValue, String levelName, double levelElevation)
+        public bool SetLevel(Autodesk.Revit.DB.ElementId levelID, String levelName, double levelElevation)
         {
             try
             {
-                Autodesk.Revit.DB.ElementId levelID = new Autodesk.Revit.DB.ElementId(levelIDValue);
                 Level systemLevel = m_revit.Application.ActiveUIDocument.Document.GetElement(levelID) as Level;
 
                 Parameter elevationPara = systemLevel.get_Parameter(BuiltInParameter.LEVEL_ELEV);
@@ -171,10 +170,9 @@ namespace Revit.SDK.Samples.LevelsProperty.CS
         /// <summary>
         /// Delete a Level.
         /// </summary>
-        /// <param name="IDValueOfLevel">A Level's ID value</param>
-        public void DeleteLevel(int IDValueOfLevel)
+        /// <param name="IDOfLevel">A Level's ID value</param>
+        public void DeleteLevel(ElementId IDOfLevel)
         {
-            Autodesk.Revit.DB.ElementId IDOfLevel = new ElementId(IDValueOfLevel);
 
             m_revit.Application.ActiveUIDocument.Document.Delete(IDOfLevel);
         }

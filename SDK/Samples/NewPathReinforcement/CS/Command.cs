@@ -60,90 +60,80 @@ namespace Revit.SDK.Samples.NewPathReinforcement.CS
         /// the operation.</returns>
         public Autodesk.Revit.UI.Result Execute(ExternalCommandData commandData,
             ref string message, Autodesk.Revit.DB.ElementSet elements)
-        {
+      {
+         try
+         {
+            Wall wall = null;
+            Floor floor = null;
+
+            ElementSet elems = new ElementSet();
+            foreach (ElementId elementId in commandData.Application.ActiveUIDocument.Selection.GetElementIds())
+            {
+               elems.Insert(commandData.Application.ActiveUIDocument.Document.GetElement(elementId));
+            }
+            #region selection handle -- select one Slab (or Structure Wall)
+            //if user had some wrong selection, give user an Error message
+            string errorMessage =
+                "Please select one Slab (or Structure Wall) to create PathReinforcement.";
+            if (1 != elems.Size)
+            {
+               message = errorMessage;
+               return Autodesk.Revit.UI.Result.Cancelled;
+            }
+
+            Autodesk.Revit.DB.Element selectElem = null;
+            IEnumerator iter = elems.GetEnumerator();
+            iter.Reset();
+            if (iter.MoveNext())
+            {
+               selectElem = (Autodesk.Revit.DB.Element)iter.Current;
+            }
+
+            if (selectElem is Wall)
+            {
+               wall = selectElem as Wall;
+            }
+            else if (selectElem is Floor)
+            {
+               floor = selectElem as Floor;
+            }
+            else
+            {
+               message = errorMessage;
+               return Autodesk.Revit.UI.Result.Cancelled;
+            }
+            #endregion
             try
             {
-                Wall wall = null;
-                Floor floor = null;
-
-                ElementSet elems = new ElementSet();
-                foreach (ElementId elementId in commandData.Application.ActiveUIDocument.Selection.GetElementIds())
-                {
-                   elems.Insert(commandData.Application.ActiveUIDocument.Document.GetElement(elementId));
-                }
-                #region selection handle -- select one Slab (or Structure Wall)
-                //if user had some wrong selection, give user an Error message
-                string errorMessage = 
-                    "Please select one Slab (or Structure Wall) to create PathReinforcement.";
-                if (1 != elems.Size)
-                {
-                    message = errorMessage;
-                    return Autodesk.Revit.UI.Result.Cancelled;
-                }
-
-                Autodesk.Revit.DB.Element selectElem = null;
-                IEnumerator iter = elems.GetEnumerator();
-                iter.Reset();
-                if (iter.MoveNext())
-                {
-                    selectElem = (Autodesk.Revit.DB.Element)iter.Current;
-                }
-
-                if (selectElem is Wall)
-                {
-                    wall = selectElem as Wall;
-                    if (null == wall.GetAnalyticalModel())
-                    {
-                        message = errorMessage;
-                        return Autodesk.Revit.UI.Result.Cancelled;
-                    }
-                }
-                else if (selectElem is Floor)
-                {
-                    floor = selectElem as Floor;
-                    if (null == floor.GetAnalyticalModel())
-                    {
-                        message = errorMessage;
-                        return Autodesk.Revit.UI.Result.Cancelled;
-                    }
-                }
-                else
-                {
-                    message = errorMessage;
-                    return Autodesk.Revit.UI.Result.Cancelled;
-                }
-                #endregion
-                try
-                {
-                    if (null != wall)
-                    {
-                        ProfileWall profileWall = new ProfileWall(wall, commandData);
-                        NewPathReinforcementForm newPathReinforcementForm = 
-                            new NewPathReinforcementForm(profileWall);
-                        newPathReinforcementForm.ShowDialog();
-                    }
-                    else if (null != floor)
-                    {
-                        ProfileFloor profileFloor = new ProfileFloor(floor, commandData);
-                        NewPathReinforcementForm newPathReinforcementForm = 
-                            new NewPathReinforcementForm(profileFloor);
-                        newPathReinforcementForm.ShowDialog();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    message = ex.Message;
-                    return Autodesk.Revit.UI.Result.Cancelled;
-                }
-
-                return Autodesk.Revit.UI.Result.Succeeded;
+               if (null != wall)
+               {
+                  ProfileWall profileWall = new ProfileWall(wall, commandData);
+                  NewPathReinforcementForm newPathReinforcementForm =
+                      new NewPathReinforcementForm(profileWall);
+                  newPathReinforcementForm.ShowDialog();
+               }
+               else if (null != floor)
+               {
+                  ProfileFloor profileFloor = new ProfileFloor(floor, commandData);
+                  NewPathReinforcementForm newPathReinforcementForm =
+                      new NewPathReinforcementForm(profileFloor);
+                  newPathReinforcementForm.ShowDialog();
+               }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                message = e.Message;
-                return Autodesk.Revit.UI.Result.Failed;
+               message = ex.Message;
+               return Autodesk.Revit.UI.Result.Cancelled;
             }
-        }
-        #endregion
-    }
+
+            return Autodesk.Revit.UI.Result.Succeeded;
+         }
+         catch (Exception e)
+         {
+            message = e.Message;
+            return Autodesk.Revit.UI.Result.Failed;
+         }
+      }
+      #endregion
+   }
 }

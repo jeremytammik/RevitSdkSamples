@@ -115,7 +115,7 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
             if (selectedsplit.Length != 2)
                 throw new ArgumentException();
 
-            ElementId id = new ElementId(int.Parse(selectedsplit[1]));
+            ElementId id = ElementId.Parse(selectedsplit[1]);
             return m_application.ActiveUIDocument.Document.GetElement(id) as PipeType;
         }
 

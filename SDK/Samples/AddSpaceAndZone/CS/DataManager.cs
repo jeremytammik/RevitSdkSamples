@@ -63,8 +63,8 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
         /// </summary>
         private void Initialize()
         {
-            Dictionary<int, List<Space>> spaceDictionary = new Dictionary<int, List<Space>>();
-            Dictionary<int, List<Zone>> zoneDictionary = new Dictionary<int, List<Zone>>();
+            Dictionary<ElementId, List<Space>> spaceDictionary = new Dictionary<ElementId, List<Space>>();
+            Dictionary<ElementId, List<Zone>> zoneDictionary = new Dictionary<ElementId, List<Zone>>();
 
             Document activeDoc = m_commandData.Application.ActiveUIDocument.Document;
 
@@ -79,8 +79,8 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
                 if (level != null)
                 {
                     m_levels.Add(level);
-                    spaceDictionary.Add(level.Id.IntegerValue, new List<Space>());
-                    zoneDictionary.Add(level.Id.IntegerValue, new List<Zone>());
+                    spaceDictionary.Add(level.Id, new List<Space>());
+                    zoneDictionary.Add(level.Id, new List<Zone>());
                 }
             }
 
@@ -90,7 +90,7 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
                 Space space = spacesIterator.Current as Space;
                 if (space != null)
                 {
-                    spaceDictionary[space.LevelId.IntegerValue].Add(space);
+                    spaceDictionary[space.LevelId].Add(space);
                 }
             }
 
@@ -100,7 +100,7 @@ namespace Revit.SDK.Samples.AddSpaceAndZone.CS
                 Zone zone = zonesIterator.Current as Zone;
                 if (zone != null && activeDoc.GetElement(zone.LevelId) != null)
                 {
-                    zoneDictionary[zone.LevelId.IntegerValue].Add(zone);
+                    zoneDictionary[zone.LevelId].Add(zone);
                 }
             }
 

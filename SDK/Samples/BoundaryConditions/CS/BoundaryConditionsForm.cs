@@ -58,7 +58,7 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         private void BoundaryConditionsForm_Load(object sender, EventArgs e)
         {
             // display host element id in the text box
-            hostTextBox.Text = m_dataBuffer.HostElement.Id.IntegerValue.ToString();
+            hostTextBox.Text = m_dataBuffer.HostElement.Id.ToString();
 
             // if the selected element has not a BC, create one and display the default parameter values
             // else list the BC ids in the combox and display the first BC's parameter values
@@ -83,7 +83,7 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
 
             // list the boundary conditions Id values to the combobox
             System.Collections.ICollection bCIdValues = m_dataBuffer.BCs.Keys;
-            foreach (int bCIdValue in bCIdValues)
+            foreach (Autodesk.Revit.DB.ElementId bCIdValue in bCIdValues)
             {
                 bCComboBox.Items.Add(bCIdValue);
             }
@@ -99,7 +99,7 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         private void bCComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // create a BCProperties instance according to current selected BC Id
-            m_dataBuffer.BCProperties = new BCProperties(m_dataBuffer.BCs[int.Parse(bCComboBox.Text)]);
+            m_dataBuffer.BCProperties = new BCProperties(m_dataBuffer.BCs[Autodesk.Revit.DB.ElementId.Parse(bCComboBox.Text)]);
             
             // set the display object
             bCPropertyGrid.SelectedObject = m_dataBuffer.BCProperties;

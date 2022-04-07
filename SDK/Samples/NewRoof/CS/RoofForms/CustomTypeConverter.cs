@@ -49,7 +49,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
             m_levels.Clear();
             foreach (Level level in levels)
             {
-                m_levels.Add(level.Id.IntegerValue.ToString(), level);
+                m_levels.Add(level.Id.ToString(), level);
             }
         }
 
@@ -58,7 +58,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
         /// </summary>
         /// <param name="id">The id of the level</param>
         /// <returns>Returns a level which id equals the specified id.</returns>
-        static public Level GetLevelByID(int id)
+        static public Level GetLevelByID(ElementId id)
         {            
             return m_levels[id.ToString()];
         }
@@ -89,7 +89,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
             if (destinationType == typeof(String) && value is Level)
             {
                 Level level = (Level)value;
-                return level.Name + "[" + level.Id.IntegerValue.ToString() + "]";
+                return level.Name + "[" + level.Id.ToString() + "]";
             }
             return base.ConvertTo(context, culture, value, destinationType);
         }

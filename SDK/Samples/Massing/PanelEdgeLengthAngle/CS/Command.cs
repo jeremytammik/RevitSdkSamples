@@ -270,7 +270,7 @@ namespace Revit.SDK.Samples.PanelEdgeLengthAngle.CS
 
          if (L1 == null || L2 == null || L3 == null || L4 == null || A1 == null || A2 == null || A3 == null || A4 == null)
          {
-            string errorstring = "Panel family: " + familyInstance.Id.IntegerValue + " '" + familyInstance.Symbol.Family.Name + "' must have instance parameters Length1, Length2, Length3, Length4, Angle1, Angle2, Angle3, and Angle4";
+            string errorstring = "Panel family: " + familyInstance.Id.ToString() + " '" + familyInstance.Symbol.Family.Name + "' must have instance parameters Length1, Length2, Length3, Length4, Angle1, Angle2, Angle3, and Angle4";
             TaskDialog.Show("Revit", errorstring);
             //   throw new ArgumentException(errorstring);
          }

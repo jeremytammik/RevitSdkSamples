@@ -84,7 +84,7 @@ namespace Revit.SDK.Samples.Openings.CS
         {
             get
             {
-                return String.Concat(m_opening.Name, " (", m_opening.Id.IntegerValue.ToString(), ")");
+                return String.Concat(m_opening.Name, " (", m_opening.Id.ToString(), ")");
             }
         }
 

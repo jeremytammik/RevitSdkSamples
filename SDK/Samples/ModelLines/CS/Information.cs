@@ -85,7 +85,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
     {
         // Private members
         String m_text;     // The display text
-        int m_id;          // The real value - id
+        ElementId m_id;          // The real value - id
 
         // Properties
         /// <summary>
@@ -102,7 +102,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
         /// <summary>
         /// The real value of the comboBox, as the ValueMember
         /// </summary>
-        public int Id
+        public ElementId Id
         {
             get
             {
@@ -116,7 +116,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
         /// </summary>
         /// <param name="typeName">indicate model curve type</param>
         /// <param name="id">the element id</param>
-        public IdInfo(String typeName, int id)
+        public IdInfo(String typeName, ElementId id)
         {
             m_id = id;          // Store the element id
             

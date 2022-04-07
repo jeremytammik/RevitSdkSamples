@@ -127,7 +127,7 @@ namespace Revit.SDK.Samples.AutoTagRooms.CS
             {
                 Level level = this.levelsComboBox.SelectedItem as Level;
                 
-                if (tmpRoom.LevelId.IntegerValue == level.Id.IntegerValue)
+                if (tmpRoom.LevelId == level.Id)
                 {
                     ListViewItem item = new ListViewItem(tmpRoom.Name);
 

@@ -111,7 +111,7 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
                 objects.Add(obj);
                 if (m_creationData.Symbol != null)
                 {
-                    if ((obj as Autodesk.Revit.DB.ElementType).Id.IntegerValue == m_creationData.Symbol.Id.IntegerValue)
+                    if ((obj as Autodesk.Revit.DB.ElementType).Id == m_creationData.Symbol.Id)
                     {
                         selected = obj;
                     }
@@ -137,7 +137,7 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
             foreach (KeyValuePair<Autodesk.Revit.DB.Element, List<Edge>> pair in creator.SupportEdges)
             {
                 Autodesk.Revit.DB.Element elem = pair.Key;
-                TreeNode elemNode = new TreeNode("[Id:" + elem.Id.IntegerValue + "] " + elem.Name);
+                TreeNode elemNode = new TreeNode("[Id:" + elem.Id.ToString() + "] " + elem.Name);
                 elemNode.StateImageIndex = (int)CheckState.Unchecked;
                 rootNode.Nodes.Add(elemNode);
                 elemNode.Tag = elem;

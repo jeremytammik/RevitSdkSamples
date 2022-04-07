@@ -25,6 +25,7 @@ namespace Revit.SDK.Samples.CreateComplexAreaRein.CS
     using System.Collections.Generic;
     using System.Text;
     using System.Windows.Forms;
+   using System.Linq;
 
     using Autodesk.Revit;
     using Autodesk.Revit.DB;
@@ -50,54 +51,67 @@ namespace Revit.SDK.Samples.CreateComplexAreaRein.CS
             m_currentDoc = Command.CommandData.Application.ActiveUIDocument.Document;
         }
 
-        /// <summary>
-        /// get necessary data when create AreaReinforcement on a horizontal floor
-        /// </summary>
-        /// <param name="floor">floor on which to create AreaReinforcemen</param>
-        /// <param name="refer">reference of the horizontal face on the floor</param>
-        /// <param name="curves">curves compose the horizontal face of the floor</param>
-        /// <returns>is successful</returns>
-        public bool GetFloorGeom(Floor floor, ref Reference refer, ref IList<Curve> curves)
-        {
-            //get horizontal face's reference
-            FaceArray faces = GeomUtil.GetFaces(floor);
-            foreach (Face face in faces)
+      /// <summary>
+      /// get necessary data when create AreaReinforcement on a horizontal floor
+      /// </summary>
+      /// <param name="floor">floor on which to create AreaReinforcemen</param>
+      /// <param name="refer">reference of the horizontal face on the floor</param>
+      /// <param name="curves">curves compose the horizontal face of the floor</param>
+      /// <returns>is successful</returns>
+      public bool GetFloorGeom(Floor floor, ref Reference refer, ref IList<Curve> curves)
+      {
+         //get horizontal face's reference
+         FaceArray faces = GeomUtil.GetFaces(floor);
+         foreach (Face face in faces)
+         {
+            if (GeomUtil.IsHorizontalFace(face))
             {
-                if (GeomUtil.IsHorizontalFace(face))
-                {
-                    refer = face.Reference;
-                    break;
-                }
+               refer = face.Reference;
+               break;
             }
-            if (null == refer)
+         }
+         if (null == refer)
+         {
+            return false;
+         }
+         //get analytical model profile
+         AnalyticalPanel model = null;
+         Document document = floor.Document;
+         AnalyticalToPhysicalAssociationManager assocManager = AnalyticalToPhysicalAssociationManager.GetAnalyticalToPhysicalAssociationManager(document);
+         if (assocManager != null)
+         {
+            ElementId associatedElementId = assocManager.GetAssociatedElementId(floor.Id);
+            if (associatedElementId != ElementId.InvalidElementId)
             {
-                return false;
+               Element associatedElement = document.GetElement(associatedElementId);
+               if (associatedElement != null && associatedElement is AnalyticalPanel)
+               {
+                  model = associatedElement as AnalyticalPanel;
+               }
             }
-            //get analytical model profile
-            AnalyticalModel model = floor.GetAnalyticalModel();
-            if (null == model)
-            {
-                return false;
-            }
+         }
+         if (null == model)
+         {
+            return false;
+         }
 
-            curves = model.GetCurves(AnalyticalCurveType.ActiveCurves);
+         curves = model.GetOuterContour().ToList();
+         if (!GeomUtil.IsRectangular(curves))
+         {
+            return false;
+         }
+         curves = AddInlaidCurves(curves, 0.5);
 
-            if (!GeomUtil.IsRectangular(curves))
-            {
-                return false;
-            }
-            curves = AddInlaidCurves(curves, 0.5);
+         return true;
+      }
 
-            return true;
-        }
-
-        /// <summary>
-        /// create CurveArray which contain 8 curves, 4 is exterior lines and 4 is interior lines
-        /// </summary>
-        /// <param name="curves"></param>
-        /// <param name="scale"></param>
-        /// <returns></returns>
-        private IList<Curve> AddInlaidCurves(IList<Curve> curves, double scale)
+      /// <summary>
+      /// create CurveArray which contain 8 curves, 4 is exterior lines and 4 is interior lines
+      /// </summary>
+      /// <param name="curves"></param>
+      /// <param name="scale"></param>
+      /// <returns></returns>
+      private IList<Curve> AddInlaidCurves(IList<Curve> curves, double scale)
         {
             //because curves is readonly, can't use method Curve.Append(Curve)
             List<Line> lines = new List<Line>();
