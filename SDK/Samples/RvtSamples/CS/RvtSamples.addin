@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Application">
-    <Name>External Tool</Name>
+    <Name>RvtSamples</Name>
     <Assembly>Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/RvtSamples/CS/bin/Debug/RvtSamples.dll</Assembly>
     <ClientId>42cb0a70-2ee7-4e64-a42d-87b9cdcc41c8</ClientId>
     <FullClassName>RvtSamples.Application</FullClassName>
