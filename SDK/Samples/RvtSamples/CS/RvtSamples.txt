@@ -598,21 +598,37 @@ Image:
 Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
 ContextualAnalyticalModel.CreateAnalyticalPanel
 
-Elements, Geometry, Structure, UI
-Add relation
-Add relation
-LargeImage:
-Image:
-Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
-ContextualAnalyticalModel.AddRelation
+#Elements, Geometry, Structure, UI
+#Add relation
+#Add relation
+#LargeImage:
+#Image:
+#Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+#ContextualAnalyticalModel.AddRelation
+#
+#Elements, Geometry, Structure, UI
+#Update relation
+#Update relation
+#LargeImage:
+#Image:
+#Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+#ContextualAnalyticalModel.UpdateRelation
+#
+#Elements, Geometry, Structure, UI
+#Break relation
+#Break relation
+#LargeImage:
+#Image:
+#Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+#ContextualAnalyticalModel.BreakRelation
 
 Elements, Geometry, Structure, UI
-Update relation
-Update relation
+Add relation
+Add relation
 LargeImage:
 Image:
 Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
-ContextualAnalyticalModel.UpdateRelation
+ContextualAnalyticalModel.AddAssociation
 
 Elements, Geometry, Structure, UI
 Break relation
@@ -620,7 +636,7 @@ Break relation
 LargeImage:
 Image:
 Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
-ContextualAnalyticalModel.BreakRelation
+ContextualAnalyticalModel.RemoveAssociation
 
 Elements, Geometry, Structure, UI
 Modify Panel Contour
