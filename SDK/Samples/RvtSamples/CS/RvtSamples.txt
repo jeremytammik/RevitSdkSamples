@@ -103,7 +103,7 @@ Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/InCanvasControlAPI\CS\bin\Debug\InCanva
 Revit.SDK.Samples.InCanvasControlAPI.CS.Command
 
 Annotation, Elements
-Infrastructure alignments
+Infrastructure Alignments CreateAlignmentStationLabelsCmd
 Demonstrates the use of API for finding and labeling an infrastructure alignment element.
 LargeImage:
 Image:
@@ -111,7 +111,7 @@ Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/CivilAlignments\CS\bin\Debug\CivilAlign
 Revit.SDK.Samples.CivilAlignments.CS.CreateAlignmentStationLabelsCmd
 
 Annotation, Elements
-Infrastructure alignments
+Infrastructure Alignments ShowPropertiesCmd
 Demonstrates the use of API for listing properties of an infrastructure alignment element and its labels.
 LargeImage:
 Image:
@@ -423,12 +423,28 @@ Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/CurtainWallGrid\CS\bin\Debug\CurtainWal
 Revit.SDK.Samples.CurtainWallGrid.CS.Command
 
 Elements
-Datumplane modification
-Datumplane modification
+DatumAlignment
+DatumAlignment
 LargeImage:
 Image:
 Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/DatumsModification\CS\bin\Debug\DatumsModification.dll
-Revit.SDK.Samples.DatumsModification.CS.Command
+Revit.SDK.Samples.DatumsModification.CS.DatumAlignment
+
+Elements
+DatumPropagation
+DatumPropagation
+LargeImage:
+Image:
+Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/DatumsModification\CS\bin\Debug\DatumsModification.dll
+Revit.SDK.Samples.DatumsModification.CS.DatumPropagation
+
+Elements
+DatumStyleModification
+DatumStyleModification
+LargeImage:
+Image:
+Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/DatumsModification\CS\bin\Debug\DatumsModification.dll
+Revit.SDK.Samples.DatumsModification.CS.DatumStyleModification
 
 Elements
 Create and modify view filters.
