@@ -195,7 +195,7 @@ Highlight by Phase
 Highlight by Phase.
 LargeImage:
 Image:
-Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/PhaseSample\VB.NET\bin\Debug\PhaseSample.dll
+Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/PhaseSample\VB.NET\bin\PhaseSample.dll
 Revit.SDK.Samples.PhaseSample.VB.NET.Command
 
 Basics
@@ -227,7 +227,6 @@ Display Options
 Display Options.
 LargeImage:
 Image:
-Y:/a/src/rvt/RevitSdkSamples/SDK/Samples/DesignOptionReader\VB.NET\bin\Debug\DesignOptionReader.dll
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\DesignOptionReader\VB.NET\bin\DesignOptionReader.dll
 Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
 
