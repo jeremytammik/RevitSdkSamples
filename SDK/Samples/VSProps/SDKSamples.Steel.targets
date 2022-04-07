@@ -31,23 +31,23 @@
        This must come after the import of the common targets -->
   <ItemGroup>
     <Reference Include="ASObjectsMgd">
-      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\Addins\SteelConnections\ASObjectsMgd.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2023\Addins\SteelConnections\ASObjectsMgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ASGeometryMgd">
-      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\Addins\SteelConnections\ASGeometryMgd.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2023\Addins\SteelConnections\ASGeometryMgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ASCADLinkMgd">
-      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\Addins\SteelConnections\ASCADLinkMgd.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2023\Addins\SteelConnections\ASCADLinkMgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
 	<Reference Include="DotNetRoots">
-      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\Addins\SteelConnections\DotNetRoots.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2023\Addins\SteelConnections\DotNetRoots.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SteelConnectionsDB">
-      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\Addins\SteelConnections\Autodesk.SteelConnectionsDB.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2023\Addins\SteelConnections\Autodesk.SteelConnectionsDB.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
