@@ -118,26 +118,26 @@ namespace Revit.SDK.Samples.DividedSurfaceByIntersects.CS
 
       private DividedSurface GetDividedSurface()
       {
-         return m_document.GetElement(new ElementId(31519)) as DividedSurface;
+         return m_document.GetElement(new ElementId(31519L)) as DividedSurface;
       }
 
       private IEnumerable<ElementId> GetPlanes()
       {
          // 1027, 1071 & 1072 are ids of the reference planes and levels drawn in the family file
-         yield return new ElementId(1027); 
-         yield return new ElementId(1071);
-         yield return new ElementId(1072);
+         yield return new ElementId(1027L); 
+         yield return new ElementId(1071L);
+         yield return new ElementId(1072L);
       }
 
       private IEnumerable<ElementId> GetLines()
       {
          // the "31xxx" numberic values are ids of the model lines drawn in the family file
-         yield return new ElementId(31170);
-         yield return new ElementId(31206);
-         yield return new ElementId(31321);
-         yield return new ElementId(31343);
-         yield return new ElementId(31377);
-         yield return new ElementId(31395);
+         yield return new ElementId(31170L);
+         yield return new ElementId(31206L);
+         yield return new ElementId(31321L);
+         yield return new ElementId(31343L);
+         yield return new ElementId(31377L);
+         yield return new ElementId(31395L);
       }
 
       /// <summary>
@@ -146,7 +146,7 @@ namespace Revit.SDK.Samples.DividedSurfaceByIntersects.CS
       /// <typeparam name="T"></typeparam>
       /// <param name="eid"></param>
       /// <returns></returns>
-      public T GetElement<T>(int eid) where T : Element
+      public T GetElement<T>(long eid) where T : Element
       {
          return m_document.GetElement(new ElementId(eid)) as T;
       }

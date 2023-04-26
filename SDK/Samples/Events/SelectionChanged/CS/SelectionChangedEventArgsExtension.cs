@@ -39,7 +39,7 @@ namespace Revit.SDK.Samples.SelectionChanged.CS
       /// </summary>
       /// <param name="args">Event arguments that contains the event data.</param>
       /// <param name="doc">document in which the event occurs.</param>
-      public static string GetInfo(this SelectionChangedEventArgs args)
+      public static string GetInfo(this SelectionChangedEventArgs args, bool showId = false)
       {
          StringBuilder sb = new StringBuilder();
          sb.AppendLine();
@@ -62,46 +62,78 @@ namespace Revit.SDK.Samples.SelectionChanged.CS
             {
                case ElementReferenceType.REFERENCE_TYPE_NONE:
                   {
-                     sb.AppendFormat("The reference is to an element. ElementId:{0}.", aRef.ElementId);
-                     if (aRef.LinkedElementId != ElementId.InvalidElementId)
+                     sb.Append("The reference is to an element.");
+                     if (showId)
                      {
-                        sb.AppendFormat("LinkedElementId:{0}", aRef.LinkedElementId);
+                        sb.AppendFormat(" ElementId:{0}.", aRef.ElementId);
+                        if (aRef.LinkedElementId != ElementId.InvalidElementId)
+                        {
+                           sb.AppendFormat("LinkedElementId:{0}", aRef.LinkedElementId);
+                        }
                      }
                      break;
                   }
                case ElementReferenceType.REFERENCE_TYPE_LINEAR:
                   {
-                     sb.AppendFormat("The reference is to a curve or edge. ElementId:{0}.", aRef.ElementId);
+                     sb.Append("The reference is to a curve or edge.");
+                     if (showId)
+                     {
+                        sb.AppendFormat(" ElementId:{0}.", aRef.ElementId);
+                     }
                      break;
                   }
                case ElementReferenceType.REFERENCE_TYPE_SURFACE:
                   {
-                     sb.AppendFormat("The reference is to a face or face region. ElementId:{0}.", aRef.ElementId);
+                     sb.Append("The reference is to a face or face region.");
+                     if (showId)
+                     {
+                        sb.AppendFormat(" ElementId:{0}.", aRef.ElementId);
+                     }
                      break;
                   }
                case ElementReferenceType.REFERENCE_TYPE_FOREIGN:
                   {
-                     sb.AppendFormat("The reference is to geometry or elements in linked Revit file. LinkedElementId:{0}.", aRef.LinkedElementId);
+                     sb.Append("The reference is to geometry or elements in linked Revit file.");
+                     if (showId)
+                     {
+                        sb.AppendFormat(" LinkedElementId:{0}.", aRef.LinkedElementId);
+                     }
                      break;
                   }
                case ElementReferenceType.REFERENCE_TYPE_INSTANCE:
                   {
-                     sb.AppendFormat("The reference is an instance of a symbol. ElementId:{0}.", aRef.ElementId);
+                     sb.Append("The reference is an instance of a symbol.");
+                     if (showId)
+                     {
+                        sb.AppendFormat(" ElementId:{0}.", aRef.ElementId);
+                     }
                      break;
                   }
                case ElementReferenceType.REFERENCE_TYPE_CUT_EDGE:
                   {
-                     sb.AppendFormat("The reference is to a face that was cut. ElementId:{0}.", aRef.ElementId);
+                     sb.Append("The reference is to a face that was cut.");
+                     if (showId)
+                     {
+                        sb.AppendFormat(" ElementId:{0}.", aRef.ElementId);
+                     }
                      break;
                   }
                case ElementReferenceType.REFERENCE_TYPE_MESH:
                   {
-                     sb.AppendFormat("The reference is to a mesh. ElementId:{0}.", aRef.ElementId);
+                     sb.Append("The reference is to a mesh.");
+                     if (showId)
+                     {
+                        sb.AppendFormat(" ElementId:{0}.", aRef.ElementId);
+                     }
                      break;
                   }
                case ElementReferenceType.REFERENCE_TYPE_SUBELEMENT:
                   {
-                     sb.AppendFormat("The reference is to a subelement. ElementId:{0}.", aRef.ElementId);
+                     sb.Append("The reference is to a subelement.");
+                     if (showId)
+                     {
+                        sb.AppendFormat(" ElementId:{0}.", aRef.ElementId);
+                     }
                      break;
                   }
                default:
@@ -111,14 +143,23 @@ namespace Revit.SDK.Samples.SelectionChanged.CS
                   }
 
             }
-            
-            
+
+
             Element elem = doc.GetElement(aRef.ElementId);
-            if(elem!= null)
+            if (elem != null)
             {
-               sb.AppendFormat(" Name:{0}.",elem.Name);
+               sb.AppendFormat(" Name:{0}.", elem.Name);
             }
-            
+
+            if (aRef.LinkedElementId != ElementId.InvalidElementId && elem is RevitLinkInstance)
+            {
+               Element linkedElem = ((RevitLinkInstance)elem).GetLinkDocument().GetElement(aRef.LinkedElementId);
+               if (linkedElem != null)
+               {
+                  sb.AppendFormat("Linked Element Name:{0}.", linkedElem.Name);
+               }
+            }
+
             sb.AppendLine();
          }
 

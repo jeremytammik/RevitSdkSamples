@@ -89,7 +89,7 @@ namespace CodeCheckingConcreteExample.UIComponents.RCSteelParameters
          }
          set
          {
-            if (value != null && Material != null && value.get_Parameter(Autodesk.Revit.DB.BuiltInParameter.MATERIAL_ID_PARAM).AsElementId().IntegerValue == Material.Id.IntegerValue)
+            if (value != null && Material != null && value.get_Parameter(Autodesk.Revit.DB.BuiltInParameter.MATERIAL_ID_PARAM).AsElementId() == Material.Id)
             {
                _RebarBarType = value;
                BarDiameter = Autodesk.Revit.DB.UnitUtils.ConvertFromInternalUnits(value.BarDiameter, DisplayUnitType.DUT_METERS);

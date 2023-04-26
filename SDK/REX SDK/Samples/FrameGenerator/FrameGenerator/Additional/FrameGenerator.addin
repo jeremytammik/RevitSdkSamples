@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Command">
-    <Assembly>P:\FrameGenerator\FrameGenerator\bin\Debug\FrameGenerator.dll</Assembly>
+    <Assembly>P:\FrameGenerator\FrameGenerator\bin\Release\FrameGenerator.dll</Assembly>
     <ClientId>d7f4085e-7843-41e1-b638-ee5547caf4cf</ClientId>
     <FullClassName>REX.FrameGenerator.DirectRevitAccess</FullClassName>
     <Text>FrameGenerator</Text>

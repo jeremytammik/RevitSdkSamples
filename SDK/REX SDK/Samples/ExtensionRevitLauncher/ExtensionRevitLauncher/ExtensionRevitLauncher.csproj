@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExtensionRevitLauncher</RootNamespace>
     <AssemblyName>ExtensionRevitLauncher</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -42,11 +42,11 @@
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="RevitAPI">
-      <HintPath>C:\program files\Autodesk\Revit 2018\RevitAPI.dll</HintPath>
+      <HintPath>RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>C:\program files\Autodesk\Revit 2018\RevitAPIUI.dll</HintPath>
+      <HintPath>RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -82,7 +82,7 @@
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)extensions.xml" "$(TargetDir)extensions.xml"
 copy "$(ProjectDir)extension.png" "$(TargetDir)extension.png"
-xcopy "$(ProjectDir)\*.addin" "R:\Autodesk\Revit\Addins\2018" /S /R /K /V /I /F /C /Y</PostBuildEvent>
+xcopy "$(ProjectDir)\*.addin" "%ProgramData%\Autodesk\Revit\Addins\2024" /S /R /K /V /I /F /C /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

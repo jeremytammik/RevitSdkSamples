@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Command">
-    <Assembly>P:\PyramidGenerator\PyramidGenerator\bin\Debug\PyramidGenerator.dll</Assembly>
+    <Assembly>P:\PyramidGenerator\PyramidGenerator\bin\Release\PyramidGenerator.dll</Assembly>
     <ClientId>1f13d9a0-70ae-4c77-b716-e70a758b9fe0</ClientId>
     <FullClassName>REX.PyramidGenerator.DirectRevitAccess</FullClassName>
     <Text>PyramidGenerator</Text>

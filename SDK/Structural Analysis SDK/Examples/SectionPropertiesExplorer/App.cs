@@ -41,7 +41,7 @@ namespace SectionPropertiesExplorer
 
             foreach (Autodesk.Revit.DB.Element el in commandData.Application.ActiveUIDocument.Selection.Elements)
             {
-                Autodesk.Revit.DB.BuiltInCategory cat = (Autodesk.Revit.DB.BuiltInCategory)el.Category.Id.IntegerValue;
+                Autodesk.Revit.DB.BuiltInCategory cat = el.Category.BuiltInCategory;
 
                 switch (cat)
                 {

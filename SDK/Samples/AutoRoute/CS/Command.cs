@@ -66,7 +66,7 @@ namespace Revit.SDK.Samples.AutoRoute.CS
         /// <summary>
         /// The type id of the duct
         /// </summary>
-        Autodesk.Revit.DB.ElementId ductTypeId = new Autodesk.Revit.DB.ElementId(139191);
+        Autodesk.Revit.DB.ElementId ductTypeId = new Autodesk.Revit.DB.ElementId(139191L);
 
         /// <summary>
         ///  The system type id of the duct
@@ -175,9 +175,9 @@ namespace Revit.SDK.Samples.AutoRoute.CS
 
                 //Get the connectors and bounding boxes
                 List<Autodesk.Revit.DB.ElementId> ids = new List<ElementId>();
-                ids.Add(new ElementId(378728));
-                ids.Add(new ElementId(378707));
-                ids.Add(new ElementId(378716));
+                ids.Add(new ElementId(378728L));
+                ids.Add(new ElementId(378707L));
+                ids.Add(new ElementId(378716L));
 
                 FamilyInstance[] instances = new FamilyInstance[3];
                 Autodesk.Revit.DB.BoundingBoxXYZ[] boxes = new Autodesk.Revit.DB.BoundingBoxXYZ[3];
@@ -212,12 +212,12 @@ namespace Revit.SDK.Samples.AutoRoute.CS
                 //Create a mechanical system with a base air supply equipment and 2 terminals.
                 m_mechanicalSystem = CreateMechanicalSystem(
                     //[378728][SupplyAir][Out][RectProfile][OST_MechanicalEquipment]
-                        new ConnectorInfo(new ElementId(378728), conns[0].Origin.X, conns[0].Origin.Y, conns[0].Origin.Z),
+                        new ConnectorInfo(new ElementId(378728L), conns[0].Origin.X, conns[0].Origin.Y, conns[0].Origin.Z),
                     new ConnectorInfo[]{
                         //[378707][SupplyAir][In][RectProfile]
-                        new ConnectorInfo(new ElementId(378707), conns[1].Origin.X, conns[1].Origin.Y, conns[1].Origin.Z),
+                        new ConnectorInfo(new ElementId(378707L), conns[1].Origin.X, conns[1].Origin.Y, conns[1].Origin.Z),
                         //[378716][SupplyAir][In][RectProfile]
-                        new ConnectorInfo(new ElementId(378716), conns[2].Origin.X, conns[2].Origin.Y, conns[2].Origin.Z)
+                        new ConnectorInfo(new ElementId(378716L), conns[2].Origin.X, conns[2].Origin.Y, conns[2].Origin.Z)
                     },
                     DuctSystemType.SupplyAir
                 );

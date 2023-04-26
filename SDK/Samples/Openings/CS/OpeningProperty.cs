@@ -53,7 +53,7 @@ namespace Revit.SDK.Samples.Openings.CS
 
             //get parameters which need to show
             m_name = opening.Name;
-            m_elementId = opening.Id.IntegerValue.ToString();
+            m_elementId = opening.Id.ToString();
 
             if (null != opening.Host)
             {

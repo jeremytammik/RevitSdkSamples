@@ -34,5 +34,23 @@ namespace ContextualAnalyticalModel
 
          return selectedElementId;
       }
+
+      /// <summary>
+      /// Selects multiple Revit elements and returns the ElementIds
+      /// </summary>
+      /// <param name="uiDoc">UIDocument</param>
+      /// <param name="msg">status message</param>
+      /// <returns>List of ElementId of the selected elements</returns>
+      public static ISet<ElementId> GetSelectedObjects(UIDocument uiDoc, string msg)
+      {
+         ISet<ElementId> selectedElementIdList = new HashSet<ElementId>();
+         IList<Reference> refElemList = uiDoc.Selection.PickObjects(ObjectType.Element, msg);
+         if (refElemList != null)
+         {
+            selectedElementIdList = refElemList.Select(x => x.ElementId).ToHashSet();
+         }
+
+         return selectedElementIdList;
+      }
    }
 }

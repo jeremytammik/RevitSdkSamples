@@ -125,7 +125,7 @@ namespace Revit.SDK.Samples.MeasureHeight.CS
             }
 
             // Find the floor to use for the measurement (hardcoded)
-            ElementId id = new ElementId(150314);
+            ElementId id = new ElementId(150314L);
             m_floor = m_doc.GetElement(id) as Floor;
 
             // Calculate the height

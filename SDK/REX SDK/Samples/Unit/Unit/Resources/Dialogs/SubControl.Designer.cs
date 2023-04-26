@@ -198,6 +198,7 @@ namespace REX.Unit.Resources.Dialogs
             this.textBoxA.RoundingFractional = REX.Controls.Common.EFractialRound.ROUNDING_1;
             this.textBoxA.RoundingIncrement = 1E-08D;
             this.textBoxA.Separator = ".";
+            this.textBoxA.Tag = "UC_Length";
             // 
             // textBoxB
             // 

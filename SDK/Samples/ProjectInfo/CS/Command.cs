@@ -348,7 +348,7 @@ namespace Revit.SDK.Samples.ProjectInfo.CS
         {
             return RevitDoc.GetElement(elementId);
         }
-        public static Element GetElement(int elementId)
+        public static Element GetElement(long elementId)
         {
             return GetElement(new ElementId(elementId));
         }

@@ -169,7 +169,7 @@ namespace REX.PyramidGenerator.Main.Revit
         void RemoveAllGeneratedBeams()
         {
             //Step 5.3.2.: Serialize
-            foreach (int id in ThisMainExtension.Data.ElementIds)
+            foreach (long id in ThisMainExtension.Data.ElementIds)
             {
                 Element el = ThisExtension.Revit.ActiveDocument.GetElement(new ElementId(id));
                 if (el != null)
@@ -182,7 +182,7 @@ namespace REX.PyramidGenerator.Main.Revit
         void SaveDataToAllBeams()
         {
             //Step 5.3.4.: Serialize
-            foreach (int id in ThisMainExtension.Data.ElementIds)
+            foreach (long id in ThisMainExtension.Data.ElementIds)
             {
                 Element el = ThisExtension.Revit.ActiveDocument.GetElement(new ElementId(id));
                 if (el != null)
@@ -207,7 +207,7 @@ namespace REX.PyramidGenerator.Main.Revit
             if (familyInstance != null)
             {
                 //Step 5.3.3.: Serialize
-                ThisMainExtension.Data.ElementIds.Add(familyInstance.Id.IntegerValue);
+                ThisMainExtension.Data.ElementIds.Add(familyInstance.Id.Value);
             }
         }
         #endregion

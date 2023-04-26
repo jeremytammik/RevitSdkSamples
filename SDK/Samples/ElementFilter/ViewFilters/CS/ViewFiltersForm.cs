@@ -596,8 +596,7 @@ namespace Revit.SDK.Samples.ViewFilters.CS
                 foreach (FilterRule filterRule in filterRules)
                 {
                    ElementId paramId = filterRule.GetRuleParameter();
-                   int parameterIdAsInt = paramId.IntegerValue;
-                   BuiltInParameter bip = (BuiltInParameter)parameterIdAsInt;
+                   BuiltInParameter bip = (BuiltInParameter)paramId.Value;
                    FilterRuleBuilder ruleData = FiltersUtil.CreateFilterRuleBuilder(bip, filterRule);
                    ruleDataSet.Add(ruleData);
                 }
@@ -630,7 +629,7 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             ICollection<ElementId> filterCatIds = ParameterFilterUtilities.GetAllFilterableCategories();
             foreach (ElementId id in filterCatIds)
             {
-                categoryCheckedListBox.Items.Add(EnumParseUtility<BuiltInCategory>.Parse((BuiltInCategory)id.IntegerValue));
+                categoryCheckedListBox.Items.Add(EnumParseUtility<BuiltInCategory>.Parse((BuiltInCategory)id.Value));
             }
         }
 
@@ -827,7 +826,7 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             paramerComboBox.Items.Clear();
             foreach (ElementId paramId in paramSet)
             {
-                paramerComboBox.Items.Add(EnumParseUtility<BuiltInParameter>.Parse(paramId.IntegerValue));
+                paramerComboBox.Items.Add(EnumParseUtility<BuiltInParameter>.Parse((BuiltInParameter)paramId.Value));
             }
             //
             // always added one (none) 
@@ -895,8 +894,8 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             }
             else if (paramType == StorageType.ElementId)
             {
-                int ruleValue = 0;
-                if (!GetRuleValueInt(ref ruleValue)) return null;
+                long ruleValue = 0;
+                if (!GetRuleValueLong(ref ruleValue)) return null;
                 return new FilterRuleBuilder(curParam, criteria, new ElementId(ruleValue));
             }
             else
@@ -923,13 +922,33 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             return true;
         }
 
-        /// <summary>
-        /// Get rule value of double type from control
-        /// </summary>
-        /// <param name="isEpsilon">Indicate if method will get value from epsilon control.</param>
-        /// <param name="ruleValue">Integer rule value.</param>
-        /// <returns>True if control's text is valid int rule value.</returns>
-        bool GetRuleValueDouble(bool isEpsilon, ref double ruleValue)
+      /// <summary>
+      /// Get rule value of long type
+      /// </summary>
+      /// <param name="ruleValue">Integer rule value.</param>
+      /// <returns>True if control's text is valid int rule value.</returns>
+      bool GetRuleValueLong(ref long ruleValue)
+      {
+         try
+         {
+            ruleValue = long.Parse(ruleValueComboBox.Text);
+         }
+         catch (System.Exception)
+         {
+            MyMessageBox("Rule value is wrong, please input valid value.");
+            ruleValueComboBox.Focus();
+            return false;
+         }
+         return true;
+      }
+
+      /// <summary>
+      /// Get rule value of double type from control
+      /// </summary>
+      /// <param name="isEpsilon">Indicate if method will get value from epsilon control.</param>
+      /// <param name="ruleValue">Integer rule value.</param>
+      /// <returns>True if control's text is valid int rule value.</returns>
+      bool GetRuleValueDouble(bool isEpsilon, ref double ruleValue)
         {
             try
             {

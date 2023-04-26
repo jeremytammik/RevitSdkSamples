@@ -62,7 +62,7 @@ namespace Revit.SDK.Samples.UIAPI.CS
 
          try
          {
-            PreviewModel form = new PreviewModel(commandData.Application.Application, new ElementId(-1));
+            PreviewModel form = new PreviewModel(commandData.Application.Application, ElementId.InvalidElementId);
             form.ShowDialog();
          }
          catch (Exception e)

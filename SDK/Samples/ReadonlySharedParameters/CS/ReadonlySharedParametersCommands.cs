@@ -81,7 +81,7 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
 
         private static double GetReadonlyCostFromId(Element elem, int seed)
         {
-            int costRoot = elem.Id.IntegerValue % 100;
+            long costRoot = elem.Id.Value % 100;
             return (double)costRoot * 100.0 + 0.99;
         }
 
@@ -233,7 +233,7 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
             manager.AddCategory(BuiltInCategory.OST_Floors);
             manager.AddCategory(BuiltInCategory.OST_Ceilings);
             manager.AddCategory(BuiltInCategory.OST_Roofs);
-            manager.ParameterGroup = BuiltInParameterGroup.PG_IDENTITY_DATA;
+            manager.ParameterGroup = GroupTypeId.IdentityData;
 
             sharedParametersToCreate.Add(manager);   // Look up syntax for this automatic initialization.
 
@@ -247,7 +247,7 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
 
             manager.AddCategory(BuiltInCategory.OST_Furniture);
             manager.AddCategory(BuiltInCategory.OST_Planting);
-            manager.ParameterGroup = BuiltInParameterGroup.PG_MATERIALS;
+            manager.ParameterGroup = GroupTypeId.Materials;
 
             sharedParametersToCreate.Add(manager);
 

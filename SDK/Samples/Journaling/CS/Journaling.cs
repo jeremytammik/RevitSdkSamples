@@ -212,7 +212,7 @@ namespace Revit.SDK.Samples.Journaling.CS
 
             // Get the level information from the journal
             dataValue = GetSpecialData(dataMap, "Level Id");   // get the level id
-            Autodesk.Revit.DB.ElementId id = new Autodesk.Revit.DB.ElementId(Convert.ToInt32(dataValue));     // get the level by its id
+            Autodesk.Revit.DB.ElementId id = Autodesk.Revit.DB.ElementId.Parse(dataValue);     // get the level by its id
 
             m_createlevel = doc.GetElement(id) as Level;
             if (null == m_createlevel)  // assert the level is exist

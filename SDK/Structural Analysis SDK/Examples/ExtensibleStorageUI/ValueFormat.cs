@@ -152,10 +152,9 @@ namespace ExtensibleStorageUI
 
         public object Parse(string value, Autodesk.Revit.DB.Document document, Autodesk.Revit.DB.UnitType unitType, Autodesk.Revit.DB.DisplayUnitType outputDisplayUnitType)
         {
-            int tempid;
-            if(!int.TryParse(value, out tempid))
+            ElementId eid;
+            if(!ElementId.TryParse(value, out eid))
                 return null;
-            ElementId eid = new ElementId(tempid);
 
             Element e = document.GetElement(eid);
             if (e == null)
@@ -347,10 +346,9 @@ namespace ExtensibleStorageUI
             List<ElementId> elementids = new List<ElementId>();
             for (int i = 0; i < elementidmain.Length; i++)
             {
-                int tempid;
-                if (!int.TryParse(elementidmain[i].ToString() , out tempid))
+                ElementId eid;
+                if (!ElementId.TryParse(elementidmain[i].ToString() , out eid))
                     return null;
-                ElementId eid = new ElementId(tempid);
 
                 Element e = document.GetElement(eid);
                 if (e == null)

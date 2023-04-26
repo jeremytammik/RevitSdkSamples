@@ -173,7 +173,7 @@ Public Class ExportFireRating
         For Each element In elementSet
 
             'ID
-            worksheet.Cells(row, 1).Value = element.Id.IntegerValue
+            worksheet.Cells(row, 1).Value = element.Id.Value
 
             'Level
             Dim level As Autodesk.Revit.DB.Level

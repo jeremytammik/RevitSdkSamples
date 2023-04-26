@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+    <Assembly>CreateDuctworkStiffener.dll</Assembly>
+    <ClientId>1c510690-63fc-4913-8ebc-52c2cfc97543</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateDuctworkStiffener.CS.Command</FullClassName>
+    <Text>Create Ductwork Stiffener</Text>
+    <Description>Create Ductwork Stiffener</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <LanguageType>Unknown</LanguageType>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+   
+</RevitAddIns>

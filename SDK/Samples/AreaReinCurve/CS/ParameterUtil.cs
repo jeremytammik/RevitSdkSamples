@@ -113,7 +113,7 @@ namespace Revit.SDK.Samples.AreaReinCurve.CS
         /// <returns></returns>
         public static bool SetParaNullId(Parameter para)
         {
-            Autodesk.Revit.DB.ElementId id = new ElementId(-1);
+            Autodesk.Revit.DB.ElementId id = Autodesk.Revit.DB.ElementId.InvalidElementId;
 
             if (!para.IsReadOnly)
             {

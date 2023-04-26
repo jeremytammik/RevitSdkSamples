@@ -27,21 +27,19 @@
     <MSLangTargets>$(MSBuildBinPath)\Microsoft.Csharp.targets</MSLangTargets>   
   </PropertyGroup>  
   <Import Project="$(MSLangTargets)" />  
-  <!-- Make sure the projects using this targets file rebuild if this file changes 
-       This must come after the import of the common targets -->
   <ItemGroup>
     <Reference Include="RevitAPI">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Autodesk\Revit 2023\RevitAPI.dll</HintPath>
+      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>C:\Program Files\Autodesk\Revit 2023\RevitAPIUI.dll</HintPath>
+      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAddInUtility">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Autodesk\Revit 2023\RevitAddInUtility.dll</HintPath>
+      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\RevitAddInUtility.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

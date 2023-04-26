@@ -337,19 +337,17 @@ namespace CodeCheckingConcreteExample.Engine
             Autodesk.Revit.DB.CodeChecking.Storage.Label ccLabel = storageDocument.LabelsManager.GetLabel(element);
             if (ccLabel != null)
             {
-               Autodesk.Revit.DB.BuiltInCategory category = (Autodesk.Revit.DB.BuiltInCategory)element.Category.Id.IntegerValue;
+               Autodesk.Revit.DB.BuiltInCategory category = element.Category.BuiltInCategory;
                StructuralAssetClass material = ccLabel.Material;
 
                if (server.GetSupportedMaterials().Contains(material) &&
                    server.GetSupportedCategories(material).Contains(category))
                {
-                  ElementId id = new ElementId(element.Id.IntegerValue);
-
                   SchemaClass label = EngineData.ReadElementLabel(category, material, ccLabel, data);
                   ResultStatus status = new Autodesk.Revit.DB.CodeChecking.Storage.ResultStatus(Server.Server.ID, activePackageId);
                   EngineData.VerifyElementLabel(category, material, label, ref status);
 
-                  listElementId.Add(new Tuple<ElementId, ResultStatus>(id, status));
+                  listElementId.Add(new Tuple<ElementId, ResultStatus>(element.Id, status));
                }
             }
          }
@@ -378,7 +376,7 @@ namespace CodeCheckingConcreteExample.Engine
                Autodesk.Revit.DB.CodeChecking.Storage.Label ccLabel = storageDocument.LabelsManager.GetLabel(element);
                if (ccLabel != null)
                {
-                  Autodesk.Revit.DB.BuiltInCategory category = (Autodesk.Revit.DB.BuiltInCategory)element.Category.Id.IntegerValue;
+                  Autodesk.Revit.DB.BuiltInCategory category = element.Category.BuiltInCategory;
                   StructuralAssetClass material = ccLabel.Material;
                   Autodesk.Revit.DB.ExtensibleStorage.Framework.SchemaClass label = EngineData.ReadElementLabel(category, material, ccLabel, data);
                   Autodesk.Revit.DB.ExtensibleStorage.Framework.SchemaClass result = EngineData.CreateElementResult(category, material);

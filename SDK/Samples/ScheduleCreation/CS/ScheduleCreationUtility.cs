@@ -142,9 +142,9 @@ namespace Revit.SDK.Samples.ScheduleCreation.CS
                     ScheduleField field = schedule.Definition.AddField(schedulableField);
 
                     //Judge if the parameterId is a BuiltInParameter.
-                    if (Enum.IsDefined(typeof(BuiltInParameter), parameterId.IntegerValue))
+                    if (ParameterUtils.IsBuiltInParameter(parameterId))
                     {
-                        BuiltInParameter bip = (BuiltInParameter)parameterId.IntegerValue;
+                        BuiltInParameter bip = (BuiltInParameter)parameterId.Value;
                         //Get the StorageType of BuiltInParameter.
                         StorageType st = document.get_TypeOfStorage(bip);
                         //if StorageType is String or ElementId, set GridColumnWidth of schedule field to three times of current GridColumnWidth. 

@@ -71,7 +71,7 @@ namespace Revit.SDK.Samples.GetSetDefaultTypes.CS
          if (categories.Count < 1)
             return;
 
-         foreach (int cid in categories)
+         foreach (BuiltInCategory cid in categories)
          {
             FamilyTypeRecord record = new FamilyTypeRecord();
             record.CategoryName = Enum.GetName(typeof(BuiltInCategory), cid);

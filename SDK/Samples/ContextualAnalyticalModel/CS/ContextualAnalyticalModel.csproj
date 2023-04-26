@@ -62,18 +62,6 @@
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RevitAddInUtility">
-      <HintPath>..\..\..\..\..\..\Debugx64\RevitAddInUtility.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RevitAPI">
-      <HintPath>..\..\..\..\..\..\Debugx64\RevitAPI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\..\..\..\Debugx64\RevitAPIUI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -85,9 +73,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCustomAssociation.cs" />
     <Compile Include="AddAssociation.cs" />
     <Compile Include="AnalyticalNodeConnStatus.cs" />
+    <Compile Include="CreateAreaLoadWithRefPoint.cs" />
     <Compile Include="CreateAnalyticalCurvedPanel.cs" />
+    <Compile Include="CustomAreaLoad.cs" />
+    <Compile Include="CustomLineLoad.cs" />
+    <Compile Include="CustomPointLoad.cs" />
     <Compile Include="RemoveAssociation.cs" />
     <Compile Include="CreateAnalytcalPanel.cs" />
     <Compile Include="CreateAnalyticalMember.cs" />
@@ -113,7 +106,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.pl"
-if exist %25FILEFORSAMPLEREG%25 perl %25FILEFORSAMPLEREG%25 $(ProjectExt) "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
   </PropertyGroup>
 </Project>

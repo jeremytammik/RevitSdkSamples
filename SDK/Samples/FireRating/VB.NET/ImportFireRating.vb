@@ -78,18 +78,18 @@ Public Class ImportFireRating
             Dim fireRatingValue As String
             fireRatingValue = worksheet.Cells(row, 4).Value
             If Not (fireRatingValue Is Nothing) Then
-               Dim idInteger As Integer
+               Dim idLong As Long
                Dim fireRateDouble As Double
                Try
-                  idInteger = value
+                  idLong = value
                   fireRateDouble = fireRatingValue
                Catch ex As Exception
-                        TaskDialog.Show("Revit", ex.ToString)
+                  TaskDialog.Show("Revit", ex.ToString)
                End Try
 
-               Dim elementId As Autodesk.Revit.DB.ElementId = New Autodesk.Revit.DB.ElementId(idInteger)
+               Dim elementId As Autodesk.Revit.DB.ElementId = New Autodesk.Revit.DB.ElementId(idLong)
 
-                    Dim element As Autodesk.Revit.DB.Element = commandData.Application.ActiveUIDocument.Document.GetElement(elementId)
+               Dim element As Autodesk.Revit.DB.Element = commandData.Application.ActiveUIDocument.Document.GetElement(elementId)
                If Not (element Is Nothing) Then
                   Dim parameters As Autodesk.Revit.DB.ParameterSet = element.Parameters
                   Dim parameter As Autodesk.Revit.DB.Parameter

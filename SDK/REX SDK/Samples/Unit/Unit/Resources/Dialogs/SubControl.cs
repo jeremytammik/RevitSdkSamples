@@ -17,9 +17,9 @@ namespace REX.Unit.Resources.Dialogs
         {
             InitializeComponent();
           
-            ThisExtension.DFM.AddUnitObject(this.rexEditBoxA, "A", Autodesk.REX.Framework.EUnitType.Dimensions_SectionDim, 2);
+            ThisExtension.DFM.AddUnitObject(this.rexEditBoxA, "A", Autodesk.REX.Framework.EUnitType.Dimensions_Length, 1);
             ThisExtension.DFM.AddUnitObject(this.rexEditBoxB, "B", Autodesk.REX.Framework.EUnitType.Dimensions_Length  , 1);
-            ThisExtension.DFM.AddUnitObject(this.rexEditBoxC, "C", Autodesk.REX.Framework.EUnitType.Dimensions_Angle , 1);
+            ThisExtension.DFM.AddUnitObject(this.rexEditBoxC, "C", Autodesk.REX.Framework.EUnitType.Dimensions_Length, 1);
 
      
             ThisExtension.DFM.SetBaseMinValue("A", true, 0.01);

@@ -172,7 +172,7 @@ namespace REX.ContentGeneratorWPF.Main.Revit
             List<PropertyItem> properties = new List<PropertyItem>();
 
             properties.Add(new PropertyItem() { Name = "Name", Value = ThisMainExtension.Data.SelectedElement.Name });
-            properties.Add(new PropertyItem() { Name = "Id", Value = ThisMainExtension.Data.SelectedElement.Id.IntegerValue.ToString() });
+            properties.Add(new PropertyItem() { Name = "Id", Value = ThisMainExtension.Data.SelectedElement.Id.ToString() });
             properties.Add(new PropertyItem() { Name = "Structural usage", Value = ThisMainExtension.Data.SelectedElement.StructuralUsage.ToString() });
             properties.Add(new PropertyItem() { Name = "Structural type", Value = ThisMainExtension.Data.SelectedElement.StructuralType.ToString() });
             properties.Add(new PropertyItem() { Name = "Structural material type", Value = ThisMainExtension.Data.SelectedElement.StructuralMaterialType.ToString() });

@@ -48,7 +48,7 @@ namespace CodeCheckingConcreteExample.Engine
       {
          category = elementCategory;
          material = elementMaterial;
-         elemId = new ElementId(elementId.IntegerValue); ;
+         elemId = elementId;
          label = elementLabel;
       }
 

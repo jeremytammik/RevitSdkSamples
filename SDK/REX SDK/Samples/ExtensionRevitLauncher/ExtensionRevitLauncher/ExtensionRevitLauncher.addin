@@ -2,7 +2,7 @@
 <RevitAddIns>
   <AddIn Type="Application">
     <Name>EXtensionRevitLauncher</Name>
-    <Assembly>P:\ExtensionRevitLauncher\ExtensionRevitLauncher\bin\Debug\ExtensionRevitLauncher.dll</Assembly>
+    <Assembly>P:\ExtensionRevitLauncher\ExtensionRevitLauncher\bin\Release\ExtensionRevitLauncher.dll</Assembly>
     <AddInId>1cd57a34-33d5-4d8f-bef4-3abff1e7f063</AddInId>
     <FullClassName>ExtensionRevitLauncher.ExtensionApp</FullClassName>
     <VendorId>ADSK</VendorId>

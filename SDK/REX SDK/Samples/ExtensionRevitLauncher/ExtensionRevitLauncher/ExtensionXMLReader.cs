@@ -70,7 +70,7 @@ namespace ExtensionRevitLauncher
             XmlNode attNode = node.Attributes.GetNamedItem(attribute);
 
             if (attNode != null)
-                return attNode.Value.ToString();
+                return attNode.ToString();
 
             return "";
         }

@@ -39,7 +39,7 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
 			public String Description { get; set; }
 			public bool Instance { get; set; }
 			public Definition Definition { get; set; }
-			public BuiltInParameterGroup ParameterGroup { get; set; }
+			public ForgeTypeId ParameterGroup { get; set; }
 			
 			public SharedParameterBindingManager ()
 			{
@@ -49,7 +49,7 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
 				Description = "";
 				Instance = true;
 				Definition = null;
-				ParameterGroup = BuiltInParameterGroup.PG_IDENTITY_DATA;
+				ParameterGroup = GroupTypeId.IdentityData;
 			}
 			
 			List<BuiltInCategory> m_categories = new List<BuiltInCategory>();

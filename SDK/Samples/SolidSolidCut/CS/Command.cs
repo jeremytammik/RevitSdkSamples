@@ -69,8 +69,8 @@ namespace Revit.SDK.Samples.SolidSolidCut.CS
 
             #region Demo how to use the SolidSolidCut API to make one solid cut another.
 
-            int solidToBeCutElementId = 30481; //The cube
-            int cuttingSolidElementId = 30809; //The sphere
+            long solidToBeCutElementId = 30481; //The cube
+            long cuttingSolidElementId = 30809; //The sphere
 
             //Get element by ElementId
             Element solidToBeCut = activeDoc.GetElement(new ElementId(solidToBeCutElementId));
@@ -144,8 +144,8 @@ namespace Revit.SDK.Samples.SolidSolidCut.CS
 
             #region Demo how to use the SolidSolidCut API to uncut two solids which have the cutting relationship.
 
-            int solidToBeCutElementId = 30481; //The cube
-            int cuttingSolidElementId = 30809; //The sphere
+            long solidToBeCutElementId = 30481; //The cube
+            long cuttingSolidElementId = 30809; //The sphere
 
             //Get element by ElementId
             Element solidToBeCut = activeDoc.GetElement(new ElementId(solidToBeCutElementId));

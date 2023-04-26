@@ -160,4 +160,14 @@
 	<LanguageType>Unknown</LanguageType>
 	<VendorId>ADSK</VendorId>
   </AddIn> 
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>68B4E24B-DBFF-423B-B218-240A155142FD</ClientId>
+    <FullClassName>ContextualAnalyticalModel.CreateAnalyticalCurvedPanel</FullClassName>
+    <Text>Create Analytical Curved Panel</Text>
+    <Description>Create Analytical Curved Panel</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn> 
 </RevitAddIns>

@@ -379,7 +379,7 @@ namespace Revit.SDK.Samples.GenericModelCreation.CS
       /// <summary>
       /// Get element by its id
       /// </summary>
-      private T GetElement<T>(int eid) where T : Autodesk.Revit.DB.Element
+      private T GetElement<T>(long eid) where T : Autodesk.Revit.DB.Element
       {
          Autodesk.Revit.DB.ElementId elementId = new ElementId(eid);
          return m_familyDocument.GetElement(elementId) as T;

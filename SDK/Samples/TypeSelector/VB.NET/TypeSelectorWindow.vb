@@ -282,7 +282,7 @@ Public Class Mylist
     ''' <remarks></remarks>
     Public Sub New()
         sName = ""
-        iID = New Autodesk.Revit.DB.ElementId(0)
+        iID = New Autodesk.Revit.DB.ElementId(0L)
 
     End Sub
 

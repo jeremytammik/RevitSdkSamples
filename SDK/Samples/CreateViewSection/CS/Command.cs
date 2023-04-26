@@ -115,7 +115,7 @@ namespace Revit.SDK.Samples.CreateViewSection.CS
                 Transaction transaction = new Transaction(m_project.Document, "CreateSectionView");
                 transaction.Start();
                 //ViewSection section = m_project.Document.Create.NewViewSection(m_box);
-                ElementId DetailViewId = new ElementId(-1);
+                ElementId DetailViewId = ElementId.InvalidElementId;
                 IList<Element> elems = new FilteredElementCollector(m_project.Document).OfClass(typeof(ViewFamilyType)).ToElements();
                 foreach (Element e in elems)
                 {

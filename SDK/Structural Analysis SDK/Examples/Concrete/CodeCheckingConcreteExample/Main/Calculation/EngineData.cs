@@ -786,7 +786,5 @@ namespace CodeCheckingConcreteExample.Main.Calculation
          }
          return forceTypes;
       }
-
-      #endregion
    }
 }

@@ -173,7 +173,7 @@ namespace Revit.SDK.Samples.AreaReinParameters.CS
         public override void GetConvertHash()
         {
             m_hash = Command.HookTypes;
-            Autodesk.Revit.DB.ElementId id = new Autodesk.Revit.DB.ElementId(-1);
+            Autodesk.Revit.DB.ElementId id = Autodesk.Revit.DB.ElementId.InvalidElementId;
 
             if (!m_hash.ContainsKey("None"))
             {

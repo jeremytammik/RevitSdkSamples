@@ -72,30 +72,30 @@ Public Class MaterialProperties
     'arraylist of all materials belonging to concrete type
     Dim m_concretes As ArrayList = New ArrayList
 
-   ReadOnly Property CurrentType() As StructuralAssetClass
-      Get
-         Dim materialId As Autodesk.Revit.DB.ElementId = New Autodesk.Revit.DB.ElementId(0)
+    ReadOnly Property CurrentType() As StructuralAssetClass
+        Get
+            Dim materialId As Autodesk.Revit.DB.ElementId = Autodesk.Revit.DB.ElementId.InvalidElementId
 
 
-         If Not m_currentMaterial Is Nothing Then
-            materialId = m_currentMaterial.AsElementId()
-         End If
+            If Not m_currentMaterial Is Nothing Then
+                materialId = m_currentMaterial.AsElementId()
+            End If
 
-         If materialId.IntegerValue <= 0 Then
-            Return StructuralAssetClass.Generic
-         End If
+            If materialId = Autodesk.Revit.DB.ElementId.InvalidElementId Then
+                Return StructuralAssetClass.Generic
+            End If
 
-         Dim materialElem As Autodesk.Revit.DB.Material = _
-         CType(m_allMaterialMap(materialId), Autodesk.Revit.DB.Material)
+            Dim materialElem As Autodesk.Revit.DB.Material = _
+            CType(m_allMaterialMap(materialId), Autodesk.Revit.DB.Material)
 
-         If Nothing Is materialElem Then
-            Return StructuralAssetClass.Generic
-         End If
+            If Nothing Is materialElem Then
+                Return StructuralAssetClass.Generic
+            End If
 
-         Return GetMaterialType(materialElem)
-      End Get
+            Return GetMaterialType(materialElem)
+        End Get
 
-   End Property
+    End Property
 
     'get the material attribute of selected element
     ReadOnly Property CurrentMaterial() As Object
@@ -366,15 +366,15 @@ Public Class MaterialProperties
 
     'get current material of selected component
     Private Function GetCurrentMaterial() As Autodesk.Revit.DB.Material
-      'get the value of current material's ElementId
-        Dim identityValue As Autodesk.Revit.DB.ElementId = New Autodesk.Revit.DB.ElementId(0)
+        'get the value of current material's ElementId
+        Dim identityValue As Autodesk.Revit.DB.ElementId = Autodesk.Revit.DB.ElementId.InvalidElementId
 
         If Not m_currentMaterial Is Nothing Then
             identityValue = m_currentMaterial.AsElementId()
         End If
 
         'material has no value
-        If (identityValue.IntegerValue <= 0) Then
+        If (identityValue = Autodesk.Revit.DB.ElementId.InvalidElementId) Then
             Return Nothing
         End If
         Dim material As Autodesk.Revit.DB.Material = _

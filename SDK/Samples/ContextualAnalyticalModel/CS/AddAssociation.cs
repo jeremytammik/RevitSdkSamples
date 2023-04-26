@@ -14,8 +14,6 @@ namespace ContextualAnalyticalModel
    /// <summary>
    /// Implements the Revit add-in interface IExternalCommand
    /// Adds new relation between physical and analytical elements using AnalyticalToPhysicalAssociationManager
-   /// The relation can be between multiple physical and analytical elements
-   /// AnalyticalToPhysicalAssociationManager can work with Revit linked files also
    /// </summary>
    [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
    [Autodesk.Revit.Attributes.Regeneration(Autodesk.Revit.Attributes.RegenerationOption.Manual)]

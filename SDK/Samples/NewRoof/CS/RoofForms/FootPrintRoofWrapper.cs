@@ -306,8 +306,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
             {
                 // update base level
                 Parameter para = m_roof.get_Parameter(BuiltInParameter.ROOF_BASE_LEVEL_PARAM);
-                Autodesk.Revit.DB.ElementId id = new Autodesk.Revit.DB.ElementId(value.Id.IntegerValue);
-                para.Set(id);
+                para.Set(value.Id);
             }
         }
 

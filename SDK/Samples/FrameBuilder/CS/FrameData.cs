@@ -395,7 +395,7 @@ namespace Revit.SDK.Samples.FrameBuilder.CS
 
             FilteredElementCollector collector = new FilteredElementCollector(m_Doc);
             IList<Element> viewFamilyTypes = collector.OfClass(typeof(ViewFamilyType)).ToElements();
-            ElementId floorPlanId = new ElementId(-1);
+            ElementId floorPlanId = ElementId.InvalidElementId;
             foreach (Element e in viewFamilyTypes)
             {
                 ViewFamilyType v = e as ViewFamilyType;

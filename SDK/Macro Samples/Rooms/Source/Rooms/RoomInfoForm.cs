@@ -50,8 +50,7 @@ namespace Rooms
             //add rooms to the listview
             foreach (Room tmpRoom in roomList)
             {
-                int idValue = tmpRoom.Id.IntegerValue;
-                string roomId = idValue.ToString();
+                string roomId = tmpRoom.Id.ToString();
                 //create a list view Item
                 ListViewItem tmpItem = new ListViewItem(roomId);
                 tmpItem.SubItems.Add(tmpRoom.Name);       //display room name.

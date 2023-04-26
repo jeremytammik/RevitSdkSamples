@@ -191,13 +191,11 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (BCType)GetParameterValue("Boundary Conditions Type", 
-                        BuiltInParameterGroup.PG_STRUCTURAL_ANALYSIS);
+                return (BCType)GetParameterValue("Boundary Conditions Type", GroupTypeId.StructuralAnalysis);
             }
             set
             {
-                SetParameterValue("Boundary Conditions Type", 
-                        BuiltInParameterGroup.PG_STRUCTURAL_ANALYSIS, value);
+                SetParameterValue("Boundary Conditions Type", GroupTypeId.StructuralAnalysis, value);
             }
         }
 
@@ -210,7 +208,7 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (BCState)GetParameterValue("State", BuiltInParameterGroup.PG_STRUCTURAL_ANALYSIS);
+                return (BCState)GetParameterValue("State",  GroupTypeId.StructuralAnalysis);
             }
             // Point BC includes Fixed, Pinned, Roller and User four different State; 
             // Line BC includes Fixed, Pinned and User; 
@@ -221,19 +219,19 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
                 {
                     if (BCState.Fixed != value && BCState.Roller != value)
                     {
-                        SetParameterValue("State", BuiltInParameterGroup.PG_STRUCTURAL_ANALYSIS, value);
+                        SetParameterValue("State",  GroupTypeId.StructuralAnalysis, value);
                     }
                 }
                 else if (BCType.Line == BoundaryConditionsType)
                 {
                     if (BCState.Roller != value)
                     {
-                        SetParameterValue("State", BuiltInParameterGroup.PG_STRUCTURAL_ANALYSIS, value); ;
+                        SetParameterValue("State",  GroupTypeId.StructuralAnalysis, value); ;
                     }
                 }
                 else if (BCType.Point == BoundaryConditionsType)
                 {
-                    SetParameterValue("State", BuiltInParameterGroup.PG_STRUCTURAL_ANALYSIS, value); ;
+                    SetParameterValue("State",  GroupTypeId.StructuralAnalysis, value); ;
                 }
 
                 // other parameters do corresponding change when the State is changed.
@@ -250,14 +248,13 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (BCTranslationRotation)GetParameterValue("X Translation", 
-                        BuiltInParameterGroup.PG_TRANSLATION_IN);
+                return (BCTranslationRotation)GetParameterValue("X Translation", GroupTypeId.TranslationIn);
             }
             set
             {
                 if (BCState.User == State)
                 {
-                    SetParameterValue("X Translation", BuiltInParameterGroup.PG_TRANSLATION_IN, value);
+                    SetParameterValue("X Translation", GroupTypeId.TranslationIn, value);
                 }       
             }
         }
@@ -270,12 +267,11 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (double)GetParameterValue("X Spring Modulus", 
-                        BuiltInParameterGroup.PG_TRANSLATION_IN);
+                return (double)GetParameterValue("X Spring Modulus", GroupTypeId.TranslationIn);
             }
             set
             {
-                SetParameterValue("X Spring Modulus", BuiltInParameterGroup.PG_TRANSLATION_IN, value);
+                SetParameterValue("X Spring Modulus", GroupTypeId.TranslationIn, value);
             }
         }
 
@@ -288,14 +284,13 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (BCTranslationRotation)GetParameterValue("Y Translation", 
-                        BuiltInParameterGroup.PG_TRANSLATION_IN);
+                return (BCTranslationRotation)GetParameterValue("Y Translation", GroupTypeId.TranslationIn);
             }
             set
             {
                 if (BCState.User == State)
                 {
-                    SetParameterValue("Y Translation", BuiltInParameterGroup.PG_TRANSLATION_IN, value);
+                    SetParameterValue("Y Translation", GroupTypeId.TranslationIn, value);
                 }
             }
         }
@@ -308,12 +303,11 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (double)GetParameterValue("Y Spring Modulus", 
-                        BuiltInParameterGroup.PG_TRANSLATION_IN);
+                return (double)GetParameterValue("Y Spring Modulus", GroupTypeId.TranslationIn);
             }
             set
             {
-                SetParameterValue("Y Spring Modulus", BuiltInParameterGroup.PG_TRANSLATION_IN, value);
+                SetParameterValue("Y Spring Modulus", GroupTypeId.TranslationIn, value);
             }
         }
 
@@ -326,14 +320,13 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (BCTranslationRotation)GetParameterValue("Z Translation",
-                        BuiltInParameterGroup.PG_TRANSLATION_IN);
+                return (BCTranslationRotation)GetParameterValue("Z Translation", GroupTypeId.TranslationIn);
             }
             set
             {
                 if (BCState.User == State)
                 {
-                    SetParameterValue("Z Translation", BuiltInParameterGroup.PG_TRANSLATION_IN, value);
+                    SetParameterValue("Z Translation", GroupTypeId.TranslationIn, value);
                 }
             }
         }
@@ -346,12 +339,11 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (double)GetParameterValue("Z Spring Modulus",
-                        BuiltInParameterGroup.PG_TRANSLATION_IN);
+                return (double)GetParameterValue("Z Spring Modulus", GroupTypeId.TranslationIn);
             }
             set
             {
-                SetParameterValue("Z Spring Modulus", BuiltInParameterGroup.PG_TRANSLATION_IN, value);
+                SetParameterValue("Z Spring Modulus", GroupTypeId.TranslationIn, value);
             }
         }
 
@@ -365,14 +357,13 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (BCTranslationRotation)GetParameterValue("X Rotation", 
-                        BuiltInParameterGroup.PG_ROTATION_ABOUT);
+                return (BCTranslationRotation)GetParameterValue("X Rotation", GroupTypeId.RotationAbout);
             }
             set
             {
                 if (BCState.User == State)
                 {
-                    SetParameterValue("X Rotation", BuiltInParameterGroup.PG_ROTATION_ABOUT, value);
+                    SetParameterValue("X Rotation", GroupTypeId.RotationAbout, value);
                 }
             }
         }
@@ -385,12 +376,11 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (double)GetParameterValue("X Spring Modulus",
-                        BuiltInParameterGroup.PG_ROTATION_ABOUT);
+                return (double)GetParameterValue("X Spring Modulus", GroupTypeId.RotationAbout);
             }
             set
             {
-                SetParameterValue("X Spring Modulus", BuiltInParameterGroup.PG_ROTATION_ABOUT, value);
+                SetParameterValue("X Spring Modulus", GroupTypeId.RotationAbout, value);
             }
         }
 
@@ -404,14 +394,13 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (BCTranslationRotation)GetParameterValue("Y Rotation",
-                        BuiltInParameterGroup.PG_ROTATION_ABOUT);
+                return (BCTranslationRotation)GetParameterValue("Y Rotation", GroupTypeId.RotationAbout);
             }
             set
             {
                 if (BCState.User == State)
                 {
-                    SetParameterValue("Y Rotation", BuiltInParameterGroup.PG_ROTATION_ABOUT, value);
+                    SetParameterValue("Y Rotation", GroupTypeId.RotationAbout, value);
                 }
             }
         }
@@ -424,12 +413,11 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (double)GetParameterValue("Y Spring Modulus",
-                        BuiltInParameterGroup.PG_ROTATION_ABOUT);
+                return (double)GetParameterValue("Y Spring Modulus", GroupTypeId.RotationAbout);
             }
             set
             {
-                SetParameterValue("Y Spring Modulus", BuiltInParameterGroup.PG_ROTATION_ABOUT, value);
+                SetParameterValue("Y Spring Modulus", GroupTypeId.RotationAbout, value);
             }
         }
 
@@ -442,14 +430,13 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         {
             get
             {
-                return (BCTranslationRotation)GetParameterValue("Z Rotation",
-                        BuiltInParameterGroup.PG_ROTATION_ABOUT);
+                return (BCTranslationRotation)GetParameterValue("Z Rotation", GroupTypeId.RotationAbout);
             }
             set
             {
                 if (BCState.User == State)
                 {
-                    SetParameterValue("Z Rotation", BuiltInParameterGroup.PG_ROTATION_ABOUT, value);
+                    SetParameterValue("Z Rotation", GroupTypeId.RotationAbout, value);
                 }
             }
         }
@@ -463,11 +450,11 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
             get
             {
                 return (double)GetParameterValue("Z Spring Modulus",
-                        BuiltInParameterGroup.PG_ROTATION_ABOUT);
+                        GroupTypeId.RotationAbout);
             }
             set
             {
-                SetParameterValue("Z Spring Modulus", BuiltInParameterGroup.PG_ROTATION_ABOUT, value);
+                SetParameterValue("Z Spring Modulus", GroupTypeId.RotationAbout, value);
             }
         }
 
@@ -588,14 +575,14 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         /// get parameter via matching the appointed name and group.
         /// and deal with it according to the type of Parameter's StorageType
         /// </summary>
-        protected Object GetParameterValue(string parameterName, BuiltInParameterGroup parameterGroup)
+        protected Object GetParameterValue(string parameterName, ForgeTypeId parameterGroup)
         {
             ParameterSet parameters = m_bC.Parameters;
             foreach (Parameter parameter in parameters)
             {
                 // find the parameter of which the name is the same as the param name
                 if ((parameterName != parameter.Definition.Name) || 
-                    (parameterGroup != parameter.Definition.ParameterGroup))
+                    (parameterGroup != parameter.Definition.GetGroupTypeId()))
                 {
                     continue;
                 }
@@ -630,7 +617,7 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
         /// </param>
         /// <param name="value">the new parameter value</param>
         protected void SetParameterValue(string parameterName,
-                                         BuiltInParameterGroup parameterGroup, 
+                                         ForgeTypeId parameterGroup, 
                                          Object value)
         {
             ParameterSet parameters = m_bC.Parameters;
@@ -638,7 +625,7 @@ namespace Revit.SDK.Samples.BoundaryConditions.CS
             {
                 // find the parameter of which the name is the same as the param name
                 if ((parameterName != parameter.Definition.Name) ||
-                    (parameterGroup != parameter.Definition.ParameterGroup))
+                    (parameterGroup != parameter.Definition.GetGroupTypeId()))
                 {
                     continue;
                 }

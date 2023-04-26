@@ -68,12 +68,12 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             get
             {
                 Material material = CurrentMaterial as Material;
-                ElementId materialId = new ElementId(0);
+                ElementId materialId = ElementId.InvalidElementId;
                 if (material != null)
                 {
                     materialId = material.Id;
                 }
-                if (materialId.IntegerValue <= 0)
+                if (materialId == ElementId.InvalidElementId)
                 {
                    return StructuralAssetClass.Generic;
                 }
@@ -422,11 +422,11 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             if (null != m_cacheMaterial)
                 return m_cacheMaterial;
 
-            ElementId identityValue = new ElementId(0);
+            ElementId identityValue = ElementId.InvalidElementId;
             if (m_currentMaterial != null)
                 identityValue = m_currentMaterial.AsElementId();    //get the value of current material's ElementId
             //material has no value
-            if (identityValue.IntegerValue <= 0)
+            if (identityValue == ElementId.InvalidElementId)
             {
                 return null;
             }

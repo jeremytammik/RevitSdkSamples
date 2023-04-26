@@ -20,7 +20,7 @@ namespace REX.Start
             currentDomain.AssemblyResolve += new ResolveEventHandler(currentDomain_AssemblyResolve);
 
 
-            RunExtension(@"c:\my documents\visual studio 2015\Projects\ElementReportHTML\ElementReportHTML\bin\Debug\ElementReportHTML.dll", "2018");
+            RunExtension(@"P:\ElementReportHTML\ElementReportHTML\bin\Release\ElementReportHTML.dll", "2024");
         }
 
         static System.Reflection.Assembly currentDomain_AssemblyResolve(object sender, ResolveEventArgs args)

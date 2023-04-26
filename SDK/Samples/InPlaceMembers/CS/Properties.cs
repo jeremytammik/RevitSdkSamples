@@ -32,7 +32,7 @@ namespace Revit.SDK.Samples.InPlaceMembers.CS
     /// </summary>
     public class Properties
     {
-        private int m_ID;
+        private long m_ID;
         private string m_Name;
         private string m_Family;
         private string m_Type;
@@ -44,7 +44,7 @@ namespace Revit.SDK.Samples.InPlaceMembers.CS
         /// the value of the element id as an integer
         /// </summary>
         [CategoryAttribute("Identity")]
-        public int ID
+        public long ID
         {
             get
             {
@@ -130,7 +130,7 @@ namespace Revit.SDK.Samples.InPlaceMembers.CS
         /// <param name="f">a In-Place family instance</param>
         public Properties(FamilyInstance f)
         {
-            m_ID = f.Id.IntegerValue;
+            m_ID = f.Id.Value;
             m_Name = f.Name;
             m_Family = f.Symbol.Family.Name;
             m_Type = f.Symbol.Name;

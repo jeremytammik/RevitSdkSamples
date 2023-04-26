@@ -54,7 +54,7 @@ namespace Revit.SDK.Samples.SelectionChanged.CS
       #region 'Event handlers for selection changed event'
       internal void RevitUIApp_SelectionChanged(object sender, Autodesk.Revit.UI.Events.SelectionChangedEventArgs e)
       {
-         textBox_log.Text += e.GetInfo(); 
+         textBox_log.Text += e.GetInfo(true); 
       }
       #endregion
 

@@ -358,7 +358,7 @@ namespace Revit.SDK.Samples.AutoParameter.CS
 
                try
                {
-                  m_manager.AddParameter(def, def.ParameterGroup, true);
+                  m_manager.AddParameter(def, def.GetGroupTypeId(), true);
                }
                catch (System.Exception e)
                {

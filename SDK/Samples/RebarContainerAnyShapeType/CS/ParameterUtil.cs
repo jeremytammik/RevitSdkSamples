@@ -288,7 +288,7 @@ namespace Revit.SDK.Samples.RebarContainerAnyShapeType.CS
       /// <returns>if set parameter's value successful return true</returns>
       public static bool SetParaNullId(Parameter parameter)
       {
-          Autodesk.Revit.DB.ElementId id = new ElementId(-1);
+         Autodesk.Revit.DB.ElementId id = ElementId.InvalidElementId;
 
          if (!parameter.IsReadOnly)
          {

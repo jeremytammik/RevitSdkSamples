@@ -65,7 +65,7 @@ namespace Revit.SDK.Samples.ComputedSymbolGeometry.CS
          instanceCollector.OfClass(typeof(FamilyInstance));
 
          // create views by different names
-         ElementId View3DId = new ElementId(-1);
+         ElementId View3DId = ElementId.InvalidElementId;
          IList<Element> elems = new FilteredElementCollector(RevitDoc).OfClass(typeof(ViewFamilyType)).ToElements();
          foreach (Element e in elems)
          {

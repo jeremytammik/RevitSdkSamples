@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>REX.Serialization</RootNamespace>
     <AssemblyName>Serialization</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
@@ -59,38 +59,38 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autodesk.Common.AResourcesControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ff3304d4f320ee59, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Autodesk.Common.AResourcesControl, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=ff3304d4f320ee59, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>Autodesk.Common.AResourcesControl.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Autodesk.REX.Framework, Version=2018.0.0.0, Culture=neutral, PublicKeyToken=51e16e3b26b42eda, processorArchitecture=MSIL">
+    <Reference Include="Autodesk.REX.Framework, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=51e16e3b26b42eda, processorArchitecture=MSIL">
       <SpecificVersion>True</SpecificVersion>
       <HintPath>Autodesk.REX.Framework.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPI">
-      <HintPath>q:\Ref\RevitAPI.dll</HintPath>
+      <HintPath>RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>q:\Ref\RevitAPIUI.dll</HintPath>
+      <HintPath>RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="REX.Controls">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Engine\REX.Controls.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Engine\REX.Controls.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="REX.Controls.Forms">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Engine\REX.Controls.Forms.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Engine\REX.Controls.Forms.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="REX.Foundation">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Foundation\REX.Foundation.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.Foundation.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="REX.Foundation.Forms">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Foundation\REX.Foundation.Forms.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.Foundation.Forms.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -249,7 +249,7 @@ goto END
 
 if exist "$(ProjectDir)Additional\buildevents.bat" call "$(ProjectDir)Additional\buildevents.bat"
 
-xcopy "$(ProjectDir)Additional\*.addin" "R:\Autodesk\Revit\Addins\2018" /S /R /K /V /I /F /C /Y    
+xcopy "$(ProjectDir)Additional\*.addin" "%ProgramData%\Autodesk\Revit\Addins\2024" /S /R /K /V /I /F /C /Y    
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

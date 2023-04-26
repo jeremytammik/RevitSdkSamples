@@ -112,20 +112,20 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelA.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelA.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="labelA.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 37</value>
   </data>
@@ -142,7 +142,7 @@
     <value>labelA</value>
   </data>
   <data name="&gt;&gt;labelA.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelA.Parent" xml:space="preserve">
     <value>groupBoxDisplay</value>
@@ -172,7 +172,7 @@
     <value>labelB</value>
   </data>
   <data name="&gt;&gt;labelB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelB.Parent" xml:space="preserve">
     <value>groupBoxDisplay</value>
@@ -202,7 +202,7 @@
     <value>labelC</value>
   </data>
   <data name="&gt;&gt;labelC.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelC.Parent" xml:space="preserve">
     <value>groupBoxDisplay</value>
@@ -223,7 +223,7 @@
     <value>rexEditBoxA</value>
   </data>
   <data name="&gt;&gt;rexEditBoxA.Type" xml:space="preserve">
-    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99</value>
+    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=2022.0.1.4742, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rexEditBoxA.Parent" xml:space="preserve">
     <value>groupBoxDisplay</value>
@@ -244,7 +244,7 @@
     <value>rexEditBoxB</value>
   </data>
   <data name="&gt;&gt;rexEditBoxB.Type" xml:space="preserve">
-    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99</value>
+    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=2022.0.1.4742, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rexEditBoxB.Parent" xml:space="preserve">
     <value>groupBoxDisplay</value>
@@ -265,7 +265,7 @@
     <value>rexEditBoxC</value>
   </data>
   <data name="&gt;&gt;rexEditBoxC.Type" xml:space="preserve">
-    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99</value>
+    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=2022.0.1.4742, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rexEditBoxC.Parent" xml:space="preserve">
     <value>groupBoxDisplay</value>
@@ -289,7 +289,7 @@
     <value>groupBoxDisplay</value>
   </data>
   <data name="&gt;&gt;groupBoxDisplay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxDisplay.Parent" xml:space="preserve">
     <value>$this</value>
@@ -310,7 +310,7 @@
     <value>textBoxA</value>
   </data>
   <data name="&gt;&gt;textBoxA.Type" xml:space="preserve">
-    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99</value>
+    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=2022.0.1.4742, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxA.Parent" xml:space="preserve">
     <value>groupBoxBase</value>
@@ -331,7 +331,7 @@
     <value>textBoxB</value>
   </data>
   <data name="&gt;&gt;textBoxB.Type" xml:space="preserve">
-    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99</value>
+    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=2022.0.1.4742, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxB.Parent" xml:space="preserve">
     <value>groupBoxBase</value>
@@ -352,7 +352,7 @@
     <value>textBoxC</value>
   </data>
   <data name="&gt;&gt;textBoxC.Type" xml:space="preserve">
-    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99</value>
+    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=2022.0.1.4742, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxC.Parent" xml:space="preserve">
     <value>groupBoxBase</value>
@@ -376,7 +376,7 @@
     <value>groupBoxBase</value>
   </data>
   <data name="&gt;&gt;groupBoxBase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxBase.Parent" xml:space="preserve">
     <value>$this</value>
@@ -397,7 +397,7 @@
     <value>textBoxIC</value>
   </data>
   <data name="&gt;&gt;textBoxIC.Type" xml:space="preserve">
-    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99</value>
+    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=2022.0.1.4742, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxIC.Parent" xml:space="preserve">
     <value>groupBoxInterface</value>
@@ -418,7 +418,7 @@
     <value>textBoxIA</value>
   </data>
   <data name="&gt;&gt;textBoxIA.Type" xml:space="preserve">
-    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99</value>
+    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=2022.0.1.4742, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxIA.Parent" xml:space="preserve">
     <value>groupBoxInterface</value>
@@ -439,7 +439,7 @@
     <value>textBoxIB</value>
   </data>
   <data name="&gt;&gt;textBoxIB.Type" xml:space="preserve">
-    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99</value>
+    <value>REX.Controls.Forms.REXEditBox, REX.Controls.Forms, Version=2022.0.1.4742, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxIB.Parent" xml:space="preserve">
     <value>groupBoxInterface</value>
@@ -463,7 +463,7 @@
     <value>groupBoxInterface</value>
   </data>
   <data name="&gt;&gt;groupBoxInterface.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxInterface.Parent" xml:space="preserve">
     <value>$this</value>
@@ -471,7 +471,7 @@
   <data name="&gt;&gt;groupBoxInterface.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -484,6 +484,6 @@
     <value>SubControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>REX.Common.REXExtensionControl, REX.Foundation.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>REX.Common.REXExtensionControl, REX.Foundation.Forms, Version=2022.0.1.4741, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

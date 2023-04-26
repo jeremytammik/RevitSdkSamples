@@ -73,7 +73,7 @@ namespace Revit.SDK.Samples.SlabShapeEditing.CS
             InitializeComponent();
             m_commandData = commandData;
             m_slabProfile = new SlabProfile(floor, commandData);
-            m_slabShapeEditor = floor.SlabShapeEditor;
+            m_slabShapeEditor = floor.GetSlabShapeEditor();
             m_lineTool = new LineTool();
             m_pointTool = new LineTool();
             editorState = EditorState.AddVertex;

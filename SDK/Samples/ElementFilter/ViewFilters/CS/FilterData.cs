@@ -383,7 +383,7 @@ namespace Revit.SDK.Samples.ViewFilters.CS
             m_doc = doc;
             m_filterCategories = new List<BuiltInCategory>();
             foreach (ElementId catId in categories)
-                m_filterCategories.Add((BuiltInCategory)catId.IntegerValue);
+                m_filterCategories.Add((BuiltInCategory)catId.Value);
             m_filterRules = new List<FilterRuleBuilder>();
             m_filterRules.AddRange(filterRules);
         }

@@ -44,11 +44,7 @@ namespace Revit.SDK.Samples.ImportExport.CS
       public ImportImageData(ExternalCommandData commandData, ImportFormat importFormat)
           : base(commandData, importFormat)
       {
-         if (OptionalFunctionalityUtils.IsPDFImportAvailable())
-            m_filter = "All Image Files (*.bmp, *.gif, *.jpg, *.jpeg, *.pdf, *.png, *.tif)|*.bmp;*.gif;*.jpg;*.jpeg;*.pdf;*.png;*.tif";
-         else
-            m_filter = "All Image Files (*.bmp, *.gif, *.jpg, *.jpeg, *.png, *.tif)|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif";
-
+         m_filter = "All Image Files (*.bmp, *.gif, *.jpg, *.jpeg, *.pdf, *.png, *.tif)|*.bmp;*.gif;*.jpg;*.jpeg;*.pdf;*.png;*.tif";
          m_title = "Import Image";
       }
 

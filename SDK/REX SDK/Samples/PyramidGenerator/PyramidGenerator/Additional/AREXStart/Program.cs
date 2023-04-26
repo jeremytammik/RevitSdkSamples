@@ -20,7 +20,7 @@ namespace REX.Start
             currentDomain.AssemblyResolve += new ResolveEventHandler(currentDomain_AssemblyResolve);
 
 
-            RunExtension(@"P:\PyramidGenerator\PyramidGenerator\bin\Debug\PyramidGenerator.dll", "2018");
+            RunExtension(@"P:\PyramidGenerator\PyramidGenerator\bin\Release\PyramidGenerator.dll", "2024");
         }
 
         static System.Reflection.Assembly currentDomain_AssemblyResolve(object sender, ResolveEventArgs args)

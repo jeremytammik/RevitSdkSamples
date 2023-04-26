@@ -85,7 +85,7 @@ namespace Revit.SDK.Samples.GeometryCreation_BooleanOperation.CS
             if (!viewNameList.Contains(viewName))
             {
                 IList<Element> viewFamilyTypes = new FilteredElementCollector(m_doc).OfClass(typeof(ViewFamilyType)).ToElements();
-                ElementId View3DId = new ElementId(-1);
+                ElementId View3DId = ElementId.InvalidElementId;
                 foreach (Element e in viewFamilyTypes)
                 {
                     if (e.Name == "3D View")

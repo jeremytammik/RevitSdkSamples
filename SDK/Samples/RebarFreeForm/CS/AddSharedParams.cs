@@ -41,8 +41,12 @@ namespace Revit.SDK.Samples.RebarFreeForm.CS
             using (Transaction tran = new Transaction(doc, "Add shared param"))
             {
                tran.Start();
+
+               // Add Shared parameters:
+               //   Update is a simple boolean.
+               //   CurveElementId is an ElementId, which is a 64-bit Entity, so stringify it to keep data intact. 
                bool paramsAdded = AddSharedTestParameter(commandData, m_paramName, SpecTypeId.Boolean.YesNo, false);
-               paramsAdded &= AddSharedTestParameter(commandData, m_CurveIdName, SpecTypeId.Int.Integer, true);
+               paramsAdded &= AddSharedTestParameter(commandData, m_CurveIdName, SpecTypeId.String.Text, true);
                if (paramsAdded)
                {
                   tran.Commit();

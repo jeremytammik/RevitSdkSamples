@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Command">
-    <Assembly>P:\DRevitFreezeDrawing\DRevitFreezeDrawing\bin\Debug\DRevitFreezeDrawing.dll</Assembly>
+    <Assembly>P:\DRevitFreezeDrawing\DRevitFreezeDrawing\bin\Release\DRevitFreezeDrawing.dll</Assembly>
     <ClientId>b3285fd3-c3b4-48ea-a8c6-c64b71eeb34c</ClientId>
     <FullClassName>REX.DRevitFreezeDrawing.DirectRevitAccess</FullClassName>
     <Text>DRevitFreezeDrawing</Text>

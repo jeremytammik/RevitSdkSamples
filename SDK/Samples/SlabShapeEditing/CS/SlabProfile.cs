@@ -82,7 +82,7 @@ namespace Revit.SDK.Samples.SlabShapeEditing.CS
       {
          m_floor = floor;
          m_commandData = commandData;
-         m_slabShapeEditor = floor.SlabShapeEditor;
+         m_slabShapeEditor = floor.GetSlabShapeEditor();
          GetSlabProfileInfo();
       }
 

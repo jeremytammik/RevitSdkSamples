@@ -184,12 +184,11 @@ namespace Rooms
             //add it to the list RoomWithTag and delete it from list RoomWithoutTag
             foreach (RoomTag tmpTag in m_roomTags)
             {
-                int idValue = tmpTag.Room.Id.IntegerValue;
                 m_roomsWithTag.Add(tmpTag.Room);
                 //search the id for list RoomWithoutTag
                 foreach (Room tmpRoom in m_rooms)
                 {
-                    if (idValue == tmpRoom.Id.IntegerValue)
+                    if (tmpTag.Room.Id == tmpRoom.Id)
                     {
                         m_roomsWithoutTag.Remove(tmpRoom);
                     }

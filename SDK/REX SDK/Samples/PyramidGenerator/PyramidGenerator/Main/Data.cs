@@ -132,7 +132,7 @@ namespace REX.PyramidGenerator
         /// Gets or sets the list of element ids.
         /// </summary>
         /// <value>The list of element ids.</value>
-        public List<int> ElementIds { get; set; }   //Step 5.1.1. : Serialize
+        public List<long> ElementIds { get; set; }   //Step 5.1.1. : Serialize
         /// <summary>
         /// Initializes a new instance of a <see cref="Data"/> class.
         /// </summary>
@@ -165,7 +165,7 @@ namespace REX.PyramidGenerator
             B = 10;//m
             FamilySymbol = "";
             AvailableFamilySymbols = new List<string>();
-            ElementIds = new List<int>();
+            ElementIds = new List<long>();
         }
         /// <summary>
         /// Called when save data.
@@ -204,11 +204,11 @@ namespace REX.PyramidGenerator
 
             if (Mode != DataMode.ModeFile)
             {
-                ElementIds = new List<int>();
+                ElementIds = new List<long>();
                 int count = Data.ReadInt32();
 
                 for (int i = 0; i < count; i++)
-                    ElementIds.Add(Data.ReadInt32());
+                    ElementIds.Add(Data.ReadInt64());
             }
 
             return true;

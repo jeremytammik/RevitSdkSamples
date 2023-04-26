@@ -76,7 +76,7 @@ namespace REX.ElementReportHTML.Main.Revit
                     continue;
 
                 Autodesk.Revit.DB.GeometryElement geomElement = el.get_Geometry(new Options());
-                BuiltInCategory bic = (BuiltInCategory)el.Category.Id.IntegerValue;
+                BuiltInCategory bic = el.Category.BuiltInCategory;
                 if ((geomElement == null) || bic == BuiltInCategory.OST_DetailComponents
                     || bic == BuiltInCategory.OST_Views || bic == BuiltInCategory.OST_Cameras)
                     continue;

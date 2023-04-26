@@ -493,7 +493,7 @@ namespace Revit.SDK.Samples.RebarFreeForm.CS
          Parameter paramCurveId = bar.LookupParameter(AddSharedParams.m_CurveIdName);
          if (paramCurveId == null)
             return null;
-         ElementId id = new ElementId(paramCurveId.AsInteger());
+         ElementId id = ElementId.Parse(paramCurveId.AsString());
          return data.GetDocument().GetElement(id) as CurveElement;
       }
       /// <summary>

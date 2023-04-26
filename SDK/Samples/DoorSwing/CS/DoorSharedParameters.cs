@@ -93,7 +93,7 @@ namespace Revit.SDK.Samples.DoorSwing.CS
             }
 
             // Add the binding and definition to the document.
-            bindingMap.Insert(basalOpening, typeBinding, BuiltInParameterGroup.PG_GEOMETRY);
+            bindingMap.Insert(basalOpening, typeBinding, GroupTypeId.Geometry);
          }
          
 
@@ -110,7 +110,7 @@ namespace Revit.SDK.Samples.DoorSwing.CS
             }
 
             // Add the binding and definition to the document.
-            bindingMap.Insert(instanceOpening, instanceBinding, BuiltInParameterGroup.PG_GEOMETRY);
+            bindingMap.Insert(instanceOpening, instanceBinding, GroupTypeId.Geometry);
          }
 
          // for "Internal Door"

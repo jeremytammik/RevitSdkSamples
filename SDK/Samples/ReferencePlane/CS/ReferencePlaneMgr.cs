@@ -187,7 +187,7 @@ namespace Revit.SDK.Samples.ReferencePlane.CS
             else
             {
                row = m_referencePlanes.NewRow();
-               row["ID"] = refPlane.Id.IntegerValue;
+               row["ID"] = refPlane.Id.Value;
                row["BubbleEnd"] = Format(refPlane.BubbleEnd);
                row["FreeEnd"] = Format(refPlane.FreeEnd);
                row["Normal"] = Format(refPlane.Normal);

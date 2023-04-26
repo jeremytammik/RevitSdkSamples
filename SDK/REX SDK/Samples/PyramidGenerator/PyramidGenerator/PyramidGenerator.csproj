@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>REX.PyramidGenerator</RootNamespace>
     <AssemblyName>PyramidGenerator</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -59,16 +59,16 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autodesk.Common.AResourcesControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ff3304d4f320ee59, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>a:\references\Autodesk.Common.AResourcesControl.dll</HintPath>
+    <Reference Include="Autodesk.Common.AResourcesControl, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=ff3304d4f320ee59, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>Autodesk.Common.AResourcesControl.dll</HintPath>
     </Reference>
-    <Reference Include="Autodesk.REX.Framework, Version=2018.0.0.0, Culture=neutral, PublicKeyToken=51e16e3b26b42eda, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Autodesk.REX.Framework, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=51e16e3b26b42eda, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>Autodesk.REX.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Interop.ROHTMLLib">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Interop\Interop.ROHTMLLib.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Interop\Interop.ROHTMLLib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="PresentationCore">
@@ -78,31 +78,31 @@
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="RevitAPI">
-      <HintPath>q:\Ref\RevitAPI.dll</HintPath>
+      <HintPath>RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>q:\Ref\RevitAPIUI.dll</HintPath>
+      <HintPath>RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="REX.API">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Foundation\REX.API.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.API.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="REX.Controls">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Engine\REX.Controls.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Engine\REX.Controls.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="REX.Controls.WPF">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Engine\REX.Controls.WPF.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Engine\REX.Controls.WPF.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="REX.Foundation">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Foundation\REX.Foundation.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.Foundation.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="REX.Foundation.WPF">
-      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2018\Framework\Foundation\REX.Foundation.WPF.dll</HintPath>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.Foundation.WPF.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -281,7 +281,7 @@ goto END
 
 if exist "$(ProjectDir)Additional\buildevents.bat" call "$(ProjectDir)Additional\buildevents.bat"
 
-xcopy "$(ProjectDir)Additional\*.addin" "R:\Autodesk\Revit\Addins\2018" /S /R /K /V /I /F /C /Y    
+xcopy "$(ProjectDir)Additional\*.addin" "%ProgramData%\Autodesk\Revit\Addins\2024" /S /R /K /V /I /F /C /Y    
 
 </PostBuildEvent>
   </PropertyGroup>

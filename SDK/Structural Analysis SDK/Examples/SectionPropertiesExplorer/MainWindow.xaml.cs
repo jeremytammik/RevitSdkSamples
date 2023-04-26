@@ -392,7 +392,7 @@ namespace SectionPropertiesExplorer
         public ElementEntry(Autodesk.Revit.DB.Element revitElement)
         {
             string elementDescription;
-            Autodesk.Revit.DB.BuiltInCategory cat = (Autodesk.Revit.DB.BuiltInCategory)revitElement.Category.Id.IntegerValue;
+            Autodesk.Revit.DB.BuiltInCategory cat = revitElement.Category.BuiltInCategory;
             switch (cat)
             {
                 case Autodesk.Revit.DB.BuiltInCategory.OST_StructuralColumns:

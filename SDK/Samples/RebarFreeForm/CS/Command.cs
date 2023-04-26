@@ -146,7 +146,7 @@ namespace Revit.SDK.Samples.RebarFreeForm.CS
                   if (newSharedParam != null && newSharedParam2 != null)
                   {
                      newSharedParam.Set(0);
-                     newSharedParam2.Set(curveElem == null ? -1 : curveElem.Id.IntegerValue);
+                     newSharedParam2.Set(curveElem == null ? ElementId.InvalidElementId.ToString() : curveElem.Id.ToString());
 
                      RebarFreeFormAccessor accesRebar = rebar.GetFreeFormAccessor();
                      accesRebar.AddUpdatingSharedParameter(newSharedParam.Id);

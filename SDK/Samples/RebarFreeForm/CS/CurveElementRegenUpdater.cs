@@ -46,7 +46,7 @@ namespace Revit.SDK.Samples.RebarFreeForm.CS
                   Parameter paramCurveId = bar.LookupParameter(AddSharedParams.m_CurveIdName);
                   if (paramCurveId == null)
                      continue;
-                  ElementId id = new ElementId(paramCurveId.AsInteger());
+                  ElementId id = ElementId.Parse(paramCurveId.AsString());
                   if (id == ElementId.InvalidElementId)
                      continue;
                   if (modifiedIds.Contains(id))// if id of line is in the rebar, then trigger regen

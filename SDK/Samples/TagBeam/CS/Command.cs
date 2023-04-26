@@ -108,12 +108,13 @@ namespace Revit.SDK.Samples.TagBeam.CS
                         // cast to Rebar and get its first curve
                         Autodesk.Revit.DB.Structure.Rebar rebar = (Autodesk.Revit.DB.Structure.Rebar)elem;
                         Autodesk.Revit.DB.Curve curve = rebar.GetCenterlineCurves(false, false, false,MultiplanarOption.IncludeAllMultiplanarCurves,0)[0];
+                        IList<Subelement> subelements = rebar.GetSubelements();  
 
                         // create a rebar tag at the first end point of the first curve
                         using( Transaction t = new Transaction(revitDoc.Document))
                         {
                            t.Start("Create new tag");
-                           IndependentTag tag = IndependentTag.Create(revitDoc.Document, view.Id, new Reference(rebar), true,
+                           IndependentTag tag = IndependentTag.Create(revitDoc.Document, view.Id, subelements[0].GetReference(), true,
                                Autodesk.Revit.DB.TagMode.TM_ADDBY_CATEGORY,
                                Autodesk.Revit.DB.TagOrientation.Horizontal, curve.GetEndPoint(0));
                            t.Commit();

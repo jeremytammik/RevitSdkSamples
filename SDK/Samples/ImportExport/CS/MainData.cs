@@ -400,10 +400,6 @@ namespace Revit.SDK.Samples.ImportExport.CS
                         ImportGBXMLData importGBXMLData = new ImportGBXMLData(m_commandData, format);
                         dialogResult = Import(importGBXMLData);
                         break;
-                    case ImportFormat.Inventor:
-                        ImportInventorData importInventorData = new ImportInventorData(m_commandData, format);
-                        dialogResult = Import(importInventorData);
-                        break;
                     default:
                         break;
                 }

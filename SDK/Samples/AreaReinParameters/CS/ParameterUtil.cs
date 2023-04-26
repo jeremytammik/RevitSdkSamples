@@ -119,7 +119,7 @@ namespace Revit.SDK.Samples.AreaReinParameters.CS
         /// <returns></returns>
         public static bool SetParaNullId(Parameter para)
         {
-            Autodesk.Revit.DB.ElementId id = new ElementId(-1);
+            Autodesk.Revit.DB.ElementId id =  ElementId.InvalidElementId;
 
             if (!para.IsReadOnly)
             {
