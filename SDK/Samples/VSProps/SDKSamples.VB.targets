@@ -8,12 +8,12 @@
   <ItemGroup>
     <Reference Include="RevitAPI">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\RevitAPI.dll</HintPath>
+      <HintPath>C:/Program Files/Autodesk/Revit 2024/RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(SolutionDir)..\..\..\..\$(ConfigurationName)$(PlatformName)\RevitAPIUI.dll</HintPath>
+      <HintPath>C:/Program Files/Autodesk/Revit 2024/RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
