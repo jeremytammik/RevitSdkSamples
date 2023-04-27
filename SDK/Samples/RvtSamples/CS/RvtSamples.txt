@@ -103,7 +103,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\InCanvasControlAPI\CS\bin\Debug\InCanva
 Revit.SDK.Samples.InCanvasControlAPI.CS.Command
 
 Annotation, Elements
-Infrastructure alignments
+Infrastructure Alignment Station Label
 Demonstrates the use of API for finding and labeling an infrastructure alignment element.
 LargeImage:
 Image:
@@ -111,7 +111,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CivilAlignments\CS\bin\Debug\CivilAlign
 Revit.SDK.Samples.CivilAlignments.CS.CreateAlignmentStationLabelsCmd
 
 Annotation, Elements
-Infrastructure alignments
+Infrastructure Alignment Properties
 Demonstrates the use of API for listing properties of an infrastructure alignment element and its labels.
 LargeImage:
 Image:
@@ -415,7 +415,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CurtainWallGrid\CS\bin\Debug\CurtainWal
 Revit.SDK.Samples.CurtainWallGrid.CS.Command
 
 Elements
-Datumplane modification
+Datum Alignment
 Datumplane modification
 LargeImage:
 Image:
@@ -423,7 +423,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\DatumsModification\CS\bin\Debug\DatumsM
 Revit.SDK.Samples.DatumsModification.CS.DatumAlignment
 
 Elements
-Datumplane modification
+Datum Propagation
 Datumplane modification
 LargeImage:
 Image:
@@ -431,7 +431,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\DatumsModification\CS\bin\Debug\DatumsM
 Revit.SDK.Samples.DatumsModification.CS.DatumPropagation
 
 Elements
-Datumplane modification
+Datum Style Modification
 Datumplane modification
 LargeImage:
 Image:
@@ -567,12 +567,77 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\StairsAutomation\CS\bin\Debug\StairsAut
 Revit.SDK.Samples.StairsAutomation.CS.Command
 
 Elements
-Toposolid API Samples
+Toposolid ContourSettingCreation
 API samples for toposolid related features.
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
-Revit.SDK.Samples.Toposolid.CS.Command
+Revit.SDK.Samples.Toposolid.CS.ContourSettingCreation
+
+
+Elements
+Toposolid ContourSettingModification
+API samples for toposolid related features.
+LargeImage:
+Image:
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
+Revit.SDK.Samples.Toposolid.CS.ContourSettingModification
+
+
+Elements
+Toposolid SSEPointVisibility
+API samples for toposolid related features.
+LargeImage:
+Image:
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
+Revit.SDK.Samples.Toposolid.CS.SSEPointVisibility
+
+
+Elements
+Toposolid SimplifyToposolid
+API samples for toposolid related features.
+LargeImage:
+Image:
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
+Revit.SDK.Samples.Toposolid.CS.SimplifyToposolid
+
+
+Elements
+Toposolid SplitToposolid
+API samples for toposolid related features.
+LargeImage:
+Image:
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
+Revit.SDK.Samples.Toposolid.CS.SplitToposolid
+
+
+Elements
+Toposolid ToposolidCreation
+API samples for toposolid related features.
+LargeImage:
+Image:
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
+Revit.SDK.Samples.Toposolid.CS.ToposolidCreation
+
+
+Elements
+Toposolid ToposolidFromDWG
+API samples for toposolid related features.
+LargeImage:
+Image:
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
+Revit.SDK.Samples.Toposolid.CS.ToposolidFromDWG
+
+
+Elements
+Toposolid ToposolidFromSurface
+API samples for toposolid related features.
+LargeImage:
+Image:
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
+Revit.SDK.Samples.Toposolid.CS.ToposolidFromSurface
+
+
 
 Elements
 Winder Stairs
@@ -600,8 +665,8 @@ Revit.SDK.Samples.SlabShapeEditing.CS.Command
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: AddAssociation
+ContextualAnalyticalModel.AddAssociation
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -609,8 +674,8 @@ ContextualAnalyticalModel.AddAssociation
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: AddCustomAssociation
+ContextualAnalyticalModel.AddCustomAssociation
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -618,8 +683,8 @@ ContextualAnalyticalModel.AddCustomAssociation
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: AnalyticalNodeConnStatus
+ContextualAnalyticalModel.AnalyticalNodeConnStatus
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -627,8 +692,8 @@ ContextualAnalyticalModel.AnalyticalNodeConnStatus
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: CreateAnalyticalPanel
+ContextualAnalyticalModel.CreateAnalyticalPanel
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -636,8 +701,8 @@ ContextualAnalyticalModel.CreateAnalyticalPanel
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: CreateAnalyticalCurvedPanel
+ContextualAnalyticalModel.CreateAnalyticalCurvedPanel
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -645,8 +710,8 @@ ContextualAnalyticalModel.CreateAnalyticalCurvedPanel
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: CreateAnalyticalMember
+ContextualAnalyticalModel.CreateAnalyticalMember
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -654,8 +719,8 @@ ContextualAnalyticalModel.CreateAnalyticalMember
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: CreateAreaLoadWithRefPoint
+ContextualAnalyticalModel.CreateAreaLoadWithRefPoint
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -663,8 +728,8 @@ ContextualAnalyticalModel.CreateAreaLoadWithRefPoint
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: CreateCustomAreaLoad
+ContextualAnalyticalModel.CreateCustomAreaLoad
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -672,8 +737,8 @@ ContextualAnalyticalModel.CreateCustomAreaLoad
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: CreateCustomLineLoad
+ContextualAnalyticalModel.CreateCustomLineLoad
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -681,8 +746,8 @@ ContextualAnalyticalModel.CreateCustomLineLoad
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: CreateCustomPointLoad
+ContextualAnalyticalModel.CreateCustomPointLoad
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -690,8 +755,8 @@ ContextualAnalyticalModel.CreateCustomPointLoad
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: FlipAnalyticalMember
+ContextualAnalyticalModel.FlipAnalyticalMember
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -699,8 +764,8 @@ ContextualAnalyticalModel.FlipAnalyticalMember
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: MemberForcesAnalyticalMember
+ContextualAnalyticalModel.MemberForcesAnalyticalMember
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -708,8 +773,8 @@ ContextualAnalyticalModel.MemberForcesAnalyticalMember
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: ModifyPanelContour
+ContextualAnalyticalModel.ModifyPanelContour
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -717,8 +782,8 @@ ContextualAnalyticalModel.ModifyPanelContour
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: MoveAnalyticalMemberUsingElementTransformUtils
+ContextualAnalyticalModel.MoveAnalyticalMemberUsingElementTransformUtils
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -726,8 +791,8 @@ ContextualAnalyticalModel.MoveAnalyticalMemberUsingElementTransformUtils
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: MoveAnalyticalMemberUsingSetCurve
+ContextualAnalyticalModel.MoveAnalyticalMemberUsingSetCurve
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -735,8 +800,8 @@ ContextualAnalyticalModel.MoveAnalyticalMemberUsingSetCurve
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: MoveAnalyticalNodeUsingElementTransformUtils
+ContextualAnalyticalModel.MoveAnalyticalNodeUsingElementTransformUtils
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -744,8 +809,8 @@ ContextualAnalyticalModel.MoveAnalyticalNodeUsingElementTransformUtils
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: MoveAnalyticalPanelUsingElementTransformUtils
+ContextualAnalyticalModel.MoveAnalyticalPanelUsingElementTransformUtils
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -753,8 +818,8 @@ ContextualAnalyticalModel.MoveAnalyticalPanelUsingElementTransformUtils
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: MoveAnalyticalPanelUsingSketchEditScope
+ContextualAnalyticalModel.MoveAnalyticalPanelUsingSketchEditScope
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -762,8 +827,8 @@ ContextualAnalyticalModel.MoveAnalyticalPanelUsingSketchEditScope
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: ReleaseConditionsAnalyticalMember
+ContextualAnalyticalModel.ReleaseConditionsAnalyticalMember
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -771,8 +836,8 @@ ContextualAnalyticalModel.ReleaseConditionsAnalyticalMember
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: RemoveAssociation
+ContextualAnalyticalModel.RemoveAssociation
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
@@ -780,12 +845,17 @@ ContextualAnalyticalModel.RemoveAssociation
 
 
 Elements, Geometry, Structure, UI
-Create Analytical Member
-Create Analytical Member
+Analytical Model: SetOuterContourForPanels
+ContextualAnalyticalModel.SetOuterContourForPanels
 LargeImage:
 Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
 ContextualAnalyticalModel.SetOuterContourForPanels
+
+
+
+
+
 
 
 
@@ -1218,7 +1288,7 @@ Element Viewer
 Display wireframe model of one or more selected elements.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Viewers\ElementViewer\VB.NET\bin\ElementViewer.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Viewers\ElementViewer\VB.NET\bin\Debug\ElementViewer.dll
 Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
 
 Geometry
@@ -1570,7 +1640,7 @@ CreateShared - Create Shared Parameter
 Create a new shared parameter and assign it to wall categories.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CreateShared\VB.NET\bin\CreateShared.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CreateShared\VB.NET\bin\Debug\CreateShared.dll
 Revit.SDK.Samples.CreateShared.VB.NET.Command1
 
 Parameters
@@ -1578,7 +1648,7 @@ CreateShared - Set Shared Parameter
 Set the shared parameter.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CreateShared\VB.NET\bin\CreateShared.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\CreateShared\VB.NET\bin\Debug\CreateShared.dll
 Revit.SDK.Samples.CreateShared.VB.NET.Command2
 
 Parameters
@@ -1650,7 +1720,7 @@ Test Floor Thickness
 Show how to retrieve and modify floor thickness.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestFloorThickness\VB.NET\bin\TestFloorThickness.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestFloorThickness\VB.NET\bin\Debug\TestFloorThickness.dll
 Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
 
 Parameters
@@ -1658,7 +1728,7 @@ Test Wall Thickness
 Show how to retrieve and modify wall thickness.
 LargeImage:
 Image:
-Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestWallThickness\VB.NET\bin\TestWallThickness.dll
+Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\TestWallThickness\VB.NET\bin\Debug\TestWallThickness.dll
 Revit.SDK.Samples.TestWallThickness.VB.NET.Command
 
 Parameters, Structure
