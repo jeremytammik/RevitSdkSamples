@@ -278,7 +278,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\RevitCommands\VB.NET\bin\RevitCommands.dll
 Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
 
-Basics, Geometry
+Basics
 Display graphics using DirectContext3D
 Select elements whose graphics should be redrawn using DirectContext3D.
 LargeImage:
@@ -286,7 +286,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\DuplicateGraphics\CS\bin\Debug\DuplicateGraphics.dll
 Revit.SDK.Samples.DuplicateGraphics.CS.CommandDuplicateGraphics
 
-Basics, Geometry
+Basics
 Clear DirectContext3D graphics
 Remove external graphics.
 LargeImage:
@@ -294,7 +294,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\DuplicateGraphics\CS\bin\Debug\DuplicateGraphics.dll
 Revit.SDK.Samples.DuplicateGraphics.CS.CommandClearExternalGraphics
 
-Basics, Geometry
+Basics
 ReferencePlane
 Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first.
 LargeImage:
@@ -302,7 +302,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ReferencePlane\CS\bin\Debug\ReferencePlane.dll
 Revit.SDK.Samples.ReferencePlane.CS.Command
 
-Basics, Geometry, Views
+Basics, Views
 Export 2D views with CustomExporter
 Export 2D views with CustomExporter, using varying options of the exporter.
 LargeImage:
@@ -566,7 +566,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\StairsAutomation\CS\bin\Debug\StairsAutomation.dll
 Revit.SDK.Samples.StairsAutomation.CS.Command
 
-Elements
+Toposolid
 Toposolid ContourSettingCreation
 API samples for toposolid related features.
 LargeImage:
@@ -575,7 +575,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
 Revit.SDK.Samples.Toposolid.CS.ContourSettingCreation
 
 
-Elements
+Toposolid
 Toposolid ContourSettingModification
 API samples for toposolid related features.
 LargeImage:
@@ -584,7 +584,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
 Revit.SDK.Samples.Toposolid.CS.ContourSettingModification
 
 
-Elements
+Toposolid
 Toposolid SSEPointVisibility
 API samples for toposolid related features.
 LargeImage:
@@ -593,7 +593,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
 Revit.SDK.Samples.Toposolid.CS.SSEPointVisibility
 
 
-Elements
+Toposolid
 Toposolid SimplifyToposolid
 API samples for toposolid related features.
 LargeImage:
@@ -602,7 +602,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
 Revit.SDK.Samples.Toposolid.CS.SimplifyToposolid
 
 
-Elements
+Toposolid
 Toposolid SplitToposolid
 API samples for toposolid related features.
 LargeImage:
@@ -611,7 +611,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
 Revit.SDK.Samples.Toposolid.CS.SplitToposolid
 
 
-Elements
+Toposolid
 Toposolid ToposolidCreation
 API samples for toposolid related features.
 LargeImage:
@@ -620,7 +620,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
 Revit.SDK.Samples.Toposolid.CS.ToposolidCreation
 
 
-Elements
+Toposolid
 Toposolid ToposolidFromDWG
 API samples for toposolid related features.
 LargeImage:
@@ -629,7 +629,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
 Revit.SDK.Samples.Toposolid.CS.ToposolidFromDWG
 
 
-Elements
+Toposolid
 Toposolid ToposolidFromSurface
 API samples for toposolid related features.
 LargeImage:
@@ -647,7 +647,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\WinderStairs\CS\bin\Debug\WinderStairs.dll
 Revit.SDK.Samples.WinderStairs.CS.Command
 
-Elements, Geometry
+Elements
 Shaft Hole Puncher
 Create shaft opening or create opening on wall, floor or beam.
 LargeImage:
@@ -655,7 +655,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ShaftHolePuncher\CS\bin\Debug\ShaftHolePuncher.dll
 Revit.SDK.Samples.ShaftHolePuncher.CS.Command
 
-Elements, Geometry
+Elements
 SlabShapeEditing
 Create vertex and crease on slab to edit it's shape.
 LargeImage:
@@ -664,7 +664,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\SlabShapeEditing\CS\bin\Debug\SlabShape
 Revit.SDK.Samples.SlabShapeEditing.CS.Command
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: AddAssociation
 ContextualAnalyticalModel.AddAssociation
 LargeImage:
@@ -673,7 +673,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.AddAssociation
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: AddCustomAssociation
 ContextualAnalyticalModel.AddCustomAssociation
 LargeImage:
@@ -682,7 +682,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.AddCustomAssociation
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: AnalyticalNodeConnStatus
 ContextualAnalyticalModel.AnalyticalNodeConnStatus
 LargeImage:
@@ -691,7 +691,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.AnalyticalNodeConnStatus
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: CreateAnalyticalPanel
 ContextualAnalyticalModel.CreateAnalyticalPanel
 LargeImage:
@@ -700,7 +700,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.CreateAnalyticalPanel
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: CreateAnalyticalCurvedPanel
 ContextualAnalyticalModel.CreateAnalyticalCurvedPanel
 LargeImage:
@@ -709,7 +709,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.CreateAnalyticalCurvedPanel
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: CreateAnalyticalMember
 ContextualAnalyticalModel.CreateAnalyticalMember
 LargeImage:
@@ -718,7 +718,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.CreateAnalyticalMember
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: CreateAreaLoadWithRefPoint
 ContextualAnalyticalModel.CreateAreaLoadWithRefPoint
 LargeImage:
@@ -727,7 +727,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.CreateAreaLoadWithRefPoint
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: CreateCustomAreaLoad
 ContextualAnalyticalModel.CreateCustomAreaLoad
 LargeImage:
@@ -736,7 +736,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.CreateCustomAreaLoad
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: CreateCustomLineLoad
 ContextualAnalyticalModel.CreateCustomLineLoad
 LargeImage:
@@ -745,7 +745,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.CreateCustomLineLoad
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: CreateCustomPointLoad
 ContextualAnalyticalModel.CreateCustomPointLoad
 LargeImage:
@@ -754,7 +754,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.CreateCustomPointLoad
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: FlipAnalyticalMember
 ContextualAnalyticalModel.FlipAnalyticalMember
 LargeImage:
@@ -763,7 +763,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.FlipAnalyticalMember
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: MemberForcesAnalyticalMember
 ContextualAnalyticalModel.MemberForcesAnalyticalMember
 LargeImage:
@@ -772,7 +772,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.MemberForcesAnalyticalMember
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: ModifyPanelContour
 ContextualAnalyticalModel.ModifyPanelContour
 LargeImage:
@@ -781,7 +781,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.ModifyPanelContour
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: MoveAnalyticalMemberUsingElementTransformUtils
 ContextualAnalyticalModel.MoveAnalyticalMemberUsingElementTransformUtils
 LargeImage:
@@ -790,7 +790,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.MoveAnalyticalMemberUsingElementTransformUtils
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: MoveAnalyticalMemberUsingSetCurve
 ContextualAnalyticalModel.MoveAnalyticalMemberUsingSetCurve
 LargeImage:
@@ -799,7 +799,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.MoveAnalyticalMemberUsingSetCurve
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: MoveAnalyticalNodeUsingElementTransformUtils
 ContextualAnalyticalModel.MoveAnalyticalNodeUsingElementTransformUtils
 LargeImage:
@@ -808,7 +808,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.MoveAnalyticalNodeUsingElementTransformUtils
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: MoveAnalyticalPanelUsingElementTransformUtils
 ContextualAnalyticalModel.MoveAnalyticalPanelUsingElementTransformUtils
 LargeImage:
@@ -817,7 +817,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.MoveAnalyticalPanelUsingElementTransformUtils
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: MoveAnalyticalPanelUsingSketchEditScope
 ContextualAnalyticalModel.MoveAnalyticalPanelUsingSketchEditScope
 LargeImage:
@@ -826,7 +826,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.MoveAnalyticalPanelUsingSketchEditScope
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: ReleaseConditionsAnalyticalMember
 ContextualAnalyticalModel.ReleaseConditionsAnalyticalMember
 LargeImage:
@@ -835,7 +835,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.ReleaseConditionsAnalyticalMember
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: RemoveAssociation
 ContextualAnalyticalModel.RemoveAssociation
 LargeImage:
@@ -844,7 +844,7 @@ Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\ContextualAnalyticalModel\CS\bin\Debug\
 ContextualAnalyticalModel.RemoveAssociation
 
 
-Elements, Geometry, Structure, UI
+Analytical Model
 Analytical Model: SetOuterContourForPanels
 ContextualAnalyticalModel.SetOuterContourForPanels
 LargeImage:
@@ -1859,7 +1859,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\AreaReinParameters\CS\bin\Debug\AreaReinParameters.dll
 Revit.SDK.Samples.AreaReinParameters.CS.Command
 
-Structure
+Rebar
 RebarParameters
 Show all parameters of selected Rebar
 LargeImage:
@@ -1947,7 +1947,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\Loads\CS\bin\Debug\Loads.dll
 Revit.SDK.Samples.Loads.CS.Loads
 
-Structure
+Rebar
 Multiplanar Rebar
 Demonstrates how to create multiplanar rebar.
 LargeImage:
@@ -1955,7 +1955,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\MultiplanarRebar\CS\bin\Debug\MultiplanarRebar.dll
 Revit.SDK.Samples.MultiplanarRebar.CS.Command
 
-Structure
+Rebar
 NewRebar
 Create a rebar on the selected concrete rectangular column or beam.
 LargeImage:
@@ -1963,7 +1963,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\NewRebar\CS\bin\Debug\NewRebar.dll
 Revit.SDK.Samples.NewRebar.CS.Command
 
-Structure
+Rebar
 PathReinforcement
 Display path reinforcement properties.
 LargeImage:
@@ -1971,7 +1971,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\PathReinforcement\CS\bin\Debug\PathReinforcement.dll
 Revit.SDK.Samples.PathReinforcement.CS.Command
 
-Structure
+Rebar
 RebarContainerAnyShapeType
 Create Rebar Container in a selected concrete element (beam or column) that does not have any reinforcement.
 LargeImage:
@@ -1979,7 +1979,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\RebarContainerAnyShapeType\CS\bin\Debug\RebarContainerAnyShapeType.dll
 Revit.SDK.Samples.RebarContainerAnyShapeType.CS.Command
 
-Structure
+Rebar
 Add Parameters
 External command to add shared parameters to Rebar
 LargeImage:
@@ -1987,7 +1987,7 @@ Image:
 Y:\a\src\rvt\RevitSdkSamples\SDK\Samples\RebarFreeForm\CS\bin\Debug\RebarFreeForm.dll
 Revit.SDK.Samples.RebarFreeForm.CS.AddSharedParams
 
-Structure
+Rebar
 Create Rebar Free Form
 External command to create a Rebar FreeForm element and external application to implement the custom server used to regenerate the rebar geometry based on constraints
 LargeImage:
