@@ -32,6 +32,7 @@ using Autodesk.Revit.UI;
 using GeoInstance = Autodesk.Revit.DB.GeometryInstance;
 using GeoElement = Autodesk.Revit.DB.GeometryElement;
 using RevitElement = Autodesk.Revit.DB.Element;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.PlaceFamilyInstanceByFace.CS
 {

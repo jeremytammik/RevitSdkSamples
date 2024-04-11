@@ -53,7 +53,7 @@ namespace Revit.SDK.Samples.RevitAddInUtilitySample.CS
       {
          RevitAddInManifest Manifest = new RevitAddInManifest();
 
-         FileInfo fileInfo = new FileInfo("..\\ExternalCommandRegistration\\ExternalCommandRegistration.dll");
+         FileInfo fileInfo = new FileInfo("ExternalCommandRegistration.dll");
 
          //create an external application
          RevitAddInApplication application1 = new RevitAddInApplication(
@@ -97,7 +97,7 @@ namespace Revit.SDK.Samples.RevitAddInUtilitySample.CS
          Manifest.AddInCommands.Add(command2);
 
          //save addin manifest in same place with RevitAddInUtilitySample.exe
-         fileInfo = new FileInfo("ExteranlCommand.Sample.addin");
+         fileInfo = new FileInfo("ExternalCommand.Sample.addin");
          Manifest.SaveAs(fileInfo.FullName);
          AddInsInfoButton_Click(null, null); //show addins information in the tree view
          this.AddInsInfoButton.Enabled = true;
@@ -109,7 +109,7 @@ namespace Revit.SDK.Samples.RevitAddInUtilitySample.CS
       /// </summary>
       private void AddInsInfoButton_Click(object sender, EventArgs e)
       {
-         FileInfo fileInfo = new FileInfo("ExteranlCommand.Sample.addin");
+         FileInfo fileInfo = new FileInfo("ExternalCommand.Sample.addin");
          RevitAddInManifest revitAddInManifest =
                Autodesk.RevitAddIns.AddInManifestUtility.GetRevitAddInManifest(fileInfo.FullName);
 
@@ -170,12 +170,12 @@ namespace Revit.SDK.Samples.RevitAddInUtilitySample.CS
       }
 
       /// <summary>
-      /// Open new created AddIn manifest file - ExteranlCommand.Sample.addin
+      /// Open new created AddIn manifest file - ExternalCommand.Sample.addin
       /// </summary>
       private void OpenAddInFileButton_Click(object sender, EventArgs e)
       {
-         FileInfo fileInfo = new FileInfo("ExteranlCommand.Sample.addin");
-         Process.Start(fileInfo.FullName);
+         FileInfo fileInfo = new FileInfo("ExternalCommand.Sample.addin");
+         Process.Start(new ProcessStartInfo { FileName = fileInfo.FullName, UseShellExecute = true });
       }
    }
 }

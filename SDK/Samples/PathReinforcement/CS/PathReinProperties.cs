@@ -106,7 +106,7 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
         /// </summary>
         private String m_primaryBarLength;
 
-        #region EnventHanlder for updating selected object of PropertyGrid
+        #region EventHandler for updating selected object of PropertyGrid
         /// <summary>
         /// update selected object of Property grid after enable / disable some properties.
         /// </summary>
@@ -184,7 +184,7 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
         /// Bar numbers of path reinforcement,read only property.
         /// the property is read-only by default
         /// </summary>
-        [Category("Layers"), DisplayName("Number of Bars"), ReadOnlyAttribute(true)]
+        [Category("Layers"), DisplayName("Number of Bars"), ReadOnly(true)]
         public int NumberOfBars
         {
             get
@@ -200,7 +200,7 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
         /// <summary>
         /// Layout rule of path reinforcement,get/set property.
         /// </summary>
-        [Category("Construction"), DisplayName("Layout Rule"), ReadOnlyAttribute(false)]
+        [Category("Construction"), DisplayName("Layout Rule"), ReadOnly(false)]
         public LayoutRule LayoutRule
         {
             get
@@ -240,7 +240,7 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
         /// <summary>
         /// Bar spacing of path reinforcement,get/set property.
         /// </summary>
-        [Category("Layers"), DisplayName("Bar Spacing"), ReadOnlyAttribute(false)]
+        [Category("Layers"), DisplayName("Bar Spacing"), ReadOnly(false)]
         public String BarSpacing
         {
             get
@@ -340,9 +340,11 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
                 Type type = typeof(System.ComponentModel.ReadOnlyAttribute);
                 PropertyDescriptorCollection props = TypeDescriptor.GetProperties(this);
                 AttributeCollection attrs = props[propertyName].Attributes;
-                FieldInfo fld = type.GetField("isReadOnly",
-                    BindingFlags.Instance | BindingFlags.NonPublic);
-                fld.SetValue(attrs[type], readOnly);
+                FieldInfo fld = type.GetField("<IsReadOnly>k__BackingField", BindingFlags.Instance | BindingFlags.NonPublic);
+                if (fld != null)
+                {
+                   fld.SetValue(attrs[type], readOnly);
+                }
             }
             catch (System.ArgumentException ex)
             {

@@ -276,7 +276,7 @@ namespace Revit.SDK.Samples.GenericStructuralConnection.CS
             Schema schema = null;
 
             Guid guid = GetConnectionHandlerTypeGuid(connection, doc);
-            if (guid != null && guid != Guid.Empty)
+            if (guid != Guid.Empty)
                 schema = Schema.ListSchemas().Where(x => x.GUID == guid).FirstOrDefault();
 
             return schema;
@@ -298,7 +298,7 @@ namespace Revit.SDK.Samples.GenericStructuralConnection.CS
                 return Guid.Empty;
 
             StructuralConnectionHandlerType connType = (StructuralConnectionHandlerType)doc.GetElement(typeId);
-            if (connType == null || connType.ConnectionGuid == null)
+            if (connType == null)
                 return Guid.Empty;
 
             return connType.ConnectionGuid;

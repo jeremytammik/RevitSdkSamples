@@ -31,6 +31,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.DB.Structure;
 using Point = System.Drawing.Point;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.Truss.CS
 {

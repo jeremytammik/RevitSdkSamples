@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -63,7 +63,7 @@ namespace Revit.SDK.Samples.AutoStamp.CS
         /// <summary>
         /// Reserves the id of TextNote created by ViewPrinting and delete it in ViewPrinted event.
         /// </summary>
-        Autodesk.Revit.DB.ElementId m_newTextNoteId; 
+        Autodesk.Revit.DB.ElementId m_newTextNoteId;
         #endregion
 
 
@@ -271,6 +271,7 @@ namespace Revit.SDK.Samples.AutoStamp.CS
             Trace.WriteLine(String.Format("{0} ViewName: {1}, ViewType: {2}", 
                 prefix, view.Name, view.ViewType));
         }
+
         #endregion
-    }
+   }
 }

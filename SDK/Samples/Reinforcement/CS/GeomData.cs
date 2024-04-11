@@ -259,7 +259,7 @@ namespace Revit.SDK.Samples.Reinforcement.CS
     /// </summary>
     public class XYZHeightComparer : IComparer<Autodesk.Revit.DB.XYZ>
     {
-        int IComparer<Autodesk.Revit.DB.XYZ>.Compare(Autodesk.Revit.DB.XYZ first, Autodesk.Revit.DB.XYZ second)
+      public int Compare(Autodesk.Revit.DB.XYZ first, Autodesk.Revit.DB.XYZ second)
         {
             // first compare z coordinate, then y coordinate, at last x coordinate
             if (GeomUtil.IsEqual(first.Z, second.Z))

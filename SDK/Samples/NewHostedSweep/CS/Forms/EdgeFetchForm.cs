@@ -396,7 +396,7 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
             ExtractCheckedEdgesAndSelectedSymbol();
             if (m_creationData.EdgesForHostedSweep.Count == 0)
             {
-                TaskDialog.Show("Revit", "At least one edge should be selected!");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "At least one edge should be selected!");
                 return;
             }
             this.DialogResult = DialogResult.OK;

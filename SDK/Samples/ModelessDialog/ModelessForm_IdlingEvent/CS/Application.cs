@@ -19,18 +19,7 @@
 // restrictions set forth in FAR 52.227-19 (Commercial Computer
 // Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
 // (Rights in Technical Data and Computer Software), as applicable. 
-
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using System.IO;
-
-using Autodesk;
-using Autodesk.Revit;
-using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.UI.Events;
 
 namespace Revit.SDK.Samples.ModelessForm_IdlingEvent.CS

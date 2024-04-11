@@ -241,8 +241,8 @@ Public Class RotateFramingObjects
                   End If
                   Dim rotateResult As Integer = pointLocation.Rotate(rotateAxis, rotateDegree)
                   If 0 = rotateResult Then
-                            TaskDialog.Show("Revit", "Rotate Failed")
-                  End If
+                            UI.TaskDialog.Show("Revit", "Rotate Failed")
+                        End If
                End If
             End If
          Next
@@ -250,8 +250,8 @@ Public Class RotateFramingObjects
          transaction.Commit()
 
       Catch ex As Exception
-            TaskDialog.Show("Revit", ("Rotate failed! " & ex.Message))
-         transaction.RollBack()
+            UI.TaskDialog.Show("Revit", ("Rotate failed! " & ex.Message))
+            transaction.RollBack()
       End Try
 
    End Sub

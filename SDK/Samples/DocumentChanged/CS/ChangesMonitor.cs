@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -21,11 +21,7 @@
 //
 
 using System;
-using System.IO;
 using System.Data;
-using System.Text;
-using System.Reflection;
-using System.Diagnostics;
 using System.Collections.Generic;
 
 using Autodesk.Revit.UI;

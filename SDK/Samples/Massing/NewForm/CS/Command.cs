@@ -402,8 +402,6 @@ namespace Revit.SDK.Samples.NewForm.CS
          modelcurve = FormUtils.MakeArc(commandData.Application, ptA, ptB, ptC);
          ref_ar.Append(modelcurve.GeometryCurve.Reference);
          ref_ar_ar.Append(ref_ar);
-         ref_ar = new ReferenceArray();
-         ref_ar_ar.Append(ref_ar);
 
          Autodesk.Revit.DB.Form form = doc.FamilyCreate.NewLoftForm(true, ref_ar_ar);
 

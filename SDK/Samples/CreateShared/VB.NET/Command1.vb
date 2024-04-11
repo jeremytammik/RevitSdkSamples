@@ -67,7 +67,7 @@ Public Class Command1
         Try
             sharedParametersFile = commandData.Application.Application.OpenSharedParameterFile()
         Catch ex As Exception
-            MsgBox("File ""RevitParameters.txt"" not found." & vbNewLine & vbTab & "Exiting function.")
+            MsgBox("File ""RevitParameters.txt"" not found." & Environment.NewLine & vbTab & "Exiting function.")
             Exit Function
         End Try
 

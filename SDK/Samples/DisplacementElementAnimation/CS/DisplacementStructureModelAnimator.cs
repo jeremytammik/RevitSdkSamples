@@ -34,7 +34,7 @@ namespace Revit.SDK.Samples.DisplacementElementAnimation.CS
     /// <summary>
     /// A class that executes an animation of structural model elements using DisplacementElements.
     /// </summary>
-    class DisplacementStructureModelAnimator
+    class DisplacementStructureModelAnimator : IDisposable
     {
         /// <summary>
         /// Starts the animation by creating the needed displacement elements, and setting up the events to allow it proceed.
@@ -487,5 +487,20 @@ namespace Revit.SDK.Samples.DisplacementElementAnimation.CS
         /// The switch for using Idling event.
         /// </summary>
         private bool m_isUsingIdling = true;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                m_timer?.Dispose();
+                ((IDisposable)m_displacementElement)?.Dispose();
+            }
+        }
+        
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
     }
 }

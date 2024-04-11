@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("RoutingPreferenceTools")]
-[assembly: AssemblyCopyright("Copyright © Autodesk 2011")]
+[assembly: AssemblyCopyright("Copyright © Autodesk 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

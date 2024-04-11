@@ -32,7 +32,7 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
     /// <summary>
     /// base class of sketch object to draw 2D geometry object
     /// </summary>
-    public abstract class ObjectSketch
+    public abstract class ObjectSketch : IDisposable
     {
         /// <summary>
         /// bounding box of the geometry object 
@@ -71,5 +71,22 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
         /// <param name="g"></param>
         /// <param name="translate"></param>
         public abstract void Draw(Graphics g, Matrix translate);
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+               if (m_pen != null) 
+                  m_pen.Dispose();
+               if (m_transform != null)
+                  m_transform.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
     }
 }

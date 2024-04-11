@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -32,27 +32,18 @@ using Autodesk.Revit.DB.Structure;
 
 namespace Revit.SDK.Samples.EnergyAnalysisModel.CS
 {
-    public class EnergyAnalysisModel
+    public class EnergyAnalysisModel : IDisposable
     {
         // An EnergyAnalysisDetailModel member that can get all analysis data includes surfaces, spaces and openings.
         private EnergyAnalysisDetailModel m_energyAnalysisDetailModel;
+
         // Options for Energy Analysis process
-        private EnergyAnalysisDetailModelOptions m_options;
+        public EnergyAnalysisDetailModelOptions m_options;
+      
         // revit document
         private Document RevitDoc;
-
-        // Options Property
-        public EnergyAnalysisDetailModelOptions Options
-        {
-            get
-            {
-                return m_options;
-            }
-            set
-            {
-                m_options = value;
-            }
-        }
+      
+        private bool disposedValue;
 
         /// <summary>
         /// Constructor
@@ -61,7 +52,7 @@ namespace Revit.SDK.Samples.EnergyAnalysisModel.CS
         public EnergyAnalysisModel(Document doc)
         {
             RevitDoc = doc;
-            m_options = new EnergyAnalysisDetailModelOptions();
+            this.m_options = new EnergyAnalysisDetailModelOptions();
         }
 
         /// <summary>
@@ -231,13 +222,33 @@ namespace Revit.SDK.Samples.EnergyAnalysisModel.CS
                     m_options.Tier = EnergyAnalysisDetailModelTier.NotComputed;
                     break;
                 case "SecondLevelBoundaries":
-                    m_options.Tier = Autodesk.Revit.DB.Analysis.EnergyAnalysisDetailModelTier.SecondLevelBoundaries;
+                    m_options.Tier = EnergyAnalysisDetailModelTier.SecondLevelBoundaries;
                     break;
                 // the default Tier is SecondLevelBoundaries
                 default:
-                    m_options.Tier = Autodesk.Revit.DB.Analysis.EnergyAnalysisDetailModelTier.SecondLevelBoundaries;
+                    m_options.Tier = EnergyAnalysisDetailModelTier.SecondLevelBoundaries;
                     break;
             }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                     m_options?.Dispose();
+                     m_energyAnalysisDetailModel?.Dispose();
+                }
+ 
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }

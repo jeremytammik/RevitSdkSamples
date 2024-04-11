@@ -55,7 +55,7 @@ Public Class RvtUtils
       str = str + ParameterSetToString(elem.Document, params)
 
       '  show it
-      MsgBox(str)
+      Autodesk.Revit.UI.TaskDialog.Show("Revit", str)
 
    End Sub
 
@@ -86,7 +86,7 @@ Public Class RvtUtils
       End If
 
       '  show it. 
-      MsgBox(str)
+      Autodesk.Revit.UI.TaskDialog.Show("Revit", str)
 
    End Sub
 
@@ -176,13 +176,13 @@ Public Class RvtUtils
       '  does the element have geometry data? 
       Dim geomElem As Autodesk.Revit.DB.GeometryElement = elem.Geometry(opt)
       If geomElem Is Nothing Then
-         MsgBox(str & "no data")
+         Autodesk.Revit.UI.TaskDialog.Show("Revit", str & "no data")
          Return
       End If
 
       str = GeometryElementToString(geomElem)
 
-      MsgBox(str)
+      Autodesk.Revit.UI.TaskDialog.Show("Revit", str)
 
    End Sub
 
@@ -343,7 +343,7 @@ Public Class RvtUtils
       ' do we have a location data? 
       Dim loc As Location = elem.Location
       If (loc Is Nothing) Then
-         MsgBox(str & "no data")
+         Autodesk.Revit.UI.TaskDialog.Show("Revit", str & "no data")
          Return
       End If
 
@@ -369,7 +369,7 @@ Public Class RvtUtils
       End If
 
       '  show it.
-      MsgBox(str)
+      Autodesk.Revit.UI.TaskDialog.Show("Revit", str)
 
    End Sub
 

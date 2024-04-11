@@ -336,7 +336,7 @@ namespace Revit.SDK.Samples.DatumsModification.CS
              {
                 if (settingForm.ShowDialog() == DialogResult.OK)
                 {
-                   ISet<ElementId> pViewList = new List<ElementId>() as ISet<ElementId>;
+                   ISet<ElementId> pViewList = new HashSet<ElementId>();
                    foreach (var item in settingForm.propagationViewList.CheckedItems)
                    {
                       ElementId selectedView = viewDic[item.ToString()];

@@ -258,7 +258,7 @@ namespace Revit.SDK.Samples.NewRebar.CS
             }
             catch (Exception ex)
             {
-                TaskDialog.Show("Revit", "Rebar shape creation failed:" + ex.ToString());
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Rebar shape creation failed:" + ex.ToString());
                 return;
             }
             

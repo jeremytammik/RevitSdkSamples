@@ -29,6 +29,8 @@ using System.IO;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
 
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
+
 namespace Revit.SDK.Samples.DisableCommand.CS
 {
     /// <summary>

@@ -239,11 +239,11 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
            }
            catch (Exception)
            {
-              throw new Exception("Could not find embedded xml RotingPreferenceBuilder schema resource.");
+              throw new Exception("Could not find embedded xml RoutingPreferenceBuilder schema resource.");
            }
            if (schemaStream == null)
            {
-              throw new Exception("Could not find embedded xml RotingPreferenceBuilder schema resource.");
+              throw new Exception("Could not find embedded xml RoutingPreferenceBuilder schema resource.");
            }
            System.IO.StreamReader stReader = new StreamReader(schemaStream);
            return stReader.ReadToEnd();

@@ -21,15 +21,12 @@
 // 
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
 using Autodesk.Revit.UI;
+
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.ImportExport.CS
 {

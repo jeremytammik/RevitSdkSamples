@@ -83,8 +83,7 @@ Public Class RvtCmd_LibraryPaths ' Library Paths
         Loop
 
         '  show it.
-        MsgBox(str)
-
+        Autodesk.Revit.UI.TaskDialog.Show("Revit", str)
 
         ' do we have lib path with this key? 
         If (paths.ContainsKey(key)) Then
@@ -106,9 +105,9 @@ Public Class RvtCmd_LibraryPaths ' Library Paths
         Do While (iter.MoveNext())
             str += iter.Current.Key + " = " + iter.Current.Value + vbCr
         Loop
-        MsgBox(str + vbCr + comment)
+      Autodesk.Revit.UI.TaskDialog.Show("Revit", str + vbCr + comment)
 
-        Return Autodesk.Revit.UI.Result.Succeeded
+      Return Autodesk.Revit.UI.Result.Succeeded
 
     End Function
 

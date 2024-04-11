@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2020 by Autodesk, Inc. All rights reserved.
+// (C) Copyright 2003-2023 by Autodesk, Inc. All rights reserved.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted
@@ -23,9 +23,9 @@
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Web.Script.Serialization;
 using System.Windows;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 using Revit.SDK.Samples.CloudAPISample.CS.Migration;
 
 namespace Revit.SDK.Samples.CloudAPISample.CS.View
@@ -64,8 +64,7 @@ namespace Revit.SDK.Samples.CloudAPISample.CS.View
          {
             var model = ((MigrationToBim360) DataContext).Model;
             var jsonString = File.ReadAllText(openFileDialog.FileName);
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            var info = serializer.Deserialize<SerializableProjectInfo>(jsonString);
+            var info = JsonConvert.DeserializeObject<SerializableProjectInfo>(jsonString);
 
             model.AccountGuid = info.AccountGuid;
             model.ProjectGuid = info.ProjectGuid;
@@ -86,8 +85,7 @@ namespace Revit.SDK.Samples.CloudAPISample.CS.View
                ProjectGuid = model.ProjectGuid,
                AvailableFolders = model.AvailableFolders.ToArray()
             };
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            var jsonString = serializer.Serialize(info);
+            var jsonString = JsonConvert.SerializeObject(info);
             File.WriteAllText(saveFileDialog.FileName, jsonString);
          }
       }

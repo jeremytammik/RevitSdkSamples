@@ -227,7 +227,7 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
     /// and indicates whether the edge is selected or highlighted.
     /// </summary>
     public class EdgeBinding : IDisposable
-    {
+   {
         /// <summary>
         /// Edge points in world coordinate system of Revit.
         /// </summary>
@@ -386,16 +386,25 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
 
         #region IDisposable Members
 
-        /// <summary>
-        /// Dispose
-        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (m_gdiEdge != null)
+                    m_gdiEdge.Dispose();
+                if (m_pen != null)
+                    m_pen.Dispose();
+                if (m_region != null)
+                    m_region.Dispose();
+            }
+        }
+
         public void Dispose()
         {
-            m_gdiEdge.Dispose();
-            m_pen.Dispose();
-            m_region.Dispose();
+           Dispose(disposing: true);
+           GC.SuppressFinalize(this);
         }
 
         #endregion
-    }
+   }
 }

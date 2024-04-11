@@ -52,7 +52,7 @@ Public Class ImportFireRating
    Public Function Execute(ByVal commandData As ExternalCommandData, ByRef message As String, ByVal elements As Autodesk.Revit.DB.ElementSet) As Autodesk.Revit.UI.Result Implements Autodesk.Revit.UI.IExternalCommand.Execute
 
       'Dim excel As Microsoft.Office.Interop.Excel.Application = New Microsoft.Office.Interop.Excel.ApplicationClass()
-      Dim excel As MsExcel.Application = New MsExcel.ApplicationClass()
+      Dim excel As MsExcel.Application = New MsExcel.Application()
 
       If (excel Is Nothing) Then
          message = "Failed to launch excel"
@@ -84,8 +84,8 @@ Public Class ImportFireRating
                   idLong = value
                   fireRateDouble = fireRatingValue
                Catch ex As Exception
-                  TaskDialog.Show("Revit", ex.ToString)
-               End Try
+                        UI.TaskDialog.Show("Revit", ex.ToString)
+                    End Try
 
                Dim elementId As Autodesk.Revit.DB.ElementId = New Autodesk.Revit.DB.ElementId(idLong)
 

@@ -22,11 +22,8 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
 
-using Autodesk.Revit.UI;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.Loads.CS
 {

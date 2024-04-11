@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2020 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -22,16 +22,13 @@
 
 using System;
 using System.Linq;
-using System.Windows.Forms;
-using System.Collections;
 using System.Collections.Generic;
 
-using Autodesk.Revit;
 using Autodesk.Revit.DB;
+using Autodesk.Revit.DB.Infrastructure;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
-
-using Autodesk.Revit.DB.Infrastructure;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.CivilAlignments.CS
 {

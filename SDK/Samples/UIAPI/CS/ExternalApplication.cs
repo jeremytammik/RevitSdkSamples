@@ -35,6 +35,7 @@ using System.Windows.Media.Imaging;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using RApplication = Autodesk.Revit.ApplicationServices.Application;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.UIAPI.CS 
 {

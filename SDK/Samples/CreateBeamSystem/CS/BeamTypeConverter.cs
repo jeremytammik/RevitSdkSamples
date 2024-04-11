@@ -46,11 +46,6 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
         protected Dictionary<string, FamilySymbol> m_hash;
 
         /// <summary>
-        /// subclass must implement to initialize m_hash
-        /// </summary>
-        public abstract void GetConvertHash();
-
-        /// <summary>
         /// returns whether this object supports a standard set of values that can be picked from a list
         /// </summary>
         /// <param name="context">provides a format context</param>
@@ -140,14 +135,6 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
         {
             return false;
         }
-        
-        /// <summary>
-        /// constructor initialize m_hash
-        /// </summary>
-        protected ParameterConverter()
-        {
-            GetConvertHash();
-        }
     }
 
     /// <summary>
@@ -157,11 +144,9 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
     /// </summary>
     public class BeamTypeItem : ParameterConverter
     {
-        /// <summary>
-        /// override the base type's GetConvertHash method
-        /// </summary>
-        public override void GetConvertHash()
-        {
+       public BeamTypeItem()
+        : base()
+       {
             m_hash = BeamSystemData.GetBeamTypes();
         }
     }

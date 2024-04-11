@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2020 by Autodesk, Inc. All rights reserved.
+// (C) Copyright 2003-2023 by Autodesk, Inc. All rights reserved.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted
@@ -22,6 +22,7 @@
 
 using System;
 using System.IO;
+using System.Resources;
 using System.Windows.Media.Imaging;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
@@ -89,7 +90,7 @@ namespace Revit.SDK.Samples.CloudAPISample.CS
          pushButton.Enabled = true;
 
          pushButton.LargeImage =
-            new BitmapImage(new Uri(Path.Combine(Path.GetDirectoryName(assemblyPath) ?? string.Empty, "icon.ico")));
+            new BitmapImage(new Uri(Path.Combine(Path.GetDirectoryName(assemblyPath) ?? string.Empty, "Resources", "icon.ico")));
          pushButton.AvailabilityClassName = " Revit.SDK.Samples.CloudAPISample.CS.RunSampleCommand";
 
          return Result.Succeeded;

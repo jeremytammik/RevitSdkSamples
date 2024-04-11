@@ -364,7 +364,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
 
             if (null == geometry)
             {
-                TaskDialog.Show("Revit", "Error! There's no grid information in the curtain wall.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Error! There's no grid information in the curtain wall.");
             }
             else
             {

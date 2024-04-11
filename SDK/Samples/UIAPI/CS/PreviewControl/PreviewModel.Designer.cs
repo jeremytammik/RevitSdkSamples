@@ -1,4 +1,6 @@
-﻿namespace Revit.SDK.Samples.UIAPI.CS
+﻿using System;
+
+namespace Revit.SDK.Samples.UIAPI.CS
 {
     partial class PreviewModel
     {
@@ -16,6 +18,9 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+                (_uiApplication as IDisposable)?.Dispose();
+                (_dbDocument as IDisposable)?.Dispose();
+                (_application as IDisposable)?.Dispose();
             }
             base.Dispose(disposing);
         }

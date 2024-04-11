@@ -35,7 +35,7 @@ namespace Revit.SDK.Samples.DoorSwing.CS
    /// <summary>
    /// Left/Right feature based on family's actual geometry and country's standard.
    /// </summary>
-   public class DoorFamily
+   public class DoorFamily : IDisposable
    {
       #region "Members"
 
@@ -202,6 +202,21 @@ namespace Revit.SDK.Samples.DoorSwing.CS
          doc.Regenerate();
 
          return createdFamilyInstance;
+      }
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (disposing)
+         {
+            ((IDisposable)m_oneInstance)?.Dispose();
+            ((IDisposable)m_geometry)?.Dispose();
+         }
+      }
+
+      public void Dispose()
+      {
+         Dispose(disposing: true);
+         GC.SuppressFinalize(this);
       }
 
       #endregion

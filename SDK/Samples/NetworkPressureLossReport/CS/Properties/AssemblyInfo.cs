@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Autodesk")]
 [assembly: AssemblyProduct("NetworkPressureLossReport")]
-[assembly: AssemblyCopyright("Copyright © Autodesk, Inc. 2022")]
+[assembly: AssemblyCopyright("Copyright © Autodesk, Inc. 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -44,6 +44,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("72ce761f-210a-40ce-ae47-e75e1356af1f")]
+[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("windows7.0")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -28,6 +28,7 @@ using Autodesk.Revit.UI;
 using System.Drawing;
 using Autodesk.Revit;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Revit.SDK.Samples.SlabShapeEditing.CS
 {
@@ -362,12 +363,17 @@ namespace Revit.SDK.Samples.SlabShapeEditing.CS
       /// <returns>new created vertex</returns>
       public SlabShapeVertex AddVertex(PointF point)
       {
-         Transaction transaction = new Transaction(
-            m_commandData.Application.ActiveUIDocument.Document, "AddVertex");
+         Document doc = m_commandData.Application.ActiveUIDocument.Document;
+         Transaction transaction = new Transaction(doc, "AddVertex");
          transaction.Start();
          Vector4 v1 = new Vector4(new Autodesk.Revit.DB.XYZ(point.X, point.Y, 0));
          v1 = m_restoreMatrix.Transform(v1);
-         SlabShapeVertex vertex = m_slabShapeEditor.DrawPoint(new Autodesk.Revit.DB.XYZ(v1.X, v1.Y, v1.Z));
+         if (!m_slabShapeEditor.IsEnabled)
+         {
+            m_slabShapeEditor.Enable();
+            doc.Regenerate();
+         }
+         SlabShapeVertex vertex = m_slabShapeEditor.AddPoint(new Autodesk.Revit.DB.XYZ(v1.X, v1.Y, v1.Z));
          transaction.Commit();
          //re-calculate geometry info
          GetSlabProfileInfo();
@@ -383,21 +389,26 @@ namespace Revit.SDK.Samples.SlabShapeEditing.CS
       /// <returns>new created Crease</returns>
       public SlabShapeCrease AddCrease(PointF point1, PointF point2)
       {
+         Document doc = m_commandData.Application.ActiveUIDocument.Document;
          //create first vertex
-         Transaction transaction = new Transaction(
-            m_commandData.Application.ActiveUIDocument.Document, "AddCrease");
+         Transaction transaction = new Transaction(doc, "AddCrease");
          transaction.Start();
+         if (!m_slabShapeEditor.IsEnabled)
+         {
+            m_slabShapeEditor.Enable();
+            doc.Regenerate();
+         }
          Vector4 v1 = new Vector4(new Autodesk.Revit.DB.XYZ(point1.X, point1.Y, 0));
          v1 = m_restoreMatrix.Transform(v1);
-         SlabShapeVertex vertex1 = m_slabShapeEditor.DrawPoint(new Autodesk.Revit.DB.XYZ(v1.X, v1.Y, v1.Z));
+         SlabShapeVertex vertex1 = m_slabShapeEditor.AddPoint(new Autodesk.Revit.DB.XYZ(v1.X, v1.Y, v1.Z));
          //create second vertex
          Vector4 v2 = new Vector4(new Autodesk.Revit.DB.XYZ(point2.X, point2.Y, 0));
          v2 = m_restoreMatrix.Transform(v2);
-         SlabShapeVertex vertex2 = m_slabShapeEditor.DrawPoint(new Autodesk.Revit.DB.XYZ(v2.X, v2.Y, v2.Z));
+         SlabShapeVertex vertex2 = m_slabShapeEditor.AddPoint(new Autodesk.Revit.DB.XYZ(v2.X, v2.Y, v2.Z));
          //create crease
-         SlabShapeCreaseArray creases = m_slabShapeEditor.DrawSplitLine(vertex1, vertex2);
+         IList<SlabShapeCrease> creases = m_slabShapeEditor.AddSplitLine(vertex1, vertex2);
 
-         SlabShapeCrease crease = creases.get_Item(0);
+         SlabShapeCrease crease = creases.First();
          transaction.Commit();
          //re-calculate geometry info 
          GetSlabProfileInfo();
@@ -412,12 +423,17 @@ namespace Revit.SDK.Samples.SlabShapeEditing.CS
       public bool CanCreateVertex(PointF pointF)
       {
          bool createSuccess = false;
-         Transaction transaction = new Transaction(
-            m_commandData.Application.ActiveUIDocument.Document, "CanCreateVertex");
+         Document doc = m_commandData.Application.ActiveUIDocument.Document;
+         Transaction transaction = new Transaction(doc, "AddVertex");
          transaction.Start();
+         if (!m_slabShapeEditor.IsEnabled)
+         {
+            m_slabShapeEditor.Enable();
+            doc.Regenerate();
+         }
          Vector4 v1 = new Vector4(new Autodesk.Revit.DB.XYZ(pointF.X, pointF.Y, 0));
          v1 = m_restoreMatrix.Transform(v1);
-         SlabShapeVertex vertex = m_slabShapeEditor.DrawPoint(new Autodesk.Revit.DB.XYZ(v1.X, v1.Y, v1.Z));
+         SlabShapeVertex vertex = m_slabShapeEditor.AddPoint(new Autodesk.Revit.DB.XYZ(v1.X, v1.Y, v1.Z));
          if (null != vertex) { createSuccess = true; }
          transaction.RollBack();
          //re-calculate geometry info 

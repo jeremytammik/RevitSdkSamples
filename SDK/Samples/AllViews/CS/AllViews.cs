@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2022 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -93,7 +93,7 @@ namespace Revit.SDK.Samples.AllViews.CS
     /// Generating a new sheet that has all the selected views placed in.
     /// Updating and retrieving properties of a selected viewport.
     /// </summary>
-    public class ViewsMgr
+    public class ViewsMgr : IDisposable
     {
       private TreeNode m_allViewsNames = new TreeNode("Views (all)");
       private ViewSet m_allViews = new ViewSet();
@@ -588,5 +588,24 @@ namespace Revit.SDK.Samples.AllViews.CS
                 view.Scale = (int)(view.Scale * Rescale);
             }
         }
-    }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                m_allViews.Dispose();
+                m_selectedViews.Dispose();
+            }
+
+            // TODO: free unmanaged resources (unmanaged objects) and override finalizer
+            // TODO: set large fields to null
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
+   }
 }

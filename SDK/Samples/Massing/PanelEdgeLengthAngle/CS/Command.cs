@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -27,6 +27,8 @@ using System.Windows.Forms;
 using Autodesk.Revit;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.PanelEdgeLengthAngle.CS
 {
@@ -81,7 +83,7 @@ namespace Revit.SDK.Samples.PanelEdgeLengthAngle.CS
                // step 3: compute the length and angle and set them to the parameters
                InstParameters instParams = GetParams(inst);
                EdgeArray edges = GetEdges(inst);
-               SetParams(edges, instParams);
+               SetParams(m_doc, edges, instParams);
             }
          }
          return Autodesk.Revit.UI.Result.Succeeded;
@@ -166,9 +168,10 @@ namespace Revit.SDK.Samples.PanelEdgeLengthAngle.CS
       /// <summary>
       /// Compute the length and angle data of the edges, then update the parameters with these values
       /// </summary>
+      /// <param name="document">The active document.</param>
       /// <param name="edge_ar">The edges of the curtain panel</param>
       /// <param name="instParams">The parameters which records the length and angle data</param>
-      private void SetParams(EdgeArray edge_ar, InstParameters instParams)
+      private void SetParams(Document document, EdgeArray edge_ar, InstParameters instParams)
       {
          double length4 = 0d;
          double angle3 = 0d;
@@ -194,14 +197,21 @@ namespace Revit.SDK.Samples.PanelEdgeLengthAngle.CS
             angle4 = AngleBetweenEdges(edge4, edge1);
          }
 
-         instParams["Length1"].Set(length1);
-         instParams["Length2"].Set(length2);
-         instParams["Length3"].Set(length3);
-         instParams["Length4"].Set(length4);
-         instParams["Angle1"].Set(angle1);
-         instParams["Angle2"].Set(angle2);
-         instParams["Angle3"].Set(angle3);
-         instParams["Angle4"].Set(angle4);
+         using (Transaction transaction = new Transaction(document, "Update family instance parameters"))
+         {
+            transaction.Start();
+
+            instParams["Length1"].Set(length1);
+            instParams["Length2"].Set(length2);
+            instParams["Length3"].Set(length3);
+            instParams["Length4"].Set(length4);
+            instParams["Angle1"].Set(angle1);
+            instParams["Angle2"].Set(angle2);
+            instParams["Angle3"].Set(angle3);
+            instParams["Angle4"].Set(angle4);
+
+            transaction.Commit();
+         }
       }
 
       /// <summary>

@@ -34,7 +34,7 @@ namespace Revit.SDK.Samples.DoorSwing.CS
    /// The DoorGeometry object is used to transform Revit geometry data
    /// to appropriate format for GDI.
    /// </summary>
-   public class DoorGeometry
+   public class DoorGeometry : IDisposable
    {
       #region "Members"
 
@@ -310,6 +310,21 @@ namespace Revit.SDK.Samples.DoorSwing.CS
          {
             AddFace(face);
          }
+      }
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (disposing)
+         {
+            ((IDisposable)m_options)?.Dispose();
+            ((IDisposable)m_bbox)?.Dispose();
+         }
+      }
+
+      public void Dispose()
+      {
+         Dispose(disposing: true);
+         GC.SuppressFinalize(this);
       }
 
       #endregion

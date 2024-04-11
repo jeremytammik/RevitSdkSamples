@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -65,24 +65,25 @@ namespace Revit.SDK.Samples.EnergyAnalysisModel.CS
             Transaction trans = new Transaction(commandData.Application.ActiveUIDocument.Document, "Revit.SDK.Samples.EnergyAnalysisModel");
             trans.Start();
             // Create an object that is responsible for collecting users inputs and getting analysis data of current model.
-            EnergyAnalysisModel analysisModel = new EnergyAnalysisModel(commandData.Application.ActiveUIDocument.Document);
-
-            // Create the UI for users inputs options and view analysis models.
-            using (OptionsAndAnalysisForm form = new OptionsAndAnalysisForm(analysisModel))
+            using (EnergyAnalysisModel analysisModel = new EnergyAnalysisModel(commandData.Application.ActiveUIDocument.Document))
             {
-                // make analysis data ready
-                analysisModel.Initialize();
-                // show dialog to browser analysis model
-                if (DialogResult.OK != form.ShowDialog())
-                {
-                    trans.RollBack();
-                    return Result.Cancelled;
-                }
+               // Create the UI for users inputs options and view analysis models.
+               using (OptionsAndAnalysisForm form = new OptionsAndAnalysisForm(analysisModel))
+               {
+                   // make analysis data ready
+                   analysisModel.Initialize();
+                   // show dialog to browser analysis model
+                   if (DialogResult.OK != form.ShowDialog())
+                   {
+                       trans.RollBack();
+                       return Result.Cancelled;
+                   }
+               }
+               trans.Commit();
+               return Result.Succeeded;
             }
-            trans.Commit();
-            return Result.Succeeded;
-        }
+         }
 
-        #endregion
-    }
+         #endregion
+      }
 }

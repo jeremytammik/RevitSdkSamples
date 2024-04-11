@@ -271,16 +271,16 @@ namespace Revit.SDK.Samples.ExternalResourceDBServer.CS
 
          // The following checks can help with testing.  However, they should not be necessary, since Revit checks all input paramters
          // before calling this method.
-         if (loadRequestId == null)
-            throw new ArgumentNullException("loadRequestId");;
+         if (loadRequestId == Guid.Empty)
+            throw new ArgumentNullException("loadRequestId");
          if (resourceType == null)
-            throw new ArgumentNullException("resourceType");;
+            throw new ArgumentNullException("resourceType");
          if (resourceReference == null)
-            throw new ArgumentNullException("resourceReference");;
+            throw new ArgumentNullException("resourceReference");
          if (loadContext == null)
-            throw new ArgumentNullException("loadContext");;
+            throw new ArgumentNullException("loadContext");
          if (loadContent == null)
-            throw new ArgumentNullException("loadContent");;
+            throw new ArgumentNullException("loadContent");
          if (!SupportsExternalResourceType(resourceType))
             throw new ArgumentOutOfRangeException("resourceType", "The specified resource type is not supported by this server.");
 

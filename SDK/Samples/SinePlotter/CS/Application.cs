@@ -77,7 +77,7 @@ namespace Revit.SDK.Samples.SinePlotter.CS
         {
             assemblyPath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             assemblyName = Assembly.GetExecutingAssembly().GetName().Name + ".dll";
-            imageFolder = GetProjectDirectory() + "/Resources/";
+            imageFolder = assemblyPath + "/Resources/";
 
             //add a panel to go on the Add-In tab
             RibbonPanel panel = application.CreateRibbonPanel("ArrayPrismsOnASineCurve");
@@ -314,20 +314,6 @@ namespace Revit.SDK.Samples.SinePlotter.CS
             {
                 TaskDialog.Show("TextBox Input", "The input value for " + textBox.Name + " has to be a double.");
             }
-        }
-
-
-        /// <summary>
-        /// Returns the path of the main project directory.
-        /// </summary>
-        /// <returns>A string object corresponding to the full path of the main project directory.</returns>
-        private String GetProjectDirectory()
-        {
-            //get the absolut path of the assembly
-            string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            //move two directory levels back
-            String grandParentDir = Directory.GetParent(assemblyPath).Parent.FullName;
-            return grandParentDir;
         }
 
         #endregion

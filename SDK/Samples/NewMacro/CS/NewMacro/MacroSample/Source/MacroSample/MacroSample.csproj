@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <Optimize>False</Optimize>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Portable</DebugType>
+    <OutputPath>..\..\Addin\</OutputPath>
+    <AssemblyName>MacroSample</AssemblyName>
+    <BaseInterMediateOutputPath>obj\</BaseInterMediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <InterMediateOutputPath>obj\Debug</InterMediateOutputPath>
+    <Deterministic>false</Deterministic>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="..\..\..\..\..\RevitAPI.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="..\..\..\..\..\RevitAPIUI.dll">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="del $(OutputPath)\*.dll" />
+  </Target>
+</Project>

@@ -35,11 +35,12 @@ using Autodesk.Revit.UI;
 namespace Revit.SDK.Samples.TransactionControl.CS
 {
     using SystemColor = System.Drawing.Color;
+   using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
-    /// <summary>
-    /// A Form used to deal with transaction and create, move or delete a wall
-    /// </summary>
-    public partial class TransactionForm : System.Windows.Forms.Form
+   /// <summary>
+   /// A Form used to deal with transaction and create, move or delete a wall
+   /// </summary>
+   public partial class TransactionForm : System.Windows.Forms.Form
     {
         /// <summary>
         /// An enum used to indicate which operation is executed

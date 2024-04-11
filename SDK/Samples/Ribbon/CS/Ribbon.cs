@@ -33,6 +33,7 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.UI.Events;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.Ribbon.CS
 {

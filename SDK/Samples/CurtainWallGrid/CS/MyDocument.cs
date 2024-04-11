@@ -38,7 +38,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
     /// <summary>
     /// maintains all the data used in the sample
     /// </summary>
-    public class MyDocument
+    public class MyDocument : IDisposable
     {
         #region Fields
         // object which contains reference of Revit Application
@@ -102,7 +102,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
         LineOperation m_activeOperation;
 
         // the length unit type for the active Revit document
-        ForgeTypeId m_LengthUnit;
+        public ForgeTypeId LengthUnit { get; set; }
 
         // store the message of the sample
         private KeyValuePair<string/*msgText*/, bool/*is warningOrError*/> m_message;
@@ -199,14 +199,6 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
             }
         }
 
-        public ForgeTypeId LengthUnit
-        {
-            get
-            {
-                return m_LengthUnit;
-            }
-        }
-
         /// <summary>
         /// store the message of the sample
         /// </summary>
@@ -276,11 +268,11 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
             try
             {
                 Autodesk.Revit.DB.FormatOptions formatOption = projectUnit.GetFormatOptions(specTypeId);
-                m_LengthUnit = formatOption.GetUnitTypeId();
+                LengthUnit = formatOption.GetUnitTypeId();
             }
             catch (System.Exception /*e*/)
             {
-                m_LengthUnit = UnitTypeId.Feet;
+                LengthUnit = UnitTypeId.Feet;
             }
         }
 
@@ -356,6 +348,23 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
             }
             return returns;
         }
-        #endregion
-    }
+      #endregion
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (disposing)
+         {
+            if (m_wallGeometry != null)
+               m_wallGeometry.Dispose();
+            if (LengthUnit != null)
+               LengthUnit.Dispose();
+         }
+      }
+
+      public void Dispose()
+      {
+         Dispose(disposing: true);
+         GC.SuppressFinalize(this);
+      }
+   }
 }

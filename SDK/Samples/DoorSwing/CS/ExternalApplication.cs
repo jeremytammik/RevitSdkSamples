@@ -21,17 +21,13 @@
 //
 using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
 using System.Windows.Media.Imaging;
 
-using Autodesk.Revit;
 using Autodesk.Revit.DB.Events;
 using Autodesk.Revit.UI;
-using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.DB;
 
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.DoorSwing.CS
 {

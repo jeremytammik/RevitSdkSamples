@@ -35,9 +35,12 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                if (components != null)
+                    components.Dispose();
+                if (m_graphicsControl != null)
+                    m_graphicsControl.Dispose();            
             }
             base.Dispose(disposing);
         }

@@ -40,13 +40,31 @@ namespace Revit.SDK.Samples.DockableDialogs.CS
     /// </summary>
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
     [Autodesk.Revit.Attributes.Regeneration(Autodesk.Revit.Attributes.RegenerationOption.Manual)]
-    public class ThisApplication : IExternalApplication
+    public class ThisApplication : IExternalApplication, IDisposable
     {
        public ThisApplication()
        {
        }
 
-       public Result OnShutdown(UIControlledApplication application)
+      public void Dispose()
+      {
+         // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+         Dispose(disposing: true);
+         GC.SuppressFinalize(this);
+      }
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (!disposing || isDisposed)
+            return;
+
+         if (m_mainPage != null)
+            m_mainPage.Dispose();
+
+         isDisposed = true;
+      }
+
+      public Result OnShutdown(UIControlledApplication application)
        {
           return Result.Succeeded;
        }
@@ -167,7 +185,7 @@ namespace Revit.SDK.Samples.DockableDialogs.CS
         MainPage m_mainPage;
         internal static ThisApplication thisApp = null;
         private APIUtility m_APIUtility;
-
+        private bool isDisposed;
 
        #endregion
 

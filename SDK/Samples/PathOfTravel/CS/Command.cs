@@ -34,6 +34,7 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using Autodesk.Revit.DB.Architecture;
 using Autodesk.Revit.DB.Analysis;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.PathOfTravelCreation.CS
 {

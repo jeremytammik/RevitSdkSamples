@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+    <Assembly>DisallowEndWrapping.dll</Assembly>
+    <ClientId>03596142-7814-429c-a7bd-dc195d70fd8e</ClientId>
+    <FullClassName>Revit.SDK.Samples.DisallowEndWrapping.CS.Command</FullClassName>
+    <Text>DisallowEndWrapping</Text>
+    <Description>Users can use public APIs to allow or disallow end wrapping at some locations of a wall.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+   
+</RevitAddIns>

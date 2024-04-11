@@ -33,6 +33,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.DB.Electrical;
 using Autodesk.Revit.UI.Selection;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.PowerCircuit.CS
 {

@@ -35,9 +35,14 @@ namespace Revit.SDK.Samples.NewRebar.CS
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                if (components != null)
+                   components.Dispose();
+                if (m_barTypesBinding != null)
+                   m_barTypesBinding.Dispose();
+                if (m_shapesBinding != null)
+                   m_shapesBinding.Dispose();            
             }
             base.Dispose(disposing);
         }

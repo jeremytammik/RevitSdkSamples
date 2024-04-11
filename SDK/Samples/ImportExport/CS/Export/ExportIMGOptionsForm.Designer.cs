@@ -20,6 +20,8 @@
 // (Rights in Technical Data and Computer Software), as applicable.
 // 
 
+using System;
+
 namespace Revit.SDK.Samples.ImportExport.CS
 {
     partial class ExportIMGOptionsForm
@@ -35,9 +37,10 @@ namespace Revit.SDK.Samples.ImportExport.CS
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
+                ((IDisposable)m_exportOptions)?.Dispose();
             }
             base.Dispose(disposing);
         }

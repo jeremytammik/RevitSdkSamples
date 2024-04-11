@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Analysis;
+using Autodesk.Revit.DB.ExtensibleStorage;
 
 namespace Revit.SDK.Samples.NetworkPressureLossReport
 {
-   internal class SegmentInfo
+   internal class SegmentInfo : IDisposable
    {
       private MEPNetworkSegmentId m_id;
       private MEPAnalyticalSegmentType m_segmentType;
@@ -21,6 +22,7 @@ namespace Revit.SDK.Samples.NetworkPressureLossReport
       private XYZ m_startPt;
       private XYZ m_endPt;
       const double Tolerance = 0.0000001;
+      private bool isDisposed;
 
       public double Flow
       {
@@ -113,6 +115,23 @@ namespace Revit.SDK.Samples.NetworkPressureLossReport
                m_length = m_startPt.DistanceTo(m_endPt);
             }
          }
+      }
+
+      public void Dispose()
+      {
+         // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+         Dispose(true);
+         GC.SuppressFinalize(this);
+      }
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (!disposing || isDisposed)
+            return;
+
+         (m_id as IDisposable)?.Dispose();
+
+         isDisposed = true;
       }
    }
 

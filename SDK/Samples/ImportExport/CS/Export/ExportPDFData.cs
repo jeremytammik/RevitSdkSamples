@@ -38,10 +38,8 @@ namespace Revit.SDK.Samples.ImportExport.CS
       #endregion
 
       #region Class Properties
-    /// <summary>
-    /// Combine
-    /// </summary>
-      public bool Combine
+
+      internal bool Combine
       {
          get
          {

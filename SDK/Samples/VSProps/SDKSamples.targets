@@ -30,16 +30,16 @@
   <ItemGroup>
     <Reference Include="RevitAPI">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:/Program Files/Autodesk/Revit 2024/RevitAPI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>C:/Program Files/Autodesk/Revit 2024/RevitAPIUI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAddInUtility">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:/Program Files/Autodesk/Revit 2024/RevitAddInUtility.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAddInUtility.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

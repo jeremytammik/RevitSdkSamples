@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.UI;
 using System.IO;
+using System.Web.UI;
 using Autodesk.Revit.DB;
 
 namespace Revit.SDK.Samples.ScheduleToHTML.CS
@@ -333,7 +333,7 @@ namespace Revit.SDK.Samples.ScheduleToHTML.CS
         /// <summary>
         /// The writer for the HTML file.
         /// </summary>
-        private HtmlTextWriter writer;
+        private HtmlTextWriter writer { get; set; }
 
         /// <summary>
         /// The schedule being exported.

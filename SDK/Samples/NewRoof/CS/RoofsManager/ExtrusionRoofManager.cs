@@ -75,10 +75,10 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
                 extrusionRoof = m_creationDoc.NewExtrusionRoof(profile, refPlane, level, roofType, extrusionStart, extrusionEnd);
                 createRoofTransaction.Commit();
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
                 createRoofTransaction.RollBack();
-                throw e;
+                throw;
             }
             
             return extrusionRoof;

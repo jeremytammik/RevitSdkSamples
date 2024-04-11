@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2019 by Autodesk, Inc. 
+// (C) Copyright 2003-2023 by Autodesk, Inc. 
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -45,7 +45,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.Button changeButton;
-        private System.Windows.Forms.DataGrid parameterDataGrid;
+        private System.Windows.Forms.DataGridView parameterDataGridView;
 
         /// <summary>
         /// Required designer variable.
@@ -66,8 +66,8 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             // Required for Windows Form Designer support
             //
             InitializeComponent();
-            parameterDataGrid.PreferredColumnWidth = parameterDataGrid.Width / 2 - 2;
-
+            //parameterDataGrid.PreferredColumnWidth = parameterDataGrid.Width / 2 - 2;
+         
             m_dataBuffer = dataBuffer;
         }
 
@@ -79,10 +79,24 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             if (disposing)
             {
                 if (components != null)
-                {
-                    components.Dispose();
-                }
-            }
+                   components.Dispose();
+                if (typeLable != null)
+                   typeLable.Dispose();
+                if (typeComboBox != null)
+                   typeComboBox.Dispose();
+                if (subTypeComboBox != null)
+                   subTypeComboBox.Dispose();
+                if (okButton != null)
+                   okButton.Dispose();
+                if (cancelButton != null)
+                   cancelButton.Dispose();
+                if (applyButton != null)
+                   applyButton.Dispose();
+                if (changeButton != null)
+                   changeButton.Dispose();
+                if (parameterDataGridView != null)
+                   parameterDataGridView.Dispose();
+   }
             base.Dispose(disposing);
         }
 
@@ -98,12 +112,12 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             this.typeLable = new System.Windows.Forms.Label();
             this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.subTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.parameterDataGrid = new System.Windows.Forms.DataGrid();
+            this.parameterDataGridView = new System.Windows.Forms.DataGridView();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.applyButton = new System.Windows.Forms.Button();
             this.changeButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.parameterDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parameterDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // typeLable
@@ -136,16 +150,16 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             // 
             // parameterDataGrid
             // 
-            this.parameterDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.parameterDataGrid.CaptionVisible = false;
-            this.parameterDataGrid.DataMember = "";
-            this.parameterDataGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
-            this.parameterDataGrid.Location = new System.Drawing.Point(16, 88);
-            this.parameterDataGrid.Name = "parameterDataGrid";
-            this.parameterDataGrid.ReadOnly = true;
-            this.parameterDataGrid.RowHeadersVisible = false;
-            this.parameterDataGrid.Size = new System.Drawing.Size(480, 380);
-            this.parameterDataGrid.TabIndex = 4;
+            this.parameterDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            //this.parameterDataGrid.CaptionVisible = false;
+            this.parameterDataGridView.DataMember = "";
+            //this.parameterDataGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+            this.parameterDataGridView.Location = new System.Drawing.Point(16, 88);
+            this.parameterDataGridView.Name = "parameterDataGrid";
+            this.parameterDataGridView.ReadOnly = true;
+            this.parameterDataGridView.RowHeadersVisible = false;
+            this.parameterDataGridView.Size = new System.Drawing.Size(480, 380);
+            this.parameterDataGridView.TabIndex = 4;
             // 
             // okButton
             // 
@@ -197,7 +211,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
-            this.Controls.Add(this.parameterDataGrid);
+            this.Controls.Add(this.parameterDataGridView);
             this.Controls.Add(this.subTypeComboBox);
             this.Controls.Add(this.typeComboBox);
             this.Controls.Add(this.typeLable);
@@ -208,7 +222,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             this.ShowInTaskbar = false;
             this.Text = "Material Properties";
             this.Load += new System.EventHandler(this.MaterialPropFrm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.parameterDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parameterDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,7 +253,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
                 subTypeComboBox.DataSource = m_dataBuffer.SteelCollection;
                 subTypeComboBox.DisplayMember = "MaterialName";
                 subTypeComboBox.ValueMember = "Material";
-                parameterDataGrid.DataSource = m_dataBuffer.GetParameterTable(subTypeComboBox.SelectedValue, (StructuralAssetClass)typeComboBox.SelectedIndex);
+                parameterDataGridView.DataSource = m_dataBuffer.GetParameterTable(subTypeComboBox.SelectedValue, (StructuralAssetClass)typeComboBox.SelectedIndex);
             }
            else if ((StructuralAssetClass)typeComboBox.SelectedIndex == StructuralAssetClass.Concrete)
             {
@@ -249,7 +263,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
                 subTypeComboBox.DataSource = m_dataBuffer.ConcreteCollection;
                 subTypeComboBox.DisplayMember = "MaterialName";
                 subTypeComboBox.ValueMember = "Material";
-                parameterDataGrid.DataSource = m_dataBuffer.GetParameterTable(subTypeComboBox.SelectedValue, (StructuralAssetClass)typeComboBox.SelectedIndex);
+                parameterDataGridView.DataSource = m_dataBuffer.GetParameterTable(subTypeComboBox.SelectedValue, (StructuralAssetClass)typeComboBox.SelectedIndex);
             }
             else
             {
@@ -257,7 +271,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
                 changeButton.Enabled = false;
                 subTypeComboBox.DataSource = new ArrayList();
                 subTypeComboBox.Enabled = false;
-                parameterDataGrid.DataSource = new DataTable();
+                parameterDataGridView.DataSource = new DataTable();
             }
         }
 
@@ -274,7 +288,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
                 m_dataBuffer.UpdateMaterial(subTypeComboBox.SelectedValue);
             }
 
-            parameterDataGrid.DataSource = m_dataBuffer.GetParameterTable(subTypeComboBox.SelectedValue, (StructuralAssetClass)typeComboBox.SelectedIndex);
+            parameterDataGridView.DataSource = m_dataBuffer.GetParameterTable(subTypeComboBox.SelectedValue, (StructuralAssetClass)typeComboBox.SelectedIndex);
         }
 
         /// <summary>
@@ -326,11 +340,11 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
         /// <param name="e"></param>
         private void changeButton_Click(object sender, System.EventArgs e)
         {
-            TaskDialog.Show("Revit", "This will change the unit weight of all instances that use this material in current document.");
+            Autodesk.Revit.UI.TaskDialog.Show("Revit", "This will change the unit weight of all instances that use this material in current document.");
 
             if (!m_dataBuffer.ChangeUnitWeight())
             {
-                TaskDialog.Show("Revit", "Failed to change the unit weight.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Failed to change the unit weight.");
                 return;
             }
             LoadCurrentMaterial();
@@ -355,7 +369,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
                 return;
 
             subTypeComboBox.SelectedValue = tmp;
-            parameterDataGrid.DataSource = m_dataBuffer.GetParameterTable(subTypeComboBox.SelectedValue, (StructuralAssetClass)typeComboBox.SelectedIndex);
+            parameterDataGridView.DataSource = m_dataBuffer.GetParameterTable(subTypeComboBox.SelectedValue, (StructuralAssetClass)typeComboBox.SelectedIndex);
         }
     }
 }

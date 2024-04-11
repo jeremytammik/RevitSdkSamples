@@ -20,14 +20,10 @@
 // (Rights in Technical Data and Computer Software), as applicable.
 //
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-using Autodesk.Revit;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Windows.Forms;
-
 
 namespace Revit.SDK.Samples.DoorSwing.CS
 {

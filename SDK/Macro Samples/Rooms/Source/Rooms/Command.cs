@@ -30,64 +30,64 @@ using Autodesk.Revit.DB.Structure;
 
 namespace Rooms
 {
-	/// <summary>
-	/// Get some properties of a slab , such as Level, Type name, Span direction,
-	/// Material name, Thickness, and Young Modulus for the slab's Material.
-	/// </summary>
-    public class SamplesRoom
-    {
-        /// <summary>
-        /// Ctor without parameter is not allowed
-        /// </summary>
-        private SamplesRoom()
-        {
-            // no code here
-        }
+   /// <summary>
+   /// Get some properties of a slab , such as Level, Type name, Span direction,
+   /// Material name, Thickness, and Young Modulus for the slab's Material.
+   /// </summary>
+   public class SamplesRoom
+   {
+      /// <summary>
+      /// Ctor without parameter is not allowed
+      /// </summary>
+      private SamplesRoom()
+      {
+         // no code here
+      }
 
-        /// <summary>
-        /// Default constructor of StructuralLayerFunction
-        /// </summary>
-        public SamplesRoom(ThisApplication hostApp)
-        {
-            // Init for varialbes
-            // this application handler
-            m_revit = hostApp;
-        }
+      /// <summary>
+      /// Default constructor of StructuralLayerFunction
+      /// </summary>
+      public SamplesRoom(ThisApplication hostApp)
+      {
+         // Init for varialbes
+         // this application handler
+         m_revit = hostApp;
+      }
 
-        /// <summary>
-        /// Run sample Rooms
-        /// </summary>
-        public void Run()
-        {
-            if (null == m_revit.ActiveUIDocument)
+      /// <summary>
+      /// Run sample Rooms
+      /// </summary>
+      public void Run()
+      {
+         if (null == m_revit?.ActiveUIDocument)
+         {
+            MessageBox.Show("No openning document.");
+            return;
+         }
+
+         Transaction trans = new Transaction(m_revit.ActiveUIDocument.Document, "RoomInfo");
+         trans.Start();
+         try
+         {
+            //create a new instance of class Data
+            RoomsData data = new RoomsData(m_revit);
+            //create a form to display the room information
+            using (roomsInformationForm infoForm = new roomsInformationForm(data))
             {
-                MessageBox.Show("No openning document.");
-                return;
+               infoForm.ShowDialog();
             }
+         }
+         catch (Exception ex)
+         {
+            // If there are something wrong, give error information
+            trans.RollBack();
+            MessageBox.Show(ex.Message);
+         }
+         trans.Commit();
+      }
 
-            Transaction trans = new Transaction(m_revit.ActiveUIDocument.Document, "RoomInfo");
-            trans.Start();
-            try
-            {
-                //create a new instance of class Data
-                RoomsData data = new RoomsData(m_revit);
-                //create a form to display the room information
-                using (roomsInformationForm infoForm = new roomsInformationForm(data))
-                {
-                    infoForm.ShowDialog();
-                }
-            }
-            catch (Exception ex)
-            {
-                // If there are something wrong, give error information
-                trans.RollBack();
-                MessageBox.Show(ex.Message);
-            }
-            trans.Commit();
-        }
-
-        #region Class member variable
-        ThisApplication m_revit;
-        #endregion 
-    }
+      #region Class member variable
+      ThisApplication? m_revit;
+      #endregion
+   }
 }

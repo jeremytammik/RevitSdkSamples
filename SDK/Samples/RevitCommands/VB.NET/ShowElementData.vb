@@ -70,14 +70,14 @@ Public Class RvtCmd_ShowElementData
       Next
 
       '  how many did you get? 
-      MsgBox("The number of selected elements:" & selSet.Size)
+      Autodesk.Revit.UI.TaskDialog.Show("Revit", "The number of selected elements:" & selSet.Size)
 
       '  look at each of them.
       Dim elem As Autodesk.Revit.DB.Element
       For Each elem In selSet
 
          '  show the type. 
-         MsgBox(elem.GetType.ToString)
+         Autodesk.Revit.UI.TaskDialog.Show("Revit", elem.GetType.ToString)
 
          '  location
          RvtUtils.ListLocation(elem)

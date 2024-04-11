@@ -34,6 +34,7 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.DB.Structure;
 using System.Drawing.Drawing2D;
 using System.Threading;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.Truss.CS
 {

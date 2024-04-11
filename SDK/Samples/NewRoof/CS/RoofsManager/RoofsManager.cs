@@ -48,7 +48,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
     /// <summary>
     /// The RoofsManager is used to manage the operations between Revit and UI.
     /// </summary>
-    public class RoofsManager
+    public class RoofsManager : IDisposable
     {
         // To store a reference to the commandData.
         ExternalCommandData m_commandData;
@@ -64,21 +64,11 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
         // To store the selected elements in the Revit
         Selection m_selection;
 
-        // roofs list
-        ElementSet m_footPrintRoofs;
-        ElementSet m_extrusionRoofs;
-
-        // To store the footprint roof lines.
-        Autodesk.Revit.DB.CurveArray m_footPrint;
-
-        // To store the profile lines.
-        Autodesk.Revit.DB.CurveArray m_profile;
-
         // Reference Plane for creating extrusion roof
         List<ReferencePlane> m_referencePlanes;
 
         // Transaction for manual mode
-        Transaction m_transaction;
+        private Transaction m_transaction;
 
         // Current creating roof kind.
         public CreateRoofKind RoofKind;
@@ -94,8 +84,8 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
             m_roofTypes = new List<RoofType>();
             m_referencePlanes = new List<ReferencePlane>();
 
-            m_footPrint = new CurveArray();
-            m_profile = new CurveArray();
+            FootPrint = new CurveArray();
+            Profile = new CurveArray();
 
             m_footPrintRoofManager = new FootPrintRoofManager(commandData);
             m_extrusionRoofManager = new ExtrusionRoofManager(commandData);
@@ -125,21 +115,21 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
             m_roofTypes = filteredElementCollector.Cast<RoofType>().ToList<RoofType>();
 
             // FootPrint Roofs
-            m_footPrintRoofs = new ElementSet();
+            FootPrintRoofs = new ElementSet();
             iter = (new FilteredElementCollector(doc)).OfClass(typeof(FootPrintRoof)).GetElementIterator();
             iter.Reset();
             while (iter.MoveNext())
             {
-                m_footPrintRoofs.Insert(iter.Current as FootPrintRoof);
+                FootPrintRoofs.Insert(iter.Current as FootPrintRoof);
             }
 
             // Extrusion Roofs
-            m_extrusionRoofs = new ElementSet();
+            ExtrusionRoofs = new ElementSet();
             iter = (new FilteredElementCollector(doc)).OfClass(typeof(ExtrusionRoof)).GetElementIterator();
             iter.Reset();
             while (iter.MoveNext())
             {
-                m_extrusionRoofs.Insert(iter.Current as ExtrusionRoof);
+                ExtrusionRoofs.Insert(iter.Current as ExtrusionRoof);
             }
 
             // Reference Planes
@@ -197,46 +187,22 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
         /// <summary>
         /// Get all the footprint roofs in Revit.
         /// </summary>
-        public ElementSet FootPrintRoofs
-        {
-            get
-            {
-                return m_footPrintRoofs;
-            }
-        }
+        public ElementSet FootPrintRoofs { get; private set; }
 
         /// <summary>
         /// Get all the extrusion roofs in Revit.
         /// </summary>
-        public ElementSet ExtrusionRoofs
-        {
-            get
-            {
-                return m_extrusionRoofs;
-            }
-        }
+        public ElementSet ExtrusionRoofs { get; private set; }
 
         /// <summary>
         /// Get the footprint roof lines.
         /// </summary>
-        public CurveArray FootPrint
-        {
-            get
-            {
-                return m_footPrint;
-            }
-        }
+        public CurveArray FootPrint { get; private set; }
 
         /// <summary>
         /// Get the extrusion profile lines.
         /// </summary>
-        public CurveArray Profile
-        {
-            get
-            {
-                return m_profile;
-            }
-        }
+        public CurveArray Profile { get; private set; }
 
         /// <summary>
         /// Select elements in Revit to obtain the footprint roof lines or extrusion profile lines.
@@ -260,7 +226,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
         /// <returns>A curve array to hold the footprint roof lines.</returns>
         public CurveArray SelectFootPrint()
         {
-            m_footPrint.Clear();
+            FootPrint.Clear();
             while (true)
             {
                ElementSet es = new ElementSet();
@@ -288,21 +254,21 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
                         if (wall != null)
                         {
                             LocationCurve wallCurve = wall.Location as LocationCurve;
-                            m_footPrint.Append(wallCurve.Curve);
+                            FootPrint.Append(wallCurve.Curve);
                             continue;
                         }
 
                         ModelCurve modelCurve = element as ModelCurve;
                         if (modelCurve != null)
                         {
-                            m_footPrint.Append(modelCurve.GeometryCurve);
+                            FootPrint.Append(modelCurve.GeometryCurve);
                         }
                     }
                     break;
                 }
                 else
                 {
-                    TaskDialogResult result = TaskDialog.Show("Warning", "You should select a curve loop, or a wall loop, or loops combination \r\nof walls and curves to create a footprint roof.", TaskDialogCommonButtons.Ok | TaskDialogCommonButtons.Cancel);
+                    TaskDialogResult result = Autodesk.Revit.UI.TaskDialog.Show("Warning", "You should select a curve loop, or a wall loop, or loops combination \r\nof walls and curves to create a footprint roof.", TaskDialogCommonButtons.Ok | TaskDialogCommonButtons.Cancel);
                     if (result == TaskDialogResult.Cancel)
                     {
                         break;
@@ -312,7 +278,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
 
             }
 
-            return m_footPrint;
+            return FootPrint;
         }
 
         /// <summary>
@@ -324,10 +290,10 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
         public FootPrintRoof CreateFootPrintRoof(Level level, RoofType roofType)
         {
             FootPrintRoof roof = null;
-            roof = m_footPrintRoofManager.CreateFootPrintRoof(m_footPrint, level, roofType);
+            roof = m_footPrintRoofManager.CreateFootPrintRoof(FootPrint, level, roofType);
             if (roof != null)
             {
-                this.m_footPrintRoofs.Insert(roof);
+                this.FootPrintRoofs.Insert(roof);
             }
             return roof;
         }
@@ -338,7 +304,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
         /// <returns>A curve array to hold the extrusion profile lines.</returns>
         public CurveArray SelectProfile()
         {
-            m_profile.Clear();
+            Profile.Clear();
             while (true)
             {
                 m_selection.GetElementIds().Clear();
@@ -359,7 +325,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
                         ModelCurve modelCurve = element as ModelCurve;
                         if (modelCurve != null)
                         {
-                            m_profile.Append(modelCurve.GeometryCurve);
+                            Profile.Append(modelCurve.GeometryCurve);
                             continue;
                         }
                     }
@@ -367,14 +333,14 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
                 }
                 else
                 {
-                    TaskDialogResult result = TaskDialog.Show("Warning", "You should select a  connected lines or arcs, \r\nnot closed in a loop to create extrusion roof.", TaskDialogCommonButtons.Ok | TaskDialogCommonButtons.Cancel);
+                    TaskDialogResult result = Autodesk.Revit.UI.TaskDialog.Show("Warning", "You should select a  connected lines or arcs, \r\nnot closed in a loop to create extrusion roof.", TaskDialogCommonButtons.Ok | TaskDialogCommonButtons.Cancel);
                     if (result == TaskDialogResult.Cancel)
                     {
                         break;
                     }
                 }
             }
-            return m_profile;
+            return Profile;
         }
 
         /// <summary>
@@ -390,10 +356,10 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
             Level level, RoofType roofType, double extrusionStart, double extrusionEnd)
         {
             ExtrusionRoof roof = null;
-            roof = m_extrusionRoofManager.CreateExtrusionRoof(m_profile, refPlane, level, roofType, extrusionStart, extrusionEnd);
+            roof = m_extrusionRoofManager.CreateExtrusionRoof(Profile, refPlane, level, roofType, extrusionStart, extrusionEnd);
             if (roof != null)
             {
-                m_extrusionRoofs.Insert(roof);
+                ExtrusionRoofs.Insert(roof);
             }
             return roof;
         }
@@ -406,7 +372,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
         {
             if (m_transaction.GetStatus() == TransactionStatus.Started)
             {
-                TaskDialog.Show("Revit", "Transaction started already");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Transaction started already");
             }
             return m_transaction.Start();
         }
@@ -426,6 +392,29 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
         public TransactionStatus AbortTransaction()
         {
             return m_transaction.RollBack();
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (FootPrintRoofs != null)
+                    FootPrintRoofs.Dispose();
+                if (ExtrusionRoofs != null)
+                    ExtrusionRoofs.Dispose();
+                if (FootPrint != null)
+                    FootPrint.Dispose();
+                if (Profile != null)
+                    Profile.Dispose();
+                if (m_transaction != null)
+                    m_transaction.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }

@@ -252,7 +252,7 @@ namespace Revit.SDK.Samples.AreaReinParameters.CS
                             }
                             str = str + name + ": " + val + "\r\n";
                         }
-                        TaskDialog.Show("Rebar parameters", str);
+                        Autodesk.Revit.UI.TaskDialog.Show("Rebar parameters", str);
                         return Autodesk.Revit.UI.Result.Succeeded;
                     }
                 }

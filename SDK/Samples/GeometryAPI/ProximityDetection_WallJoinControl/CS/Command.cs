@@ -70,8 +70,8 @@ namespace Revit.SDK.Samples.ProximityDetection_WallJoinControl.CS
                 WallJoinControl walljoinControl = WallJoinControl.getInstance(application, document);
 
                 // Create the UI for users select operation and view the results.
-                using (ProximityDetectionAndWallJoinControlForm form = 
-                   new ProximityDetectionAndWallJoinControlForm(document, proximityDetection, walljoinControl))
+                using (PrxmtDtctnWallJoinControl form = 
+                   new PrxmtDtctnWallJoinControl(document, proximityDetection, walljoinControl))
                 {
                    // show dialog to browser operations and results
                    if (DialogResult.OK != form.ShowDialog())

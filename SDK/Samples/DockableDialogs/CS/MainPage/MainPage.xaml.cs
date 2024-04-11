@@ -45,7 +45,7 @@ using System.Text;
 namespace Revit.SDK.Samples.DockableDialogs.CS
 {
 
-   public partial class MainPage : Page, Autodesk.Revit.UI.IDockablePaneProvider
+   public partial class MainPage : Page, Autodesk.Revit.UI.IDockablePaneProvider, IDisposable
     {
       public MainPage()
         {
@@ -132,9 +132,33 @@ namespace Revit.SDK.Samples.DockableDialogs.CS
          private Autodesk.Revit.UI.ExternalEvent m_exEvent;
          private APIExternalEventHandler m_handler=  new APIExternalEventHandler();
          private System.IO.TextWriter m_textWriter; //Used to re-route any standard IO to the WPF UI.
+         private bool isDisposed;
 
+      #endregion
 
-        #endregion
+      public void Dispose()
+      {
+         // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+         Dispose(true);
+         GC.SuppressFinalize(this);
+      }
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (!disposing || isDisposed)
+            return;
+
+         if (m_textWriter != null)
+         {
+            m_textWriter.Close();
+            m_textWriter.Dispose();
+         }
+
+         (m_exEvent as IDisposable)?.Dispose();
+
+         isDisposed = true;
+      }
+
 
       /// <summary>
       /// Called by Revit to initialize dockable pane settings set in DockingSetupDialog.

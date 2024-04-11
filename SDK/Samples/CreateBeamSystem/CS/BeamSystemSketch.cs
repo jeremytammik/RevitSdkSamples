@@ -185,5 +185,14 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
 
          return plgpts;
       }
+
+      protected override void Dispose(bool disposing)
+      {
+         if (disposing)
+         {
+            if (m_inverse != null)
+               m_inverse.Dispose();
+         }
+      }
    }
 }

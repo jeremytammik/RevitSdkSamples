@@ -71,10 +71,10 @@ namespace Revit.SDK.Samples.NewRoof.RoofsManager.CS
                 footprintRoof = m_creationDoc.NewFootPrintRoof(footPrint, level, roofType, out footPrintToModelCurveMapping);
                 createRoofTransaction.Commit();
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
                 createRoofTransaction.RollBack();
-                throw e;
+                throw;
             }
             
             return footprintRoof;

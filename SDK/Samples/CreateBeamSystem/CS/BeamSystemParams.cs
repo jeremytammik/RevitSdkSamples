@@ -216,7 +216,7 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
         /// properties related to LayoutRule when it's clear spacing
         /// only visible for class BeamSystemParam
         /// </summary>
-        class ClearSpacingParam : BeamSystemParam
+        class ClearSpacingParam : BeamSystemParam, IDisposable
         {
             protected LayoutRuleClearSpacing m_layout;
 
@@ -283,13 +283,28 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
                 m_layout     = new LayoutRuleClearSpacing(m_fixedSpacing, m_justifyType);
                 m_layoutType = LayoutMethod.ClearSpacing;
             }
+
+            protected virtual void Dispose(bool disposing)
+            {
+               if (disposing)
+               {
+                  if (m_layout != null) 
+                     m_layout.Dispose();
+               }
+            }
+
+            public void Dispose()
+            {
+               Dispose(disposing: true);
+               GC.SuppressFinalize(this);
+            }
         }
 
         /// <summary>
         /// properties related to LayoutRule when it's fixed distance
         /// only visible for class BeamSystemParam
         /// </summary>
-        class FixedDistanceParam : BeamSystemParam
+        class FixedDistanceParam : BeamSystemParam, IDisposable
         {
             protected LayoutRuleFixedDistance m_layout;
 
@@ -357,13 +372,28 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
                     m_justifyType        = value;
                 }
             }
+
+            protected virtual void Dispose(bool disposing)
+            {
+               if (disposing)
+               {
+                  if (m_layout != null) 
+                     m_layout.Dispose();
+               }
+            }
+
+            public void Dispose()
+            {
+               Dispose(disposing: true);
+               GC.SuppressFinalize(this);
+            }
         }
 
         /// <summary>
         /// properties related to LayoutRule when it's fixed number
         /// only visible for class BeamSystemParam
         /// </summary>
-        class FixedNumberParam : BeamSystemParam
+        class FixedNumberParam : BeamSystemParam, IDisposable
         {
             protected LayoutRuleFixedNumber m_layout;
 
@@ -411,13 +441,28 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
                 m_layout     = new LayoutRuleFixedNumber(m_numberOfLines);
                 m_layoutType = LayoutMethod.FixedNumber;
             }
+
+            protected virtual void Dispose(bool disposing)
+            {
+               if (disposing)
+               {
+                  if (m_layout != null) 
+                     m_layout.Dispose();
+               }
+            }
+
+            public void Dispose()
+            {
+               Dispose(disposing: true);
+               GC.SuppressFinalize(this);
+            }
         }
 
         /// <summary>
         /// properties related to LayoutRule when it's maximum spacing
         /// only visible for class BeamSystemParam
         /// </summary>
-        class MaximumSpacingParam : BeamSystemParam
+        class MaximumSpacingParam : BeamSystemParam, IDisposable
         {
             protected LayoutRuleMaximumSpacing m_layout;
 
@@ -464,6 +509,21 @@ namespace Revit.SDK.Samples.CreateBeamSystem.CS
             {
                 m_layout     = new LayoutRuleMaximumSpacing(m_fixedSpacing);
                 m_layoutType = LayoutMethod.MaximumSpacing;
+            }
+
+            protected virtual void Dispose(bool disposing)
+            {
+               if (disposing)
+               {
+                  if (m_layout != null) 
+                     m_layout.Dispose();
+               }
+            }
+
+            public void Dispose()
+            {
+               Dispose(disposing: true);
+               GC.SuppressFinalize(this);
             }
         }
     }

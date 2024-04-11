@@ -51,7 +51,7 @@ namespace Revit.SDK.Samples.ExtensibleStorageUtility.CS
             Transaction tErase = new Transaction(document, "Erase EStorage");
             tErase.Start();
             IList<Schema> schemas = Schema.ListSchemas();
-            foreach (Schema schema in schemas)
+            foreach (Schema schema in schemas?.Where(x => x.WriteAccessLevel == AccessLevel.Public))
             {
                //Note-this will delete storage of this schema in *all* open documents.
                document.EraseSchemaAndAllEntities(schema);

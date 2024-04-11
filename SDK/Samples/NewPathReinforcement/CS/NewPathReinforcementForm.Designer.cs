@@ -19,6 +19,8 @@
 // Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
 // (Rights in Technical Data and Computer Software), as applicable.
 //
+using System;
+
 namespace Revit.SDK.Samples.NewPathReinforcement.CS
 {
     partial class NewPathReinforcementForm
@@ -34,9 +36,10 @@ namespace Revit.SDK.Samples.NewPathReinforcement.CS
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
+                ((IDisposable)m_tool)?.Dispose();
             }
             base.Dispose(disposing);
         }

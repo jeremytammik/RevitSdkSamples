@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2020 by Autodesk, Inc. All rights reserved.
+// (C) Copyright 2003-2023 by Autodesk, Inc. All rights reserved.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted
@@ -20,18 +20,7 @@
 // Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
 // (Rights in Technical Data and Computer Software), as applicable. 
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using System.Windows.Media.Imaging;
-using System.IO;
-
-using Autodesk;
-using Autodesk.Revit;
-using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using Autodesk.Revit.ApplicationServices;
 
 namespace Revit.SDK.Samples.CivilAlignments.CS
 {

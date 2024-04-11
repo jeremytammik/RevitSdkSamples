@@ -118,7 +118,7 @@ namespace Revit.SDK.Samples.InPlaceMembers.CS
         /// <summary>
         /// initialize some member data
         /// </summary>
-        protected virtual void Initialize()
+        protected void Initialize()
         {    
             double INITANGLE = Math.PI / 4;
 

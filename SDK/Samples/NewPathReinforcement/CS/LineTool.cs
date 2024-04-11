@@ -31,7 +31,7 @@ namespace Revit.SDK.Samples.NewPathReinforcement.CS
     /// <summary>
     /// tool used to draw line
     /// </summary>
-    public class LineTool
+    public class LineTool : IDisposable
     {
         # region members
         private List<Point> m_points = new List<Point>();  // Field used to store points of a line
@@ -139,6 +139,21 @@ namespace Revit.SDK.Samples.NewPathReinforcement.CS
             {
                 graphic.DrawLine(m_foreGroundPen, m_points[i], m_points[i + 1]);
             }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                m_backGroundPen?.Dispose();
+                m_foreGroundPen?.Dispose();
+            }
+        }
+        
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }

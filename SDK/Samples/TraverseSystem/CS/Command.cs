@@ -34,6 +34,7 @@ using Autodesk.Revit.DB.Plumbing;
 using Autodesk.Revit.UI.Selection;
 using Application = Autodesk.Revit.ApplicationServices.Application;
 using Element = Autodesk.Revit.DB.Element;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.TraverseSystem.CS
 {

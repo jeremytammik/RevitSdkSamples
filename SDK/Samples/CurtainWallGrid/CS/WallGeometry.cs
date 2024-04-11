@@ -34,7 +34,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
    /// <summary>
    /// the class manages the creation operation for the curtain wall
    /// </summary>
-   public class WallGeometry
+   public class WallGeometry : IDisposable
    {
       #region Fields
       // the document of this sample
@@ -219,7 +219,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
          }
          catch (System.ArgumentException)
          {
-            TaskDialog.Show("Revit", "The start point and the end point of the line are too close, please re-draw it.");
+            Autodesk.Revit.UI.TaskDialog.Show("Revit", "The start point and the end point of the line are too close, please re-draw it.");
          }
          Transaction act = new Transaction(m_myDocument.Document);
          act.Start(Guid.NewGuid().GetHashCode().ToString());
@@ -233,5 +233,20 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
          return wall;
       }
       #endregion
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (disposing)
+         {
+            if (m_drawing != null)
+               m_drawing.Dispose();
+         }
+      }
+
+      public void Dispose()
+      {
+         Dispose(disposing: true);
+         GC.SuppressFinalize(this);
+      }
    }// end of class
 }

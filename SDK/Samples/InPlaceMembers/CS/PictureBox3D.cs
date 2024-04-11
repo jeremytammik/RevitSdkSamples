@@ -23,12 +23,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.ComponentModel;
 using System.Windows.Forms;
-using System.Windows.Forms.ComponentModel;
 
 namespace Revit.SDK.Samples.InPlaceMembers.CS
 {
@@ -191,6 +188,15 @@ namespace Revit.SDK.Samples.InPlaceMembers.CS
             plgpts[2] = new PointF(minX, realHeight + minY);
 
             return plgpts;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((IDisposable)m_transform)?.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

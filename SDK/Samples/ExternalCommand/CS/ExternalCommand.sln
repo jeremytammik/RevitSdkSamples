@@ -1,24 +1,36 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitAddInUtilitySample", "RevitAddInUtilitySample\RevitAddInUtilitySample.csproj", "{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevitAddInUtilitySample", "RevitAddInUtilitySample\RevitAddInUtilitySample.csproj", "{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalCommandRegistration", "ExternalCommandRegistration\ExternalCommandRegistration.csproj", "{60316DFC-53FD-42B4-BBCE-25FD3D337815}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExternalCommandRegistration", "ExternalCommandRegistration\ExternalCommandRegistration.csproj", "{60316DFC-53FD-42B4-BBCE-25FD3D337815}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Debug|x64.ActiveCfg = Debug|x64
+		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Debug|x64.Build.0 = Debug|x64
 		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Release|x64.ActiveCfg = Release|x64
+		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Release|x64.Build.0 = Release|x64
 		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Debug|x64.ActiveCfg = Debug|x64
+		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Debug|x64.Build.0 = Debug|x64
 		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Release|x64.ActiveCfg = Release|x64
+		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

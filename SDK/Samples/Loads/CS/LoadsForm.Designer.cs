@@ -36,9 +36,23 @@ namespace Revit.SDK.Samples.Loads.CS
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
+                combinationNameColumn?.Dispose();
+                combinationFormulaColumn?.Dispose();
+                combinationTypeColumn?.Dispose();
+                combinationStateColumn?.Dispose();
+                combinationUsageColumn?.Dispose();
+                usageSetColumn?.Dispose();
+                usageNameColumn?.Dispose();
+                formulaFactorColumn?.Dispose();
+                formulaCaseColumn?.Dispose();
+                LoadCasesName?.Dispose();
+                LoadCasesNumber?.Dispose();
+                LoadCasesNature?.Dispose();
+                LoadCasesCategory?.Dispose();
+                LoadNatureName?.Dispose();
             }
             base.Dispose(disposing);
         }

@@ -41,7 +41,7 @@ namespace SchemaWrapperTools
    /// and also provides easy serialization of schema data to xml for the user.
    /// </summary>
    [Serializable]
-   public class SchemaWrapper
+   public class SchemaWrapper : IDisposable
    {
       #region Constructors and class Factories
       /// <summary>
@@ -150,6 +150,28 @@ namespace SchemaWrapperTools
       private SchemaWrapper(Schema schema) : this(schema.GUID, schema.ReadAccessLevel, schema.WriteAccessLevel, schema.VendorId, schema.ApplicationGUID.ToString(), schema.SchemaName, schema.Documentation)
       {
          this.SetSchema(schema);
+      }
+
+      #endregion
+
+      #region IDisposable implementation
+
+      public void Dispose()
+      {
+         // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+         Dispose(true);
+         GC.SuppressFinalize(this);
+      }
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (!disposing || isDisposed)
+            return;
+
+         (m_Schema as IDisposable)?.Dispose();
+         (m_SchemaBuilder as IDisposable)?.Dispose();
+
+         isDisposed = true;
       }
 
       #endregion
@@ -526,6 +548,9 @@ namespace SchemaWrapperTools
 
       [NonSerialized]
       private string m_xmlPath;
+
+      [NonSerialized]
+      private bool isDisposed;
       #endregion
 
    }

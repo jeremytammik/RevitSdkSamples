@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2024 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -90,7 +90,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores the data of vertical justification
       /// </summary>
-      [CategoryAttribute("Vertical Grid Pattern"), DefaultValueAttribute(CurtainGridAlign.Beginning), ReadOnlyAttribute(true)]
+      [Category("Vertical Grid Pattern"), DefaultValue(CurtainGridAlign.Beginning), ReadOnly(true)]
       public CurtainGridAlign VerticalJustification
       {
          get
@@ -106,7 +106,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores the data of vertical angle
       /// </summary>
-      [CategoryAttribute("Vertical Grid Pattern"), DefaultValueAttribute(0.0), ReadOnlyAttribute(true)]
+      [Category("Vertical Grid Pattern"), DefaultValue(0.0), ReadOnly(true)]
       public double VerticalAngle
       {
          get
@@ -122,7 +122,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores the data of vertical offset
       /// </summary>
-      [CategoryAttribute("Vertical Grid Pattern"), DefaultValueAttribute(0.0), ReadOnlyAttribute(true)]
+      [Category("Vertical Grid Pattern"), DefaultValue(0.0), ReadOnly(true)]
       public double VerticalOffset
       {
          get
@@ -138,7 +138,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores how many U lines there are in the grid
       /// </summary>
-      [CategoryAttribute("Vertical Grid Pattern"), DefaultValueAttribute(0), ReadOnlyAttribute(true)]
+      [Category("Vertical Grid Pattern"), DefaultValue(0), ReadOnly(true)]
       public int VerticalLinesNumber
       {
          get
@@ -154,7 +154,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores the data of horizontal justification
       /// </summary>
-      [CategoryAttribute("Horizontal Grid Pattern"), DefaultValueAttribute(CurtainGridAlign.Beginning), ReadOnlyAttribute(true)]
+      [Category("Horizontal Grid Pattern"), DefaultValue(CurtainGridAlign.Beginning), ReadOnly(true)]
       public CurtainGridAlign HorizontalJustification
       {
          get
@@ -170,7 +170,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores the data of horizontal angle
       /// </summary>
-      [CategoryAttribute("Horizontal Grid Pattern"), DefaultValueAttribute(0.0), ReadOnlyAttribute(true)]
+      [Category("Horizontal Grid Pattern"), DefaultValue(0.0), ReadOnly(true)]
       public double HorizontalAngle
       {
          get
@@ -186,7 +186,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores the data of horizontal offset
       /// </summary>
-      [CategoryAttribute("Horizontal Grid Pattern"), DefaultValueAttribute(0.0), ReadOnlyAttribute(true)]
+      [Category("Horizontal Grid Pattern"), DefaultValue(0.0), ReadOnly(true)]
       public double HorizontalOffset
       {
          get
@@ -202,7 +202,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores how many V lines there are in the grid
       /// </summary>
-      [CategoryAttribute("Horizontal Grid Pattern"), DefaultValueAttribute(0), ReadOnlyAttribute(true)]
+      [Category("Horizontal Grid Pattern"), DefaultValue(0), ReadOnly(true)]
       public int HorizontalLinesNumber
       {
          get
@@ -218,7 +218,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores how many panels there are in the grid
       /// </summary>
-      [CategoryAttribute("Other Data"), DefaultValueAttribute(0), ReadOnlyAttribute(true)]
+      [Category("Other Data"), DefaultValue(0), ReadOnly(true)]
       public int PanelNumber
       {
          get
@@ -234,7 +234,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores how many curtain cells there are in the grid
       /// </summary>
-      [CategoryAttribute("Other Data"), DefaultValueAttribute(0), ReadOnlyAttribute(true)]
+      [Category("Other Data"), DefaultValue(0), ReadOnly(true)]
       public int CellNumber
       {
          get
@@ -250,7 +250,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores how many unlocked panels there are in the grid
       /// </summary>
-      [CategoryAttribute("Other Data"), DefaultValueAttribute(0), ReadOnlyAttribute(true)]
+      [Category("Other Data"), DefaultValue(0), ReadOnly(true)]
       public int UnlockedPanelsNumber
       {
          get
@@ -266,7 +266,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores how many mullions there are in the grid
       /// </summary>
-      [CategoryAttribute("Other Data"), DefaultValueAttribute(0), ReadOnlyAttribute(true)]
+      [Category("Other Data"), DefaultValue(0), ReadOnly(true)]
       public int MullionsNumber
       {
          get
@@ -282,7 +282,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
       /// <summary>
       /// stores how many unlocked mullions there are in the grid
       /// </summary>
-      [CategoryAttribute("Other Data"), DefaultValueAttribute(0), ReadOnlyAttribute(true)]
+      [Category("Other Data"), DefaultValue(0), ReadOnly(true)]
       public int UnlockedmullionsNumber
       {
          get

@@ -47,13 +47,7 @@ namespace Revit.SDK.Samples.AreaReinParameters.CS
         protected ParameterConverter()
         {
             m_hash = new Hashtable();
-            GetConvertHash();
         }
-
-        /// <summary>
-        /// fill m_hashtable
-        /// </summary>
-        public abstract void GetConvertHash();
 
         /// <summary>
         /// always return true
@@ -170,7 +164,8 @@ namespace Revit.SDK.Samples.AreaReinParameters.CS
     /// </summary>
     public class HookTypeItem : ParameterConverter
     {
-        public override void GetConvertHash()
+        public HookTypeItem()
+         : base()
         {
             m_hash = Command.HookTypes;
             Autodesk.Revit.DB.ElementId id = Autodesk.Revit.DB.ElementId.InvalidElementId;
@@ -187,7 +182,8 @@ namespace Revit.SDK.Samples.AreaReinParameters.CS
     /// </summary>
     public class BarTypeItem : ParameterConverter
     {
-        public override void GetConvertHash()
+        public BarTypeItem()
+         : base()
         {
             m_hash = Command.BarTypes;
         }

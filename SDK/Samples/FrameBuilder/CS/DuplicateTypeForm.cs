@@ -23,14 +23,10 @@
 namespace Revit.SDK.Samples.FrameBuilder.CS
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Drawing;
-    using System.Text;
     using System.Windows.Forms;
 
     using Autodesk.Revit.DB;
-    using Autodesk.Revit.UI;
+    using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
     /// <summary>
     /// form to duplicate FamilySymbol and edit its name and parameters

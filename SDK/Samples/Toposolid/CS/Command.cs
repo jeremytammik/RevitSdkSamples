@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
 using Autodesk.Revit.DB.Architecture;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.Toposolid.CS
 {

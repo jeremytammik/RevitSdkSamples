@@ -33,7 +33,7 @@ namespace Revit.SDK.Samples.EnergyAnalysisModel.CS
 {
     public partial class OptionsAndAnalysisForm : Form
     {
-        EnergyAnalysisModel m_model = null;
+        EnergyAnalysisModel m_model;
         public OptionsAndAnalysisForm(EnergyAnalysisModel analysisModel)
         {
             m_model = analysisModel;
@@ -45,9 +45,9 @@ namespace Revit.SDK.Samples.EnergyAnalysisModel.CS
         {
             // get UI input of options
             m_model.SetTier(this.comboBoxTier.SelectedText);
-            m_model.Options.ExportMullions = this.checkBoxExportMullions.Checked;
-            m_model.Options.IncludeShadingSurfaces = this.checkBoxIncludeShadingSurfaces.Checked;
-            m_model.Options.SimplifyCurtainSystems = this.checkBoxSimplifyCurtainSystems.Checked;
+            m_model.m_options.ExportMullions = this.checkBoxExportMullions.Checked;
+            m_model.m_options.IncludeShadingSurfaces = this.checkBoxIncludeShadingSurfaces.Checked;
+            m_model.m_options.SimplifyCurtainSystems = this.checkBoxSimplifyCurtainSystems.Checked;
 
             m_model.Initialize();
             m_model.RefreshAnalysisData(treeViewAnalyticalData);

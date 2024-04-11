@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Autodesk, Inc.")]
 [assembly: AssemblyProduct("EnergyAnalysisModel")]
-[assembly: AssemblyCopyright("Copyright © Autodesk, Inc. 2011")]
+[assembly: AssemblyCopyright("Copyright © Autodesk, Inc. 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -34,3 +34,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("windows7.0")]

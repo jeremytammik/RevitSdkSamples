@@ -41,7 +41,7 @@ namespace Revit.SDK.Samples.DockableDialogs.CS
          /// </summary>
          public void Make(ModelessCommandData commandData)
          {
-            lock (this)
+            lock (m_data)
             {
                m_data = commandData;
             }
@@ -52,7 +52,7 @@ namespace Revit.SDK.Samples.DockableDialogs.CS
          /// </summary>
          public ModelessCommandData Take()
          {
-            lock (this)
+            lock (m_data)
             {
                return m_data;
             }

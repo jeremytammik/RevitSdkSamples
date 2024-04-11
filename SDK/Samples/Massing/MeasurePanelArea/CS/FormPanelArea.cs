@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -34,6 +34,7 @@ using Autodesk.Revit.UI;
 using Panel = Autodesk.Revit.DB.Panel;
 using Element = Autodesk.Revit.DB.Element;
 using Instance = Autodesk.Revit.DB.Instance;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.MeasurePanelArea.CS
 {
@@ -356,6 +357,5 @@ namespace Revit.SDK.Samples.MeasurePanelArea.CS
          }
          return returns;
       }
-
    }
 }

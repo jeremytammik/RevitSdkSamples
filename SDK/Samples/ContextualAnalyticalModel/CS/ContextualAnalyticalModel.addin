@@ -170,4 +170,14 @@
 	<LanguageType>Unknown</LanguageType>
 	<VendorId>ADSK</VendorId>
   </AddIn> 
+  <AddIn Type="Command">
+	<Assembly>ContextualAnalyticalModel.dll</Assembly>
+	<ClientId>4FA12718-37CF-48BF-897D-6CCF91565816</ClientId>
+	<FullClassName>ContextualAnalyticalModel.AnalyticalElementLocalCoordinateSystem</FullClassName>
+	<Text>Align Analytical Element Local Coordinate System</Text>
+	<Description>Align Analytical Element Local Coordinate System</Description>
+	<VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
 </RevitAddIns>

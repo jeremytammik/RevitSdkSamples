@@ -32,6 +32,7 @@ using System.Windows.Media.Imaging;
 using Autodesk.Revit;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.ApplicationServices;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace RvtSamples
 {

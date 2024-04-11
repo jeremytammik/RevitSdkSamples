@@ -76,10 +76,10 @@ Public Class RvtCmd_Selection
       '  how many did you get? 
       '
       If selSet.IsEmpty Then
-         MsgBox("Nothing selected - exiting command!")
+         Autodesk.Revit.UI.TaskDialog.Show("Revit", "Nothing selected - exiting command!")
          Return Autodesk.Revit.UI.Result.Failed
       End If
-      MsgBox("The number of selected elements = " & selSet.Size & vbCrLf)
+      Autodesk.Revit.UI.TaskDialog.Show("Revit", "The number of selected elements = " & selSet.Size & vbCrLf)
 
       '  look at each of them.
       Dim str As String = ""
@@ -98,7 +98,7 @@ Public Class RvtCmd_Selection
           " Cat=" & catName &
           " Type=" & elem.Name & vbCrLf
       Next
-      MsgBox(str)
+      Autodesk.Revit.UI.TaskDialog.Show("Revit", str)
 
       Return Autodesk.Revit.UI.Result.Succeeded
 

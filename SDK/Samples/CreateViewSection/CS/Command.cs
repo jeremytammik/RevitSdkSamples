@@ -33,6 +33,8 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.DB.Structure;
 
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
+
 namespace Revit.SDK.Samples.CreateViewSection.CS
 {
     /// <summary>
@@ -42,7 +44,7 @@ namespace Revit.SDK.Samples.CreateViewSection.CS
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
     [Autodesk.Revit.Attributes.Regeneration(Autodesk.Revit.Attributes.RegenerationOption.Manual)]
     [Autodesk.Revit.Attributes.Journaling(Autodesk.Revit.Attributes.JournalingMode.NoCommandData)]
-    public class Command : IExternalCommand
+    public class Command : IExternalCommand, IDisposable
     {
         // Private Members
         Autodesk.Revit.UI.UIDocument m_project;  // Store the current document in revit   
@@ -442,6 +444,20 @@ namespace Revit.SDK.Samples.CreateViewSection.CS
             // The elevation of wall location equals the elevation of "Base Constraint" level
             Double midOffset = baseOffset + height / 2;
             return midOffset;
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+               (m_box as IDisposable)?.Dispose();
+            }
+        }
+        
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 

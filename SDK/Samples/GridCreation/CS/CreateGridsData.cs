@@ -21,15 +21,11 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Collections;
-using System.Windows.Forms;
 
-using Autodesk.Revit;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using Application = Autodesk.Revit.ApplicationServices.Application;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.GridCreation.CS
 {

@@ -30,6 +30,7 @@ using System.Drawing.Printing;
 using Autodesk.Revit;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
 namespace Revit.SDK.Samples.ViewPrinter.CS
 {

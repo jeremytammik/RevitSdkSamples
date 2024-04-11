@@ -20,14 +20,8 @@
 // (Rights in Technical Data and Computer Software), as applicable.
 //
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using Autodesk.Revit.DB.Macros;
-using Autodesk.Revit.UI.Macros;
+using Revit.SDK.Samples.DockableDialogs.CS;
 
 namespace Revit.SDK.Samples.DockableDiagnostics.CS
 {

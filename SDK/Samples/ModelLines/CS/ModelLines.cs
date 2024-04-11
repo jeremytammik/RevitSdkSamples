@@ -23,11 +23,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-using Autodesk.Revit;
 using Autodesk.Revit.DB;
 
 namespace Revit.SDK.Samples.ModelLines.CS
@@ -36,7 +34,7 @@ namespace Revit.SDK.Samples.ModelLines.CS
    /// The main deal class, which takes charge of showing the number of each model line type
    /// and creating one instance for each type using Revit API
    /// </summary>
-   public class ModelLines
+   public class ModelLines : IDisposable
    {
       // Private members
       Autodesk.Revit.UI.UIApplication m_revit; // Store the reference of the application in revit
@@ -523,6 +521,24 @@ namespace Revit.SDK.Samples.ModelLines.CS
             throw new Exception("Don't have the work plane you select.");
          }
          return workPlane;
+      }
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (disposing)
+         {
+            ((IDisposable)m_lineArray)?.Dispose();
+            ((IDisposable)m_arcArray)?.Dispose();
+            ((IDisposable)m_ellipseArray)?.Dispose();
+            ((IDisposable)m_hermiteArray)?.Dispose();
+            ((IDisposable)m_nurbArray)?.Dispose();
+         }
+      }
+
+      public void Dispose()
+      {
+         Dispose(disposing: true);
+         GC.SuppressFinalize(this);
       }
 
       #endregion

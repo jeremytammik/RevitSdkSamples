@@ -33,12 +33,12 @@ namespace Revit.SDK.Samples.ReadonlySharedParameters.CS
     {
         #region IExternalApplication Members
 
-        Result IExternalApplication.OnShutdown(UIControlledApplication application)
+        public Result OnShutdown(UIControlledApplication application)
         {
             return Result.Succeeded;
         }
 
-        Result IExternalApplication.OnStartup(UIControlledApplication application)
+        public Result OnStartup(UIControlledApplication application)
         {
             RibbonPanel panel = application.CreateRibbonPanel("Shared parameters");
 

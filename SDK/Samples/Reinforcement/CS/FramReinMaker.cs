@@ -96,12 +96,12 @@ namespace Revit.SDK.Samples.Reinforcement.CS
             }
         }
 
-        /// <summary>
-        /// Implement the Run() method of IFrameReinMaker interface.
-        /// Give the flew process of the reinforcement creation.
-        /// </summary>
-        /// <returns></returns>
-        bool IFrameReinMaker.Run()
+      /// <summary>
+      /// Implement the Run() method of IFrameReinMaker interface.
+      /// Give the flew process of the reinforcement creation.
+      /// </summary>
+      /// <returns></returns>
+      public bool Run()
         {
             // First, check the data whether is right and enough.
             if (!AssertData())

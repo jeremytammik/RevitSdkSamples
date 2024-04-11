@@ -33,6 +33,8 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.DB.Structure;
 
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
+
 namespace Revit.SDK.Samples.CreateWallinBeamProfile.CS
 {
     /// <summary>

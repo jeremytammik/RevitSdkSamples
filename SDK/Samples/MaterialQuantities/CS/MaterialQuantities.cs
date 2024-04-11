@@ -40,7 +40,7 @@ namespace Revit.Samples.MaterialQuantities
     [Autodesk.Revit.Attributes.Regeneration(Autodesk.Revit.Attributes.RegenerationOption.Manual)]
     [Autodesk.Revit.Attributes.Journaling(Autodesk.Revit.Attributes.JournalingMode.NoCommandData)]
 
-    public class Command : IExternalCommand
+    public class Command : IExternalCommand, IDisposable
     {
         static AddInId appId = new AddInId(new Guid("7E5CAC0D-F3D8-4040-89D6-0828D681561B"));
         /// <summary>
@@ -98,6 +98,20 @@ namespace Revit.Samples.MaterialQuantities
         private TextWriter m_writer;
         #endregion
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (m_writer != null)
+                    m_writer.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
     }
 
     /// <summary>

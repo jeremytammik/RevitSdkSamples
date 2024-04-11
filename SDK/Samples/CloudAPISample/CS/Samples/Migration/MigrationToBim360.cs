@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2020 by Autodesk, Inc. All rights reserved.
+// (C) Copyright 2003-2023 by Autodesk, Inc. All rights reserved.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted
@@ -26,10 +26,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Web.Script.Serialization;
 using System.Windows;
 using Autodesk.Revit.DB;
 using Revit.SDK.Samples.CloudAPISample.CS.View;
+using Newtonsoft.Json;
 
 namespace Revit.SDK.Samples.CloudAPISample.CS.Migration
 {
@@ -148,8 +148,7 @@ namespace Revit.SDK.Samples.CloudAPISample.CS.Migration
          }
 
          // All link info should be dump to local file in case something wrong happens during uploading process
-         JavaScriptSerializer serializer = new JavaScriptSerializer();
-         var jsonString = serializer.Serialize(mapLocalModelPathToLinksName);
+         var jsonString = JsonConvert.SerializeObject(mapLocalModelPathToLinksName);
 
          File.WriteAllText(FLinksInfo, jsonString);
 
@@ -186,7 +185,7 @@ namespace Revit.SDK.Samples.CloudAPISample.CS.Migration
             yield return null;
          }
 
-         jsonString = serializer.Serialize(mapModelsNameToGuid);
+         jsonString = JsonConvert.SerializeObject(mapModelsNameToGuid);
          File.WriteAllText(FModelsGuid, jsonString);
 
          view.UpdateUploadingProgress("Uploading finished", 100);
@@ -218,10 +217,9 @@ namespace Revit.SDK.Samples.CloudAPISample.CS.Migration
          // Read mapping info
          var jsonString = File.ReadAllText(FLinksInfo);
 
-         JavaScriptSerializer serializer = new JavaScriptSerializer();
-         var mapLocalModelPathToLinksName = serializer.Deserialize<Dictionary<string, List<string>>>(jsonString);
+         var mapLocalModelPathToLinksName = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(jsonString);
          jsonString = File.ReadAllText(FModelsGuid);
-         var mapModelsNameToGuid = serializer.Deserialize<Dictionary<string, string>>(jsonString);
+         var mapModelsNameToGuid = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
 
          // Try to open each cloud model and reload if they have links, making that point to cloud path.
          foreach (var kvp in mapLocalModelPathToLinksName)

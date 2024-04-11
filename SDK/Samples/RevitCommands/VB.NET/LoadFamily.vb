@@ -83,14 +83,14 @@ Public Class RvtCmd_LoadFamilySymbol
             Dim loadSuccess As Boolean = revitDoc.LoadFamilySymbol(fileName, symName)
             transaction.Commit()
             If (loadSuccess) Then
-                MsgBox("Family " & fileName & ", Type " & symName & " successfully loaded!")
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Family " & fileName & ", Type " & symName & " successfully loaded!")
                 Return Autodesk.Revit.UI.Result.Succeeded
             End If
         Catch ex As Exception
             transaction.RollBack()
         End Try
 
-        MsgBox("ERROR in loading Family " & fileName & ", Type " & symName)
+        Autodesk.Revit.UI.TaskDialog.Show("Revit", "ERROR in loading Family " & fileName & ", Type " & symName)
         Return Autodesk.Revit.UI.Result.Failed
 
     End Function
@@ -143,14 +143,14 @@ Public Class RvtCmd_LoadFamily
             Dim loadSuccess As Boolean = revitDoc.LoadFamily(fullPath)
             transaction.Commit()
             If (loadSuccess) Then
-                MsgBox("Loaded a family ok.")
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Loaded a family ok.")
                 Return Autodesk.Revit.UI.Result.Succeeded
             End If
         Catch ex As Exception
             transaction.RollBack()
         End Try
 
-        MsgBox("Failed to load a family.")
+        Autodesk.Revit.UI.TaskDialog.Show("Revit", "Failed to load a family.")
         'Return Autodesk.Revit.UI.Result.Failed ' bug in Revit 8.0 
         Return Autodesk.Revit.UI.Result.Succeeded
 
@@ -192,7 +192,7 @@ Public Class RvtCmd_LoadFamily
         '  search this directory 
         Dim fname As String
         For Each fname In Directory.GetFiles(path, fileName)
-            MsgBox("I found the file in: " + fname)
+            Autodesk.Revit.UI.TaskDialog.Show("Revit", "I found the file in: " + fname)
             Return path
         Next
 

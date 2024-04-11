@@ -36,9 +36,12 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                if (components != null)
+                    components.Dispose();
+                if (m_profile != null)
+                    m_profile.Dispose();
             }
             base.Dispose(disposing);
         }

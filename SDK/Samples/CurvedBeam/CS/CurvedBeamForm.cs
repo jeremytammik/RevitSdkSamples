@@ -31,6 +31,8 @@ using System.Windows.Forms;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 
+using TaskDialog = Autodesk.Revit.UI.TaskDialog;
+
 namespace Revit.SDK.Samples.CurvedBeam.CS
 {
     /// <summary>

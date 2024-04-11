@@ -193,7 +193,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
             }
             else
             {
-                TaskDialog.Show("Revit", "To edit a roof, you should select a roof or double click a roof in the list first.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "To edit a roof, you should select a roof or double click a roof in the list first.");
             }
         }
 
@@ -213,7 +213,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
                         Autodesk.Revit.DB.FootPrintRoof roof = m_roofsManager.CreateFootPrintRoof(level, roofType);
                         if (roof == null)
                         {
-                            TaskDialog.Show("Revit", "Invalid footprint2");
+                            Autodesk.Revit.UI.TaskDialog.Show("Revit", "Invalid footprint2");
                         }
                         else
                         {
@@ -224,12 +224,12 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
                 }
                 else
                 {
-                    TaskDialog.Show("Revit", "You should supply footprint to create footprint roof, click select button to select footprint in Revit.");
+                    Autodesk.Revit.UI.TaskDialog.Show("Revit", "You should supply footprint to create footprint roof, click select button to select footprint in Revit.");
                 }
             }
             catch (Exception ex)
             {
-                TaskDialog.Show("Revit", ex.Message + " : Footprint must be in closed loops.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", ex.Message + " : Footprint must be in closed loops.");
             }
         }
 
@@ -250,7 +250,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
                         Autodesk.Revit.DB.ExtrusionRoof roof = m_roofsManager.CreateExtrusionRoof(refPlane, level, roofType, m_start, m_end);
                         if (roof == null)
                         {
-                            TaskDialog.Show("Revit", "Invalid profile");
+                            Autodesk.Revit.UI.TaskDialog.Show("Revit", "Invalid profile");
                         }
                         else
                         {
@@ -261,12 +261,12 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
                 }
                 else
                 {
-                    TaskDialog.Show("Revit", "You should supply profile to create extrusion roof, click select button to select profile in Revit.");
+                    Autodesk.Revit.UI.TaskDialog.Show("Revit", "You should supply profile to create extrusion roof, click select button to select profile in Revit.");
                 }
             }
             catch (Exception ex)
             {
-                TaskDialog.Show("Revit", ex.Message);
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", ex.Message);
             }
         }
 
@@ -312,7 +312,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
             }
             catch (Exception ex)
             {
-                TaskDialog.Show("Revit", ex.Message);
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", ex.Message);
                 m_roofsManager.AbortTransaction();
             }
         }
@@ -356,7 +356,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
             }
             catch
             {
-                TaskDialog.Show("Revit", "You should input a decimal value.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "You should input a decimal value.");
                 e.Cancel = true;
             }
         }
@@ -374,7 +374,7 @@ namespace Revit.SDK.Samples.NewRoof.RoofForms.CS
             }
             catch
             {
-                TaskDialog.Show("Revit", "You should input a decimal value.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "You should input a decimal value.");
                 e.Cancel = true;
             }
         }

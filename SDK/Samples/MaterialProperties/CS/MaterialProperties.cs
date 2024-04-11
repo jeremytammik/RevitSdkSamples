@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2019 by Autodesk, Inc. 
+// (C) Copyright 2003-2023 by Autodesk, Inc. 
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -165,7 +165,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             if (!Init())
             {
                 // there must be exactly one beam, column or brace selected
-                TaskDialog.Show("Revit", "You should select only one beam, structural column or brace.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "You should select only one beam, structural column or brace.");
                 return Autodesk.Revit.UI.Result.Failed;
             }
 
@@ -178,7 +178,7 @@ namespace Revit.SDK.Samples.MaterialProperties.CS
             }
             catch
             {
-                TaskDialog.Show("Revit", "Sorry that your command failed.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Sorry that your command failed.");
                 return Autodesk.Revit.UI.Result.Failed;
             }
             documentTransaction.Commit();

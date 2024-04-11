@@ -35,7 +35,7 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
    /// <summary>
    /// This class stores the geometry information of path reinforcement.
    /// </summary>
-   class Profile
+   class Profile : IDisposable
    {
       /// <summary>
       /// field used to store path reinforcement.
@@ -62,7 +62,7 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
       /// field used to store the bound of the curves of path reinforcement.
       /// 2d data.
       /// </summary>
-      private BoundingBoxUV m_box = new BoundingBoxUV();
+      private BoundingBoxUV m_box;
 
       /// <summary>
       /// field used to store the geometry data of curves of path reinforcement.
@@ -82,6 +82,7 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
       /// <param name="commandData">External command data</param>
       public Profile(Autodesk.Revit.DB.Structure.PathReinforcement pathRein, ExternalCommandData commandData)
       {
+         m_box = new BoundingBoxUV();
          m_pathRein = pathRein;
          m_commandData = commandData;
          Tessellate();
@@ -269,6 +270,21 @@ namespace Revit.SDK.Samples.PathReinforcement.CS
          Autodesk.Revit.DB.XYZ vYAxis = activeView.UpDirection;
 
          return new Matrix4(new Vector4(vXAxis), new Vector4(vYAxis), new Vector4(vZAxis));
+      }
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (disposing)
+         {
+            if (m_box != null)
+               m_box.Dispose();
+         }
+      }
+
+      public void Dispose()
+      {
+         Dispose(disposing: true);
+         GC.SuppressFinalize(this);
       }
    }
 }

@@ -32,7 +32,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
    /// <summary>
    /// maintain the baseline of the curtain wall
    /// </summary>
-   public class WallDrawing
+   public class WallDrawing : IDisposable
    {
       #region Fields
       // zoom the baseline to a suitable length
@@ -291,5 +291,20 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
              new PointF(m_wallLine2D.AssistantPoint.X + 2, m_wallLine2D.AssistantPoint.Y + 2));
       }
       #endregion
+
+      protected virtual void Dispose(bool disposing)
+      {
+         if (disposing)
+         {
+            if (m_coordinateFont != null)
+               m_coordinateFont.Dispose();
+         }
+      }
+
+      public void Dispose()
+      {
+         Dispose(disposing: true);
+         GC.SuppressFinalize(this);
+      }
    }
 }

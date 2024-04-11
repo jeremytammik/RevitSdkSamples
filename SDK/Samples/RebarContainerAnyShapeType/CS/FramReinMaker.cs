@@ -174,7 +174,7 @@ namespace Revit.SDK.Samples.RebarContainerAnyShapeType.CS
         /// Give the flew process of the reinforcement creation.
         /// </summary>
         /// <returns></returns>
-        bool IFrameReinMaker.Run()
+        public bool Run()
         {
             // First, check the data whether is right and enough.
             if (!AssertData())

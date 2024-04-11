@@ -53,7 +53,7 @@ namespace Revit.SDK.Samples.SlabShapeEditing.CS
         int m_clickedIndex; //index of crease and vertex which mouse clicked.
         ArrayList m_createdVertices; // new created vertices
         ArrayList m_createCreases; // new created creases
-        SlabShapeEditor m_slabShapeEditor; //object use to edit slab shape
+        private SlabShapeEditor m_slabShapeEditor; //object use to edit slab shape
         SlabShapeCrease m_selectedCrease; //selected crease, mouse clicked on
         SlabShapeVertex m_selectedVertex; //selected vertex, mouse clicked on
         EditorState editorState; //state of user's operation
@@ -277,20 +277,22 @@ namespace Revit.SDK.Samples.SlabShapeEditing.CS
         /// <param name="e">event args</param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            if (-1 == m_clickedIndex) { TaskDialog.Show("Revit", selectFirst); return; }
+            if (-1 == m_clickedIndex) { Autodesk.Revit.UI.TaskDialog.Show("Revit", selectFirst); return; }
 
             double moveDistance = 0;
             try { moveDistance = Convert.ToDouble(this.DistanceTextBox.Text); }
-            catch (Exception) { TaskDialog.Show("Revit", justNumber); return; }
+            catch (Exception) { Autodesk.Revit.UI.TaskDialog.Show("Revit", justNumber); return; }
 
-            Transaction transaction = new Transaction(
-               m_commandData.Application.ActiveUIDocument.Document, "Update");
-            transaction.Start();
-            if (null != m_selectedCrease)
-            { m_slabShapeEditor.ModifySubElement(m_selectedCrease, moveDistance); }
-            else if (null != m_selectedVertex)
-            { m_slabShapeEditor.ModifySubElement(m_selectedVertex, moveDistance); }
-            transaction.Commit();
+            using (Transaction transaction = new Transaction(
+               m_commandData.Application.ActiveUIDocument.Document, "Update"))
+            {
+                transaction.Start();
+                if (null != m_selectedCrease)
+                { m_slabShapeEditor.ModifySubElement(m_selectedCrease, moveDistance); }
+                else if (null != m_selectedVertex)
+                { m_slabShapeEditor.ModifySubElement(m_selectedVertex, moveDistance); }
+                transaction.Commit();
+            }
             //re-calculate geometry info
             m_slabProfile.GetSlabProfileInfo();
             this.SlabShapePictureBox.Refresh();

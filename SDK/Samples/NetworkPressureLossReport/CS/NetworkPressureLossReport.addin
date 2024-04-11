@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Command">
-    <Assembly>D:\git\revit\RevitAdditions\RevitSDK\Software Development Kit\Samples\NetworkPressureLossReport\CS\bin\Debug\NetworkPressureLossReport.dll</Assembly>
+    <Assembly>NetworkPressureLossReport.dll</Assembly>
     <ClientId>a000b64b-a718-48e7-bf5c-7f1f7452490b</ClientId>
     <FullClassName>Revit.SDK.Samples.NetworkPressureLossReport.Command</FullClassName>
     <Text>Pressure Loss Report</Text>

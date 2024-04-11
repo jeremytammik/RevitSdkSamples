@@ -156,7 +156,7 @@ namespace Revit.SDK.Samples.NewRebar.CS
             // Make sure the name is not null or empty.
             if (string.IsNullOrEmpty(nameTextBox.Text.Trim()))
             {
-                TaskDialog.Show("Revit", "Please give a name to create a rebar shape.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Please give a name to create a rebar shape.");
                 return;
             }
 
@@ -165,7 +165,7 @@ namespace Revit.SDK.Samples.NewRebar.CS
             Regex regex = new Regex("^[a-zA-Z]\\w+$");
             if (!regex.IsMatch(nameTextBox.Text.Trim()))
             {
-                TaskDialog.Show("Revit", "Please input the name starting with letter and just containing letters, numbers and underlines. String is " + nameTextBox.Text.ToString());
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Please input the name starting with letter and just containing letters, numbers and underlines. String is " + nameTextBox.Text.ToString());
                 nameTextBox.Focus();
                 return;
             }
@@ -199,7 +199,7 @@ namespace Revit.SDK.Samples.NewRebar.CS
                 }
                 else
                 {
-                    TaskDialog.Show("Revit", "Please input a valid positive integer as segments count.");
+                    Autodesk.Revit.UI.TaskDialog.Show("Revit", "Please input a valid positive integer as segments count.");
                     return;
                 }
             }

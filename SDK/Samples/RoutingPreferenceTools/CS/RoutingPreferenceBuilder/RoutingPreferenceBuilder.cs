@@ -96,10 +96,10 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
                 {
                     ParseFamilyFromXml(xfamily, findFolderUtility);  //Load families.
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     loadFamilies.RollBack();
-                    throw ex;
+                    throw;
                 }
             loadFamilies.Commit();
 
@@ -111,10 +111,10 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
                 {
                     ParsePipeTypeFromXml(xpipeType);  //Define new pipe types.
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     addPipeTypes.RollBack();
-                    throw ex;
+                    throw;
                 }
             addPipeTypes.Commit();
 
@@ -126,10 +126,10 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
                 {
                     ParsePipeScheduleTypeFromXml(xpipeScheduleType);  //Define new pipe schedule types.
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     addPipeSchedules.RollBack();
-                    throw ex;
+                    throw;
                 }
             addPipeSchedules.Commit();
 
@@ -146,10 +146,10 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
                 {
                     ParsePipeSegmentFromXML(xpipeSegment);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     addPipeSchedules.RollBack();
-                    throw ex;
+                    throw;
                 }
             addPipeSchedules.Commit();
 
@@ -165,10 +165,10 @@ namespace Revit.SDK.Samples.RoutingPreferenceTools.CS
                 {
                     ParseRoutingPreferenceManagerFromXML(xroutingPreferenceManager);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     addRoutingPreferences.RollBack();
-                    throw ex;
+                    throw;
                 }
             addRoutingPreferences.Commit();
 

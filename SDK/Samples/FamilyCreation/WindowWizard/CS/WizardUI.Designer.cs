@@ -1,5 +1,5 @@
 ﻿//
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -35,10 +35,19 @@ namespace Revit.SDK.Samples.WindowWizard.CS
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
-            }
+               if(components != null)
+                  components.Dispose();
+               if (bindSource != null)
+                  bindSource.Dispose();
+               if (m_newTip != null)
+                  m_newTip.Dispose();
+               if (m_copyTip != null)
+                  m_copyTip.Dispose();
+               if (m_errorTip != null)
+                  m_errorTip.Dispose();
+         }
             base.Dispose(disposing);
         }
 

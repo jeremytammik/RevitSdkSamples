@@ -29,7 +29,7 @@ Imports System.Collections
 
 Imports Autodesk.Revit.DB
 Imports Autodesk.Revit.UI
-Imports Autodesk.Revit.DB.Structure
+Imports autodesk.Revit.DB.Structure
 
 ' All Autodesk Revit external commands must support this interface
 
@@ -168,7 +168,7 @@ Public Class MaterialProperties
         m_revit = revit
         If Not (Init()) Then
             'there must be exactly one beam, column or brace selected
-            TaskDialog.Show("Revit", "You should select only one beam, structural column or brace.")
+            Autodesk.Revit.UI.TaskDialog.Show("Revit", "You should select only one beam, structural column or brace.")
             Return Autodesk.Revit.UI.Result.Failed
         End If
 
@@ -178,7 +178,7 @@ Public Class MaterialProperties
         Try
             displayForm.ShowDialog()
         Catch ex As Exception
-            TaskDialog.Show("Revit", "Sorry that your command failed.")
+            Autodesk.Revit.UI.TaskDialog.Show("Revit", "Sorry that your command failed.")
             Return Autodesk.Revit.UI.Result.Failed
         End Try
         documentTransaction.Commit()

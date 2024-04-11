@@ -128,7 +128,7 @@ namespace Revit.SDK.Samples.RebarFreeForm.CS
                      List<Reference> refs = new List<Reference>();
                      refs.Add(reference);
                      RebarConstraint constraint = RebarConstraint.Create(handle, refs, true, 0.0);
-                     rManager.SetPreferredConstraintForHandle(handle, constraint);
+                     rManager.SetPreferredConstraint(constraint);
                   }
                   catch (Exception e)
                   {

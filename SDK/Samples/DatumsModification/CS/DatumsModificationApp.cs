@@ -44,7 +44,7 @@ namespace Revit.SDK.Samples.DatumsModification.CS
     {
         static string AddInPath = typeof(DatumsModificationApp).Assembly.Location;
         // Button icons directory
-        static string ButtonIconsFolder = Path.GetDirectoryName(AddInPath);
+        static string ButtonIconsFolder = Path.Combine(Path.GetDirectoryName(AddInPath), "Resources");
         #region IExternalApplication Members
         /// <summary>
         /// Implements the OnShutdown event
@@ -65,11 +65,11 @@ namespace Revit.SDK.Samples.DatumsModification.CS
         {
            RibbonPanel ribbonPanel = application.CreateRibbonPanel("DatumModification");
            PushButtonData styleSettingButton = new PushButtonData("DatumStyle", "Datum Style", AddInPath, "Revit.SDK.Samples.DatumsModification.CS.DatumStyleModification");
-           styleSettingButton.LargeImage = new BitmapImage(new Uri(Path.Combine(ButtonIconsFolder, "Style.png"), UriKind.Absolute)); ;
+           styleSettingButton.LargeImage = new BitmapImage(new Uri(Path.Combine(ButtonIconsFolder, "Style.png"), UriKind.Absolute));
            PushButtonData alignSettingButton = new PushButtonData("AlignDatum", "Align Datums", AddInPath, "Revit.SDK.Samples.DatumsModification.CS.DatumAlignment");
-           alignSettingButton.LargeImage = new BitmapImage(new Uri(Path.Combine(ButtonIconsFolder, "Align.png"), UriKind.Absolute)); ;
+           alignSettingButton.LargeImage = new BitmapImage(new Uri(Path.Combine(ButtonIconsFolder, "Align.png"), UriKind.Absolute));
            PushButtonData propagateButton = new PushButtonData("PropagateDatum", "Propagate Extents", AddInPath, "Revit.SDK.Samples.DatumsModification.CS.DatumPropagation");
-           propagateButton.LargeImage = new BitmapImage(new Uri(Path.Combine(ButtonIconsFolder, "Propagate.png"), UriKind.Absolute)); ;         
+           propagateButton.LargeImage = new BitmapImage(new Uri(Path.Combine(ButtonIconsFolder, "Propagate.png"), UriKind.Absolute));
            
            ribbonPanel.AddItem(styleSettingButton);
            ribbonPanel.AddItem(alignSettingButton);

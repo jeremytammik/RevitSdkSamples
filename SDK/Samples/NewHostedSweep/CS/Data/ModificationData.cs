@@ -29,6 +29,7 @@ using Autodesk.Revit;
 using Autodesk.Revit.DB.Architecture;
 using System.Drawing.Design;
 using System.ComponentModel;
+using System.Transactions;
 
 namespace Revit.SDK.Samples.NewHostedSweep.CS
 {
@@ -57,11 +58,6 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
         /// </summary>
         private UIDocument m_rvtUIDoc;
 
-        /// <summary>
-        /// Sub transaction
-        /// </summary>
-        Transaction m_transaction;
-
 
         /// <summary>
         /// Constructor with HostedSweep and CreationData as parameters.
@@ -74,8 +70,6 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
             m_rvtUIDoc = creationData.Creator.RvtUIDocument;
             m_elemToModify = elem;
             m_creationData = creationData;
-
-            m_transaction = new Transaction(m_rvtDoc, "External Tool");
 
             m_creationData.EdgeAdded +=
                 new CreationData.EdgeEventHandler(m_creationData_EdgeAdded);
@@ -102,15 +96,18 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
         /// <param name="sym"></param>
         private void m_creationData_SymbolChanged(ElementType sym)
         {
-            try
+            using (var transaction = new Autodesk.Revit.DB.Transaction(m_rvtDoc, "External Tool"))
             {
-                StartTransaction();
-                m_elemToModify.ChangeTypeId(sym.Id);
-                CommitTransaction();
-            }
-            catch
-            {
-                RollbackTransaction();
+                try
+                {
+                    transaction.Start();
+                    m_elemToModify.ChangeTypeId(sym.Id);
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.RollBack();
+                }
             }
 
         }
@@ -121,15 +118,18 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
         /// <param name="edge"></param>
         private void m_creationData_EdgeRemoved(Edge edge)
         {
-            try
+            using (var transaction = new Autodesk.Revit.DB.Transaction(m_rvtDoc, "External Tool"))
             {
-                StartTransaction();
-                m_elemToModify.RemoveSegment(edge.Reference);
-                CommitTransaction();
-            }
-            catch
-            {
-                RollbackTransaction();
+                try
+                {
+                    transaction.Start();
+                    m_elemToModify.RemoveSegment(edge.Reference);
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.RollBack();
+                }
             }
         }
 
@@ -139,26 +139,29 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
         /// <param name="edge"></param>
         private void m_creationData_EdgeAdded(Edge edge)
         {
-            try
-            {    
-                StartTransaction();
-                if (m_elemToModify is Fascia)
-                {
-                    (m_elemToModify as Fascia).AddSegment(edge.Reference);
-                }
-                else if (m_elemToModify is Gutter)
-                {
-                    (m_elemToModify as Gutter).AddSegment(edge.Reference);
-                }
-                else if (m_elemToModify is SlabEdge)
-                {
-                    (m_elemToModify as SlabEdge).AddSegment(edge.Reference);
-                }
-                CommitTransaction();
-            }
-            catch
+            using (var transaction = new Autodesk.Revit.DB.Transaction(m_rvtDoc, "External Tool"))
             {
-                RollbackTransaction();
+               try
+               {    
+                    transaction.Start();
+                    if (m_elemToModify is Fascia)
+                    {
+                        (m_elemToModify as Fascia).AddSegment(edge.Reference);
+                    }
+                    else if (m_elemToModify is Gutter)
+                    {
+                        (m_elemToModify as Gutter).AddSegment(edge.Reference);
+                    }
+                    else if (m_elemToModify is SlabEdge)
+                    {
+                        (m_elemToModify as SlabEdge).AddSegment(edge.Reference);
+                    }
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.RollBack();
+                }
             }
         }
 
@@ -167,15 +170,19 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
         /// </summary>
         public void ShowElement()
         {
-            try
+         
+            using (var transaction = new Autodesk.Revit.DB.Transaction(m_rvtDoc, "External Tool"))
             {
-                StartTransaction();
-                m_rvtUIDoc.ShowElements(m_elemToModify);
-                CommitTransaction();
-            }
-            catch
-            {
-                RollbackTransaction();
+                try
+                {
+                    transaction.Start();
+                    m_rvtUIDoc.ShowElements(m_elemToModify);
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.RollBack();
+                }
             }
         }
 
@@ -208,19 +215,22 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
             }
             set
             {
-                try
+                using (var transaction = new Autodesk.Revit.DB.Transaction(m_rvtDoc, "External Tool"))
                 {
-                    StartTransaction();
-                    Parameter angle = GetParameter("Angle");
-                    if (angle != null)
-                        angle.SetValueString(value);
-                    else
-                        m_elemToModify.Angle = double.Parse(value);
-                    CommitTransaction();
-                }
-                catch
-                {
-                    RollbackTransaction();
+                    try
+                    {
+                        transaction.Start();
+                        Parameter angle = GetParameter("Angle");
+                        if (angle != null)
+                            angle.SetValueString(value);
+                        else
+                            m_elemToModify.Angle = double.Parse(value);
+                        transaction.Commit();
+                    }
+                    catch
+                    {
+                        transaction.RollBack();
+                    }
                 }
             }
         }
@@ -267,15 +277,19 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
             {
                 if (value != m_elemToModify.HorizontalFlipped)
                 {
-                    try
+               
+                    using (var transaction = new Autodesk.Revit.DB.Transaction(m_rvtDoc, "External Tool"))
                     {
-                        StartTransaction();
-                        m_elemToModify.HorizontalFlip();
-                        CommitTransaction();
-                    }
-                    catch
-                    {
-                        RollbackTransaction();
+                        try
+                        {
+                            transaction.Start();
+                            m_elemToModify.HorizontalFlip();
+                            transaction.Commit();
+                        }
+                        catch
+                        {
+                            transaction.RollBack();
+                        }
                     }
                 }
             }
@@ -297,19 +311,22 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
             }
             set
             {
-                try
-                {
-                    StartTransaction();
-                    Parameter horiOff = GetParameter("Horizontal Profile Offset");
-                    if (horiOff != null)
-                        horiOff.SetValueString(value);
-                    else
-                        m_elemToModify.HorizontalOffset = double.Parse(value); 
-                    CommitTransaction();
-                }
-                catch
-                {
-                    RollbackTransaction();
+               using (var transaction = new Autodesk.Revit.DB.Transaction(m_rvtDoc, "External Tool"))
+               {
+                   try
+                   {
+                       transaction.Start();
+                       Parameter horiOff = GetParameter("Horizontal Profile Offset");
+                       if (horiOff != null)
+                           horiOff.SetValueString(value);
+                       else
+                           m_elemToModify.HorizontalOffset = double.Parse(value); 
+                       transaction.Commit();
+                   }
+                   catch
+                   {
+                       transaction.RollBack();
+                   }
                 }
             }
         }
@@ -328,15 +345,19 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
             {
                 if (value != m_elemToModify.VerticalFlipped)
                 {
-                    try
+               
+                    using (var transaction = new Autodesk.Revit.DB.Transaction(m_rvtDoc, "External Tool"))
                     {
-                        StartTransaction();
-                        m_elemToModify.VerticalFlip();
-                        CommitTransaction();
-                    }
-                    catch
-                    {
-                        RollbackTransaction();
+                        try
+                        {
+                            transaction.Start();
+                            m_elemToModify.VerticalFlip();
+                            transaction.Commit();
+                        }
+                        catch
+                        {
+                            transaction.RollBack();
+                        }
                     }
                 }
             }
@@ -358,19 +379,22 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
             }
             set 
             {
-                try
+                using (var transaction = new Autodesk.Revit.DB.Transaction(m_rvtDoc, "External Tool"))
                 {
-                    StartTransaction();
-                    Parameter vertOff = GetParameter("Vertical Profile Offset");
-                    if (vertOff != null)
-                        vertOff.SetValueString(value);
-                    else 
-                        m_elemToModify.VerticalOffset = double.Parse(value); 
-                    CommitTransaction();
-                }
-                catch
-                {
-                    RollbackTransaction();
+                    try
+                    {
+                        transaction.Start();
+                        Parameter vertOff = GetParameter("Vertical Profile Offset");
+                        if (vertOff != null)
+                            vertOff.SetValueString(value);
+                        else 
+                            m_elemToModify.VerticalOffset = double.Parse(value); 
+                        transaction.Commit();
+                     }
+                    catch
+                    {
+                        transaction.RollBack();
+                    }
                 }
             }
         }
@@ -383,22 +407,6 @@ namespace Revit.SDK.Samples.NewHostedSweep.CS
         protected Parameter GetParameter(String name)
         {
             return m_elemToModify.LookupParameter(name);
-        }
-
-
-        public TransactionStatus StartTransaction()
-        {
-            return m_transaction.Start();
-        }
-
-        public TransactionStatus CommitTransaction()
-        {
-            return m_transaction.Commit();
-        }
-
-        public TransactionStatus RollbackTransaction()
-        {
-            return m_transaction.RollBack();
         }
     }
 }

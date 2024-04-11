@@ -105,7 +105,7 @@ Public Class Command
     ''' <remarks></remarks>
     Function LaunchExcel() As MsExcel.Application
 
-        Dim excel As MsExcel.Application = New MsExcel.ApplicationClass()
+        Dim excel As MsExcel.Application = New MsExcel.Application()
 
         If (excel Is Nothing) Then
             Return Nothing

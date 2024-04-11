@@ -33,7 +33,7 @@ namespace Revit.SDK.Samples.FoundationSlab.CS
     /// <summary>
     /// A class of regular slab.
     /// </summary>
-    public class RegularSlab
+    public class RegularSlab : IDisposable
     {
         bool m_selected = true; // Be selected or not.
         string m_mark;   // The mark of the slab.
@@ -187,5 +187,19 @@ namespace Revit.SDK.Samples.FoundationSlab.CS
             return true;
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((IDisposable)m_maxBBox)?.Dispose();
+                ((IDisposable)m_octagonalProfile)?.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
     }
 }

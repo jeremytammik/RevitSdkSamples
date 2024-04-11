@@ -363,7 +363,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
                 }
                 catch (System.Exception e)
                 {
-                    TaskDialog.Show("Exception", e.Message);
+                    Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                     return;
                 }
             }
@@ -429,7 +429,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
                     }
                     catch (System.Exception e)
                     {
-                        TaskDialog.Show("Exception", e.Message);
+                        Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                         return;
                     }
                 }
@@ -456,7 +456,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
                     }
                     catch (System.Exception e)
                     {
-                        TaskDialog.Show("Exception", e.Message);
+                        Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                         return;
                     }
                 }
@@ -498,7 +498,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
                     }
                     catch (System.Exception e)
                     {
-                        TaskDialog.Show("Exception", e.Message);
+                        Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                         return;
                     }
                 }
@@ -524,7 +524,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
                     }
                     catch (System.Exception e)
                     {
-                        TaskDialog.Show("Exception", e.Message);
+                        Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                         return;
                     }
                 }
@@ -586,7 +586,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
             }
             catch (System.Exception e)
             {
-                TaskDialog.Show("Exception", e.Message);
+                Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                 // "add U line" failed, so return directly
                 return;
             }
@@ -641,7 +641,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
             }
             catch (System.Exception e)
             {
-                TaskDialog.Show("Exception", e.Message);
+                Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                 // "add V line" failed, so return directly
                 return;
             }
@@ -756,7 +756,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
                 }
                 catch (System.Exception e)
                 {
-                    TaskDialog.Show("Exception", e.Message);
+                    Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                     return false;
                 }
                 act.Commit();
@@ -805,7 +805,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
                 }
                 catch (System.Exception e)
                 {
-                    TaskDialog.Show("Exception", e.Message);
+                    Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                     return false;
                 }
                 act.Commit();
@@ -867,7 +867,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
             }
             catch (System.Exception e)
             {
-                TaskDialog.Show("Exception", e.Message);
+                Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                 return;
             }
             act.Commit();
@@ -899,7 +899,7 @@ namespace Revit.SDK.Samples.CurtainWallGrid.CS
             }
             catch (System.Exception e)
             {
-                TaskDialog.Show("Exception", e.Message);
+                Autodesk.Revit.UI.TaskDialog.Show("Exception", e.Message);
                 return;
             }
             act.Commit();

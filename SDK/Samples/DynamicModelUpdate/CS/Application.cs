@@ -37,7 +37,7 @@ namespace Revit.SDK.Samples.DynamicModelUpdate.CS
     //
 
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
-    public class AssociativeSectionUpdater : Autodesk.Revit.UI.IExternalCommand
+    public sealed class AssociativeSectionUpdater : Autodesk.Revit.UI.IExternalCommand
     {
         Document m_document;
         UIDocument m_documentUI;

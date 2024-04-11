@@ -112,7 +112,7 @@ namespace Revit.SDK.Samples.NewRebar.CS
         {
             if (string.IsNullOrEmpty(ParamName) || string.IsNullOrEmpty(ParamValue))
             {
-                TaskDialog.Show("Revit", "Parameter Name and Value should not be null.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Parameter Name and Value should not be null.");
                 return;
             }
 
@@ -124,7 +124,7 @@ namespace Revit.SDK.Samples.NewRebar.CS
                 }
                 catch
                 {
-                    TaskDialog.Show("Revit", "Input value - " + ParamValue + " - should be double.");
+                    Autodesk.Revit.UI.TaskDialog.Show("Revit", "Input value - " + ParamValue + " - should be double.");
                     return;
                 }
             }
@@ -134,7 +134,7 @@ namespace Revit.SDK.Samples.NewRebar.CS
             Regex regex = new Regex("^[a-zA-Z]\\w*$");
             if (!regex.IsMatch(ParamName))
             {
-                TaskDialog.Show("Revit", "Parameter name should be started with letter \r\n And just contains letters, numbers and underlines.");
+                Autodesk.Revit.UI.TaskDialog.Show("Revit", "Parameter name should be started with letter \r\n And just contains letters, numbers and underlines.");
                 paramNameTextBox.Focus();
                 return;
             }
@@ -144,7 +144,7 @@ namespace Revit.SDK.Samples.NewRebar.CS
             {
                 if (param.Name.Equals(ParamName))
                 {
-                    TaskDialog.Show("Revit", "The name is already exist, please input again.");
+                    Autodesk.Revit.UI.TaskDialog.Show("Revit", "The name is already exist, please input again.");
                     paramNameTextBox.Focus();
                     return;
                 }

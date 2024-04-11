@@ -23,7 +23,6 @@
 using System;
 using System.Collections.Generic;
 using Autodesk.Revit.DB;
-using Autodesk.Revit.DB.ExtensibleStorage;
 using Autodesk.Revit.UI;
 
 namespace Revit.SDK.Samples.DynamicModelUpdate.CS
@@ -32,7 +31,7 @@ namespace Revit.SDK.Samples.DynamicModelUpdate.CS
     /// <summary>
     /// Updater to automatically move a section in conjunction with the location of a window
     /// </summary>
-    public class SectionUpdater : IUpdater
+    public class SectionUpdater : IUpdater, IDisposable
     {
         internal SectionUpdater(AddInId addinID)
         {
@@ -194,6 +193,21 @@ namespace Revit.SDK.Samples.DynamicModelUpdate.CS
         private ElementId m_windowId = null;
         private ElementId m_sectionId = null;   // The real ViewSection that contains the Origin and ViewDirection
         private Element m_sectionElement = null;    // The view section element to move and rotate
-    }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((IDisposable)m_updaterId)?.Dispose();
+                ((IDisposable)m_sectionElement)?.Dispose();
+            }
+        }
+        
+        public void Dispose()
+        {
+           // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+           Dispose(disposing: true);
+           GC.SuppressFinalize(this);
+        }
+    }
 }

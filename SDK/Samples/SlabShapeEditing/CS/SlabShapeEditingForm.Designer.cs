@@ -1,5 +1,5 @@
 //
-// (C) Copyright 2003-2019 by Autodesk, Inc.
+// (C) Copyright 2003-2023 by Autodesk, Inc.
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -34,9 +34,16 @@ namespace Revit.SDK.Samples.SlabShapeEditing.CS
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                if (components != null)
+                    components.Dispose();
+                if (m_toolPen != null)
+                    m_toolPen.Dispose();
+                if (m_selectPen != null)
+                    m_selectPen.Dispose();
+                if (m_profilePen != null)
+                    m_profilePen.Dispose();
             }
             base.Dispose(disposing);
         }

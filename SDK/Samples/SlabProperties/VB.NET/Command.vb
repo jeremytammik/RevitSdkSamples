@@ -105,7 +105,7 @@ Public Class Command
 
         Catch displayProblem As Exception
 
-            TaskDialog.Show("Revit", displayProblem.ToString())
+            UI.TaskDialog.Show("Revit", displayProblem.ToString())
             Return Autodesk.Revit.UI.Result.Failed
 
         End Try
@@ -296,14 +296,14 @@ Public Class Command
         If m_slabComponent.IsEmpty Then
 
             'nothing selected
-            TaskDialog.Show("Revit", "Please select a slab.")
+            UI.TaskDialog.Show("Revit", "Please select a slab.")
 
             Return False
 
         ElseIf 1 <> m_slabComponent.Size Then
 
             'too many things selected
-            TaskDialog.Show("Revit", "Please select only one slab.")
+            UI.TaskDialog.Show("Revit", "Please select only one slab.")
 
             Return False
 
