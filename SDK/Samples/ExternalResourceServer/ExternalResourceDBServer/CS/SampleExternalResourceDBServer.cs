@@ -330,24 +330,24 @@ namespace Revit.SDK.Samples.ExternalResourceDBServer.CS
       public virtual void GetTypeSpecificServerOperations(ExternalResourceServerExtensions extensions)
       {
          RevitLinkOperations revitLinkOps = extensions.GetRevitLinkOperations();
-         revitLinkOps.SetGetLocalPathForOpenCallback(new GetLinkPathForOpen());
-         revitLinkOps.SetOnLocalLinkSharedCoordinatesSavedCallback(new LocalLinkSharedCoordinatesSaved());
-      }
+      //revitLinkOps.SetGetLocalPathForOpenCallback(new GetLinkPathForOpen()); // jeremy
+      //revitLinkOps.SetOnLocalLinkSharedCoordinatesSavedCallback(new LocalLinkSharedCoordinatesSaved()); // jeremy
+    }
 
-      #endregion IExternalResourceServer Implementation
+    #endregion IExternalResourceServer Implementation
 
 
 
-      #region SampleExternalResourceDBServer Implementation
+    #region SampleExternalResourceDBServer Implementation
 
-      /// <summary>
-      /// <para>Returns the path of the server's root folder.  The contents of this folder will be displayed
-      /// when the user first selects this server while browsing to load keynote data or a Revit link
-      /// (unless the user loading keynote data is in France or Germany).</para>
-      /// <para>For this example server, the root folder is simply a directory immediately under the folder
-      /// where the DLL for this assembly is located.</para>
-      /// </summary>
-      private static String RootFolder
+    /// <summary>
+    /// <para>Returns the path of the server's root folder.  The contents of this folder will be displayed
+    /// when the user first selects this server while browsing to load keynote data or a Revit link
+    /// (unless the user loading keynote data is in France or Germany).</para>
+    /// <para>For this example server, the root folder is simply a directory immediately under the folder
+    /// where the DLL for this assembly is located.</para>
+    /// </summary>
+    private static String RootFolder
       {
          get
          {
