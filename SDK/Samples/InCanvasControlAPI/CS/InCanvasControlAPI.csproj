@@ -10,10 +10,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="issue.bmp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="selected.bmp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.targets" />

@@ -17,7 +17,7 @@
   <ItemGroup>
     <None Include="..\Generic Model.rft">
       <Link>Generic Model.rft</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.targets" />
