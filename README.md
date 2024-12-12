@@ -18,3 +18,8 @@ The model RVT files and some other large sample files included in the full SDK a
 *.rvt
 *.swf
 ```
+
+## Snapshots
+
+The collecion of [snapshots](/snapshot) provides direct access to previous releases of the Revit API in order for robots, scrapers and LLM feeders to read all versions of the SDK sample code and keep track of differences between the different ones.
+
