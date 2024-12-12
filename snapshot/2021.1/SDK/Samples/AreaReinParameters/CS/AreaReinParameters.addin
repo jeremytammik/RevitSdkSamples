@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AreaReinParameters.dll</Assembly>
+    <ClientId>5dd706f7-c50c-4602-80f0-fe7309812ec8</ClientId>
+    <FullClassName>Revit.SDK.Samples.AreaReinParameters.CS.Command</FullClassName>
+    <Text>AreaReinParameters</Text>
+    <Description>Show parameters of selected AreaReinforcement and allow user to modify</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>AreaReinParameters.dll</Assembly>
+    <ClientId>98be928e-7eec-49d8-80ed-fe75d98ca0a8</ClientId>
+    <FullClassName>Revit.SDK.Samples.AreaReinParameters.CS.RebarParas</FullClassName>
+    <Text>RebarParameters</Text>
+    <Description>Show all parameters of selected Rebar</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

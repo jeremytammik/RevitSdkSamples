@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DatumsModification.dll</Assembly>
+    <ClientId>d831df7c-d9d0-41d5-ab83-d1df2a412351</ClientId>
+    <FullClassName>Revit.SDK.Samples.DatumsModification.CS.Command</FullClassName>
+    <Text>Datumplane modification</Text>
+    <Description>Datumplane modification</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>DatumsModification</Name>
+    <Assembly>DatumsModification.dll</Assembly>
+    <ClientId>7f6460ca-9829-4701-90e6-1c66273891d4</ClientId>
+    <FullClassName>Revit.SDK.Samples.DatumsModification.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,196 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Listing Groups and Group Types</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs5-2.htm">next</a>
+<a class="j" href="labs4-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<p>Groups of elements are useful when users need to create entities that
+represent repeating layouts or are common to many building projects.
+In this lab, we shall list all the existing groups in a Revit model and
+display their group Id and group type. This can be done by filtering all the
+elements of Group type and displaying the property of each. The latter part of
+the lab focuses on listing all the available GroupTypes and listing the
+properties of each GroupType element. It will also cover extracting all the
+'Model' group types from the Revit model and displaying their names.</p>
+
+<p>Using the new filtering mechanism in Revit 2009, we can select all
+elements of 'Group' type only.
+This avoids iterating through all the elements in the model and thus is
+a huge performance advantage. Once we collect
+all the group elements, we will simply display some of the properties
+like Id, Name etc. of each group:</p>
+
+<pre class="jtcollapse" title="C# List all groups in model">
+using RvtElement = Autodesk.Revit.Element;
+public class Lab5_1_GroupsAndGroupTypes : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+
+      // List all Group Elements
+      List&lt;RvtElement&gt; groups = new List&lt;RvtElement&gt;();
+      Filter filterType = app.Create.Filter.NewTypeFilter( typeof( Group ) );
+      app.ActiveDocument.get_Elements( filterType, groups );
+
+      string sMsg = "All GROUPS in the doc are:\r\n";
+      foreach( Group grp in groups )
+      {
+        sMsg += "\r\n  Id=" + grp.Id.Value.ToString() + "; Type=" + grp.GroupType.Name;
+      }
+      LabUtils.InfoMsg( sMsg );
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre class="jtcollapse" title="VB List all groups in model">    Public Class Lab5_1_GroupsAndGroupTypes
+        Implements IExternalCommand
+
+        Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, _
+        ByRef message As String, ByVal elements As Autodesk.Revit.ElementSet) As Autodesk.Revit.IExternalCommand.Result _
+        Implements Autodesk.Revit.IExternalCommand.Execute
+
+            Dim app As Revit.Application = commandData.Application
+
+            ' List all Group Elements using filtering mechanism in 2009
+            Dim groups As New List(Of Element)
+            Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(Group))
+            Dim iRetVal As Integer = app.ActiveDocument.Elements(filterType, groups)
+
+            Dim sMsg As String = "All GROUPS in the doc are:" & vbCrLf
+            Dim grp As Group
+            For Each grp In groups
+                sMsg += vbCrLf + "  Id=" & grp.Id.Value.ToString & "; Type=" & grp.GroupType.Name
+            Next
+            MsgBox(sMsg)
+
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+</pre>
+
+<p>Groups can be of Model and Detail types and these are referred to as GroupTypes.
+Model groups contain model elements and Detail groups contain view-specific elements. We shall use filtering mechanism available in
+Revit 2009 again to get all the elements of 'GroupType' type and list their Built-in parameters (for example, we can use
+<code>symbol_family_name_param</code> built-in parameter to extract the GroupType family name).</p>
+
+<p>Further, we shall attempt to extract the name of each model group type in the Revit
+model. For this, you can use the <code>NewLogicAndFilter</code> to filter out elements which are
+of 'GroupType' AND family name 'Model Group'. Once we have all
+the model group types listed, we can directly display the Name property from the
+GroupType element:</p>
+
+<pre class="jtcollapse" title="C# List all groups types in model">    // List all Group Type Elements
+    List&lt;Element&gt; groupTypes = new List&lt;Element&gt;();
+    Filter filterType1 = app.Create.Filter.NewTypeFilter( typeof( GroupType ) );
+    app.ActiveDocument.get_Elements( filterType1, groupTypes );
+
+    sMsg = "All GROUP TYPES in the doc are:\r\n";
+    foreach( GroupType grpTyp in groupTypes )
+    {
+      // determine the GroupType system family
+      // (cf. Labs3 for standard symbols):
+      Parameter p = grpTyp.get_Parameter(BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM);
+      string famName = null == p ? "?" : p.AsString();
+      sMsg += "\r\n  Name=" + grpTyp.Name + "; Id=" + grpTyp.Id.Value.ToString() + "; Family=" + famName;
+    }
+    LabUtils.InfoMsg( sMsg );
+
+    List&lt;Element&gt; modelGroupTypes = new List&lt;Element&gt;();
+    Filter filterType2 = app.Create.Filter.NewTypeFilter( typeof( GroupType ) );
+    Filter filterParam = app.Create.Filter.NewParameterFilter(
+      BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM, Autodesk.Revit.Enums.CriteriaFilterType.Equal, "Model Group" );
+    Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterType2, filterParam );
+    app.ActiveDocument.get_Elements( filterAnd, modelGroupTypes );
+
+    sMsg = "All *MODEL* GROUP TYPES in the doc are:\r\n";
+    foreach( GroupType grpTyp in modelGroupTypes )
+    {
+      sMsg += "\r\n  Name=" + grpTyp.Name + "; Id=" + grpTyp.Id.Value.ToString();
+    }
+    LabUtils.InfoMsg( sMsg );
+</pre>
+
+<pre class="jtcollapse" title="VB List all groups types in model">    ' List all Group Type Elements
+    Dim groupTypes As New List(Of Element)
+    Dim filterType1 As Filter = app.Create.Filter.NewTypeFilter(GetType(GroupType))
+    Dim iRetVal1 As Integer = app.ActiveDocument.Elements(filterType1, groupTypes)
+
+    sMsg = "All GROUP TYPES in the doc are:" & vbCrLf
+    Dim grpTyp As GroupType
+    For Each grpTyp In groupTypes
+        ' To Determine the GroupType system Family,
+        ' we need the following (as in Labs3 for standard Symbols):
+        Dim famName As String = "?"
+        Dim p As Parameter = grpTyp.Parameter(Parameters.BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM)
+        If Not p Is Nothing Then
+            famName = p.AsString
+        End If
+        sMsg += vbCrLf + "  Name=" & grpTyp.Name & "; Id=" & grpTyp.Id.Value.ToString & "; Family=" & famName
+    Next
+    MsgBox(sMsg)
+
+    ' Typically, only "Model" types will be needed,
+    Dim modelGroupTypes As New List(Of Element)
+    Dim filterType2 As Filter = app.Create.Filter.NewTypeFilter(GetType(GroupType))
+    Dim filterParam = app.Create.Filter.NewParameterFilter( _
+        BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM, CriteriaFilterType.Equal, "Model Group")
+    Dim filter As Filter = app.Create.Filter.NewLogicAndFilter(filterType2, filterParam)
+    Dim n As Integer = app.ActiveDocument.Elements(filter, modelGroupTypes)
+
+    sMsg = "All *MODEL* GROUP TYPES in the doc are:" & vbCrLf
+    For Each grpTyp In modelGroupTypes
+        sMsg += vbCrLf + "  Name=" & grpTyp.Name & "; Id=" & grpTyp.Id.Value.ToString
+    Next
+    MsgBox(sMsg)
+</pre>
+
+<p>Build the project, adjust the ini file and examine the output with various pre-existing model groups and types as displayed in the UI.</p>
+
+<a class="j" href="labs5-2.htm">next</a>
+<a class="j" href="labs4-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

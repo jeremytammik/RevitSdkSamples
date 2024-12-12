@@ -1,0 +1,254 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Listing Room Boundaries</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs6.htm">next</a>
+<a class="j" href="labs5-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we will extract some elementary information from
+the room objects in a Revit model and also list their boundaries.
+To display the information associated with each room, we can iterate
+through all the Room type elements in the model and display the
+parameters associated with each.</p>
+
+<p>Using the new filtering mechanism in Revit 2009, we can select all
+elements of 'Room' type only. Once we have the set of Room elements,
+use the <code>get_Parameter</code> method in C# and <code>Parameter</code>
+in VB.Net on each Room element to extract information like the Name and
+Number associated with it.</p>
+
+<pre class="jtcollapse" title="C# List some parameters of Room object">
+  /// &lt;summary&gt;
+  /// List room boundaries.
+  /// &lt;/summary&gt;
+  public class Lab5_3_Rooms : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+
+      // List all Room Elements
+      List&lt;RvtElement&gt; rooms = LabUtils.GetAllRooms(app);
+      if( 0 == rooms.Count )
+      {
+        LabUtils.InfoMsg( "There are no rooms in this model!" );
+      }
+      else
+      {
+        foreach( Room room in rooms )
+        {
+          // Some identification parameters
+          // (there are probably built-in Params for this, but this works :-)
+
+          Parameter p = room.get_Parameter( "Name" );
+          string roomName = null == p ? "?" : p.AsString();
+
+          p = room.get_Parameter( "Number" );
+          string roomNumber = null == p ? "?" : p.AsString();
+
+          string sMsg = "Room Id=" + room.Id.Value.ToString()
+            + " Name=" + roomName + " Number=" + roomNumber + "\r\n";
+
+          LabUtils.InfoMsg( sMsg );
+        }
+      }
+    return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+ <pre class="jtcollapse" title="VB List some parameters of Room object">
+    ''' <summary>
+    ''' List room boundaries.
+    ''' </summary>
+    Public Class Lab5_3_Rooms
+        Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+
+            Dim app As Revit.Application = commandData.Application
+            Dim rm As Room
+
+            ' List all Room Elements
+            Dim rooms As List(Of Element) = LabUtils.GetAllRooms(app)
+            If (0 = rooms.Count) Then
+                MsgBox("There are no rooms in this model!")
+            Else
+                For Each rm In rooms
+
+                    ' Some identification Parameters
+                    ' (there are probably built-in Params for this, but this works :-)
+
+                    Dim roomName As String = "?"
+                    Dim p As Parameter = rm.Parameter("Name")
+                    If Not p Is Nothing Then
+                        roomName = p.AsString
+                    End If
+
+                    Dim roomNumber As String = "?"
+                    p = rm.Parameter("Number")
+                    If Not p Is Nothing Then
+                        roomNumber = p.AsString
+                    End If
+
+                    Dim sMsg As String = "Room Id=" & rm.Id.Value.ToString & " Name=" & roomName & " Number=" & roomNumber & vbCrLf
+                    MsgBox(sMsg)
+                Next
+            End If
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+</pre>
+
+<p>Extracting the Room boundary is a bit more complex.</p>
+
+<p>The room boundary property is of BoundarySegmentArrayArray type which is an array of
+BoundarySegmentArray objects. Each BoundarySegmentArray makes up a circuit or a continuous
+line in which one segment joins next. BoundarySegmentArray comprises of BoundarySegment
+objects which make up the region and can be of line or arc type. Room boundary will
+return null if the room is not in an enclosed region or only exists in the schedule.
+Using each of the room objects obtained in the previous section in this lab, we
+can extract the boundary property as follows:</p>
+
+<pre class="jtcollapse" title="C# List all boundaries of a room">
+    // Loop all boundaries of this room
+    BoundarySegmentArrayArray boundaries = room.Boundary;
+    // Check to ensure room has boundary
+    if (null != boundaries)
+    {
+      int iB = 0;
+      foreach (BoundarySegmentArray boundary in boundaries)
+      {
+        ++iB;
+        sMsg += "\r\n    Boundary " + iB + ":";
+        int iSeg = 0;
+        foreach (BoundarySegment segment in boundary)
+        {
+          ++iSeg;
+
+          // Segment's curve
+          Curve crv = segment.Curve;
+          if (crv is Line) // LINE
+          {
+            Line line = crv as Line;
+            XYZ ptS = line.get_EndPoint(0);
+            XYZ ptE = line.get_EndPoint(1);
+            sMsg += "\r\n        Segment " + iSeg + " is a LINE: "
+              + LabUtils.PointString(ptS) + " ; "
+              + LabUtils.PointString(ptE);
+          }
+          else if (crv is Arc) // ARC
+          {
+            Arc arc = crv as Arc;
+            XYZ ptS = arc.get_EndPoint(0);
+            XYZ ptE = arc.get_EndPoint(1);
+            double r = arc.Radius;
+            sMsg += "\r\n        Segment " + iSeg + " is an ARC:"
+              + LabUtils.PointString(ptS) + " ; "
+              + LabUtils.PointString(ptE) + " ; R=" + r;
+          }
+        }
+      }
+    }
+</pre>
+
+<pre class="jtcollapse" title="VB List all boundaries of a room">
+    ' Loop all Boundaries of this Room
+    Dim boundaries As Rooms.BoundarySegmentArrayArray = rm.Boundary
+    ' Check to ensure the room has boundary
+    If Not (boundaries Is Nothing) Then
+
+        Dim iB As Integer = 0
+        Dim boundary As Rooms.BoundarySegmentArray
+        For Each boundary In boundaries
+
+            ' Msg
+            iB += 1
+            sMsg += vbCrLf & "    Boundary " & iB & ":"
+
+            ' Loop through all Segments of that Boundary
+            Dim iSeg As Integer = 0
+            Dim segment As Rooms.BoundarySegment
+            For Each segment In boundary
+                iSeg += 1
+
+                ' Segment's curve
+                Dim crv As Geometry.Curve = segment.Curve
+
+                If TypeOf crv Is Geometry.Line Then                     'LINE
+
+                    Dim line As Geometry.Line = crv
+                    Dim ptS As Geometry.XYZ = line.EndPoint(0)
+                    Dim ptE As Geometry.XYZ = line.EndPoint(1)
+
+                    sMsg += vbCrLf & "        Segment " & iSeg & " is a LINE:" & _
+                       ptS.X & ", " & ptS.Y & ", " & ptS.Z & " ; " & _
+                       ptE.X & ", " & ptE.Y & ", " & ptE.Z
+
+                ElseIf TypeOf crv Is Geometry.Arc Then                      'ARC
+
+                    Dim arc As Geometry.Arc = crv
+                    Dim ptS As Geometry.XYZ = arc.EndPoint(0)
+                    Dim ptE As Geometry.XYZ = arc.EndPoint(1)
+                    Dim r As Double = arc.Radius
+
+                    sMsg += vbCrLf & "        Segment " & iSeg & " is an ARC:" & _
+                       ptS.X & ", " & ptS.Y & ", " & ptS.Z & " ; " & _
+                       ptE.X & ", " & ptE.Y & ", " & ptE.Z & " ; R=" & r
+
+                End If
+            Next
+        Next
+    End If
+</pre>
+
+<p>Build the project, adjust the ini file and examine the output in a
+model with a few room instances with different types of boundary segments.</p>
+
+<a class="j" href="labs6.htm">next</a>
+<a class="j" href="labs5-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

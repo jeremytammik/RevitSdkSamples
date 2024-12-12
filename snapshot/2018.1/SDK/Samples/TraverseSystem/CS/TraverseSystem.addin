@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>TraverseSystem.dll</Assembly>
+    <ClientId>5642cd0f-64f6-4936-9d16-8ddef933a4e3</ClientId>
+    <FullClassName>Revit.SDK.Samples.TraverseSystem.CS.Command</FullClassName>
+    <Text>TraverseSystem</Text>
+    <Description>Traverse a mechanical or piping system in the direction of flow</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

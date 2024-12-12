@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>InvisibleParam.dll</Assembly>
+    <ClientId>53b0ac24-2fa5-4807-a6ff-c1c4770c9acc</ClientId>
+    <FullClassName>Revit.SDK.Samples.InvisibleParam.CS.Command</FullClassName>
+    <Text>Create shared parameters</Text>
+    <Description>Create a visible and an invisible parameter.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

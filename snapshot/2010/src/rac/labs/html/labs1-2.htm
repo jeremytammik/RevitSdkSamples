@@ -1,0 +1,254 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Command Arguments</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs1-3.htm">next</a>
+<a class="j" href="labs1-1-cs.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this lab, we explore the contents and usage of the Execute() arguments.
+To do so, we add another command to the existing application by implementing
+another class derived from IExternalCommand in the same source file.</p>
+
+<pre title="C# external command implementation with its Execute() method" class="jtcollapse">namespace LabsCode
+{
+  public class Lab1_2_CommandArguments : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+}
+</pre>
+
+<pre title="VB external command implementation with its Execute() method" class="jtcollapse">Public Class Lab1_2_CommandArguments
+    Implements IExternalCommand
+
+    Public Function Execute( _
+        ByVal commandData As ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As ElementSet) _
+    As Autodesk.Revit.IExternalCommand.Result _
+    Implements Autodesk.Revit.IExternalCommand.Execute
+
+        Return IExternalCommand.Result.Succeeded
+
+    End Function
+
+End Class
+</pre>
+
+<p>The first argument is the command data object which is used to access the application object,
+from it the current view and document, and from it in turn <em>all</em> or the currently <em>selected</em>
+elements.</p>
+
+<p>Let's first report some data about the current application, document and view. Add something like the following to the Execute() function body:</p>
+
+<pre title="C# List command data app, doc and view properties" class="jtcollapse">  //
+  // List the app, doc and view data:
+  //
+  Application revitApp = commandData.Application;
+  Document doc = revitApp.ActiveDocument;
+  View view = commandData.View;
+  string sMsg = "Application = " + revitApp.VersionName
+    + " " + revitApp.VersionNumber + "\r\n";
+  sMsg += "Document path = " + doc.PathName + "\r\n"; // Empty if not saved yet
+  sMsg += "Document title = " + doc.Title + "\r\n";
+  sMsg += "View name = " + view.Name;
+  LabUtils.InfoMsg( sMsg );
+</pre>
+
+<pre title="VB List command data app, doc and view properties" class="jtcollapse">  ' List the app, doc and view data
+  Dim revitApp As Revit.Application = commandData.Application
+  Dim doc As Revit.Document = revitApp.ActiveDocument
+  Dim view As Revit.Elements.View = commandData.View
+
+  Dim sMsg As String = "Application = " & revitApp.VersionName & " " & revitApp.VersionNumber & vbCrLf
+  sMsg += "Document path = " & doc.PathName & vbCrLf ' Empty if not saved yet
+  sMsg += "Document title = " & doc.Title & vbCrLf
+  sMsg += "View name = " & view.Name
+  MsgBox(sMsg)
+</pre>
+
+<p>In VB, we can use the built-in <code>MsgBox()</code> function to display messages.
+In C#, however, this function is not available. We can use <code>MessageBox.Show()</code>
+instead, like in the Hello world demo we just looked at. Since it is cumbersome to
+add an additional argument for the caption each time we call it, we implement some
+message box helper functions in a separate class <code>LabUtils</code>. This is required
+only for C#:</p>
+
+<pre title="C# Message box helpers" class="jtcollapse">using System;
+using WinForms = System.Windows.Forms;
+
+namespace Labs
+{
+  class LabUtils
+  {
+    /// &lt;summary&gt;
+    /// MessageBox wrapper for informational message.
+    /// &lt;/summary&gt;
+    public static void InfoMsg( string msg )
+    {
+      WinForms.MessageBox.Show( msg, "Revit API Labs", WinForms.MessageBoxButtons.OK, WinForms.MessageBoxIcon.Information );
+    }
+
+    /// &lt;summary&gt;
+    /// MessageBox wrapper for error message.
+    /// &lt;/summary&gt;
+    public static void ErrorMsg( string msg )
+    {
+      WinForms.MessageBox.Show( msg, "Revit API Labs", WinForms.MessageBoxButtons.OK, WinForms.MessageBoxIcon.Error );
+    }
+
+    /// &lt;summary&gt;
+    /// MessageBox wrapper for question message.
+    /// &lt;/summary&gt;
+    public static bool QuestionMsg( string msg )
+    {
+      return WinForms.DialogResult.Yes
+        == WinForms.MessageBox.Show( msg, "Revit API Labs", WinForms.MessageBoxButtons.YesNo, WinForms.MessageBoxIcon.Question );
+    }
+
+    /// &lt;summary&gt;
+    /// MessageBox wrapper for question and cancel message.
+    /// &lt;/summary&gt;
+    public static WinForms.DialogResult QuestionCancelMsg( string msg )
+    {
+      return WinForms.MessageBox.Show( msg, "Revit API Labs", WinForms.MessageBoxButtons.YesNoCancel, WinForms.MessageBoxIcon.Question );
+    }
+  }
+}
+</pre>
+
+<p>To list all the currently selected elements, we can use the <code>Selection</code> property on
+    <code>Document</code> object. This property further exposes <code>Elements</code> property which returns an
+    elementset containing the selected elements. This is often used whenever we need
+    to work with element selection set:</p>
+
+<pre title="C# List the current selection set" class="jtcollapse">  //
+  // List the current selection set:
+  //
+  Selection sel = doc.Selection;
+  sMsg = "There are " + sel.Elements.Size + " elements in the selection set:";
+  foreach( Element elem in sel.Elements )
+  {
+    sMsg += "\r\n  " + elem.Category.Name + " Id=" + elem.Id.Value.ToString();
+  }
+  LabUtils.InfoMsg( sMsg );
+</pre>
+
+<pre title="VB List the current selection set" class="jtcollapse">  ' List the current selection set
+  Dim sel As Selection = doc.Selection
+
+  sMsg = "There are " & sel.Elements.Size & " elements in the selection set:"
+  Dim elem As Revit.Element
+  For Each elem In sel.Elements
+      sMsg += vbCrLf & "  " & elem.Category.Name & " Id=" & elem.Id.Value.ToString
+  Next
+  MsgBox(sMsg)
+</pre>
+
+<p>The other two arguments are used only when returning a Cancelled or Failed status to Revit,
+so that a meaningful message can be displayed in the standard user interface dialogue box
+and the relevant elements can be highlighted. To simulate an error condition, add the
+following code:</p>
+
+<pre title="C# Return error message and elements to Revit UI" class="jtcollapse">  //
+  // Let's pretend that something is wrong with the first element in the selection.
+  // We pass a message back to the Revit user and indicate the error result:
+  //
+  if( !sel.Elements.IsEmpty )
+  {
+    ElementSetIterator iter = sel.Elements.ForwardIterator();
+    iter.MoveNext();
+    Element errElem = iter.Current as Element;
+    elements.Clear();
+    elements.Insert( errElem );
+    message = "We pretend something is wrong with this element and pass back this message to user";
+    return IExternalCommand.Result.Failed;
+  }
+  else {
+    return IExternalCommand.Result.Succeeded;
+  }
+</pre>
+
+<pre title="VB Return error message and elements to Revit UI" class="jtcollapse">  ' Let's pretend that something is wrong with the first element in the selection
+  ' We pass a message back to the Revit user and indicate the error result
+  If Not sel.Elements.IsEmpty Then
+      Dim iter As ElementSetIterator = sel.Elements.ForwardIterator
+      iter.MoveNext()
+      Dim errElem As Revit.Element = iter.Current
+      elements.Clear()
+      elements.Insert(errElem)
+      message = "We pretend something is wrong with this element and pass back this message to user"
+      Return IExternalCommand.Result.Failed
+  Else
+      Return IExternalCommand.Result.Succeeded
+  End If
+</pre>
+
+<p>Build the project and adjust the Revit.ini file to include the new command,
+i.e. increment the counter and add the details for the second command:</p>
+
+<pre title="Add the second command to Revit.ini" class="jtcollapse">[ExternalCommands]
+ECCount=2
+
+ECName1=Lab 1-1 Hello World
+ECDescription1=Basic sample that displays a message box from Revit!
+ECClassName1=LabsCode.Lab1_1_HelloWorld
+ECAssembly1=LabsCode.dll
+
+ECName2=Lab 1-2 Command Arguments
+ECDescription2=Lists the app, doc and view data; then the current selection set and finally simulates an error condition on return
+ECClassName2=LabsCode.Lab1_2_CommandArguments
+ECAssembly2=LabsCode.dll
+</pre>
+
+<p>If you now start Revit, pre-select some elements and then run the new Lab1-2 command,
+it will display the app, doc and view data, then the currently selected elements,
+and finally an error reported on the first one of the elements in this set.</p>
+
+<a class="j" href="labs1-3.htm">next</a>
+<a class="j" href="labs1-1-cs.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

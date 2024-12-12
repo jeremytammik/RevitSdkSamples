@@ -1,0 +1,984 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "rcuapiNET"
+    </assembly>
+    <members>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetStressGravityCenter(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary>Gets the coordinates center of inertia for stresses.</summary>
+            <returns>Returns the center of inertia point for stresses as a<see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>.</returns>
+            <param name="resType">
+Determines which type of stresses could be taken into account: for rebar, concrete or equivalent section (transformed).
+</param>
+            <returns>
+Returns the center of inertia point as Point2D.
+</returns>
+            <exception>Calculation were not performed</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetInternalForces(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary>Gets the set of internal forces.</summary>
+            <param name="resType">
+Determines which type of internal forces could be taken into account: for rebar, concrete or equivalent section (transformed).
+</param>
+            <returns>
+Returned set is adequate for Rebar, Concrete or Section area. Includes axial force and moments around x-axis and y-axis.
+</returns>
+            <remarks>  
+Unit depends to the units used to define concrete, steel, geometry and internal forces.
+</remarks>
+            <exception>Calculation are not performed</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetConcreteStressArea">
+            <summary>Gets area of the compressed part of the section.</summary>
+            <returns>
+Returns area of concrete in compression.<br />
+Unit: [length*length].
+</returns>
+            <remarks>  
+Section returned is reduced by holes due to the reinforcement in compression.
+Unit depends to the units used to define concrete, steel, geometry and internal forces.
+</remarks>
+            <exception>Calculation are not performed</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetNeutralAxisAngle">
+            <summary>Gets the angle between the neutral axis normal and the x-axis</summary>
+            <returns>
+Returns angle between the vector perpendicular to neutral axis and the x-axis. <br />
+The sense of the vector indicate direction to the most tension fiber.<br />
+Unit: [dimensionless].
+</returns>
+            <exception>Calculation are not performed.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetNeutralAxisDistance">
+            <summary> Gets the distance from the concrete section gravity center to neutral axis.</summary>
+            <returns> Returns distance from gravity center of contour to neutral axis.<br />
+Unit: [length].</returns>
+            <remarks> 
+Neutral axis divides the part of the compression from the tension. <br />
+ This is line where the strain changes sign. <br />
+Unit depends to the units used to define concrete, steel, geometry and internal forces.
+</remarks>
+            <exception>Calculation are not performed.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetStress(Autodesk.CodeChecking.Concrete.ResultType,System.Int32)">
+            <summary> Gets stress at a given point.</summary>
+            <param name="resType">
+Determines which type of stress to be returned: for rebar or concrete only. 
+</param>
+            <param name="id"> Id of the contour or a given rebar.</param>
+            <returns> Returns the stress in concrete or rebar at point given by contour or rebar Id.<br />
+ Unit: [force per length^2]
+</returns>
+            <remarks> 
+This method could be used only for concrete and rebars, for section, this method throws exception.<br />
+If calculation are not performed, this method throws exception as well.<br />
+Unit depends to the units used to define concrete, steel, geometry and internal forces.
+</remarks>
+            <exception>Calculation are not performed</exception>
+            <exception>This method could be used only for concrete and rebars.</exception>
+            <exception cref="T:System.ArgumentException">Index must be less than Count.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetStrain(Autodesk.CodeChecking.Concrete.ResultType,System.Int32)">
+            <summary> Gets strain at a given point.</summary>
+            <param name="resType">
+Determines which type of strain to be returned: for rebar or concrete only. 
+</param>
+            <param name="index"> index of a point given from the contour  or a given rebar.</param>
+            <returns> Returns strain in concrete or rebar at point given from the contour or rebar index.<br />
+Unit: [dimensionless]</returns>
+            <remarks> 
+This method could be used only for concrete and rebars, for section, this method throws exception.<br />
+If calculation are not performed, this method throws exception as well.
+</remarks>
+            <exception>Calculation are not performed</exception>
+            <exception cref="T:System.ArgumentException">This method could be used only for concrete and rebars.</exception>
+            <exception cref="T:System.ArgumentException">Index must be less than Count.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetStressMin(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary> Gets minimum stress.</summary>
+            <param name="resType">
+Determines which type of stress to be returned: for rebar or concrete only. 
+</param>
+            <returns> Returns minimum strain in concrete or in the rebar.</returns>
+            <remarks> 
+This method could be used only for concrete and rebars, for section, this method throws exception.<br />
+If calculation are not performed, this method throws exception as well.
+</remarks>
+            <exception>Calculation are not performed</exception>
+            <exception cref="T:System.ArgumentException">This method could be used only for concrete and rebars.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetStressMax(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary> Gets maximum strain.</summary>
+            <param name="resType">
+Determines which type of stress to be returned: for rebar or concrete only. 
+</param>
+            <returns> Returns maximum stress in concrete or in the rebar.</returns>
+            <remarks> 
+This method could be used only for concrete and rebars, for section, this method throws exception.<br />
+If calculation are not performed, this method throws exception as well.
+</remarks>
+            <exception>Calculation are not performed</exception>
+            <exception cref="T:System.ArgumentException">This method could be used only for concrete and rebars.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetStrainMin(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary> Gets minimum strain.</summary>
+            <param name="resType">
+Determines which type of strain to be returned: for rebar or concrete only. 
+</param>
+            <returns> Returns minimum strain in concrete or in the rebar.</returns>
+            <remarks> 
+This method could be used only for concrete and rebars, for section, this method throws exception.<br />
+If calculation are not performed, this method throws exception as well.
+</remarks>
+            <exception>Calculation are not performed</exception>
+            <exception cref="T:System.ArgumentException">This method could be used only for concrete and rebars.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetStrainMax(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary> Gets maximum strain.</summary>
+            <param name="resType">
+Determines which type of strain to be returned: for rebar or concrete only. 
+</param>
+            <returns> Returns maximum strain in concrete or in the rebar.</returns>
+            <remarks> 
+This method could be used only for concrete and rebars, for section, this method throws exception.<br />
+If calculation are not performed, this method throws exception as well.
+</remarks>
+            <exception>Calculation are not performed</exception>
+            <exception cref="T:System.ArgumentException">This method could be used only for concrete and rebars.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.SolveForces(Autodesk.CodeChecking.Concrete.ResultType,System.Double,System.Double,System.Double)">
+            <summary>Calculates forces according to acting strain</summary>
+            <param name="resType">
+Determines which type of resistance to be returned: for rebar, concrete or equivalent section (transformed).
+</param>
+            <param name="maxStrain">Maximum strain in the concrete section.<br />
+  Unit: [dimensionless].</param>
+            <param name="minStrain">Minimum strain in the concrete section.<br />
+  Unit: [dimensionless].</param>
+            <param name="angle">
+Angle between the vector perpendicular to neutral axis and the x-axis. <br />
+The sense of the vector indicate the direction to the most tensioned fiber. <br />
+ Unit: [dimensionless].
+</param>
+            <remarks>
+The resistance forces could be read by <see cref="M:Autodesk.CodeChecking.Concrete.RCSolver.GetInternalForces(Autodesk.CodeChecking.Concrete.ResultType)">GetInternalForces </see>method.<br />
+Other information about state of failure could be read using dedicated methods.<br />
+The units should be consistent for concrete, steel, geometry and internal forces.
+</remarks>
+            <exception cref="T:Autodesk.CodeChecking.Concrete.IRCException">Minimum strain greater than maximum strain. </exception>
+            <exception cref="T:Autodesk.CodeChecking.Concrete.IRCException">Minimum strain greater than ultimate concrete strain. </exception>
+            <exception cref="T:Autodesk.CodeChecking.Concrete.IRCException">Maximum strain greater than ultimate steel strain. </exception>
+            <exception cref="T:Autodesk.CodeChecking.Concrete.IRCException">Minimum strain greater than ultimate steel strain. </exception>
+            <exception cref="T:Autodesk.CodeChecking.Concrete.IRCException">Rotation angle should be in the range between 0 and 2.0*Pi. </exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.SolveForces(Autodesk.CodeChecking.Concrete.ResultType,System.Double,System.Double)">
+            <summary>Calculates resistance forces according to acting strain</summary>
+            <param name="resType">
+Determines which type of resistance to be returned: for rebar, concrete or equivalent section (transformed).
+</param>
+            <param name="topStrain">Strain at the top of the section (on the extreme point of cross-section on the positive side of y axis).<br />
+  Unit: [dimensionless].</param>
+            <param name="bottomStrain">Strain at the bottom of section (on extreme point of cross-section on the negative side of y axis).<br />
+  Unit: [dimensionless].</param>
+            <remarks>
+The resistance forces could be read by <see cref="M:Autodesk.CodeChecking.Concrete.RCSolver.GetInternalForces(Autodesk.CodeChecking.Concrete.ResultType)">GetInternalForces </see>method.<br />
+Top and Bottom mean points of cross section with the maximum and minimum y coordinate.<br />
+Other information about state of failure could be read using dedicated methods.<br /></remarks>
+            <exception cref="T:System.ArgumentException">Top strain greater than ultimate concrete strain. </exception>
+            <exception cref="T:System.ArgumentException">Bottom strain greater than ultimate concrete strain. </exception>
+            <exception cref="T:System.ArgumentException">Top strain greater than ultimate steel strain. </exception>
+            <exception cref="T:System.ArgumentException">Bottom strain greater than ultimate steel strain. </exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.SolveResistanceF(System.Double,Autodesk.CodeChecking.Concrete.Axis,System.Boolean)">
+            <summary>Calculates resistance moment according to acting design moment</summary>
+            <param name="actingMoment">The acting moment.<br />
+ Unit: [force*length].</param>
+            <param name="axis">Determinates which beanding moment is acting around x-axis or y-axis.</param>
+            <param name="resultAsPositive">Determinates singn of result. Resistance axial force should be calculate as negative or positive.</param>
+            <remarks>
+The design forces are described in the coordinate system x'y'.<br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+The x' axis is parallel to the x axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The y' axis is parallel to the y axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+resistanceMoment - The bending moment. The axis around moment was calculated is determined by BendingMomentDefinition.<br />
+The resistance moment is the same as acting moment, the moment on the second direction is equal 0.0.<br />
+The resistance forces could be read by <see cref="M:Autodesk.CodeChecking.Concrete.RCSolver.GetInternalForces(Autodesk.CodeChecking.Concrete.ResultType)">GetInternalForces </see>method.<br />
+Other information about state of failure could be read using dedicated methods.<br />
+The units should be consistent for concrete, steel, geometry and internal forces.
+</remarks>
+            <exception>Internal error in the SolveResistanceF method</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.SolveResistanceM(System.Double,Autodesk.CodeChecking.Concrete.Axis,System.Boolean)">
+            <summary>Calculates resistance moment according to acting design axial forces.</summary>
+            <param name="actingAxialForce">The acting axial force. <br />
+ Unit: [force].</param>
+            <param name="axis">Determinates which beanding moment is acting. Bending around x-axis or y-axis.</param>
+            <param name="resultAsPositive">Determinates singn of result. Resistance bending moment should be calculate as negative or positive.</param>
+            <remarks>
+The forces are described in the coordinate system x'y'.<br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+The x' axis is parallel to the x axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The y' axis is parallel to the y axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The resistance axial force are the same as acting forces, the moment on the second direction is equal 0.0;
+The positive axial force gives compression.
+The resistance forces could be read by <see cref="M:Autodesk.CodeChecking.Concrete.RCSolver.GetInternalForces(Autodesk.CodeChecking.Concrete.ResultType)">GetInternalForces </see>method.<br />
+Other information about state of failure could be read using dedicated methods.<br />
+The units should be consistent for concrete, steel, geometry and internal forces.
+</remarks>
+            <exception>Internal error in the SolveResistanceM method</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.SolveResistance(System.Double,System.Double,System.Double)">
+            <summary>Calculates resistance according to acting design forces</summary>
+            <param name="designAxialForce">The acting design axial force.<br />
+Unit: [force].</param>
+            <param name="designMomentX">The acting design moment around x-axis.<br />
+Unit: [force*length].</param>
+            <param name="designMomentY">The acting design moment around y-axis.<br />
+Unit: [force*length]</param>
+            <remarks>
+The forces are described in the coordinate system x'y'.<br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+The x' axis is parallel to the x axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The y' axis is parallel to the y axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+designAxialForce - Axial force. The compresion have positive sign.<br />
+designMomentX - The bending moment around x'-axis.<br />
+designMomentY - The bending moment around y'-axis.<br />
+The resistance forces could be read by <see cref="M:Autodesk.CodeChecking.Concrete.RCSolver.GetInternalForces(Autodesk.CodeChecking.Concrete.ResultType)">GetInternalForces </see>method.<br />
+The resistance force has the same eccentricities than acting forces.<br />
+Other information about state of failure could be read using dedicated methods.<br />
+The units should be consistent for concrete, steel, geometry and internal forces.<br /></remarks>
+            <exception>Internal error in the SolveResistance method</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.CreateNewSolver(Autodesk.CodeChecking.Concrete.Geometry)">
+            <summary>Creates a new solver according geometry and defaults parameters for the concrete and steel.</summary>
+            <param name="geometry"> The <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see> object.</param>
+            <returns>New solver object</returns>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetMomentFirstY(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary>Gets the value of first moment of inertia.</summary>
+            <param name="resType">
+Determines which type of moment to be returned: for rebar, concrete or equivalent section (transformed)
+</param>
+            <returns> Returns the value first moment of inertia calculated around y' axis for rebar, concrete or section.<br />
+Unit: [length^3]</returns>
+            <remarks> 
+The y' axis is parallel to the y axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+Unit depends to the units used to define concrete, steel, geometry and internal forces
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetMomentFirstX(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary>Gets the value of first moment of inertia.</summary>
+            <param name="resType">
+Determines which type of moment to be returned: for rebar, concrete or equivalent section (transformed)
+</param>
+            <returns> Returns the value first monet of  of inertia calculated around x' axis for rebar, concrete or section.<br />
+Unit: [length^3]</returns>
+            <remarks> 
+The x' axis is parallel to the x axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+Unit depends to the units used to define concrete, steel, geometry and internal forces
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetCenterOfInertia(Autodesk.CodeChecking.Concrete.ResultType)">
+            <returns>Returns the center of inertia point as <see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>.</returns>
+            <summary>Gets the coordinates of center of inertia.</summary>
+            <param name="resType">
+Determines which type of moment to be returned, repectively for rebar, concrete or equivalent section (transformed).
+</param>
+            <returns>
+Returns the center of inertia point as <see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>.
+</returns>
+            <remarks>
+Unit depends to the units used to define concrete, steel, geometry and internal forces.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetMomentOfInertiaY(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary>Gets the value of moment of inertia.</summary>
+            <param name="resType">
+Determines which type of moment to be returned, repectively for rebar, concrete or equivalent section (transformed)
+</param>
+            <returns> Returns the value of moment of inertia calculated around y' axis for rebar, concrete or section. <br />
+Unit: [length^4].</returns>
+            <remarks> 
+The y' axis is parallel to the x axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+Unit depends to the units used to define concrete, steel, geometry and internal forces
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetMomentOfInertiaX(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary>Gets the value of moment of inertia.</summary>
+            <param name="resType">
+Determine which type of moment to be returned, repectively  for rebar, concrete or equivalent section (transformed)
+</param>
+            <returns> Returns the value of moment of inertia calculated around x' axis for rebar, concrete or section.<br />
+Unit: [length^4].</returns>
+            <remarks> 
+The x' axis is parallel to the x axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+Unit depends to the units used to define concrete, steel, geometry and internal forces
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetArea(Autodesk.CodeChecking.Concrete.ResultType)">
+            <summary>Gets the value of the area.</summary>
+            <param name="resType">
+Determine which type of area will be returned, repectively for rebar, concrete or equivalent section (transformed)
+</param>
+            <returns>
+Returns the area for rebar, concrete or section. <br />
+Unit: [length*length].
+</returns>
+            <remarks>Unit depends to the units used to define concrete, steel, geometry and internal forces.</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.SetRebars(System.Collections.Generic.IEnumerable`1{Autodesk.CodeChecking.Concrete.Rebar})">
+            <summary>Sets the set of reinforcement bars.</summary>
+            <param name="vRebar">The <see cref="T:System.Collections.Generic.IEnumerable`1">IEnumerable</see> of <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebar</see>.</param>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetRebars">
+            <summary> Gets the copy of set of reinforcement bars.</summary>
+            <returns> Gets the copy of <see cref="T:System.Collections.Generic.List`1">List</see> of <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebar</see>.</returns>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetGeometry">
+            <summary> Gets the copy of cross-section geometry.</summary>
+            <returns> Gets the copy of Geometry object.</returns>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.SetGeometry(Autodesk.CodeChecking.Concrete.Geometry)">
+            <summary>Sets the cross-section geometry.</summary>
+            <param name="geometry">The <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see> object.</param>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetSteel">
+            <summary> Gets the copy ofparameters describing steel behaviors.</summary>
+            <returns> Gets the copy of Steel object.</returns>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.SetSteel(Autodesk.CodeChecking.Concrete.Steel)">
+            <summary>Sets necessary parameters describing reinforcement steel behaviors.</summary>
+            <param name="steel">The <see cref="T:Autodesk.CodeChecking.Concrete.Steel">Steel</see> object.</param>
+            <exception cref="T:System.ArgumentException">The steel strength must be greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The steel strain at failure must be greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The steel modulus of elasticity (Young modulus)  must greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The hardening factor for inclined top branch must be greater than 1.0 , for horizontal branch must be equal 1.0.</exception>
+            <exception cref="T:System.ArgumentException">The steel strain at failure can't be less than the design strength divided by modulus of elasticity.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.GetConcrete">
+            <summary> Gets the copy of parameters describing concrete behavior.</summary>
+            <returns> Gets the copy of Concrete object.</returns>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.RCSolver.SetConcrete(Autodesk.CodeChecking.Concrete.Concrete)">
+            <summary>Sets necessary parameters describing concrete behaviors.</summary>
+            <param name="concrete">The Concrete object.</param>
+            <exception cref="T:System.ArgumentException">The concrete strength must be greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The concrete strain at failure must be greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The concrete modulus of elasticity (Young modulus) must greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The power should be greater than 1.0.</exception>
+            <exception cref="T:System.ArgumentException">The reduction factor of the compression zone height must be in the range between 0 and 1.0.</exception>
+            <exception cref="T:System.ArgumentException">The power must be greater than 1.0.</exception>
+            <exception cref="T:System.ArgumentException">The relationship changeover must be less than the ultimate strain.</exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.SetOfForces.#ctor(System.Double,System.Double,System.Double)">
+            <summary>The SetOfForces class constructor with AxialForce, MomentX and MomentY values set as parameter.</summary>
+            <param name="n">The axial force. <br />
+Unit: [force].</param>
+            <param name="mx">The bending moment around x-axis. <br />
+Unit: [force*length].</param>
+            <param name="my">The bending moment around y-axis. <br />
+Unit: [force*length].</param>
+            <remarks>
+The internal forces are described in coordinate system x'y'.<br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+The x' axis is parallel to the x axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The y' axis is parallel to the y axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />   
+AxialForce(N) - The compresion have positive sign.<br />
+MomentX(Mx) - The bending moment around x'-axis.<br />
+MomentY(My) - The bending moment around y'-axis.<br />
+The units should be consistent for concrete, steel, geometry and internal forces.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.SetOfForces.#ctor">
+            <summary>The default SetOfForces class constructor. </summary>
+            <remarks>
+All internal forces are set to 0.0.
+</remarks>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.SetOfForces.MomentY">
+            <summary>The MomentY field represents the bending moment around y'-axis. </summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.SetOfForces.MomentX">
+            <summary>The MomentX field represents the bending moment around x'-axis. </summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.SetOfForces.AxialForce">
+            <summary>The AxialForce field represents the axial force (N). The compresion have positive sign. </summary>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.SetOfForces">
+            <summary>Describes the set of internal forces:  AxialForce(N), MomentX(Mx) and MomentY(My).</summary>
+            <remarks>
+The internal forces are described in coordinate system x'y'.<br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+The x' axis is parallel to the x axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The y' axis is parallel to the y axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />   
+AxialForce(N) - The compresion have positive sign.<br />
+MomentX(Mx) - The bending moment around x'-axis.<br />
+MomentY(My) - The bending moment around y'-axis.
+</remarks>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.ResultType">
+            <summary>Classification of the type of results returned by the solver.</summary>
+            <remarks>
+Section defines a full set of results for the reinforced concrete section. It's a typical situation. <br />
+For Rebars and Concrete only results for the concrete and rebars are available. <br /></remarks>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ResultType.Section">
+            <summary>To be used in typical situation, when all results (for rebars and concrete) are required.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ResultType.Concrete">
+            <summary>To be used when only results for concrete are required.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ResultType.Rebars">
+            <summary>To be used when only results for rebars are required.</summary>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.Axis">
+            <summary>Classification of axis.</summary>
+            <remarks>
+The internal forces are described in coordinate system x'y'.<br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br />
+The x' axis is parallel to the x axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br />
+The y' axis is parallel to the y axis in which the <see cref="T:Autodesk.CodeChecking.Concrete.Geometry">Geometry</see>
+and <see cref="T:Autodesk.CodeChecking.Concrete.Rebar">Rebars</see> have been defined. <br /></remarks>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.Axis.y">
+            <summary>y'-axis.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.Axis.x">
+            <summary>x'-axis.</summary>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Concrete.ModulusOfElasticity">
+            <summary>The ModulusOfElasticity property represents the concrete modulus of elasticity (Young modulus).</summary>
+            <value> Gets or sets the value of the concrete modulus of elasticity (Young modulus).</value>
+            <remarks>
+Unit: [force per length^2].<br />
+Modulus of elasticity (Young modulus) should be in base units for example [Pa] or [psi]. <br />
+Typical values are in the range between 25000000000 and 40000000000 [Pa] or 3000000 and 5700000 [psi].<br />
+This value is used for the calculation of equivalent (transformed) characteristic of the reinforced section.<br />
+The return value will be in the same unit which has been used for strength measurement and should be consistent with units used to define concrete, steel, geometry and internal forces.
+</remarks>
+            <exception cref="T:System.ArgumentException">The concrete Young modulus (modulus of elasticity) must be greater than 0.0.</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Concrete.Power">
+            <summary>The Power property represents the power for an power-linar stress-strain relationship.</summary>
+            <value> Gets or sets power for an power-linar stress-strain relationship.</value>
+            <remarks>
+ Unit: [dimensionless].<br />
+Power parameter is taken into account only for power-linar relationship.<br />
+Typical values are in the range between 1.4 and 2.0. 
+When power is equal to 2.0, a better approach is to use the parabola-rectangle relationship. 
+</remarks>
+            <exception cref="T:System.ArgumentException">The poawe should be greater than 1.0.</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Concrete.StrainRelationChangeOver">
+            <summary>The StrainRelationChangeOver property represents the strain which changes the type of stress-strain relationship.</summary>
+            <value> Gets or sets the value of the concrete strain which changes the type of stress-strain relationship.</value>
+            <remarks> 
+Unit: [dimensionless].<br />
+StrainRelationChangeOver parameter is taken into account only for models with more than one stress-strain relationships: <br />
+ - Linear-rectangle.<br />
+ - Parabola-rectangle.<br />
+-  Exponential-rectangle.<br />
+Typical values are in the range between 0.00175 and 0.0026. .<br /></remarks>
+            <exception cref="T:System.ArgumentException">The relationship changeover must be greater than 0.0</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Concrete.StrainUltimateLimit">
+            <summary>The StrainUltimateLimit property represents the value of maximum strain.</summary>
+            <value> Gets or sets the value of the concrete strain at failure.  Unit: [dimensionless].</value>
+            <remarks> StrainUltimateLimit parameter is taken into account for all models.
+Typical values are in the range between 0.0028 and 0.0035. </remarks>
+            <exception cref="T:System.ArgumentException">The concrete strain at failure must be greater than 0.0.</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Concrete.EffectiveHeightReductionFactor">
+            <summary>The EffectiveHeightReductionFactor property represents the reduction factor of the compression zone height.</summary>
+            <value> Gets or sets the reduction factor of the compression zone height.</value>
+            <remarks> 
+Unit: [dimensionless]. <br />
+This parameter is taken into account only for a simplified model with rectangular stress distribution <see cref="T:Autodesk.CodeChecking.Concrete.StressDiagramType">StressDiagType.Rectangular</see>. <br />
+Typical values are in the range between 0.8 and 1.0. 
+</remarks>
+            <exception cref="T:System.ArgumentException">Reduction factor of the compression zone must be in the range between 0 and 1.0.</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Concrete.DesignStrength">
+            <summary>The DesignStrength property represents the design strenght of concrete.</summary>
+            <value> Gets or sets concrete design strength</value>
+            <remarks>
+Unit: [force per length^2].<br />
+Concrete design strength should be in base units for example [Pa] or [psi].<br /> 
+Typical values are in the range between 1000000 and 6000000 [Pa] or 3000 and 10000 [psi].<br />
+The return value will be in the same unit which has been used for strength measurement and should be consistent with units used to define concrete, steel, geometry and internal forces.
+</remarks>
+            <exception cref="T:System.ArgumentException"> The concrete strength must be greater than 0.0. </exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Concrete.StrainStressModel">
+            <summary>The StrainStressModel property represents the type of stress-strain relationship.</summary>
+            <value>Gets or sets the type of stress-strain relationship.</value>
+            <remarks>
+Available stress-strain relationship are described by the <see cref="T:Autodesk.CodeChecking.Concrete.StressDiagramType">StressDiagType</see> enumeration.<br />
+For ULS, most common used relationships are rectangular and parabolic.<br />
+For SLS, most common used relationship is linear.<br />
+All the parameters required by the choosen relationship should be set using dedicated methods:<br /><see cref="M:Autodesk.CodeChecking.Concrete.Concrete.SetStrainStressModelRectangular(System.Double,System.Double,System.Double,System.Double)">SetStrainStressModelRectangular</see><br /><see cref="M:Autodesk.CodeChecking.Concrete.Concrete.SetStrainStressModelLinear(System.Double,System.Double,System.Double)">SetStrainStressModelLinear</see><br /><see cref="M:Autodesk.CodeChecking.Concrete.Concrete.SetStrainStressModelParabolicRectangular(System.Double,System.Double,System.Double,System.Double)">SetStrainStressModelParabolicRectangular</see><br /><see cref="M:Autodesk.CodeChecking.Concrete.Concrete.SetStrainStressModelBiLinear(System.Double,System.Double,System.Double,System.Double)">SetStrainStressModelBiLinear</see><br /></remarks>
+            <exception cref="T:System.ArgumentException"> Unsupported stress-strain relationship. </exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Concrete.SetStrainStressModelPowerRectangular(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>Sets all appropriate parameters for a power-rectangle stress-strain relationship.</summary>
+            <param name="designStrength">The concrete design strength.<br />
+Unit: [force per length^2].</param>
+            <param name="strainUltimateLimit">The concrete strain at failure.<br />
+Unit: [dimensionless].</param>
+            <param name="modulusOfElasticity">The concrete modulus of elasticity (Young modulus).<br />
+Unit: [force per length^2]</param>
+            <param name="strainRelationChangeOver">The concrete strain value which changes the type of stress-strain relationship.<br />
+Unit: [dimensionless].</param>
+            <param name="power">The power for power function of stress-strain (1.0 - strain^power) relationship.<br />
+Unit: [dimensionless].</param>
+            <remarks>
+The parameters should be defined in base units for example [m],[N], or [pound],[in].<br />
+All set values for concrete, steel, geometry and internal forces should have some consistent units.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Concrete.SetStrainStressModelBiLinear(System.Double,System.Double,System.Double,System.Double)">
+            <summary>Sets all appropriate parameters for a bi-linear stress-strain relationship.</summary>
+            <param name="designStrength">The concrete design strength.<br />
+Unit: [force per length^2].</param>
+            <param name="strainUltimateLimit">The concrete strain at failure.<br />
+Unit: [dimensionless].</param>
+            <param name="modulusOfElasticity">The concrete modulus of elasticity (Young modulus).<br />
+Unit: [force per length^2]</param>
+            <param name="strainRelationChangeOver">The concrete strain value which changes the type of stress-strain relationship.<br />
+Unit: [dimensionless].</param>
+            <remarks>
+The parameters should be defined in base units for example [m],[N], or [pound],[in].<br />
+All set values for concrete, steel, geometry and internal forces should have some consistent units.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Concrete.SetStrainStressModelParabolicRectangular(System.Double,System.Double,System.Double,System.Double)">
+            <summary>Sets all appropriate parameters for a parabola-rectangle stress-strain relationship.</summary>
+            <param name="designStrength">The concrete design strength.<br />
+Unit: [force per length^2].</param>
+            <param name="strainUltimateLimit">The concrete strain at failure.<br />
+Unit: [dimensionless].</param>
+            <param name="modulusOfElasticity">The concrete modulus of elasticity (Young modulus).<br />
+Unit: [force per length^2]</param>
+            <param name="strainRelationChangeOver">The concrete strain value which changes the type of stress-strain relationship.<br />
+Unit: [dimensionless].</param>
+            <remarks>
+The parameters should be defined in base units for example [m],[N], or [pound],[in].<br />
+All set values for concrete, steel, geometry and internal forces should have some consistent units.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Concrete.SetStrainStressModelLinear(System.Double,System.Double,System.Double)">
+            <summary>Sets all appropriate parameters for a linear stress-strain relationship.</summary>
+            <param name="designStrength">The concrete design strength.<br />
+Unit: [force per length^2].</param>
+            <param name="strainUltimateLimit">The concrete strain at failure.<br />
+Unit: [dimensionless].</param>
+            <param name="modulusOfElasticity">The concrete modulus of elasticity (Young modulus).<br />
+Unit: [force per length^2]</param>
+            <remarks>
+The parameters should be defined in base units for example [m],[N], or [pound],[in].<br />
+All set values for concrete, steel, geometry and internal forces should have some consistent units.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Concrete.SetStrainStressModelRectangular(System.Double,System.Double,System.Double,System.Double)">
+            <summary>Sets all appropriate parameters for a simplified model with rectangular stress distribution.</summary>
+            <param name="designStrength">The concrete design strength. <br />
+Unit: [force per length^2].</param>
+            <param name="strainUltimateLimit">The concrete strain at failure.<br />
+Unit: [dimensionless].</param>
+            <param name="modulusOfElasticity">The concrete modulus of elasticity (Young modulus).<br />
+Unit: [force per length^2]</param>
+            <param name="effectiveHeightReductionFactor">The reduction factor of the compression zone height.<br />
+Unit: [dimensionless].</param>
+            <remarks>
+The parameters should be defined in base units for example [m],[N], or [pound],[in].<br />
+All set values for concrete, steel, geometry and internal forces should have some consistent units.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Concrete.#ctor">
+            <summary>The default Concrete class constructor</summary>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.Concrete">
+            <summary>Represents the class for concrete behaviors definition.</summary>
+            <remarks>
+Including parameters of concrete and methods for calculating the stress in concrete for a given strain.<br />
+The parameters should be defined in base units for example [m],[N], or [pound],[in].<br />
+All set values for concrete, steel, geometry and internal forces should have some consistent units.
+</remarks>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.StressDiagramType">
+            <summary>Classification of concrete stress-strain relationships.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.StressDiagramType.PowerRectangular">
+            <summary>
+Stress with Power-rectangle relationship to strain.<br />
+Power part (1.0 - strain^x) from 0.0 to strain relationship changeover value,
+constant part  from strain relationship changeover value to the ultimate limit of the strain.
+</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.StressDiagramType.ParabolicRectangular">
+            <summary>
+Stress with Parabola-rectangle relationship to strain.<br />
+Parabolic part (1.0 - strain^2) from 0.0 to strain relationship changeover value,
+constant part  from strain relationship changeover value to the ultimate limit of the strain.
+</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.StressDiagramType.Bilinear">
+            <summary>
+Stress with Bi-linear relationship to strain.<br />
+Linear part from 0.0 to strain relationship changeover value,
+constant part from strain relationship changeover to the ultimate limit of the strain.
+</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.StressDiagramType.Linear">
+            <summary>Stress with linear relationship to strain. <br />
+Usage of the typical SLS model.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.StressDiagramType.Rectangular">
+            <summary>Simplified model with rectangular stress distribution.<br />
+Usage of a constant value of stress along the reduced height.</summary>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.ConcreteExceptionEnum">
+            <summary>Classification of exceptions that could be thrown during creation of the concrete parameters.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ConcreteExceptionEnum.EffectiveHeightReductionFactor">
+            <summary>The reduction factor of the compression zone height must be in the range between 0 and 1.0.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ConcreteExceptionEnum.StrainRelationChangeOver">
+            <summary>The relationship changeover must be less than the ultimate strain</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ConcreteExceptionEnum.Power">
+            <summary>The power should be greater than 1.0.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ConcreteExceptionEnum.StressDiagType">
+            <summary>Unsupported stress-strain relationship.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ConcreteExceptionEnum.ModulusOfElasticity">
+            <summary>The concrete Young modulus (modulus of elasticity) must greater than 0.0.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ConcreteExceptionEnum.StrainUltimateLimit">
+            <summary>The concrete strain at failure must be greater than 0.0.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.ConcreteExceptionEnum.DesignStrength">
+            <summary>The concrete design strength must be greater than 0.0.</summary>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Rebar.Y">
+            <summary>The Y property represents the y-coordinate of the point.</summary>
+            <value>Gets or sets the y-coordinate of the center of rebar.</value>
+            <remarks> Unit: [length].</remarks>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Rebar.X">
+            <summary>The X property represents the x-coordinate of the point.</summary>
+            <value>Gets or sets the x-coordinate of the center of rebar.</value>
+            <remarks> Unit: [length].</remarks>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Rebar.Area">
+            <summary> The Position property represents the the area of the rebar.</summary>
+            <summary> Gets or sets the area of the rebar. </summary>
+            <remarks> Unit: [length^2].</remarks>
+            <exception cref="T:System.ArgumentException">Rebar area must be greater than 0.0</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Rebar.Position">
+            <summary>The Position property represents the the position of the center of rebar.</summary>
+            <value> Gets or sets a point in the 2D space (<see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>) describing the position of the center of rebar.</value>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Rebar.#ctor(System.Double,System.Double,System.Double)">
+            <summary> The Rebar class constructor. Creates the rebar with coordinates x,y and area. </summary>
+            <param name="x">The x-coordinate of the center of rebar.<br />
+Unit: [length].</param>
+            <param name="y">The y-coordinate of the center of rebar.<br />
+Unit: [length].</param>
+            <param name="area">The area of the rebar.<br />
+Unit: [length^2]</param>
+            <exception cref="T:System.ArgumentException">Rebar area must be greater than 0.0</exception>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.Rebar">
+            <summary>Describes a rebar in the context of Autodesk.CodeChecking.Concrete.</summary>
+            <remarks>
+In this context a rebar is described by a point in the 2D space (<see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>) and his area.
+The rebars must be described in the same coordinate system as the cross-section geometry.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Geometry.GetEnumerator">
+            <summary>IEnumerable standard implementation.</summary>
+            <returns> Return standard enumerator for geometry points collection.</returns>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Geometry.isClockwiseOrientation">
+            <summary>Check if the contour has a clockwise orientation.</summary>
+            <returns>Return true if the contour has a clockwise orientation.</returns>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Geometry.Clear">
+            <summary>Remove all points from the concrete cross section contour collection of points.</summary>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Geometry.Add(System.Double,System.Double)">
+            <summary>Adds a new point into the concrete cross section contour collection of points.</summary>
+            <remarks>Points should be described in base units for example [m] or [in] and in the same coordinate system as rebars.</remarks>
+            <param name="x">The x-coordinate of the contour point <see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>.<br />
+Unit: [length].</param>
+            <param name="y">The y-coordinate of the contour point <see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>.<br />
+Unit: [length].</param>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Geometry.Point(System.Int32)">
+            <summary> Gets a specific point from the concrete cross section contour collection of points.</summary>
+            <param name="index">Index of a point in the contour points collection.</param>
+            <returns>Returns given point as <see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>.</returns>
+            <exception cref="T:System.ArgumentException">Index must be less than Count</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Geometry.CenterOfInertia">
+            <summary> Gets coordinates of the center of inertia of the concrete cross section.</summary>
+            <returns> Returns the center of inertia as a <see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>.</returns>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Geometry.MomentOfInertiaY">
+            <summary> Gets the value of the moment of inertia of the concrete cross section.</summary>
+            <values> Returns the value of moment of inertia calculated around y' axis.<br /> 
+Unit: [length^4].</values>
+            <remarks> 
+The y' axis is parallel to the y axis in which the geometry and rebars have been defined. <br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br /></remarks>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Geometry.MomentOfInertiaX">
+            <summary> Gets the value of the moment of inertia of the concrete cross section. </summary>
+            <values> Returns the value of moment of inertia calculated around x' axis.<br /> 
+Unit: [length^4].</values>
+            <remarks>
+The x' axis is parallel to the x axis in which the geometry and rebars have been defined. <br />
+The coordinate system x'y' has for origin (0,0) the gravity center of the cross section.<br /></remarks>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Geometry.Count">
+            <summary>Gets the number of points describing the concrete cross section contour.</summary>
+            <values>Returns the number of points.</values>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Geometry.Perimeter">
+            <summary>Gets the value of contour perimeter.</summary>
+            <values>Returns the contour (concrete cross section) perimeter.<br />
+Unit: [length^2]. </values>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Geometry.Area">
+            <summary>Gets the value of contour area.</summary>
+            <values>Returns the contour (concrete cross section) area.<br />
+Unit: [length^2].</values>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Geometry.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>The class constructor for a T cross section.</summary>
+            <param name="heightTotal">The total height of the cross-section.<br />
+Unit: [length].</param>
+            <param name="heightFlange">The height of the flange (flange thickness).<br />
+Unit: [length].</param>
+            <param name="widthBottom">The width of the web (web thickness).<br />
+Unit: [length].</param>
+            <param name="widthTop">The width of the flange (top of the section).<br />
+Unit: [length].</param>
+            <remarks>The bottom left corner is in the center of coordinate system x=0, y=0 and the contour has a counterclockwise orientation.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Geometry.#ctor(System.Double,System.Double)">
+            <summary>The class constructor for a rectangular cross section.</summary>
+            <param name="height">The height of the rectangular cross-section.<br />
+Unit: [length].</param>
+            <param name="width">The width of the rectangular cross-section.<br />
+Unit: [length].</param>
+            <remarks>The bottom left corner is in the center of coordinate system x=0, y=0 and the contour has a counterclockwise orientation.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Geometry.#ctor(System.Double)">
+            <summary>The class constructor for a circular cross section.</summary>
+            <param name="diameter">The diameter of the circle.<br />
+Unit: [length].</param>
+            <remarks>
+Internal representation of the circular cross-section is regular a 18-gon (octadecagon).<br />
+The area of the polygon is equal to circle (Pi()*diameter^2)/4.<br />
+The center of the circle is in the center of coordinate system x=0, y=0 and the contour has a counterclockwise orientation.<br /></remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Geometry.#ctor">
+            <summary>The default Geometry class constructor</summary>
+            <remarks>This constructor could used to define a concrete cross section based on contour </remarks>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.Geometry">
+            <summary>Represents the class for a concrete cross-section geometry definition.</summary>
+            <remarks>
+Including the description of the geometrical contour (section shape) and properties.<br />
+The geometrical contour is based on points in a 2D space (<see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>).<br />
+Contour must be defined in the same coordinate system as rebars.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Utils.ConvexHull(System.Collections.Generic.IEnumerable`1{Autodesk.CodeChecking.Concrete.Point2D})">
+            <summary>Looking for the envelope of two dimensional points cloud.</summary>
+            <param name="vPoints">List of two dimensional points <see cref="T:Autodesk.CodeChecking.Concrete.Point2D">Point2D</see>.</param>
+            <return>List of indexes points on the envelope.</return>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Utils.#ctor">
+            <summary>The Utils object constructor</summary>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Utils">
+            <summary>Class include static functions with the simple utilities.</summary>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Point2D.Y">
+            <summary>The Y property represents the y-coordinate of the point.</summary>
+            <value> Gets or sets the y-coordinate of the point.</value>
+            <remarks> 
+Unit: [length].
+</remarks>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Point2D.X">
+            <summary>The X property represents the x-coordinate of the point.</summary>
+            <value> Gets or sets the x-coordinate of the point.</value>
+            <remarks> 
+Unit: [length].
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Point2D.#ctor(System.Double,System.Double)">
+            <summary>The class constructor for a Point2D. Creates a point with in x, y.</summary>
+            <param name="x">The x-coordinate of the point.<br />
+Unit: [length].</param>
+            <param name="y">The y-coordinate of the point.<br />
+Unit: [length].</param>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.Point2D">
+            <summary> Describes a point in a two dimensional cartesian space. </summary>
+            <remarks>
+In the Autodesk.CodeChecking.Concrete, the two dimensional space is related to a cross-section.<br />
+The X and Y axes of the righ-hand oriented coordinate system with axis Z perpendicular to the cross-section.<br />
+All objects (geometry, rebars, internal forces) must be described in the same coordinate system.<br /></remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Steel.StrainToStress(System.Double)">
+            <summary>Calculates stress in steel according to the strain.</summary>
+            <returns>Returns the stress in steel.<br />
+Unit: [force per length^2]</returns>
+            <param name="Strain">the steel strain.<br />
+Unit: [dimensionless].</param>
+            <remarks>
+Calculations takes into account the hardening factor.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Steel.SetModelIdealElastoPlastic(System.Double,System.Double,System.Double)">
+            <summary>Sets all appropriate parameters for steel with horizontal top branch (Ideal elasto-plactic behaviour).</summary>
+            <param name="designStrength">The steel design strength.<br />
+Unit: [force per length^2].</param>
+            <param name="strainUltimateLimit">The steel strain at failure.<br />
+Unit: [dimensionless].</param>
+            <param name="modulusOfElasticity">The steel modulus of elasticity (Young modulus).<br />
+Unit: [force per length^2]</param>
+            <exception cref="T:System.ArgumentException">The steel design strength must be greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The steel design strain at failure must be greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The steel Young modulus (modulus of elasticity) must greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The steel strain at failure can't be less than the design strength divided by the modulus of elasticity</exception>
+            <remarks>  
+The values should be in the base unit and it should be consistent for concrete, steel, geometry and internal forces.
+</remarks>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Steel.SetModelWithHardening(System.Double,System.Double,System.Double,System.Double)">
+            <summary>Sets all appropriate parameters for steel with inclined top branch (plastic with hardening).</summary>
+            <param name="designStrength">The steel design strength.<br />
+Unit: [force per length^2].</param>
+            <param name="strainUltimateLimit">The steel strain at failure.<br />
+Unit: [dimensionless].</param>
+            <param name="modulusOfElasticity">The steel Modulus of elasticity (Young modulus).<br />
+Unit: [force per length^2]</param>
+            <param name="hardeningFactor">Value of the hardening between strain equals to design strength divided by the modulus of elasticity and the ultimate limit of steel strain.<br />
+Unit: [dimensionless].</param>
+            <exception cref="T:System.ArgumentException">The steel design strength must be greater than 0.0. </exception>
+            <exception cref="T:System.ArgumentException">The steel strain at failure must be greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The steel Young modulus (modulus of elasticity) must greater than 0.0.</exception>
+            <exception cref="T:System.ArgumentException">The hardening factor for inclined top branch must be greater than 1.0 , for horizontal branch must be equal to 1.0</exception>
+            <exception cref="T:System.ArgumentException">The steel strain at failure can't be less than the design strength divided by the modulus of elasticity</exception>
+            <remarks>  
+The values should be in the base unit and it should be consistent for concrete, steel, geometry and internal forces.
+</remarks>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Steel.HardeningFactor">
+            <summary>The HardeningFactor property represents the value of steel hardening over the plastic behaviour.</summary>
+            <value>Gets or sets the value of hardening factor between the strain equal to the design strength divided by the modulus of elasticity and the ultimate limit of steel strain.</value>
+            <remarks> 
+Unit: [dimensionless]. <br />
+Typical values are in the range between 1.0 and 1.05.<br />
+Hardening factor equal to 1.0 means an ideal elasto-plastic steel with horizontal branch, greater than 1.0 an inclined top branch steel with hardening on plastic side.
+</remarks>
+            <exception cref="T:System.ArgumentException">The hardening factor for inclined top branch must be greater than 1.0 , for horizontal branch must be equal 1.0</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Steel.StrainUltimateLimit">
+            <summary>The StrainUltimateLimit property represents the value of maximum steel strain.</summary>
+            <value>Gets or sets the value of the steel strain at failure</value>
+            <remarks> 
+Unit: [dimensionless].<br />
+Typical values are in the range between 0.005 and 0.1.</remarks>
+            <exception cref="T:System.ArgumentException">The concrete strain at failure must be greater than 0.0.</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Steel.ModulusOfElasticity">
+            <summary>The ModulusOfElasticity property represents the steel modulus of elasticity (Young modulus).</summary>
+            <value> Gets or sets value of the steel modulus of elasticity (Young modulus).</value>
+            <remarks>
+Unit: [length^4]. <br />
+The steel modulus of elasticity (Young modulus) should be in base units for example [Pa],[psi]. <br />
+Typical values are 200000000000[Pa] 29000000[psi].<br />
+This value is used for calculating changeover of stress-strain relationship and equivalent (transformed) characteristic of the reinforced section.<br />
+The return value will be in the same unit which has been used.<br />
+The units should be consistent for concrete, steel, geometry and internal forces.
+</remarks>
+            <exception cref="T:System.ArgumentException">The concrete Young modulus (modulus of elasticity) must greater than 0.0.</exception>
+        </member>
+        <member name="P:Autodesk.CodeChecking.Concrete.Steel.DesignStrength">
+            <summary>The DesignStrength property represents the design strenght of steel (design yield strength).</summary>
+            <value>Gets or sets the steel design strength (design yield strength).</value>
+            <remarks>
+Unit: [force per length^2].<br />
+Design strength should be in base units for example[Pa]. 
+Typical values are in the range between 200000000 and 500000000[Pa] or 30000 and 75000 [psi].<br />
+The return value will be in the same unit which has been used.<br />
+The units should be consistent for concrete, steel, geometry and internal forces.
+</remarks>
+            <exception cref="T:System.ArgumentException">The steel design strength must be greater than 0.0. </exception>
+        </member>
+        <member name="M:Autodesk.CodeChecking.Concrete.Steel.#ctor">
+            <summary>The default Steel class constructor</summary>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.Steel">
+            <summary>Represents the class for steel behaviors definition.</summary>
+            <remarks>Including parameters of steel and method for calculating the stress in steel for the given strain.
+The parameters should be defined in base units for example [m],[N], or [pound],[in].
+All set values should have consistent units. The units should be the same for concrete, steel, geometry and internal forces.
+</remarks>
+        </member>
+        <member name="T:Autodesk.CodeChecking.Concrete.SteelExceptionEnum">
+            <summary>Classification of exceptions that could be thrown in time of creation the concrete parameters.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.SteelExceptionEnum.HardeningFactor">
+            <summary>The hardening factor cannot be less than 1.0</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.SteelExceptionEnum.ModulusOfElasticity">
+            <summary>The steel modulus of elasticity (Young modulus ) must greater than 0.0</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.SteelExceptionEnum.StrainUltimateLimit">
+            <summary>The steel strain at failure must be greater than 0.0. The steel strain at failure can't be less than the design strength divided by the modulus of elasticity.</summary>
+        </member>
+        <member name="F:Autodesk.CodeChecking.Concrete.SteelExceptionEnum.DesignStrength">
+            <summary>The steel design strength must be greater than 0.0</summary>
+        </member>
+        <member name="M:RcUtils.Section.UltimateStrain(RcUtils.ProblemType,System.Double*,System.Double*)">
+Logic
+</member>
+        <member name="M:RcUtils.Section.GetConcrete">
+Getters (this stuff should be moved to solver)
+</member>
+        <member name="M:RcUtils.Section.CalSectResistance(System.Double,RcUtils.SectionProperties,System.Boolean)">
+Setters
+</member>
+    </members>
+</doc>

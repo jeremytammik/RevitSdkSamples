@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>WorkThread.dll</Assembly>
+    <ClientId>4b902d86-4d6f-46dd-873c-57c5ed767426</ClientId>
+    <FullClassName>Revit.SDK.Samples.WorkThread.CS.Command</FullClassName>
+    <Text>Analyze Wall Face</Text>
+    <Description>This sample shows how to utilize the Applicaiton.Idling event in order to communicate with the Revit API from an external work thread.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>WorkThread</Name>
+    <Assembly>WorkThread.dll</Assembly>
+    <ClientId>a2436e18-4393-4c89-b905-393554f9d8d5</ClientId>
+    <FullClassName>Revit.SDK.Samples.WorkThread.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

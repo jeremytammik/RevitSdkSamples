@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4369B093-FA5D-4120-8F82-44D58550262E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>REX.FrameGenerator</RootNamespace>
+    <AssemblyName>FrameGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TV2_0;TV1_5;REXUI;REXUIL2;REVIT;$(AssemblyName)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;TV2_0;TV1_5;REXUI;REXUIL2;REVIT;$(AssemblyName)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autodesk.Common.AResourcesControl, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=ff3304d4f320ee59, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>Autodesk.Common.AResourcesControl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Autodesk.REX.Framework, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=51e16e3b26b42eda, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>Autodesk.REX.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="REX.Controls">
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Engine\REX.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="REX.Controls.Forms, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Engine\REX.Controls.Forms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="REX.Foundation">
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.Foundation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="REX.Foundation.Forms">
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.Foundation.Forms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Module\Application.cs" />
+    <Compile Include="Module\DirectAccess.cs" />
+    <Compile Include="Module\Foundation.cs" />
+    <Compile Include="Main\Revit\ExtensionRevit.cs" />
+    <Compile Include="Main\Data.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Extension.cs" />
+    <Compile Include="Main\Settings.cs" />
+    <Compile Include="Resources\Dialogs\MainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\MainControl.designer.cs">
+      <DependentUpon>MainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Dialogs\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Dialogs\SubControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\SubControl.Designer.cs">
+      <DependentUpon>SubControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Other\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Strings\Texts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Texts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Results.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\MainControl.resx">
+      <DependentUpon>MainControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\SubControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SubControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Other\Images.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings\Texts.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Texts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOOLBAR_help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOOLBAR_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en-US\REX_revit.xml" />
+    <Content Include="pl-PL\REX_revit.xml" />
+    <None Include="Additional\buildevents.bat" />
+    <None Include="Resources\REX.ico" />
+    <None Include="Resources\REX_logo.png" />
+    <None Include="Resources\TOOLBAR_calculate.png" />
+    <None Include="Resources\TOOLBAR_close.png" />
+    <None Include="Resources\TOOLBAR_open.png" />
+    <None Include="Resources\TOOLBAR_print.png" />
+    <None Include="Resources\TOOLBAR_save.png" />
+    <None Include="Resources\TOOLBAR_save_as.png" />
+    <Content Include="Additional\FrameGenerator.addin">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\REX.png" />
+    <Content Include="Configuration\REX_revit.xml" />
+    <Content Include="Configuration\REX_small.png" />
+    <Content Include="Configuration\REX_tooltip.png" />
+    <Content Include="Configuration\settings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+if not exist "q:\exe.$(ConfigurationName)" goto InstalledSDK
+
+md "q:\exe.$(ConfigurationName)"
+md "q:\exe.$(ConfigurationName)\Modules"
+md "q:\exe.$(ConfigurationName)\Modules\$(ProjectName)"
+
+del "q:\exe.$(ConfigurationName)\Modules\$(ProjectName)\$(TargetFileName)"
+
+copy "$(TargetPath)" "q:\exe.$(ConfigurationName)\Modules\$(ProjectName)\$(TargetFileName)"
+copy "$(TargetDir)Interop.*.dll" "q:\exe.$(ConfigurationName)\Modules\$(ProjectName)\"
+
+goto END
+
+:InstalledSDK
+
+:END
+
+if exist "$(ProjectDir)Additional\buildevents.bat" call "$(ProjectDir)Additional\buildevents.bat"
+
+xcopy "$(ProjectDir)Additional\*.addin" "%ProgramData%\Autodesk\Revit\Addins\2024" /S /R /K /V /I /F /C /Y    
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

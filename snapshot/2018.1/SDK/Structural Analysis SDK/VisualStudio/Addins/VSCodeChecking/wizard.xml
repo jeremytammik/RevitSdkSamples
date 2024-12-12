@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wizard>
+  <template name="CodeChecking" description="Visual Studio Wizard for Code Checking">
+    <option name="$CC_UPDATER">
+      <file mode="include">Updater</file>
+      <file mode="include">Updater\Updater.cs</file>
+    </option>
+    <option name="$CC_ENGINEERING">
+      <file mode="reference">CodeChecking.Engineering.dll</file>
+    </option>
+  </template>
+  <template name="ExtensibleStorageFramework" description="Visual Studio Wizard for Extensible Storage Framework"></template>
+  <template name="LoadCombination" description="Visual Studio Wizard for Load Combination"></template>
+  <template name="CodeCheckingConcrete" description="Visual Studio Wizard for Code Checking - Concrete">
+    <option name="$CC_UPDATER">
+      <file mode="include">Updater</file>
+      <file mode="include">Updater\Updater.cs</file>
+    </option>
+    <option name="$RC_UICALCPOINTSELECTION">
+      <file mode="include">UIComponents\CalculationPointsSelector\CalculationPointsSelectorAttribute.cs</file>
+      <file mode="include">UIComponents\CalculationPointsSelector\CalculationPointsSelectorSchema.cs</file>
+      <file mode="include">UIComponents\CalculationPointsSelector\CalculationPointsSelectorServerUI.cs</file>
+      <file mode="modify">Main\CalculationParameter.cs</file>
+    </option>
+    <option name="$RC_CREEP">
+      <file mode="modify">Main\LabelBeam.cs</file>
+      <file mode="modify">Main\LabelColumn.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+    </option>
+    <option name="$RC_BEAM_GEOMETRY_T_SECTION">
+      <file mode="modify">Main\LabelBeam.cs</file>
+      <file mode="modify">Main\Calculation\BeamSection.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+    </option>
+    <option name="$RC_COLUMN_BUCKLING">
+      <file mode="modify">Main\LabelColumn.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\CalculationScenario.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+      <file mode="modify">Server\ServerUI.cs</file>
+    </option>
+    <option name="$RC_RESULTS_PRESENTATION_TEMPLATE">
+      <file mode="modify">Main\ResultSurfaceElement.cs</file>
+      <file mode="modify">Main\ResultLinearElement.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+    </option>
+    <option name="$RC_BEAM">
+      <file mode="include">Main\LabelBeam.cs</file>
+      <file mode="include">Main\ResultBeam.cs</file>
+      <file mode="include">Main\ResultLinearElement.cs</file>
+      <file mode="include">Main\Calculation\BeamElement.cs</file>
+      <file mode="include">Main\Calculation\BeamSection.cs</file>
+      <file mode="include">Main\Calculation\LinearSection.cs</file>
+      <file mode="include">Server\ServerResultsLinear.cs</file>
+      <file mode="include">UIComponents\ICons\BeamSlabFalse.png</file>
+      <file mode="include">UIComponents\ICons\BeamSlabTrue.png</file>
+      <file mode="include">UIComponents\ICons\BFY.png</file>
+      <file mode="include">UIComponents\ICons\BFZ.png</file>
+      <file mode="include">UIComponents\ICons\BMX.png</file>
+      <file mode="include">UIComponents\ICons\BMY.png</file>
+      <file mode="include">UIComponents\ICons\BMZ.png</file>
+      <file mode="include">UIComponents\ICons\BN.png</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+      <file mode="modify">Server\ServerUI.cs</file>
+    </option>
+     <option name="$RC_COLUMN">
+      <file mode="include">Main\LabelColumn.cs</file>
+      <file mode="include">Main\ResultColumn.cs</file>
+      <file mode="include">Main\ResultLinearElement.cs</file>
+      <file mode="include">Main\Calculation\ColumnElement.cs</file>
+      <file mode="include">Main\Calculation\ColumnSection.cs</file>
+      <file mode="include">Main\Calculation\LinearSection.cs</file>
+      <file mode="include">Server\ServerResultsLinear.cs</file>
+      <file mode="include">UIComponents\Icons\CFY.png</file>
+      <file mode="include">UIComponents\Icons\CFZ.png</file>
+      <file mode="include">UIComponents\Icons\CMX.png</file>
+      <file mode="include">UIComponents\Icons\CMY.png</file>
+      <file mode="include">UIComponents\Icons\CMZ.png</file>
+      <file mode="include">UIComponents\Icons\CN.png</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+      <file mode="modify">Server\ServerUI.cs</file>
+     </option>
+    <option name="$RC_FLOOR">
+      <file mode="include">Main\LabelFloor.cs</file>
+      <file mode="include">Main\ResultSurfaceElement.cs</file> 
+      <file mode="include">Main\ResultFloor.cs</file>
+      <file mode="include">Main\Calculation\FloorElement.cs</file>
+      <file mode="include">Main\Calculation\SurfaceSection.cs</file>
+      <file mode="include">Main\Calculation\FloorSection.cs</file>
+      <file mode="include">Server\ServerResultsSurface.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+      <file mode="modify">Server\ServerUI.cs</file>
+    </option>
+    <option name="$RC_FOUNDATION_SLAB">
+      <file mode="include">Main\LabelFloor.cs</file>
+      <file mode="include">Main\ResultSurfaceElement.cs</file>
+      <file mode="include">Main\ResultFloor.cs</file>
+      <file mode="include">Main\Calculation\FloorElement.cs</file>
+      <file mode="include">Main\Calculation\SurfaceSection.cs</file>
+      <file mode="include">Main\Calculation\FloorSection.cs</file>
+      <file mode="include">Server\ServerResultsSurface.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+      <file mode="modify">Server\ServerUI.cs</file>
+    </option>
+    <option name="$RC_WALL">
+      <file mode="include">Main\LabelWall.cs</file>
+      <file mode="include">Main\ResultWall.cs</file>
+      <file mode="include">Main\ResultSurfaceElement.cs</file>
+      <file mode="include">Main\Calculation\WallElement.cs</file>
+      <file mode="include">Main\Calculation\SurfaceSection.cs</file>
+      <file mode="include">Main\Calculation\WallSection.cs</file>
+      <file mode="include">Server\ServerResultsSurface.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+      <file mode="modify">Server\ServerUI.cs</file>
+    </option>
+  </template>
+</wizard>

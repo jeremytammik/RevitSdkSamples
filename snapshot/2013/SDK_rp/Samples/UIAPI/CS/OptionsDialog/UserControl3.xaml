@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Revit.SDK.Samples.UIAPI.CS.UserControl3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="512" d:DesignWidth="432">
+    <Grid Background="White">
+      <GroupBox Header="Product Information" Height="512" HorizontalAlignment="Left" Name="groupBox1" VerticalAlignment="Top" Width="432">
+         <Grid>
+            <Grid Height="489" HorizontalAlignment="Left" Name="grid1" VerticalAlignment="Top" Width="420">
+               <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition />
+               </Grid.RowDefinitions>
+               <Image Height="230" HorizontalAlignment="Left" Margin="6,6,0,0" Name="image1" VerticalAlignment="Top" Width="408" Source="/TestCases;component/Images/autodesk.jpg"  />
+               <RichTextBox Grid.Row="1" Height="230" HorizontalAlignment="Left" Margin="6,10,0,0" Name="richTextBox1" VerticalAlignment="Top" Width="408" >
+                  <FlowDocument>
+                     <Paragraph>
+                        <Bold>Copyright © 2012 Autodesk, Inc.  All Rights Reserved.</Bold>
+                     </Paragraph>
+                     <Paragraph>
+                        All use of this Software is subject to the terms and conditions of the Autodesk End User License Agreement accepted upon installation of this Software and/or packaged with the Software.
+                     </Paragraph>
+                     <Paragraph>
+                        <Bold>Trademarks</Bold>
+                     </Paragraph>
+                     <Paragraph>
+                        Autodesk, AutoCAD, Buzzsaw, DWF, DWG, DWG TrueView, DXF, FBX, Freewheel, Heidi, Hoops, Revit, ShowMotion, SteeringWheels and ViewCube are either registered trademarks or trademarks of Autodesk, Inc., and/or its subsidiaries and/or affiliates.
+                     </Paragraph>
+                     <Paragraph>
+                        Python is a registered trademark of Python Software Foundation.
+                     </Paragraph>
+                     <Paragraph>
+                        ACE™, TAO™, CIAO™, and CoSMIC™ are copyrighted by Douglas C. Schmidt and his research group at Washington University, University of California, Irvine, and Vanderbilt University, Copyright (c) 1993-2009, all rights reserved.
+                     </Paragraph>
+                  </FlowDocument>
+               </RichTextBox>
+            </Grid>
+         </Grid>
+      </GroupBox>
+   </Grid>
+</UserControl>

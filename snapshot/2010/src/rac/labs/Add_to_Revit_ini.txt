@@ -1,0 +1,155 @@
+[ExternalApplications]
+EACount=4
+
+EAClassName1=Labs.Lab6_1_HelloWorldExternalApplication
+EAAssembly1=...\labs.dll
+
+EAClassName2=Labs.Lab6_2_Ribbon
+EAAssembly2=...\labs.dll
+
+EAClassName3=Labs.Lab6_3_PreventSaveEvent
+EAAssembly3=...\labs.dll
+
+EAClassName4=Labs.Lab6_4_DismissDialog
+EAAssembly4=...\labs.dll
+
+
+[ExternalCommands]
+ECCount=24
+
+ECName1=Lab 1-1 Hello World
+ECDescription1=Basic sample that displays a message box from Revit!
+ECClassName1=Labs.Lab1_1_HelloWorld
+ECAssembly1=...\labs.dll
+
+ECName2=Lab 1-2 Command Arguments
+ECDescription2=Lists the app, doc and view data; then the current selection set and finally simulates an error condition on return
+ECClassName2=Labs.Lab1_2_CommandArguments
+ECAssembly2=...\labs.dll
+
+ECName3=Lab 2-0 make a little house
+ECDescription3=Create a simple house,consisting of four walls, two windows and a door.
+ECClassName3=Labs.Lab2_0_CreateLittleHouse
+ECAssembly3=...\labs.dll
+
+ECName3=Lab 2-1 List all Elements
+ECDescription3=Outputs info on each element to a text file line
+ECClassName3=Labs.Lab2_1_Elements
+ECAssembly3=...\labs.dll
+
+ECName4=Lab 2-2 List all Model Elements
+ECDescription4=Outputs info on each model-element instance to a mesage box
+ECClassName4=Labs.Lab2_2_ModelElements
+ECAssembly4=...\labs.dll
+
+ECName5=Lab 2-3 List all Walls and Doors
+ECDescription5=Outputs some info on each instance of walls and doors to a message box
+ECClassName5=Labs.Lab2_3_AllWallsAndFamilyInstances
+ECAssembly5=...\labs.dll
+
+ECName6=Lab 2-4 Modify Doors 
+ECDescription6=Modify location and width of doors 
+ECClassName6=Labs.Lab2_4_EditFamilyInstance
+ECAssembly6=...\labs.dll
+
+ECName7=Lab 2-5 List Categories
+ECDescription7=Calculate all Built-In Category members and all Categories in Document.
+ECClassName7=Labs.Lab2_5_Categories
+ECAssembly7=...\labs.dll
+
+ECName8=Lab 3-1 List all Standard Families and Types
+ECDescription8=First lists all Standard Family Names and (unsuccessfully) their Category. Then lists them one-by-one with all children Types
+ECClassName8=Labs.Lab3_1_StandardFamiliesAndTypes
+ECAssembly8=...\labs.dll
+
+ECName10=Lab 3-2 Load whole Family and single Symbol
+ECDescription10=Loads a whole Family with corresponding catalog file and also a single specified Symbol (Type) from another family
+ECClassName10=Labs.Lab3_2_LoadStandardFamilies
+ECAssembly10=...\labs.dll
+
+ECName11=Lab 3-3 Determining Type and Family for selected standard Instances
+ECDescription11=First list all Windows Family Types (Symbols), then Type and Family for any Windows in the selection set
+ECClassName11=Labs.Lab3_3_DetermineInstanceTypeAndFamily
+ECAssembly11=...\labs.dll
+
+ECName12=Lab 3-4 Change Type for the selected standard Instance
+ECDescription12=Displays a form with all available Families and Types for the category of selected Instance
+ECClassName12=Labs.Lab3_4_ChangeSelectedInstanceType
+ECAssembly12=...\labs.dll
+
+ECName13=Lab 3-5 Wall and Floor Types
+ECDescription13=List all Wall and Floor Types/Families and then change Type/Family for the selected Walls and Floors
+ECClassName13=Labs.Lab3_5_WallAndFloorTypes
+ECAssembly13=...\labs.dll
+
+ECName14=Lab 4-1 Parameters for selected Elements
+ECDescription14=First list all parameters from the standard collection, then looks for a specific param via built-in params and the standard collection
+ECClassName14=Labs.Lab4_1_ParametersForSelectedObjects
+ECAssembly14=...\labs.dll
+
+ECName15=Lab 4-2 Export Parameters to Excel
+ECDescription15=Exports all parameter values for each model element to Excel: one sheet per category, one row per element
+ECClassName15=Labs.Lab4_2_ExportParametersToExcel
+ECAssembly15=...\labs.dll
+
+ECName16=Lab 4-3-1 FireRating: Create and Bind Shared Parameter
+ECDescription16=Get-or-create shared parameters group, create shared parm definition within and bind it to Doors
+ECClassName16=Labs.Lab4_3_1_CreateAndBindSharedParam
+ECAssembly16=...\labs.dll
+
+ECName17=Lab 4-3-2 FireRating: Export to Excel
+ECDescription17=Exports one row per each door with its values (Id, Level, Tag and FireRating) to Excel
+ECClassName17=Labs.Lab4_3_2_ExportSharedParamToExcel
+ECAssembly17=...\labs.dll
+
+ECName18=Lab 4-3-3 FireRating: Import from Excel
+ECDescription18=Imports updated FireRating values for each door from Excel
+ECClassName18=Labs.Lab4_3_3_ImportSharedParamFromExcel
+ECAssembly18=...\labs.dll
+
+ECName19=Lab 4-4-1 Create and Bind per-Doc Params
+ECDescription19=Create and Bind two per-Doc Params, one visible one invisible
+ECClassName19=Labs.Lab4_4_1_PerDocParams
+ECAssembly19=...\labs.dll
+
+ECName20=Lab 4-4-2 Increment Invisible per-Doc Param
+ECDescription20=Increment the invisible per-Doc Params and shows the values before and after the command
+ECClassName20=Labs.Lab4_4_2_PerDocParams
+ECAssembly20=...\labs.dll
+
+ECName21=Built-In Parameters Checker
+ECDescription21=Uses reflection to check for all built-in params enumeration values on the selected element
+ECClassName21=Labs.BuiltInParamsChecker
+ECAssembly21=...\labs.dll
+
+ECName22=Lab 5-1 Groups and Group Types
+ECDescription22=Lists: all Groups details, all Group Types details and all 'Model' Family Group Types
+ECClassName22=Labs.Lab5_1_GroupsAndGroupTypes
+ECAssembly22=...\labs.dll
+
+ECName23=Lab 5-2 Change Group Type
+ECDescription23=Offers user to change Type for any Group in the selection to any other Model Group Type
+ECClassName23=Labs.Lab5_2_SwapGroupTypes
+ECAssembly23=...\labs.dll
+
+ECName24=Lab 5-3 List Rooms
+ECDescription24=Lists all Rooms in the model, including the Boundary information
+ECClassName24=Labs.Lab5_3_Rooms
+ECAssembly24=...\labs.dll
+
+ECName25=Lab7_1_CreateForm
+ECDescription25=Creates a Loft form
+ECClassName25=Labs.Lab7_1_CreateForm
+ECAssembly25=...\labs.dll
+
+ECName26=Lab7_2_CreateDividedSurface
+ECDescription26=Creates a Divided Surface on the forms in the model
+ECClassName26=Labs.Lab7_2_CreateDividedSurface
+ECAssembly26=...\labs.dll
+
+ECName27=Lab7_3_ChangeTilePattern
+ECDescription27=Changes the tiling pattern of the divided surface
+ECClassName27=Labs.Lab7_3_ChangeTilePattern
+ECAssembly27=...\labs.dll
+
+

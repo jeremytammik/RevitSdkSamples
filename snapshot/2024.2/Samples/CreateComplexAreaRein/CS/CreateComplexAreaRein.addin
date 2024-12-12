@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateComplexAreaRein.dll</Assembly>
+    <ClientId>94ea8791-f8fd-44c6-9bcd-aa3c49170ba3</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateComplexAreaRein.CS.Command</FullClassName>
+    <Text>Create Complex Area Reinforcement</Text>
+    <Description>Create complex AreaReinforcement on selected slab.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

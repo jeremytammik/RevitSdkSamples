@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <ClientId>399fe985-0175-42c0-98a2-ce1469d2a592</ClientId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.FabricationPartLayout</FullClassName>
+    <Text>Fabrication Part Layout</Text>
+    <Description>Fabrication Part Layout Sample</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <ClientId>DECE0D9A-51EB-48CD-B260-DD7E4373FFEE</ClientId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.OptimizeStraights</FullClassName>
+    <Text>Optimize Straights</Text>
+    <Description>Optimize Straights</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

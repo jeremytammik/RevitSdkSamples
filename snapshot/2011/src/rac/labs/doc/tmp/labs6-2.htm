@@ -1,0 +1,222 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Create Ribbon Controls</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Create Ribbon Controls">
+Create Ribbon Controls</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs6-3.htm">next</a>
+<a class="j" href="labs6-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<p>In this lab, we shall write code that adds user controls to the Ribbon panel, through which your External Commands can be called.
+As an example, we will be using the external commands created in Lab 1, and hook them up to our Ribbon controls.</p>
+
+<p>First of all, we need to determine the path of our add-in DLL, so we can provide the absolute path to the images that we will be using.</p>
+
+<pre class="jtcollapse" title="C# Image Path">
+void CreateRibbonItems( ControlledApplication a )
+{
+  string addInPath = typeof(Lab6_2_Ribbon).Assembly.Location;
+  string imgDir = Path.Combine(Path.GetDirectoryName(addInPath), "img");
+
+
+}
+</pre>
+
+<pre class="jtcollapse" title="VB Image Path">
+Public Sub CreateRibbonItems(ByVal a As ControlledApplication)
+    Dim addInPath As String = GetType(Lab6_2_Ribbon).Assembly.Location
+    Dim imgDir As String = Path.Combine(Path.GetDirectoryName(addInPath), "img")
+
+End Sub
+</pre>
+
+<p>Then we specify all the button names and image paths that we need.</p>
+
+<pre class="jtcollapse" title="C# Button Names">  const string panelName = "Lab 6 Panel";
+
+  const string cmd1 = "Labs.Lab1_1_HelloWorld";
+  const string name1 = "HelloWorld";
+  const string text1 = "Hello World";
+  const string tooltip1 = "Run Lab1_1_HelloWorld command";
+  const string img1 = "ImgHelloWorld.png";
+  const string img31 = "ImgHelloWorldSmall.png";
+
+  const string cmd2 = "Labs.Lab1_2_CommandArguments";
+  const string name2 = "CommandArguments";
+  const string text2 = "Command Arguments";
+  const string tooltip2 = "Run Lab1_2_CommandArguments command";
+  const string img2 = "ImgCommandArguments.png";
+  const string img32 = "ImgCommandArgumentsSmall.png";
+
+  const string name3 = "Lab1Commands";
+  const string text3 = "Lab 1 Commands";
+  const string tooltip3 = "Run a Lab 1 command";
+  const string img33 = "ImgCommandSmall.png";
+</pre>
+
+<pre class="jtcollapse" title="VB Button Names">  Dim panelName As String = "Lab 6 Panel"
+
+  Dim cmd1 As String = "Labs.Lab1_1_HelloWorld"
+  Dim name1 As String = "HelloWorld"
+  Dim text1 As String = "Hello World"
+  Dim tooltip1 As String = "Run Lab1_1_HelloWorld command"
+  Dim img1 As String = "ImgHelloWorld.png"
+  Dim img31 As String = "ImgHelloWorldSmall.png"
+
+  Dim cmd2 As String = "Labs.Lab1_2_CommandArguments"
+  Dim name2 As String = "CommandArguments"
+  Dim text2 As String = "Command Arguments"
+  Dim tooltip2 As String = "Run Lab1_2_CommandArguments command"
+  Dim img2 As String = "ImgCommandArguments.png"
+  Dim img32 As String = "ImgCommandArgumentsSmall.png"
+
+  Dim name3 As String = "Lab1Commands"
+  Dim text3 As String = "Lab 1 Commands"
+  Dim tooltip3 As String = "Run a Lab 1 command"
+  Dim img33 As String = "ImgCommandSmall.png"
+</pre>
+
+<p>Before we can add our controls, we need to create a Ribbon Panel for them using <code>CreateRibbonPanel</code>. At the moment we can only add Panels to the AddOns Tab of the Ribbon.</p>
+
+<pre class="jtcollapse" title="C# Create Ribbon Panel">  RibbonPanel panel = a.CreateRibbonPanel(panelName);
+</pre>
+
+<pre class="jtcollapse" title="VB Create Ribbon Panel">  Dim panel As RibbonPanel = a.CreateRibbonPanel(panelName)
+</pre>
+
+<p>Now we can start adding our controls. </p>
+
+<p>At the moment, you can only create a push button or a pulldown button.
+Their size depends on whether they were added using the <code>AddPushButton/AddPulldownButton</code> or <code>AddStackedButtons</code> function.
+Let's add a simple large button to the panel to invoke the Lab 1 Hello World command.</p>
+
+<pre class="jtcollapse" title="C# Create Button">
+  PushButton pb1 = panel.AddPushButton(name1, text1, addInPath, cmd1);
+  pb1.ToolTip = tooltip1;
+  pb1.LargeImage = new BitmapImage(new Uri(Path.Combine(imgDir, img1)));
+</pre>
+
+<pre class="jtcollapse" title="VB Create Button">
+  Dim pb1 As PushButton = panel.AddPushButton(name1, text1, addInPath, cmd1)
+  pb1.ToolTip = tooltip1
+  pb1.LargeImage = New BitmapImage(New Uri(Path.Combine(imgDir, img1)))
+</pre>
+
+<p>We separate the large button from the following small ones.</p>
+
+<pre class="jtcollapse" title="C# Add Separator">
+  panel.AddSeparator();
+</pre>
+
+<pre class="jtcollapse" title="VB Add Separator">
+  panel.AddSeparator()
+</pre>
+
+<p>When adding small, stacked buttons, we need to use <code>PushButtonData/PulldownButtondata</code> to tell <code>AddStackedButtons</code> what to create, and then the function will return the list of created items, containing <code>PushButtons</code> and <code>PulldownButtons</code>.
+The first button will refer to the Hello World command, the second one to the Command Arguments one, and the third one will provide a pulldown menu containing both the Lab 1 commands.</p>
+
+<pre class="jtcollapse" title="C# Add Stacked Buttons">
+  // prepare data for creating stackable buttons
+  PushButtonData pbd1 = new PushButtonData(name1, text1, addInPath, cmd1);
+  pbd1.ToolTip = tooltip1;
+  pbd1.Image = new BitmapImage(new Uri(Path.Combine(imgDir, img31)));
+
+  PushButtonData pbd2 = new PushButtonData(name2, text2, addInPath, cmd2);
+  pbd2.ToolTip = tooltip2;
+  pbd2.Image = new BitmapImage(new Uri(Path.Combine(imgDir, img32)));
+
+  PulldownButtonData pbd3 = new PulldownButtonData(name3, text3);
+  pbd3.ToolTip = tooltip3;
+  pbd3.Image = new BitmapImage(new Uri(Path.Combine(imgDir, img33)));
+
+  // add stackable buttons
+  List&lt;RibbonItem&gt; ribbonItems = panel.AddStackedButtons(pbd1, pbd2, pbd3);
+</pre>
+
+<pre class="jtcollapse" title="VB Add Stacked Buttons">
+  ' prepare data for creating stackable buttons
+  Dim pbd1 As New PushButtonData(name1, text1, addInPath, cmd1)
+  pbd1.ToolTip = tooltip1
+  pbd1.Image = New BitmapImage(New Uri(Path.Combine(imgDir, img31)))
+
+  Dim pbd2 As New PushButtonData(name2, text2, addInPath, cmd2)
+  pbd2.ToolTip = tooltip2
+  pbd2.Image = New BitmapImage(New Uri(Path.Combine(imgDir, img32)))
+
+  Dim pbd3 As New PulldownButtonData(name3, text3)
+  pbd3.ToolTip = tooltip3
+  pbd3.Image = New BitmapImage(New Uri(Path.Combine(imgDir, img33)))
+
+  ' add stackable buttons.
+  Dim ribbonItems As List(Of RibbonItem) = panel.AddStackedButtons(pbd1, pbd2, pbd3)
+</pre>
+
+<p>The last item provided to <code>AddStackedButtons</code> is a <code>PulldownButtonData</code>, so the last item added is a <code>PulldownButton</code>.
+We retrieve that button and fill it up with additional Push Buttons that will pop up when the Pulldown Button is clicked:</p>
+
+<pre class="jtcollapse" title="C# Add Pulldown Buttons">  PulldownButton pb3 = ribbonItems[2] as PulldownButton;
+
+  PushButton pb3_1 = pb3.AddItem(text1, addInPath, cmd1);
+  pb3_1.ToolTip = tooltip1;
+  pb3_1.LargeImage = new BitmapImage(new Uri(Path.Combine(imgDir, img1)));
+
+  PushButton pb3_2 = pb3.AddItem(text2, addInPath, cmd2);
+  pb3_2.ToolTip = tooltip2;
+  pb3_2.LargeImage = new BitmapImage(new Uri(Path.Combine(imgDir, img2)));
+</pre>
+
+<pre class="jtcollapse" title="VB Add Pulldown Buttons">  Dim pb3 As PulldownButton = ribbonItems(2)
+
+  Dim pb3_1 As PushButton = pb3.AddItem(text1, addInPath, cmd1)
+  pb3_1.ToolTip = tooltip1
+  pb3_1.LargeImage = New BitmapImage(New Uri(Path.Combine(imgDir, img1)))
+
+  Dim pb3_2 As PushButton = pb3.AddItem(text2, addInPath, cmd2)
+  pb3_2.ToolTip = tooltip2
+  pb3_2.LargeImage = New BitmapImage(New Uri(Path.Combine(imgDir, img2)))
+</pre>
+
+<p>Before building the project, we need to add references to the PresentationCore and WindowsBase .NET assemblies and use the System.Windows.Media.Imaging namespace.</p>
+
+<p>Now, build the project, adjust the ini file and switch to the Add-Ins tab on the ribbon bar to see the result.</p>
+
+<a class="j" href="labs6-3.htm">next</a>
+<a class="j" href="labs6-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

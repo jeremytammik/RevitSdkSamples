@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DesignOptionReader.dll</Assembly>
+    <ClientId>e50a34d0-a573-46c9-9570-b86a49d21bb2</ClientId>
+    <FullClassName>Revit.SDK.Samples.DesignOptionReader.VB.NET.Command</FullClassName>
+    <Text>Display Options</Text>
+    <Description>Display Options.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

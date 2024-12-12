@@ -1,0 +1,4507 @@
+<head>
+<style type="text/css">
+<!--
+a:visited{color:blue; text-decoration:none;}
+a:hover {color:#red; text-decoration:underline;}
+body {font-family: Arial;}
+-->
+</style>
+</head>
+<h1>RevitAPI Samples Readme</h1><hr/><h2><a name="Introduction">Introduction</a></h2>
+This document provides an overview of the sample applications that come with RevitAPI for .NET developers. Whether you are new to RevitAPI or relatively experienced with it, the sample applications can be a source of ideas and an opportunity to learn new concepts. In addition to describing what each sample application does, this document explains the sample categories, lists the skill level required to understand each application, and provides a suggested order in which to go through the sample applications.
+<br/><h2><a name="Sample_Categories">Sample Categories</a></h2>
+The RevitAPI sample applications are grouped into subdirectories according to the major focus of the sample code. The subdirectories and descriptions of the corresponding categories are listed below.
+<br/><h3><b>Basics</b></h3>
+The category Contains samples related to the ExternalCommand framework, transactions, and event registration.
+<br/><h3><b>Geometry</b></h3>
+Contains samples related to read and analysis of element geometry including curves and reference planes.
+<br/><h3><b>Parameters</b></h3>
+Contains samples related to creation, modification and read of element and shared parameters.
+<br/><h3><b>Elements</b></h3>
+Contains samples related to Revit basic elements such as walls, roofs, floors, levels, grids.
+<br/><h3><b>Families</b></h3>
+Contains samples related to family creation and family instances.
+<br/><h3><b>Materials</b></h3>
+Contains samples related to materials and units. 
+<br/><h3><b>Annotation</b></h3>
+Contains samples related to annotations such as notes, detail curves, dimensions and tags.
+<br/><h3><b>Views</b></h3>
+Contains samples related to view creation and view properties.
+<br/><h3><b>Rooms/Spaces</b></h3>
+Contains samples related to rooms, spaces and areas.
+<br/><h3><b>Data Exchange</b></h3>
+Contains samples related to import, export, or print of Revit documents.
+<br/><h3><b>MEP</b></h3>
+Contains MEP-specific samples.
+<br/><h3><b>Structure</b></h3>
+Contains structure-specific samples.
+<br/><h2><a name="Sample_Skill_Levels">Sample Skill Levels</a></h2>
+To help you identify where to start and what skill level you need to understand a particular sample application, this document lists a skill level rating for each sample. The four levels, beginning, medium, high, and advanced, are characterized by the specific RevitAPI development skills described below.
+<br/><h3><b>Beginning</b></h3>
+At this level, the developer has an understanding of the RevitAPI database and knows most of features that RevitAPI provides.
+<ul>
+<li>How to use External Command. </li>
+<li>How to retrieve data.</li>
+<li>How to modify data.</li>
+<li>How to delete objects.</li>
+<li>How to create objects.</li>
+<li>How to use toolbar.</li>
+<li>How to control element visibility.</li>
+<br/></ul>
+<h3><b>Medium</b></h3>
+At this level, the developer knows how to:
+<ul>
+<li>Control visibility of elements.</li>
+<li>Deal with RevitAPI events.</li>
+<li>Create complex objects.</li>
+<li>Obtain data from complex objects.</li>
+<li>Print views.</li>
+<li>Use transaction.</li>
+<br/></ul>
+<h3><b>High</b></h3>
+At this level, the developer knows how to:
+<ul>
+<li>Get and preview geometry information using graphics GUI (windows forms).</li>
+<li>Create objects using graphics GUI (windows forms).</li>
+<li>Deal with more complex objects.</li>
+<br/></ul>
+<h3><b>Advanced</b></h3>
+At this level, the developer knows how to:
+<ul>
+<li>View all elements' geometry information.</li>
+<li>Interact with database.</li>
+<br/></ul>
+<h2><a name="By_Category">By Category</a></h2>
+<h3><a name="Basics">Basics</a></h3>
+<a href="#APIAppStartup">APIAppStartup</a>
+<br/><a href="#AutoStamp">AutoStamp</a>
+<br/><a href="#AutoUpdate">AutoUpdate</a>
+<br/><a href="#CancelSave">CancelSave</a>
+<br/><a href="#DeleteDimensions">DeleteDimensions</a>
+<br/><a href="#DeleteObject">DeleteObject</a>
+<br/><a href="#DesignOptionReader">DesignOptionReader</a>
+<br/><a href="#ElementsFilter">ElementsFilter</a>
+<br/><a href="#EventsMonitor">EventsMonitor</a>
+<br/><a href="#HelloRevit">HelloRevit</a>
+<br/><a href="#HelloWorld">HelloWorld</a>
+<br/><a href="#Journaling">Journaling</a>
+<br/><a href="#ModifyIniFile">ModifyIniFile</a>
+<br/><a href="#PhaseSample">PhaseSample</a>
+<br/><a href="#PrintLog">PrintLog</a>
+<br/><a href="#ProjectInfo">ProjectInfo</a>
+<br/><a href="#ProjectUnit">ProjectUnit</a>
+<br/><a href="#ReferencePlane">ReferencePlane</a>
+<br/><a href="#RevitCommands">RevitCommands</a>
+<br/><a href="#Ribbon">Ribbon</a>
+<br/><a href="#RotateFramingObjects">RotateFramingObjects</a>
+<br/><a href="#RvtSamples">RvtSamples</a>
+<br/><a href="#TransactionControl">TransactionControl</a>
+<br/><a href="#VersionChecking">VersionChecking</a>
+<br/><h3><a name="Geometry">Geometry</a></h3>
+<a href="#AnalyticalViewer">AnalyticalViewer</a>
+<br/><a href="#AutoJoin">AutoJoin</a>
+<br/><a href="#ElementViewer">ElementViewer</a>
+<br/><a href="#NewPathReinforcement">NewPathReinforcement</a>
+<br/><a href="#RayTraceBounce">RayTraceBounce</a>
+<br/><a href="#ReferencePlane">ReferencePlane</a>
+<br/><a href="#RoomViewer">RoomViewer</a>
+<br/><a href="#ShaftHolePuncher">ShaftHolePuncher</a>
+<br/><a href="#SlabShapeEditing">SlabShapeEditing</a>
+<br/><a href="#Truss">Truss</a>
+<br/><h3><a name="Parameters">Parameters</a></h3>
+<a href="#AutoParameter">AutoParameter</a>
+<br/><a href="#BeamAndSlabNewParameter">BeamAndSlabNewParameter</a>
+<br/><a href="#BrowseBindings">BrowseBindings</a>
+<br/><a href="#CreateBeamsColumnsBraces">CreateBeamsColumnsBraces</a>
+<br/><a href="#CreateShared">CreateShared</a>
+<br/><a href="#DeckProperties">DeckProperties</a>
+<br/><a href="#FireRating">FireRating</a>
+<br/><a href="#InvisibleParam">InvisibleParam</a>
+<br/><a href="#MoveLinear">MoveLinear</a>
+<br/><a href="#ParameterUtils">ParameterUtils</a>
+<br/><a href="#PhysicalProp">PhysicalProp</a>
+<br/><a href="#RDBLink">RDBLink</a>
+<br/><a href="#SlabProperties">SlabProperties</a>
+<br/><a href="#SpanDirection">SpanDirection</a>
+<br/><a href="#TestFloorThickness">TestFloorThickness</a>
+<br/><a href="#TestWallThickness">TestWallThickness</a>
+<br/><a href="#VersionChecking">VersionChecking</a>
+<br/><h3><a name="Elements">Elements</a></h3>
+<a href="#CurtainSystem">CurtainSystem</a>
+<br/><a href="#CurtainWallGrid">CurtainWallGrid</a>
+<br/><a href="#DesignOptionReader">DesignOptionReader</a>
+<br/><a href="#ElementsBatchCreation">ElementsBatchCreation</a>
+<br/><a href="#FoundationSlab">FoundationSlab</a>
+<br/><a href="#GenerateFloor">GenerateFloor</a>
+<br/><a href="#GridCreation">GridCreation</a>
+<br/><a href="#LevelsProperty">LevelsProperty</a>
+<br/><a href="#ModelLines">ModelLines</a>
+<br/><a href="#MoveLinear">MoveLinear</a>
+<br/><a href="#NewHostedSweep">NewHostedSweep</a>
+<br/><a href="#NewOpenings">NewOpenings</a>
+<br/><a href="#NewRoof">NewRoof</a>
+<br/><a href="#Openings">Openings</a>
+<br/><a href="#ShaftHolePuncher">ShaftHolePuncher</a>
+<br/><a href="#SharedCoordinateSystem">SharedCoordinateSystem</a>
+<br/><a href="#SlabProperties">SlabProperties</a>
+<br/><a href="#SlabShapeEditing">SlabShapeEditing</a>
+<br/><a href="#SpanDirection">SpanDirection</a>
+<br/><h3><a name="Families">Families</a></h3>
+<a href="#AutoParameter">AutoParameter</a>
+<br/><a href="#CreateAirHandler">CreateAirHandler</a>
+<br/><a href="#CreateTruss">CreateTruss</a>
+<br/><a href="#DWGFamilyCreation">DWGFamilyCreation</a>
+<br/><a href="#GenericModelCreation">GenericModelCreation</a>
+<br/><a href="#InPlaceMembers">InPlaceMembers</a>
+<br/><a href="#PlaceFamilyInstanceByFace">PlaceFamilyInstanceByFace</a>
+<br/><a href="#RevitCommands">RevitCommands</a>
+<br/><a href="#TypeRegeneration">TypeRegeneration</a>
+<br/><a href="#TypeSelector">TypeSelector</a>
+<br/><a href="#ValidateParameters">ValidateParameters</a>
+<br/><a href="#WindowWizard">WindowWizard</a>
+<br/><h3><a name="Materials">Materials</a></h3>
+<a href="#MaterialProperties">MaterialProperties</a>
+<br/><a href="#Materials">Materials</a>
+<br/><a href="#PhysicalProp">PhysicalProp</a>
+<br/><h3><a name="Annotation">Annotation</a></h3>
+<a href="#AutoTagRooms">AutoTagRooms</a>
+<br/><a href="#CreateDimensions">CreateDimensions</a>
+<br/><a href="#DeleteDimensions">DeleteDimensions</a>
+<br/><a href="#SpotDimension">SpotDimension</a>
+<br/><a href="#TagBeam">TagBeam</a>
+<br/><h3><a name="Views">Views</a></h3>
+<a href="#AllViews">AllViews</a>
+<br/><a href="#CreateViewSection">CreateViewSection</a>
+<br/><a href="#ObjectViewer">ObjectViewer</a>
+<br/><a href="#VisibilityControl">VisibilityControl</a>
+<br/><h3><a name="Rooms/Spaces">Rooms/Spaces</a></h3>
+<a href="#AddSpaceAndZone">AddSpaceAndZone</a>
+<br/><a href="#DoorSwing">DoorSwing</a>
+<br/><a href="#RoofsRooms">RoofsRooms</a>
+<br/><a href="#Rooms">Rooms</a>
+<br/><a href="#RoomSchedule">RoomSchedule</a>
+<br/><h3><a name="Data_Exchange">Data Exchange</a></h3>
+<a href="#ArchSample">ArchSample</a>
+<br/><a href="#DWGFamilyCreation">DWGFamilyCreation</a>
+<br/><a href="#ImportExport">ImportExport</a>
+<br/><a href="#ProjectUnit">ProjectUnit</a>
+<br/><a href="#RDBLink">RDBLink</a>
+<br/><a href="#ViewPrinter">ViewPrinter</a>
+<br/><h3><a name="MEP">MEP</a></h3>
+<a href="#AutoRoute">AutoRoute</a>
+<br/><a href="#AvoidObstruction">AvoidObstruction</a>
+<br/><a href="#PowerCircuit">PowerCircuit</a>
+<br/><a href="#TraverseSystem">TraverseSystem</a>
+<br/><h2><a name="By_Skill_Level">By Skill Level</a></h2>
+<h3><a name="Beginning">Beginning</a></h3>
+<a href="#APIAppStartup">APIAppStartup</a>
+<br/><a href="#AreaReinCurve">AreaReinCurve</a>
+<br/><a href="#AutoRoute">AutoRoute</a>
+<br/><a href="#BarDescriptions">BarDescriptions</a>
+<br/><a href="#BrowseBindings">BrowseBindings</a>
+<br/><a href="#CancelSave">CancelSave</a>
+<br/><a href="#CreateShared">CreateShared</a>
+<br/><a href="#CurvedBeam">CurvedBeam</a>
+<br/><a href="#DeckProperties">DeckProperties</a>
+<br/><a href="#DeleteDimensions">DeleteDimensions</a>
+<br/><a href="#DeleteObject">DeleteObject</a>
+<br/><a href="#DesignOptionReader">DesignOptionReader</a>
+<br/><a href="#DWGFamilyCreation">DWGFamilyCreation</a>
+<br/><a href="#ElementsBatchCreation">ElementsBatchCreation</a>
+<br/><a href="#FireRating">FireRating</a>
+<br/><a href="#HelloRevit">HelloRevit</a>
+<br/><a href="#HelloWorld">HelloWorld</a>
+<br/><a href="#InplaceFamilyAnalyticalModel3D">InplaceFamilyAnalyticalModel3D</a>
+<br/><a href="#LevelsProperty">LevelsProperty</a>
+<br/><a href="#ModelLines">ModelLines</a>
+<br/><a href="#ModifyIniFile">ModifyIniFile</a>
+<br/><a href="#MoveLinear">MoveLinear</a>
+<br/><a href="#ParameterUtils">ParameterUtils</a>
+<br/><a href="#PhaseSample">PhaseSample</a>
+<br/><a href="#PhysicalProp">PhysicalProp</a>
+<br/><a href="#PowerCircuit">PowerCircuit</a>
+<br/><a href="#ProjectInfo">ProjectInfo</a>
+<br/><a href="#ProjectUnit">ProjectUnit</a>
+<br/><a href="#RevitCommands">RevitCommands</a>
+<br/><a href="#Ribbon">Ribbon</a>
+<br/><a href="#Rooms">Rooms</a>
+<br/><a href="#RvtSamples">RvtSamples</a>
+<br/><a href="#SlabProperties">SlabProperties</a>
+<br/><a href="#SpanDirection">SpanDirection</a>
+<br/><a href="#SpotDimension">SpotDimension</a>
+<br/><a href="#StructSample">StructSample</a>
+<br/><a href="#StructuralLayerFunction">StructuralLayerFunction</a>
+<br/><a href="#TagBeam">TagBeam</a>
+<br/><a href="#TestFloorThickness">TestFloorThickness</a>
+<br/><a href="#TestWallThickness">TestWallThickness</a>
+<br/><a href="#TypeRegeneration">TypeRegeneration</a>
+<br/><a href="#TypeSelector">TypeSelector</a>
+<br/><a href="#ValidateParameters">ValidateParameters</a>
+<br/><a href="#VersionChecking">VersionChecking</a>
+<br/><a href="#WindowWizard">WindowWizard</a>
+<br/><h3><a name="Medium">Medium</a></h3>
+<a href="#AddSpaceAndZone">AddSpaceAndZone</a>
+<br/><a href="#AllViews">AllViews</a>
+<br/><a href="#AnalyticalSupportData_Info">AnalyticalSupportData_Info</a>
+<br/><a href="#AnalyticalViewer">AnalyticalViewer</a>
+<br/><a href="#ArchSample">ArchSample</a>
+<br/><a href="#AreaReinParameters">AreaReinParameters</a>
+<br/><a href="#AutoJoin">AutoJoin</a>
+<br/><a href="#AutoParameter">AutoParameter</a>
+<br/><a href="#AutoStamp">AutoStamp</a>
+<br/><a href="#AutoTagRooms">AutoTagRooms</a>
+<br/><a href="#AutoUpdate">AutoUpdate</a>
+<br/><a href="#AvoidObstruction">AvoidObstruction</a>
+<br/><a href="#BeamAndSlabNewParameter">BeamAndSlabNewParameter</a>
+<br/><a href="#CreateAirHandler">CreateAirHandler</a>
+<br/><a href="#CreateBeamsColumnsBraces">CreateBeamsColumnsBraces</a>
+<br/><a href="#CreateComplexAreaRein">CreateComplexAreaRein</a>
+<br/><a href="#CreateDimensions">CreateDimensions</a>
+<br/><a href="#CreateSimpleAreaRein">CreateSimpleAreaRein</a>
+<br/><a href="#CreateTruss">CreateTruss</a>
+<br/><a href="#CreateViewSection">CreateViewSection</a>
+<br/><a href="#CreateWallinBeamProfile">CreateWallinBeamProfile</a>
+<br/><a href="#CreateWallsUnderBeams">CreateWallsUnderBeams</a>
+<br/><a href="#CurtainSystem">CurtainSystem</a>
+<br/><a href="#CurtainWallGrid">CurtainWallGrid</a>
+<br/><a href="#DoorSwing">DoorSwing</a>
+<br/><a href="#ElementViewer">ElementViewer</a>
+<br/><a href="#EventsMonitor">EventsMonitor</a>
+<br/><a href="#FoundationSlab">FoundationSlab</a>
+<br/><a href="#FrameBuilder">FrameBuilder</a>
+<br/><a href="#GenerateFloor">GenerateFloor</a>
+<br/><a href="#GenericModelCreation">GenericModelCreation</a>
+<br/><a href="#InPlaceMembers">InPlaceMembers</a>
+<br/><a href="#InvisibleParam">InvisibleParam</a>
+<br/><a href="#Journaling">Journaling</a>
+<br/><a href="#Loads">Loads</a>
+<br/><a href="#MaterialProperties">MaterialProperties</a>
+<br/><a href="#NewPathReinforcement">NewPathReinforcement</a>
+<br/><a href="#PathReinforcement">PathReinforcement</a>
+<br/><a href="#PlaceFamilyInstanceByFace">PlaceFamilyInstanceByFace</a>
+<br/><a href="#PrintLog">PrintLog</a>
+<br/><a href="#RayTraceBounce">RayTraceBounce</a>
+<br/><a href="#ReferencePlane">ReferencePlane</a>
+<br/><a href="#RoofsRooms">RoofsRooms</a>
+<br/><a href="#RoomViewer">RoomViewer</a>
+<br/><a href="#RotateFramingObjects">RotateFramingObjects</a>
+<br/><a href="#SharedCoordinateSystem">SharedCoordinateSystem</a>
+<br/><a href="#SlabShapeEditing">SlabShapeEditing</a>
+<br/><a href="#TransactionControl">TransactionControl</a>
+<br/><a href="#TraverseSystem">TraverseSystem</a>
+<br/><a href="#Truss">Truss</a>
+<br/><a href="#ViewPrinter">ViewPrinter</a>
+<br/><a href="#VisibilityControl">VisibilityControl</a>
+<br/><h3><a name="High">High</a></h3>
+<a href="#BoundaryConditions">BoundaryConditions</a>
+<br/><a href="#CreateBeamSystem">CreateBeamSystem</a>
+<br/><a href="#ElementsFilter">ElementsFilter</a>
+<br/><a href="#GridCreation">GridCreation</a>
+<br/><a href="#ImportExport">ImportExport</a>
+<br/><a href="#Materials">Materials</a>
+<br/><a href="#NewHostedSweep">NewHostedSweep</a>
+<br/><a href="#NewOpenings">NewOpenings</a>
+<br/><a href="#NewRebar">NewRebar</a>
+<br/><a href="#NewRoof">NewRoof</a>
+<br/><a href="#Openings">Openings</a>
+<br/><a href="#Reinforcement">Reinforcement</a>
+<br/><a href="#RoomSchedule">RoomSchedule</a>
+<br/><a href="#ShaftHolePuncher">ShaftHolePuncher</a>
+<br/><h3><a name="Advanced">Advanced</a></h3>
+<a href="#ObjectViewer">ObjectViewer</a>
+<br/><a href="#RDBLink">RDBLink</a>
+<br/><h2><a name="By_Version">By Version</a></h2>
+<h3><a name="8.0">8.0</a></h3>
+<a href="#AnalyticalViewer">AnalyticalViewer</a>
+<br/><a href="#ArchSample">ArchSample</a>
+<br/><a href="#BrowseBindings">BrowseBindings</a>
+<br/><a href="#CreateShared">CreateShared</a>
+<br/><a href="#ElementViewer">ElementViewer</a>
+<br/><a href="#FireRating">FireRating</a>
+<br/><a href="#HelloRevit">HelloRevit</a>
+<br/><a href="#MoveLinear">MoveLinear</a>
+<br/><a href="#PhysicalProp">PhysicalProp</a>
+<br/><a href="#RevitCommands">RevitCommands</a>
+<br/><a href="#RoomViewer">RoomViewer</a>
+<br/><a href="#StructSample">StructSample</a>
+<br/><a href="#TypeSelector">TypeSelector</a>
+<br/><h3><a name="8.1">8.1</a></h3>
+<a href="#DeckProperties">DeckProperties</a>
+<br/><a href="#HelloWorld">HelloWorld</a>
+<br/><a href="#InvisibleParam">InvisibleParam</a>
+<br/><a href="#ParameterUtils">ParameterUtils</a>
+<br/><a href="#SpanDirection">SpanDirection</a>
+<br/><h3><a name="9.0">9.0</a></h3>
+<a href="#AllViews">AllViews</a>
+<br/><a href="#AnalyticalSupportData_Info">AnalyticalSupportData_Info</a>
+<br/><a href="#AreaReinCurve">AreaReinCurve</a>
+<br/><a href="#AreaReinParameters">AreaReinParameters</a>
+<br/><a href="#BarDescriptions">BarDescriptions</a>
+<br/><a href="#BeamAndSlabNewParameter">BeamAndSlabNewParameter</a>
+<br/><a href="#CreateBeamsColumnsBraces">CreateBeamsColumnsBraces</a>
+<br/><a href="#CreateComplexAreaRein">CreateComplexAreaRein</a>
+<br/><a href="#CreateDimensions">CreateDimensions</a>
+<br/><a href="#CreateSimpleAreaRein">CreateSimpleAreaRein</a>
+<br/><a href="#CreateViewSection">CreateViewSection</a>
+<br/><a href="#CreateWallinBeamProfile">CreateWallinBeamProfile</a>
+<br/><a href="#CreateWallsUnderBeams">CreateWallsUnderBeams</a>
+<br/><a href="#DeleteDimensions">DeleteDimensions</a>
+<br/><a href="#DeleteObject">DeleteObject</a>
+<br/><a href="#DesignOptionReader">DesignOptionReader</a>
+<br/><a href="#GenerateFloor">GenerateFloor</a>
+<br/><a href="#InPlaceMembers">InPlaceMembers</a>
+<br/><a href="#LevelsProperty">LevelsProperty</a>
+<br/><a href="#Loads">Loads</a>
+<br/><a href="#MaterialProperties">MaterialProperties</a>
+<br/><a href="#ObjectViewer">ObjectViewer</a>
+<br/><a href="#PhaseSample">PhaseSample</a>
+<br/><a href="#RotateFramingObjects">RotateFramingObjects</a>
+<br/><a href="#SlabProperties">SlabProperties</a>
+<br/><a href="#StructuralLayerFunction">StructuralLayerFunction</a>
+<br/><a href="#VersionChecking">VersionChecking</a>
+<br/><h3><a name="9.1">9.1</a></h3>
+<a href="#BoundaryConditions">BoundaryConditions</a>
+<br/><a href="#CreateBeamSystem">CreateBeamSystem</a>
+<br/><a href="#FoundationSlab">FoundationSlab</a>
+<br/><a href="#FrameBuilder">FrameBuilder</a>
+<br/><a href="#Journaling">Journaling</a>
+<br/><a href="#Openings">Openings</a>
+<br/><a href="#ReferencePlane">ReferencePlane</a>
+<br/><a href="#Reinforcement">Reinforcement</a>
+<br/><a href="#Rooms">Rooms</a>
+<br/><a href="#SharedCoordinateSystem">SharedCoordinateSystem</a>
+<br/><h3><a name="2008.0">2008.0</a></h3>
+<a href="#APIAppStartup">APIAppStartup</a>
+<br/><a href="#AutoTagRooms">AutoTagRooms</a>
+<br/><a href="#CurvedBeam">CurvedBeam</a>
+<br/><a href="#ImportExport">ImportExport</a>
+<br/><a href="#InplaceFamilyAnalyticalModel3D">InplaceFamilyAnalyticalModel3D</a>
+<br/><a href="#ModifyIniFile">ModifyIniFile</a>
+<br/><a href="#NewOpenings">NewOpenings</a>
+<br/><a href="#NewPathReinforcement">NewPathReinforcement</a>
+<br/><a href="#PathReinforcement">PathReinforcement</a>
+<br/><a href="#ProjectInfo">ProjectInfo</a>
+<br/><a href="#ProjectUnit">ProjectUnit</a>
+<br/><a href="#ShaftHolePuncher">ShaftHolePuncher</a>
+<br/><a href="#SpotDimension">SpotDimension</a>
+<br/><a href="#TagBeam">TagBeam</a>
+<br/><a href="#TestFloorThickness">TestFloorThickness</a>
+<br/><a href="#TestWallThickness">TestWallThickness</a>
+<br/><a href="#TransactionControl">TransactionControl</a>
+<br/><a href="#ViewPrinter">ViewPrinter</a>
+<br/><a href="#VisibilityControl">VisibilityControl</a>
+<br/><h3><a name="2008.2">2008.2</a></h3>
+<a href="#Materials">Materials</a>
+<br/><a href="#ModelLines">ModelLines</a>
+<br/><a href="#RDBLink">RDBLink</a>
+<br/><a href="#RoomSchedule">RoomSchedule</a>
+<br/><h3><a name="2009.0">2009.0</a></h3>
+<a href="#AddSpaceAndZone">AddSpaceAndZone</a>
+<br/><a href="#CurtainSystem">CurtainSystem</a>
+<br/><a href="#CurtainWallGrid">CurtainWallGrid</a>
+<br/><a href="#DoorSwing">DoorSwing</a>
+<br/><a href="#ElementsBatchCreation">ElementsBatchCreation</a>
+<br/><a href="#ElementsFilter">ElementsFilter</a>
+<br/><a href="#GridCreation">GridCreation</a>
+<br/><a href="#NewHostedSweep">NewHostedSweep</a>
+<br/><a href="#NewRebar">NewRebar</a>
+<br/><a href="#NewRoof">NewRoof</a>
+<br/><a href="#PlaceFamilyInstanceByFace">PlaceFamilyInstanceByFace</a>
+<br/><a href="#PowerCircuit">PowerCircuit</a>
+<br/><a href="#RvtSamples">RvtSamples</a>
+<br/><a href="#SlabShapeEditing">SlabShapeEditing</a>
+<br/><a href="#Truss">Truss</a>
+<br/><h3><a name="2009.1">2009.1</a></h3>
+<a href="#RoofsRooms">RoofsRooms</a>
+<br/><h3><a name="2010.0">2010.0</a></h3>
+<a href="#AutoJoin">AutoJoin</a>
+<br/><a href="#AutoParameter">AutoParameter</a>
+<br/><a href="#AutoRoute">AutoRoute</a>
+<br/><a href="#AutoStamp">AutoStamp</a>
+<br/><a href="#AutoUpdate">AutoUpdate</a>
+<br/><a href="#AvoidObstruction">AvoidObstruction</a>
+<br/><a href="#CancelSave">CancelSave</a>
+<br/><a href="#CreateAirHandler">CreateAirHandler</a>
+<br/><a href="#CreateTruss">CreateTruss</a>
+<br/><a href="#DWGFamilyCreation">DWGFamilyCreation</a>
+<br/><a href="#EventsMonitor">EventsMonitor</a>
+<br/><a href="#GenericModelCreation">GenericModelCreation</a>
+<br/><a href="#PrintLog">PrintLog</a>
+<br/><a href="#RayTraceBounce">RayTraceBounce</a>
+<br/><a href="#Ribbon">Ribbon</a>
+<br/><a href="#TraverseSystem">TraverseSystem</a>
+<br/><a href="#TypeRegeneration">TypeRegeneration</a>
+<br/><a href="#ValidateParameters">ValidateParameters</a>
+<br/><a href="#WindowWizard">WindowWizard</a>
+<br/><h2><a name="By_Name_alphabetically">By Name alphabetically</a></h2>
+This section lists the sample applications in alphabetical order and briefly discusses what each application does.
+<br/><a href="#AddSpaceAndZone">A</a> | <a href="#BarDescriptions">B</a> | <a href="#CancelSave">C</a> | <a href="#DeckProperties">D</a> | <a href="#ElementsBatchCreation">E</a> | <a href="#FireRating">F</a> | <a href="#GenerateFloor">G</a> | <a href="#HelloRevit">H</a> | <a href="#ImportExport">I</a> | <a href="#Journaling">J</a> | K | <a href="#LevelsProperty">L</a> | <a href="#MaterialProperties">M</a> | <a href="#NewHostedSweep">N</a> | <a href="#ObjectViewer">O</a> | <a href="#ParameterUtils">P</a> | Q | <a href="#RayTraceBounce">R</a> | <a href="#ShaftHolePuncher">S</a> | <a href="#TagBeam">T</a> | U | <a href="#ValidateParameters">V</a> | <a href="#WindowWizard">W</a> | X | Y | Z
+<h4><a name="AddSpaceAndZone">AddSpaceAndZone</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create spaces and zones.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Rooms/Spaces</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.Space<br/>Autodesk.Revit.Elements.Zone<br/>Autodesk.Revit.Elements.Phase<br/>Autodesk.Revit.Creation.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates three main features:<br/>1.	How to get all Space elements in a specified level.<br/>2.	How to get all Zone elements   in a specified level.<br/>3.	How to create Space elements for each closed wall loop or closed space separation.<br/>4.	How to create a new Zone element in a specified level and phase.<br/>5.	How to add/remove spaces in a Zone element.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AllViews">AllViews</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Generate a new sheet that includes all the selected views.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Views</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Elements.View<br/>Autodesk.Revit.Elements.ViewSet<br/>Autodesk.Revit.Creation.Document.NewViewSheet</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to generate a new sheet that includes all the selected views.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AnalyticalSupportData_Info">AnalyticalSupportData_Info</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display elements' analytical support informations.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Structural.AnalyticalSupportData<br/>Autodesk.Revit.Structural.AnalyticalSupportInfoArray<br/>Autodesk.Revit.Structural.AnalyticalSupportInfo</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample displays the supported information of the element (includes the element id, element type and supported type of the element).</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AnalyticalViewer">AnalyticalViewer</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > View analytical model wireframe.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Structural.AnalyticalModel<br/>Autodesk.Revit.Structural.AnalyticalModel3D<br/>Autodesk.Revit.Structural.AnalyticalModelFloor<br/>Autodesk.Revit.Structural.AnalyticalModelFrame<br/>Autodesk.Revit.Structural.AnalyticalModelLocation<br/>Autodesk.Revit.Structural.AnalyticalModelWall<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Elements.Wall<br/>Autodesk.Revit.Elements.ContFooting<br/>Autodesk.Revit.Elements.Floor</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This program demonstrates the usage of a structural analytical model. This sample uses a helper program RevitViewer.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="APIAppStartup">APIAppStartup</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Launch an external application.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to launch an external application when Revit starts and closes.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ArchSample">ArchSample</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Export data to Excel.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Data Exchange</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Collections.Map<br/>Autodesk.Revit.Collections.MapIterator<br/>Autodesk.Revit.ElementSet<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.ParameterSet<br/>Autodesk.Revit.Collections.Set</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample exports the contents of an entire project to Microsoft Excel 2003.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AreaReinCurve">AreaReinCurve</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Parameters of AreaReinCurve.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.ElementSet<br/>Autodesk.Revit.Elements.AreaReinforcementCurve<br/>Autodesk.Revit.Parameters.BuiltInParameter</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows user how to get AreaReinforcementCurve and change its parameters.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AreaReinParameters">AreaReinParameters</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Parameters of AreaReinforcement and Rebar.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.ElementSet<br/>Autodesk.Revit.ElementIterator<br/>Autoesk.Revit.Symbols.RebarBarType <br/>Autodesk.Revit.Elements.AreaReinforcementCurve<br/>Autodesk.Revit.Parameters.BuiltInParameter</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to use API displays and modifies parameters of AreaReinforcement. And teach user how to get all parameters of Rebar.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AutoJoin">AutoJoin</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Automatically join geometry of combinable elements.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Elements.CombinableElement</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to automatically join geometry between multiple generic forms for use in family modeling and massing.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AutoParameter">AutoParameter</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Auto add parameters to family document.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters, Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.FamilyManager<br/>Autodesk.Revit.Parameters.FamilyParameter<br/>Autodesk.Revit.Parameters.ExternalDefinition</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to automatically add parameters (shared or not) to family documents.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AutoRoute">AutoRoute</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Route ducts and fittings.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.MEP.MechanicalSystem<br/>Autodesk.Revit.MEP.Duct<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.MEP.Connector<br/>Autodesk.Revit.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to route a set of ducts and fittings between a base air supply equipment and 2 terminals.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AutoStamp">AutoStamp</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Auto stamp when print view.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalApplication <br/>Autodesk.Revit.Elements<br/>Autodesk.Revit.Elements.TextNote<br/>Autodesk.Revit.Geometry.XYZ<br/>Autodesk.Revit.Events.ViewPrintingEventArgs<br/>Autodesk.Revit.Events.ViewPrintedEventArgs</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to subscribe ViewPrint events, create and delete TextNote element in event handler and cancel events when creation failure occurred.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AutoTagRooms">AutoTagRooms</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Auto Tag Rooms.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Annotation</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Architecture</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.Room<br/>Autodesk.Revit.Elements.RoomTag<br/>Autodesk.Revit.Symbols.RoomTagType<br/>Autodesk.Revit.Creation.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates three main features:<br/>1.	How to get all rooms in a specified level.<br/>2.	How to get all room tags in current document.<br/>3.	How to create new room tags with specified room tag type to auto tag all rooms in a specified level.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AutoUpdate">AutoUpdate</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Auto-update Revit model after document is opened.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalApplication <br/>Autodesk.Revit.Events.DocumentOpenedArgs</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to subscribe DocumentOpened event and modify model in event handler in the event handler method.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="AvoidObstruction">AvoidObstruction</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Obstruction detect and resolve.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.MEP<br/>Autodesk.Revit.Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample will demonstrate how to detect and resolve the obstructions of Pipe with Pipe, Pipe with Beam, or Pipe with Duct.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="BarDescriptions">BarDescriptions</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Parameters of BarDescriptions.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.AreaReinforcement <br/>Autodesk.Revit.Structure.BarDescription</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to get parameters of BarDescriptions in a table. And allow the parameters information of BarDescriptions to be saved in an Excel .CSV file.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="BeamAndSlabNewParameter">BeamAndSlabNewParameter</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Shared parameter.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Parameters.DefinitionFile<br/>Autodesk.Revit.Parameters.Definition<br/>Autodesk.Revit.CategorySet<br/>Autodesk.Revit.Parameters.InstanceBinding<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.SelElementSet</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to add a shared instance parameter to beams and slabs, and uses GUID as the parameter's value. Users also can use the value of the parameter to find the special element.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="BoundaryConditions">BoundaryConditions</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create or retrieve boundary conditions.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.BoundaryConditions</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows to get BoundaryConditions' parameters or create BoundaryConditons.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="BrowseBindings">BrowseBindings</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display shared parameters bindings.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Application<br/>Autodesk.Revit.Parameters.BindingMap<br/>Autodesk.Revit.Collections.DefinitionBindingMapIterator<br/>Autodesk.Revit.Parameters.ElementBinding<br/>Autodesk.Revit.Parameters.Definition<br/>Autodesk.Revit.CategorySet</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample browses all the shared parameters bindings used in the project.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CancelSave">CancelSave</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Cancel document save process</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalApplication<br/>Autodesk.Revit.Elements.ControlledApplication<br/>Autodesk.Revit.Elements.ProjectInfo</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to cancel the document save process through DocumentSaving / DocumentSavingAs event's arguments.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateAirHandler">CreateAirHandler</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create one air handler and add connectors.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Creation.FamilyItemFactory<br/>Autodesk.Revit.Elements.Extrusion<br/>Autodesk.Revit.MEP.DuctConnector<br/>Autodesk.Revit.MEP.PipeConnector<br/>Autodesk.Revit.Elements.CombinableElement</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample creates one air handler and adds connectors (piping, duct).</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateBeamsColumnsBraces">CreateBeamsColumnsBraces</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create a frame with beams, columns and braces.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters, Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Symbols.FamilySymbol<br/>Autodesk.Revit.Creation.Document.NewFamilyInstance(бн) method</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create a truss model which composes of columns, beams and braces automatically according to the user's input.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateBeamSystem">CreateBeamSystem</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create beamsystem.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.BeamSystem<br/>Autodesk.Revit.Elements.LayoutRule<br/>Autodesk.Revit.Symbols.FamilySymbol</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to generate a beam system with the horizontal linear beams selection's profile.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateComplexAreaRein">CreateComplexAreaRein</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create AreaReinforcement.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Structural.AnalyticalModelFloor<br/>Autodesk.Revit.Geometry.CurveArray<br/>Autodesk.Revit.Geometry.Line<br/>Autodesk.Revit.Symbols.AreaReinforcementType<br/>Autodesk.Revit.ElementIterator<br/>Autodesk.Revit.Geometry.Element<br/>Autodesk.Revit.Geometry.Solid</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create AreaReinforcement by Revit API and change its parameters.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateDimensions">CreateDimensions</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create dimensions.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Annotation</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.View<br/>Autodesk.Revit.Elements.Wall<br/>Autodesk.Revit.Elements.Dimension<br/>Autodesk.Revit.CategorySet<br/>Autodesk.Revit.Category<br/>Autodesk.Revit.SelElementSet <br/>Autodesk.Revit.Location<br/>Autodesk.Revit.LocationCurve<br/>Autodesk.Revit.Geometry.Curve<br/>Autodesk.Revit.Geometry.Line<br/>Autodesk.Revit.Geometry.ReferenceArray<br/>Autodesk.Revit.Geometry.Options<br/>Autodesk.Revit.Geometry.Element<br/>Autodesk.Revit.Geometry.GeometryObjectArray<br/>Autodesk.Revit.Geometry.GeometryObject</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to add a dimension to a selected structure wall from its start to its end.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateShared">CreateShared</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create and modify a shared parameter.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Parameters.DefinitionFile<br/>Autodesk.Revit.Parameters.DefinitionGroup<br/>Autodesk.Revit.Parameters.Definition<br/>Autodesk.Revit.CategorySet<br/>Autodesk.Revit.Category<br/>Autodesk.Revit.Parameters.InstanceBinding<br/>Autodesk.Revit.ParameterSet<br/>Autodesk.Revit.Symbol</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how a shared parameter can be created via the API and how a shared parameter can be modified via the API.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateSimpleAreaRein">CreateSimpleAreaRein</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create rectangular AreaReinforcement.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Elemetns.AreaReinforcement<br/>Autodesk.Revit.Elements.Floor<br/>Autodesk.Revit.Elements.Wall<br/>Autodesk.Revit.Geometry.CurveArray<br/>Autodesk.Revit.Symbols.AreaReinforcementType<br/>Autodesk.Revit.Parameter</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample uses to show how to create AreaReinforcement and change its parameters by Revit API.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateTruss">CreateTruss</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create Truss</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Elements.ModelCurve<br/>Autodesk.Revit.Elements.Family<br/>Autodesk.Revit.Creation.ItemFactoryBase<br/>Autodesk.Revit.Creation.FamilyItemFactory</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create a mono truss in truss family document.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateViewSection">CreateViewSection</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create section views.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Views</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Geometry.BoundingBoxXYZ<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.ElementSet<br/>Autodesk.Revit.Elements.Wall<br/>Autodesk.Revit.LocationCurve<br/>Autodesk.Revit.Geometry.Line<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Geometry.Transform<br/>Autodesk.Revit.Structural.AnalyticalModel<br/>Autodesk.Revit.Structural.AnalyticalModelFrame<br/>Autodesk.Revit.Geometry.Curve<br/>Autodesk.Revit.Elements.Floor<br/>Autodesk.Revit.Structural.AnalyticalModelFloor</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to generate a section view across the mid point of a linear element, such as a wall, floor or beam</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateWallinBeamProfile">CreateWallinBeamProfile</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create wall with Profile of selected Beams.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Geometry.Curve<br/>Autodesk.Revit.Creation.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to generate a wall which has the profile of beams selection. When the command is executed, a dialog should appear that contains a drop-down list for all types of wall and a check box for whether the walls are structural. Default should be checked.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CreateWallsUnderBeams">CreateWallsUnderBeams</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create wall under selected Beams.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Structural.AnalyticalModelFrame<br/>Autodesk.Revit.Creation.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to generate simple rectangular wall(s) under the beam(s) selection. When the command is executed a dialog should appear that contains a drop-down list for all types of wall and a check box for whether the walls are structural. Default should be checked.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CurtainSystem">CurtainSystem</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create curtain systems.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.CurtainSystem</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates 4 main features:<br/>1.	How to create curtain systems on specified faces.<br/>2.	How to delete curtain systems.<br/>3.	How to add curtain grids to curtain systems.<br/>4.	How to remove curtain grids from curtain systems.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CurtainWallGrid">CurtainWallGrid</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create Curtain Wall and manipulate its curtain grid.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.Wall<br/>Autodesk.Revit.Elements.CurtainGrid<br/>Autodesk.Revit.Elements.CurtainGridLine<br/>Autodesk.Revit.Elements.CurtainCell<br/>Autodesk.Revit.Elements.Mullion</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates five main features:<br/>1.	How to create curtain wall with specific level and wall type.<br/>2.	How to retrieve the curtain grid information of the curtain wall.<br/>3.	How to edit the data of the curtain grid.<br/>4.	How to retrieve the grid lines of the curtain grid.<br/>5.	How to edit the grid lines and mullions of the curtain grid.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="CurvedBeam">CurvedBeam</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Curved Beam creation.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements<br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Symbols.FamilySymbol<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Elements.Level<br/>Autodesk.Revit.LocationCurve<br/>Autodesk.Revit.Geometry.Arc<br/>Autodesk.Revit.Geometry.Ellipse<br/>Autodesk.Revit.Geometry.NurbSpline<br/>Autodesk.Revit.Geometry.XYZ</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create curved beam, this sample can create three types of curved beam: arc, ellipse and nurbspline.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="DeckProperties">DeckProperties</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display Deck Layer Properties.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Structural.CompoundStructureLayer<br/>Autodesk.Revit.Symbols.FloorType<br/>Autodesk.Revit.Structural.Enums.CompoundStructureLayerFunction</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows that how to get the properties of deck layer by RevitAPI.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="DeleteDimensions">DeleteDimensions</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Delete dimensions.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics, Annotation</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.Dimension<br/>Autodesk.Revit.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Show how to delete Dimension elements.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="DeleteObject">DeleteObject</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Delete Objects.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.SelElementSet</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample is used to delete the objects selected by user.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="DesignOptionReader">DesignOptionReader</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display design options.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements, Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Application<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Elements.DesignOption</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get the design options in the current document of Revit.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="DoorSwing">DoorSwing</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Manage opening of the door and rooms relevant to the door.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Rooms/Spaces</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand, ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Architecture</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.IExternalApplication<br/>Autodesk.Revit. RibbonPanel<br/>Autodesk.Revit. PushButton<br/>Autodesk.Revit.Elements.Family<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Geometry.Element<br/>Autodesk.Revit.Geometry.BoundingBoxXYZ<br/>Autodesk.Revit.Geometry.Options<br/>Autodesk.Revit.Parameters.DefinitionFile<br/>Autodesk.Revit.Parameters.Definition <br/>Autodesk.Revit.Parameters.BindingMap<br/>Autodesk.Revit.Parameters.ElementBinding<br/>Autodesk.Revit.Parameters.InstanceBinding<br/>Autodesk.Revit.Parameters.TypeBinding<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.ControlledApplication<br/>Autodesk.Revit.Events. DocumentSavingEventArgs<br/>Autodesk.Revit.Events. DocumentSavingAsEventArgs</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample will demonstrate how to create and maintain door opening parameters, internal door parameter, From/To Room and how to schedule these parameters. Feature to customize to your country standard is also provided.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="DWGFamilyCreation">DWGFamilyCreation</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Import dwg file into family document.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families, Data Exchange</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to import a dwg file into a family document and add parameters to the family through Revit API.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ElementsBatchCreation">ElementsBatchCreation</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Elements batch creation.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.Area<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Elements.Room<br/>Autodesk.Revit.Elements.TextNote<br/>Autodesk.Revit.Elements.Wall</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create a batch of Revit elements via batch creation methods.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ElementsFilter">ElementsFilter</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Filter elements.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Creation.Filter<br/>Autodesk.Revit.Filter<br/>Autodesk.Revit.CategoryFilter<br/>Autodesk.Revit.FamilyFilter<br/>Autodesk.Revit.SymbolFilter<br/>Autodesk.Revit.ParameterFilter<br/>Autodesk.Revit.TypeFilter<br/>Autodesk.Revit.WallUsageFilter<br/>Autodesk.Revit.StructuralTypeFilter<br/>Autodesk.Revit.MaterialFilter<br/>Autodesk.Revit.InstanceUsageFilter<br/>Autodesk.Revit.LogicAndFilter<br/>Autodesk.Revit.LogicNotFilter<br/>Autodesk.Revit.LogicOrFilter</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > The sample demonstrates how to retrieve element by different criterions using Filters.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ElementViewer">ElementViewer</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > View element wireframe.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Geometry.Element<br/>Autodesk.Revit.Geometry.GeometryObject</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This program demonstrates the usage of element's geometry. This sample uses a helper program RevitViewer.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="EventsMonitor">EventsMonitor</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Track Event.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.IExternamApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to subscribe to controlled application level Events.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="FireRating">FireRating</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create shared parameter;export and import form excel.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand  <br/>Autodesk.Revit.Parameters<br/>Autodesk.Revit.Category</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This program defines three commands: ApplyParameter which is used to add a new shared parameter; ExportFireRating which is used to export fire rating values to an Excel file and ImportFireRating which is used to import fire rating values from the Excel file and apply them to doors.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="FoundationSlab">FoundationSlab</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create Foundation Slab.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.Floor<br/>Autodesk.Revit.Symbols.FloorType<br/>Autodesk.Revit.Creation.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create Foundation Slab.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="FrameBuilder">FrameBuilder</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create a frame composed of columns, beams and braces.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Creation.Document <br/>Autodesk.Revit.Elements.Level<br/>Autodesk.Revit.Symbols.FamilySymbol</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create a frame composed of columns, beams and braces. User can input parameters to create a frame consist of column, beam and brace. It has a user visible option to use the suspended updating function to increase the speed of the model creation. And users can duplicate the type of column, beam and brace.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="GenerateFloor">GenerateFloor</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Generate a floor using the closed outline made by a selection of walls.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.Floor<br/>Autodesk.Revit.Symbols.FloorType<br/>Autodesk.Revit.Elements.Level</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to generate a floor using the closed outline made by a selection of walls.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="GenericModelCreation">GenericModelCreation</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create Generic Model</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Elements<br/>Autodesk.Revit.Geometry<br/>Autodesk.Revit.Creation.FamilyItemFactory</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to create Generic Model through Revit API</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="GridCreation">GridCreation</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create Grid.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Elements<br/>Autodesk.Revit.Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to create grids and modify grids' properties through Revit API.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="HelloRevit">HelloRevit</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > How to use external command.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to add a command to Revit.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="HelloWorld">HelloWorld</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display a Hello World message box.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Show How to use Revit API to develop a simple external application.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ImportExport">ImportExport</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Import and Export data.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Data Exchange</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Elements<br/>Autodesk.Revit.Enums<br/>Autodesk.Revit.GBXMLExportOptions<br/>Autodesk.Revit.DWF2DExportOptions<br/>Autodesk.Revit.DWF3DExportOptions<br/>Autodesk.Revit.DWFX2DExportOptions<br/>Autodesk.Revit.DWFX3DExportOptions<br/>Autodesk.Revit.DWGExportOptions<br/>Autodesk.Revit.FBXExportOptions<br/>Autodesk.Revit.BuildingSiteExportOptions<br/>Autodesk.Revit.DGNExportOptions<br/>Autodesk.Revit.DWGImportOptions<br/>Autodesk.Revit.ImageImportOptions<br/>Autodesk.Revit.GBXMLImportOptions<br/>Autodesk.Revit.InventorImportOptions</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to export current project to dwg, dwf(x), gbxml, fbx, dgn or Civil3D files and how to import a dwg, image, GBXML or Inventor file into Revit.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="InplaceFamilyAnalyticalModel3D">InplaceFamilyAnalyticalModel3D</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > AnalyticalModel3D elements.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Structural.AnalyticalModel3D</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to read an analytical model 3D object from an in-place family instance.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="InPlaceMembers">InPlaceMembers</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display In-place Familyinstance propeties.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Structural.AnalyticalModel<br/>Autodesk.Revit.Geometry.Curve</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get the In-place Family instance and its properties in the current document of Revit.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="InvisibleParam">InvisibleParam</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create shared parameters.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Application<br/>Autodesk.Revit.Parameters.DefinitionFile<br/>Autodesk.Revit.Parameters.Definition<br/>Autodesk.Revit.Parameters.DefinitionGroup<br/>Autodesk.Revit.Parameters.InstanceBinding</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to use share parameter file to create share parameters and how to bind share parameters and instance.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="Journaling">Journaling</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Journaling mechanism: Journal Data read and write.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Creation<br/>Autodesk.Revit.Collections.StringStringMap</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how an external application can be incorporated into the journaling mechanism.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="LevelsProperty">LevelsProperty</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display and Create Levels.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.Level<br/>Autodesk.Revit.Creation.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get all the levels in a document, and how to create or delete a level and set its properties.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="Loads">Loads</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Operate Load Case, Load Nature, Load Usage and Load Combination.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.LoadCase<br/>Autodesk.Revit.Elements.LoadNature<br/>Autodesk.Revit.Elements.LoadCombination<br/>Autodesk.Revit.Creation.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to operate Load Case, Load Nature, Load Usage and Load Combination.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="MaterialProperties">MaterialProperties</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display Material Properties.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Materials</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.Elements.Material</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get the material physical properties of a selected beam, column or brace, how to change the material type of the selected beam and how to change the unit weight of a selected beam, column or brace.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="Materials">Materials</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Get and Set material's parameters and Render Appearance.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Materials</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.2</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.Material<br/>Autodesk.Revit.Elements.MaterialConcrete<br/>Autodesk.Revit.Elements.MaterialGeneric<br/>Autodesk.Revit.Elements.MaterialOther<br/>Autodesk.Revit.Elements.MaterialSteel<br/>Autodesk.Revit.Elements.MaterialWood<br/>Autodesk.Revit.Enums.DisplayUnitType<br/>Autodesk.Revit.Utility</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates 4 main features:<br/>1.	How to get and set the parameters of materials in the current document.<br/>2.	How to duplicate a material (Concrete material).<br/>3.	How to change the material of a structural element.<br/>4.	How to get and set material's Render Appearance.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ModelLines">ModelLines</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display and Create ModelLines.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.2</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.ModelArc<br/>Autodesk.Revit.Elements.ModelLine<br/>Autodesk.Revit.Elements.ModelCurveArray<br/>Autodesk.Revit.Elements.ModelCurve<br/>Autodesk.Revit.Elements.SketchPlane<br/>Autodesk.Revit.Creation.Application<br/>Autodesk.Revit.Geormetry.Arc<br/>Autodesk.Revit.Geormetry.XYZ<br/>Autodesk.Revit.Geormetry.Line</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to get model lines of all kinds and how to create model lines using Revit API.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ModifyIniFile">ModifyIniFile</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Modify Revit.ini.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > N/A</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > </td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Provides sample that shows how to add an external command that represents the menu item "Tools-> External Tools-> (Command)" to Revit.ini using program.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="MoveLinear">MoveLinear</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Move an element which is based on Line.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters, Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand	   <br/>Autodesk.Revit.LocationCurve<br/>Autodesk.Revit.Creation.Application<br/>Autodesk.Revit.Geometry.Curve</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to move element which is based on a Line.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="NewHostedSweep">NewHostedSweep</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create hosted sweep (Fascia, Gutter, and SlabEdge).</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Architecture</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.HostedSweep<br/>Autodesk.Revit.Elements.Fascia<br/>Autodesk.Revit.Elements.Gutter<br/>Autodesk.Revit.Elements.SlabEdge<br/>Autodesk.Revit.Symbols.HostedSweepType<br/>Autodesk.Revit.Symbols.FasciaType<br/>Autodesk.Revit.Symbols.GutterType<br/>Autodesk.Revit.Symbols.SlabEdgeType<br/>Autodesk.Revit.Geometry.Solid<br/>Autodesk.Revit.Geometry.Edge<br/>Autodesk.Revit.Geometry.Reference<br/>Autodesk.Revit.Geometry.Transform</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample will demonstrate how to create hosted sweep (includes Fascia, Gutter and SlabEdge), and how to modify their properties.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="NewOpenings">NewOpenings</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create openings.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Creation.Application<br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.Wall<br/>Autodesk.Revit.Elements.Floor<br/>Autodesk.Revit.Elements.Opening<br/>Autodesk.Revit.Geometry.XYZ<br/>Autodesk.Revit.Geometry.Edge</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Shows how to create Openings by Revit API.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="NewPathReinforcement">NewPathReinforcement</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create PathReinforcement.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure , Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.PathReinforcement <br/>Autodesk.Revit.Symbols.PathReinforcementType<br/>Autodesk.Revit.Geometry.Face<br/>Autodesk.Revit.Geometry.Edge<br/>Autodesk.Revit.Geometry.Solid<br/>Autodesk.Revit.Geometry.Element<br/>Autodesk.Revit.Creation.Documen</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create PathReinforcement by API.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="NewRebar">NewRebar</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create Rebar and ReabrShapes.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Elements.Rebar<br/>Autodesk.Revit.Symbols.RebarShape<br/>Autodesk.Revit.Symbols.RebarShapeDefinition<br/>Autodesk.Revit.Symbols.RebarShapeDefinitionByArc<br/>Autodesk.Revit.Symbols.RebarShapeDefinitionBySegments<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.Parameters.DefinitionGroup<br/>Autodesk.Revit.Parameters.ExternalDefinition<br/>Autodesk.Revit.Structural.Enums.StructuralType <br/>Autodesk.Revit.Geometry.Solid</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample will demonstrate how to create rebar via NewRebar (RebarShape rebarShape, RebarBarType rebarType, Element host, XYZ origin, XYZ xVec, XYZ yVec) and how to customize RebarShape (include straight segment and arc shape).</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="NewRoof">NewRoof</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create footprint and extrusion roof.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.FootPrintRoof<br/>Autodesk.Revit.Elements.ExtrusionRoof<br/>Autodesk.Revit.Elements.Level<br/>Autodesk.Revit.Symbols.RoofType<br/>Autodesk.Revit.Elements.Wall<br/>Autodesk.Revit.Geometry.Curve<br/>Autodesk.Revit.Creation.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates four main features:<br/>1.	How to create a new footprint roof.<br/>2.	How to create an extrusion roof.<br/>3.	How to edit an existed footprint roof.<br/>4.	How to edit an existed extrusion roof.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ObjectViewer">ObjectViewer</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Show element's geometry,get and set its parameter value.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Advanced</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Views</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Geometry.Element<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.Geometry.GeometryObject<br/>Autodesk.Revit.Geometry.Transform<br/>Autodesk.Revit.Structural.AnalyticalModel</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates two main features:<br/>1.	How to get physical or analytical model of selected element.<br/>2.	How to get and set parameter's value of selected element.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="Openings">Openings</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display Opening informations.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.Opening<br/>Autodesk.Revit.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Shows how to get geometry profile and properties of an opening and how to add x model lines to opening bounding box.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ParameterUtils">ParameterUtils</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display parameters.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Element <br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get the parameters of a Revit element.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="PathReinforcement">PathReinforcement</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display PathReinforcement informations.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.PathReinforcement<br/>Autodesk.Revit.Symbols.RebarBarType<br/>Autodesk.Revit.Elements.ModelCurve</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to retrieve curves, profile and properties of path reinforcement object.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="PhaseSample">PhaseSample</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Filter elements by their phases.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Document <br/>Autodesk.Revit.Element <br/>Autodesk.Revit.Elements.Phase <br/>Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.ElementSet</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to use phase to filter elements and how to highlight filtered elements by Execute method parameters.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="PhysicalProp">PhysicalProp</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display physical property.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters, Materials</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get the physical material of a column or beam.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="PlaceFamilyInstanceByFace">PlaceFamilyInstanceByFace</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create family instance on face.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Symbols.FamilySymbol<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Geometry.Face<br/>Autodesk.Revit.Geometry.Options<br/>Autodesk.Revit.Geometry.Solid</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create family instance on face.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="PowerCircuit">PowerCircuit</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Operate power circuits.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Elements<br/>Autodesk.Revit.Geometry<br/>Autodesk.Revit.Symbols;<br/>Autodesk.Revit.MEP;<br/>Autodesk.Revit.Parameters;</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to operate power circuits.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="PrintLog">PrintLog</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Dump print information to log.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalApplication <br/>Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements<br/>Autodesk.Revit.Events.ViewPrintingEventArgs<br/>Autodesk.Revit.Events.ViewPrintedEventArgs<br/>Autodesk.Revit.Events.DocumentPrintingEventArgs<br/>Autodesk.Revit.Events.DocumentPrintedEventArgs<br/><br/>System.DateTime<br/>System.Diagnostics.Stopwatch</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to subscribe Print related events, access properties in argument of event handlers and dump print related information to log file.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ProjectInfo">ProjectInfo</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display project information.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Document<br/>Autodesk.Revit.Elements.ProjectInfo<br/>Autodesk.Revit.Elements.gbXMLParamElem<br/>Autodesk.Revit.Parameters.BuildInParameter<br/>Autodesk.Revit.Parameters.BuildingType<br/>Autodesk.Revit.Symbols.MEPBuildingConstruction<br/>Autodesk.Revit.Parameters.ServiceType<br/>Autodesk.Revit.Site.ProjectLocation<br/>Autodesk.Revit.Site.ProjectPosition<br/>Autodesk.Revit.Construction</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Demonstrates how to manipulate project information.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ProjectUnit">ProjectUnit</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > List and set units and format options.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Data Exchange, Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Elements.ProjectUnit<br/>Autodesk.Revit.FormatOptions</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Add a command which lists all the units in the current project and displays their format information; Display the decimal symbol type of current project's units. Users could set it to comma or dot; Display the slope type of current project units, users can set it to Rise or Angle.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="RayTraceBounce">RayTraceBounce</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Ray Trace Bounce</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Elements<br/>Autodesk.Revit.Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to find intersection between ray and face and create connecting lines by Revit API method FindReferencesByDirection.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="RDBLink">RDBLink</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Import and Export data.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Advanced</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters, Data Exchange</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.2</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.BuiltInCategory<br/>Autodesk.Revit.Symbol<br/>Autodesk.Revit.Elements.Instance<br/>Autodesk.Revit.Parameters.BuiltInParameter<br/>Autodesk.Revit.Parameters.DefinitionFile<br/>Autodesk.Revit.Parameters.Definition<br/>Autodesk.Revit.Parameters.BindingMap<br/>Autodesk.Revit.Parameters.Binding<br/>Autodesk.Revit.Elements.Material<br/>Autodesk.Revit.Creation.Application<br/>Autodesk.Revit.Categories<br/>Autodesk.Revit.Category<br/>Autodesk.Revit.Settings</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to export Revit model data into ODBC database and how to import data from database into Revit which can modify or create some Revit elements.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ReferencePlane">ReferencePlane</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create ReferencePlane.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics, Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Document<br/>Autodesk.Revit.Elements.Floor<br/>Autodesk.Revit.Elements.Wall<br/>Autodesk.Revit.Geometry.Options<br/>Autodesk.Revit.Geometry.Line<br/>Autodesk.Revit.Geometry.Solid<br/>Autodesk.Revit.Geometry.Mesh<br/>Autodesk.Revit.Creation.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to create Reference Plane by Revit API.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="Reinforcement">Reinforcement</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create Rebars.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.Rebar<br/>Autodesk.Revit.Structural.Enums.StructuralType</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Show how to create Rebar in concrete element (Beam or Column) which does not have any reinforcement.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="RevitCommands">RevitCommands</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Simple Revit commands.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics, Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Element <br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Application<br/>Autodesk.Revit.Location<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.Geometry.Element<br/>Autodesk.Revit.Geometry.Solid<br/>Autodesk.Revit.Geometry.Instance<br/>Autodesk.Revit.Geometry.Curve<br/>Autodesk.Revit.Geometry.Mesh</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > These sample contains 5 commands, demonstrates:<br/>1.	How to load family from family file.<br/>2.	How to load family symbol from family file.<br/>3.	How to access the selection set.<br/>4.	How to get and set library paths in Revit.<br/>5.	How to retrieve data from selected elements.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="Ribbon">Ribbon</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create Custom Ribbon</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit .ControlledApplication<br/>Autodesk.Revit.RibbonPanel<br/>Autodesk.Revit.PushButton<br/>Autodesk.Revit.PulldownButton<br/>Autodesk.Revit.PushButtonData<br/>Autodesk.Revit.PulldownButtonData<br/>Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.IExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create custom ribbon for Add-In and how to create different types of ribbon items (RibbonPanel, PushButton, PulldownButton, Stackable Buttons).</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="RoofsRooms">RoofsRooms</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Geometry checking for Roofs and Rooms (Spaces).</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Rooms/Spaces</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Architecture, MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Filter<br/>Autodesk.Revit.TypeFilter<br/>Autodesk.Revit.CategoryFilter<br/>Autodesk.Revit.LogicalNotFilter<br/>Autodesk.Revit.LogicalAndFilter<br/>Autodesk.Revit.LogicalOrFilter<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Elements.Room<br/>Autodesk.Revit.Elements.Space<br/>Autodesk.Revit.BuiltInCategory<br/>Autodesk.Revit.Geometry.Options<br/>Autodesk.Revit.Geometry.BoundingBoxXYZ<br/>Autodesk.Revit.Geometry.GeometryObject<br/>Autodesk.Revit.Geometry.Solid<br/>Autodesk.Revit.Geometry.Face<br/>Autodesk.Revit.Geometry.PlanarFace<br/>Autodesk.Revit.Geometry.ConicalFace<br/>Autodesk.Revit.Geometry.CylindricalFace<br/>Autodesk.Revit.Geometry.RevolvedFace<br/>Autodesk.Revit.Geometry.HermiteFace<br/>Autodesk.Revit.Geometry.RuledFace<br/>Autodesk.Revit.Geometry.Curve<br/>Autodesk.Revit.Geometry.EdgeArray<br/>Autodesk.Revit.Geometry.Edge<br/>Autodesk.Revit.Geometry.XYZArray<br/>Autodesk.Revit.Geometry.XYZ<br/>Autodesk.Revit.Geometry.IntersectionResult</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to check whether Room/Space has bounding Roof, this sample try to work consistently with Revit on bounding checking when exporting gbXML.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="Rooms">Rooms</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Room data retrieval and modifitcation.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Rooms/Spaces</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Architecture</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.Room<br/>Autodesk.Revit.Elements.RoomTag<br/>Autodesk.Revit.Parameters.BuiltInParameter</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get Room's information (Number, Area, Department, etc), add room tags and change Room numbers.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="RoomSchedule">RoomSchedule</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Room creation and modification; Excel data import and export.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Rooms/Spaces</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand and ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Architecture</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.2</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Elements.Room<br/>Autodesk.Revit.Elements.Level<br/>Autodesk.Revit.Elements.Phase<br/>Autodesk.Revit.Category<br/>Autodesk.Revit.Parameters.BuildInParameter<br/>Autodesk.Revit.Parameters.Definition<br/>Autodesk.Revit.Parameters.DefinitionGroup<br/>Autodesk.Revit.Parameters.InstanceBinding<br/><br/>Autodesk.Revit.ControlledApplication.DocumentSaving<br/>Autodesk.Revit.ControlledApplication.DocumentSavingAs<br/>Autodesk.Revit.ControlledApplication.DocumentClosed<br/><br/>System.Data.OleDb.OleDbConnection<br/>System.Data.OleDb.OleDbCommand<br/>System.Data.DataTable</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates: how to retrieve spread sheet data, how to create rooms without placing them and how to update spreadsheet data with data of rooms mapped to.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="RoomViewer">RoomViewer</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > View room boundary wireframe.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Architecture</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Elements.Room<br/>Autodesk.Revit.Rooms.BoundarySegmentArrayArray</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates the usage of room boundary and uses a helper program RevitViewer.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="RotateFramingObjects">RotateFramingObjects</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Rotate framing objects.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics, Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Element <br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Structural.Enums.StructuralType<br/>Autodesk.Revit.Creation.Application</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Demonstrates how to rotate beams, braces or structural columns around their directional axis rather than project axis.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="RvtSamples">RvtSamples</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Add menu items of samples to Revit.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.ControlledApplication<br/>Autodesk.Revit.RibbonPanel<br/>Autodesk.Revit.PulldownButton<br/>Autodesk.Revit.PushButton<br/>Autodesk.Revit.PulldownButtonData</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample integrates all other samples excluding ExternalApplications into a panel named "RvtSamples" under menu "Add-Ins".</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ShaftHolePuncher">ShaftHolePuncher</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create all Kinds Opening.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > High</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Geometry, Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.Opening<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Elements.Level<br/>Autodesk.Revit.Geometry.Face<br/>Autodesk.Revit.Geometry.Edge<br/>Autodesk.Revit.Geometry.Solid<br/>Autodesk.Revit.Geometry.Instance<br/>Autodesk.Revit.Geometry.Transform<br/>Autodesk.Revit.Geometry.CurveArray<br/>Autodesk.Revit.Geometry.Element<br/>Autodesk.Revit.Creation.Documen</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create single or Shaft Opening on a wall, floor or beam.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="SharedCoordinateSystem">SharedCoordinateSystem</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Get and set project's place,location.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Geometry.Element<br/>Autodesk.Revit.Parameter<br/>Autodesk.Revit.Geometry.GeometryObject<br/>Autodesk.Revit.Geometry.Transform<br/>Autodesk.Revit.Structural.AnalyticalModel<br/>Autodesk.Revit.Site.SiteLocation<br/>Autodesk.Revit.Site.CitySet</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get place, location of project, and change their values.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="SlabProperties">SlabProperties</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Slab properties retrieval.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters, Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.Floor<br/>Autodesk.Revit.Structural.CompoundStructureLayer<br/>Autodesk.Revit.Structural.CompoundStructureLayerArray<br/>Autodesk.Revit.Parameters.BuiltInParameter</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get Slab's properties which consist of Level, Type Name, Span Direction and Slab's Layers information (Material Name, Thickness, Young Modulus X, Y and Z).</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="SlabShapeEditing">SlabShapeEditing</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create SlabShapeVertex and SlabShapeCrease.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Geometry, Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Architecture, Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Editor.SlabShapeEditor<br/>Autodesk.Revit.Editor.SlabShapeCrease<br/>Autodesk.Revit.Editor.SlabShapeCreaseArray<br/>Autodesk.Revit.Editor.SlabShapeCreaseArrayIterator<br/>Autodesk.Revit.Editor.SlabShapeVertex<br/>Autodesk.Revit.Geometry.Line<br/>Autodesk.Revit.Geometry.Edge<br/>Autodesk.Revit.Geometry.CurveArray<br/>Autodesk.Revit.Geometry.GeometryObject</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create SlabShapeVertex and SlabShapeCrease, and then use them to edit slab's shape.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="SpanDirection">SpanDirection</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Date retrieval for structural Floor (Slab).</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters, Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.1</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.ElementSet<br/>Autodesk.Revit.Elements.Floor<br/>Autodesk.Revit.ElementArray<br/>Autodesk.Revit.ElementArrayIterator</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get span direction and span direction symbols of structural Floor (Slab).</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="SpotDimension">SpotDimension</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Display Spot Dimensiones.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Annotation</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.SpotDimension<br/>Autodesk.Revit.Parameter</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to retrieve all the spot dimensions and theirs properties in all views of Revit document.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="StructSample">StructSample</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Column creation and placing.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.ElementSet<br/>Autodesk.Revit.Elements.Wall<br/>Autodesk.Revit.Paramete<br/>Autodesk.Revit.Parameters.BuiltInParameter<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Elements.Family<br/>Autodesk.Revit.Symbols.FamilySymbol<br/>Autodesk.Revit.Geometry.XYZ<br/>Autodesk.Revit.Geometry.UV<br/>Autodesk.Revit.Geometry.Line</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to place a set of columns in the selected wall.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="StructuralLayerFunction">StructuralLayerFunction</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Function retrieval for structural layers.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.ElementSet<br/>Autodesk.Revit.Structural.CompoundStructureLayer<br/>Autodesk.Revit.Structural.Enum.CompoundStructureLayerFunction</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to retrieve the function of each structural layer of selected floor in order from outside to inside in a dialog box.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="TagBeam">TagBeam</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create tags for beam or rebar; Create text.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Annotation</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.LocationCurve<br/>Autodesk.Revit.Elements.Family<br/>Autodesk.Revit.Symbols.FamilySymbol<br/>Autodesk.Revit.Creation.Document<br/>Autodesk.Revit.Elements.IndependentTag<br/>Autodesk.Revit.Elements.Rebar<br/>Autodesk.Revit.Elements.TextNote</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create tags at the start and end of selected beams, how to create a rebar tag at the end of the first curve of selected rebar and how to create a text.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="TestFloorThickness">TestFloorThickness</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Change the thickness of floor.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Elements.Floor <br/>Autodesk.Revit.Symbols.FloorType</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Retrieve and change floor thickness.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="TestWallThickness">TestWallThickness</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Change the thickness of wall.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Elements.Wall <br/>Autodesk.Revit.Symbols.WallType</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > Retrieve and change wall thickness.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="TransactionControl">TransactionControl</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > How to deal with transaction.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Document</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to use transaction control.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="TraverseSystem">TraverseSystem</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Traverse a well-connected mechanical or piping system in the direction of flow.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > MEP</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.MEP<br/>Autodesk.Revit.Elements</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample shows how to traverse a well-connected mechanical or piping system in the direction of flow and dump the traversal into an XML file.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="Truss">Truss</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Create truss, edit truss Profile and Members.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Structure , Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > Structure</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2009.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Elements.Truss<br/>Autodesk.Revit.Symbols.TrussType<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Symbols.FamilySymbol<br/>Autodesk.Revit.Elements.ViewPlan<br/>Autodesk.Revit.TrussMemberInfo<br/>Autodesk.Revit.Geometry.Line<br/>Autodesk.Revit.Geometry.CurveArray<br/>Autodesk.Revit.ElementIdSet</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to create a truss and modify its truss members and profile.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="TypeRegeneration">TypeRegeneration</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Family type regeneration</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Document.FamilyManager<br/>Autodesk.Revit.Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates Family type regeneration by Revit API.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="TypeSelector">TypeSelector</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Wall types retrieval.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 8.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.ElementId<br/>Autodesk.Revit.Elements.Family<br/>Autodesk.Revit.Elements.FamilySymbol<br/>Autodesk.Revit.Elements.FamilyInstance<br/>Autodesk.Revit.Symbols.FamilySymbol<br/>Autodesk.Revit.Symbols.FamilySymbolSet<br/>Autodesk.Revit.Symbols.WallType<br/>Autodesk.Revit.Symbols.WallTypeSet</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to retrieve all types in project of one specific family (wall) and how to change the type of one family instance or wall.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ValidateParameters">ValidateParameters</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Validate Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand and ExternalApplication</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.IExternalApplication<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Document.FamilyManager<br/>Autodesk.Revit.Parameters</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample will demonstrate if every type has valid values for certain parameters.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="VersionChecking">VersionChecking</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Version information of Revit application.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Parameters, Basics</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 9.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand <br/>Autodesk.Revit.Application</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to get Revit version information: product name, product version and product build number.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="ViewPrinter">ViewPrinter</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Print the printable views.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Data Exchange</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.PrintManager<br/>Autodesk.Revit.Enums.VirtualPrinterType<br/>Autodesk.Revit.Enums.PrintRange<br/>Autodesk.Revit.PrintSetup<br/>Autodesk.Revit.PrintSetting<br/>Autodesk.Revit.ViewSheetSetting<br/>Autodesk.Revit.Elements.ViewSheetSet</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to print the printable view and sheets.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="VisibilityControl">VisibilityControl</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Control visibility by category.</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Medium</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Views</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > All</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2008.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.Elements.View<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Selection<br/>Autodesk.Revit.Settings<br/>Autodesk.Revit.Categories</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample demonstrates how to control visibility by category, and how the API supports the options to pick a single element or pick multiple elements.</td>
+</tr>
+</table>
+<hr/>
+<br/><h4><a name="WindowWizard">WindowWizard</a></h4>
+<table>
+<tr>
+<td  valign="top" align="left" width="140px"> <b>Subject:</b></td>
+<td > Windows Wizard</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Skill Level:</b></td>
+<td > Beginning</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Category:</b></td>
+<td > Families</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Type:</b></td>
+<td > ExternalCommand</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Revit Platform:</b></td>
+<td > ALL</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>First Released For:</b></td>
+<td > 2010.0</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Classes:</b></td>
+<td > Autodesk.Revit.IExternalCommand<br/>Autodesk.Revit.IExternalApplication<br/>Autodesk.Revit.Document<br/>Autodesk.Revit.Element<br/>Autodesk.Revit.Document.FamilyManager<br/>Autodesk.Revit.Parameters<br/>Autodesk.Revit.Geometry</td>
+</tr>
+<tr>
+<td  valign="top" align="left" width="140px"><b>Summary:</b></td>
+<td > This sample will demonstrate how to create a window family via wizard.</td>
+</tr>
+</table>
+<hr/>
+<br/><br/><br/><br/><br/><br/><br/>

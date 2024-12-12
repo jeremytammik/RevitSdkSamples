@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+      <Assembly>[TARGETDIR]AddInManager.dll</Assembly>
+      <ClientId>FF6DB199-BAAB-496e-A452-623B977B2320</ClientId>
+      <FullClassName>AddInManager.CAddInManagerAutomatic</FullClassName>
+      <Text>Add-In Manager (Automatic Mode)</Text>
+      <VisibilityMode>AlwaysVisible</VisibilityMode>
+      <LanguageType>Unknown</LanguageType>
+	   <VendorId>ADSK</VendorId>
+	   <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+   </AddIn>
+</RevitAddIns>

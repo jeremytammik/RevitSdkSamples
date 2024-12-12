@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>BeamAndSlabNewParameter.dll</Assembly>
+    <ClientId>4918f2e4-b94a-4511-aa25-78c8c16cb7fc</ClientId>
+    <FullClassName>Revit.SDK.Samples.BeamAndSlabNewParameter.CS.Command</FullClassName>
+    <Text>Beam and slab parameter</Text>
+    <Description>Add a new GUID parameter to beam and slab, and use the GUID value to find the right element.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

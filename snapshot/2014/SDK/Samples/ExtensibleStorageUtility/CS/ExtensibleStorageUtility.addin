@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ExtensibleStorageUtility.dll</Assembly>
+    <ClientId>c8d55396-6199-4b21-878a-88d0714e2228</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExtensibleStorageUtility.CS.DeleteStorage</FullClassName>
+    <Text>ExtensibleStorageUtility-DeleteStorage</Text>
+    <Description>ExtensibleStorageUtility-DeleteStorage</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Assembly>ExtensibleStorageUtility.dll</Assembly>
+    <ClientId>d8d55396-6199-4b21-878a-88d0714ee209</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExtensibleStorageUtility.CS.QueryStorage</FullClassName>
+    <Text>ExtensibleStorageUtility-QueryStorage</Text>
+    <Description>ExtensibleStorageUtility-QueryStorage</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+
+
+
+
+
+</RevitAddIns>

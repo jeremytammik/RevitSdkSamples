@@ -1,0 +1,23 @@
+Max Bogl Bauservice: Frank Neuberg, fneuberg@max-boegl.de: 10 years ACA and OMF experience, 5 years Revit API
+FISA: Olivier and Jerome Fauconnet, autodesk@fisa.fr, jerome@fisa.fr: HVAC application developers, AME experience, Revir newbies
+Linear Gmbh: Javier Castell and Manfred Waluga, jcc@linear.de and mww@linear.de: HVAC application developers, AutoCAD experience, Revir newbies
+IDAT Gmbh: Alexander Buschmann, lackner@idat.de: Structural developer, concrete precast elements
+N+P Informationssysteme GmbH: Stefan Uhlmann, uhlmann@nupis.de: FM company, has an application on Revit MEP 2010
+Dirk Ziegenbalg, ziegenbalg@nupis.de: FM company, Revit newbie
+bocad Software GmbH: Michael Falck, mf@bocad.de: Experienced CAD developer, steel structural detailine, works in C++, needs to move to RST
+
+
+Day 1: Overview and Revit database basics 
+External command, external application, RevitLookup and RvtSamples setup, understanding the Revit element class, filtered element collector, object creation and modification 
+Day 2
+FindMaterialTypeElements2
+Developing something together following requests from the group 
+Revit UI basics: ribbon, dialog, selection 
+Event and dynamic modeling 
+Family API
+Quick overview of other/advanced topics through samples
+Custom data in shared parameters: FireRating
+DocumentChanged event: ChangesMonitor
+Dynamic Model Update (DMU): DynamicModelUpdate and DistanceToSurfaces
+Analysis Visualisation Framework (AVF): DistanceToSurfaces and SpatialFieldGradient
+Q&A 

@@ -1,0 +1,188 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Hello World External Application</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Create Ribbon Controls">
+Hello World External Application</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs6-2.htm">next</a>
+<a class="j" href="labs6.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this lab, we will create a simple external application, which only shows a hello message box when Revit starts up. External application provides an opportunity to do initialization tasks when Revit starts up, and do final clean up tasks when Revit shuts down.</p>
+
+<p>First of all, create a class derived from the IExternalApplication interface. The interface has two methods, OnStartup() and OnShutdown().  OnStartup() is called when Revit starts up, and OnShutdown() is called when Revit shuts down. Implement the two methods in a new class.</p>
+
+<pre class="jtcollapse" title="C# external application">
+#region Namespaces
+using System;
+using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+using WinForms = System.Windows.Forms;
+using Autodesk.Revit;
+using Autodesk.Revit.Elements;
+using Autodesk.Revit.Symbols;
+using Autodesk.Revit.Events;
+using System.Diagnostics;
+#endregion // Namespaces
+
+namespace Labs
+{
+  public class Lab6_1_HelloWorldExternalApplication : IExternalApplication
+  {
+    public IExternalApplication.Result OnStartup(
+      ControlledApplication a )
+    {
+      return IExternalApplication.Result.Succeeded;
+    }
+
+    public IExternalApplication.Result OnShutdown(
+      ControlledApplication a )
+    {
+      return IExternalApplication.Result.Succeeded;
+    }
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB external application">
+#Region "Namespaces"
+Imports Microsoft.VisualBasic
+Imports System
+Imports System.Collections.Generic
+Imports System.IO
+Imports WinForms = System.Windows.Forms
+Imports Autodesk.Revit
+Imports Autodesk.Revit.Events
+Imports System.Diagnostics
+#End Region
+
+Namespace Labs
+    Public Class Lab6_1_HelloWorldExternalApplication
+        Implements IExternalApplication
+
+        Public Function OnStartup(ByVal a As ControlledApplication) _
+            As IExternalApplication.Result _
+            Implements IExternalApplication.OnStartup
+
+            Return IExternalApplication.Result.Succeeded
+
+        End Function
+
+        Public Function OnShutdown(ByVal a As ControlledApplication) _
+            As IExternalApplication.Result _
+            Implements IExternalApplication.OnShutdown
+
+            Return IExternalApplication.Result.Succeeded
+
+        End Function
+
+    End Class
+End Namespace
+</pre>
+
+<p>The project should already compile, link and load into Revit properly, but does not have any visible effect when run.</p>
+
+<p>Add code to display the hello message box:</p>
+
+<pre class="jtcollapse" title="C# hello world external application">
+  public class Lab6_1_HelloWorldExternalApplication : IExternalApplication
+  {
+    public IExternalApplication.Result OnStartup(
+      ControlledApplication a )
+    {
+      LabUtils.InfoMsg( "Hello World from an external application in C#." );
+      return IExternalApplication.Result.Succeeded;
+    }
+
+    public IExternalApplication.Result OnShutdown(
+      ControlledApplication a )
+    {
+      return IExternalApplication.Result.Succeeded;
+    }
+  }
+
+</pre>
+
+<pre class="jtcollapse" title="VB hello world external application">
+      Public Class Lab6_1_HelloWorldExternalApplication
+        Implements IExternalApplication
+
+        Public Function OnStartup(ByVal a As ControlledApplication) _
+            As IExternalApplication.Result _
+            Implements IExternalApplication.OnStartup
+
+            MsgBox("Hello World from an external application in VB.")
+            Return IExternalApplication.Result.Succeeded
+
+        End Function
+
+        Public Function OnShutdown(ByVal a As ControlledApplication) _
+            As IExternalApplication.Result _
+            Implements IExternalApplication.OnShutdown
+
+            Return IExternalApplication.Result.Succeeded
+
+        End Function
+
+    End Class
+</pre>
+
+<p>The project should still compile and link properly.</p>
+
+<p>We need to let Revit know how to load this external applications. 
+The loading settings are similar to the ones required to load an external command, except the key names are different. 
+Replace the prefix "EC" with "EA", which means External Application.
+Add the entries below to Revit.ini. 
+The name and description are not required for external applications, since they define their own user interface.</p>
+
+<pre>
+[ExternalApplications]
+EACount=1
+EAAssembly1=C:\tmp\revit\LabsCode\LabsCode\bin\Debug\LabsCode.dll
+EAClassName1=Labs.Lab6_1_HelloWorldExternalApplication
+</pre>
+
+<p>You <em>must</em> adjust the full assembly path and fully qualified class name including the namespace prefix settings to match your project or the application cannot be loaded by Revit.</p>
+
+<p>Restart Revit. The Hello message box will be shown automatically.</p>
+
+<a class="j" href="labs6-2.htm">next</a>
+<a class="j" href="labs6.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ProjectInfo.dll</Assembly>
+    <ClientId>2b019102-4688-4d9c-9e16-c36c1240ebc7</ClientId>
+    <FullClassName>Revit.SDK.Samples.ProjectInfo.CS.Command</FullClassName>
+    <Text>Project Information</Text>
+    <Description>Project Information.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

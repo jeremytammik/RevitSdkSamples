@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+
+  <HelpKINode Title="AccessibilityNotifyClients method" Url="html/1776ca0c-83ad-473a-85e4-700b5b14d25f.htm" />
+  <HelpKINode Title="AllowElement method" Url="html/b8fe0061-513e-9390-47fa-4be84f23b6db.htm" />
+  <HelpKINode Title="AllowReference method" Url="html/b6ac1d09-0492-2fbe-9b6b-bee8c0ebc649.htm" />
+  <HelpKINode Title="BeginInvoke method" Url="html/6c2499e1-8d4b-f5f3-2ce9-3f289c6b7727.htm" />
+  <HelpKINode Title="Caption field" Url="html/fbc0f20b-25e4-5bc3-8024-38d171f1a65f.htm" />
+  <HelpKINode Title="Dispose method" Url="html/32322243-a7d4-72a7-7ee2-b957c0def29d.htm" />
+  <HelpKINode Title="DotOrColon method" Url="html/3bca7c08-c847-759b-b8e5-afee56c6a11a.htm" />
+  <HelpKINode Title="ElementDescription method" Url="html/63c6b8c3-4760-5db8-b44f-d212e2431d16.htm" />
+  <HelpKINode Title="ErrorMsg method" Url="html/b0b2515c-8954-fbad-5d63-40a829168e1e.htm" />
+  <HelpKINode Title="Execute method" Url="html/000a2b2c-3616-bcff-40ab-fd42d86430cd.htm" />
+  <HelpKINode Title="Execute method" Url="html/073b8194-9918-62c2-e88c-061ac0769db2.htm" />
+  <HelpKINode Title="Execute method" Url="html/0b6bf312-b4b3-0326-864f-45f3e15c1384.htm" />
+  <HelpKINode Title="Execute method" Url="html/0c1ec9b1-d251-58c7-bc8e-d35955927ea1.htm" />
+  <HelpKINode Title="Execute method" Url="html/0e2292c8-84f2-6907-5a6d-1a37276226ec.htm" />
+  <HelpKINode Title="Execute method" Url="html/1e3a1289-82b7-5815-9add-7f371fea2ac2.htm" />
+  <HelpKINode Title="Execute method" Url="html/1f85c393-892d-123b-2206-77087bde154c.htm" />
+  <HelpKINode Title="Execute method" Url="html/2173ce4a-27fe-9a63-44e5-632b71ace359.htm" />
+  <HelpKINode Title="Execute method" Url="html/267f0550-f439-d39d-67e1-1fe3a5fd2091.htm" />
+  <HelpKINode Title="Execute method" Url="html/2c5d7cb8-10ed-fac6-68fc-dc4209a36eb0.htm" />
+  <HelpKINode Title="Execute method" Url="html/3c84dc62-b5f3-80ce-24b8-93afb15a09c0.htm" />
+  <HelpKINode Title="Execute method" Url="html/3f5bb9ad-8aaa-9b92-9236-f289d3d1cc21.htm" />
+  <HelpKINode Title="Execute method" Url="html/4fd0223e-37d2-9ed8-7521-1d4838e49ceb.htm" />
+  <HelpKINode Title="Execute method" Url="html/609040df-e135-5b05-9647-48ec75fec647.htm" />
+  <HelpKINode Title="Execute method" Url="html/73232904-f4e8-fab9-30e7-f881f1673a8d.htm" />
+  <HelpKINode Title="Execute method" Url="html/7e5510c2-ed68-6a3f-ff61-8692cde4e342.htm" />
+  <HelpKINode Title="Execute method" Url="html/803d19a8-e5f5-756e-2dc1-f7f60c15fbc4.htm" />
+  <HelpKINode Title="Execute method" Url="html/98703ec6-94f0-b0d5-bae0-fcaabc5b4767.htm" />
+  <HelpKINode Title="Execute method" Url="html/9c19e3b3-aedf-b97f-4089-01b296cf0e32.htm" />
+  <HelpKINode Title="Execute method" Url="html/ae0351ae-c279-0d2a-a067-f17ad064701d.htm" />
+  <HelpKINode Title="Execute method" Url="html/b50e1496-6d6a-cd64-385d-f4fe90e54101.htm" />
+  <HelpKINode Title="Execute method" Url="html/bd1ebe6f-cec8-72a6-b819-972091429603.htm" />
+  <HelpKINode Title="Execute method" Url="html/c87360a7-d047-1ad4-7cea-c4669f7da852.htm" />
+  <HelpKINode Title="Execute method" Url="html/cbdbd459-c18f-dbdb-5f79-14a6a184d8a0.htm" />
+  <HelpKINode Title="Execute method" Url="html/d0b29af8-0dc9-2bbf-7814-96e329536893.htm" />
+  <HelpKINode Title="Execute method" Url="html/d7a78744-2676-0ac2-f635-b5018a3739ab.htm" />
+  <HelpKINode Title="Execute method" Url="html/da43dcfe-9cc3-16ec-6498-9f21118338a7.htm" />
+  <HelpKINode Title="Execute method" Url="html/e28c6fe3-4f81-37fc-02a6-df36f4759fb6.htm" />
+  <HelpKINode Title="Execute method" Url="html/f6f8a067-fbe2-b3c7-cf5f-8936b2c13c69.htm" />
+  <HelpKINode Title="FormUtils class" Url="html/df0b08b3-2bba-33f3-40ad-240cb817716f.htm" />
+  <HelpKINode Title="FormUtils class" Url="html/eaacbb6d-dddf-b103-9e2a-e5697353ff82.htm" />
+  <HelpKINode Title="FormUtils class">
+    <HelpKINode Title="about FormUtils class" Url="html/df0b08b3-2bba-33f3-40ad-240cb817716f.htm" />
+    <HelpKINode Title="all members" Url="html/eaacbb6d-dddf-b103-9e2a-e5697353ff82.htm" />
+    <HelpKINode Title="constructor" Url="html/67dbaacc-d43e-5d7f-48c2-e27ae392337d.htm" />
+    <HelpKINode Title="methods" Url="html/0a16354e-a5f7-fc71-314c-204a7e1dbf9b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FormUtils.FormUtils constructor" Url="html/67dbaacc-d43e-5d7f-48c2-e27ae392337d.htm" />
+  <HelpKINode Title="FormUtils.MakeCurve method" Url="html/f6150817-bf20-89fd-27d5-dcb6ea7709d3.htm" />
+  <HelpKINode Title="GetBottomAndTopLevels method" Url="html/20dcfe14-2f15-38ea-d268-bf850a4af1e0.htm" />
+  <HelpKINode Title="GetChildAtPoint method" Url="html/f1064cd0-ece4-6d87-bfc5-1d4ba45536d7.htm" />
+  <HelpKINode Title="GetElementsOfType method" Url="html/7fb22030-b949-7d44-7b05-de374f500a4d.htm" />
+  <HelpKINode Title="GetFamilyInstances method" Url="html/b1017140-9e93-01fe-5090-2b8402feba92.htm" />
+  <HelpKINode Title="GetFamilySymbols method" Url="html/14974525-b700-4933-3bb0-1f7b0c623c43.htm" />
+  <HelpKINode Title="GetFirstFamilySymbol method" Url="html/5196da85-366c-5b34-9a1e-39d5f85f6b42.htm" />
+  <HelpKINode Title="GetOrCreateSharedParamsDefinition method" Url="html/7e39a8af-723c-ae16-2e2a-f54836874bd4.htm" />
+  <HelpKINode Title="GetOrCreateSharedParamsGroup method" Url="html/5220cfa3-23b0-667e-49ef-363fdcb20d57.htm" />
+  <HelpKINode Title="GetParameterValue method" Url="html/4544cdf6-abe3-0d43-a396-3d1f2245bae5.htm" />
+  <HelpKINode Title="GetParameterValue2 method" Url="html/e319fe7f-4f11-15bb-4b35-c3cccaac7b72.htm" />
+  <HelpKINode Title="GetProjectInfoElem method" Url="html/2231f1b0-d3bf-b4ca-cd34-ac058eee45da.htm" />
+  <HelpKINode Title="GetSharedParamsFile method" Url="html/0535f22e-1030-7cbc-f5c0-8defcad7d5e6.htm" />
+  <HelpKINode Title="GetSingleSelectedElementOrPrompt method" Url="html/95b4c394-d4ff-d81c-4fa1-7637f0d09862.htm" />
+  <HelpKINode Title="GetTargetInstances method" Url="html/1f274ffa-5675-296a-8fb8-4efbae26a7ee.htm" />
+  <HelpKINode Title="InfoMsg method" Url="html/85bd4da2-4ec8-65c9-7f42-0bf0dea0abbd.htm" />
+  <HelpKINode Title="Invalidate method" Url="html/2748b15e-374a-80bf-bbb2-954c3a1d6f03.htm" />
+  <HelpKINode Title="Invoke method" Url="html/f9aec73b-275b-b2d6-c84c-c0ef05cc73ae.htm" />
+  <HelpKINode Title="Lab1_1_HelloWorld class" Url="html/d4aa3c52-67e8-2da1-b062-022386b2aa1b.htm" />
+  <HelpKINode Title="Lab1_1_HelloWorld class" Url="html/f6a79d4b-4fba-dc9f-3738-db593d87e702.htm" />
+  <HelpKINode Title="Lab1_1_HelloWorld class">
+    <HelpKINode Title="about Lab1_1_HelloWorld class" Url="html/f6a79d4b-4fba-dc9f-3738-db593d87e702.htm" />
+    <HelpKINode Title="all members" Url="html/d4aa3c52-67e8-2da1-b062-022386b2aa1b.htm" />
+    <HelpKINode Title="constructor" Url="html/37a37575-4f87-aa21-7131-1fe5ab466ccc.htm" />
+    <HelpKINode Title="methods" Url="html/2ae18301-cf50-ebfd-c16f-9677e6f47945.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab1_1_HelloWorld.Execute method" Url="html/73232904-f4e8-fab9-30e7-f881f1673a8d.htm" />
+  <HelpKINode Title="Lab1_1_HelloWorld.Lab1_1_HelloWorld constructor" Url="html/37a37575-4f87-aa21-7131-1fe5ab466ccc.htm" />
+  <HelpKINode Title="Lab1_2_CommandArguments class" Url="html/2e57467a-af71-1c93-0159-4dfd69a30ce1.htm" />
+  <HelpKINode Title="Lab1_2_CommandArguments class" Url="html/fb2c5a55-f61c-b83c-fae4-694c47f0c821.htm" />
+  <HelpKINode Title="Lab1_2_CommandArguments class">
+    <HelpKINode Title="about Lab1_2_CommandArguments class" Url="html/fb2c5a55-f61c-b83c-fae4-694c47f0c821.htm" />
+    <HelpKINode Title="all members" Url="html/2e57467a-af71-1c93-0159-4dfd69a30ce1.htm" />
+    <HelpKINode Title="constructor" Url="html/9986be39-376d-9958-29f0-4557248a9106.htm" />
+    <HelpKINode Title="methods" Url="html/1de4a803-563d-1ab8-c76f-04e7b5380ed4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab1_2_CommandArguments.Execute method" Url="html/1e3a1289-82b7-5815-9add-7f371fea2ac2.htm" />
+  <HelpKINode Title="Lab1_2_CommandArguments.Lab1_2_CommandArguments constructor" Url="html/9986be39-376d-9958-29f0-4557248a9106.htm" />
+  <HelpKINode Title="Lab2_0_CreateLittleHouse class" Url="html/77f0fd36-18f7-7311-4d04-c82c087a71c4.htm" />
+  <HelpKINode Title="Lab2_0_CreateLittleHouse class" Url="html/a52feb54-340d-ccca-1ea3-1bce555f5bc3.htm" />
+  <HelpKINode Title="Lab2_0_CreateLittleHouse class">
+    <HelpKINode Title="about Lab2_0_CreateLittleHouse class" Url="html/77f0fd36-18f7-7311-4d04-c82c087a71c4.htm" />
+    <HelpKINode Title="all members" Url="html/a52feb54-340d-ccca-1ea3-1bce555f5bc3.htm" />
+    <HelpKINode Title="constructor" Url="html/54352bb5-7c7a-e043-8bb5-d5d015f7e869.htm" />
+    <HelpKINode Title="methods" Url="html/abab1f99-baaf-1e36-df83-b5414b17976a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab2_0_CreateLittleHouse.Execute method" Url="html/000a2b2c-3616-bcff-40ab-fd42d86430cd.htm" />
+  <HelpKINode Title="Lab2_0_CreateLittleHouse.Lab2_0_CreateLittleHouse constructor" Url="html/54352bb5-7c7a-e043-8bb5-d5d015f7e869.htm" />
+  <HelpKINode Title="Lab2_1_Elements class" Url="html/56b94c91-d186-e603-7b9d-9eb94ee787ae.htm" />
+  <HelpKINode Title="Lab2_1_Elements class" Url="html/b44937f6-f251-20ca-1b9e-525459171c06.htm" />
+  <HelpKINode Title="Lab2_1_Elements class">
+    <HelpKINode Title="about Lab2_1_Elements class" Url="html/b44937f6-f251-20ca-1b9e-525459171c06.htm" />
+    <HelpKINode Title="all members" Url="html/56b94c91-d186-e603-7b9d-9eb94ee787ae.htm" />
+    <HelpKINode Title="constructor" Url="html/d48b5618-d02e-7d66-9c84-efafd695bf3c.htm" />
+    <HelpKINode Title="methods" Url="html/56ee1adb-48ac-9133-d8d7-e9419dc390ef.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab2_1_Elements.Execute method" Url="html/2c5d7cb8-10ed-fac6-68fc-dc4209a36eb0.htm" />
+  <HelpKINode Title="Lab2_1_Elements.Lab2_1_Elements constructor" Url="html/d48b5618-d02e-7d66-9c84-efafd695bf3c.htm" />
+  <HelpKINode Title="Lab2_2_ModelElements class" Url="html/5cc9fba4-96cc-8ac3-1f24-cd79267d2824.htm" />
+  <HelpKINode Title="Lab2_2_ModelElements class" Url="html/8a72b8c2-01c7-cb9b-2d89-f7129314f20f.htm" />
+  <HelpKINode Title="Lab2_2_ModelElements class">
+    <HelpKINode Title="about Lab2_2_ModelElements class" Url="html/5cc9fba4-96cc-8ac3-1f24-cd79267d2824.htm" />
+    <HelpKINode Title="all members" Url="html/8a72b8c2-01c7-cb9b-2d89-f7129314f20f.htm" />
+    <HelpKINode Title="constructor" Url="html/e5cdacdb-815b-3d2d-b1a7-59275ce332c5.htm" />
+    <HelpKINode Title="methods" Url="html/4409857d-c1a8-a62f-214a-0ebd9b76e32a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab2_2_ModelElements.Execute method" Url="html/267f0550-f439-d39d-67e1-1fe3a5fd2091.htm" />
+  <HelpKINode Title="Lab2_2_ModelElements.Lab2_2_ModelElements constructor" Url="html/e5cdacdb-815b-3d2d-b1a7-59275ce332c5.htm" />
+  <HelpKINode Title="Lab2_3_ListWallsAndDoors class" Url="html/700e3890-0e7c-1a2f-fe43-59783b306cea.htm" />
+  <HelpKINode Title="Lab2_3_ListWallsAndDoors class" Url="html/861f3553-e92a-04ba-4725-21cb0dbe5a31.htm" />
+  <HelpKINode Title="Lab2_3_ListWallsAndDoors class">
+    <HelpKINode Title="about Lab2_3_ListWallsAndDoors class" Url="html/861f3553-e92a-04ba-4725-21cb0dbe5a31.htm" />
+    <HelpKINode Title="all members" Url="html/700e3890-0e7c-1a2f-fe43-59783b306cea.htm" />
+    <HelpKINode Title="constructor" Url="html/972b3c93-0737-b931-8e21-125a870d9f38.htm" />
+    <HelpKINode Title="methods" Url="html/cc8cb955-252b-e58d-652b-d590feb24545.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab2_3_ListWallsAndDoors.Execute method" Url="html/f6f8a067-fbe2-b3c7-cf5f-8936b2c13c69.htm" />
+  <HelpKINode Title="Lab2_3_ListWallsAndDoors.Lab2_3_ListWallsAndDoors constructor" Url="html/972b3c93-0737-b931-8e21-125a870d9f38.htm" />
+  <HelpKINode Title="Lab2_4_EditFamilyInstance class" Url="html/3e54607b-6435-fc9c-272a-79d001ff482f.htm" />
+  <HelpKINode Title="Lab2_4_EditFamilyInstance class" Url="html/a7ba3ddd-b7d8-9bdf-4c88-563eacb77753.htm" />
+  <HelpKINode Title="Lab2_4_EditFamilyInstance class">
+    <HelpKINode Title="about Lab2_4_EditFamilyInstance class" Url="html/a7ba3ddd-b7d8-9bdf-4c88-563eacb77753.htm" />
+    <HelpKINode Title="all members" Url="html/3e54607b-6435-fc9c-272a-79d001ff482f.htm" />
+    <HelpKINode Title="constructor" Url="html/b37f5e87-2894-5fe6-662d-d4e8751db52b.htm" />
+    <HelpKINode Title="methods" Url="html/cb5ba356-c187-c0d3-4405-1098115532bd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab2_4_EditFamilyInstance.Execute method" Url="html/d0b29af8-0dc9-2bbf-7814-96e329536893.htm" />
+  <HelpKINode Title="Lab2_4_EditFamilyInstance.Lab2_4_EditFamilyInstance constructor" Url="html/b37f5e87-2894-5fe6-662d-d4e8751db52b.htm" />
+  <HelpKINode Title="Lab2_5_SelectAndMoveWallAndAddColumns class" Url="html/0af058f5-790f-0273-12a8-7d0a815fc469.htm" />
+  <HelpKINode Title="Lab2_5_SelectAndMoveWallAndAddColumns class" Url="html/aa3f9539-3ad5-f7f2-602e-43469af16f62.htm" />
+  <HelpKINode Title="Lab2_5_SelectAndMoveWallAndAddColumns class">
+    <HelpKINode Title="about Lab2_5_SelectAndMoveWallAndAddColumns class" Url="html/0af058f5-790f-0273-12a8-7d0a815fc469.htm" />
+    <HelpKINode Title="all members" Url="html/aa3f9539-3ad5-f7f2-602e-43469af16f62.htm" />
+    <HelpKINode Title="constructor" Url="html/6c5d69a2-eb1d-deac-8066-92221797bd59.htm" />
+    <HelpKINode Title="methods" Url="html/f53a071d-5bc6-7755-2e9a-909f00c2fe29.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab2_5_SelectAndMoveWallAndAddColumns.Execute method" Url="html/9c19e3b3-aedf-b97f-4089-01b296cf0e32.htm" />
+  <HelpKINode Title="Lab2_5_SelectAndMoveWallAndAddColumns.Lab2_5_SelectAndMoveWallAndAddColumns constructor" Url="html/6c5d69a2-eb1d-deac-8066-92221797bd59.htm" />
+  <HelpKINode Title="Lab3_1_StandardFamiliesAndTypes class" Url="html/4bf4960b-5cce-337e-8b89-705e0c1ffd61.htm" />
+  <HelpKINode Title="Lab3_1_StandardFamiliesAndTypes class" Url="html/f8e95cb8-c79f-859b-05a8-2392c594379e.htm" />
+  <HelpKINode Title="Lab3_1_StandardFamiliesAndTypes class">
+    <HelpKINode Title="about Lab3_1_StandardFamiliesAndTypes class" Url="html/4bf4960b-5cce-337e-8b89-705e0c1ffd61.htm" />
+    <HelpKINode Title="all members" Url="html/f8e95cb8-c79f-859b-05a8-2392c594379e.htm" />
+    <HelpKINode Title="constructor" Url="html/3244eb2a-8890-ecc5-ca25-01219f266941.htm" />
+    <HelpKINode Title="methods" Url="html/52f54d2a-d2d4-a636-1007-2a4d9630da68.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab3_1_StandardFamiliesAndTypes.Execute method" Url="html/da43dcfe-9cc3-16ec-6498-9f21118338a7.htm" />
+  <HelpKINode Title="Lab3_1_StandardFamiliesAndTypes.Lab3_1_StandardFamiliesAndTypes constructor" Url="html/3244eb2a-8890-ecc5-ca25-01219f266941.htm" />
+  <HelpKINode Title="Lab3_2_LoadStandardFamilies class" Url="html/9ce1d4e5-e2ea-4d10-3ce5-11f0233769af.htm" />
+  <HelpKINode Title="Lab3_2_LoadStandardFamilies class" Url="html/b70937d7-6630-21d9-cfd9-b8d34d0e3a3b.htm" />
+  <HelpKINode Title="Lab3_2_LoadStandardFamilies class">
+    <HelpKINode Title="about Lab3_2_LoadStandardFamilies class" Url="html/b70937d7-6630-21d9-cfd9-b8d34d0e3a3b.htm" />
+    <HelpKINode Title="all members" Url="html/9ce1d4e5-e2ea-4d10-3ce5-11f0233769af.htm" />
+    <HelpKINode Title="constructor" Url="html/8fee3cd8-0073-8e57-6f89-20ca3da102bf.htm" />
+    <HelpKINode Title="methods" Url="html/961d9fd6-b752-822c-b1d1-8191dc5b4ad2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab3_2_LoadStandardFamilies.Execute method" Url="html/3f5bb9ad-8aaa-9b92-9236-f289d3d1cc21.htm" />
+  <HelpKINode Title="Lab3_2_LoadStandardFamilies.Lab3_2_LoadStandardFamilies constructor" Url="html/8fee3cd8-0073-8e57-6f89-20ca3da102bf.htm" />
+  <HelpKINode Title="Lab3_3_DetermineInstanceTypeAndFamily class" Url="html/4c8ee507-4630-5a32-78c7-77f96cb4b211.htm" />
+  <HelpKINode Title="Lab3_3_DetermineInstanceTypeAndFamily class" Url="html/a2c78632-4d01-5013-a8c4-35b52035fc2c.htm" />
+  <HelpKINode Title="Lab3_3_DetermineInstanceTypeAndFamily class">
+    <HelpKINode Title="about Lab3_3_DetermineInstanceTypeAndFamily class" Url="html/a2c78632-4d01-5013-a8c4-35b52035fc2c.htm" />
+    <HelpKINode Title="all members" Url="html/4c8ee507-4630-5a32-78c7-77f96cb4b211.htm" />
+    <HelpKINode Title="constructor" Url="html/c4223400-0530-ddf6-f098-69952cbf66c1.htm" />
+    <HelpKINode Title="methods" Url="html/4a7e1922-4366-7a1a-529e-100257fb3f6d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab3_3_DetermineInstanceTypeAndFamily.Execute method" Url="html/b50e1496-6d6a-cd64-385d-f4fe90e54101.htm" />
+  <HelpKINode Title="Lab3_3_DetermineInstanceTypeAndFamily.Lab3_3_DetermineInstanceTypeAndFamily constructor" Url="html/c4223400-0530-ddf6-f098-69952cbf66c1.htm" />
+  <HelpKINode Title="Lab3_4_ChangeSelectedInstanceType class" Url="html/34d32996-e00e-4074-927f-002d9e31621a.htm" />
+  <HelpKINode Title="Lab3_4_ChangeSelectedInstanceType class" Url="html/80fe5a7d-e1af-4cd4-4594-7a01deb9224f.htm" />
+  <HelpKINode Title="Lab3_4_ChangeSelectedInstanceType class">
+    <HelpKINode Title="about Lab3_4_ChangeSelectedInstanceType class" Url="html/80fe5a7d-e1af-4cd4-4594-7a01deb9224f.htm" />
+    <HelpKINode Title="all members" Url="html/34d32996-e00e-4074-927f-002d9e31621a.htm" />
+    <HelpKINode Title="constructor" Url="html/5ce0076c-8f30-423e-bd04-ad624e88ec2b.htm" />
+    <HelpKINode Title="methods" Url="html/22bf21ec-258d-2b94-496c-bdb7d07d523c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab3_4_ChangeSelectedInstanceType.Execute method" Url="html/bd1ebe6f-cec8-72a6-b819-972091429603.htm" />
+  <HelpKINode Title="Lab3_4_ChangeSelectedInstanceType.Lab3_4_ChangeSelectedInstanceType constructor" Url="html/5ce0076c-8f30-423e-bd04-ad624e88ec2b.htm" />
+  <HelpKINode Title="Lab3_4_Form class" Url="html/2cfc9b86-9337-86c2-7ffc-7f1491066b4e.htm" />
+  <HelpKINode Title="Lab3_4_Form class" Url="html/54c0a52b-1120-5e07-0747-d6a2a0a3f2f0.htm" />
+  <HelpKINode Title="Lab3_4_Form class">
+    <HelpKINode Title="about Lab3_4_Form class" Url="html/2cfc9b86-9337-86c2-7ffc-7f1491066b4e.htm" />
+    <HelpKINode Title="all members" Url="html/54c0a52b-1120-5e07-0747-d6a2a0a3f2f0.htm" />
+    <HelpKINode Title="constructor" Url="html/3a6cf285-7cdb-ced7-ab7e-5c0b1aaf5c22.htm" />
+    <HelpKINode Title="events" Url="html/be78160c-6791-1bbe-f34c-407e06878438.htm" />
+    <HelpKINode Title="methods" Url="html/78c8666b-9dbd-f602-0495-7e505f55c502.htm" />
+    <HelpKINode Title="properties" Url="html/cfc501b5-6a81-da26-2409-baa48554f160.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab3_4_Form.AccessibilityNotifyClients method" Url="html/1776ca0c-83ad-473a-85e4-700b5b14d25f.htm" />
+  <HelpKINode Title="Lab3_4_Form.BeginInvoke method" Url="html/6c2499e1-8d4b-f5f3-2ce9-3f289c6b7727.htm" />
+  <HelpKINode Title="Lab3_4_Form.Dispose method" Url="html/32322243-a7d4-72a7-7ee2-b957c0def29d.htm" />
+  <HelpKINode Title="Lab3_4_Form.GetChildAtPoint method" Url="html/f1064cd0-ece4-6d87-bfc5-1d4ba45536d7.htm" />
+  <HelpKINode Title="Lab3_4_Form.Invalidate method" Url="html/2748b15e-374a-80bf-bbb2-954c3a1d6f03.htm" />
+  <HelpKINode Title="Lab3_4_Form.Invoke method" Url="html/f9aec73b-275b-b2d6-c84c-c0ef05cc73ae.htm" />
+  <HelpKINode Title="Lab3_4_Form.Lab3_4_Form constructor" Url="html/3a6cf285-7cdb-ced7-ab7e-5c0b1aaf5c22.htm" />
+  <HelpKINode Title="Lab3_4_Form.MemberwiseClone method" Url="html/f14958eb-75dd-4d23-610e-8ebb4b51b25f.htm" />
+  <HelpKINode Title="Lab3_4_Form.PerformLayout method" Url="html/99e0b6ff-caa9-8ce1-1f0d-34ec2af8fd8b.htm" />
+  <HelpKINode Title="Lab3_4_Form.ResumeLayout method" Url="html/d8ee054b-1a15-7cbb-267c-5c809620c078.htm" />
+  <HelpKINode Title="Lab3_4_Form.RtlTranslateAlignment method" Url="html/5556bb62-7368-fd41-a929-b03a70049471.htm" />
+  <HelpKINode Title="Lab3_4_Form.Scale method" Url="html/673c8129-83f9-b2d4-8959-50b4b980181d.htm" />
+  <HelpKINode Title="Lab3_4_Form.Select method" Url="html/2e9d512e-1fe3-54af-b664-27331e5860fc.htm" />
+  <HelpKINode Title="Lab3_4_Form.SetBounds method" Url="html/145613c7-f535-f083-eb3e-0e305b563592.htm" />
+  <HelpKINode Title="Lab3_4_Form.Show method" Url="html/f5d67bcd-deb4-7d3f-f869-befc3f7ed4b0.htm" />
+  <HelpKINode Title="Lab3_4_Form.ShowDialog method" Url="html/5981b541-bc26-7bea-4a22-5a23fe910950.htm" />
+  <HelpKINode Title="Lab3_4_Form.UpdateBounds method" Url="html/941a3980-69eb-2997-5d1d-1d79cfd99920.htm" />
+  <HelpKINode Title="Lab3_4_Form.Validate method" Url="html/c89d75b6-b6b5-57b9-2b82-ee776ba613e4.htm" />
+  <HelpKINode Title="Lab3_4_Form.ValidateChildren method" Url="html/3c6061e8-3579-6174-488f-2dfa5cc42ddc.htm" />
+  <HelpKINode Title="Lab3_5_WallAndFloorTypes class" Url="html/164f8c81-891d-50fd-82d5-d0dbe375ee44.htm" />
+  <HelpKINode Title="Lab3_5_WallAndFloorTypes class" Url="html/2fb86544-a595-6224-8255-c3f0c4cd4712.htm" />
+  <HelpKINode Title="Lab3_5_WallAndFloorTypes class">
+    <HelpKINode Title="about Lab3_5_WallAndFloorTypes class" Url="html/164f8c81-891d-50fd-82d5-d0dbe375ee44.htm" />
+    <HelpKINode Title="all members" Url="html/2fb86544-a595-6224-8255-c3f0c4cd4712.htm" />
+    <HelpKINode Title="constructor" Url="html/db8694bf-4008-4ae5-59f6-e947afc1e621.htm" />
+    <HelpKINode Title="methods" Url="html/c5ea4c97-6b1b-ce1d-7042-5dc2e02d3dd1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab3_5_WallAndFloorTypes.Execute method" Url="html/98703ec6-94f0-b0d5-bae0-fcaabc5b4767.htm" />
+  <HelpKINode Title="Lab3_5_WallAndFloorTypes.Lab3_5_WallAndFloorTypes constructor" Url="html/db8694bf-4008-4ae5-59f6-e947afc1e621.htm" />
+  <HelpKINode Title="Lab3_6_DuplicateWallType class" Url="html/0173b2ab-e5d8-38d6-d626-8592de30fae5.htm" />
+  <HelpKINode Title="Lab3_6_DuplicateWallType class" Url="html/f8102cb8-b61e-3e43-507d-bafe67e9a75d.htm" />
+  <HelpKINode Title="Lab3_6_DuplicateWallType class">
+    <HelpKINode Title="about Lab3_6_DuplicateWallType class" Url="html/0173b2ab-e5d8-38d6-d626-8592de30fae5.htm" />
+    <HelpKINode Title="all members" Url="html/f8102cb8-b61e-3e43-507d-bafe67e9a75d.htm" />
+    <HelpKINode Title="constructor" Url="html/5883e5a3-2886-d18f-1b90-6f8d09283aac.htm" />
+    <HelpKINode Title="methods" Url="html/2bc64ae5-335f-cd5b-1c65-4e8ae7423c48.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab3_6_DuplicateWallType.Execute method" Url="html/0e2292c8-84f2-6907-5a6d-1a37276226ec.htm" />
+  <HelpKINode Title="Lab3_6_DuplicateWallType.Lab3_6_DuplicateWallType constructor" Url="html/5883e5a3-2886-d18f-1b90-6f8d09283aac.htm" />
+  <HelpKINode Title="Lab3_7_DeleteFamilyType class" Url="html/1d8c9fb5-2548-08e6-2ddb-5c413693c096.htm" />
+  <HelpKINode Title="Lab3_7_DeleteFamilyType class" Url="html/7546fabd-c29e-a09d-20f5-56a3d6eb6777.htm" />
+  <HelpKINode Title="Lab3_7_DeleteFamilyType class">
+    <HelpKINode Title="about Lab3_7_DeleteFamilyType class" Url="html/1d8c9fb5-2548-08e6-2ddb-5c413693c096.htm" />
+    <HelpKINode Title="all members" Url="html/7546fabd-c29e-a09d-20f5-56a3d6eb6777.htm" />
+    <HelpKINode Title="constructor" Url="html/28eb44d1-7ade-87e1-d999-346ce6089436.htm" />
+    <HelpKINode Title="methods" Url="html/78ea55da-e2a7-8081-1c51-1451ca406898.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab3_7_DeleteFamilyType.Execute method" Url="html/e28c6fe3-4f81-37fc-02a6-df36f4759fb6.htm" />
+  <HelpKINode Title="Lab3_7_DeleteFamilyType.Lab3_7_DeleteFamilyType constructor" Url="html/28eb44d1-7ade-87e1-d999-346ce6089436.htm" />
+  <HelpKINode Title="Lab4_1_ElementParameters class" Url="html/3a1b4c73-3646-0b2e-c8e7-66440d7b5dec.htm" />
+  <HelpKINode Title="Lab4_1_ElementParameters class" Url="html/5e59e4f2-cd0a-f5e5-5b96-002604b70511.htm" />
+  <HelpKINode Title="Lab4_1_ElementParameters class">
+    <HelpKINode Title="about Lab4_1_ElementParameters class" Url="html/3a1b4c73-3646-0b2e-c8e7-66440d7b5dec.htm" />
+    <HelpKINode Title="all members" Url="html/5e59e4f2-cd0a-f5e5-5b96-002604b70511.htm" />
+    <HelpKINode Title="constructor" Url="html/664c550d-987a-2214-a8a5-7c58cdeae920.htm" />
+    <HelpKINode Title="methods" Url="html/6e28f110-d4a7-9772-5cc1-aa5e0c1b5244.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab4_1_ElementParameters.Execute method" Url="html/d7a78744-2676-0ac2-f635-b5018a3739ab.htm" />
+  <HelpKINode Title="Lab4_1_ElementParameters.Lab4_1_ElementParameters constructor" Url="html/664c550d-987a-2214-a8a5-7c58cdeae920.htm" />
+  <HelpKINode Title="Lab4_2_ExportParametersToExcel class" Url="html/90c0cd97-7285-55ac-195f-9947c93494fc.htm" />
+  <HelpKINode Title="Lab4_2_ExportParametersToExcel class" Url="html/faf47a29-3537-6b33-63fe-b3b9caca0dcb.htm" />
+  <HelpKINode Title="Lab4_2_ExportParametersToExcel class">
+    <HelpKINode Title="about Lab4_2_ExportParametersToExcel class" Url="html/faf47a29-3537-6b33-63fe-b3b9caca0dcb.htm" />
+    <HelpKINode Title="all members" Url="html/90c0cd97-7285-55ac-195f-9947c93494fc.htm" />
+    <HelpKINode Title="constructor" Url="html/393811c5-2e74-1758-3dcb-84f64217a648.htm" />
+    <HelpKINode Title="methods" Url="html/aa912af1-8599-6bfc-7baa-18fc1fe9bcd5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab4_2_ExportParametersToExcel.Execute method" Url="html/ae0351ae-c279-0d2a-a067-f17ad064701d.htm" />
+  <HelpKINode Title="Lab4_2_ExportParametersToExcel.Lab4_2_ExportParametersToExcel constructor" Url="html/393811c5-2e74-1758-3dcb-84f64217a648.htm" />
+  <HelpKINode Title="Lab4_3_1_CreateAndBindSharedParam class" Url="html/363e83c0-64f3-a0cb-b68d-cdff87bc1a09.htm" />
+  <HelpKINode Title="Lab4_3_1_CreateAndBindSharedParam class" Url="html/4906c7dc-d2d4-f4db-036f-1ea94cbf2d44.htm" />
+  <HelpKINode Title="Lab4_3_1_CreateAndBindSharedParam class">
+    <HelpKINode Title="about Lab4_3_1_CreateAndBindSharedParam class" Url="html/363e83c0-64f3-a0cb-b68d-cdff87bc1a09.htm" />
+    <HelpKINode Title="all members" Url="html/4906c7dc-d2d4-f4db-036f-1ea94cbf2d44.htm" />
+    <HelpKINode Title="constructor" Url="html/d1754000-ece3-ec87-3f3f-2e4aaf41cf9c.htm" />
+    <HelpKINode Title="fields" Url="html/0df92648-18e1-fe9c-c941-22b3a53e7685.htm" />
+    <HelpKINode Title="methods" Url="html/ea3d2066-2d59-e635-ad6f-5ea44acfdf46.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab4_3_1_CreateAndBindSharedParam.Execute method" Url="html/1f85c393-892d-123b-2206-77087bde154c.htm" />
+  <HelpKINode Title="Lab4_3_1_CreateAndBindSharedParam.Lab4_3_1_CreateAndBindSharedParam constructor" Url="html/d1754000-ece3-ec87-3f3f-2e4aaf41cf9c.htm" />
+  <HelpKINode Title="Lab4_3_1_CreateAndBindSharedParam.Target field" Url="html/28f5332e-0ce1-5437-b495-786b0a8f5c30.htm" />
+  <HelpKINode Title="Lab4_3_2_ExportSharedParamToExcel class" Url="html/8b399f33-c3d6-55e6-1b84-4bc50af1cb5c.htm" />
+  <HelpKINode Title="Lab4_3_2_ExportSharedParamToExcel class" Url="html/9063f95f-1df9-5e40-58b7-c9e74e08fa6a.htm" />
+  <HelpKINode Title="Lab4_3_2_ExportSharedParamToExcel class">
+    <HelpKINode Title="about Lab4_3_2_ExportSharedParamToExcel class" Url="html/8b399f33-c3d6-55e6-1b84-4bc50af1cb5c.htm" />
+    <HelpKINode Title="all members" Url="html/9063f95f-1df9-5e40-58b7-c9e74e08fa6a.htm" />
+    <HelpKINode Title="constructor" Url="html/8e56a4bd-cfbc-6d9e-cede-4f3514a97dbc.htm" />
+    <HelpKINode Title="methods" Url="html/d2d737f4-a925-ff9f-52b8-14ba19f9308a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab4_3_2_ExportSharedParamToExcel.Execute method" Url="html/2173ce4a-27fe-9a63-44e5-632b71ace359.htm" />
+  <HelpKINode Title="Lab4_3_2_ExportSharedParamToExcel.Lab4_3_2_ExportSharedParamToExcel constructor" Url="html/8e56a4bd-cfbc-6d9e-cede-4f3514a97dbc.htm" />
+  <HelpKINode Title="Lab4_3_3_ImportSharedParamFromExcel class" Url="html/a2a497fe-a941-7ba9-bebd-d959df277aef.htm" />
+  <HelpKINode Title="Lab4_3_3_ImportSharedParamFromExcel class" Url="html/b3972f95-e59b-fe81-7ca1-01d4e973f20b.htm" />
+  <HelpKINode Title="Lab4_3_3_ImportSharedParamFromExcel class">
+    <HelpKINode Title="about Lab4_3_3_ImportSharedParamFromExcel class" Url="html/a2a497fe-a941-7ba9-bebd-d959df277aef.htm" />
+    <HelpKINode Title="all members" Url="html/b3972f95-e59b-fe81-7ca1-01d4e973f20b.htm" />
+    <HelpKINode Title="constructor" Url="html/281883fd-e956-f43e-1bd5-c798a27a51af.htm" />
+    <HelpKINode Title="methods" Url="html/bc1ab0d0-8985-1919-db82-6c475f52b43e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab4_3_3_ImportSharedParamFromExcel.Execute method" Url="html/4fd0223e-37d2-9ed8-7521-1d4838e49ceb.htm" />
+  <HelpKINode Title="Lab4_3_3_ImportSharedParamFromExcel.Lab4_3_3_ImportSharedParamFromExcel constructor" Url="html/281883fd-e956-f43e-1bd5-c798a27a51af.htm" />
+  <HelpKINode Title="Lab4_4_1_CreatePerDocParameters class" Url="html/0409e7b6-2d08-f198-9c20-ba5002f283e7.htm" />
+  <HelpKINode Title="Lab4_4_1_CreatePerDocParameters class" Url="html/c32b25a9-03c5-fd99-272f-f831f1930012.htm" />
+  <HelpKINode Title="Lab4_4_1_CreatePerDocParameters class">
+    <HelpKINode Title="about Lab4_4_1_CreatePerDocParameters class" Url="html/c32b25a9-03c5-fd99-272f-f831f1930012.htm" />
+    <HelpKINode Title="all members" Url="html/0409e7b6-2d08-f198-9c20-ba5002f283e7.htm" />
+    <HelpKINode Title="constructor" Url="html/931e699c-de4d-aa9d-79b6-4d0edfa936fb.htm" />
+    <HelpKINode Title="methods" Url="html/7896faec-f1c8-96f5-8ebe-9c50632c763f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab4_4_1_CreatePerDocParameters.Execute method" Url="html/0c1ec9b1-d251-58c7-bc8e-d35955927ea1.htm" />
+  <HelpKINode Title="Lab4_4_1_CreatePerDocParameters.Lab4_4_1_CreatePerDocParameters constructor" Url="html/931e699c-de4d-aa9d-79b6-4d0edfa936fb.htm" />
+  <HelpKINode Title="Lab4_4_2_IncrementPerDocParameters class" Url="html/4f512456-3d17-54a2-c631-a3ee3d3fe6fe.htm" />
+  <HelpKINode Title="Lab4_4_2_IncrementPerDocParameters class" Url="html/57b00ade-888f-f0d3-1eab-bc8fa41d59bb.htm" />
+  <HelpKINode Title="Lab4_4_2_IncrementPerDocParameters class">
+    <HelpKINode Title="about Lab4_4_2_IncrementPerDocParameters class" Url="html/4f512456-3d17-54a2-c631-a3ee3d3fe6fe.htm" />
+    <HelpKINode Title="all members" Url="html/57b00ade-888f-f0d3-1eab-bc8fa41d59bb.htm" />
+    <HelpKINode Title="constructor" Url="html/62a48759-6bab-334f-893d-6e095ec5aa7f.htm" />
+    <HelpKINode Title="methods" Url="html/ebe3a7f2-da2c-24de-010f-287974fb6fb0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab4_4_2_IncrementPerDocParameters.Execute method" Url="html/803d19a8-e5f5-756e-2dc1-f7f60c15fbc4.htm" />
+  <HelpKINode Title="Lab4_4_2_IncrementPerDocParameters.Lab4_4_2_IncrementPerDocParameters constructor" Url="html/62a48759-6bab-334f-893d-6e095ec5aa7f.htm" />
+  <HelpKINode Title="Lab5_1_GroupsAndGroupTypes class" Url="html/054694f0-0d8e-5b61-c27a-9005d2608b01.htm" />
+  <HelpKINode Title="Lab5_1_GroupsAndGroupTypes class" Url="html/5598709d-297d-b859-4a31-ac005c34d405.htm" />
+  <HelpKINode Title="Lab5_1_GroupsAndGroupTypes class">
+    <HelpKINode Title="about Lab5_1_GroupsAndGroupTypes class" Url="html/5598709d-297d-b859-4a31-ac005c34d405.htm" />
+    <HelpKINode Title="all members" Url="html/054694f0-0d8e-5b61-c27a-9005d2608b01.htm" />
+    <HelpKINode Title="constructor" Url="html/4800d5a7-4468-2281-a3e1-0db3b02c65a1.htm" />
+    <HelpKINode Title="methods" Url="html/2538d792-180e-c781-cfdf-512c3e0700d0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab5_1_GroupsAndGroupTypes.Execute method" Url="html/c87360a7-d047-1ad4-7cea-c4669f7da852.htm" />
+  <HelpKINode Title="Lab5_1_GroupsAndGroupTypes.Lab5_1_GroupsAndGroupTypes constructor" Url="html/4800d5a7-4468-2281-a3e1-0db3b02c65a1.htm" />
+  <HelpKINode Title="Lab5_2_SwapGroupTypes class" Url="html/a5b6a19b-8e69-4f21-a7d5-57b7175f9ac2.htm" />
+  <HelpKINode Title="Lab5_2_SwapGroupTypes class" Url="html/c04c6461-bed9-3365-0be8-65f30d8dd3f9.htm" />
+  <HelpKINode Title="Lab5_2_SwapGroupTypes class">
+    <HelpKINode Title="about Lab5_2_SwapGroupTypes class" Url="html/a5b6a19b-8e69-4f21-a7d5-57b7175f9ac2.htm" />
+    <HelpKINode Title="all members" Url="html/c04c6461-bed9-3365-0be8-65f30d8dd3f9.htm" />
+    <HelpKINode Title="constructor" Url="html/4afef61d-db88-4940-ca22-fe4c1bfb131b.htm" />
+    <HelpKINode Title="methods" Url="html/1d94df8f-edcc-cac3-9327-1a0e40d52d20.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab5_2_SwapGroupTypes.Execute method" Url="html/cbdbd459-c18f-dbdb-5f79-14a6a184d8a0.htm" />
+  <HelpKINode Title="Lab5_2_SwapGroupTypes.Lab5_2_SwapGroupTypes constructor" Url="html/4afef61d-db88-4940-ca22-fe4c1bfb131b.htm" />
+  <HelpKINode Title="Lab5_3_Rooms class" Url="html/221b2020-3254-1225-95da-451821690643.htm" />
+  <HelpKINode Title="Lab5_3_Rooms class" Url="html/e4982ff5-39d3-a317-6987-e61504a8fb2a.htm" />
+  <HelpKINode Title="Lab5_3_Rooms class">
+    <HelpKINode Title="about Lab5_3_Rooms class" Url="html/221b2020-3254-1225-95da-451821690643.htm" />
+    <HelpKINode Title="all members" Url="html/e4982ff5-39d3-a317-6987-e61504a8fb2a.htm" />
+    <HelpKINode Title="constructor" Url="html/ee72c4c7-240f-37b8-972a-0d22a91fd1ad.htm" />
+    <HelpKINode Title="methods" Url="html/3303b18e-7f25-890c-c262-d64200cb7f91.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab5_3_Rooms.Execute method" Url="html/0b6bf312-b4b3-0326-864f-45f3e15c1384.htm" />
+  <HelpKINode Title="Lab5_3_Rooms.Lab5_3_Rooms constructor" Url="html/ee72c4c7-240f-37b8-972a-0d22a91fd1ad.htm" />
+  <HelpKINode Title="Lab6_1_HelloWorldExternalApplication class" Url="html/3c5135e4-9255-8216-c1ad-11f525ea1812.htm" />
+  <HelpKINode Title="Lab6_1_HelloWorldExternalApplication class" Url="html/84e5399e-0bd7-1076-7389-9f64334cebf2.htm" />
+  <HelpKINode Title="Lab6_1_HelloWorldExternalApplication class">
+    <HelpKINode Title="about Lab6_1_HelloWorldExternalApplication class" Url="html/84e5399e-0bd7-1076-7389-9f64334cebf2.htm" />
+    <HelpKINode Title="all members" Url="html/3c5135e4-9255-8216-c1ad-11f525ea1812.htm" />
+    <HelpKINode Title="constructor" Url="html/404a8876-6259-1f82-354d-7ce4f92436f3.htm" />
+    <HelpKINode Title="methods" Url="html/aec2c4d4-b8fb-a66b-c220-808ba996fab7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab6_1_HelloWorldExternalApplication.Lab6_1_HelloWorldExternalApplication constructor" Url="html/404a8876-6259-1f82-354d-7ce4f92436f3.htm" />
+  <HelpKINode Title="Lab6_1_HelloWorldExternalApplication.OnShutdown method" Url="html/ef1f967e-4c5a-dc93-1b94-1c9445b2bcea.htm" />
+  <HelpKINode Title="Lab6_1_HelloWorldExternalApplication.OnStartup method" Url="html/6ba36631-b840-a6fe-83a9-ea921998e48a.htm" />
+  <HelpKINode Title="Lab6_2_Ribbon class" Url="html/43c8cb72-273d-e588-f181-0c23ce964920.htm" />
+  <HelpKINode Title="Lab6_2_Ribbon class" Url="html/aaf53f7d-62c0-5bfe-ed60-c992406a2af9.htm" />
+  <HelpKINode Title="Lab6_2_Ribbon class">
+    <HelpKINode Title="about Lab6_2_Ribbon class" Url="html/43c8cb72-273d-e588-f181-0c23ce964920.htm" />
+    <HelpKINode Title="all members" Url="html/aaf53f7d-62c0-5bfe-ed60-c992406a2af9.htm" />
+    <HelpKINode Title="constructor" Url="html/ba0bf8c5-b8da-0971-965c-4eef4bf2eb3e.htm" />
+    <HelpKINode Title="methods" Url="html/ff6c945b-22ba-cd1c-3b01-1738b7a0ed3e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab6_2_Ribbon.Lab6_2_Ribbon constructor" Url="html/ba0bf8c5-b8da-0971-965c-4eef4bf2eb3e.htm" />
+  <HelpKINode Title="Lab6_2_Ribbon.OnShutdown method" Url="html/52fd0031-8c41-52bb-be8c-2dab37254707.htm" />
+  <HelpKINode Title="Lab6_2_Ribbon.OnStartup method" Url="html/b552f61b-2d9f-ffa5-911c-54544693298b.htm" />
+  <HelpKINode Title="Lab6_3_PreventSaveEvent class" Url="html/418e7816-32ce-d7ab-9bf8-c357a9ca7da5.htm" />
+  <HelpKINode Title="Lab6_3_PreventSaveEvent class" Url="html/c6b39e95-f30c-279a-7b39-ac8f877473b7.htm" />
+  <HelpKINode Title="Lab6_3_PreventSaveEvent class">
+    <HelpKINode Title="about Lab6_3_PreventSaveEvent class" Url="html/c6b39e95-f30c-279a-7b39-ac8f877473b7.htm" />
+    <HelpKINode Title="all members" Url="html/418e7816-32ce-d7ab-9bf8-c357a9ca7da5.htm" />
+    <HelpKINode Title="constructor" Url="html/9b781da7-d6db-98c5-912d-f1dbf432fef8.htm" />
+    <HelpKINode Title="methods" Url="html/8e559ea0-9c15-567a-ec6a-80e327f791ce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab6_3_PreventSaveEvent.Lab6_3_PreventSaveEvent constructor" Url="html/9b781da7-d6db-98c5-912d-f1dbf432fef8.htm" />
+  <HelpKINode Title="Lab6_3_PreventSaveEvent.OnShutdown method" Url="html/5ad27672-ad30-0160-16dd-5fc516729a7c.htm" />
+  <HelpKINode Title="Lab6_3_PreventSaveEvent.OnStartup method" Url="html/f895b067-b4c2-af54-1beb-178e6e5b77e0.htm" />
+  <HelpKINode Title="Lab6_4_DismissDialog class" Url="html/565ff07a-ce8e-2977-c5a3-a5ac1467a0a2.htm" />
+  <HelpKINode Title="Lab6_4_DismissDialog class" Url="html/83ef634f-a830-21f6-0e55-28303e5c7e1e.htm" />
+  <HelpKINode Title="Lab6_4_DismissDialog class">
+    <HelpKINode Title="about Lab6_4_DismissDialog class" Url="html/565ff07a-ce8e-2977-c5a3-a5ac1467a0a2.htm" />
+    <HelpKINode Title="all members" Url="html/83ef634f-a830-21f6-0e55-28303e5c7e1e.htm" />
+    <HelpKINode Title="constructor" Url="html/29f7cdfe-57ea-5cfe-0711-8229ff59dbda.htm" />
+    <HelpKINode Title="methods" Url="html/f2df45b8-a149-19f9-3fb7-23c583067c4e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab6_4_DismissDialog.Lab6_4_DismissDialog constructor" Url="html/29f7cdfe-57ea-5cfe-0711-8229ff59dbda.htm" />
+  <HelpKINode Title="Lab6_4_DismissDialog.OnShutdown method" Url="html/ca6c3f00-ebc6-0fe4-a3e5-aa2d2505ed2a.htm" />
+  <HelpKINode Title="Lab6_4_DismissDialog.OnStartup method" Url="html/a92a9b05-658c-c3f7-0b3c-cfad2851794d.htm" />
+  <HelpKINode Title="Lab6_5_RibbonExplorer class" Url="html/001120f5-576c-45b9-19bc-d4f1ab86f5b6.htm" />
+  <HelpKINode Title="Lab6_5_RibbonExplorer class" Url="html/b8ceea39-4929-9c58-8627-e7b72bb5ccad.htm" />
+  <HelpKINode Title="Lab6_5_RibbonExplorer class">
+    <HelpKINode Title="about Lab6_5_RibbonExplorer class" Url="html/b8ceea39-4929-9c58-8627-e7b72bb5ccad.htm" />
+    <HelpKINode Title="all members" Url="html/001120f5-576c-45b9-19bc-d4f1ab86f5b6.htm" />
+    <HelpKINode Title="constructor" Url="html/2eb177e9-377d-cb22-955b-eef339d19cf5.htm" />
+    <HelpKINode Title="methods" Url="html/201f1dc3-292f-8763-4747-188fa22c56e6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab6_5_RibbonExplorer.Execute method" Url="html/3c84dc62-b5f3-80ce-24b8-93afb15a09c0.htm" />
+  <HelpKINode Title="Lab6_5_RibbonExplorer.Lab6_5_RibbonExplorer constructor" Url="html/2eb177e9-377d-cb22-955b-eef339d19cf5.htm" />
+  <HelpKINode Title="Lab7_1_CreateForm class" Url="html/9fb34702-f0f7-7aca-60df-02c29c4c7678.htm" />
+  <HelpKINode Title="Lab7_1_CreateForm class" Url="html/a4c1d027-1972-7bf6-eda6-8fe931e41193.htm" />
+  <HelpKINode Title="Lab7_1_CreateForm class">
+    <HelpKINode Title="about Lab7_1_CreateForm class" Url="html/9fb34702-f0f7-7aca-60df-02c29c4c7678.htm" />
+    <HelpKINode Title="all members" Url="html/a4c1d027-1972-7bf6-eda6-8fe931e41193.htm" />
+    <HelpKINode Title="constructor" Url="html/4cedcb41-93c9-0caa-6435-3bf885ae522b.htm" />
+    <HelpKINode Title="methods" Url="html/316eb9af-c713-2774-f288-41e3e9e3c0a3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab7_1_CreateForm.Execute method" Url="html/7e5510c2-ed68-6a3f-ff61-8692cde4e342.htm" />
+  <HelpKINode Title="Lab7_1_CreateForm.Lab7_1_CreateForm constructor" Url="html/4cedcb41-93c9-0caa-6435-3bf885ae522b.htm" />
+  <HelpKINode Title="Lab7_2_CreateDividedSurface class" Url="html/1226d050-7a96-730c-ed68-a1d63dd20057.htm" />
+  <HelpKINode Title="Lab7_2_CreateDividedSurface class" Url="html/b6ca1435-05de-e72b-0321-4d40e0f16d2e.htm" />
+  <HelpKINode Title="Lab7_2_CreateDividedSurface class">
+    <HelpKINode Title="about Lab7_2_CreateDividedSurface class" Url="html/b6ca1435-05de-e72b-0321-4d40e0f16d2e.htm" />
+    <HelpKINode Title="all members" Url="html/1226d050-7a96-730c-ed68-a1d63dd20057.htm" />
+    <HelpKINode Title="constructor" Url="html/891dc18f-e1cd-9023-b6f2-1546ba8500c5.htm" />
+    <HelpKINode Title="methods" Url="html/6afb8507-ce6f-a296-945b-aecae5ab03c4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab7_2_CreateDividedSurface.Execute method" Url="html/073b8194-9918-62c2-e88c-061ac0769db2.htm" />
+  <HelpKINode Title="Lab7_2_CreateDividedSurface.Lab7_2_CreateDividedSurface constructor" Url="html/891dc18f-e1cd-9023-b6f2-1546ba8500c5.htm" />
+  <HelpKINode Title="Lab7_3_ChangeTilePattern class" Url="html/01b11e69-426c-3389-059c-2402369b03b3.htm" />
+  <HelpKINode Title="Lab7_3_ChangeTilePattern class" Url="html/11d7d823-1d21-c9fd-c0bb-a07b30ec1828.htm" />
+  <HelpKINode Title="Lab7_3_ChangeTilePattern class">
+    <HelpKINode Title="about Lab7_3_ChangeTilePattern class" Url="html/11d7d823-1d21-c9fd-c0bb-a07b30ec1828.htm" />
+    <HelpKINode Title="all members" Url="html/01b11e69-426c-3389-059c-2402369b03b3.htm" />
+    <HelpKINode Title="constructor" Url="html/d4f4f603-f848-d6dd-2bd3-0a5336d6aa19.htm" />
+    <HelpKINode Title="methods" Url="html/8b59efba-a361-13b7-f877-56e371f6ba7e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lab7_3_ChangeTilePattern.Execute method" Url="html/609040df-e135-5b05-9647-48ec75fec647.htm" />
+  <HelpKINode Title="Lab7_3_ChangeTilePattern.Lab7_3_ChangeTilePattern constructor" Url="html/d4f4f603-f848-d6dd-2bd3-0a5336d6aa19.htm" />
+  <HelpKINode Title="Labs namespace" Url="html/715b3539-b2e6-3295-58e6-1481eea1cf44.htm" />
+  <HelpKINode Title="Labs.FormUtils class" Url="html/df0b08b3-2bba-33f3-40ad-240cb817716f.htm" />
+  <HelpKINode Title="Labs.FormUtils class" Url="html/eaacbb6d-dddf-b103-9e2a-e5697353ff82.htm" />
+  <HelpKINode Title="Labs.Lab1_1_HelloWorld class" Url="html/d4aa3c52-67e8-2da1-b062-022386b2aa1b.htm" />
+  <HelpKINode Title="Labs.Lab1_1_HelloWorld class" Url="html/f6a79d4b-4fba-dc9f-3738-db593d87e702.htm" />
+  <HelpKINode Title="Labs.Lab1_2_CommandArguments class" Url="html/2e57467a-af71-1c93-0159-4dfd69a30ce1.htm" />
+  <HelpKINode Title="Labs.Lab1_2_CommandArguments class" Url="html/fb2c5a55-f61c-b83c-fae4-694c47f0c821.htm" />
+  <HelpKINode Title="Labs.Lab2_0_CreateLittleHouse class" Url="html/77f0fd36-18f7-7311-4d04-c82c087a71c4.htm" />
+  <HelpKINode Title="Labs.Lab2_0_CreateLittleHouse class" Url="html/a52feb54-340d-ccca-1ea3-1bce555f5bc3.htm" />
+  <HelpKINode Title="Labs.Lab2_1_Elements class" Url="html/56b94c91-d186-e603-7b9d-9eb94ee787ae.htm" />
+  <HelpKINode Title="Labs.Lab2_1_Elements class" Url="html/b44937f6-f251-20ca-1b9e-525459171c06.htm" />
+  <HelpKINode Title="Labs.Lab2_2_ModelElements class" Url="html/5cc9fba4-96cc-8ac3-1f24-cd79267d2824.htm" />
+  <HelpKINode Title="Labs.Lab2_2_ModelElements class" Url="html/8a72b8c2-01c7-cb9b-2d89-f7129314f20f.htm" />
+  <HelpKINode Title="Labs.Lab2_3_ListWallsAndDoors class" Url="html/700e3890-0e7c-1a2f-fe43-59783b306cea.htm" />
+  <HelpKINode Title="Labs.Lab2_3_ListWallsAndDoors class" Url="html/861f3553-e92a-04ba-4725-21cb0dbe5a31.htm" />
+  <HelpKINode Title="Labs.Lab2_4_EditFamilyInstance class" Url="html/3e54607b-6435-fc9c-272a-79d001ff482f.htm" />
+  <HelpKINode Title="Labs.Lab2_4_EditFamilyInstance class" Url="html/a7ba3ddd-b7d8-9bdf-4c88-563eacb77753.htm" />
+  <HelpKINode Title="Labs.Lab2_5_SelectAndMoveWallAndAddColumns class" Url="html/0af058f5-790f-0273-12a8-7d0a815fc469.htm" />
+  <HelpKINode Title="Labs.Lab2_5_SelectAndMoveWallAndAddColumns class" Url="html/aa3f9539-3ad5-f7f2-602e-43469af16f62.htm" />
+  <HelpKINode Title="Labs.Lab3_1_StandardFamiliesAndTypes class" Url="html/4bf4960b-5cce-337e-8b89-705e0c1ffd61.htm" />
+  <HelpKINode Title="Labs.Lab3_1_StandardFamiliesAndTypes class" Url="html/f8e95cb8-c79f-859b-05a8-2392c594379e.htm" />
+  <HelpKINode Title="Labs.Lab3_2_LoadStandardFamilies class" Url="html/9ce1d4e5-e2ea-4d10-3ce5-11f0233769af.htm" />
+  <HelpKINode Title="Labs.Lab3_2_LoadStandardFamilies class" Url="html/b70937d7-6630-21d9-cfd9-b8d34d0e3a3b.htm" />
+  <HelpKINode Title="Labs.Lab3_3_DetermineInstanceTypeAndFamily class" Url="html/4c8ee507-4630-5a32-78c7-77f96cb4b211.htm" />
+  <HelpKINode Title="Labs.Lab3_3_DetermineInstanceTypeAndFamily class" Url="html/a2c78632-4d01-5013-a8c4-35b52035fc2c.htm" />
+  <HelpKINode Title="Labs.Lab3_4_ChangeSelectedInstanceType class" Url="html/34d32996-e00e-4074-927f-002d9e31621a.htm" />
+  <HelpKINode Title="Labs.Lab3_4_ChangeSelectedInstanceType class" Url="html/80fe5a7d-e1af-4cd4-4594-7a01deb9224f.htm" />
+  <HelpKINode Title="Labs.Lab3_4_Form class" Url="html/2cfc9b86-9337-86c2-7ffc-7f1491066b4e.htm" />
+  <HelpKINode Title="Labs.Lab3_4_Form class" Url="html/54c0a52b-1120-5e07-0747-d6a2a0a3f2f0.htm" />
+  <HelpKINode Title="Labs.Lab3_5_WallAndFloorTypes class" Url="html/164f8c81-891d-50fd-82d5-d0dbe375ee44.htm" />
+  <HelpKINode Title="Labs.Lab3_5_WallAndFloorTypes class" Url="html/2fb86544-a595-6224-8255-c3f0c4cd4712.htm" />
+  <HelpKINode Title="Labs.Lab3_6_DuplicateWallType class" Url="html/0173b2ab-e5d8-38d6-d626-8592de30fae5.htm" />
+  <HelpKINode Title="Labs.Lab3_6_DuplicateWallType class" Url="html/f8102cb8-b61e-3e43-507d-bafe67e9a75d.htm" />
+  <HelpKINode Title="Labs.Lab3_7_DeleteFamilyType class" Url="html/1d8c9fb5-2548-08e6-2ddb-5c413693c096.htm" />
+  <HelpKINode Title="Labs.Lab3_7_DeleteFamilyType class" Url="html/7546fabd-c29e-a09d-20f5-56a3d6eb6777.htm" />
+  <HelpKINode Title="Labs.Lab4_1_ElementParameters class" Url="html/3a1b4c73-3646-0b2e-c8e7-66440d7b5dec.htm" />
+  <HelpKINode Title="Labs.Lab4_1_ElementParameters class" Url="html/5e59e4f2-cd0a-f5e5-5b96-002604b70511.htm" />
+  <HelpKINode Title="Labs.Lab4_2_ExportParametersToExcel class" Url="html/90c0cd97-7285-55ac-195f-9947c93494fc.htm" />
+  <HelpKINode Title="Labs.Lab4_2_ExportParametersToExcel class" Url="html/faf47a29-3537-6b33-63fe-b3b9caca0dcb.htm" />
+  <HelpKINode Title="Labs.Lab4_3_1_CreateAndBindSharedParam class" Url="html/363e83c0-64f3-a0cb-b68d-cdff87bc1a09.htm" />
+  <HelpKINode Title="Labs.Lab4_3_1_CreateAndBindSharedParam class" Url="html/4906c7dc-d2d4-f4db-036f-1ea94cbf2d44.htm" />
+  <HelpKINode Title="Labs.Lab4_3_2_ExportSharedParamToExcel class" Url="html/8b399f33-c3d6-55e6-1b84-4bc50af1cb5c.htm" />
+  <HelpKINode Title="Labs.Lab4_3_2_ExportSharedParamToExcel class" Url="html/9063f95f-1df9-5e40-58b7-c9e74e08fa6a.htm" />
+  <HelpKINode Title="Labs.Lab4_3_3_ImportSharedParamFromExcel class" Url="html/a2a497fe-a941-7ba9-bebd-d959df277aef.htm" />
+  <HelpKINode Title="Labs.Lab4_3_3_ImportSharedParamFromExcel class" Url="html/b3972f95-e59b-fe81-7ca1-01d4e973f20b.htm" />
+  <HelpKINode Title="Labs.Lab4_4_1_CreatePerDocParameters class" Url="html/0409e7b6-2d08-f198-9c20-ba5002f283e7.htm" />
+  <HelpKINode Title="Labs.Lab4_4_1_CreatePerDocParameters class" Url="html/c32b25a9-03c5-fd99-272f-f831f1930012.htm" />
+  <HelpKINode Title="Labs.Lab4_4_2_IncrementPerDocParameters class" Url="html/4f512456-3d17-54a2-c631-a3ee3d3fe6fe.htm" />
+  <HelpKINode Title="Labs.Lab4_4_2_IncrementPerDocParameters class" Url="html/57b00ade-888f-f0d3-1eab-bc8fa41d59bb.htm" />
+  <HelpKINode Title="Labs.Lab5_1_GroupsAndGroupTypes class" Url="html/054694f0-0d8e-5b61-c27a-9005d2608b01.htm" />
+  <HelpKINode Title="Labs.Lab5_1_GroupsAndGroupTypes class" Url="html/5598709d-297d-b859-4a31-ac005c34d405.htm" />
+  <HelpKINode Title="Labs.Lab5_2_SwapGroupTypes class" Url="html/a5b6a19b-8e69-4f21-a7d5-57b7175f9ac2.htm" />
+  <HelpKINode Title="Labs.Lab5_2_SwapGroupTypes class" Url="html/c04c6461-bed9-3365-0be8-65f30d8dd3f9.htm" />
+  <HelpKINode Title="Labs.Lab5_3_Rooms class" Url="html/221b2020-3254-1225-95da-451821690643.htm" />
+  <HelpKINode Title="Labs.Lab5_3_Rooms class" Url="html/e4982ff5-39d3-a317-6987-e61504a8fb2a.htm" />
+  <HelpKINode Title="Labs.Lab6_1_HelloWorldExternalApplication class" Url="html/3c5135e4-9255-8216-c1ad-11f525ea1812.htm" />
+  <HelpKINode Title="Labs.Lab6_1_HelloWorldExternalApplication class" Url="html/84e5399e-0bd7-1076-7389-9f64334cebf2.htm" />
+  <HelpKINode Title="Labs.Lab6_2_Ribbon class" Url="html/43c8cb72-273d-e588-f181-0c23ce964920.htm" />
+  <HelpKINode Title="Labs.Lab6_2_Ribbon class" Url="html/aaf53f7d-62c0-5bfe-ed60-c992406a2af9.htm" />
+  <HelpKINode Title="Labs.Lab6_3_PreventSaveEvent class" Url="html/418e7816-32ce-d7ab-9bf8-c357a9ca7da5.htm" />
+  <HelpKINode Title="Labs.Lab6_3_PreventSaveEvent class" Url="html/c6b39e95-f30c-279a-7b39-ac8f877473b7.htm" />
+  <HelpKINode Title="Labs.Lab6_4_DismissDialog class" Url="html/565ff07a-ce8e-2977-c5a3-a5ac1467a0a2.htm" />
+  <HelpKINode Title="Labs.Lab6_4_DismissDialog class" Url="html/83ef634f-a830-21f6-0e55-28303e5c7e1e.htm" />
+  <HelpKINode Title="Labs.Lab6_5_RibbonExplorer class" Url="html/001120f5-576c-45b9-19bc-d4f1ab86f5b6.htm" />
+  <HelpKINode Title="Labs.Lab6_5_RibbonExplorer class" Url="html/b8ceea39-4929-9c58-8627-e7b72bb5ccad.htm" />
+  <HelpKINode Title="Labs.Lab7_1_CreateForm class" Url="html/9fb34702-f0f7-7aca-60df-02c29c4c7678.htm" />
+  <HelpKINode Title="Labs.Lab7_1_CreateForm class" Url="html/a4c1d027-1972-7bf6-eda6-8fe931e41193.htm" />
+  <HelpKINode Title="Labs.Lab7_2_CreateDividedSurface class" Url="html/1226d050-7a96-730c-ed68-a1d63dd20057.htm" />
+  <HelpKINode Title="Labs.Lab7_2_CreateDividedSurface class" Url="html/b6ca1435-05de-e72b-0321-4d40e0f16d2e.htm" />
+  <HelpKINode Title="Labs.Lab7_3_ChangeTilePattern class" Url="html/01b11e69-426c-3389-059c-2402369b03b3.htm" />
+  <HelpKINode Title="Labs.Lab7_3_ChangeTilePattern class" Url="html/11d7d823-1d21-c9fd-c0bb-a07b30ec1828.htm" />
+  <HelpKINode Title="Labs.LabUtils class" Url="html/737e3e41-d09e-20d3-86d2-6278bd9a2094.htm" />
+  <HelpKINode Title="Labs.LabUtils class" Url="html/912afa5f-2c1f-54fc-7ef9-68413cb90c5e.htm" />
+  <HelpKINode Title="Labs.LabUtils.TypeSelectionFilter class" Url="html/46f8749b-7f45-5b6e-7725-28ccb7b9986a.htm" />
+  <HelpKINode Title="Labs.LabUtils.TypeSelectionFilter class" Url="html/8ed00835-783c-478c-c97b-3daf7c232e81.htm" />
+  <HelpKINode Title="LabUtils class" Url="html/737e3e41-d09e-20d3-86d2-6278bd9a2094.htm" />
+  <HelpKINode Title="LabUtils class" Url="html/912afa5f-2c1f-54fc-7ef9-68413cb90c5e.htm" />
+  <HelpKINode Title="LabUtils class">
+    <HelpKINode Title="about LabUtils class" Url="html/737e3e41-d09e-20d3-86d2-6278bd9a2094.htm" />
+    <HelpKINode Title="all members" Url="html/912afa5f-2c1f-54fc-7ef9-68413cb90c5e.htm" />
+    <HelpKINode Title="constructor" Url="html/20264983-5699-1793-2331-3929100583e8.htm" />
+    <HelpKINode Title="fields" Url="html/ff90108e-50a1-8cdb-d790-8d2fe9b9c71a.htm" />
+    <HelpKINode Title="methods" Url="html/9496e4d2-5d74-fe26-f17b-8e380a041882.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LabUtils.Caption field" Url="html/fbc0f20b-25e4-5bc3-8024-38d171f1a65f.htm" />
+  <HelpKINode Title="LabUtils.DotOrColon method" Url="html/3bca7c08-c847-759b-b8e5-afee56c6a11a.htm" />
+  <HelpKINode Title="LabUtils.ElementDescription method" Url="html/63c6b8c3-4760-5db8-b44f-d212e2431d16.htm" />
+  <HelpKINode Title="LabUtils.ErrorMsg method" Url="html/b0b2515c-8954-fbad-5d63-40a829168e1e.htm" />
+  <HelpKINode Title="LabUtils.GetBottomAndTopLevels method" Url="html/20dcfe14-2f15-38ea-d268-bf850a4af1e0.htm" />
+  <HelpKINode Title="LabUtils.GetElementsOfType method" Url="html/7fb22030-b949-7d44-7b05-de374f500a4d.htm" />
+  <HelpKINode Title="LabUtils.GetFamilyInstances method" Url="html/b1017140-9e93-01fe-5090-2b8402feba92.htm" />
+  <HelpKINode Title="LabUtils.GetFamilySymbols method" Url="html/14974525-b700-4933-3bb0-1f7b0c623c43.htm" />
+  <HelpKINode Title="LabUtils.GetFirstFamilySymbol method" Url="html/5196da85-366c-5b34-9a1e-39d5f85f6b42.htm" />
+  <HelpKINode Title="LabUtils.GetOrCreateSharedParamsDefinition method" Url="html/7e39a8af-723c-ae16-2e2a-f54836874bd4.htm" />
+  <HelpKINode Title="LabUtils.GetOrCreateSharedParamsGroup method" Url="html/5220cfa3-23b0-667e-49ef-363fdcb20d57.htm" />
+  <HelpKINode Title="LabUtils.GetParameterValue method" Url="html/4544cdf6-abe3-0d43-a396-3d1f2245bae5.htm" />
+  <HelpKINode Title="LabUtils.GetParameterValue2 method" Url="html/e319fe7f-4f11-15bb-4b35-c3cccaac7b72.htm" />
+  <HelpKINode Title="LabUtils.GetProjectInfoElem method" Url="html/2231f1b0-d3bf-b4ca-cd34-ac058eee45da.htm" />
+  <HelpKINode Title="LabUtils.GetSharedParamsFile method" Url="html/0535f22e-1030-7cbc-f5c0-8defcad7d5e6.htm" />
+  <HelpKINode Title="LabUtils.GetSingleSelectedElementOrPrompt method" Url="html/95b4c394-d4ff-d81c-4fa1-7637f0d09862.htm" />
+  <HelpKINode Title="LabUtils.GetTargetInstances method" Url="html/1f274ffa-5675-296a-8fb8-4efbae26a7ee.htm" />
+  <HelpKINode Title="LabUtils.InfoMsg method" Url="html/85bd4da2-4ec8-65c9-7f42-0bf0dea0abbd.htm" />
+  <HelpKINode Title="LabUtils.LabUtils constructor" Url="html/20264983-5699-1793-2331-3929100583e8.htm" />
+  <HelpKINode Title="LabUtils.Midpoint method" Url="html/7592cef8-cb06-6764-b29c-08733c349556.htm" />
+  <HelpKINode Title="LabUtils.PluralSuffix method" Url="html/63a7f2a1-7a19-c476-d701-eb6225e82c99.htm" />
+  <HelpKINode Title="LabUtils.PointString method" Url="html/57e03a24-1ecb-c291-10ad-adcb0b8e4a10.htm" />
+  <HelpKINode Title="LabUtils.QuestionCancelMsg method" Url="html/7a738528-2df1-42eb-51be-705f4ed69c74.htm" />
+  <HelpKINode Title="LabUtils.QuestionMsg method" Url="html/ce092300-7b39-2234-64d9-1307bb418d33.htm" />
+  <HelpKINode Title="LabUtils.RealString method" Url="html/2eaf6559-b380-f68b-51ef-a7dd25047020.htm" />
+  <HelpKINode Title="LabUtils.SharedParamGUID method" Url="html/b1e88467-32a9-987a-f951-8a1e77705af4.htm" />
+  <HelpKINode Title="LabUtils.TypeSelectionFilter class" Url="html/46f8749b-7f45-5b6e-7725-28ccb7b9986a.htm" />
+  <HelpKINode Title="LabUtils.TypeSelectionFilter class" Url="html/8ed00835-783c-478c-c97b-3daf7c232e81.htm" />
+  <HelpKINode Title="LabUtils.TypeSelectionFilter class">
+    <HelpKINode Title="about LabUtils.TypeSelectionFilter class" Url="html/46f8749b-7f45-5b6e-7725-28ccb7b9986a.htm" />
+    <HelpKINode Title="all members" Url="html/8ed00835-783c-478c-c97b-3daf7c232e81.htm" />
+    <HelpKINode Title="constructor" Url="html/a7873893-5534-9a14-0be7-b1508573927d.htm" />
+    <HelpKINode Title="methods" Url="html/dee98cf3-fc03-bbf9-5a31-4d8ce5e4f838.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LabUtils.TypeSelectionFilter.AllowElement method" Url="html/b8fe0061-513e-9390-47fa-4be84f23b6db.htm" />
+  <HelpKINode Title="LabUtils.TypeSelectionFilter.AllowReference method" Url="html/b6ac1d09-0492-2fbe-9b6b-bee8c0ebc649.htm" />
+  <HelpKINode Title="LabUtils.TypeSelectionFilter.TypeSelectionFilter constructor" Url="html/a7873893-5534-9a14-0be7-b1508573927d.htm" />
+  <HelpKINode Title="MakeCurve method" Url="html/f6150817-bf20-89fd-27d5-dcb6ea7709d3.htm" />
+  <HelpKINode Title="MemberwiseClone method" Url="html/f14958eb-75dd-4d23-610e-8ebb4b51b25f.htm" />
+  <HelpKINode Title="Midpoint method" Url="html/7592cef8-cb06-6764-b29c-08733c349556.htm" />
+  <HelpKINode Title="OnShutdown method" Url="html/52fd0031-8c41-52bb-be8c-2dab37254707.htm" />
+  <HelpKINode Title="OnShutdown method" Url="html/5ad27672-ad30-0160-16dd-5fc516729a7c.htm" />
+  <HelpKINode Title="OnShutdown method" Url="html/ca6c3f00-ebc6-0fe4-a3e5-aa2d2505ed2a.htm" />
+  <HelpKINode Title="OnShutdown method" Url="html/ef1f967e-4c5a-dc93-1b94-1c9445b2bcea.htm" />
+  <HelpKINode Title="OnStartup method" Url="html/6ba36631-b840-a6fe-83a9-ea921998e48a.htm" />
+  <HelpKINode Title="OnStartup method" Url="html/a92a9b05-658c-c3f7-0b3c-cfad2851794d.htm" />
+  <HelpKINode Title="OnStartup method" Url="html/b552f61b-2d9f-ffa5-911c-54544693298b.htm" />
+  <HelpKINode Title="OnStartup method" Url="html/f895b067-b4c2-af54-1beb-178e6e5b77e0.htm" />
+  <HelpKINode Title="PerformLayout method" Url="html/99e0b6ff-caa9-8ce1-1f0d-34ec2af8fd8b.htm" />
+  <HelpKINode Title="PluralSuffix method" Url="html/63a7f2a1-7a19-c476-d701-eb6225e82c99.htm" />
+  <HelpKINode Title="PointString method" Url="html/57e03a24-1ecb-c291-10ad-adcb0b8e4a10.htm" />
+  <HelpKINode Title="QuestionCancelMsg method" Url="html/7a738528-2df1-42eb-51be-705f4ed69c74.htm" />
+  <HelpKINode Title="QuestionMsg method" Url="html/ce092300-7b39-2234-64d9-1307bb418d33.htm" />
+  <HelpKINode Title="RealString method" Url="html/2eaf6559-b380-f68b-51ef-a7dd25047020.htm" />
+  <HelpKINode Title="ResumeLayout method" Url="html/d8ee054b-1a15-7cbb-267c-5c809620c078.htm" />
+  <HelpKINode Title="RtlTranslateAlignment method" Url="html/5556bb62-7368-fd41-a929-b03a70049471.htm" />
+  <HelpKINode Title="Scale method" Url="html/673c8129-83f9-b2d4-8959-50b4b980181d.htm" />
+  <HelpKINode Title="Select method" Url="html/2e9d512e-1fe3-54af-b664-27331e5860fc.htm" />
+  <HelpKINode Title="SetBounds method" Url="html/145613c7-f535-f083-eb3e-0e305b563592.htm" />
+  <HelpKINode Title="SharedParamGUID method" Url="html/b1e88467-32a9-987a-f951-8a1e77705af4.htm" />
+  <HelpKINode Title="Show method" Url="html/f5d67bcd-deb4-7d3f-f869-befc3f7ed4b0.htm" />
+  <HelpKINode Title="ShowDialog method" Url="html/5981b541-bc26-7bea-4a22-5a23fe910950.htm" />
+  <HelpKINode Title="Target field" Url="html/28f5332e-0ce1-5437-b495-786b0a8f5c30.htm" />
+  <HelpKINode Title="UpdateBounds method" Url="html/941a3980-69eb-2997-5d1d-1d79cfd99920.htm" />
+  <HelpKINode Title="Validate method" Url="html/c89d75b6-b6b5-57b9-2b82-ee776ba613e4.htm" />
+  <HelpKINode Title="ValidateChildren method" Url="html/3c6061e8-3579-6174-488f-2dfa5cc42ddc.htm" />
+</HelpKI>

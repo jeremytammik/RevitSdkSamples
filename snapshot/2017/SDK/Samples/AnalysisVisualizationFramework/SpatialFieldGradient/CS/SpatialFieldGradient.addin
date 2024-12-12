@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+      <Text>Gradient Results On Surface</Text>
+      <Assembly>SpatialFieldGradient.dll</Assembly>
+      <ClientId>CF099951-E66B-4a35-BF7F-2959CA87A42D</ClientId>
+      <FullClassName>Revit.SDK.Samples.AnalysisVisualizationFramework.CS.SpatialFieldGradient</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+   </AddIn>
+
+</RevitAddIns>

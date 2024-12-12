@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>NewForm.dll</Assembly>
+    <ClientId>586fbb70-fb00-4698-86ff-16d63d0d899a</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewForm.CS.MakeExtrusionForm</FullClassName>
+    <Text>New Extrusion Form</Text>
+    <Description>The sample show how to create extrusion form at family document.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewForm.dll</Assembly>
+    <ClientId>835a037b-c897-4e1d-9aae-9979eec9ebe8</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewForm.CS.MakeRevolveForm</FullClassName>
+    <Text>New Revolve Form</Text>
+    <Description>The sample show how to create revolve form at family document.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewForm.dll</Assembly>
+    <ClientId>455e2dc4-c97b-430a-9f27-1d6ef9925b57</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewForm.CS.MakeLoftForm</FullClassName>
+    <Text>New Loft Form</Text>
+    <Description>The sample show how to create loft form at family document.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewForm.dll</Assembly>
+    <ClientId>710b1a2f-c725-4ae7-a6e8-bec7c6dd1654</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewForm.CS.MakeSweptBlendForm</FullClassName>
+    <Text>New Swept Blend Form</Text>
+    <Description>The sample show how to create swept blend form at family document.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewForm.dll</Assembly>
+    <ClientId>b4a16505-a137-4028-be39-f48cc2cdf04e</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewForm.CS.MakeCapForm</FullClassName>
+    <Text>New Cap Form</Text>
+    <Description>The sample show how to create cap form at family document.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

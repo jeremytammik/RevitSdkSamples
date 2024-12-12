@@ -1,0 +1,509 @@
+Revit Programming Introduction
+
+look at 
+  C:\a\j\adn\train\revit\2008\telecon.txt
+  C:\a\j\adn\devdays\2007\AEC\webcast\todo_webcast.txt
+  C:\a\j\adn\train\revit\2009\doc\RST_API_notes.rtf
+  C:\a\j\adn\train\revit\2009\doc\webcast\todo_webcast.txt
+  C:\a\j\adn\train\revit\2010\doc\todo_webcast.txt
+
+revit:
+
+https://www.livemeeting.com/cc/autodesklearning/join?id=PGGHD3&role=present&pw=RevitAPIPresent
+
+rst:
+
+Jeremy Tammik
+jeremy.tammik@eur.autodesk.com
+Autodesk
+
+first conference line is jim's see details below.
+second conference line is keans, see C:\a\doc\conf_call\kean.htm
+
+  de 0800-101-7056  participant passcode 9672646 leader code 2026602 for jim (jeremy)
+  de 0800-101-7056  participant passcode 2354092 leader code 6448486 for kean (mikako)
+
+DIAL-IN NUMBERS & PASSCODES:
+  Toll Numbers:	
+    AUSTRALIA	61-2-8211-1393
+    AUSTRIA	43-1-92-86-509
+    BELGIUM	32-2-400-1326
+    FINLAND	358-106-33-199
+    FRANCE	33-1-70-70-84-56
+    GERMANY	49-69-2222-3468
+    GREECE	30-80-1-100-0672
+    HONG KONG	852-2286-5639
+    IRELAND	353-1-247-5394
+    ITALY	39-02-3604-7040
+    JAPAN	81-3-5539-5161
+    LUXEMBOURG	352-27-000-1348
+    NETHERLANDS	31-20-717-6858
+    NEW ZEALAND	64-9-970-4657
+    NORWAY	47-21-59-00-48
+    SINGAPORE	65-6883-9205
+    SOUTH KOREA	82-2-6744-1059
+    SPAIN	34-91-414-0092
+    SWEDEN	46-8-505-98-267
+    SWITZERLAND	41-44-580-3897
+    TAIWAN	886-2-2795-7355
+    UNITED KINGDOM	44-20-7108-6391
+    USA	1-210-795-0625
+  		
+  Toll Free Numbers:	
+    AUSTRALIA	1-800-098-324
+    AUSTRIA	0800-677-287
+    BELGIUM	0800-4-9731
+    CHINA A	10800-712-1298
+    CHINA B	10800-120-1298
+    DENMARK	8088-5429
+    FINLAND	0800-1-15768
+    FRANCE	805-100-984
+    GERMANY	0800-101-7056
+    GREECE	00800-12-6810
+    HONG KONG	800-908-205
+    HUNGARY	06-800-17566
+    INDONESIA	001-803-011-3650
+    IRELAND	1800-932-054
+    ISRAEL	1-80-9214709
+    ITALY	0800-906-465
+    JAPAN	0034-800-400652
+    MALAYSIA	1-800-81-2059
+    NETHERLANDS	0800-343-4363
+    NEW ZEALAND	0800-441-452
+    NORWAY	800-10129
+    POLAND	00-800-1211769
+    PORTUGAL	8008-15135
+    SINGAPORE	800-120-4246
+    SOUTH AFRICA	080-09-92282
+    SOUTH KOREA	00798-14800-6608
+    SPAIN	800-099-728
+    SWEDEN	0200-893-410
+    SWITZERLAND	0800-001-215
+    TAIWAN	00801-137-662
+    THAILAND	001-800-1206-65425
+    UNITED KINGDOM	0800-279-9632
+    USA	866-617-3597
+                                      
+  Participant Passcode:    9672646            
+
+
+set up audio and recording:
+
+  C:\a\doc\livemeeting\LiveMeeting Setup.zip
+
+  live meeting scheduling: usr quancij pwd autodesk
+
+  set up at least one minute before you start recording
+
+  voice and video > options > connect telephone and computer audio
+
+  enter the key sequence to connect phone conference and live meeting audio: 
+  ppppp9672646ppppppppp9672646#pppppppppppppp#
+
+  recording > to service > record
+
+
+in-conference features:
+  All participants must use a touch-tone phone to participate in an Instant Meeting conference. The following features are available for you to use during an active conference: 
+  *1 for a private pre-recorded help menu. A recorded message will play listing the available touch- tone features. 
+  *2 for a roll call (conference). A playback of the participants' names who have joined the call will be played into the conference. This feature is only available when Name Record feature is set to "yes." 
+  *3 for a roll call (private). A playback of the participants' names who have joined the call will be announced to the initiator only. This feature is only available when Name Record feature is set to "yes." 
+  *4 to mute or unmute the entire conference (except for your line). 
+  *5 to enable Conference Continuation. This allows you to determine if the active conference can continue after you disconnect. In order to use this feature, Auto Continuation must be set to "yes." 
+  *6 to mute or unmute your line. 
+  *7 to lock or unlock the conference. If you lock the call, those attempting to join will hear a prompt indicating the conference has been "secured." 
+  *8 to dial out to additional participants within North America. 
+  *9 for Entry/Exit options. You can specify how the entry and exit of participants are announced for the active conference: by tone, by recorded name, or by silent entry. 
+
+
+- test run all labs before webcast!
+- test run all new samples before webcast!
+- reboot, disable vpn
+- set up resolution 1024 x 768
+- set up webcast audio
+
+
+Polls at beginning
+
+  1. What category best describes your main professional activity?
+
+  Architect
+  Engineer
+  Constructor
+  Programmer
+  Manager
+  Other
+
+  2. How would you rate your level of experience with the Revit products?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  3. How would you rate your level of experience with the Revit API?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  4. Which statement best describes you?
+
+  This topic directly affects my work today
+  I expect this topic to be useful to me in the future
+  I'm evaluating this technology
+  None of the above
+
+Polls at end
+
+  5. How was the audio quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  6. How was the visual quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  7. How do you rate the presentation material?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  8. How do you rate the presentation delivery?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  9. Would you recommend this webcast to a friend or colleague?
+
+  Yes
+  No
+
+  10. What topics would you be interested in for future webcasts?
+
+  Family API
+  Family UI
+  Form creation API 
+  VSTA
+  MEP API
+  Geometry
+  For other topics and multiple choices, please send suggestions through Q&A
+
+
+2009-04-28:
+
+slide 2: please mention internet audio. we want to encourage people to use it. 
+
+
+--------------------------------
+2009-07-15:
+
+Webcast synopses:
+
+The Revit family API provides access to programming facilities within the family editor context and can be used to automate Revit content creation based on existing part databases and other library specifications, create and modify family content, extract family definitions from existing projects, define references, constraints, formulas, annotation and dimensioning, and visibility control. We also demonstrate the Revit SDK family API samples.
+
+The Revit MEP API provides access to analyze and modify Revit MEP models in all domains including HVAC, electrical and plumbing. The webcast  discusses how to analyse and create MEP systems and elements including ducts, pipes, fittings, and connectors, traverse systems, use new part creation methods to implement automatic splitting of parts, obstruction avoidance, routing automation, and demonstrates the Revit MEP SDK samples.
+
+2009-07-23:
+
+Revit family API
+
+Polls at beginning
+
+  1. What category best describes your main professional activity?
+
+  Architect
+  Engineer
+  Constructor
+  Programmer
+  Manager
+  Other
+
+  2. How would you rate your level of experience with the Revit products?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  3. How would you rate your level of experience with the Revit non-family API?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  4. How would you rate your level of experience with the Revit Family API?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  5. Which statement best describes you?
+
+  This topic directly affects my work today
+  I expect this topic to be useful to me in the future
+  I'm evaluating this technology
+  None of the above
+
+Polls at end
+
+  6. How was the audio quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  7. How was the visual quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  8. How do you rate the presentation material?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  9. How do you rate the presentation delivery?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  10. Would you recommend this webcast to a friend or colleague?
+
+  Yes
+  No
+
+- test run all labs
+- test run all sdk samples
+- reboot, disable vpn
+- set up resolution 1024 x 768
+- set up webcast audio
+- set up recording
+
+- prepare family api webcast
+  "\\brigand\transfer\AEC\Revit\Revit API 2010 Training Materials"
+  "C:/a/doc/aec/newsletter/2009_1/ADN - AEC Customization Newsletter - Spring 2009.htm"
+  C:\a\j\adn\train\revit\2010\doc\Family_API.pptx
+  # send out the family webcast ppt draft
+  # test run all the family labs
+  # write a document
+  - test run all the family SDK samples
+  - add lab to load TXT files
+  - add lab for nested families
+
+  https://www.livemeeting.com/cc/autodesklearning/join?id=DCD2D7&role=attend&pw=RevitFamilyAttend
+  https://www.livemeeting.com/cc/autodesklearning/join?id=DCD2D7&role=present&pw=RevitFamilyPresent
+  jeremy.tammik@eur.autodesk.com
+  Autodesk
+  
+  Toll-free: +1-866-692-4541  de 0800-664-4253
+  Participant Code: 4673390
+  Leader Code: 9458039
+
+  All participants must use a touch-tone phone to participate in an Instant Meeting conference. The following features are available for you to use during an active conference: 
+  *1 for a private pre-recorded help menu. A recorded message will play listing the available touch- tone features. 
+  *2 for a roll call (conference). A playback of the participants' names who have joined the call will be played into the conference. This feature is only available when Name Record feature is set to "yes." 
+  *3 for a roll call (private). A playback of the participants' names who have joined the call will be announced to the initiator only. This feature is only available when Name Record feature is set to "yes." 
+  *4 to mute or unmute the entire conference (except for your line). 
+  *5 to enable Conference Continuation. This allows you to determine if the active conference can continue after you disconnect. In order to use this feature, Auto Continuation must be set to "yes." 
+  *6 to mute or unmute your line. 
+  *7 to lock or unlock the conference. If you lock the call, those attempting to join will hear a prompt indicating the conference has been "secured." 
+  *8 to dial out to additional participants within North America. 
+  *9 for Entry/Exit options. You can specify how the entry and exit of participants are announced for the active conference: by tone, by recorded name, or by silent entry. 
+
+2009-08-26:
+
+  - prepare revit mep api webcast
+  - submit material for rme api webcast draft
+  - complete rme_api.rtf
+  C:\a\j\adn\train\revit\2009\doc\RME_API.pptx
+  C:\a\doc\revit\blog\156_rme_api.htm
+  C:\a\doc\revit\blog\130_mep_connectors.htm
+  C:\a\j\adn\train\revit\2010\doc\RME_API.txt
+  C:\a\j\adn\train\revit\2010\doc\rme_api.rtf
+  - port my rme samples to 2010 and test
+  - test run all the RME SDK samples
+  - mention air handler sample
+  copy rme api material to brigand
+  \\brigand\transfer\aec\ADN Posting (External)\Revit 2010 Family API Webcast - July 2009
+  \\brigand\resources\aec\by products\revit\Revit API 2010 training materials
+  \\brigand\resources\aec\ADN Posting (External)\webcast\Revit 2010 API Webcast - April 29 2009
+  \\brigand\resources\aec\By Products\revit\2010\webcast\Meet the Experts - Revit Architecture 2010 (Feb 2009)
+  \\brigand\resources\aec\By Products\revit\2010\webcast\Revit 2010 API Overview Webcast_2009-04-29
+  \\brigand\resources\AEC\By Products\Revit\2010\Webcast\rme_api
+
+2009-08-27:
+
+  rme:
+
+  Polls at beginning
+
+  1. What category best describes your main professional activity?
+
+  Architect
+  Engineer
+  Constructor
+  Programmer
+  Manager
+  Other
+
+  2. How would you rate your level of experience with the Revit products?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  3. How would you rate your level of experience with the Revit API?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  4. How would you rate your level of experience with the Revit MEP API?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  5. Which statement best describes your interest in this topic?
+
+  This topic directly affects my work today
+  I expect this topic to be useful to me in the future
+  I'm evaluating this technology
+  None of the above
+
+  Polls at end
+
+  6. How was the audio quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  7. How was the visual quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  8. How do you rate the presentation material?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  9. How do you rate the presentation delivery?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  10. Would you recommend this webcast to a friend or colleague?
+
+  Yes
+  No
+
+  - test run all sdk and non-sdk samples
+  - reboot, disable vpn
+  - set up resolution 1024 x 768
+  - set up webcast audio
+  - set up recording
+
+  https://www.livemeeting.com/cc/autodesklearning/join?id=GJWRM2&role=present&pw=RevitAMEPresent
+
+  Jeremy Tammik
+  jeremy.tammik@eur.autodesk.com
+  Autodesk
+
+  Toll-free: +1 (866) 692-4541 de 0800-664-4253
+  Participant code: 4673390 
+  Leader Code: 9458039
+
+  *4 to mute or unmute the entire conference (except for your line). 
+  *9 for Entry/Exit options.
+
+2009-09-03:
+
+  aca:
+
+  Polls at beginning
+
+  1. What category best describes your main professional activity?
+
+  Architect
+  Engineer
+  Constructor
+  Programmer 100 5
+  Manager
+  Other
+
+  2. How would you rate your level of experience with the ACA products?
+
+  Very experienced
+  Quite experienced 50 3
+  Not experienced 50 3
+
+  3. How would you rate your level of experience with the ACA PI?
+
+  Very experienced 20 1
+  Quite experienced
+  Not experienced 80 4
+
+  4. How would you rate your level of experience with the ACA.NET API?
+
+  Very experienced 16 1
+  Quite experienced
+  Not experienced 83 5
+
+  5. Which statement best describes your interest in this topic?
+
+  This topic directly affects my work today 12 1
+  I expect this topic to be useful to me in the future 37 3
+  I'm evaluating this technology 50 4
+  None of the above
+
+  Polls at end
+
+  6. How was the audio quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  7. How was the visual quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  8. How do you rate the presentation material?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  9. How do you rate the presentation delivery?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  10. Would you recommend this webcast to a friend or colleague?
+
+  Yes
+  No

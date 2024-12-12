@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>SlabProperties.dll</Assembly>
+    <ClientId>55456c3e-0db7-434b-8254-4660165dbffd</ClientId>
+    <FullClassName>Revit.SDK.Samples.SlabProperties.VB.NET.Command</FullClassName>
+    <Text>Slab Properties (VB)</Text>
+    <Description>Display slab properties.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

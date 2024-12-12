@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TraverseSystem</name>
+    </assembly>
+    <members>
+        <member name="T:Revit.SDK.Samples.TraverseSystem.CS.Command">
+            <summary>
+            Implements the Revit add-in interface IExternalCommand
+            </summary>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.Command.Execute(Autodesk.Revit.UI.ExternalCommandData,System.String@,Autodesk.Revit.DB.ElementSet)">
+            <summary>
+            Implement this method as an external command for Revit.
+            </summary>
+            <param name="commandData">An object that is passed to the external application 
+            which contains data related to the command, 
+            such as the application object and active view.</param>
+            <param name="message">A message that can be set by the external application 
+            which will be displayed if a failure or cancellation is returned by 
+            the external command.</param>
+            <param name="elements">A set of elements to which the external application 
+            can add elements that are to be highlighted in case of failure or cancellation.</param>
+            <returns>Return the status of the external command. 
+            A result of Succeeded means that the API external method functioned as expected. 
+            Cancelled can be used to signify that the user cancelled the external operation 
+            at some point. Failure should be returned if the application is unable to proceed with 
+            the operation.</returns>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.Command.ExtractMechanicalOrPipingSystem(Autodesk.Revit.DB.Element)">
+            <summary>
+            Get the mechanical or piping system from selected element
+            </summary>
+            <param name="selectedElement">Selected element</param>
+            <returns>The extracted mechanical or piping system. Null if no expected system is found.</returns>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.Command.ExtractSystemFromConnectors(Autodesk.Revit.DB.ConnectorSet)">
+            <summary>
+            Get the mechanical or piping system from the connectors of selected element
+            </summary>
+            <param name="connectors">Connectors of selected element</param>
+            <returns>The found mechanical or piping system</returns>
+        </member>
+        <member name="T:Revit.SDK.Samples.TraverseSystem.CS.TreeNode">
+            <summary>
+            A TreeNode object represents an element in the system
+            </summary>
+        </member>
+        <member name="F:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.m_Id">
+            <summary>
+            Id of the element
+            </summary>
+        </member>
+        <member name="F:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.m_direction">
+            <summary>
+            Flow direction of the node
+            For the starting element of the traversal, the direction will be the same as the connector
+            connected to its following element; Otherwise it will be the direction of the connector connected to
+            its previous element
+            </summary>
+        </member>
+        <member name="F:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.m_parent">
+            <summary>
+            The parent node of the current node.
+            </summary>
+        </member>
+        <member name="F:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.m_inputConnector">
+            <summary>
+            The connector of the previous element to which current element is connected
+            </summary>
+        </member>
+        <member name="F:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.m_childNodes">
+            <summary>
+            The first-level child nodes of the current node
+            </summary>
+        </member>
+        <member name="F:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.m_document">
+            <summary>
+            Active document of Revit
+            </summary>
+        </member>
+        <member name="P:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.Id">
+            <summary>
+            Id of the element
+            </summary>
+        </member>
+        <member name="P:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.Direction">
+            <summary>
+            Flow direction of the node
+            </summary>
+        </member>
+        <member name="P:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.Parent">
+            <summary>
+            Gets and sets the parent node of the current node.
+            </summary>
+        </member>
+        <member name="P:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.ChildNodes">
+            <summary>
+            Gets and sets the first-level child nodes of the current node
+            </summary>
+        </member>
+        <member name="P:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.InputConnector">
+            <summary>
+            The connector of the previous element to which current element is connected
+            </summary>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.#ctor(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="doc">Revit document</param>
+            <param name="id">Element's Id</param>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.GetElementById(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Get Element by its Id
+            </summary>
+            <param name="eid">Element's Id</param>
+            <returns>Element</returns>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TreeNode.DumpIntoXML(System.Xml.XmlWriter)">
+            <summary>
+            Dump the node into XML file
+            </summary>
+            <param name="writer">XmlWriter object</param>
+        </member>
+        <member name="T:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree">
+            <summary>
+            Data structure of the traversal
+            </summary>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.#ctor(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.MEPSystem)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="activeDocument">Revit document</param>
+            <param name="system">The MEP system to traverse</param>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.Traverse">
+            <summary>
+            Traverse the system
+            </summary>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.GetStartingElementNode">
+            <summary>
+            Get the starting element node.
+            If the system has base equipment then get it;
+            Otherwise get the owner of the open connector in the system
+            </summary>
+            <returns>The starting element node</returns>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.GetOwnerOfOpenConnector">
+            <summary>
+            Get the owner of the open connector as the starting element
+            </summary>
+            <returns>The owner</returns>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.GetOpenConnector(Autodesk.Revit.DB.Element,Autodesk.Revit.DB.Connector)">
+            <summary>
+            Get the open connector of the system if the system has no base equipment
+            </summary>
+            <param name="element">An element in the system</param>
+            <param name="inputConnector">The connector of the previous element 
+            to which the element is connected </param>
+            <returns>The found open connector</returns>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.Traverse(Revit.SDK.Samples.TraverseSystem.CS.TreeNode)">
+            <summary>
+            Traverse the system recursively by analyzing each element
+            </summary>
+            <param name="elementNode">The element to be analyzed</param>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.AppendChildren(Revit.SDK.Samples.TraverseSystem.CS.TreeNode)">
+            <summary>
+            Find all child nodes of the specified element node
+            </summary>
+            <param name="elementNode">The specified element node to be analyzed</param>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.GetConnectedConnector(Autodesk.Revit.DB.Connector)">
+            <summary>
+            Get the connected connector of one connector
+            </summary>
+            <param name="connector">The connector to be analyzed</param>
+            <returns>The connected connector</returns>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.GetElementById(Autodesk.Revit.DB.ElementId)">
+            <summary>
+            Get element by its id
+            </summary>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.DumpIntoXML(System.String)">
+            <summary>
+            Dump the traversal into an XML file
+            </summary>
+            <param name="fileName">Name of the XML file</param>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.WriteBasicInfo(System.Xml.XmlWriter)">
+            <summary>
+            Write basic information of the MEP system into the XML file
+            </summary>
+            <param name="writer">XMLWriter object</param>
+        </member>
+        <member name="M:Revit.SDK.Samples.TraverseSystem.CS.TraversalTree.WritePaths(System.Xml.XmlWriter)">
+            <summary>
+            Write paths of the traversal into the XML file
+            </summary>
+            <param name="writer">XMLWriter object</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>GenericModelCreation.dll</Assembly>
+    <ClientId>50567fc8-e907-429f-b34c-32e1bd0d8cc1</ClientId>
+    <FullClassName>Revit.SDK.Samples.GenericModelCreation.CS.Command</FullClassName>
+    <Text>GenericModelCreation</Text>
+    <Description>The sample show how to create Generic Model family at family document.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

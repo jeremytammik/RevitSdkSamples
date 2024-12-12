@@ -1,0 +1,39 @@
+﻿<Page x:Class="Revit.SDK.Samples.DockableDialogs.CS.MainPage"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:dat="clr-namespace:System.Windows.Data;assembly=PresentationFramework"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Revit.SDK.Samples.DockableDialogs.CS"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        Title="Dockable Dialogs"  Height="500" Width="200"
+        x:Name="DockableDialogs"  Background="LightGray" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+           <RowDefinition></RowDefinition>
+      </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+   
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0">Log</Label>
+        <StackPanel Grid.Row="0">
+            <Button Name="btn_stats" Click="PaneInfoButton_Click">This Pane's dock info...</Button>
+            <Button Name="btn_wpf_stats" Click="wpf_stats_Click">This Pane's WPF Info</Button>
+         <Button Name="btn_getById" Click="btn_getById_Click">Get info of Pane...</Button>
+         <Button Name="btn_listTabs" Click="btn_listTabs_Click">List tabs...</Button>
+      </StackPanel>
+
+        <TextBox Name="tb_output" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"></TextBox>
+      
+    </Grid>
+
+</Page>
+
+
+
+
+
+

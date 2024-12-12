@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DividedSurfaceByIntersects.dll</Assembly>
+    <ClientId>40ac79c8-68d6-4517-a999-dcf83dac72c4</ClientId>
+    <FullClassName>Revit.SDK.Samples.DividedSurfaceByIntersects.CS.Command</FullClassName>
+    <Text>DividedSurface by intersects</Text>
+    <Description>Customize DividedSurface with intersection elements</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

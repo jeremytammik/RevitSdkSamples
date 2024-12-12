@@ -1,0 +1,8 @@
+# This is a Revit family parameter file.
+# allows to edit manually.
+# make sure the "ParamGroup" and "ParamType" values are correct (with or without "BuiltInParameterGroup." and "ParameterType." doesn't affect the sample).
+
+       
+*ParamName	ParamGroup	ParamType	IsInstance
+FamilyParam1	PG_TEXT		Text	false
+FamilyParam2	BuiltInParameterGroup.PG_TEXT		ParameterType.Text	true

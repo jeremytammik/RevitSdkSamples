@@ -1,0 +1,268 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Import Updated Parameter Values </div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs4-4.htm">next</a>
+<a class="j" href="labs4-3-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we import the modified door FireRating parameter
+values back into the Revit building model.</p>
+
+<p>The third and last command complements the previous one,
+reading the updated FireRating parameter values back in from Excel
+and updating the existing Revit element parameters.
+Add the following full command to <code>Labs4</code>:</p>
+
+<pre title="C# Import updated param values" class="jtcollapse">  #region Lab4_3_3_ImportSharedParamFromExcel
+  /// &lt;summary&gt;
+  /// 4.3.3 Import updated FireRating param values from Excel.
+  /// &lt;/summary&gt;
+  public class Lab4_3_3_ImportSharedParamFromExcel : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      // Let user select the Excel file
+      WinForms.OpenFileDialog dlg = new WinForms.OpenFileDialog();
+      dlg.Title = "Select source Excel file from which to update Revit shared parameters";
+      dlg.Filter = "Excel spreadsheet files (*.xls;*.xlsx)|*.xls;*.xlsx|All files (*)|*";
+      if( WinForms.DialogResult.OK != dlg.ShowDialog() )
+      {
+        return IExternalCommand.Result.Cancelled;
+      }
+      //
+      // Launch/Get Excel via COM Interop:
+      //
+      X.Application excel = new X.Application();
+      if( null == excel )
+      {
+        LabUtils.ErrorMsg( "Failed to get or start Excel." );
+        return IExternalCommand.Result.Failed;
+      }
+      excel.Visible = true;
+      X.Workbook workbook = excel.Workbooks.Open( dlg.FileName,
+        Missing.Value, Missing.Value, Missing.Value,
+        Missing.Value, Missing.Value, Missing.Value, Missing.Value,
+        Missing.Value, Missing.Value, Missing.Value, Missing.Value,
+        Missing.Value, Missing.Value, Missing.Value );
+      X.Worksheet worksheet = workbook.ActiveSheet as X.Worksheet;
+      //
+      // Starting from row 2, loop the rows and extract Id and FireRating param.
+      //
+      int id;
+      double fireRatingValue;
+      int row = 2;
+      while( true )
+      {
+        try
+        {
+          // Extract relevant XLS values
+          X.Range r = worksheet.Cells[row, 1] as X.Range;
+          if( null == r.Value2 )
+          {
+            break;
+          }
+          double d = (double) r.Value2;
+          id = (int) d;
+          if( 0 &gt;= id )
+          {
+            break;
+          }
+          r = worksheet.Cells[row, 4] as X.Range;
+          fireRatingValue = (double) r.Value2;
+          // Get document's door element via Id
+          ElementId elementId;
+          elementId.Value = id;
+          Element door = doc.get_Element( ref elementId );
+          // Set the param
+          if( null != door )
+          {
+            Parameter parameter = door.get_Parameter( LabConstants.gsSharedParamsDefFireRating );
+            parameter.Set( fireRatingValue );
+          }
+        }
+        catch( Exception )
+        {
+          break;
+        }
+        ++row;
+      }
+      //
+      // Set focus back to Revit (there may be a better way, but this works :-)
+      //
+
+#if USE_PROCESS_GET_PROCESSES
+      foreach( Process p in Process.GetProcesses() )
+      {
+        try
+        {
+          if( "REVIT" == p.ProcessName.ToUpper().Substring( 0, 5 ) )
+          {
+            // In VB, we can use AppActivate( p.Id );
+            // Pre-3.0, I think you may need to use p/invoke and call the native Windows
+            // SetForegroundWindow() function directly.
+            // http://www.codeproject.com/csharp/windowhider.asp?df=100
+            break;
+          }
+        }
+        catch( Exception )
+        {
+        }
+      }
+#endif // USE_PROCESS_GET_PROCESSES
+
+      JtRevitWindow w = new JtRevitWindow();
+      w.Activate();
+
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion // Lab4_3_3_ImportSharedParamFromExcel
+</pre>
+
+<pre title="VB Import updated param values" class="jtcollapse">
+Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.Runtime
+Imports Autodesk.Revit
+Imports Autodesk.Revit.Parameters
+Imports Microsoft.VisualBasic
+Imports MsExcel = Microsoft.Office.Interop.Excel
+Imports W = System.Windows.Forms
+
+#Region "Lab4_3_3_ImportSharedParamFromExcel"
+''' &lt;summary&gt;
+''' 4.3.3 Import updated FireRating param values from Excel.
+''' &lt;/summary&gt;
+Public Class Lab4_3_3_ImportSharedParamFromExcel
+    Implements IExternalCommand
+    Public Function Execute( _
+        ByVal commandData As ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+
+        Dim app As Revit.Application = commandData.Application
+
+        ' Let user select the Excel file
+        Dim dlgFileXLS As New W.OpenFileDialog()
+        With dlgFileXLS
+            .Title = "Select the Excel file to update Revit Shared Parameters from"
+            .Filter = "Excel XLS Files (*.xls)|*.xls"
+            If Not .ShowDialog() = W.DialogResult.OK Then
+                Return IExternalCommand.Result.Cancelled
+            End If
+        End With
+
+        ' Launch Excel and open the selected file
+        Dim excel As MsExcel.Application = New MsExcel.ApplicationClass()
+        If (excel Is Nothing) Then
+            MsgBox("Failed to get or start Excel!?")
+            Return IExternalCommand.Result.Failed
+        End If
+        excel.Visible = True
+        Dim workbook As MsExcel.Workbook = excel.Workbooks.Open(dlgFileXLS.FileName)
+        Dim worksheet As MsExcel.Worksheet = workbook.ActiveSheet
+
+        ' Starting from row 2, loop the rows and extract Id and FireRating param.
+        Dim id As Integer
+        Dim fireRatingValue As Double
+        Dim row As Integer = 2
+        Do
+            Try
+                ' Extract relevant XLS values
+                id = worksheet.Cells(row, 1).Value
+                If id &lt;= 0 Then Exit Do
+                fireRatingValue = worksheet.Cells(row, 4).Value
+
+                ' Get document's door element via Id
+                Dim elementId As Autodesk.Revit.ElementId
+                elementId.Value = id
+                Dim door As Autodesk.Revit.Element = app.ActiveDocument.Element(elementId)
+
+                ' Set the param
+                If Not (door Is Nothing) Then
+                    Dim parameter As Parameter = door.Parameter(gsSharedParamsDefFireRating)
+                    parameter.Set(fireRatingValue)
+                End If
+
+            Catch
+                Exit Do
+            End Try
+
+            row = row + 1
+        Loop
+
+        ' Set focus back to Revit (there may be a better way, but this works :-)
+        Dim p, cPs() As Process
+        cPs = Process.GetProcesses()
+        For Each p In cPs
+            Try
+                If p.ProcessName.ToUpper.Substring(0, 5) = "REVIT" Then
+                    AppActivate(p.Id)
+                    Exit For
+                End If
+            Catch
+            End Try
+        Next
+
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+
+#End Region
+</pre>
+
+<p>Compile the code and update Revit.ini again.
+Before running this command, make sure you first export
+some Revit door elements to the Excel sheet using the previous command,
+update some of the FireRating values in Excel and save the file,
+remembering the path which you will need to select it to read it in again.</p>
+
+<a class="j" href="labs4-4.htm">next</a>
+<a class="j" href="labs4-3-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

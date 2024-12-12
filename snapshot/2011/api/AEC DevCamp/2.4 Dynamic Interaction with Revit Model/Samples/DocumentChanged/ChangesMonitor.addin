@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Monitor for DocumentChanged events</Name>
+    <Assembly>d:\DevCamp_2010\Samples\DocumentChanged\bin\Debug\ChangesMonitor.dll</Assembly>
+    <ClientId>ebae9def-6cd3-456f-98a4-cfe06c362af5</ClientId>
+    <FullClassName>ChangesMonitor.ExternalApplication</FullClassName>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>d:\DevCamp_2010\Samples\DocumentChanged\bin\Debug\ChangesMonitor.dll</Assembly>
+    <ClientId>152051df-aa75-463f-a722-b8b1bca5d88c</ClientId>
+    <FullClassName>ChangesMonitor.Command</FullClassName>
+    <Text>Show/Clear Model Changes</Text>
+    <Description>""</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+  </AddIn>
+</RevitAddIns>

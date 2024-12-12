@@ -1,0 +1,18 @@
+<rexf:REXExtensionControl x:Class="REX.PyramidGenerator.Resources.Dialogs.PyramidParametersControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:rexf="clr-namespace:REX.Common;assembly=REX.Foundation.WPF"
+    xmlns:rexc="clr-namespace:REX.Controls.WPF;assembly=REX.Controls.WPF"                          
+    Height="158" Width="435">
+    <Grid Height="158" Width="435">
+        <Label Name="labelH" Content="H=" HorizontalAlignment="Left" Width="34" Height="24" VerticalAlignment="Top" Margin="12,14,0,0" />
+        <rexc:REXEditBox x:Name="editH" RememberCorrect="True" Height="26" Margin="0,12,259,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="124"/>
+        <Label Name="labelB" Content="B="   HorizontalAlignment="Left" Width="34" Height="24" VerticalAlignment="Top" Margin="12,44,0,0" />
+        <rexc:REXUnitEditBox x:Name="editB" RememberCorrect="True" Height="26" Margin="52,44,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="124" UnitType="Dimensions_StructureDim" Power="1"/>
+        <Label Name="labelFamSymbol" Content="Member type:" HorizontalAlignment="Left" Width="164" Margin="12,76,0,58" />
+        <ComboBox Name="comboFamilySymbol" Margin="12,106,216,0" Height="24" VerticalAlignment="Top" />
+        <Border Margin="0,3.5,22,3.5" Width="170" BorderThickness="1" BorderBrush="Gray" HorizontalAlignment="Right" Background="White">
+            <Image  VerticalAlignment="Top" Source="/PyramidGenerator;component/Resources/Other/Images/IMAGE_Pyramid.png" HorizontalAlignment="Left" Stretch="None"></Image>
+        </Border>
+    </Grid>
+</rexf:REXExtensionControl>

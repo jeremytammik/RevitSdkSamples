@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{660be36e-93c4-40d5-af0b-3d0734110c4f}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RevitAddin</RootNamespace>
+    <AssemblyName>RevitAddin</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Name>RevitAddin</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\Revit Architecture 2009\Program\Revit.exe</StartProgram>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Script.fsx" />
+    <Compile Include="Module3.fs" />
+    <Compile Include="Module2.fs" />
+    <Compile Include="Module1.fs" />
+    <None Include="Revit.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=2009.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <Name>RevitAPI</Name>
+      <AssemblyName>RevitAPI.dll</AssemblyName>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Program Files\Revit Architecture 2009\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\FSharp\1.0\Microsoft.FSharp.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

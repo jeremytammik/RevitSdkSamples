@@ -1,0 +1,118 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3505D5A1-24CB-46C3-8077-276BC07757D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Revit.SDK.Samples.ImportAndExportForDWG.CS</RootNamespace>
+    <AssemblyName>ImportAndExportForDWG</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=10.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Revit Architecture 2008\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="ExportData.cs" />
+    <Compile Include="ExportOptionsData.cs" />
+    <Compile Include="ExportOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportOptionsForm.Designer.cs">
+      <DependentUpon>ExportOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportData.cs" />
+    <Compile Include="ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportForm.Designer.cs">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainData.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectViewsData.cs" />
+    <Compile Include="SelectViewsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectViewsForm.Designer.cs">
+      <DependentUpon>SelectViewsForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExportForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportOptionsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExportOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectViewsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectViewsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

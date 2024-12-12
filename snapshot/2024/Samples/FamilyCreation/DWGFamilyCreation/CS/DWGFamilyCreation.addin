@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DWGFamilyCreation.dll</Assembly>
+    <ClientId>288339ab-7003-4457-aceb-736fb74a29f3</ClientId>
+    <FullClassName>Revit.SDK.Samples.DWGFamilyCreation.CS.Command</FullClassName>
+    <Text>DWGFamilyCreation</Text>
+    <Description>Import dwg file into family document.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

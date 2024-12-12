@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateShared.dll</Assembly>
+    <ClientId>251848b8-9a73-4d7a-9a94-e6323c3c65a0</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateShared.VB.NET.Command1</FullClassName>
+    <Text>CreateShared - Create Shared Parameter</Text>
+    <Description>Create a new shared parameter and assign it to wall categories.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>CreateShared.dll</Assembly>
+    <ClientId>afa39f8b-c5aa-4d1d-bddb-faffd9c19d3d</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateShared.VB.NET.Command2</FullClassName>
+    <Text>CreateShared - Set Shared Parameter</Text>
+    <Description>Set the shared parameter.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

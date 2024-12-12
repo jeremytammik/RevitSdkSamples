@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Modules>
+  <Module name="PyramidGenerator" path="P:\PyramidGenerator\PyramidGenerator\bin\Debug\PyramidGenerator.dll" namespace="REX.PyramidGenerator" description="Pyramid"/>
+  <Module name="ContentGenerator" path="P:\ContentGeneratorWPF\ContentGeneratorWPF\bin\Debug\ContentGeneratorWPF.dll" namespace="REX.ContentGeneratorWPF" description="Content Generator"/>
+  <Module name="ElementReportHTML" path="P:\ElementReportHTML\ElementReportHTML\bin\Debug\ElementReportHTML.dll" namespace="REX.ElementReportHTML" description="Element Report"/>
+  <Module name="Unit" path="P:\Unit\Unit\bin\Debug\Unit.dll" namespace="REX.Unit" description="Unit" />
+  <Module name="FrameGenerator" path="P:\FrameGenerator\FrameGenerator\bin\Debug\FrameGenerator.dll" namespace="REX.FrameGenerator" description="Frame Generator" />
+  <Module name="Serialization" path="P:\Serialization\Serialization\bin\Debug\Serialization.dll" namespace="REX.Serialization" description="Serialization" />
+  <Module name="DRevitFreezeDrawing" path="P:\DRevitFreezeDrawing\DRevitFreezeDrawing\bin\Debug\DRevitFreezeDrawing.dll" namespace="REX.DRevitFreezeDrawing" description="Freeze Drawing" />
+</Modules>

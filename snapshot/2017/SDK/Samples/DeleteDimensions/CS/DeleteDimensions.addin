@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DeleteDimensions.dll</Assembly>
+    <ClientId>39ff9d42-c160-40dd-b3c9-bf6f344541b9</ClientId>
+    <FullClassName>Revit.SDK.Samples.DeleteDimensions.CS.Command</FullClassName>
+    <Text>Delete Dimensions</Text>
+    <Description>Delete all unpinned dimensions found in current selection.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>CancelSave</Name>
+    <Assembly>CancelSave.dll</Assembly>
+    <ClientId>d7e30025-97d4-4012-a581-5f8ed8d18808</ClientId>
+    <FullClassName>Revit.SDK.Samples.CancelSave.CS.CancelSave</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

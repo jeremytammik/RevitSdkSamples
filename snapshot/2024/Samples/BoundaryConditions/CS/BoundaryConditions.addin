@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>BoundaryConditions.dll</Assembly>
+    <ClientId>71ac558f-0ce7-4e97-8a36-67bbb86a0229</ClientId>
+    <FullClassName>Revit.SDK.Samples.BoundaryConditions.CS.Command</FullClassName>
+    <Text>Boundary Conditions</Text>
+    <Description>Display the BoundaryConditions' parameters or create a new BoundaryConditions instance.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

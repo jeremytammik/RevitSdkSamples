@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>SolidSolidCut.dll</Assembly>
+    <ClientId>c983c2bc-bdfa-41e3-9c18-8e893dd9836e</ClientId>
+    <FullClassName>Revit.SDK.Samples.SolidSolidCut.CS.Cut</FullClassName>
+    <Text>SolidSolidCut-Cut</Text>
+    <Description>"Let the sphere cut the cube"</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>SolidSolidCut.dll</Assembly>
+    <ClientId>8d447a09-547f-4b57-892d-668f6cf62d04</ClientId>
+    <FullClassName>Revit.SDK.Samples.SolidSolidCut.CS.Uncut</FullClassName>
+    <Text>SolidSolidCut-Uncut</Text>
+    <Description>"Remove the cutting relationship between the sphere and the cube"</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

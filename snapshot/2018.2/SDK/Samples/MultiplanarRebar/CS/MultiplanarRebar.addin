@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>MultiplanarRebar.dll</Assembly>
+    <ClientId>6f5594b1-4285-40b7-bfca-043bb69ea0a7</ClientId>
+    <FullClassName>Revit.SDK.Samples.MultiplanarRebar.CS.Command</FullClassName>
+    <Text>Multiplanar Rebar</Text>
+    <Description>Demonstrates how to create multiplanar rebar.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

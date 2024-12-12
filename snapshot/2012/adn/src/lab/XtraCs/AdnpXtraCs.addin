@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+  AdnpXtraCs.addin - Revit API introduction labs manifest file
+
+  Copyright (C) 2010-2011 Autodesk Inc. All rights reserved.
+
+  Register Revit API introduction lab external applications and commands.
+  
+  Manifest files are read automatically by Revit when they are placed in one the
+  following locations:
+
+  - In a non-user specific location in "application data":
+    - For Windows XP - "C:\Documents and Settings\All Users\Application Data\Autodesk\Revit\Addins\2011"
+    - For Vista/Windows 7 - C:\ProgramData\Autodesk\Revit\Addins\2011
+
+  - In a user specific location in "application data":
+    - For Windows XP - "C:\Documents and Settings\<user>\Application Data\Autodesk\Revit\Addins\2011"
+    - For Vista/Windows 7 - C:\Users\<user>\AppData\Roaming\Autodesk\Revit\Addins\2011
+
+  You can create a personal ClientId GUID using the Microsoft GuidGen tool, e.g.
+  "C:\Program Files\Microsoft Visual Studio 9.0\Common7\Tools\guidgen.exe" or
+  using The Building Coder specialised Revit addin manifest file ClienId guidizer.
+-->
+<RevitAddIn>
+  <AddIn Type="Command">
+    <Text>Lab1_1_HelloWorld</Text>
+    <Description>Say hello.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab1_1_HelloWorld</FullClassName>
+    <ClientId>68391e66-7d51-4cd3-83d7-d4111325aaa5</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <!-- #region Lab 1-2 -->
+  <AddIn Type="Command">
+    <Text>Lab1_2_CommandArguments</Text>
+    <Description>Demonstrate contents and usage of the Execute() method's command data input argument and the meaning of the result return code and the message and element set return arguments.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab1_2_CommandArguments</FullClassName>
+    <ClientId>e96140eb-43fe-4e69-9eba-9252ceb55624</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <!-- #endregion -->
+  <AddIn Type="Command">
+    <Text>Lab2_0_CreateLittleHouse</Text>
+    <Description>
+      Create some sample elements.
+      We create a simple building consisting of four walls,
+      a door, two windows, a floor, a roof, a room and a room tag.
+    </Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab2_0_CreateLittleHouse</FullClassName>
+    <ClientId>09034ae8-f6ed-4fce-9a72-83676c3b5b6f</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab2_1_Elements</Text>
+    <Description>List all document elements.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab2_1_Elements</FullClassName>
+    <ClientId>320d2ca1-5502-432e-88e1-0c499be0e829</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab2_2_ModelElements</Text>
+    <Description>List all model elements.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab2_2_ModelElements</FullClassName>
+    <ClientId>a7abf175-d75a-46ed-a005-4c28a909914c</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab2_3_ListWallsAndDoors</Text>
+    <Description>
+      List all walls and doors.
+      These represent two different kinds of elements:
+      walls are represented by their own specialised
+      System.Type Wall, whereas doors are represented
+      by family instances and need to be identified by
+      aditionally checking the category.
+    </Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab2_3_ListWallsAndDoors</FullClassName>
+    <ClientId>ebd2752f-aeae-4c3c-9681-a511c683963d</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab2_4_EditFamilyInstance</Text>
+    <Description>
+      Demonstrate access to family instance parameters,
+      and modification of family instance location:
+      Edit all doors in the current project.
+      Move the doors up 0.2 feet via the Document.Move() method.
+      and widen them 1 foot by changing the parameter value.
+    </Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab2_4_EditFamilyInstance</FullClassName>
+    <ClientId>d5a22e2d-b9b5-4ded-b034-382f01e5e440</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab2_5_SelectAndMoveWallAndAddColumns</Text>
+    <Description>
+      Demonstrate pre-selection and interactive
+      prompted selection process.
+      Demonstrate access to wall parameters,
+      and modification of wall location.
+      Demonstrate a filtered query using LINQ.
+      Demonstrate creation of new family instance elements
+      by querying an existing wall for its location and parameters,
+      modifying it, and inserting column elements.
+    </Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab2_5_SelectAndMoveWallAndAddColumns</FullClassName>
+    <ClientId>c5a105f0-8035-4c85-95a0-dcd0f0f311a7</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab3_1_StandardFamiliesAndTypes</Text>
+    <Description>List all loaded standard families and types.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab3_1_StandardFamiliesAndTypes</FullClassName>
+    <ClientId>701d261f-5ae5-4b72-a253-df61fb373486</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab3_2_LoadStandardFamilies</Text>
+    <Description>Load an entire family or a specific type from a family.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab3_2_LoadStandardFamilies</FullClassName>
+    <ClientId>6fb5cc6f-a88e-4780-9e4d-f1be78dd1402</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab3_3_DetermineInstanceTypeAndFamily</Text>
+    <Description>For a selected family instance in the model, determine its type and family.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab3_3_DetermineInstanceTypeAndFamily</FullClassName>
+    <ClientId>f387b3b9-0fcd-44cb-b25c-5e9dbbf95ab3</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab3_4_ChangeSelectedInstanceType</Text>
+    <Description>Form-based utility to change the type or symbol of a selected standard instance.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab3_4_ChangeSelectedInstanceType</FullClassName>
+    <ClientId>27f6923d-0c18-4502-bb64-caea50b65314</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab3_5_WallAndFloorTypes</Text>
+    <Description>
+      Access and modify system family type, similarly
+      to the standard families looked at above:
+      List all wall and floor types and
+      change the type of selected walls and floors.
+    </Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab3_5_WallAndFloorTypes</FullClassName>
+    <ClientId>0cb080f4-73e4-4a24-b5ac-a3b1c95711f7</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab3_6_DuplicateWallType</Text>
+    <Description>
+      Create a new family symbol or type by calling Duplicate() on an existing one and then modifying its parameters.
+    </Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab3_6_DuplicateWallType</FullClassName>
+    <ClientId>d99d2673-a262-48b8-ae4d-33a5fa84661e</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab3_7_DeleteFamilyType</Text>
+    <Description>
+      Delete a specific individual type from a family.
+      Hard-coded to a column type named "457 x 610mm".
+    </Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab3_7_DeleteFamilyType</FullClassName>
+    <ClientId>d56080d5-daf3-46c8-bcc2-779404f2631e</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab4_1_ElementParameters</Text>
+    <Description>List all parameters for selected elements.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab4_1_ElementParameters</FullClassName>
+    <ClientId>9b86c2f6-a5fd-43ad-b09d-0cc701aedd30</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab4_2_ExportParametersToExcel</Text>
+    <Description>Export all parameters for each model element to Excel, one sheet per category.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab4_2_ExportParametersToExcel</FullClassName>
+    <ClientId>edb40ce9-6d3d-4bb8-8735-cac65fb535da</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab4_3_1_CreateAndBindSharedParam</Text>
+    <Description>Create and bind shared parameter.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab4_3_1_CreateAndBindSharedParam</FullClassName>
+    <ClientId>6793aa7c-b808-4c9f-aeb0-bf730dd953d9</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab4_3_2_ExportSharedParamToExcel</Text>
+    <Description>Export all target element ids and their FireRating param values to Excel.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab4_3_2_ExportSharedParamToExcel</FullClassName>
+    <ClientId>555039fb-8871-4f03-9860-f18828b45f2b</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab4_3_3_ImportSharedParamFromExcel</Text>
+    <Description>Import updated FireRating param values from Excel.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab4_3_3_ImportSharedParamFromExcel</FullClassName>
+    <ClientId>7b018fb5-eb4a-4d40-8c39-1fde2b04e7f8</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab4_4_1_CreatePerDocParameters</Text>
+    <Description>Add and bind a visible and an invisible per-doc parameter.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab4_4_1_CreatePerDocParameters</FullClassName>
+    <ClientId>84e7c779-b510-4c77-a9ac-c3cf6c68dcef</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab4_4_2_IncrementPerDocParameters</Text>
+    <Description>Increment the invisible per-doc param.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab4_4_2_IncrementPerDocParameters</FullClassName>
+    <ClientId>6cd2f5b8-2a3b-4f99-8a0a-21143d727113</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab5_1_GroupsAndGroupTypes</Text>
+    <Description>List all groups and group types in the model.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab5_1_GroupsAndGroupTypes</FullClassName>
+    <ClientId>f74d4f13-d31c-496e-b658-0043d9d025f6</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab5_2_SwapGroupTypes</Text>
+    <Description>Swap group types for selected groups.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab5_2_SwapGroupTypes</FullClassName>
+    <ClientId>d3bed50b-43af-4cf4-882f-2d37f232a336</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab5_3_Rooms</Text>
+    <Description>List room boundaries.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab5_3_Rooms</FullClassName>
+    <ClientId>16608958-3ec9-4250-867c-009f219386b9</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Application">
+    <Name>Lab6_1_HelloWorldExternalApplication</Name>
+    <!-- A minimal external application saying hello. -->
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab6_1_HelloWorldExternalApplication</FullClassName>
+    <ClientId>2b2a3d86-6e31-4d20-9ea1-d41db3cfcdfd</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Lab6_2_Ribbon</Name>
+    <!-- Add various controls to the Revit ribbon. -->
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab6_2_Ribbon</FullClassName>
+    <ClientId>75a3bf04-fc1c-4ecd-a004-ea0f5ad33a49</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Lab6_3_PreventSaveEvent</Name>
+    <!-- Handle document saving event. -->
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab6_3_PreventSaveEvent</FullClassName>
+    <ClientId>3cd40982-5acc-48e6-ade9-e79f1c3a410d</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Lab6_4_DismissDialog</Name>
+    <!-- Handle dialog box showing event. -->
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab6_4_DismissDialog</FullClassName>
+    <ClientId>3f6d3654-2279-445f-a645-86a6dfd7abf3</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab6_5_RibbonExplorer</Text>
+    <Description>List the contents of the Revit ribbon in the Visual Studio debug output window.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab6_5_RibbonExplorer</FullClassName>
+    <ClientId>b6cdb5fb-8a28-4a45-99c1-88a0c85dd3a8</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab7_1_CreateForm</Text>
+    <Description>Create a loft form using reference points and curve by points.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab7_1_CreateForm</FullClassName>
+    <ClientId>9f679eaf-c729-42ef-8aa6-28de383717b2</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab7_2_CreateDividedSurface</Text>
+    <Description>Create a divided surface using reference of a face of the form.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab7_2_CreateDividedSurface</FullClassName>
+    <ClientId>4a08226d-249f-4e1e-bacd-3edbc847564d</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>Lab7_3_ChangeTilePattern</Text>
+    <Description>Change the tiling pattern of the divided surface using the built-in TilePattern enumeration.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.Lab7_3_ChangeTilePattern</FullClassName>
+    <ClientId>99050868-30b8-4742-9b67-f7b8754b24c6</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Text>BuiltInParamsChecker</Text>
+    <Description>List all accessible parameters on a selected element in a DataGridView.</Description>
+    <Assembly>XtraCs.dll</Assembly>
+    <FullClassName>XtraCs.BuiltInParamsChecker</FullClassName>
+    <ClientId>415a0b05-a7b7-4ef3-aa63-76857c9bb478</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIn>

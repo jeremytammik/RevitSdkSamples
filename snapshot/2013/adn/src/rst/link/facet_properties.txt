@@ -1,0 +1,7 @@
+create a facet class
+registere it in the rx class hierarchy
+create a facte provider class
+register it in the facet provider list
+point to instance acrxclass instance registered in the hierarchy
+in the cal back function used to register it, create one instance of each of the properties
+add it to the list

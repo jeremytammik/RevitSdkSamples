@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB5C52F3-93FC-441C-91D4-758182CC2747}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Revit.SDK.Samples.NewHostedSweep.CS</RootNamespace>
+    <AssemblyName>NewHostedSweep</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="Data\CreationData.cs" />
+    <Compile Include="Forms\CreationDataTypeConvertor.cs" />
+    <Compile Include="Creators\CreationMgr.cs" />
+    <Compile Include="Forms\EdgeFormUITypeEditor.cs" />
+    <Compile Include="Geom\ElementGeometry.cs" />
+    <Compile Include="Creators\FasciaCreator.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creators\GutterCreator.cs" />
+    <Compile Include="Creators\HostedSweepCreator.cs" />
+    <Compile Include="Forms\HostedSweepModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HostedSweepModifyForm.Designer.cs">
+      <DependentUpon>HostedSweepModifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EdgeFetchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EdgeFetchForm.Designer.cs">
+      <DependentUpon>EdgeFetchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ModificationData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Creators\SlabEdgeCreator.cs" />
+    <Compile Include="Geom\TrackBall.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HostedSweepModifyForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HostedSweepModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EdgeFetchForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EdgeFetchForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\CBChecked.bmp" />
+    <Content Include="Images\CBIndeterminate.bmp" />
+    <Content Include="Images\CBUnchecked.bmp" />
+  </ItemGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+</Project>

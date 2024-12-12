@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ShaftHolePuncher.dll</Assembly>
+    <ClientId>9708919a-94fc-429a-986e-556c65286694</ClientId>
+    <FullClassName>Revit.SDK.Samples.ShaftHolePuncher.CS.Command</FullClassName>
+    <Text>Shaft Hole Puncher</Text>
+    <Description>Create shaft opening or create opening on wall, floor or beam.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

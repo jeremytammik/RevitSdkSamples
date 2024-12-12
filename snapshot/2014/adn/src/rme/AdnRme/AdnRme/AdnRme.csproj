@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+      None
+    </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBAF92E6-72D5-4C38-ADC7-754F11E27E3A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdnRme</RootNamespace>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramFiles)\Autodesk\Revit Architecture 2011\Program\Revit.exe</StartProgram>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramFiles)\Autodesk\Revit Architecture 2011\Program\Revit.exe</StartProgram>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2014\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2014\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App.cs" />
+    <Compile Include="Bip.cs" />
+    <Compile Include="CmdAbout.cs" />
+    <Compile Include="CmdAssignFlowToTerminals.cs" />
+    <Compile Include="CmdChangeSize.cs" />
+    <Compile Include="CmdElectricalConnectors.cs" />
+    <Compile Include="CmdElectricalHierarchy2.cs" />
+    <Compile Include="CmdElectricalSystemBrowser.cs" />
+    <Compile Include="CmdInspectElectricalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdInspectElectricalForm.designer.cs">
+      <DependentUpon>CmdInspectElectricalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdInspectElectricallForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdInspectElectricallForm2.designer.cs">
+      <DependentUpon>CmdInspectElectricallForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdPopulateCfmPerSf.cs" />
+    <Compile Include="CmdResetDemo.cs" />
+    <Compile Include="CmdUnhostedElements.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="Const.cs" />
+    <Compile Include="FamilySelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FamilySelector.Designer.cs" />
+    <Compile Include="PanelTreeNodeHelper.cs" />
+    <Compile Include="ParameterName.cs" />
+    <Compile Include="ParameterValue.cs" />
+    <Compile Include="ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressForm.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="WaitCursor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AdnRme.addin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdInspectElectricalForm.resx">
+      <DependentUpon>CmdInspectElectricalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdInspectElectricallForm2.resx">
+      <DependentUpon>CmdInspectElectricallForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FamilySelector.resx" />
+    <EmbeddedResource Include="ProgressForm.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterClean">
+    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2011\AdnRme.addin" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)AdnRme.addin" "$(AppData)\Autodesk\REVIT\Addins\2014"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

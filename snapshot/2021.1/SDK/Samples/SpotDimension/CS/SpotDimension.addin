@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>SpotDimension.dll</Assembly>
+    <ClientId>f11032af-f02b-47ad-9e19-330bb9c9988d</ClientId>
+    <FullClassName>Revit.SDK.Samples.SpotDimension.CS.Command</FullClassName>
+    <Text>Spot Dimension</Text>
+    <Description>Get all spot dimensions in all views and show their properties.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

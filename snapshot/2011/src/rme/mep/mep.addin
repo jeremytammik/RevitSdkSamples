@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Revit MEP Samples</Name>
+    <Assembly>C:\a\j\adn\train\revit\2011\src\rme\mep\bin\Debug\mep.dll</Assembly>
+    <FullClassName>mep.App</FullClassName>
+    <ClientId>ee9f66e1-3813-416e-8c03-ca53a75c8ac9</ClientId>
+  </AddIn>
+</RevitAddIns>

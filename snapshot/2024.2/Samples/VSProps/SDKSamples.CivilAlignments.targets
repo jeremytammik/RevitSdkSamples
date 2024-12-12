@@ -1,0 +1,52 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This target file is used for the entry projects (which implements the IExternalCommand, IExternalApplication and etc.) of Revit Addin.
+		It adds the way to create a signiture for the target file, which is required by Revit addin registry mechanism.
+	-->    
+  <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
+    <!--
+    Turn off warning CS1607 due to issues related to
+    64 bit compiler warnings for mscorlib.dll. This is known issue with
+    the CSC and AL .NET tools. They are incorrectly using the 32 bit
+    libraries when building. This is not, according to Microsoft, a fatal
+    warning and this workaround is the preferred solution.
+    -->
+    <NoWarn>1607</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(VersionInfo)">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup>
+    <MSLangTargets>$(MSBuildBinPath)\Microsoft.Csharp.targets</MSLangTargets>   
+  </PropertyGroup>  
+  <Import Project="$(MSLangTargets)" />  
+  <!-- Make sure the projects using this targets file rebuild if this file changes 
+       This must come after the import of the common targets -->
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2024\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2024\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAddInUtility">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2024\RevitAddInUtility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	    <Reference Include="Autodesk.CivilAlignments.DBApplication">
+      <HintPath>C:\Program Files\Autodesk\Revit 2024\Addins\CivilAlignments\Autodesk.CivilAlignments.DBApplication.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

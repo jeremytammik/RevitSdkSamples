@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>ValidateParameters.dll</Assembly>
+    <ClientId>b557782a-d0a0-4347-a847-5c8770a40603</ClientId>
+    <FullClassName>Revit.SDK.Samples.ValidateParameters.CS.Application</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ValidateParameters.dll</Assembly>
+    <ClientId>95cb6d1f-ac0e-4bcc-89df-471bb6e69117</ClientId>
+    <FullClassName>Revit.SDK.Samples.ValidateParameters.CS.Command</FullClassName>
+    <Text>ValidateParameters</Text>
+    <Description>This command will validate if every type has valid values for certain parameter</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

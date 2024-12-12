@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DisconnectPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DisconnectPanel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CaptionInformation" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="EditCircuit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditCircuit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPowerElements" xml:space="preserve">
+    <value>Please select elements first!</value>
+  </data>
+  <data name="CreateCircuit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreateCircuit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectPanel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddToCircuit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddToCircuit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemoveFromCircuit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveFromCircuit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FailedToAddElement" xml:space="preserve">
+    <value>Failed to add the selected element to Circuit. Please verify that The Number of Poles and Voltage for the selected element match the Number of Poles and Voltage for the Circuit.</value>
+  </data>
+  <data name="FailedToCreateCircuit" xml:space="preserve">
+    <value>Failed to create circuit with selected elements. Please verify that The Number of Poles and Voltage for selected elements match with each other.</value>
+  </data>
+  <data name="FailedToSelectPanel" xml:space="preserve">
+    <value>Failed to assign the selected element to the circuit. Please verify that The Number of Poles and Voltage for the selected element match the Number of Poles and Voltage for the Circuit.</value>
+  </data>
+  <data name="OperationFailed" xml:space="preserve">
+    <value>Operation Failed</value>
+  </data>
+  <data name="FailedToDisconnectPanel" xml:space="preserve">
+    <value>Failed to disconnect panel from the power circuit!</value>
+  </data>
+  <data name="FailedToRemoveElement" xml:space="preserve">
+    <value>Failed to remove selected element from the power circuit!</value>
+  </data>
+  <data name="ElementInCircuit" xml:space="preserve">
+    <value>Selected element has already been included in the circuit!</value>
+  </data>
+  <data name="ElementNotInCircuit" xml:space="preserve">
+    <value> The circuit does not include the selected element!</value>
+  </data>
+  <data name="NoUsableConnector" xml:space="preserve">
+    <value>Selected element has no unused electrical connector!</value>
+  </data>
+  <data name="SelectElectricalComponent" xml:space="preserve">
+    <value>Selected element is not electrical!</value>
+  </data>
+  <data name="tipAddToCircuit" xml:space="preserve">
+    <value>Add to Circuit</value>
+  </data>
+  <data name="tipCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="tipCreateCircuit" xml:space="preserve">
+    <value>Create Power Circuit</value>
+  </data>
+  <data name="tipDisconnectPanel" xml:space="preserve">
+    <value>Disconnect Panel from Circuit</value>
+  </data>
+  <data name="tipEditCircuit" xml:space="preserve">
+    <value>Edit Circuit</value>
+  </data>
+  <data name="tipRemoveFromCircuit" xml:space="preserve">
+    <value>Remove from circuit</value>
+  </data>
+  <data name="tipSelectPanel" xml:space="preserve">
+    <value>Select a Panel for the Circuit</value>
+  </data>
+  <data name="NullActiveDocument" xml:space="preserve">
+    <value>Active document is null.</value>
+  </data>
+</root>

@@ -1,0 +1,338 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="stylesheet" href="ac.acad_ak.css" type="text/css"/>
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Create Loft Form</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs7-2.htm">next</a>
+<a class="j" href="labs6-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this lab, we shall create a simple loft form using the new conceptual
+design API as shown in the image below -</p>
+<img src="img/labs7-1-01.jpg" alt="New Loft Form"/>
+
+<p>To begin with, we have to be in Family creation environment in Revit
+and specifically, the active document should be the conceptual massing template file.</p>
+
+<pre title="C# Lab7_1_CreateLoftForm command skeleton" class="jtcollapse">
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+using Autodesk.Revit;
+using Autodesk.Revit.Geometry;
+using Autodesk.Revit.Elements;
+using Autodesk.Revit.Enums;
+
+namespace Labs
+{
+  /// &lt;summary&gt;
+  /// Create a loft form using reference points and curve by points.
+  /// &lt;/summary&gt;
+  public class Lab7_1_CreateForm : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements)
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      if (doc.IsFamilyDocument && doc.OwnerFamily.FamilyCategory.Name.Equals("Mass"))
+      {
+        . . .
+
+        return IExternalCommand.Result.Succeeded;
+      }
+      else
+      {
+        System.Windows.Forms.MessageBox.Show("Please load a conceptual massing family document!");
+        return IExternalCommand.Result.Failed;
+      }
+    }
+  }
+}
+</pre>
+
+<pre title="VB Lab7_1_CreateLoftForm command skeleton" class="jtcollapse">
+Imports System
+Imports System.Collections.Generic
+Imports Autodesk.Revit
+Imports Autodesk.Revit.Geometry
+Imports Autodesk.Revit.Elements
+Imports Autodesk.Revit.Enums
+Imports XYZ2 = Autodesk.Revit.Geometry.XYZ
+
+Namespace Labs
+
+#Region "Lab7_1_CreateForm"
+    Public Class Lab7_1_CreateForm
+        Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+
+            Dim app As Application = commandData.Application
+            Dim doc As Document = app.ActiveDocument
+
+            If (doc.IsFamilyDocument And doc.OwnerFamily.FamilyCategory.Name.Equals("Mass")) Then
+
+                . . .
+
+                Return IExternalCommand.Result.Succeeded
+            Else
+                System.Windows.Forms.MessageBox.Show("Please load a conceptual massing family document!")
+                Return IExternalCommand.Result.Failed
+            End If
+        End Function
+    End Class
+#End Region
+</pre>
+
+<p>Next, we shall create an instance of <code>ReferenceArrayArray</code> object which will
+contain all the reference arrays of profiles. The form will eventually be comprised of
+these profiles. To begin with creating the first profile, we shall create an instance of
+the <code>ReferenceArray</code> which will be appended to the <code>ReferenceArrayArray</code> collection.
+Using the <code>Autodesk.Revit.Geometry.XYZ</code> class, we specify three points which will be
+used to create respective three reference points. These reference points will be
+appended in a <code>ReferencePointArray</code> collection and using this collection, we shall create
+a <code>CurveByPoints</code> object. This reference of the geometry curve property of this curve will be
+appended to the <code>ReferenceArray</code> which eventually will be appended to the
+<code>ReferenceArrayArray</code> collection.</p>
+
+<p>Add the following code to create curve by points and reference arrays:</p>
+
+<pre title="C# Create Profile" class="jtcollapse">
+  // Create profiles array
+  ReferenceArrayArray ref_ar_ar = new ReferenceArrayArray();
+
+  // Create first profile
+  ReferenceArray ref_ar = new ReferenceArray();
+
+  int y = 100;
+  int x = 50;
+  XYZ ptA = new XYZ(-x, y, 0);
+  XYZ ptB = new XYZ(x, y, 0);
+  XYZ ptC = new XYZ(0, y + 10, 10);
+  CurveByPoints curve = FormUtils.MakeCurve(app, ptA, ptB, ptC);
+  ref_ar.Append(curve.GeometryCurve.Reference);
+  ref_ar_ar.Append(ref_ar);
+</pre>
+
+<pre title="VB Create Profile" class="jtcollapse">
+    ' Create profiles array
+    Dim ref_ar_ar As New ReferenceArrayArray()
+
+    ' Create first profile
+    Dim ref_ar As New ReferenceArray()
+
+    Dim y As Integer = 100
+    Dim x As Integer = 50
+    Dim ptA As New XYZ2(-x, y, 0)
+    Dim ptB As New XYZ2(x, y, 0)
+    Dim ptC As New XYZ2(0, y + 10, 10)
+    Dim curve As CurveByPoints = FormUtils.MakeCurve(app, ptA, ptB, ptC)
+    ref_ar.Append(curve.GeometryCurve.Reference)
+    ref_ar_ar.Append(ref_ar)
+</pre>
+
+<p>Curve By Points object (created in the utility module in the piece of code above) can be created out of new
+instances of reference points each corresponding to the XYZ points and storing these reference points in the
+<code>ReferencePointArray</code>. This collection can be used an an argument in the <code>NewCurveByPoints</code>
+creation method available on the <code>FamilyCreate</code> method on the active document.</p>
+
+<pre title="C# Make Curve" class="jtcollapse">
+  /// &lt;summary&gt;
+  /// This class is utility class for form creation.
+  /// &lt;/summary&gt;
+  public class FormUtils
+  {
+    /// &lt;summary&gt;
+    /// Create a CurveByPoints element by three points
+    /// &lt;/summary>
+    /// &lt;param name="app"&gt;Revit application&lt;/param&gt;
+    /// &lt;param name="ptA"&gt;point a&lt;/param&gt;
+    /// &lt;param name="ptB"&gt;point b&lt;/param&gt;
+    /// &lt;param name="ptC"&gt;point c&lt;/param&gt;
+    /// &lt;returns&gt;CurveByPoints instance&lt;/returns&gt;
+    public static CurveByPoints MakeCurve(Application app, XYZ ptA, XYZ ptB, XYZ ptC)
+    {
+      Document doc = app.ActiveDocument;
+      ReferencePoint refPtA = doc.FamilyCreate.NewReferencePoint(ptA);
+      ReferencePoint refPtB = doc.FamilyCreate.NewReferencePoint(ptB);
+      ReferencePoint refPtC = doc.FamilyCreate.NewReferencePoint(ptC);
+
+      ReferencePointArray refPtsArray = new ReferencePointArray();
+      refPtsArray.Append(refPtA);
+      refPtsArray.Append(refPtB);
+      refPtsArray.Append(refPtC);
+
+      CurveByPoints curve = doc.FamilyCreate.NewCurveByPoints(refPtsArray);
+      return curve;
+    }
+  }
+</pre>
+
+<pre title="VB Make Curve" class="jtcollapse">
+    ''' &lt;summary&gt;
+    ''' This class is utility class for form creation.
+    ''' &lt;/summary&gt;
+    Public Class FormUtils
+
+        ' Create curve by points element by three points
+        Public Shared Function MakeCurve( _
+            ByVal app As Application, _
+            ByVal ptA As XYZ2, _
+            ByVal ptB As XYZ2, _
+            ByVal ptC As XYZ2) _
+        As CurveByPoints
+            Dim doc As Document = app.ActiveDocument
+            Dim refPtA As ReferencePoint = doc.FamilyCreate.NewReferencePoint(ptA)
+            Dim refPtB As ReferencePoint = doc.FamilyCreate.NewReferencePoint(ptB)
+            Dim refPtC As ReferencePoint = doc.FamilyCreate.NewReferencePoint(ptC)
+
+            Dim refPtsArray As ReferencePointArray = New ReferencePointArray()
+            refPtsArray.Append(refPtA)
+            refPtsArray.Append(refPtB)
+            refPtsArray.Append(refPtC)
+
+            Dim curve As CurveByPoints = doc.FamilyCreate.NewCurveByPoints(refPtsArray)
+
+            Return curve
+        End Function
+
+    End Class
+</pre>
+
+<p>Repeat the steps for profile creation for three other profiles</p>
+
+<pre title="C# Create profiles" class="jtcollapse">
+  // Create second profile
+  ref_ar = new ReferenceArray();
+
+  y = 40;
+  ptA = new XYZ(-x, y, 5);
+  ptB = new XYZ(x, y, 5);
+  ptC = new XYZ(0, y, 25);
+  curve = FormUtils.MakeCurve(app, ptA, ptB, ptC);
+  ref_ar.Append(curve.GeometryCurve.Reference);
+  ref_ar_ar.Append(ref_ar);
+
+  // Create third profile
+  ref_ar = new ReferenceArray();
+
+  y = -20;
+  ptA = new XYZ(-x, y, 0);
+  ptB = new XYZ(x, y, 0);
+  ptC = new XYZ(0, y, 15);
+  curve = FormUtils.MakeCurve(app, ptA, ptB, ptC);
+  ref_ar.Append(curve.GeometryCurve.Reference);
+  ref_ar_ar.Append(ref_ar);
+
+  // Create fourth profile
+  ref_ar = new ReferenceArray();
+
+  y = -60;
+  ptA = new XYZ(-x, y, 0);
+  ptB = new XYZ(x, y, 0);
+  ptC = new XYZ(0, y + 10, 20);
+  curve = FormUtils.MakeCurve(app, ptA, ptB, ptC);
+  ref_ar.Append(curve.GeometryCurve.Reference);
+  ref_ar_ar.Append(ref_ar);
+</pre>
+
+<pre title="VB Create Profiles" class="jtcollapse">
+    ' Create second profile
+    ref_ar = New ReferenceArray()
+
+    y = 40
+    ptA = New XYZ2(-x, y, 5)
+    ptB = New XYZ2(x, y, 5)
+    ptC = New XYZ2(0, y, 25)
+    curve = FormUtils.MakeCurve(app, ptA, ptB, ptC)
+    ref_ar.Append(curve.GeometryCurve.Reference)
+    ref_ar_ar.Append(ref_ar)
+
+    ' Create third profile
+    ref_ar = New ReferenceArray()
+
+    y = -20
+    ptA = New XYZ2(-x, y, 0)
+    ptB = New XYZ2(x, y, 0)
+    ptC = New XYZ2(0, y, 15)
+    curve = FormUtils.MakeCurve(app, ptA, ptB, ptC)
+    ref_ar.Append(curve.GeometryCurve.Reference)
+    ref_ar_ar.Append(ref_ar)
+
+    ' Create fourth profile
+    ref_ar = New ReferenceArray()
+
+    y = -60
+    ptA = New XYZ2(-x, y, 0)
+    ptB = New XYZ2(x, y, 0)
+    ptC = New XYZ2(0, y + 10, 20)
+    curve = FormUtils.MakeCurve(app, ptA, ptB, ptC)
+    ref_ar.Append(curve.GeometryCurve.Reference)
+    ref_ar_ar.Append(ref_ar)
+</pre>
+
+<p>Finally, we can use this <code>ReferenceArrayArray</code> to create the
+new loft form. This form can be created using the
+<code>FamilyCreate.NewLoftForm</code> method available on the document object.</p>
+
+<pre title="C# NewLoftForm Method" class="jtcollapse">
+  Form form = doc.FamilyCreate.NewLoftForm(true, ref_ar_ar);
+  return IExternalCommand.Result.Succeeded;
+</pre>
+
+<pre title="VB Parameter utilities" class="jtcollapse">
+    Dim form As Form = doc.FamilyCreate.NewLoftForm(True, ref_ar_ar)
+    Return IExternalCommand.Result.Succeeded
+</pre>
+
+<p>Compile the code, start Revit, open the new conceptual mass family
+template and run the external command.</p>
+
+<a class="j" href="labs7-2.htm">next</a>
+<a class="j" href="labs6-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

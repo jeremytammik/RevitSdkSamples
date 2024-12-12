@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateViewSection.dll</Assembly>
+    <ClientId>c5a6c410-17b1-4e92-b78d-306f6e24ed23</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateViewSection.CS.Command</FullClassName>
+    <Text>Create view section</Text>
+    <Description>Create a section view across the mid point of the selected wall, floor or beam</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>CreateViewSection.dll</Assembly>
+    <ClientId>29b8d8aa-48cc-4a36-aee6-96e704aaec38</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateViewSection.CS.CreateDraftingView</FullClassName>
+    <Text>Create drafting view</Text>
+    <Description>Create a new empty drafting view</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>SinePlotter</Name>
+    <Assembly>[AddIn Dll Location]\SinePlotter.dll</Assembly>
+    <AddInId>7ffe9331-9583-49da-8037-9c7873970219</AddInId>
+    <FullClassName>Revit.SDK.Samples.SinePlotter.CS.Application</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

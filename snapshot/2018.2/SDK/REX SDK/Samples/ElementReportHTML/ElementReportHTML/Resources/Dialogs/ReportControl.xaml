@@ -1,0 +1,22 @@
+<rexf:REXExtensionControl x:Class="REX.ElementReportHTML.Resources.Dialogs.ReportControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:rexf="clr-namespace:REX.Common;assembly=REX.Foundation.WPF"
+    xmlns:rexc="clr-namespace:REX.Controls.WPF;assembly=REX.Controls.WPF" Width="500" Height="300">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>            
+        </Grid.ColumnDefinitions>
+        <ToolBar Grid.Row="0" Background="White">
+            <Button Name="ToolStripButtonSave" Click="ToolStripButtonSave_Click">
+                <Image Source="..\other\images\toolbar_save.png" Stretch="None"/>
+            </Button>            
+        </ToolBar>
+        <WebBrowser x:Name="webBrowser" Grid.Row="1">            
+        </WebBrowser>
+    </Grid>
+</rexf:REXExtensionControl>

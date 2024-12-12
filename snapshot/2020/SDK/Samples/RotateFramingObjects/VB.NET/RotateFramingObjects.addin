@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>RotateFramingObjects.dll</Assembly>
+    <ClientId>beb5115d-b4ff-4032-9bba-ef8f13899006</ClientId>
+    <FullClassName>Revit.SDK.Samples.RotateFramingObjects.VB.NET.RotateFramingObjects</FullClassName>
+    <Text>Rotate Framing Objects (VB)</Text>
+    <Description>Rotate selected objects, such as beams, braces and columns.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,31 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SlabShapeEditingForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SlabShapeEditingForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+</Project>

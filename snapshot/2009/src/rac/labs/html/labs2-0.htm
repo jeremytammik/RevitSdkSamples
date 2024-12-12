@@ -1,0 +1,540 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Creating a Little House</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs2-1.htm">next</a>
+<a class="j" href="labs1-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this Lab, we create a simple building
+containing four walls, two windows,
+one door, one floor, a roof and a room.
+External commands in the following
+other labs can run on this model.
+This lab needs to make use of some features
+which will not be discussed fully until later on, such as parameter access.</p>
+
+<img src="img/Labs2-0-01.jpg" alt="The target little house"/>
+
+<p>In preparation for the lab, we create a utility class
+<code>LabUtils</code> in a separate file LabUtils,
+which is used to include all reusable helper functions.
+In the following labs,
+further utilities will be added to this class.
+Here is the class definition and namespace:</p>
+
+<pre title="C# LabUtils class skeleton" class="jtcollapse">    using System;
+    using System.Collections;
+    using System.Diagnostics;
+    using System.IO;
+    using Autodesk.Revit;
+    using Autodesk.Revit.Elements;
+    using Geo = Autodesk.Revit.Geometry;
+    using Autodesk.Revit.Parameters;
+    using Autodesk.Revit.Symbols;
+
+    namespace Labs
+    {
+      class LabUtils
+      {
+      }
+    }
+</pre>
+
+<pre title="VB LabUtils class skeleton" class="jtcollapse">
+    Imports System
+    Imports System.Collections
+    Imports System.Diagnostics
+    Imports System.IO
+    Imports Autodesk.Revit
+    Imports Autodesk.Revit.Elements
+    Imports Geo = Autodesk.Revit.Geometry
+    Imports Autodesk.Revit.Parameters
+    Imports Autodesk.Revit.Symbols
+
+    Namespace Labs
+        Public Class LabUtils
+
+        End Class
+    End Namespace
+</pre>
+
+<p>
+To create walls, a top and bottom level are needed. We add a helper
+function <code>GetBottomAndTopLevels</code> to the <code>LabUtils</code>
+class to get two levels.
+It takes advantage of filters to quickly obtain Levels of the document.
+In a loop, two Levels are retrieved.
+The level with bigger elevation value is the top level,
+and the other level is the bottom level.</p>
+
+<pre title="C# LabUtils_GetBottomAndTopLevels command skeleton" class="jtcollapse">    ///C# code
+    /// Determine bottom and top levels for creating walls.
+    /// In a default empty Revit Architecture 2009 project,
+    /// 'Level 1' and 'Level 2' will be returned.
+    ///
+    /// True is the two levels are successfully determined.
+    public static bool GetBottomAndTopLevels(
+      Application app,
+      ref Level levelBottom,
+      ref Level levelTop )
+    {
+      Document doc = app.ActiveDocument;
+      Autodesk.Revit.Creation.Application creApp = app.Create;
+      List&lt;Element&gt; levels = new List&lt;Element&gt;();
+      Filter filterType = creApp.Filter.NewTypeFilter( typeof( Level ) );
+      doc.get_Elements( filterType, levels );
+      foreach( Element e in levels )
+      {
+        if( null == levelBottom )
+        {
+          levelBottom = e as Level;
+        }
+        else if( null == levelTop )
+        {
+          levelTop = e as Level;
+        }
+        else
+        {
+          break;
+        }
+      }
+      if( levelTop.Elevation &lt; levelBottom.Elevation )
+      {
+        Level tmp = levelTop;
+        levelTop = levelBottom;
+        levelBottom = tmp;
+      }
+      return null != levelBottom && null != levelTop;
+    }
+    </pre>
+
+<pre title="VB LabUtils_GetBottomAndTopLevels command skeleton" class="jtcollapse">    '''True is the two levels are successfully determined
+    Public Shared Function GetBottomAndTopLevels( _
+        ByVal app As Application, ByRef levelBottom As Level, ByRef levelTop As Level _
+        ) As Boolean
+        Dim doc As Document = app.ActiveDocument
+        Dim creApp As Autodesk.Revit.Creation.Application = app.Create
+        Dim levels As New List(Of Element)
+
+        Dim filterType As Filter = creApp.Filter.NewTypeFilter(GetType(Level))
+        Dim nRetVal As Integer = doc.Elements(filterType, levels)
+        Dim e As Element
+        For Each e In levels
+            If levelBottom Is Nothing Then
+                levelBottom = CType(e, Level)
+            ElseIf levelTop Is Nothing Then
+                levelTop = CType(e, Level)
+            Else
+                Exit For
+            End If
+        Next
+        If levelTop.Elevation &lt; levelBottom.Elevation Then
+            Dim tmp As Level = levelTop
+            levelTop = levelBottom
+            levelBottom = tmp
+        End If
+        Return Not (levelBottom Is Nothing) And Not (levelTop Is Nothing)
+    End Function
+</pre>
+
+<p>Add a new external command to the file <b>Labs2</b>
+and implement a class <code>Lab2_0_CreateLittleHouse</code> derived from
+<code>IExternalCommand</code> to it.
+In the first stage, define four points, which form the four corners of a rectangle.
+Walls will be created along the rectangle.
+They are created by the <code>Document.NewWall()</code> method.</p>
+
+<pre title="C# Lab2_0_CreateLittleHouse wall implementation" class="jtcollapse">
+#region Namespaces
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using Autodesk.Revit;
+using Autodesk.Revit.Elements;
+using Autodesk.Revit.Enums;
+using Geo = Autodesk.Revit.Geometry;
+using Autodesk.Revit.Parameters;
+using Autodesk.Revit.Structural.Enums;
+using Autodesk.Revit.Symbols;
+using CmdResult = Autodesk.Revit.IExternalCommand.Result;
+using Line = Autodesk.Revit.Geometry.Line;
+using UV = Autodesk.Revit.Geometry.UV;
+using XYZ = Autodesk.Revit.Geometry.XYZ;
+using XYZArray = Autodesk.Revit.Geometry.XYZArray;
+#endregion // Namespaces
+
+namespace Labs
+{
+  #region Lab2_0_CreateLittleHouse
+  /// &lt;summary&gt;
+  /// Create some sample elements.
+  /// We create a simple building consisting of four walls,
+  /// a door, two windows, a floor, a roof, a room and a room tag.
+  /// &lt;/summary&gt;
+  public class Lab2_0_CreateLittleHouse : IExternalCommand
+  {
+    Autodesk.Revit.Creation.Application _createApp;
+    Autodesk.Revit.Creation.Document _createDoc;
+
+    public CmdResult Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      try
+      {
+        WaitCursor waitCursor = new WaitCursor();
+        Application app = commandData.Application;
+        Document doc = app.ActiveDocument;
+        _createApp = app.Create;
+        _createDoc = doc.Create;
+        //
+        // determine the four corners of the rectangular house:
+        //
+        double width = 7 * LabConstants.MeterToFeet;
+        double depth = 4 * LabConstants.MeterToFeet;
+        List&lt;XYZ&gt; corners = new List&lt;XYZ&gt;( 4 );
+        corners.Add( new XYZ( 0, 0, 0 ) );
+        corners.Add( new XYZ( width, 0, 0 ) );
+        corners.Add( new XYZ( width, depth, 0 ) );
+        corners.Add( new XYZ( 0, depth, 0 ) );
+        //
+        // determine the levels where the walls will be located:
+        //
+        Level levelBottom = null;
+        Level levelTop = null;
+        if( !LabUtils.GetBottomAndTopLevels( app, ref levelBottom, ref levelTop ) )
+        {
+          message = "Unable to determine wall bottom and top levels";
+          return CmdResult.Failed;
+        }
+        Debug.Print(String.Format("Drawing walls on '{0}' up to '{1}'", _
+          levelBottom.Name, levelTop.Name))
+        //
+        // create the walls:
+        //
+        BuiltInParameter topLevelParam = BuiltInParameter.WALL_HEIGHT_TYPE;
+        ElementId topLevelId = levelTop.Id;
+        List&lt;Wall&gt; walls = new List&lt;Wall&gt;( 4 );
+        for( int i = 0; i &lt; 4; ++i )
+        {
+          Geo.Line line = _createApp.NewLineBound( corners[i], corners[3 == i ? 0 : i + 1] );
+          Wall wall = _createDoc.NewWall( line, levelBottom, false );
+          Parameter param = wall.get_Parameter( topLevelParam );
+          param.Set( ref topLevelId );
+          walls.Add( wall );
+        }
+        // determine wall thickness for tag offset and profile growth:
+        double wallThickness = walls[0].WallType.CompoundStructure.Layers.get_Item( 0 ).Thickness;
+
+        //
+        // add door and windows to the first wall;
+
+        //
+        // add floor , roof and room
+        //
+
+        return CmdResult.Succeeded;
+      }
+      catch( Exception ex )
+      {
+        message = ex.Message;
+        return CmdResult.Failed;
+      }
+    }
+  }
+  #endregion // Lab2_0_CreateLittleHouse
+}
+
+</pre>
+
+<pre title="VB Lab2_0_CreateLittleHouse wall implementation" class="jtcollapse"> #Region "Lab2_0_CreateLittleHouse"
+    ''' &lt;summary&gt;
+    ''' Create some sample elements.
+    ''' We create a simple building consisting of four walls,
+    ''' a door, two windows, a floor, a roof, a room and a room tag.
+    ''' &lt;/summary&gt;
+    Public Class Lab2_0_CreateLittleHouse
+        Implements IExternalCommand
+
+
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+
+            Try
+                Dim waitCursor As New Labs.WaitCursor
+                Dim app As Application = commandData.Application
+                Dim doc As Document = app.ActiveDocument
+                Dim creApp As Autodesk.Revit.Creation.Application = app.Create
+                Dim creDoc As Autodesk.Revit.Creation.Document = doc.Create
+                '
+                ' determine the four corners of the rectangular house:
+                '
+                Dim width As Double = 7 * LabConstants.MeterToFeet
+                Dim depth As Double = 4 * LabConstants.MeterToFeet
+
+                Dim corners As List(Of Geometry.XYZ) = New List(Of Geometry.XYZ)(4)
+                corners.Add(New Geometry.XYZ(0, 0, 0))
+                corners.Add(New Geometry.XYZ(width, 0, 0))
+                corners.Add(New Geometry.XYZ(width, depth, 0))
+                corners.Add(New Geometry.XYZ(0, depth, 0))
+                '
+                'determine the levels where the walls will be located:
+                '
+                Dim levelBottom As Level = Nothing
+                Dim levelTop As Level = Nothing
+                If Not LabUtils.GetBottomAndTopLevels(app, levelBottom, levelTop) Then
+                    message = "Unable to determine wall bottom and top levels"
+                    Return IExternalCommand.Result.Failed
+                End If
+                Debug.Print(String.Format("Drawing walls on '{0}' up to '{1}'", _
+                  levelBottom.Name, levelTop.Name))
+                '
+                ' Create the walls
+                '
+                Dim topLevelParam As BuiltInParameter = BuiltInParameter.WALL_HEIGHT_TYPE
+                Dim topLevelId As ElementId = levelTop.Id
+                Dim walls As List(Of Wall) = New List(Of Wall)(4)
+                Dim i As Integer
+                For i = 0 To 4 - 1 Step +1
+                    Dim line As Line = creApp.NewLineBound(corners(i), corners(IIf(3 = i, 0, i + 1)))
+
+                    Dim wall As Wall = creDoc.NewWall(line, levelBottom, False)
+                    Dim param As Parameter = wall.Parameter(topLevelParam)
+                    param.Set(topLevelId)
+                    walls.Add(wall)
+                Next
+
+                '
+                ' add door and windows to the first wall;
+
+                '
+                ' add the floor , roof and room
+                '
+                Catch ex As Exception
+                    message = ex.Message
+                Return IExternalCommand.Result.Failed
+            End Try
+        End Function
+    End Class
+#End Region
+</pre>
+
+<p>Next, create a door and two windows in the south wall.
+They are created using the <code>NewFamilyInstance</code> method.
+The door is located in the middle of the wall,
+two windows symmetrically at each side of it.
+When calling the <code>NewFamilyInstance</code> method,
+assign the south wall as the host of the door and the two windows.</p>
+
+<pre title="C# Lab2_0_CreateLittleHouse door and windows implementation" class="jtcollapse">
+    //
+    // add door and windows to the first wall;
+    // note that the NewFamilyInstance() api method does not automatically add door
+    // and window tags, like the ui command does. we add tags here by making additional calls
+    // to NewTag():
+    //
+    List&lt;Element&gt; doorSymbols = LabUtils.GetAllFamilySymbols( app, BuiltInCategory.OST_Doors );
+    List&lt;Element&gt; windowSymbols = LabUtils.GetAllFamilySymbols( app, BuiltInCategory.OST_Windows );
+    Debug.Assert( 0 &lt; doorSymbols.Count, "expected at least one door symbol to be loaded into project" );
+    Debug.Assert( 0 &lt; windowSymbols.Count, "expected at least one window symbol to be loaded into project" );
+    FamilySymbol door = doorSymbols[0] as FamilySymbol;
+    FamilySymbol window = windowSymbols[0] as FamilySymbol;
+    XYZ midpoint = LabUtils.Midpoint( corners[0], corners[1] );
+    XYZ p = LabUtils.Midpoint( corners[0], midpoint );
+    XYZ q = LabUtils.Midpoint( midpoint, corners[1] );
+    double tagOffset = 3 * wallThickness;
+    //double windowHeight = 1 * LabConstants.MeterToFeet;
+    double windowHeight = levelBottom.Elevation + 0.3 * ( levelTop.Elevation - levelBottom.Elevation );
+    p.Z = q.Z = windowHeight;
+    View view = doc.ActiveView;
+    FamilyInstance inst = _createDoc.NewFamilyInstance(
+      midpoint, door, walls[0], levelBottom, StructuralType.NonStructural );
+    midpoint.Y = midpoint.Y + tagOffset;
+    IndependentTag tag = _createDoc.NewTag(
+      view, inst, false, TagMode.TM_ADDBY_CATEGORY, TagOrientation.TAG_HORIZONTAL, midpoint );
+    inst = _createDoc.NewFamilyInstance( p, window, walls[0], levelBottom, StructuralType.NonStructural );
+    p.Y = p.Y + tagOffset;
+    tag = _createDoc.NewTag( view, inst, false, TagMode.TM_ADDBY_CATEGORY, TagOrientation.TAG_HORIZONTAL, p );
+    inst = _createDoc.NewFamilyInstance( q, window, walls[0], levelBottom, StructuralType.NonStructural );
+    q.Y = q.Y + tagOffset;
+    tag = _createDoc.NewTag( view, inst, false, TagMode.TM_ADDBY_CATEGORY, TagOrientation.TAG_HORIZONTAL, q );
+</pre>
+
+<pre title="VB Lab2_0_CreateLittleHouse door and windowsimplementation" class="jtcollapse">
+    '
+    ' Add door and windows to the first wall:
+    '
+    Dim doorSymbols As List(Of Element) = LabUtils.GetAllFamilySymbols(app, BuiltInCategory.OST_Doors)
+    Dim windowSymbols As List(Of Element) = LabUtils.GetAllFamilySymbols(app, BuiltInCategory.OST_Windows)
+    Debug.Assert(0 &lt; doorSymbols.Count, "expected at least one door symbol to be loaded into project")
+    Debug.Assert(0 &lt; windowSymbols.Count, "expected at least one window symbol to be loaded into project")
+    Dim door As FamilySymbol = CType(doorSymbols(0), FamilySymbol)
+    Dim window As FamilySymbol = CType(windowSymbols(0), FamilySymbol)
+    Dim midpoint As Geometry.XYZ = LabUtils.Midpoint(corners(0), corners(1))
+    Dim p As Geometry.XYZ = LabUtils.Midpoint(corners(0), midpoint)
+    Dim q As Geometry.XYZ = LabUtils.Midpoint(midpoint, corners(1))
+    'double h = 1 * LabConstants.MeterToFeet;
+    Dim h As Double = levelBottom.Elevation + 0.3 * (levelTop.Elevation - levelBottom.Elevation)
+    p.Z = h
+    q.Z = h
+    Dim inst As FamilyInstance = creDoc.NewFamilyInstance( _
+      midpoint, door, walls(0), levelBottom, StructuralType.NonStructural)
+    inst = creDoc.NewFamilyInstance(p, window, walls(0), levelBottom, StructuralType.NonStructural)
+    inst = creDoc.NewFamilyInstance(q, window, walls(0), levelBottom, StructuralType.NonStructural)
+</pre>
+
+<p>Next, we create a floor, roof and room.
+Please notice the sloped footprint roof.
+We can set the slope for each side to create a realistically sloped footprint roof
+using the <code>SlopeAngle()</code> and <code>DefinesSlope()</code> methods.</p>
+
+<pre title="C# Lab2_0_CreateLittleHouseFloor roof and room implementation" class="jtcollapse">
+    //
+    // grow the profile out by half the wall thickness,
+    // so the floor and roof do not stop halfway through the wall:
+    //
+    double w = 0.5 * wallThickness;
+    corners[0].X -= w;
+    corners[0].Y -= w;
+    corners[1].X += w;
+    corners[1].Y -= w;
+    corners[2].X += w;
+    corners[2].Y += w;
+    corners[3].X -= w;
+    corners[3].Y += w;
+    Geo.CurveArray profile = new Geo.CurveArray();
+    for( int i = 0; i &lt; 4; ++i )
+    {
+      Geo.Line line = _createApp.NewLineBound( corners[i], corners[3 == i ? 0 : i + 1] );
+      profile.Append( line );
+    }
+    //
+    // add a floor, a roof, the roof slope, a room and a room tag:
+    //
+    bool structural = false;
+    Floor floor = _createDoc.NewFloor( profile, structural );
+    List&lt;Element&gt; roofTypes = LabUtils.GetAllTypes(
+        app, typeof( RoofType ), BuiltInCategory.OST_Roofs );
+    Debug.Assert( 0 &lt; roofTypes.Count, "expected at least one roof type to be loaded into project" );
+    RoofType roofType = roofTypes[0] as RoofType;
+    ElementIdSet footPrintToModelCurvesMapping = new ElementIdSet();
+    FootPrintRoof roof = _createDoc.NewFootPrintRoof(
+        profile, levelTop, roofType, footPrintToModelCurvesMapping );
+    double slopeAngle = 30 * LabConstants.DegreesToRadians;
+    foreach( ElementId id in footPrintToModelCurvesMapping )
+    {
+      ElementId id2 = id;
+      ModelCurve line = doc.get_Element( ref id2 ) as ModelCurve;
+      roof.set_DefinesSlope( line, true );
+      roof.set_SlopeAngle( line, slopeAngle );
+    }
+    Room room = _createDoc.NewRoom( levelBottom, new UV( 0.5 * width, 0.5 * depth ) );
+    RoomTag roomTag = _createDoc.NewRoomTag( room, new UV( 0.5 * width, 0.7 * depth ), null );
+</pre>
+
+<pre title="VB Lab2_0_CreateLittleHouseFloor roof and room implementation" class="jtcollapse">
+    '
+    ' determine wall thickness and grow the profile out by half the wall thickness,
+    ' so the floor and roof do not stop halfway through the wall:
+    '
+    Dim thickness As Double = walls(0).WallType.CompoundStructure.Layers.Item(0).Thickness
+    Dim w As Double = 0.5 * thickness
+    corners(0).X -= w
+    corners(0).Y -= w
+    corners(1).X += w
+    corners(1).Y -= w
+    corners(2).X += w
+    corners(2).Y += w
+    corners(3).X -= w
+    corners(3).Y += w
+    Dim profile As New CurveArray()
+    For i = 0 To 4 - 1 Step +1
+        Dim line As Line = creApp.NewLineBound(corners(i), corners(IIf(3 = i, 0, i + 1)))
+        profile.Append(line)
+    Next
+    '
+    ' add a floor, a roof, a room and a room tag:
+    '
+    Dim structural As Boolean = False
+    Dim floor As Floor = creDoc.NewFloor(profile, structural)
+    '
+    ' add a roof.
+    '
+    Dim roofTypes As List(Of Element) = LabUtils.GetAllTypes(app, GetType(RoofType), BuiltInCategory.OST_Roofs)
+    Debug.Assert(0 &lt; roofTypes.Count, "expected at least one roof type to be loaded into project")
+    Dim roofType As RoofType = CType(roofTypes(0), RoofType)
+
+    Dim footPrintToModelCurvesMapping As ElementIdSet = New ElementIdSet
+    Dim roof As FootPrintRoof = creDoc.NewFootPrintRoof(profile, levelTop, roofType, footPrintToModelCurvesMapping)
+    Dim slopeAngle As Double = 30 * LabConstants.DegreesToRadians
+
+    For Each id As ElementId In footPrintToModelCurvesMapping
+        Dim id2 As ElementId = id
+        Dim line As ModelCurve = doc.Element(id2)
+        roof.DefinesSlope(line) = True
+        roof.SlopeAngle(line) = slopeAngle
+    Next
+    '
+    ' create a room.
+    '
+    Dim room As Room = creDoc.NewRoom( _
+        levelBottom, New Autodesk.Revit.Geometry.UV(0.5 * width, 0.5 * depth))
+    '
+    ' add a room tag.
+    '
+    Dim roomTag As RoomTag = creDoc.NewRoomTag( _
+        room, New Autodesk.Revit.Geometry.UV(0.5 * width, 0.7 * depth), Nothing)
+</pre>
+
+<p>Compile and link the project and update the Revit.ini file accordingly.
+Run the command and examine and discuss the information
+displayed with the course instructor and your peers.</p>
+
+<a class="j" href="labs2-1.htm">next</a>
+<a class="j" href="labs1-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j">copyright &copy; 2007-2008 jeremy tammik, autodesk inc. all rights reserved.</span>
+
+</body>
+</html>

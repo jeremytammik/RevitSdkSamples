@@ -1,0 +1,141 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF08ADB8-FD42-4055-86E5-062DFDA61B02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mep</RootNamespace>
+    <AssemblyName>mep</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>mep.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=2009.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Revit Architecture 2009\Program\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App.cs" />
+    <Compile Include="Bip.cs" />
+    <Compile Include="CmdAbout.cs" />
+    <Compile Include="CmdAssignFlowToTerminals.cs" />
+    <Compile Include="CmdChangeSize.cs" />
+    <Compile Include="CmdInspectElectricalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdInspectElectricalForm.Designer.cs">
+      <DependentUpon>CmdInspectElectricalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdElectricalSystemBrowser.cs" />
+    <Compile Include="CmdElectricalHierarchy2.cs" />
+    <Compile Include="CmdInspectElectricallForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdInspectElectricallForm2.designer.cs">
+      <DependentUpon>CmdInspectElectricallForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdPopulateCfmPerSf.cs" />
+    <Compile Include="CmdResetDemo.cs" />
+    <Compile Include="CmdUnhostedElements.cs" />
+    <Compile Include="Const.cs" />
+    <Compile Include="FamilySelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FamilySelector.Designer.cs">
+      <DependentUpon>FamilySelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelTreeNodeHelper.cs" />
+    <Compile Include="ParameterName.cs" />
+    <Compile Include="ParameterValue.cs" />
+    <Compile Include="ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressForm.Designer.cs">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Compile Include="WaitCursor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdInspectElectricalForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CmdInspectElectricalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdInspectElectricallForm2.resx">
+      <DependentUpon>CmdInspectElectricallForm2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FamilySelector.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FamilySelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressForm.resx">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPictureBox.Image.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

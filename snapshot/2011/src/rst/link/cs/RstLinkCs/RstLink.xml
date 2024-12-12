@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RstLink</name>
+    </assembly>
+    <members>
+        <member name="M:RstLink.Util.InfoMsg(System.String)">
+            <summary>
+            MessageBox wrapper for informational message.
+            </summary>
+        </member>
+    </members>
+</doc>

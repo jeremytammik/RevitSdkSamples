@@ -1,0 +1,170 @@
+webcast in may
+ 
+devcamp ui presentation
+update mep
+saikat finished devday online recording
+devday stuff is available for viewing
+refer to that
+focus on the devcamp material
+use as opportunity to prepare and present
+90 minutes, 45 balaji, 45 jeremy
+balaji does intro portion
+include short demo
+second half: jeremy point to recording and now we go on into more depth
+
+meeting 2012-04-17: balaji, mikako, jeremy
+
+chance for general public to speak, live interaction
+materials: lab posted, newbie material, devday online, should appear in revit developer page training sessions
+not cover everything, not possible
+go through tutorial as much as possible, point to further material
+balaji focus on beginners
+jeremy focus on what's new in 2013, open to public
+devday online not yet open to public
+devcamp coming up in june, new 2013 ui class, use that, opportunity to prepare for devcamp
+selective about what we explain in detail
+recording available on public site
+basic migration issues, basic intro to 2013, mention for those already familiar with webcast can join later, come back in 40 minutes
+what changed, e.g. one box version
+past webcast sessions: 
+in 2011, for revit 2012, we only focused on what's new
+in 2010, for revit 2011, we only focused on intro
+now we combine both
+take a look at the materials from webcast 2010, prep for devcamp 2010
+full length intro, first part basic, second basic UI, basically labs material, presented by adam and saikat
+point to further reading at least five minutes or so
+poll at beginning and end
+start at 10:00 us time, 19:30 balaji, 15:00 jeremy, maybe less people from west coast
+basic powerpoint skeleton overview from both balaji and jeremy by tuesday april 24
+
+jeremy migrated bc samples in about four hours
+
+slides on:
+- rme
+- rst
+- idling and external event
+
+2012-05-09:
+
+webcast synopsis:
+
+The Revit API presentation addresses two main areas: an introduction to Revit programming for beginners, including a quick walkthrough of basic concepts, and an overview of the new functionality provided by the Revit 2013 API, of interest to both beginners and experienced developers. The first part covers the Revit SDK, documentation and samples, getting started, the basic structure and access to the Revit database, its elements, and their parameters. The second part presents a summary of the DevDays Online recording and examines some new Revit 2013 API features  in depth, including add-in integration features, the Idling and external events, Revit MEP and Structure API news and the new SDK samples.
+
+2012-05-14:
+
+https://www.livemeeting.com/cc/autodesklearning/join?id=7FH6BB&role=present&pw=APIRevitPresent
+
+Jeremy Tammik
+jeremy.tammik@eur.autodesk.com
+Autodesk
+
+set up audio and recording:
+
+  live meeting scheduling: usr quancij pwd autodesk
+
+  set up at least one minute before you start recording
+
+  voice and video > options > connect telephone and computer audio
+
+  enter the key sequence to connect phone conference and live meeting audio: 
+  ppppp9672646ppppppppp9672646#pppppppppppppp#
+
+  recording > to service > record
+
+in-conference features:
+
+  All participants must use a touch-tone phone to participate in an Instant Meeting conference. The following features are available for you to use during an active conference: 
+  *1 for a private pre-recorded help menu. A recorded message will play listing the available touch- tone features. 
+  *2 for a roll call (conference). A playback of the participants' names who have joined the call will be played into the conference. This feature is only available when Name Record feature is set to "yes." 
+  *3 for a roll call (private). A playback of the participants' names who have joined the call will be announced to the initiator only. This feature is only available when Name Record feature is set to "yes." 
+  *4 to mute or unmute the entire conference (except for your line). 
+  *5 to enable Conference Continuation. This allows you to determine if the active conference can continue after you disconnect. In order to use this feature, Auto Continuation must be set to "yes." 
+  *6 to mute or unmute your line. 
+  *7 to lock or unlock the conference. If you lock the call, those attempting to join will hear a prompt indicating the conference has been "secured." 
+  *8 to dial out to additional participants within North America. 
+  *9 for Entry/Exit options. You can specify how the entry and exit of participants are announced for the active conference: by tone, by recorded name, or by silent entry. 
+
+- test run all labs before webcast!
+- test run all new samples before webcast!
+- reboot, disable vpn
+- set up resolution 1024 x 768
+- set up webcast audio
+
+
+Polls at beginning
+
+1. What category best describes your main professional activity?
+
+Architect
+Engineer
+Constructor
+Programmer
+Manager
+Other
+
+2. How would you rate your level of experience with the Revit products?
+
+Very experienced
+Quite experienced
+Not experienced
+
+3. How would you rate your level of experience with the Revit API?
+
+Very experienced
+Quite experienced
+Not experienced
+
+4. Which statement best describes you?
+
+This topic directly affects my work today
+I expect this topic to be useful to me in the future
+I'm evaluating this technology
+None of the above
+
+Polls at end
+
+5. How was the audio quality of the presentation?
+
+Good
+Acceptable
+Poor
+
+6. How was the visual quality of the presentation?
+
+Good
+Acceptable
+Poor
+
+7. How do you rate the presentation material?
+
+Excellent
+Good
+Okay
+Poor
+
+8. How do you rate the presentation delivery?
+
+Excellent
+Good
+Okay
+Poor
+
+9. Would you recommend this webcast to a friend or colleague?
+
+Yes
+No
+
+10. What API topics would you be interested in for future webcasts?
+
+Advanced UI API
+IFC Open Source 
+Materials and Physical Properties
+Revit Server API
+Revit Links API
+Schedule API
+(For other topics and multiple choices, please send suggestions through Q&A)
+
+Advanced UI API, IFC Open Source, Materials and Physical Properties, Revit Server API, Revit Links API, Schedule API
+
+use polls defined in the ppt slide directly?
+

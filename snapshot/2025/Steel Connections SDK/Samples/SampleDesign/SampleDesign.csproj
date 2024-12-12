@@ -1,0 +1,77 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <Import Project="..\StructuralConnectionsSDKSamples.Common.props" />
+  <ItemGroup>
+    <Reference Include="AxInterop.ASTCONTROLSLib">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\AxInterop.ASTCONTROLSLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetRoots">
+      <HintPath>$(ASInstallDir)\DotNetRoots.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.ASTCONTROLSLib">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\Interop.ASTCONTROLSLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.AstSTEELAUTOMATIONLib5">
+      <HintPath>$(ASInstallDir)\Interop.AstSTEELAUTOMATIONLib5.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.DSCGEOMCOMLib">
+      <HintPath>$(ASInstallDir)\Interop.DSCGEOMCOMLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.DSCODBCCOMLib">
+      <HintPath>$(ASInstallDir)\Interop.DSCODBCCOMLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.DSCRootsCOMLib">
+      <HintPath>$(ASInstallDir)\Interop.DSCRootsCOMLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetRoots">
+      <HintPath>$(ASInstallDir)\JointDesignUtils.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="JointDesignUtils">
+      <HintPath>$(ASInstallDir)\JointDesignUtils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SimpleTorsors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Torsors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk"/>
+</Project>

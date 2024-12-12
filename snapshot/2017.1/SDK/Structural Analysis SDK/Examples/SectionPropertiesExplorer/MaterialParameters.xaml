@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="SectionPropertiesExplorer.MaterialParametersControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="690">
+    <DockPanel LastChildFill="True">
+        <DockPanel DockPanel.Dock="Top">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label Name="MaterialNameLabel" Content="Name :" HorizontalAlignment="Left" Height="25" DockPanel.Dock="Top"/>
+                    <Label Name="MaterialName" Content="No name" HorizontalAlignment="Center" Height="25" DockPanel.Dock="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Name="MaterialDescriptionLabel" Content="Description :" HorizontalAlignment="Center" Height="25" DockPanel.Dock="Top"/>
+                    <Label Name="MaterialDescription" Content="No description" HorizontalAlignment="Center" Height="25" DockPanel.Dock="Top"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Name="LayerDescription" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Label Name="LayerThicknessLabel" Content="Structural layer thickness :" HorizontalAlignment="Center" Height="25" DockPanel.Dock="Top"/>
+                    <Label Name="LayerThickness" Content="No value" HorizontalAlignment="Center" Height="25" DockPanel.Dock="Top"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Name="LayerOffsetLabel" Content="Structural layer offset :" HorizontalAlignment="Center" Height="25" DockPanel.Dock="Top"/>
+                    <Label Name="LayerOffset" Content="No value" HorizontalAlignment="Center" Height="25" DockPanel.Dock="Top"/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+        <ListView Name="materialParameters" Width="auto" Margin="0 10 0 0" DockPanel.Dock="Bottom">
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridView.Columns>
+                        <GridViewColumn Header="Property name of characteristic" Width="400" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Value" Width="158" DisplayMemberBinding="{Binding Value}" />
+                        <GridViewColumn Header="Unit" Width="120" DisplayMemberBinding="{Binding Unit}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</UserControl>

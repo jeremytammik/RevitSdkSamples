@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="4976de04-dba4-4045-8d9b-a0cd9ff7e9bf" Title="Labs Namespace" Url="html/715b3539-b2e6-3295-58e6-1481eea1cf44.htm">
+    <HelpTOCNode Id="a7beff99-9411-4a4c-99d4-4f1db78b4970" Title="FormUtils Class" Url="html/df0b08b3-2bba-33f3-40ad-240cb817716f.htm">
+      <HelpTOCNode Title="FormUtils Members" Url="html/eaacbb6d-dddf-b103-9e2a-e5697353ff82.htm" />
+      <HelpTOCNode Title="FormUtils Constructor " Url="html/67dbaacc-d43e-5d7f-48c2-e27ae392337d.htm" />
+      <HelpTOCNode Id="0e92fa6b-295c-472d-a89b-987a3b99e320" Title="FormUtils Methods " Url="html/0a16354e-a5f7-fc71-314c-204a7e1dbf9b.htm">
+        <HelpTOCNode Title="MakeCurve Method " Url="html/f6150817-bf20-89fd-27d5-dcb6ea7709d3.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ea26a459-1f7b-437d-8c16-1c879413d2ea" Title="Lab1_1_HelloWorld Class" Url="html/f6a79d4b-4fba-dc9f-3738-db593d87e702.htm">
+      <HelpTOCNode Title="Lab1_1_HelloWorld Members" Url="html/d4aa3c52-67e8-2da1-b062-022386b2aa1b.htm" />
+      <HelpTOCNode Title="Lab1_1_HelloWorld Constructor " Url="html/37a37575-4f87-aa21-7131-1fe5ab466ccc.htm" />
+      <HelpTOCNode Id="91b577e9-04f7-4414-874b-a2dc080e5321" Title="Lab1_1_HelloWorld Methods " Url="html/2ae18301-cf50-ebfd-c16f-9677e6f47945.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/73232904-f4e8-fab9-30e7-f881f1673a8d.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a12a708a-cb80-492c-8ce9-fdeb3cccf107" Title="Lab1_2_CommandArguments Class" Url="html/fb2c5a55-f61c-b83c-fae4-694c47f0c821.htm">
+      <HelpTOCNode Title="Lab1_2_CommandArguments Members" Url="html/2e57467a-af71-1c93-0159-4dfd69a30ce1.htm" />
+      <HelpTOCNode Title="Lab1_2_CommandArguments Constructor " Url="html/9986be39-376d-9958-29f0-4557248a9106.htm" />
+      <HelpTOCNode Id="fedd9e93-c49b-47c4-b527-5c4a58c736be" Title="Lab1_2_CommandArguments Methods " Url="html/1de4a803-563d-1ab8-c76f-04e7b5380ed4.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/1e3a1289-82b7-5815-9add-7f371fea2ac2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c0f25bfb-f937-4f83-a9d9-c04a44495ef4" Title="Lab2_0_CreateLittleHouse Class" Url="html/77f0fd36-18f7-7311-4d04-c82c087a71c4.htm">
+      <HelpTOCNode Title="Lab2_0_CreateLittleHouse Members" Url="html/a52feb54-340d-ccca-1ea3-1bce555f5bc3.htm" />
+      <HelpTOCNode Title="Lab2_0_CreateLittleHouse Constructor " Url="html/54352bb5-7c7a-e043-8bb5-d5d015f7e869.htm" />
+      <HelpTOCNode Id="f82f804c-e96f-476b-b355-7440f37eb35a" Title="Lab2_0_CreateLittleHouse Methods " Url="html/abab1f99-baaf-1e36-df83-b5414b17976a.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/000a2b2c-3616-bcff-40ab-fd42d86430cd.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="79b08d56-d532-4e69-a6dd-157749fb4d10" Title="Lab2_1_Elements Class" Url="html/b44937f6-f251-20ca-1b9e-525459171c06.htm">
+      <HelpTOCNode Title="Lab2_1_Elements Members" Url="html/56b94c91-d186-e603-7b9d-9eb94ee787ae.htm" />
+      <HelpTOCNode Title="Lab2_1_Elements Constructor " Url="html/d48b5618-d02e-7d66-9c84-efafd695bf3c.htm" />
+      <HelpTOCNode Id="92d1ff4c-58e0-48f4-96aa-d8bc6d62c501" Title="Lab2_1_Elements Methods " Url="html/56ee1adb-48ac-9133-d8d7-e9419dc390ef.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/2c5d7cb8-10ed-fac6-68fc-dc4209a36eb0.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="41721aa1-3ad8-4b44-b566-518b9739d124" Title="Lab2_2_ModelElements Class" Url="html/5cc9fba4-96cc-8ac3-1f24-cd79267d2824.htm">
+      <HelpTOCNode Title="Lab2_2_ModelElements Members" Url="html/8a72b8c2-01c7-cb9b-2d89-f7129314f20f.htm" />
+      <HelpTOCNode Title="Lab2_2_ModelElements Constructor " Url="html/e5cdacdb-815b-3d2d-b1a7-59275ce332c5.htm" />
+      <HelpTOCNode Id="fc1d587b-ae48-46e5-9b6e-0bb3c1215e15" Title="Lab2_2_ModelElements Methods " Url="html/4409857d-c1a8-a62f-214a-0ebd9b76e32a.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/267f0550-f439-d39d-67e1-1fe3a5fd2091.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="88a7c458-31dd-43ab-a771-aa34c0715d01" Title="Lab2_3_ListWallsAndDoors Class" Url="html/861f3553-e92a-04ba-4725-21cb0dbe5a31.htm">
+      <HelpTOCNode Title="Lab2_3_ListWallsAndDoors Members" Url="html/700e3890-0e7c-1a2f-fe43-59783b306cea.htm" />
+      <HelpTOCNode Title="Lab2_3_ListWallsAndDoors Constructor " Url="html/972b3c93-0737-b931-8e21-125a870d9f38.htm" />
+      <HelpTOCNode Id="fc0fe64d-25c7-4942-bd4a-5134c8a969f9" Title="Lab2_3_ListWallsAndDoors Methods " Url="html/cc8cb955-252b-e58d-652b-d590feb24545.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/f6f8a067-fbe2-b3c7-cf5f-8936b2c13c69.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b22b338a-2c21-400d-aae9-08286e453a22" Title="Lab2_4_EditFamilyInstance Class" Url="html/a7ba3ddd-b7d8-9bdf-4c88-563eacb77753.htm">
+      <HelpTOCNode Title="Lab2_4_EditFamilyInstance Members" Url="html/3e54607b-6435-fc9c-272a-79d001ff482f.htm" />
+      <HelpTOCNode Title="Lab2_4_EditFamilyInstance Constructor " Url="html/b37f5e87-2894-5fe6-662d-d4e8751db52b.htm" />
+      <HelpTOCNode Id="68e95329-d243-4141-a55c-c6af0b797e44" Title="Lab2_4_EditFamilyInstance Methods " Url="html/cb5ba356-c187-c0d3-4405-1098115532bd.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/d0b29af8-0dc9-2bbf-7814-96e329536893.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c6ebec71-73ca-4dc5-8fb2-8bafd38322f2" Title="Lab2_5_SelectAndMoveWallAndAddColumns Class" Url="html/0af058f5-790f-0273-12a8-7d0a815fc469.htm">
+      <HelpTOCNode Title="Lab2_5_SelectAndMoveWallAndAddColumns Members" Url="html/aa3f9539-3ad5-f7f2-602e-43469af16f62.htm" />
+      <HelpTOCNode Title="Lab2_5_SelectAndMoveWallAndAddColumns Constructor " Url="html/6c5d69a2-eb1d-deac-8066-92221797bd59.htm" />
+      <HelpTOCNode Id="fde1daf0-32e9-4b22-b74d-e5d122a419b4" Title="Lab2_5_SelectAndMoveWallAndAddColumns Methods " Url="html/f53a071d-5bc6-7755-2e9a-909f00c2fe29.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/9c19e3b3-aedf-b97f-4089-01b296cf0e32.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7d4a0f14-a638-41e0-a33a-f61d65dfe4e6" Title="Lab3_1_StandardFamiliesAndTypes Class" Url="html/4bf4960b-5cce-337e-8b89-705e0c1ffd61.htm">
+      <HelpTOCNode Title="Lab3_1_StandardFamiliesAndTypes Members" Url="html/f8e95cb8-c79f-859b-05a8-2392c594379e.htm" />
+      <HelpTOCNode Title="Lab3_1_StandardFamiliesAndTypes Constructor " Url="html/3244eb2a-8890-ecc5-ca25-01219f266941.htm" />
+      <HelpTOCNode Id="e47cc378-6501-44eb-a0b0-a40392f6ce71" Title="Lab3_1_StandardFamiliesAndTypes Methods " Url="html/52f54d2a-d2d4-a636-1007-2a4d9630da68.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/da43dcfe-9cc3-16ec-6498-9f21118338a7.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="dbf883ce-a765-4005-b242-5b217af8b885" Title="Lab3_2_LoadStandardFamilies Class" Url="html/b70937d7-6630-21d9-cfd9-b8d34d0e3a3b.htm">
+      <HelpTOCNode Title="Lab3_2_LoadStandardFamilies Members" Url="html/9ce1d4e5-e2ea-4d10-3ce5-11f0233769af.htm" />
+      <HelpTOCNode Title="Lab3_2_LoadStandardFamilies Constructor " Url="html/8fee3cd8-0073-8e57-6f89-20ca3da102bf.htm" />
+      <HelpTOCNode Id="bf4e7510-b33a-495f-ba29-6f180df7d65b" Title="Lab3_2_LoadStandardFamilies Methods " Url="html/961d9fd6-b752-822c-b1d1-8191dc5b4ad2.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/3f5bb9ad-8aaa-9b92-9236-f289d3d1cc21.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="da9f7198-325e-45cf-9e75-cd4305c05833" Title="Lab3_3_DetermineInstanceTypeAndFamily Class" Url="html/a2c78632-4d01-5013-a8c4-35b52035fc2c.htm">
+      <HelpTOCNode Title="Lab3_3_DetermineInstanceTypeAndFamily Members" Url="html/4c8ee507-4630-5a32-78c7-77f96cb4b211.htm" />
+      <HelpTOCNode Title="Lab3_3_DetermineInstanceTypeAndFamily Constructor " Url="html/c4223400-0530-ddf6-f098-69952cbf66c1.htm" />
+      <HelpTOCNode Id="bc4694b0-2486-4a28-92ff-4f57812e3b23" Title="Lab3_3_DetermineInstanceTypeAndFamily Methods " Url="html/4a7e1922-4366-7a1a-529e-100257fb3f6d.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/b50e1496-6d6a-cd64-385d-f4fe90e54101.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="3a9af764-fc9b-473a-9de6-6b807d7bcbc8" Title="Lab3_4_ChangeSelectedInstanceType Class" Url="html/80fe5a7d-e1af-4cd4-4594-7a01deb9224f.htm">
+      <HelpTOCNode Title="Lab3_4_ChangeSelectedInstanceType Members" Url="html/34d32996-e00e-4074-927f-002d9e31621a.htm" />
+      <HelpTOCNode Title="Lab3_4_ChangeSelectedInstanceType Constructor " Url="html/5ce0076c-8f30-423e-bd04-ad624e88ec2b.htm" />
+      <HelpTOCNode Id="544bfad0-cad6-4e3d-abe2-a2d2ff660ae8" Title="Lab3_4_ChangeSelectedInstanceType Methods " Url="html/22bf21ec-258d-2b94-496c-bdb7d07d523c.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/bd1ebe6f-cec8-72a6-b819-972091429603.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="08af556c-51cd-4dba-a6f5-1836adc30a22" Title="Lab3_4_Form Class" Url="html/2cfc9b86-9337-86c2-7ffc-7f1491066b4e.htm">
+      <HelpTOCNode Title="Lab3_4_Form Members" Url="html/54c0a52b-1120-5e07-0747-d6a2a0a3f2f0.htm" />
+      <HelpTOCNode Title="Lab3_4_Form Constructor " Url="html/3a6cf285-7cdb-ced7-ab7e-5c0b1aaf5c22.htm" />
+      <HelpTOCNode Id="faebab17-0cbb-4841-8135-64044060d088" Title="Lab3_4_Form Methods " Url="html/78c8666b-9dbd-f602-0495-7e505f55c502.htm">
+        <HelpTOCNode Title="AccessibilityNotifyClients Method " Url="html/1776ca0c-83ad-473a-85e4-700b5b14d25f.htm" />
+        <HelpTOCNode Title="BeginInvoke Method " Url="html/6c2499e1-8d4b-f5f3-2ce9-3f289c6b7727.htm" />
+        <HelpTOCNode Id="7dba86a8-9351-4238-8fa6-8959c1007026" Title="Dispose Method " Url="html/32322243-a7d4-72a7-7ee2-b957c0def29d.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/38a7b604-e51d-bd6f-c483-a847f582c62f.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetChildAtPoint Method " Url="html/f1064cd0-ece4-6d87-bfc5-1d4ba45536d7.htm" />
+        <HelpTOCNode Title="Invalidate Method " Url="html/2748b15e-374a-80bf-bbb2-954c3a1d6f03.htm" />
+        <HelpTOCNode Title="Invoke Method " Url="html/f9aec73b-275b-b2d6-c84c-c0ef05cc73ae.htm" />
+        <HelpTOCNode Title="MemberwiseClone Method " Url="html/f14958eb-75dd-4d23-610e-8ebb4b51b25f.htm" />
+        <HelpTOCNode Title="PerformLayout Method " Url="html/99e0b6ff-caa9-8ce1-1f0d-34ec2af8fd8b.htm" />
+        <HelpTOCNode Title="ResumeLayout Method " Url="html/d8ee054b-1a15-7cbb-267c-5c809620c078.htm" />
+        <HelpTOCNode Title="RtlTranslateAlignment Method " Url="html/5556bb62-7368-fd41-a929-b03a70049471.htm" />
+        <HelpTOCNode Title="Scale Method " Url="html/673c8129-83f9-b2d4-8959-50b4b980181d.htm" />
+        <HelpTOCNode Title="Select Method " Url="html/2e9d512e-1fe3-54af-b664-27331e5860fc.htm" />
+        <HelpTOCNode Title="SetBounds Method " Url="html/145613c7-f535-f083-eb3e-0e305b563592.htm" />
+        <HelpTOCNode Title="Show Method " Url="html/f5d67bcd-deb4-7d3f-f869-befc3f7ed4b0.htm" />
+        <HelpTOCNode Title="ShowDialog Method " Url="html/5981b541-bc26-7bea-4a22-5a23fe910950.htm" />
+        <HelpTOCNode Title="UpdateBounds Method " Url="html/941a3980-69eb-2997-5d1d-1d79cfd99920.htm" />
+        <HelpTOCNode Title="Validate Method " Url="html/c89d75b6-b6b5-57b9-2b82-ee776ba613e4.htm" />
+        <HelpTOCNode Title="ValidateChildren Method " Url="html/3c6061e8-3579-6174-488f-2dfa5cc42ddc.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Lab3_4_Form Properties " Url="html/cfc501b5-6a81-da26-2409-baa48554f160.htm" />
+      <HelpTOCNode Title="Lab3_4_Form Events" Url="html/be78160c-6791-1bbe-f34c-407e06878438.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="3abc2fbc-cf39-40bc-b5b7-93dd8043e96d" Title="Lab3_5_WallAndFloorTypes Class" Url="html/164f8c81-891d-50fd-82d5-d0dbe375ee44.htm">
+      <HelpTOCNode Title="Lab3_5_WallAndFloorTypes Members" Url="html/2fb86544-a595-6224-8255-c3f0c4cd4712.htm" />
+      <HelpTOCNode Title="Lab3_5_WallAndFloorTypes Constructor " Url="html/db8694bf-4008-4ae5-59f6-e947afc1e621.htm" />
+      <HelpTOCNode Id="505c3685-459a-456e-8520-b284ab064b61" Title="Lab3_5_WallAndFloorTypes Methods " Url="html/c5ea4c97-6b1b-ce1d-7042-5dc2e02d3dd1.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/98703ec6-94f0-b0d5-bae0-fcaabc5b4767.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="27954028-d8f4-4dcd-8165-34e9c6739722" Title="Lab3_6_DuplicateWallType Class" Url="html/0173b2ab-e5d8-38d6-d626-8592de30fae5.htm">
+      <HelpTOCNode Title="Lab3_6_DuplicateWallType Members" Url="html/f8102cb8-b61e-3e43-507d-bafe67e9a75d.htm" />
+      <HelpTOCNode Title="Lab3_6_DuplicateWallType Constructor " Url="html/5883e5a3-2886-d18f-1b90-6f8d09283aac.htm" />
+      <HelpTOCNode Id="ef7c2761-9252-4ea8-8b18-88c479c7264d" Title="Lab3_6_DuplicateWallType Methods " Url="html/2bc64ae5-335f-cd5b-1c65-4e8ae7423c48.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/0e2292c8-84f2-6907-5a6d-1a37276226ec.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6a5f29eb-03df-425b-b64b-1eaf27737f2f" Title="Lab3_7_DeleteFamilyType Class" Url="html/1d8c9fb5-2548-08e6-2ddb-5c413693c096.htm">
+      <HelpTOCNode Title="Lab3_7_DeleteFamilyType Members" Url="html/7546fabd-c29e-a09d-20f5-56a3d6eb6777.htm" />
+      <HelpTOCNode Title="Lab3_7_DeleteFamilyType Constructor " Url="html/28eb44d1-7ade-87e1-d999-346ce6089436.htm" />
+      <HelpTOCNode Id="020049b5-2554-454b-abaf-436136ef68f4" Title="Lab3_7_DeleteFamilyType Methods " Url="html/78ea55da-e2a7-8081-1c51-1451ca406898.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/e28c6fe3-4f81-37fc-02a6-df36f4759fb6.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f0bc650e-62c8-4bc9-a69b-6e9aca583fbb" Title="Lab4_1_ElementParameters Class" Url="html/3a1b4c73-3646-0b2e-c8e7-66440d7b5dec.htm">
+      <HelpTOCNode Title="Lab4_1_ElementParameters Members" Url="html/5e59e4f2-cd0a-f5e5-5b96-002604b70511.htm" />
+      <HelpTOCNode Title="Lab4_1_ElementParameters Constructor " Url="html/664c550d-987a-2214-a8a5-7c58cdeae920.htm" />
+      <HelpTOCNode Id="81e40248-71af-489b-a1c8-8877e58e4643" Title="Lab4_1_ElementParameters Methods " Url="html/6e28f110-d4a7-9772-5cc1-aa5e0c1b5244.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/d7a78744-2676-0ac2-f635-b5018a3739ab.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="8e0e184c-c41a-49e7-994f-8cae41762763" Title="Lab4_2_ExportParametersToExcel Class" Url="html/faf47a29-3537-6b33-63fe-b3b9caca0dcb.htm">
+      <HelpTOCNode Title="Lab4_2_ExportParametersToExcel Members" Url="html/90c0cd97-7285-55ac-195f-9947c93494fc.htm" />
+      <HelpTOCNode Title="Lab4_2_ExportParametersToExcel Constructor " Url="html/393811c5-2e74-1758-3dcb-84f64217a648.htm" />
+      <HelpTOCNode Id="86bacbd4-3f3b-4bdc-993c-a73318211c1a" Title="Lab4_2_ExportParametersToExcel Methods " Url="html/aa912af1-8599-6bfc-7baa-18fc1fe9bcd5.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/ae0351ae-c279-0d2a-a067-f17ad064701d.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="f08e2ccd-cea8-4784-b319-b03a6d12c8ad" Title="Lab4_3_1_CreateAndBindSharedParam Class" Url="html/363e83c0-64f3-a0cb-b68d-cdff87bc1a09.htm">
+      <HelpTOCNode Title="Lab4_3_1_CreateAndBindSharedParam Members" Url="html/4906c7dc-d2d4-f4db-036f-1ea94cbf2d44.htm" />
+      <HelpTOCNode Title="Lab4_3_1_CreateAndBindSharedParam Constructor " Url="html/d1754000-ece3-ec87-3f3f-2e4aaf41cf9c.htm" />
+      <HelpTOCNode Id="f6d18cc8-622e-4e21-8776-5161e8614577" Title="Lab4_3_1_CreateAndBindSharedParam Fields" Url="html/0df92648-18e1-fe9c-c941-22b3a53e7685.htm">
+        <HelpTOCNode Title="Target Field" Url="html/28f5332e-0ce1-5437-b495-786b0a8f5c30.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="2d17ed06-aba8-4b33-9eae-59480a36837d" Title="Lab4_3_1_CreateAndBindSharedParam Methods " Url="html/ea3d2066-2d59-e635-ad6f-5ea44acfdf46.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/1f85c393-892d-123b-2206-77087bde154c.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="081d497e-200b-49cd-958a-eaa60e2fba66" Title="Lab4_3_2_ExportSharedParamToExcel Class" Url="html/8b399f33-c3d6-55e6-1b84-4bc50af1cb5c.htm">
+      <HelpTOCNode Title="Lab4_3_2_ExportSharedParamToExcel Members" Url="html/9063f95f-1df9-5e40-58b7-c9e74e08fa6a.htm" />
+      <HelpTOCNode Title="Lab4_3_2_ExportSharedParamToExcel Constructor " Url="html/8e56a4bd-cfbc-6d9e-cede-4f3514a97dbc.htm" />
+      <HelpTOCNode Id="e5365746-be6f-4e97-bdbd-a3efcbf7fe70" Title="Lab4_3_2_ExportSharedParamToExcel Methods " Url="html/d2d737f4-a925-ff9f-52b8-14ba19f9308a.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/2173ce4a-27fe-9a63-44e5-632b71ace359.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="196d878b-a8a8-4f29-b1f2-cd17d7ad6cc6" Title="Lab4_3_3_ImportSharedParamFromExcel Class" Url="html/a2a497fe-a941-7ba9-bebd-d959df277aef.htm">
+      <HelpTOCNode Title="Lab4_3_3_ImportSharedParamFromExcel Members" Url="html/b3972f95-e59b-fe81-7ca1-01d4e973f20b.htm" />
+      <HelpTOCNode Title="Lab4_3_3_ImportSharedParamFromExcel Constructor " Url="html/281883fd-e956-f43e-1bd5-c798a27a51af.htm" />
+      <HelpTOCNode Id="85ccea87-1a0b-4c50-ba03-f75b0970d45f" Title="Lab4_3_3_ImportSharedParamFromExcel Methods " Url="html/bc1ab0d0-8985-1919-db82-6c475f52b43e.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/4fd0223e-37d2-9ed8-7521-1d4838e49ceb.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="dc61c540-7ecd-49f2-8e8c-ecd28618a3aa" Title="Lab4_4_1_CreatePerDocParameters Class" Url="html/c32b25a9-03c5-fd99-272f-f831f1930012.htm">
+      <HelpTOCNode Title="Lab4_4_1_CreatePerDocParameters Members" Url="html/0409e7b6-2d08-f198-9c20-ba5002f283e7.htm" />
+      <HelpTOCNode Title="Lab4_4_1_CreatePerDocParameters Constructor " Url="html/931e699c-de4d-aa9d-79b6-4d0edfa936fb.htm" />
+      <HelpTOCNode Id="e3a885bf-a871-40af-bb2c-f3f22523470f" Title="Lab4_4_1_CreatePerDocParameters Methods " Url="html/7896faec-f1c8-96f5-8ebe-9c50632c763f.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/0c1ec9b1-d251-58c7-bc8e-d35955927ea1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="0455d4db-fd8f-4996-b177-8fab1a6f395e" Title="Lab4_4_2_IncrementPerDocParameters Class" Url="html/4f512456-3d17-54a2-c631-a3ee3d3fe6fe.htm">
+      <HelpTOCNode Title="Lab4_4_2_IncrementPerDocParameters Members" Url="html/57b00ade-888f-f0d3-1eab-bc8fa41d59bb.htm" />
+      <HelpTOCNode Title="Lab4_4_2_IncrementPerDocParameters Constructor " Url="html/62a48759-6bab-334f-893d-6e095ec5aa7f.htm" />
+      <HelpTOCNode Id="8aea953d-a1d7-4586-a67a-0e3bedf19d23" Title="Lab4_4_2_IncrementPerDocParameters Methods " Url="html/ebe3a7f2-da2c-24de-010f-287974fb6fb0.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/803d19a8-e5f5-756e-2dc1-f7f60c15fbc4.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cb4a2d7c-8e3c-4927-8415-7e0a90636bec" Title="Lab5_1_GroupsAndGroupTypes Class" Url="html/5598709d-297d-b859-4a31-ac005c34d405.htm">
+      <HelpTOCNode Title="Lab5_1_GroupsAndGroupTypes Members" Url="html/054694f0-0d8e-5b61-c27a-9005d2608b01.htm" />
+      <HelpTOCNode Title="Lab5_1_GroupsAndGroupTypes Constructor " Url="html/4800d5a7-4468-2281-a3e1-0db3b02c65a1.htm" />
+      <HelpTOCNode Id="186b0ee3-a909-45d9-9381-49ea9c32d35a" Title="Lab5_1_GroupsAndGroupTypes Methods " Url="html/2538d792-180e-c781-cfdf-512c3e0700d0.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/c87360a7-d047-1ad4-7cea-c4669f7da852.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c9d93f3c-62d2-44d3-991f-9ffffb08b59a" Title="Lab5_2_SwapGroupTypes Class" Url="html/a5b6a19b-8e69-4f21-a7d5-57b7175f9ac2.htm">
+      <HelpTOCNode Title="Lab5_2_SwapGroupTypes Members" Url="html/c04c6461-bed9-3365-0be8-65f30d8dd3f9.htm" />
+      <HelpTOCNode Title="Lab5_2_SwapGroupTypes Constructor " Url="html/4afef61d-db88-4940-ca22-fe4c1bfb131b.htm" />
+      <HelpTOCNode Id="0105ec2c-adff-42e4-b596-bd2169747b37" Title="Lab5_2_SwapGroupTypes Methods " Url="html/1d94df8f-edcc-cac3-9327-1a0e40d52d20.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/cbdbd459-c18f-dbdb-5f79-14a6a184d8a0.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2b158f3d-060c-4b89-8d22-d6ba0069ccef" Title="Lab5_3_Rooms Class" Url="html/221b2020-3254-1225-95da-451821690643.htm">
+      <HelpTOCNode Title="Lab5_3_Rooms Members" Url="html/e4982ff5-39d3-a317-6987-e61504a8fb2a.htm" />
+      <HelpTOCNode Title="Lab5_3_Rooms Constructor " Url="html/ee72c4c7-240f-37b8-972a-0d22a91fd1ad.htm" />
+      <HelpTOCNode Id="acb9e1fc-4257-471d-bc77-b255b9ac1e25" Title="Lab5_3_Rooms Methods " Url="html/3303b18e-7f25-890c-c262-d64200cb7f91.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/0b6bf312-b4b3-0326-864f-45f3e15c1384.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="25a8dd85-8f02-4a32-b923-2d70e3cd5e06" Title="Lab6_1_HelloWorldExternalApplication Class" Url="html/84e5399e-0bd7-1076-7389-9f64334cebf2.htm">
+      <HelpTOCNode Title="Lab6_1_HelloWorldExternalApplication Members" Url="html/3c5135e4-9255-8216-c1ad-11f525ea1812.htm" />
+      <HelpTOCNode Title="Lab6_1_HelloWorldExternalApplication Constructor " Url="html/404a8876-6259-1f82-354d-7ce4f92436f3.htm" />
+      <HelpTOCNode Id="b52336dd-1d39-4769-b085-5a21d60cee34" Title="Lab6_1_HelloWorldExternalApplication Methods " Url="html/aec2c4d4-b8fb-a66b-c220-808ba996fab7.htm">
+        <HelpTOCNode Title="OnShutdown Method " Url="html/ef1f967e-4c5a-dc93-1b94-1c9445b2bcea.htm" />
+        <HelpTOCNode Title="OnStartup Method " Url="html/6ba36631-b840-a6fe-83a9-ea921998e48a.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cdb28248-7d82-4454-a7d9-6e05d7016f57" Title="Lab6_2_Ribbon Class" Url="html/43c8cb72-273d-e588-f181-0c23ce964920.htm">
+      <HelpTOCNode Title="Lab6_2_Ribbon Members" Url="html/aaf53f7d-62c0-5bfe-ed60-c992406a2af9.htm" />
+      <HelpTOCNode Title="Lab6_2_Ribbon Constructor " Url="html/ba0bf8c5-b8da-0971-965c-4eef4bf2eb3e.htm" />
+      <HelpTOCNode Id="42de49f0-a2bc-406c-a7fc-838f62643475" Title="Lab6_2_Ribbon Methods " Url="html/ff6c945b-22ba-cd1c-3b01-1738b7a0ed3e.htm">
+        <HelpTOCNode Title="OnShutdown Method " Url="html/52fd0031-8c41-52bb-be8c-2dab37254707.htm" />
+        <HelpTOCNode Title="OnStartup Method " Url="html/b552f61b-2d9f-ffa5-911c-54544693298b.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c36d86ea-c94d-45eb-bdb3-27ab9e1fdced" Title="Lab6_3_PreventSaveEvent Class" Url="html/c6b39e95-f30c-279a-7b39-ac8f877473b7.htm">
+      <HelpTOCNode Title="Lab6_3_PreventSaveEvent Members" Url="html/418e7816-32ce-d7ab-9bf8-c357a9ca7da5.htm" />
+      <HelpTOCNode Title="Lab6_3_PreventSaveEvent Constructor " Url="html/9b781da7-d6db-98c5-912d-f1dbf432fef8.htm" />
+      <HelpTOCNode Id="feea44b7-61f8-4993-b5b5-3d73d8834759" Title="Lab6_3_PreventSaveEvent Methods " Url="html/8e559ea0-9c15-567a-ec6a-80e327f791ce.htm">
+        <HelpTOCNode Title="OnShutdown Method " Url="html/5ad27672-ad30-0160-16dd-5fc516729a7c.htm" />
+        <HelpTOCNode Title="OnStartup Method " Url="html/f895b067-b4c2-af54-1beb-178e6e5b77e0.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b058a52f-d439-468f-a9ce-896faa3b65e5" Title="Lab6_4_DismissDialog Class" Url="html/565ff07a-ce8e-2977-c5a3-a5ac1467a0a2.htm">
+      <HelpTOCNode Title="Lab6_4_DismissDialog Members" Url="html/83ef634f-a830-21f6-0e55-28303e5c7e1e.htm" />
+      <HelpTOCNode Title="Lab6_4_DismissDialog Constructor " Url="html/29f7cdfe-57ea-5cfe-0711-8229ff59dbda.htm" />
+      <HelpTOCNode Id="7fb6283e-14c1-40f5-8fc8-bb7b419cd5bf" Title="Lab6_4_DismissDialog Methods " Url="html/f2df45b8-a149-19f9-3fb7-23c583067c4e.htm">
+        <HelpTOCNode Title="OnShutdown Method " Url="html/ca6c3f00-ebc6-0fe4-a3e5-aa2d2505ed2a.htm" />
+        <HelpTOCNode Title="OnStartup Method " Url="html/a92a9b05-658c-c3f7-0b3c-cfad2851794d.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c95437d7-d399-4cc5-b692-014ed851f1f9" Title="Lab6_5_RibbonExplorer Class" Url="html/b8ceea39-4929-9c58-8627-e7b72bb5ccad.htm">
+      <HelpTOCNode Title="Lab6_5_RibbonExplorer Members" Url="html/001120f5-576c-45b9-19bc-d4f1ab86f5b6.htm" />
+      <HelpTOCNode Title="Lab6_5_RibbonExplorer Constructor " Url="html/2eb177e9-377d-cb22-955b-eef339d19cf5.htm" />
+      <HelpTOCNode Id="3f3986a5-30b1-4cd2-8b0a-ab7d618033c0" Title="Lab6_5_RibbonExplorer Methods " Url="html/201f1dc3-292f-8763-4747-188fa22c56e6.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/3c84dc62-b5f3-80ce-24b8-93afb15a09c0.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="97f67d0a-0145-4227-971b-9ee37413106f" Title="Lab7_1_CreateForm Class" Url="html/9fb34702-f0f7-7aca-60df-02c29c4c7678.htm">
+      <HelpTOCNode Title="Lab7_1_CreateForm Members" Url="html/a4c1d027-1972-7bf6-eda6-8fe931e41193.htm" />
+      <HelpTOCNode Title="Lab7_1_CreateForm Constructor " Url="html/4cedcb41-93c9-0caa-6435-3bf885ae522b.htm" />
+      <HelpTOCNode Id="70915ebc-2160-4d19-b6da-69eec2b6381d" Title="Lab7_1_CreateForm Methods " Url="html/316eb9af-c713-2774-f288-41e3e9e3c0a3.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/7e5510c2-ed68-6a3f-ff61-8692cde4e342.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="27f51cdc-9960-44f9-a3ff-7a8b25642d68" Title="Lab7_2_CreateDividedSurface Class" Url="html/b6ca1435-05de-e72b-0321-4d40e0f16d2e.htm">
+      <HelpTOCNode Title="Lab7_2_CreateDividedSurface Members" Url="html/1226d050-7a96-730c-ed68-a1d63dd20057.htm" />
+      <HelpTOCNode Title="Lab7_2_CreateDividedSurface Constructor " Url="html/891dc18f-e1cd-9023-b6f2-1546ba8500c5.htm" />
+      <HelpTOCNode Id="997cf90c-3d2f-45ba-b9a8-9ab862bba54c" Title="Lab7_2_CreateDividedSurface Methods " Url="html/6afb8507-ce6f-a296-945b-aecae5ab03c4.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/073b8194-9918-62c2-e88c-061ac0769db2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="50823593-0304-4874-96dd-19d0d8f8ff99" Title="Lab7_3_ChangeTilePattern Class" Url="html/11d7d823-1d21-c9fd-c0bb-a07b30ec1828.htm">
+      <HelpTOCNode Title="Lab7_3_ChangeTilePattern Members" Url="html/01b11e69-426c-3389-059c-2402369b03b3.htm" />
+      <HelpTOCNode Title="Lab7_3_ChangeTilePattern Constructor " Url="html/d4f4f603-f848-d6dd-2bd3-0a5336d6aa19.htm" />
+      <HelpTOCNode Id="2bf78594-6a72-4f01-b3f9-f879551f8b88" Title="Lab7_3_ChangeTilePattern Methods " Url="html/8b59efba-a361-13b7-f877-56e371f6ba7e.htm">
+        <HelpTOCNode Title="Execute Method " Url="html/609040df-e135-5b05-9647-48ec75fec647.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b011912c-2bbc-4125-a3f2-1cbb1d7f3ba9" Title="LabUtils Class" Url="html/737e3e41-d09e-20d3-86d2-6278bd9a2094.htm">
+      <HelpTOCNode Title="LabUtils Members" Url="html/912afa5f-2c1f-54fc-7ef9-68413cb90c5e.htm" />
+      <HelpTOCNode Title="LabUtils Constructor " Url="html/20264983-5699-1793-2331-3929100583e8.htm" />
+      <HelpTOCNode Id="18e97593-02a4-42bd-8b41-395ffe05ab5d" Title="LabUtils Fields" Url="html/ff90108e-50a1-8cdb-d790-8d2fe9b9c71a.htm">
+        <HelpTOCNode Title="Caption Field" Url="html/fbc0f20b-25e4-5bc3-8024-38d171f1a65f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="8f7c0627-42eb-4e7f-9b7d-32641c6038b7" Title="LabUtils Methods " Url="html/9496e4d2-5d74-fe26-f17b-8e380a041882.htm">
+        <HelpTOCNode Title="DotOrColon Method " Url="html/3bca7c08-c847-759b-b8e5-afee56c6a11a.htm" />
+        <HelpTOCNode Id="3d55545e-913f-46f3-94d9-6e7ff273d32e" Title="ElementDescription Method " Url="html/63c6b8c3-4760-5db8-b44f-d212e2431d16.htm">
+          <HelpTOCNode Title="ElementDescription Method ()" Url="html/abb85543-43ab-7340-d6c8-de9a17d112e9.htm" />
+          <HelpTOCNode Title="ElementDescription Method (, Boolean)" Url="html/852e4584-b774-cbec-fa3a-747d9ae48a2c.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ErrorMsg Method " Url="html/b0b2515c-8954-fbad-5d63-40a829168e1e.htm" />
+        <HelpTOCNode Title="GetBottomAndTopLevels Method " Url="html/20dcfe14-2f15-38ea-d268-bf850a4af1e0.htm" />
+        <HelpTOCNode Title="GetElementsOfType Method " Url="html/7fb22030-b949-7d44-7b05-de374f500a4d.htm" />
+        <HelpTOCNode Title="GetFamilyInstances Method " Url="html/b1017140-9e93-01fe-5090-2b8402feba92.htm" />
+        <HelpTOCNode Title="GetFamilySymbols Method " Url="html/14974525-b700-4933-3bb0-1f7b0c623c43.htm" />
+        <HelpTOCNode Title="GetFirstFamilySymbol Method " Url="html/5196da85-366c-5b34-9a1e-39d5f85f6b42.htm" />
+        <HelpTOCNode Title="GetOrCreateSharedParamsDefinition Method " Url="html/7e39a8af-723c-ae16-2e2a-f54836874bd4.htm" />
+        <HelpTOCNode Title="GetOrCreateSharedParamsGroup Method " Url="html/5220cfa3-23b0-667e-49ef-363fdcb20d57.htm" />
+        <HelpTOCNode Title="GetParameterValue Method " Url="html/4544cdf6-abe3-0d43-a396-3d1f2245bae5.htm" />
+        <HelpTOCNode Title="GetParameterValue2 Method " Url="html/e319fe7f-4f11-15bb-4b35-c3cccaac7b72.htm" />
+        <HelpTOCNode Title="GetProjectInfoElem Method " Url="html/2231f1b0-d3bf-b4ca-cd34-ac058eee45da.htm" />
+        <HelpTOCNode Title="GetSharedParamsFile Method " Url="html/0535f22e-1030-7cbc-f5c0-8defcad7d5e6.htm" />
+        <HelpTOCNode Id="4a240db0-73e1-4b89-b1a0-0fec9e8d6b1a" Title="GetSingleSelectedElementOrPrompt Method " Url="html/95b4c394-d4ff-d81c-4fa1-7637f0d09862.htm">
+          <HelpTOCNode Title="GetSingleSelectedElementOrPrompt Method ()" Url="html/d7615466-ffeb-39f8-1c91-717da0e53ac9.htm" />
+          <HelpTOCNode Title="GetSingleSelectedElementOrPrompt Method (, Type)" Url="html/b3347aca-13e0-3535-1109-4a0b964023f2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetTargetInstances Method " Url="html/1f274ffa-5675-296a-8fb8-4efbae26a7ee.htm" />
+        <HelpTOCNode Id="d1bbf8c6-33ab-434f-94ce-d3c4c3056e6a" Title="InfoMsg Method " Url="html/85bd4da2-4ec8-65c9-7f42-0bf0dea0abbd.htm">
+          <HelpTOCNode Title="InfoMsg Method (String)" Url="html/33513d6b-b6ac-2505-b6da-6e2e1fcb53f6.htm" />
+          <HelpTOCNode Title="InfoMsg Method (String, List(String))" Url="html/2cc5dd38-78c7-ebfc-517e-efb36b9459ff.htm" />
+          <HelpTOCNode Title="InfoMsg Method (String, String)" Url="html/1a74cd02-7782-b27d-efaf-c4599885880e.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Midpoint Method " Url="html/7592cef8-cb06-6764-b29c-08733c349556.htm" />
+        <HelpTOCNode Title="PluralSuffix Method " Url="html/63a7f2a1-7a19-c476-d701-eb6225e82c99.htm" />
+        <HelpTOCNode Title="PointString Method " Url="html/57e03a24-1ecb-c291-10ad-adcb0b8e4a10.htm" />
+        <HelpTOCNode Title="QuestionCancelMsg Method " Url="html/7a738528-2df1-42eb-51be-705f4ed69c74.htm" />
+        <HelpTOCNode Title="QuestionMsg Method " Url="html/ce092300-7b39-2234-64d9-1307bb418d33.htm" />
+        <HelpTOCNode Title="RealString Method " Url="html/2eaf6559-b380-f68b-51ef-a7dd25047020.htm" />
+        <HelpTOCNode Title="SharedParamGUID Method " Url="html/b1e88467-32a9-987a-f951-8a1e77705af4.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4653a72e-04fc-4344-95f1-deedf67b19bb" Title="LabUtils.TypeSelectionFilter Class" Url="html/46f8749b-7f45-5b6e-7725-28ccb7b9986a.htm">
+      <HelpTOCNode Title="LabUtils.TypeSelectionFilter Members" Url="html/8ed00835-783c-478c-c97b-3daf7c232e81.htm" />
+      <HelpTOCNode Title="LabUtils.TypeSelectionFilter Constructor " Url="html/a7873893-5534-9a14-0be7-b1508573927d.htm" />
+      <HelpTOCNode Id="4f2cd6df-cc2e-453d-aff4-8617b1efb61a" Title="LabUtils.TypeSelectionFilter Methods " Url="html/dee98cf3-fc03-bbf9-5a31-4d8ce5e4f838.htm">
+        <HelpTOCNode Title="AllowElement Method " Url="html/b8fe0061-513e-9390-47fa-4be84f23b6db.htm" />
+        <HelpTOCNode Title="AllowReference Method " Url="html/b6ac1d09-0492-2fbe-9b6b-bee8c0ebc649.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

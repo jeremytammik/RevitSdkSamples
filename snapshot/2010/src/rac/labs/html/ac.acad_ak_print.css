@@ -1,0 +1,36 @@
+/* Special tweaks for printed topics .. media="print"   */
+
+H1 	{ color: BLACK; font-size: 14pt; font-weight: normal; line-height: 18pt;
+	margin-top: -6pt; margin-bottom: 16pt; margin-left: -12pt; margin-right: -18pt;
+	padding-top: 10pt; padding-bottom: 14pt; padding-left: 12pt; padding-right: 18pt}
+
+H1.Overlay 	/* Overlays a heading graphic. See P.HeadGraphic below. */
+	{ background-color: transparent; color: BLACK }
+SPAN.H1Overlay 	/* Overlays a heading graphic. See P.HeadGraphic below. */
+	{ background-color: transparent; color: BLACK; font-size: 14pt; font-weight: bold; }
+
+DIV.HeadingOverlayNew
+	{ position:relative; left:13pt; top:6pt; width: 650pt;
+	Filter: DropShadow(Color=#000000, OffX=2, OffY=1, Positive=1); }
+DIV.TabOverlay
+	{ position:static; }
+
+TABLE.FooterTable
+	{ background: none;
+	border-top: none; border-bottom: 2px #003399 solid;
+	margin-top: 0pt; margin-bottom: 20pt; height: 25pt; }
+
+P.HeadGraphic 	/* Positions a heading graphic. See H1.Overlay above. */
+	{ display: none; margin-bottom: 15pt; margin-left: -12pt; margin-top: -6pt }
+P.TabLabel
+	{ font-size: 9pt; line-height: 12pt; font-family: Arial; font-size: 10pt;
+	margin-bottom: 0pt; margin-top: 6pt; }
+SPAN.CommentsLink
+	{ display: none }
+
+TABLE.TabTable
+	{ display: none }
+
+P.cr_leadin
+	{ margin-top: 10pt; }
+

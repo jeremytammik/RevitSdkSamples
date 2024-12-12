@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>RebarContainerAnyShapeType.dll</Assembly>
+    <ClientId>5F500CA5-F3FF-418F-A38F-0AF1858E368B</ClientId>
+    <FullClassName>Revit.SDK.Samples.RebarContainerAnyShapeType.CS.Command</FullClassName>
+    <Text>RebarContainerAnyShapeType</Text>
+    <Description>Create Rebar Container in a selected concrete element (beam or column) that does not have any reinforcement.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

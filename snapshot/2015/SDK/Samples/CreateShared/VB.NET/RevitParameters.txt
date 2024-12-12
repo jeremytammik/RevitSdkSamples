@@ -1,0 +1,8 @@
+# This is a Revit shared parameter file.
+# Do not edit manually.
+*GROUP	ID	NAME
+GROUP	1	API
+GROUP	2	RevitParameters
+*PARAM	GUID	NAME	DATATYPE	DATACATEGORY	GROUP	VISIBLE
+PARAM	63f54050-d7f9-4e39-be07-86572a648918	APIParameter	INTEGER		1	1
+PARAM	89f128b0-d1a2-4066-a11b-01e51c4864b5	APIParameter	TEXT		2	1

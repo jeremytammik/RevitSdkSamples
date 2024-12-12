@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ScheduleAutomaticFormatter</Name>
+    <Assembly>ScheduleAutomaticFormatter.dll</Assembly>
+    <ClientId>c60d746a-3cc6-4c16-86cd-9067001d7d60</ClientId>
+    <FullClassName>Revit.SDK.Samples.ScheduleAutomaticFormatter.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

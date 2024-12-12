@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>TypeSelector.dll</Assembly>
+    <ClientId>e2920243-300a-4657-b7e7-f52a7f8d0ab4</ClientId>
+    <FullClassName>Revit.SDK.Samples.TypeSelector.VB.NET.Command</FullClassName>
+    <Text>Type Selector</Text>
+    <Description>Retrieve all the types of the selected element, such as a wall and allow the selected element's type to be changed.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

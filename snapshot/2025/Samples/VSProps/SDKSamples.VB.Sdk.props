@@ -1,0 +1,11 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk"/>
+  <ItemGroup Condition="'$(UseWPF)' == ''">
+    <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
+  </ItemGroup>
+</Project>

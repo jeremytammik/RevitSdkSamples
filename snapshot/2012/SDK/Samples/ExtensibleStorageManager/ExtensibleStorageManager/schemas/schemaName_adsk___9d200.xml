@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<SchemaWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Data>
+    <DataList>
+      <FieldData>
+        <Name>int0Name</Name>
+        <Type>System.Int32</Type>
+        <Unit>UT_Undefined</Unit>
+      </FieldData>
+      <FieldData>
+        <Name>short0Name</Name>
+        <Type>System.Int16</Type>
+        <Unit>UT_Undefined</Unit>
+      </FieldData>
+      <FieldData>
+        <Name>double0Name</Name>
+        <Type>System.Double</Type>
+        <Unit>UT_Length</Unit>
+      </FieldData>
+      <FieldData>
+        <Name>float0Name</Name>
+        <Type>System.Single</Type>
+        <Unit>UT_Length</Unit>
+      </FieldData>
+      <FieldData>
+        <Name>bool0Name</Name>
+        <Type>System.Boolean</Type>
+        <Unit>UT_Undefined</Unit>
+      </FieldData>
+      <FieldData>
+        <Name>string0Name</Name>
+        <Type>System.String</Type>
+        <Unit>UT_Undefined</Unit>
+      </FieldData>
+    </DataList>
+    <SchemaId>ddf50f22-44c8-bfc4-f275-d3d39f69d200</SchemaId>
+    <ReadAccess>Public</ReadAccess>
+    <WriteAccess>Public</WriteAccess>
+    <VendorId>adsk</VendorId>
+    <ApplicationId>dec00020-2010-4338-8de4-addcadcadcad</ApplicationId>
+    <Documentation>Schema documentation</Documentation>
+    <Name>schemaName</Name>
+  </Data>
+</SchemaWrapper>

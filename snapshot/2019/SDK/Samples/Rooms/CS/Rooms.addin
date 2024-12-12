@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Rooms.dll</Assembly>
+    <ClientId>fc5ac22e-80ae-4084-b876-86ef5aa3caea</ClientId>
+    <FullClassName>Revit.SDK.Samples.Rooms.CS.Command</FullClassName>
+    <Text>Rooms</Text>
+    <Description>Get and set room information (Number, Tag, Area).</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

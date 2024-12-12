@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>PanelEdgeLengthAngle.dll</Assembly>
+    <ClientId>7ead6750-de24-4ca4-b063-ba40914e2d53</ClientId>
+    <FullClassName>Revit.SDK.Samples.PanelEdgeLengthAngle.CS.SetLengthAngleParams</FullClassName>
+    <Text>Compute the length and angle of edges</Text>
+    <Description>Measure curtain panels on divided surfaces, store the length and angle data to parameters</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

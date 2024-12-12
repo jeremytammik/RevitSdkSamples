@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>RvtSamples External Application</Name>
+    <Assembly>C:\a\lib\revit\2020\SDK\Samples\RvtSamples\CS\bin\Debug\RvtSamples.dll</Assembly>
+    <ClientId>42cb0a70-2ee7-4e64-a42d-87b9cdcc41c8</ClientId>
+    <FullClassName>RvtSamples.Application</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

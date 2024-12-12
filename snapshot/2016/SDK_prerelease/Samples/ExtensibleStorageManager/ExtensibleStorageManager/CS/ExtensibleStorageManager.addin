@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ExtensibleStorageManager</Name>
+    <Assembly>ExtensibleStorageManager.dll</Assembly>
+    <AddInId>DEC00020-2010-4338-8de4-ADDCADCADCAD</AddInId>
+    <FullClassName>ExtensibleStorageManager.Application</FullClassName>
+    <VendorId>adsk</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ExtensibleStorageManager.dll</Assembly>
+    <ClientId>0183228C-5DFC-4db2-A191-A3BB2A83EB46</ClientId>
+    <FullClassName>ExtensibleStorageManager.Command</FullClassName>
+    <Text>Extensible Storage Manager</Text>
+    <Description>Extensible Storage Manager</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

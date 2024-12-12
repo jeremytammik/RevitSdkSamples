@@ -1,0 +1,115 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FCA4DD1E-1C51-4B45-B0E1-95FEFC077548}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Revit.SDK.Samples.FrameBuilder.CS</RootNamespace>
+    <AssemblyName>FrameBuilder</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>-Microsoft.Design#CA2210;-Microsoft.Design#CA1014;-Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1303;-Microsoft.Globalization#CA1306;-Microsoft.Globalization#CA1304;-Microsoft.Globalization#CA1305;-Microsoft.Globalization#CA1300;-Microsoft.Interoperability#CA1403;-Microsoft.Interoperability#CA1406;-Microsoft.Interoperability#CA1413;-Microsoft.Interoperability#CA1402;-Microsoft.Interoperability#CA1407;-Microsoft.Interoperability#CA1404;-Microsoft.Interoperability#CA1410;-Microsoft.Interoperability#CA1411;-Microsoft.Interoperability#CA1405;-Microsoft.Interoperability#CA1409;-Microsoft.Interoperability#CA1415;-Microsoft.Interoperability#CA1408;-Microsoft.Interoperability#CA1414;-Microsoft.Interoperability#CA1412;-Microsoft.Interoperability#CA1400;-Microsoft.Interoperability#CA1401;-Microsoft.Mobility#CA1600;-Microsoft.Mobility#CA1601;-Microsoft.Portability#CA1901;-Microsoft.Portability#CA1900</CodeAnalysisRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=10.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk Revit Structure 2010\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="CreateFrameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFrameForm.Designer.cs">
+      <DependentUpon>CreateFrameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditTypeNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTypeNameForm.Designer.cs">
+      <DependentUpon>EditTypeNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DuplicateTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuplicateTypeForm.Designer.cs">
+      <DependentUpon>DuplicateTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessageException.cs" />
+    <Compile Include="FrameBuilder.cs" />
+    <Compile Include="FrameData.cs" />
+    <Compile Include="FrameTypeParameters.cs" />
+    <Compile Include="FrameTypesMgr.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CreateFrameForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CreateFrameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTypeNameForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditTypeNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuplicateTypeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DuplicateTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ScriptHost">
+      <Guid>{CCD8C5EB-3980-11D0-A37A-00805FCA87EB}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

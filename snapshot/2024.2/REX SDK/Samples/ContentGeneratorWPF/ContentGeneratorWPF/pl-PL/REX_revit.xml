@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options product="REX" name="REX">
+	<option name="SDK" description="SDK" description_full="SDK" version="" domain="" date="">
+		<option name="ContentGeneratorWPF" description="ContentGeneratorWPF" description_full="ContentGeneratorWPF" version="0.5" domain="" date="" type="">
+		  <data>
+			<data.run type="ASSEMBLY" path="ContentGeneratorWPF" file="ContentGeneratorWPF.dll" class="REX.ContentGeneratorWPF.Application" direct_revit_class="REX.ContentGeneratorWPF.DirectRevitAccess"/>
+		  </data>
+		</option>
+	</option>
+</options>

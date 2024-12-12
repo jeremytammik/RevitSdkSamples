@@ -1,0 +1,123 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF7001E6-9FED-4374-B948-58F0C32A703C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>RstLinkAcadClient</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RstLinkAcadClient</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>RstLinkAcadClientCs.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>RstLinkAcadClientCs.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcDbMgd, Version=18.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\lib\arx\2010\inc-win32\AcDbMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcMgd, Version=18.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\lib\arx\2010\inc-win32\AcMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RstLink, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RstLinkCs\bin\RstLink.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <Name>System.Runtime.Serialization.Formatters.Soap</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcadCommands.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>copy "$(TargetPath)" "C:\Program Files\Autodesk\AutoCAD Architecture 2011\$(TargetFileName)"
+copy "$(TargetDir)RstLink.dll" "C:\Program Files\Autodesk\AutoCAD Architecture 2011\RstLink.dll"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

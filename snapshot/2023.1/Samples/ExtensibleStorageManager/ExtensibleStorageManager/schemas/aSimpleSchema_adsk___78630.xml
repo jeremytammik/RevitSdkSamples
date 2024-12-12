@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<SchemaWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Data>
+    <DataList>
+      <FieldData>
+        <Name>int0Name</Name>
+        <Type>System.Int32</Type>
+        <Spec></Spec>
+      </FieldData>
+      <FieldData>
+        <Name>short0Name</Name>
+        <Type>System.Int16</Type>
+        <Spec></Spec>
+      </FieldData>
+      <FieldData>
+        <Name>double0Name</Name>
+        <Type>System.Double</Type>
+        <Spec>autodesk.spec.aec:length-1.0.0</Spec>
+      </FieldData>
+      <FieldData>
+        <Name>float0Name</Name>
+        <Type>System.Single</Type>
+        <Spec>autodesk.spec.aec:length-1.0.0</Spec>
+      </FieldData>
+      <FieldData>
+        <Name>bool0Name</Name>
+        <Type>System.Boolean</Type>
+        <Spec></Spec>
+      </FieldData>
+      <FieldData>
+        <Name>string0Name</Name>
+        <Type>System.String</Type>
+        <Spec></Spec>
+      </FieldData>
+    </DataList>
+    <SchemaId>d07961c1-6958-9ecc-4ebf-6ba84b378630</SchemaId>
+    <ReadAccess>Public</ReadAccess>
+    <WriteAccess>Public</WriteAccess>
+    <VendorId>adsk</VendorId>
+    <ApplicationId>dec00020-2010-4338-8de4-addcadcadcad</ApplicationId>
+    <Documentation>A simple schema that can be deserialized into an Autodesk.Revit.DB.ExtensibleStorage.Schema</Documentation>
+    <Name>aSimpleSchema</Name>
+  </Data>
+</SchemaWrapper>

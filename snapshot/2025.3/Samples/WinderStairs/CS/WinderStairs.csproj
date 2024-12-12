@@ -1,0 +1,25 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <RootNamespace>Revit.SDK.Samples.WinderStairs.CS</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\WinderStairs.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FamilyCreation\TypeRegeneration\CS\TypeRegeneration.csproj" />
+  </ItemGroup>
+</Project>

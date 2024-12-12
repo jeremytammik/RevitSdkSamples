@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>P:\Unit\Unit\bin\Release\Unit.dll</Assembly>
+    <ClientId>0ce14778-361d-4592-aeeb-a123d48f2b7c</ClientId>
+    <FullClassName>REX.Unit.DirectRevitAccess</FullClassName>
+    <Text>Unit</Text>
+    <Description>Unit</Description>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

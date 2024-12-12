@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Point Cloud Engine</Name>
+    <Assembly>PointCloudEngine.dll</Assembly>
+    <AddInId>accd64af-f324-4f0d-9d6e-17a0f1e0e435</AddInId>
+    <FullClassName>Revit.SDK.Samples.CS.PointCloudEngine.PointCloudTestApplication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Point cloud engine sample - Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>PointCloudEngine.dll</Assembly>
+    <ClientId>AFD0104D-9372-4052-96CE-2CEF2A8BEFB1</ClientId>
+    <FullClassName>Revit.SDK.Samples.CS.PointCloudEngine.AddPredefinedInstanceCommand</FullClassName>
+    <Text>AddPredefinedInstance - Point Cloud Engine</Text>
+    <Description>Add predefined instance</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>PointCloudEngine.dll</Assembly>
+    <ClientId>7D48FBE9-6B4F-4211-8931-F66019CACDF1</ClientId>
+    <FullClassName>Revit.SDK.Samples.CS.PointCloudEngine.AddRandomizedInstanceCommand</FullClassName>
+    <Text>Add randomized instance - Point Cloud Engine</Text>
+    <Description>Add randomized instance</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>PointCloudEngine.dll</Assembly>
+    <ClientId>202AF792-6278-4752-A8A5-87D1F6A5B676</ClientId>
+    <FullClassName>Revit.SDK.Samples.CS.PointCloudEngine.AddTransformedInstanceCommand</FullClassName>
+    <Text>Add randomized instance at transform - Point Cloud Engine</Text>
+    <Description>Add randomized instance at transform</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>PointCloudEngine.dll</Assembly>
+    <ClientId>3A44EF5E-182B-4d9e-A852-12F7DA623AE0</ClientId>
+    <FullClassName>Revit.SDK.Samples.CS.PointCloudEngine.SerializePredefinedPointCloud</FullClassName>
+    <Text>Serialize point cloud (utility) - Point Cloud Engine</Text>
+    <Description>Serialize point cloud (utility)</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

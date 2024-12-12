@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>DMU</Name>
+    <FullClassName>RstAvfDmu.AlignRebar</FullClassName>
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\RstAvfDmu\RstAvfDmu\bin\Debug\RstAvfDmu.dll</Assembly>
+    <ClientId>8C0A9E25-B7C5-421c-A1AB-702F73FA552F</ClientId>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>AVFWithPointLoad</Text>
+    <FullClassName>RstAvfDmu.AVFWithPointLoads</FullClassName>
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\RstAvfDmu\RstAvfDmu\bin\Debug\RstAvfDmu.dll</Assembly>
+    <ClientId>6FDB8EC7-CCD3-4fc0-ADB7-B459D298FB94</ClientId>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CurvedBeam.dll</Assembly>
+    <ClientId>efc146c1-1cfe-4319-9c14-f77bda872464</ClientId>
+    <FullClassName>Revit.SDK.Samples.CurvedBeam.CS.Command</FullClassName>
+    <Text>Create Curved Beam</Text>
+    <Description>Create Curved Beam.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

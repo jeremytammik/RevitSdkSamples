@@ -1,0 +1,54 @@
+notes:
+
+poll results:
+
+1 33% engineer, 33% programmer, 15% manager, rest other
+2 7 13 10
+3 2 8 20
+4 18 11 8 1 1
+
+53 attendees in live meeting
+
+shared params values are not stored in text files, just the shared param definition can be imported from them. the values are stored in the project
+extensible storage, not external
+
+q & a:
+
+Question: welcome. this is a sample question :-)
+Answer: here is the answer.
+Question: audio is very quiet
+Answer: Can you hear the audio now?
+Question: It sounds like I can hear someone typing? The presenter speaking sounds very much in the background
+Answer: I have passed on the message to speak louder
+Question: Can you speak a little louder?
+Answer: I have passed on the message
+Question: Would you please speak near the microphone, I hear you far away
+Answer: I have passed on the message
+Question: To hear, i have to make a phone call?
+Answer: The audio should be available via LiveMeeting as well - if you are not able to hear clearly, you can dial in to the phone numbers too which were part of the Webcast invite
+Question: the typing is getting louder?
+Answer: sorry for the incovenience, The sound seems to have stopped now. I hope this disturbance will not occur again
+Question: the selection of doors and windows are possible with the use of filer in Revet without API, so what the meaning of it?
+Answer: sorry for the confusion, the filter is part of the API
+Question: Is it right? In revit you can filter all the windows, but through revit api, you could filter a window with certain size?
+Answer: yes that correct, you can use the FilteredElementCollector and pass in the class (FamilyInstance), category (OST_Windows) and Type (the specific size) and you should be able to get what you need.
+Question: Hi How can I scan ( filter the elements) a certain specific area in the document?
+Answer: You can use the BoundingBoxIntersectsFilter to use a Bounding Box to filter elements contained in it
+Question: Is there an API that I can use to edit a wall profile?
+Answer: Sorry this is not possible at the moment, I would think you can delete the wall and create a new wall in that location with a profile you desire to workaround this. http://thebuildingcoder.typepad.com/blog/2011/07/create-gable-wall.html shows how you can have gable wall - a wall with non-regular profile
+Question: Regarding the Question: Is it right? In revit you can filter all the windows, but through revit api, you could filter a window with certain size? >> Response: With the API you can also filter all the windows if you want to just by using the Class and Category filter (without specifying any type).
+Answer: Additional inputs to the previous reponse to the same question
+Question: Where to download this video of this webcast?
+Answer: We will be making the recording available via the ADN and the API training schedule (the same place where you registered for this webcast from)
+Question: Hi I just wonder, If I develop very useful add-in how can I sell? Is there any way to prome it through autodesk?
+Answer: yes, Please look at the Revit Exhange Store. Via apps.exchange.autodesk.com
+Question: 1. With the upcoming release of Visual Studio version 11, can it be used for programming with the Revit API? 2. Can the Revit API be used for reading and writing (exporting) gbXML files?
+Answer: 1. The requirement is to have .NET framework 4.0
+Question: Regarding this question -2. Can the Revit API be used for reading and writing (exporting) gbXML files? Response: The API has an Export method on the document object which can help you export to GBXML format from Revit using API
+Answer: responding to query 2
+Question: Is there any api that can be usd to access Revit DB Link?
+Answer: You are talking about DB Link on the subscription? I don't think there is API for that. But DB link is written in public API. So you should be able to do the similiar with the API.
+Question: Do you planning to add some ability to select all values of parameter (i mean distinct values) to collect them all at one query?
+Answer: the filtering mechanism is based on LINQ queries and I believe this should be possible
+Question: I do not understand UV coordinate. Is it the same thing as XY Coordinate?
+Answer: http://en.wikipedia.org/wiki/UV_mapping

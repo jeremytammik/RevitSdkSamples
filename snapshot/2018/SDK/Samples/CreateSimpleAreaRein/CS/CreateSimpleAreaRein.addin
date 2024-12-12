@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateSimpleAreaRein.dll</Assembly>
+    <ClientId>81dafcfd-c1d7-48e1-8816-a155fc414df2</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateSimpleAreaRein.CS.Command</FullClassName>
+    <Text>Create simple area reinforcement</Text>
+    <Description>Create simple AreaReinforcement on selected wall or floor.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

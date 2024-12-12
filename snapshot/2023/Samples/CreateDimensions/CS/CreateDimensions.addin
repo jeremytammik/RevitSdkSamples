@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateDimensions.dll</Assembly>
+    <ClientId>11baad53-9393-44be-8395-cca54fb4ad1f</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateDimensions.CS.Command</FullClassName>
+    <Text>Create Dimensions</Text>
+    <Description>Add a dimension to a selected structural wall from its start to its end. Name the dimensions 'Dimension N' where N is an increasing number for each dimension.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

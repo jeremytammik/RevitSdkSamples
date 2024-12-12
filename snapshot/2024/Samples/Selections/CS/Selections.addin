@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Selections.dll</Assembly>
+    <ClientId>b18daefa-1ad6-446d-aa17-3f4c289c3e80</ClientId>
+    <FullClassName>Revit.SDK.Samples.Selections.CS.PickforDeletion</FullClassName>
+    <Text>Pick for Deletion</Text>
+    <Description>This command is to pick element and delete.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>Selections.dll</Assembly>
+    <ClientId>71a74027-bbc1-427c-a001-78d18ff14212</ClientId>
+    <FullClassName>Revit.SDK.Samples.Selections.CS.PlaceAtPointOnWallFace</FullClassName>
+    <Text>Place At Point On Wall Face</Text>
+    <Description>This command is to pick a point on wall face and place a window.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>Selections.dll</Assembly>
+    <ClientId>5513682a-b16a-4e5d-a45f-88942694b714</ClientId>
+    <FullClassName>Revit.SDK.Samples.Selections.CS.PlaceAtPickedFaceWorkplane</FullClassName>
+    <Text>Place At Picked Face Work plane</Text>
+    <Description>This command is to pick a face, set work plane, then pick a point to create a circle.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>Selections.dll</Assembly>
+    <ClientId>cf843bf5-e9cd-40d3-bd6b-e137fedb970b</ClientId>
+    <FullClassName>Revit.SDK.Samples.Selections.CS.SelectionDialog</FullClassName>
+    <Text>Selection Dialog</Text>
+    <Description>This command is to pick a element and a point from dialog.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

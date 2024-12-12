@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DevCamp_AVF.dll</Assembly>
+    <AddInId>C3183411-E65B-4a35-BF7F-2959CA87A42D</AddInId>
+    <FullClassName>DevCamp_AVF.SpatialFieldXYZ_OnePoint</FullClassName>
+    <Text>One XYZ Point</Text>
+  </AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_AVF.dll</Assembly>
+		<AddInId>CF284371-E65B-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_AVF.CreateSetAnalysisDisplayStyle</FullClassName>
+		<Text>Create and Set Analysis Display Style</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_AVF.dll</Assembly>
+		<AddInId>C3183471-E65B-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_AVF.SpatialFieldXYZ_ThreePoint</FullClassName>
+		<Text>Three XYZ Points</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_AVF.dll</Assembly>
+		<AddInId>CF184371-E64B-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_AVF.SpatialFieldCurve</FullClassName>
+		<Text>Curve Points</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_AVF.dll</Assembly>
+		<AddInId>CF184321-165B-4a38-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_AVF.SpatialFieldFaceTransform_MultiValuesPerPoint</FullClassName>
+		<Text>Face - Multiple Values Per Point and Transform</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_AVF.dll</Assembly>
+		<AddInId>CF293952-E66B-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_AVF.MultiThreadAVF</FullClassName>
+		<Text>Multi-Threaded Dynamic Update AVF</Text>
+	</AddIn>
+</RevitAddIns>

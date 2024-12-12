@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DeleteObject.dll</Assembly>
+    <ClientId>d2ec51b2-d06b-4c47-bf37-b7342189a584</ClientId>
+    <FullClassName>Revit.SDK.Samples.DeleteObject.VB.NET.Command</FullClassName>
+    <Text>Delete Objects (VB)</Text>
+    <Description>Delete selected elements.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,107 @@
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+<head>
+<title>Comments?</title>
+<style>
+body    { background-color: #c0c0c0; }
+.label  { margin-top: 2pt; margin-bottom: 2pt; color: #0000bf; font-family:sans-serif; font-size:8pt; }
+.info   { font-family:sans-serif; font-size:8pt; font-weight:bold; color: #555555; }
+.btn    { font-family:sans-serif; font-size:8pt; font-weight:bold; width:100 }
+.input  { font-family:sans-serif; font-size:8pt; font-weight:normal; width:100%;
+          behavior:url(#default#userData); }
+</style>
+
+<script>
+var fileid = "AC_COMMENTS";
+</script>
+<!-- <script language=javascript src="ac.persistence.js"></script> -->
+<script>
+var persistlist = new Array(5);
+persistlist[0] = "frm.uname";
+persistlist[1] = "frm.uemail";
+</script>
+
+<script language="javascript" src="../scripts/ac_common.js"></script>
+<script>
+// Constants .. pulled from external JS files
+
+//var prod   = "AX01";    // pulled in from ac_common.js
+//var lang   = "ENU";     // pulled in from ac_common.js
+//var build  = "AX.0.1";  // pulled in from ac_common.js
+//var cmturl = "http://www.autodesk.com/cgi-bin/achelp15.pl";
+//var cmturl = "http://www.acdocs.com/achelp/achelp15.cgi?type=COMMENTS"; // pulled in from ac_common.js
+var achelpscript = "http://www.autodesk.com/cgi-bin/achelp15.pl";
+var cmturl = achelpscript+ "?type=COMMENTS";
+
+//===========================================================================
+function doSend() {
+  try {
+  var cmtstr = document.frm.ucmt.value;
+  var locstr = document.frm.loc.value;
+  var c1 = locstr.indexOf("#");
+  if( c1 != -1 ) { locstr = locstr.substring(0,c1); }
+  if( cmtstr.replace( /^\s*(.*)\s*$/, "$1" ) == "" ) {
+    alert( "Please enter a comment before sending." );
+    return;
+  }
+  cmtstr = escape(cmtstr.replace( /\r\n/g, " " ));
+  location.href = cmturl+"&prod="+prod+"&lang="+lang+"&build="+build+"&loc="+locstr+"&name="+document.frm.uname.value+"&email="+document.frm.uemail.value+"&comments="+cmtstr;
+  } catch(exception) { }
+}
+
+function loader() {
+  document.frm.uname.focus();
+}
+//===========================================================================
+</script>
+</head>
+
+<body topmargin=2 leftmargin=10 onload="try { window.resizeTo(document.frm.loc.clientWidth+70, 450);} catch(exception) { }">
+<form name=frm id=frm>
+<table width="100%" border=0>
+<tr><td colspan=2>
+<p class=label><b>Using this form sends your comments to the Autodesk Technical
+ Publications group responsible for this documentation.</b>
+</p>
+</td></tr>
+<tr valign=top>
+ <td colspan=2><span class=label>Topic title and location (do not edit):<br></span>
+  <script>
+   try {
+   var arg = unescape(location.hash);
+   var arg = unescape(arg);
+   arg = arg.substring(1,arg.length);
+   document.writeln("<textarea cols=50 class=input id=\"loc\" name=\"loc\" DISABLED  wrap=auto>" + arg + "</textarea>");
+   } catch(exception) { }
+  </script>
+ </td>
+</tr>
+<tr valign=top>
+ <td width="50%"><span class=label>Name (optional):<br></span>
+  <input class=input type=text name="uname" id="uname"></td>
+ <td width="50%"><span class=label>Email (optional):<br></span>
+  <input class=input type=text name="uemail" id="uemail"></td>
+</tr>
+<tr valign=top>
+ <td colspan=2 width="100%"><span class=label>Comments:<br></span>
+  <textarea class=input cols=50 rows=12 name="ucmt" wrap=auto></textarea>
+ </td>
+</tr>
+<tr>
+ <td colspan=2 align=right>
+  <input class=btn type=button value="Send Comment" onclick="doSend(); " >
+ </td>
+</tr>
+<tr><td colspan=2>
+<p class=label><b>Note:</b> This form is not intended as a way for
+  you to receive feedback or technical support. The information you provide
+  will be used to enhance future updates to the documentation. Thanks!
+</p>
+</td></tr>
+</table>
+</form>
+
+
+</body>
+</html>
+

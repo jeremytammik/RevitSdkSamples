@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>BarDescriptions.dll</Assembly>
+    <ClientId>c8d55396-6199-4b24-878a-88d0714e2208</ClientId>
+    <FullClassName>Revit.SDK.Samples.BarDescriptions.CS.Command</FullClassName>
+    <Text>Bar Descriptions</Text>
+    <Description>Iterate through the BarDescriptions in the project and display the properties in a table. Allow the table to be saved to a CSV file.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

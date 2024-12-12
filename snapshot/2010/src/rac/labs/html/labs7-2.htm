@@ -1,0 +1,178 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="stylesheet" href="ac.acad_ak.css" type="text/css"/>
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Create Divided Surface</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs7-3.htm">next</a>
+<a class="j" href="labs7-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this lab, we shall create a divided surface on top of the form we created in the <code>lab 7-1</code> as shown in the
+image below - </p>
+<img src="img/labs7-2-01.jpg" alt="Divided Surface"/>
+
+<p>For this lab, we shall use the Category filter to extract all the mass elements which belong to
+category <code>OST_MassSurface</code>.</p>
+
+<pre title="C# Category Filter for Mass Surface" class="jtcollapse">
+  # region Lab7_2_CreateDividedSurface
+  /// &lt;summary&gt;
+  /// Create a divided surface using reference of a face of the form.
+  /// &lt;/summary&gt;
+  public class Lab7_2_CreateDividedSurface : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements)
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      try
+      {
+        // find forms in the model by filter:
+        Filter filterForm = app.Create.Filter.NewCategoryFilter(BuiltInCategory.OST_MassSurface);
+        List&lt;Autodesk.Revit.Element&gt; forms = new List&lt;Autodesk.Revit.Element&gt;();
+        doc.get_Elements(filterForm, forms);
+        foreach (Form form in forms)
+        {
+          . . .
+        }
+      }
+      catch
+      {
+        return IExternalCommand.Result.Failed;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion
+</pre>
+
+<pre title="Category Filter for Mass Surface" class="jtcollapse">
+    #Region "Lab7_2_CreateDividedSurface"
+    Public Class Lab7_2_CreateDividedSurface
+        Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+            Dim app As Application = commandData.Application
+            Dim doc As Document = app.ActiveDocument
+            Try
+                ' find forms in the model by filter:
+                Dim filterForm As Filter = app.Create.Filter.NewCategoryFilter(BuiltInCategory.OST_MassSurface)
+                Dim forms As New List(Of Autodesk.Revit.Element)()
+                Dim iForms As Integer = doc.Elements(filterForm, forms)
+                For Each form As Form In forms
+                    . . .
+                Next
+            Catch
+                Return IExternalCommand.Result.Failed
+            End Try
+
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+    #End Region
+</pre>
+
+<p>With each of the forms in the model, we shall get access to the geometry
+element of each form which is a collection of Geometry Objects stored in an
+array <code>GeometryObjectArray</code>. With each of the geometry object, working with only
+the ones that are solids, we shall work with each face on the solid and create a
+divided surface on the face(s) using the <code>NewDividedSurface</code> method on the
+<code>FamilyItemFactory</code> instance.</p>
+
+<pre title="C# Divided Surface Creation" class="jtcollapse">
+  // Now, lets create the Divided surface on the loft form
+  Autodesk.Revit.Creation.FamilyItemFactory fac = doc.FamilyCreate;
+  Options options = app.Create.NewGeometryOptions();
+  options.ComputeReferences = true;
+  options.View = doc.ActiveView;
+  Autodesk.Revit.Geometry.Element element = form.get_Geometry(options);
+
+  GeometryObjectArray geoObjectArray = element.Objects;
+  //enum the geometry element
+  for (int j = 0; j < geoObjectArray.Size; j++)
+  {
+    GeometryObject geoObject = geoObjectArray.get_Item(j);
+    Solid solid = geoObject as Solid;
+    foreach (Face face in solid.Faces)
+    {
+      if (face.Reference != null)
+      {
+        if (null != face)
+        {
+          DividedSurface divSurface = fac.NewDividedSurface(face.Reference);
+        }
+      }
+    }
+  }
+</pre>
+
+<pre title="VB Divided Surface Creation" class="jtcollapse">
+    ' Now, lets create the Divided surface on the loft form
+    Dim fac As Autodesk.Revit.Creation.FamilyItemFactory = doc.FamilyCreate
+    Dim options As Autodesk.Revit.Geometry.Options = app.Create.NewGeometryOptions()
+    options.ComputeReferences = True
+    options.View = doc.ActiveView
+    Dim element As Autodesk.Revit.Geometry.Element = form.Geometry(options)
+
+    Dim geoObjectArray As GeometryObjectArray = element.Objects
+    'enum the geometry element
+    For j As Integer = 0 To geoObjectArray.Size - 1
+        Dim geoObject As GeometryObject = geoObjectArray.Item(j)
+        Dim solid As Solid = TryCast(geoObject, Solid)
+        For Each face As Autodesk.Revit.Geometry.Face In solid.Faces
+            If face.Reference IsNot Nothing Then
+                If face IsNot Nothing Then
+                    Dim divSurface As DividedSurface = fac.NewDividedSurface(face.Reference)
+                End If
+            End If
+         Next
+    Next
+</pre>
+
+<p>Compile the code, update Revit.ini and test the command. Examine the outcome.</p>
+
+<a class="j" href="labs7-3.htm">next</a>
+<a class="j" href="labs7-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

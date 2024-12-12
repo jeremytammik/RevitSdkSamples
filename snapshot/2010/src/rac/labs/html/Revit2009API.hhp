@@ -1,0 +1,14 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=RevitAPI2009RACLabs.chm
+Contents file=Table of Contents.hhc
+Default topic=labs0-0-introduction.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=Revit2009API.hhk
+Language=0x409 English (United States)
+Title=Revit API 2009 RAC Labs
+
+
+[INFOTYPES]
+

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CapitalizeAllTextNotes.dll</Assembly>
+    <ClientId>83c95618-b9c4-42a2-ad1e-a54751415975</ClientId>
+    <FullClassName>Revit.SDK.Samples.CapitalizeAllTextNotes.CS.Command</FullClassName>
+    <Text>Capitalize all TextNote elements</Text>
+    <Description>This command iterates through the document and applies the 'AllCaps' formatting to them.  This will show text in upper case characters.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,27 @@
+HKCR
+{
+	Miro.Force.2 = s 'Force Class'
+	{
+		CLSID = s '{3E21B286-B799-4bce-B115-EB06287D1454}'
+	}
+	Miro.Force = s 'Force Class'
+	{
+		CLSID = s '{3E21B286-B799-4bce-B115-EB06287D1454}'
+		CurVer = s 'Miro.Force.2'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3E21B286-B799-4bce-B115-EB06287D1454} = s 'Force Class'
+		{
+			ProgID = s 'Miro.Force.2'
+			VersionIndependentProgID = s 'Miro.Force'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{57BA066C-86BA-4e21-B09B-E6139B3662A6}'
+		}
+	}
+}

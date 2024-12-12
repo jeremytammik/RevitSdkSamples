@@ -1,0 +1,4935 @@
+
+
+
+<a class="j" href="labs3-2.htm">next</a>
+<a class="j" href="labs2-5.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<pre title="C# Lab3_1_StandardFamiliesAndTypes skeleton" class="jtcollapse">using System;
+using System.Collections;
+using System.Collections.Generic;
+using WinForms = System.Windows.Forms;
+using Autodesk.Revit;
+using Autodesk.Revit.Elements;
+using Autodesk.Revit.Parameters;
+using Autodesk.Revit.Symbols;
+using RvtElement = Autodesk.Revit.Element;
+
+namespace Labs
+{
+  public class Lab3_1_StandardFamiliesAndTypes : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+}
+</pre>
+
+<pre title="VB Lab3_1_StandardFamiliesAndTypes skeleton" class="jtcollapse">Public Class Lab3_1_StandardFamiliesAndTypes
+    Implements IExternalCommand
+
+    Public Function Execute( _
+        ByVal commandData As ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As ElementSet) _
+    As IExternalCommand.Result _
+    Implements Autodesk.Revit.IExternalCommand.Execute
+
+        Return IExternalCommand.Result.Succeeded
+
+    End Function
+End Class
+</pre>
+
+<para>Unlike previous versions of Revit where we had to iterate through all the
+elements in Revit and create a list of family elements, from Revit 2009 onwards,
+we can use the element filtering mechanism to filter out all the family elements.
+This not only reduces the number of lines of code required to achieve the same
+result, but also has tremendous performance advantage as compared to previous releases.
+Insert the following lines of code to the class implementation to create a list
+of family elements using the filtering mechanism.</para>
+
+<pre title="C# List standard families" class="jtcollapse">
+    Application app = commandData.Application;
+    Document doc = app.ActiveDocument;
+    //
+    // get all family elements in current document:
+    //
+    List&lt;RvtElement&gt; families = new List&lt;RvtElement&gt;();
+    Filter filterFamily = app.Create.Filter.NewTypeFilter( typeof( Family ) );
+    doc.get_Elements( filterFamily, families );
+    string sMsg = "Standard families already loaded in this model:";
+    foreach( Family f in families )
+    {
+      // Get its category name; notice that the Category property is not
+      // implemented for the Family class; use FamilyCategory instead;
+      // notice that that is also not always implemented; in that case,
+      // use the workaround demonstrated below, looking at the contained
+      // family symbols' category:
+      sMsg += "\r\n  Name=" + f.Name
+        + "; Category=" + ( ( null == f.Category ) ? "?" : f.Category.Name )
+        + "; FamilyCategory=" + ( ( null == f.FamilyCategory ) ? "?" : f.FamilyCategory.Name );
+    }
+    LabUtils.InfoMsg( sMsg );
+</pre>
+
+<pre title="VB List standard families" class="jtcollapse">
+    ' Element iteration done with element filtering functionality in Revit 2009
+    Dim doc As Revit.Document = commandData.Application.ActiveDocument
+    Dim elementList As New List(Of Revit.Element)
+    Dim filterType As Filter = commandData.Application.Create.Filter.NewTypeFilter(GetType(Family))
+    Dim nRetVal As Integer = doc.Elements(filterType, elementList)
+    Dim sMsg As String = "Standard Families already loaded in this model are:"
+    Dim f As Family
+    For Each f In elementList
+        ' get its category name; notice that the category property is
+        ' not implemented for the Family class. use FamilyCategory
+        ' instead, which is also not always implemented:
+
+        Dim catName As String
+        If f.Category Is Nothing Then
+            catName = "?"
+        Else
+            catName = f.Category.Name
+        End If
+
+        Dim famCatName As String
+        If f.FamilyCategory Is Nothing Then
+            famCatName = "?"
+        Else
+            famCatName = f.FamilyCategory.Name
+        End If
+
+        sMsg += vbCrLf & "  Name=" & f.Name _
+            & "; Category=" & catName _
+            & "; FamilyCategory=" & famCatName
+    Next
+    MsgBox(sMsg)
+</pre>
+
+<para>Compile the project, adjust the ini file and run the command.
+As we can see from the message box, all the categories are listed as "?",
+showing that this property is not implemented for family class.</para>
+
+<para>Because the <code>Category</code> property is not implemented for family
+objects, and it is often useful to determine a family instance's category,
+the Revit API has defined an additional property <code>FamilyCategory</code>
+to query it. Unfortunately, the value of this property is defined in the
+content, and some legacy content does not specify a value for it,
+so even this property does not always reliably return the value you
+might expect.</para>
+
+<para>In order to reliably determine a family's category, we can retrieve the
+contained symbols or types and determine <em>their</em> category.
+The following code demonstrates this and also reports
+all types available in each family, displaying one message box per family.
+Add the following between the previous loop and the return statement:</para>
+
+<pre title="C# List standard families and types" class="jtcollapse">
+    // Loop through the collection of families, and now look at
+    // the child symbols (types) as well. These symbols can be
+    // used to determine the family category.
+    foreach( Family f in families )
+    {
+      string catName;
+      bool first = true;
+      // Loop all contained symbols (types)
+      foreach( FamilySymbol symb in f.Symbols )
+      {
+        // you can determine the family category from its first symbol.
+        if( first )
+        {
+          first = false;
+          catName = symb.Category.Name;
+          sMsg = "Family: Name=" + f.Name
+            + "; Id=" + f.Id.Value.ToString()
+            + "; Category=" + catName
+            + "\r\nContains Types:";
+        }
+        sMsg += "\r\n    " + symb.Name + "; Id=" + symb.Id.Value.ToString();
+      }
+      // Show the symbols for this family and allow user to proceed
+      // to the next family (OK) or cancel (Cancel)
+      sMsg += "\r\nContinue?";
+      if( !LabUtils.QuestionMsg( sMsg ) )
+      {
+        break;
+      }
+    }
+</pre>
+
+<pre title="VB List standard families and types" class="jtcollapse">
+    ' Let's do a similar loop, but now get all the child symbols (types) as well.
+    ' These symbols can also be used to determine the category:
+
+    For Each f In elementList
+        Dim catName As String
+        Dim first As Boolean = True
+        Dim symb As FamilySymbol
+        'Loop all contained symbols (types)
+        For Each symb In f.Symbols
+            ' Determine the category via first symbol
+            If first Then
+                first = False
+                If (symb.Category Is Nothing) Then
+                    catName = "?"  ' Still happens for *some* Symbols (Profiles?)
+                Else
+                    catName = symb.Category.Name
+                End If
+
+                sMsg = "Family: Name=" & f.Name & "; Id=" & f.Id.Value.ToString & "; Category=" & catName & vbCrLf & "Contains Types:"
+            End If
+                sMsg += vbCrLf & "    " & symb.Name & "; Id=" & symb.Id.Value.ToString
+        Next
+
+        ' Show the symbols for this family and allow user to procede to the next family (OK) or cancel (Cancel)
+        If MsgBox(sMsg, MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then
+            Exit For
+        End If
+    Next
+</pre>
+
+<para>Now a valid category name is reported for all families.
+The looping continues displaying all types contained in each family
+in one message box each as long as you click 'OK'.
+Click 'Cancel' to terminate.</para>
+
+<a class="j" href="labs3-2.htm">next</a>
+<a class="j" href="labs2-5.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<a class="j" href="labs3-3.htm">next</a>
+<a class="j" href="labs3-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we load a new entire family or
+a single family instance into the current document.
+The document object provides straightforward methods to load either a whole RFA file
+or just a specific symbol from the corresponding TXT catalog file.
+Before implementing a new command, we add some new constants to
+<code>LabConstants</code> module to define which family and symbol to load. This ensures that all the hard-coded
+    constant values have a single repository for easy access in case we need to alter
+    them at a later date:
+</para>
+
+<pre title="C# Family and symbol name string constants" class="jtcollapse">  // Lab 3_3
+  public const string gsLibPath = @"C:\Documents and Settings\All Users\Application Data\Autodesk\RST 2009\Metric Library\";
+
+  public const string gsWholeFamilyFileToLoad1 = gsLibPath + @"Structural\Framing\Steel\M_C-Channel.rfa"; // has TXT catalog file
+  public const string gsWholeFamilyFileToLoad2 = gsLibPath + @"Structural\Framing\Steel\M_Plate.rfa"; // no TXT catalog file
+
+  public const string gsFamilyFileToLoadSingleSymbol = gsLibPath + @"Structural\Framing\Steel\M_L-Angle.rfa";
+  public const string gsSymbolName = "L152x102x12.7";
+</pre>
+
+<pre title="VB Family and symbol name string constants" class="jtcollapse">  ' Lab 3_3
+  Public Const gsLibPath As String = "C:\Documents and Settings\All Users\Application Data\Autodesk\RST 2009\Metric Library\"
+
+  Public Const gsWholeFamilyFileToLoad1 As String = gsLibPath + "Structural\Framing\Steel\M_C-Channel.rfa" ' has TXT catalog file
+  Public Const gsWholeFamilyFileToLoad2 As String = gsLibPath + "Structural\Framing\Steel\M_Plate.rfa" ' no TXT catalog file
+
+  Public Const gsFamilyFileToLoadSingleSymbol As String = gsLibPath + "Structural\Framing\Steel\M_L-Angle.rfa"
+  Public Const gsSymbolName As String = "L152x102x12.7"
+</pre>
+
+<para>You may need to change the paths and family names to make sure the
+RFA files and the corresponding TXT catalog files exist on your machine.</para>
+
+<para>Now we can add a new command to Labs3 calling the document method to load an entire family using the <code>LoadFamily</code> method:</para>
+
+<pre title="C# Load an entire family" class="jtcollapse">  /// &lt;summary&gt;
+  /// Load an entire family or a specific type from a family.
+  /// &lt;/summary&gt;
+  public class Lab3_2_LoadStandardFamilies : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Document doc = commandData.Application.ActiveDocument;
+      //
+      // Load a whole Family
+      //
+      // example for a family WITH TXT file
+      if( doc.LoadFamily( LabConstants.gsWholeFamilyFileToLoad1 ) )
+      {
+        LabUtils.InfoMsg( "Successfully loaded family " + LabConstants.gsWholeFamilyFileToLoad1 + "." );
+      }
+      else
+      {
+        LabUtils.ErrorMsg( "ERROR loading family " + LabConstants.gsWholeFamilyFileToLoad1 + "." );
+      }
+      // example for a family WITHOUT TXT file
+      if( doc.LoadFamily( LabConstants.gsWholeFamilyFileToLoad2 ) )
+      {
+        LabUtils.InfoMsg( "Successfully loaded family " + LabConstants.gsWholeFamilyFileToLoad2 + "." );
+      }
+      else
+      {
+        LabUtils.ErrorMsg( "ERROR loading family " + LabConstants.gsWholeFamilyFileToLoad2 + "." );
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre title="VB Load an entire family" class="jtcollapse">Public Class Lab3_2_LoadStandardFamilies
+    Implements IExternalCommand
+
+    Public Function Execute( _
+        ByVal commandData As Autodesk.Revit.ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As Autodesk.Revit.ElementSet) _
+        As Autodesk.Revit.IExternalCommand.Result Implements Autodesk.Revit.IExternalCommand.Execute
+
+        Dim doc As Revit.Document = commandData.Application.ActiveDocument
+
+        'Load a whole Family
+
+	    ' example for a family WITH TXT file
+        If Not CType(doc.LoadFamily(gsWholeFamilyFileToLoad1), Boolean) Then
+            MsgBox("ERROR in loading Family " & gsWholeFamilyFileToLoad1 & "?")
+        Else
+            MsgBox("Successfully loaded Family " & gsWholeFamilyFileToLoad1 & "!")
+        End If
+
+        ' example for a family WITHOUT TXT file
+        If Not CType(doc.LoadFamily(gsWholeFamilyFileToLoad2), Boolean) Then
+            MsgBox("ERROR in loading Family " & gsWholeFamilyFileToLoad2 & "?")
+        Else
+            MsgBox("Successfully loaded Family " & gsWholeFamilyFileToLoad2 & "!")
+        End If
+
+        Return Revit.IExternalCommand.Result.Succeeded
+    End Function
+End Class
+</pre>
+
+<para>Build the project, adjust the ini file and test loading the whole family.
+In order to load a single symbol, you can add the following piece of code
+before return statement:</para>
+
+<pre title="C# Load an individual family symbol" class="jtcollapse">  //
+  // Load only a specific Symbol (Type)
+  // The symbol MUST exist in the corresponding catalog (TXT) file - same as in the UI
+  if( doc.LoadFamilySymbol( LabConstants.gsFamilyFileToLoadSingleSymbol, LabConstants.gsSymbolName ) )
+  {
+    LabUtils.InfoMsg( "Successfully loaded family symbol " + LabConstants.gsFamilyFileToLoadSingleSymbol + " : " + LabConstants.gsSymbolName + "." );
+  }
+  else
+  {
+    LabUtils.ErrorMsg( "ERROR loading family symbol " + LabConstants.gsFamilyFileToLoadSingleSymbol + " : " + LabConstants.gsSymbolName + "." );
+  }
+</pre>
+
+<pre title="VB Load an individual family symbol" class="jtcollapse">  'Load only a specific Symbol (Type)
+  ' The symbol MUST exist in the corresponding catalog (TXT) file - same as in the UI
+  If Not CType(doc.LoadFamilySymbol(gsFamilyFileToLoadSingleSymbol, gsSymbolName), Boolean) Then
+      MsgBox("ERROR in loading FamilySymbol " & gsFamilyFileToLoadSingleSymbol & " : " & gsSymbolName & "?")
+  Else
+      MsgBox("Successfully loaded FamilySymbol " & gsFamilyFileToLoadSingleSymbol & " : " & gsSymbolName & "!")
+  End If
+</pre>
+
+<para>Compile and test again, and discuss with the course instructor and your peers.</para>
+
+<a class="j" href="labs3-3.htm">next</a>
+<a class="j" href="labs3-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs3-4.htm">next</a>
+<a class="j" href="labs3-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we determine the family and type of a family instance element.
+We look at two simple scenarios.
+In Lab 3-1, we listed all symbols by looping over the contents of the symbols
+property for each family found in the model.
+Here, we first list all loaded standard family symbols belonging to a category,
+such as 'Windows'.
+For this we can use the new filter type called <code>NewLogicAndFilter</code>,
+which lists all elements based on filter criteria which matches the 'Windows'
+category AND the 'FamilySymbol' type. Once we have the loaded family symbols,
+we can directly access the Family and Name properties to display them.</para>
+
+<pre title="C# List all symbols for a category" class="jtcollapse">  /// &lt;summary&gt;
+  /// For a selected family instance in the model, determine
+  /// its type and family using Revit 2009 filtering.
+  /// &lt;/summary&gt;
+  public class Lab3_3_DetermineInstanceTypeAndFamily : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements)
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      // Use the filtering mechanism to report all FamilySymbol objects of "Windows" category.
+      BuiltInCategory bic = BuiltInCategory.OST_Windows;
+      List&lt;Element&gt; familySymbols = new List&lt;Element&gt;();
+
+      Filter filterCategory = app.Create.Filter.NewCategoryFilter( bic );
+      Filter filterType = app.Create.Filter.NewTypeFilter( typeof( FamilySymbol ) );
+      Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterCategory, filterType );
+      app.ActiveDocument.get_Elements( filterAnd, familySymbols );
+
+      string sMsg = "The loaded windows family symbols in the model are:";
+      foreach( Element elem in familySymbols )
+      {
+        FamilySymbol symb = elem as FamilySymbol;
+        sMsg += "\r\n    " + symb.Name + ", Id=" + symb.Id.Value.ToString();
+        Family fam = symb.Family;
+        sMsg += "; Family name=" + fam.Name + ", Family Id=" + fam.Id.Value.ToString();
+      }
+      LabUtils.InfoMsg( sMsg );
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre title="VB List all symbols for a category" class="jtcollapse">    Public Class Lab3_3_DetermineInstanceTypeAndFamily
+        Implements IExternalCommand
+
+        Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, ByRef message As String, ByVal elements As Autodesk.Revit.ElementSet) As Autodesk.Revit.IExternalCommand.Result Implements Autodesk.Revit.IExternalCommand.Execute
+
+            Dim app As Autodesk.Revit.Application = commandData.Application
+            Dim doc As Revit.Document = commandData.Application.ActiveDocument
+
+            ' Use the filtering mechanism to report all FamilySymbol objects of "Windows" category.
+            Dim sMsg As String = " Windows Family Symbols in the model are:"
+            Dim bic As BuiltInCategory = BuiltInCategory.OST_Windows
+
+            Dim familySymbols As New List(Of Element)
+            Dim filterCategory As Filter = app.Create.Filter.NewCategoryFilter(bic)
+            Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(FamilySymbol))
+            Dim filter As Filter = app.Create.Filter.NewLogicAndFilter(filterCategory, filterType)
+            Dim rVal As Integer = app.ActiveDocument.Elements(filter, familySymbols)
+
+            Dim elem As Element
+            For Each elem In familySymbols
+                Dim symb As FamilySymbol = elem
+                sMsg += vbCrLf & "  " & symb.Name & ", Id=" & symb.Id.Value.ToString
+                Dim fam As Family = symb.Family
+                sMsg += "; Family name=" & fam.Name & ", Family Id=" & fam.Id.Value.ToString
+            Next
+            MsgBox(sMsg)
+
+            Return IExternalCommand.Result.Succeeded
+        End Function
+     End Class
+</pre>
+
+<para>Build the project, adjust the ini file and examine the output
+in a model with a few windows instances.
+Notice the intriguing fact that some of the family symbols are
+listed multiple times if used for any instances.</para>
+
+<h3>Why do two different family symbols have the same name?</h3>
+
+<para>In Revit, a symbol represents geometry, and we have the concept
+of master and slave family symbols.</para>
+
+<para>Consider two window instances of the same type, but inserted into walls of different types.
+Now, these two window instances refer to the same family symbol and count as being of the
+same type, but it is clear that they cannot possibly use the same symbol geometry,
+since they have different thickness. Hence master and slave symbols are used.</para>
+
+<para>For instance, if there is no door instance in project, there will be only
+one master symbol for 36"x84" doors.
+Now, if the user draws a wall and places a door into it, Revit will create a
+slave symbol for 36"x84".
+If she then draws a different type of wall and places a new door of the same
+type in this new wall, Revit will create another slave symbol for 36"x84".
+Then there will be one master symbol and two slave symbols in the project.</para>
+
+<para>There is currently no API to query the symbol whether it is master or slave.</para>
+
+<para>Both of the symbols have the same parent family class instance and either are
+usable for editing existing or creating new instances,
+so there is no issue with this.</para>
+
+<para>Let us add some code that shows the symbol and family for any selected windows:</para>
+
+<pre title="C# List window family and type" class="jtcollapse">  // Now loop the selection set and check for standard Family Instances of "Windows" category
+  Categories categories = doc.Settings.Categories;
+  Category catWindows = categories.get_Item( bic );
+  foreach( Element elem2 in doc.Selection.Elements )
+  {
+    if( elem2 is FamilyInstance )
+    {
+      FamilyInstance inst = elem2 as FamilyInstance;
+      if( null != inst.Category && inst.Category.Id.Equals( catWindows.Id ) )
+      {
+        sMsg = "Selected window Id=" + elem2.Id.Value.ToString();
+        FamilySymbol fs = inst.Symbol;
+        sMsg += "\r\n  FamilySymbol = " + fs.Name + "; Id=" + fs.Id.Value.ToString();
+        Family f = fs.Family;
+        sMsg += "\r\n  Family = " + f.Name + "; Id=" + f.Id.Value.ToString();
+        LabUtils.InfoMsg( sMsg );
+      }
+    }
+  }
+</pre>
+
+<pre title="VB List window family and type" class="jtcollapse">    ' Now loop the selection set and check for standard
+    ' family instances of "Windows" category
+    Dim categories As Categories = doc.Settings.Categories
+    Dim catWindows As Category = categories.Item(bic)
+    For Each elem In doc.Selection.Elements
+        If TypeOf elem Is FamilyInstance Then
+            Dim inst As FamilyInstance = elem
+            Dim catInst As Category = Nothing
+            If (inst.Category Is Nothing) Then
+                catInst = Nothing
+            Else
+                catInst = inst.Category
+            End If
+            ' Check if the element category id is same as Windows category id
+            If (Not catInst Is Nothing) AndAlso catInst.Id.Equals(catWindows.Id) Then
+
+                sMsg = "Selected Window Id=" & elem.Id.Value.ToString & vbCrLf
+                Dim fs1 As FamilySymbol = inst.Symbol
+                sMsg += "  FamilySymbol = " & fs1.Name & "; Id=" & fs1.Id.Value.ToString & vbCrLf
+                Dim f1 As Family = fs1.Family
+                sMsg += "  Family = " & f1.Name & "; Id=" & f1.Id.Value.ToString
+                ' Report each Window data
+                MsgBox(sMsg)
+            End If
+        End If
+    Next
+</pre>
+
+<para>Rebuild the solution, preselect some window instances and run the command again.
+Discuss the code with the course instructor and your peers.</para>
+
+<a class="j" href="labs3-4.htm">next</a>
+<a class="j" href="labs3-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs3-5.htm">next</a>
+<a class="j" href="labs3-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we change the type of a standard family instance element.
+We make use of a windows form that displays all available families and types
+for the category of the single selected instance. Since the lab involves some
+user interface elements, it may take too long for a hands-on lab. If so,
+compile and debug the solved lab and discuss the code and its comments
+with the instructor and your peers. If you are confident with windows forms
+development, you may try to design similar code in your own project as well.
+The relevant code in the command does three things:</para>
+
+<ul>
+<li>Ensure a single instance element is selected and determine its category.</li>
+<li>Collect all types applicable to this category and sort them into a dictionary mapping the family name to a list of its types.</li>
+<li>Display the form, allow the user to select a family and a type, and assign this type to the instance.</li>
+</ul>
+
+<para>Before proceeding with the selected instance change, we need to ensure
+that only a single element is selected. We also need to
+ensure that the element is of FamilyInstance type.</para>
+
+<pre title="C# Lab3_4_ChangeSelectedInstanceType command" class="jtcollapse">  public class Lab3_4_ChangeSelectedInstanceType : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      //
+      // Make sure we have a single FamilyInstance selected:
+      //
+      ElementSet ss = doc.Selection.Elements;
+      // First make sure we have a single FamilyInstance selected
+      if( 1 != ss.Size )
+      {
+        LabUtils.ErrorMsg( "Please pre-select a single family instance element." );
+        return IExternalCommand.Result.Cancelled;
+      }
+      ElementSetIterator itTmp = ss.ForwardIterator();
+      itTmp.MoveNext();
+      Element elTmp = itTmp.Current as Element;
+      if( !(elTmp is FamilyInstance) )
+      {
+        LabUtils.ErrorMsg( "Selected element is NOT a standard family instance." );
+        return IExternalCommand.Result.Cancelled;
+      }
+      FamilyInstance inst = elTmp as FamilyInstance;
+      Category instCat = inst.Category;
+      //
+      // todo:
+      //
+      // Collect all types applicable to this category and sort them into
+      // a dictionary mapping the family name to a list of its types.
+      //
+      // todo:
+      //
+      // Display the form, allowing the user to select a family
+      // and a type, and assign this type to the instance.
+      //
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre title="VB Lab3_4_ChangeSelectedInstanceType command" class="jtcollapse">' Form-utility to change Type for a selected standard Instance
+Public Class Lab3_4_ChangeSelectedInstanceType
+    Implements IExternalCommand
+
+    Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, ByRef message As String, ByVal elements As Autodesk.Revit.ElementSet) As Autodesk.Revit.IExternalCommand.Result Implements Autodesk.Revit.IExternalCommand.Execute
+
+        Dim app As Revit.Application = commandData.Application
+        Dim doc As Revit.Document = app.ActiveDocument
+
+        'First make sure we have a single FamilyInstance selected
+        '--------------------------------------------------------
+        Dim inst As FamilyInstance
+        Dim instCat As Category
+
+        Dim ss As ElementSet = doc.Selection.Elements
+
+        ' First make sure we have a single FamilyInstance selected
+        If Not ss.Size = 1 Then
+            MsgBox("You must pre-select a single element!")
+            Return IExternalCommand.Result.Cancelled
+        Else
+            Dim itTmp As ElementSetIterator = ss.ForwardIterator
+            itTmp.MoveNext()
+            Dim elTmp As Revit.Element = itTmp.Current
+            If Not TypeOf elTmp Is FamilyInstance Then
+                MsgBox("Selected element is NOT a standard family instance!")
+                Return IExternalCommand.Result.Cancelled
+            Else
+                inst = elTmp
+                instCat = inst.Category
+            End If
+        End If
+        '
+        ' todo:
+        '
+        ' Collect all types applicable to this category and sort them into
+        ' a dictionary mapping the family name to a list of its types.
+        '
+
+        '
+        ' todo:
+        '
+        ' Display the form, allowing the user to select a family
+        ' and a type, and assign this type to the instance.
+        '
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+</pre>
+
+<para>To create the dictionary of relevant families with a list of all the
+symbols of each, we can use the new filtering mechanism to create a type filter
+(of Family type). With this set of family elements, we will match the category
+of the family (or the symbol, as the case might be) with that of
+the selected family instance element. It is a good practice to check for
+category match against category id instead of category name
+(and more so while comparing with built-in category).
+The following code illustrates the approach described above:</para>
+
+<pre title="C# Create a dictionary of families and symbols for a category" class="jtcollapse">  Dictionary&ltstring, List&ltFamilySymbol&gt&gt dictFamilyToSymbols = new Dictionary&ltstring, List&ltFamilySymbol&gt&gt();
+  {
+    WaitCursor waitCursor = new WaitCursor();
+    //
+    // We create a collection of all loaded families for this category
+    // and for each one, the list of all loaded types (symbols).
+    //
+    // There are many ways how to store the matching objects, but we choose whatever is most suitable for the relevant UI:
+    // We could use Revit's generic Map class, but it's probably more efficient to use the new 2005 .NET strongly-typed Dictionary with
+    // KEY = Family name (String)
+    // VALUE = ArrayList (implements iList so we can elegantly bind it to combobox) of corresponding FamilySymbol obects
+    //
+    // Find all the corresponding Families/Types:
+      List&lt;Element&gt; families = new List&lt;Element&gt;();
+      Filter filterFamily = app.Create.Filter.NewTypeFilter( typeof( Family ) );
+      doc.get_Elements( filterFamily, families );
+      foreach( Family f in families )
+      {
+        bool categoryMatches = false;
+        if( null == f.FamilyCategory )
+        {
+          foreach( FamilySymbol sym in f.Symbols )
+          {
+            categoryMatches = sym.Category.Id.Equals( instCat.Id );
+            break;
+          }
+        }
+        else
+        {
+          categoryMatches = f.FamilyCategory.Id.Equals( instCat.Id );
+        }
+        if( categoryMatches )
+        {
+          List&lt;FamilySymbol&gt; familySymbols = new List&lt;FamilySymbol&gt;();
+          foreach( FamilySymbol sym in f.Symbols )
+          {
+            familySymbols.Add( sym );
+          }
+          dictFamilyToSymbols.Add( f.Name, familySymbols );
+        }
+      }
+    }
+</pre>
+
+<pre title="VB Create a dictionary of families and symbols for a category" class="jtcollapse">    '
+    ' We create a collection of all loaded families for this category
+    ' and for each one, the list of all loaded types (symbols).
+    '
+    ' There are many ways how to store the matching objects, but we choose whatever is most suitable for the relevant UI:
+    '   We could use Revit's generic Map class, but it's probably more efficient to use the new 2005 .NET strongly-typed Dictionary with
+    '   KEY = Family name (String)
+    '   VALUE = ArrayList (implements iList so we can elegantly bind it to combobox) of corresponding FamilySymbol obects
+    Dim dictFamilyToSymbols As New Dictionary(Of String, ArrayList)
+
+    ' Looping may take a few seconds, so let user know by changing the cursor
+    Dim oldCursor As Cursor = Cursor.Current
+    Cursor.Current = Cursors.WaitCursor
+
+    ' using Revit 2009 element filtering
+    Dim families As List(Of Revit.Element) = New List(Of Revit.Element)
+    Dim filterFamily As Filter = commandData.Application.Create.Filter.NewTypeFilter(GetType(Family))
+
+    Dim nRetVal = doc.Elements(filterFamily, families)
+    Dim f As Family
+    Dim categoryMatches = False
+    For Each f In families
+        categoryMatches = False
+        If (f.FamilyCategory Is Nothing) Then
+            For Each sym As FamilySymbol In f.Symbols
+                categoryMatches = sym.Category.Id.Equals(instCat.Id)
+                Exit For
+            Next
+        Else
+            categoryMatches = f.FamilyCategory.Id.Equals(instCat.Id)
+        End If
+
+        If (categoryMatches) Then
+            Dim familySymbols As New ArrayList
+            For Each sym As FamilySymbol In f.Symbols
+                familySymbols.Add(sym)
+            Next
+            dictFamilyToSymbols.Add(f.Name, familySymbols)
+        End If
+
+    Next
+</pre>
+
+<para>Displaying the form and assigning the selected type is short and sweet:</para>
+
+<pre title="C# Display form and assign type to instance" class="jtcollapse">  //
+  // Display the form, allowing the user to select a family
+  // and a type, and assign this type to the instance.
+  //
+  Lab3_4_Form frm = new Lab3_4_Form( dictFamilyToSymbols );
+  if( WinForms.DialogResult.OK == frm.ShowDialog() )
+  {
+    try
+    {
+      inst.Symbol = frm.cmbType.SelectedItem as FamilySymbol;
+      LabUtils.InfoMsg( "Successfully changed Family:Type to " + frm.cmbFamily.Text + " : " + frm.cmbType.Text );
+    }
+    catch( Exception )
+    {
+    }
+  }
+</pre>
+
+<pre title="VB Display form and assign type to instance" class="jtcollapse">    '
+    ' Display the form, allowing the user to select a family
+    ' and a type, and assign this type to the instance.
+    '
+    Dim frm As New Lab3_4_Form(dictFamilyToSymbols)
+    Cursor.Current = oldCursor ' restore cursor
+    If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+        Try
+            inst.Symbol = frm.cmbType.SelectedItem
+            MsgBox("Successfully changed Family:Type to " & frm.cmbFamily.Text & " : " & frm.cmbType.Text)
+        Catch
+        End Try
+    End If
+</pre>
+
+<para>Compile and link the project and update the Revit.ini file accordingly.
+Debug the code and discuss with the course instructor and your peers.</para>
+
+<a class="j" href="labs3-5.htm">next</a>
+<a class="j" href="labs3-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs4-1.htm">next</a>
+<a class="j" href="labs3-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we list system types and change the type of a system family instance element.
+All the previous labs in this section dealt with the <em>standard</em> families and instances.
+In this lab, we show more or less the same issues for <em>system</em> families, which are
+often host objects, such as walls and floors. Wall is the most comprehensively exposed
+host object so far in the Revit API. Specific and dedicated classes, methods and
+properties are available which makes them somewhat simpler to use than standard
+family instances.</para>
+
+<para>Add a new command class to the Lab3 module, e.g. <code>Lab3_5_WallAndFloorTypes</code>.
+First we will enumerate all available wall types.
+This is simple thanks to the dedicated property on the document object.
+We will also store the last one in order to change the
+selected wall's type later without any complex user interface:</para>
+
+<pre title="C# List all wall types" class="jtcollapse">
+  Application app = commandData.Application;
+  Document doc = app.ActiveDocument;
+
+  //
+  // Find all wall types and their system families (or kinds)
+  //
+  WallType newWallType = null;
+  string sMsg = "ALL Wall Types/Families in the model:";
+  foreach( WallType wt in doc.WallTypes )
+  {
+    sMsg += "\r\n  Type=" + wt.Name + " Family(or Kind)=" + wt.Kind.ToString();
+    newWallType = wt;
+  }
+  LabUtils.InfoMsg( sMsg );
+  LabUtils.InfoMsg( "Stored WallType " + newWallType.Name + " (Id=" + newWallType.Id.Value.ToString() + ") for later use" );
+</pre>
+
+<pre title="VB List all wall types" class="jtcollapse">
+  Dim app As Autodesk.Revit.Application = commandData.Application
+
+  ' Find ALL Wall Types and their System Families (or Kinds)
+  '--------------------
+  Dim newWallType As WallType = Nothing 'at the same time store the last one to use to change the wall type later
+  Dim sMsg As String = "ALL Wall Types/Families in the model:"
+
+  ' We could again iterete all elements and check for WallType class, but it's simpler directly from the doc:
+  Dim doc As Revit.Document = commandData.Application.ActiveDocument
+  For Each wt As WallType In doc.WallTypes
+  	sMsg += vbCrLf & "  Type=" & wt.Name & " Family(or Kind)=" & wt.Kind.ToString
+      newWallType = wt
+  Next
+  MsgBox(sMsg)
+  MsgBox("Stored WallType " & newWallType.Name & " (Id=" & newWallType.Id.Value.ToString & ") for later use")
+</pre>
+
+<para>Implement the same functionality for floor types.
+Since Revit 2008, the document class has a FloorTypes property
+and we can use this to retrieve the collection of all the floor types.
+However from 9.0 version, the "Foundation Slab" system family
+from the "Structural Foundations" category also contain FloorType class instances.</para>
+
+<para>In the C# sample, we loop through all the FloorTypes listed in the document and
+then check if the category of the floor type is same as built-in category of Floor.
+This is done by comparing the category id of the floor type element with that of
+the built-in Floors category. Please note that from Revit 2009 onwards,
+category ids need to be used to compare categories, instead of comparing categories
+with each other directly.</para>
+
+<para>In the VB.Net sample, the approach is more performance centric,
+where we use a compound filter called <code>NewLogicAndFilter</code>
+and use that to filter elements of FloorType AND
+built-in category Floors to avoid structural foundation floor slabs.</para>
+
+<pre title="C# List all floor types" class="jtcollapse">
+  //
+  // Find all floor types:
+  //
+  FloorType newFloorType = null;
+  Category floorCat = doc.Settings.Categories.get_Item( BuiltInCategory.OST_Floors );
+  sMsg = "All floor types in the model:";
+  foreach( FloorType ft in doc.FloorTypes )
+  {
+    sMsg += "\r\n  Type=" + ft.Name + ", Id=" + ft.Id.Value.ToString();
+    // In 9.0, the "Foundation Slab" system family from "Structural
+    // Foundations" category ALSO contains FloorType class instances.
+    // Be careful to exclude those as choices for standard floor types.
+    Parameter p = ft.get_Parameter( BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM );
+    string famName = null == p ? "?" : p.AsString();
+    Category cat = ft.Category;
+    sMsg += ", Family=" + famName + ", Category=" + cat.Name;
+    if( floorCat.Id.Equals( cat.Id ) ) // store only if proper Floors category
+    {
+      newFloorType = ft;
+    }
+  }
+  LabUtils.InfoMsg( sMsg );
+  LabUtils.InfoMsg( "Stored FloorType " + newFloorType.Name + " (Id=" + newFloorType.Id.Value.ToString() + ") for later use" );
+</pre>
+
+<pre title="VB List all floor types" class="jtcollapse">
+  Dim newFloorType As FloorType = Nothing ' store the last one to use to change the floor type later
+  sMsg = "ALL FLOOR Types in the model:"
+
+  ' define a filter to get the family
+  Dim filterFloorType As Filter = app.Create.Filter.NewTypeFilter(GetType(FloorType))
+  Dim filterFloorCategory As Filter = app.Create.Filter.NewCategoryFilter(BuiltInCategory.OST_Floors)
+
+  ' make a compund filter using logical or/and
+  Dim filterFloorTypeFloorCategory As Filter = app.Create.Filter.NewLogicAndFilter(filterFloorType, filterFloorCategory)
+
+  ' get a list using the filter
+  Dim elementList As New List(Of Revit.Element)
+  Dim num As Integer = doc.Elements(filterFloorTypeFloorCategory, elementList)
+
+  ' go over the list
+  Dim elem As Revit.Element
+  For Each elem In elementList
+
+      Dim ft As Symbols.FloorType = elem
+      sMsg += vbCrLf & "  Type=" & ft.Name & ", Id=" & ft.Id.Value.ToString
+      Dim p As Parameter = ft.Parameter(Parameters.BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM)
+      Dim famName As String = "?"
+      If Not p Is Nothing Then
+          famName = p.AsString
+      End If
+      Dim cat As Category = ft.Category
+      sMsg += ", Family=" & famName & ", Category=" & cat.Name
+      ' all elements have proper Floors category
+      newFloorType = ft
+
+  Next
+
+  MsgBox(sMsg)
+  MsgBox("Stored FloorType " & newFloorType.Name & " (Id=" & newFloorType.Id.Value.ToString & ") for later use")</pre>
+
+<para>Build the application, add the command to the Revit.ini file and check the result in the debugger and in Revit.</para>
+
+<para>Modifying the wall and floor type of an instance are both simple operations in Revit 2009,
+since they each expose a WallType and FloorType property, respectively:</para>
+
+<pre title="C# Change type of wall and floor" class="jtcollapse">
+  //
+  // Change the type for selected walls and floors
+  //
+  ElementSet sel = doc.Selection.Elements;
+  int iWall = 0;
+  int iFloor = 0;
+  // Loop all selection elements
+  foreach( Element el in sel )
+  {
+    if( el is Wall ) // Check for walls
+    {
+      ++iWall;
+      Wall wall = el as Wall;
+      WallType oldWallType = wall.WallType;
+      // change wall type and report the old/new values
+      wall.WallType = newWallType;
+      LabUtils.InfoMsg( "Wall " + iWall.ToString() + ": Id=" + wall.Id.Value.ToString()
+        + "\r\n  changed from OldType=" + oldWallType.Name + "; Id=" + oldWallType.Id.Value.ToString()
+        + "  to NewType=" + wall.WallType.Name + "; Id=" + wall.WallType.Id.Value.ToString() );
+    }
+    else if( el is Floor )
+    {
+      ++iFloor;
+      Floor f = el as Floor;
+      FloorType oldFloorType = f.FloorType;
+      f.FloorType = newFloorType;
+      LabUtils.InfoMsg( "Floor " + iFloor.ToString() + ": Id=" + f.Id.Value.ToString()
+        + "\r\n  changed from OldType=" + oldFloorType.Name + "; Id=" + oldFloorType.Id.Value.ToString()
+        + "  to NewType=" + f.FloorType.Name + "; Id=" + f.FloorType.Id.Value.ToString() );
+    }
+  }
+</pre>
+
+<pre title="VB Change type of wall and floor" class="jtcollapse">
+  ' Change the Type for selected Walls and Floors
+  Dim sel As ElementSet = doc.Selection.Elements
+  Dim iWall As Integer
+  Dim iFloor As Integer
+  Dim el As Revit.Element
+
+  'Loop through all selection elements
+  If sel.Size > 0 Then
+      For Each el In sel
+          If TypeOf el Is Wall Then 'Check for walls
+              Dim wall As Wall = el
+              iWall += 1
+              Dim oldWallType As WallType = wall.WallType
+              'change wall type and report the old/new values
+              wall.WallType = newWallType
+              MsgBox("Wall " & iWall.ToString & ": Id=" & wall.Id.Value.ToString & vbCrLf & _
+               "  changed from OldType=" & oldWallType.Name & "; Id=" & oldWallType.Id.Value.ToString & _
+               "  to NewType=" & wall.WallType.Name & "; Id=" & wall.WallType.Id.Value.ToString)
+
+          ElseIf TypeOf el Is Floor Then
+              iFloor += 1
+              Dim f As Floor = el
+
+              ' simple code for 2008 onwards:
+              Dim oldFloorType As FloorType = f.FloorType
+              f.FloorType = newFloorType
+              MsgBox("Floor " & iFloor.ToString & ": Id=" & f.Id.Value.ToString & vbCrLf & _
+               "  changed from OldType=" & oldFloorType.Name & "; Id=" & oldFloorType.Id.Value.ToString & _
+               "  to NewType=" & f.FloorType.Name & "; Id=" & f.FloorType.Id.Value.ToString)
+          End If
+      Next
+  Else
+      MsgBox("There are no elements in selection set!")
+  End If
+</pre>
+
+<para>Run, analyse and discuss the code with the course instructor and your peers.</para>
+
+<a class="j" href="labs4-1.htm">next</a>
+<a class="j" href="labs3-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<para>
+In this section, we will look at families and family types, and learn how to retrieve a family and family types. we will also learn how to load an entire family and a specific family type.
+</para>
+
+<hr class="jumplist_intro_overline">
+<p class="jumplist_intro" >Topics in this section:
+</para>
+<ul>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs3-1.htm">
+List all Loaded Families and Types </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs3-2.htm">
+Load Family and Family Type </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs3-3.htm">
+Determine Instance Type and Family </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs3-4.htm">
+Cahnge the Type of Standard Instance </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs3-5.htm">
+List Wall and Floor Types and Change the Type of System Instance </a>
+</ul>
+
+<table class=FooterTable width=100% border=0 cellspacing=0 cellpadding=4><tr valign=top>
+<td>&nbsp;</td>
+<td align=right>&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="Click here to send a comment about this topic."></span></a>&nbsp;</td>
+</tr></table>&nbsp;
+
+
+
+
+
+<a class="j" href="labs4-2.htm">next</a>
+<a class="j" href="labs3-5.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we explore the parameters attached to every Revit element.</para>
+
+<para>Add a new module <code>Labs4</code> to the project and the first command class
+<code>Lab4_1_ParametersForSelectedObjects</code> for this lab.
+Since we will be exporting parameter values to Excel later on in this lab,
+the C# code includes a statement to use that namespace as well.
+For the moment we just loop through all elements in the current selection set:</para>
+
+<pre title="C# Lab4_1_ParametersForSelectedObjects command skeleton" class="jtcollapse">
+using System;
+using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using WinForms = System.Windows.Forms;
+using System.Reflection;
+using Autodesk.Revit;
+using Autodesk.Revit.Elements;
+using Autodesk.Revit.Parameters;
+using X = Microsoft.Office.Interop.Excel;
+
+namespace Labs
+{
+  /// &lt;summary&gt;
+  /// List all parameters for selected elements.
+  /// &lt;/summary&gt;
+  public class Lab4_1_ParametersForSelectedObjects : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Document doc = commandData.Application.ActiveDocument;
+      // Loop all elements in the selection
+      foreach( Element elem in commandData.Application.ActiveDocument.Selection.Elements )
+      {
+        //
+        // todo:
+        //
+        // Loop through and list all UI-visible element parameters
+        //
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+}
+</pre>
+
+<pre title="VB Lab4_1_ParametersForSelectedObjects command skeleton" class="jtcollapse">
+Public Class Lab4_1_ParametersForSelectedObjects
+    Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+
+        Dim doc As Document = commandData.Application.ActiveDocument
+        ' Loop all elements in the selection
+        Dim elem As Revit.Element
+        For Each elem In commandData.Application.ActiveDocument.Selection.Elements
+
+            '
+            ' todo:
+            '
+            ' Loop through and list all UI-visible element parameters
+            '
+        Next
+
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+</pre>
+
+<para>Compile and link the project and update the Revit.ini file accordingly.
+Look at the elements and their properties in the debugger,
+especially the <code>Parameters</code> property.</para>
+
+<para>Add the following code within the loop to report all
+UI-visible parameters for each element:</para>
+
+<pre title="C# List all element parameters" class="jtcollapse">
+    Element elem2 = elem; // enable us to assign to elem2 in case analyseTypeParameters == true
+    string s = string.Empty;
+
+    // set this variable to false to analyse the element's own parameters,
+    // i.e. instance parameters for a family instance, and set it to true
+    // to analyse a family instance's type parameters:
+    bool analyseTypeParameters = false;
+    if( analyseTypeParameters )
+    {
+      if( elem2 is FamilyInstance )
+      {
+        FamilyInstance inst = elem2 as FamilyInstance;
+        if( null != inst.Symbol )
+        {
+          elem2 = inst.Symbol;
+          s = " type";
+        }
+      }
+      else if( elem2 is Wall )
+      {
+        Wall wall = elem2 as Wall;
+        if( null != wall.WallType )
+        {
+          elem2 = wall.WallType;
+          s = " type";
+        }
+      }
+    }
+
+    // Loop through and list all UI-visible element parameters
+    string sMsg = elem2.Parameters.Size.ToString() + s
+      + " parameters for the selected " + elem2.Category.Name
+      + " (" + elem2.Id.Value.ToString() + "):\r\n";
+    foreach( Parameter param in elem2.Parameters )
+    {
+      string name = param.Definition.Name;
+      string type = param.StorageType.ToString();
+      string value = LabUtils.GetParameterValue2( param, doc );
+      sMsg += "\r\n  Name=" + name + "; Type=" + type + "; Value=" + value;
+    }
+    LabUtils.InfoMsg( sMsg );
+</pre>
+
+<pre title="VB List all element parameters" class="jtcollapse">
+    ' Loop through and list all UI-visible element parameters
+    Dim sMsg As String = "Parameters for the selected " & elem.Category.Name & " (" & elem.Id.Value.ToString & ") are:" & vbCrLf
+    Dim param As Parameter
+    For Each param In elem.Parameters
+        Dim paramName As String = param.Definition.Name
+        Dim paramType As String = param.StorageType.ToString
+        Dim paramValue As String = LabUtils.GetParameterValue2(param, doc)
+        sMsg += vbCrLf & "  Name=" & paramName & "; Type=" & paramType & "; Value=" & paramValue
+    Next
+    MsgBox(sMsg)
+</pre>
+
+<para>The code makes use of a couple of utility functions which we
+need to add to the <code>LabUtils</code> class: the <code>GetParameterValue()</code>
+method retrieves the input parameter's value as string.
+<code>GetParameterValue2()</code> adds the name of the element if the
+for a <code>StorageType.ElementId</code> type parameter.</para>
+
+<pre title="C# Parameter utilities" class="jtcollapse">
+     #region Helpers for parameters
+    /// &lt;summary&gt;
+    /// Helper to return parameter value as string.
+    /// One can also use param.AsValueString() to
+    /// get the user interface representation.
+    /// &lt;/summary&gt;
+    public static string GetParameterValue( Parameter param )
+    {
+      string s;
+      switch( param.StorageType )
+      {
+        case StorageType.Double:
+          //
+          // the internal database unit for all lengths is feet.
+          // for instance, if a given room perimeter is returned as
+          // 102.36 as a double and the display unit is millimeters,
+          // then the length will be displayed as
+          // peri = 102.36220472440
+          // peri * 12 *25.4
+          // 31200 mm
+          //
+          //s = param.AsValueString(); // value seen by user, in display units
+          s = RealString( param.AsDouble() ); // database value, internal units, e.g. feet
+          break;
+        case StorageType.Integer:
+          s = param.AsInteger().ToString();
+          break;
+        case StorageType.String:
+          s = param.AsString();
+          break;
+        case StorageType.ElementId:
+          s = param.AsElementId().Value.ToString();
+          break;
+        case StorageType.None:
+          s = "?NONE?";
+          break;
+        default:
+          s = "?ELSE?";
+          break;
+      }
+      return s;
+    }
+
+    /// &lt;summary&gt;
+    /// Helper to return parameter value as string, with additional
+    /// support for element id to display the element type referred to.
+    /// &lt;/summary&gt;
+    public static string GetParameterValue2( Parameter param, Document doc )
+    {
+      string s;
+      if( StorageType.ElementId == param.StorageType && null != doc )
+      {
+        ElementId id = param.AsElementId();
+        int i = id.Value;
+        s = ( 0 &lt;= i )
+          ? string.Format( "{0}: {1}", i, doc.get_Element( ref id ).Name )
+          : i.ToString();
+      }
+      else
+      {
+        s = GetParameterValue( param );
+      }
+      return s;
+    }
+
+    #endregion // Helpers for parameters
+</pre>
+
+<pre title="VB Parameter utilities" class="jtcollapse">
+  #Region "Helper for Parameters"
+
+        ''' &lt;summary&gt;
+        ''' Helper to return parameter value as string.
+        ''' One can also use param.AsValueString() to
+        ''' get the user interface representation.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetParameterValue(ByVal param As Parameter) As String
+
+            Dim str As String
+            Select Case param.StorageType
+                Case StorageType.Double
+                    str = param.AsDouble.ToString
+                Case StorageType.Integer
+                    str = param.AsInteger.ToString
+                Case StorageType.String
+                    str = param.AsString
+                Case StorageType.ElementId
+                    str = param.AsElementId.Value.ToString
+                Case StorageType.None
+                    str = "?NONE?"
+                Case Else
+                    str = "?ELSE?"
+            End Select
+            Return str
+
+        End Function
+
+        ''' &lt;summary&gt;
+        ''' Helper to return parameter value as string, with additional
+        ''' support for element id to display the element type referred to.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetParameterValue2( _
+            ByVal param As Parameter, _
+            ByVal doc As Document) _
+        As String
+            Dim str As String
+            If StorageType.ElementId = param.StorageType Then
+                Dim id As ElementId = param.AsElementId
+                Dim i As Integer = id.Value
+                If (0 &lt;= i) Then : str = String.Format("{0}: {1}", i, doc.Element(id).Name)
+                Else : str = i.ToString
+                End If
+            Else
+                str = GetParameterValue(param)
+            End If
+            Return str
+        End Function
+
+        ''' &lt;summary&gt;
+        ''' Helper to get *specific* parameter by name.
+        ''' No longer required in 2009, because the element provides
+        ''' direct look-up access by name as well in Revit 2009.
+        ''' &lt;/summary&gt;
+        Shared Function GetElemParam_2008(ByVal elem As Revit.Element, ByVal name As String) As Parameter
+
+            Dim parameters As Autodesk.Revit.ParameterSet = elem.Parameters
+            Dim parameter As Autodesk.Revit.Parameter
+            For Each parameter In parameters
+                If (parameter.Definition.Name = name) Then
+                    Return parameter
+                End If
+            Next
+
+            Return Nothing
+
+        End Function
+
+#End Region
+</pre>
+
+<para>At this point you can compile and link the project again
+and see the list of element properties reported for selected elements.</para>
+
+<para>There are several different methods to access a <em>specific</em> parameter:
+by localised name, by built-in parameter enum, by definition or by GUID.
+Add the following code and note the embedded comments:</para>
+
+<pre title="C# Accessing specific parameters" class="jtcollapse">
+    // If we know WHICH param we are looking for, then:
+    // A) If a standard parameter, we can get it via BuiltInParam signature of Parameter method:
+    Parameter parBuiltIn;
+    try
+    {
+      parBuiltIn = elem.get_Parameter( BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM );
+      if( null == parBuiltIn )
+      {
+        LabUtils.InfoMsg( "FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element." );
+      }
+      else
+      {
+        string parBuiltInName = parBuiltIn.Definition.Name;
+        string parBuiltInType = parBuiltIn.StorageType.ToString();
+        string parBuiltInValue = LabUtils.GetParameterValue2( parBuiltIn, doc );
+        LabUtils.InfoMsg( "FAMILY_BASE_LEVEL_OFFSET_PARAM: Name=" + parBuiltInName
+          + "; Type=" + parBuiltInType + "; Value=" + parBuiltInValue );
+      }
+    }
+    catch( Exception )
+    {
+      LabUtils.InfoMsg( "FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element." );
+    }
+
+    // B) For a Shared parameter, we can get it via "GUID" signature of Parameter method
+    // this will be shown later in Labs 4 ...
+
+    // C) or we can get the parameter by name, since Revit 2009 ... previously we had to
+    // use a GetParameterValue2 utility to loop over all parameters and search for the name
+    // (this works for either standard or shared!):
+    const string paramName = "Base Offset";
+    Parameter parByName = elem.get_Parameter( paramName );
+    if( null == parByName )
+    {
+      LabUtils.InfoMsg( paramName + " is NOT available for this element." );
+    }
+    else
+    {
+      string parByNameName = parByName.Definition.Name;
+      string parByNameType = parByName.StorageType.ToString();
+      string parByNameValue = LabUtils.GetParameterValue2( parByName, doc );
+      LabUtils.InfoMsg( paramName + ": Name=" + parByNameName
+        + "; Type=" + parByNameType + "; Value=" + parByNameValue );
+    }
+</pre>
+
+<pre title="VB Accessing specific parameters" class="jtcollapse">
+    ' If we know WHICH param we are looking for, then:
+    'A) If a standard parameter, we can get it via BuiltInParam signature of Parameter method:
+    Dim parInBuilt As Parameter
+    Try
+        parInBuilt = elem.Parameter(BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM)
+        If Not parInBuilt Is Nothing Then
+            Dim parInBuiltName As String = parInBuilt.Definition.Name
+            Dim parInBuiltType As String = parInBuilt.StorageType.ToString
+            Dim parInBuiltValue As String = LabUtils.GetParameterValue2(parInBuilt, doc)
+            MsgBox("FAMILY_BASE_LEVEL_OFFSET_PARAM: Name=" & parInBuiltName & "; Type=" & parInBuiltType & "; Value=" & parInBuiltValue)
+        Else
+            MsgBox("FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element")
+        End If
+    Catch
+        MsgBox("FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element")
+    End Try
+
+    'B) For a Shared parameter, we can get it via "GUID" signature of Parameter method:
+    ' this will be shown later in Labs 4 ...
+
+    'C) or we can use GetElemParam utility to get it by hard coded-name (this works for either standard or shared!):
+    Const csParamToFind As String = "Base Offset"
+    Dim parByName As Parameter = elem.Parameter(csParamToFind)
+    If parByName Is Nothing Then
+        MsgBox(csParamToFind & " is NOT available for this element")
+    Else
+        Dim parByNameName As String = parByName.Definition.Name
+        Dim parByNameType As String = parByName.StorageType.ToString
+        Dim parByNameValue As String = LabUtils.GetParameterValue2(parByName, doc)
+        MsgBox(csParamToFind & ": Name=" & parByNameName & "; Type=" & parByNameType & "; Value=" & parByNameValue)
+    End If
+</pre>
+
+<para>Compile the code, start Revit, select various elements and run the command.
+Note that built-in parameters are available for some, but not all categories.
+For instance, try Walls, Columns and Furniture.
+The <code>BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM</code> and 'Base Offset'
+parameters used in the sample are available on column elements.</para>
+
+<para>Note that more parameters may be available on any given element than those
+reported by the element's <code>Parameters</code> property ... use the
+<code>BuiltInParamsChecker</code> to discover these as well.</para>
+
+<a class="j" href="labs4-2.htm">next</a>
+<a class="j" href="labs3-5.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs4-3.htm">next</a>
+<a class="j" href="labs4-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we export all parameters of all elements in the Revit model
+to Excel, sorted by category into different sheets.
+We create a separate sheet per each category.
+The first row of the sheet is a header listing the parameter
+names for the given category.
+It is followed by a row of values for each element.
+Note that we need to reference the Excel COM library.
+There is no native .NET API available for the Microsoft Office products,
+so we use COM via COM callable wrappers, also known as COM-Interop in .NET.</para>
+
+<para>We implement a new command <code>Lab4_2_ExportParametersToExcel</code>.
+In a first step, we iterate over all elements and sort them into
+separate element sets, one for each category:</para>
+
+<pre title="C# Create element sets for each category" class="jtcollapse">
+  /// &lt;summary&gt;
+  /// Export all parameters for each model element to Excel, one sheet per category.
+  /// &lt;/summary&gt;
+public class Lab4_2_ExportParametersToExcel : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      // extract and group the data from Revit in a dictionary, where
+      // the key is the category name and the value is a list of elements.
+      //Autodesk.Revit.Collections.Map sortedElements = app.Create.NewMap();
+      Dictionary&lt;string, List&lt;Element&gt;&gt; sortedElements = new Dictionary&lt;string, List&lt;Element&gt;&gt;();
+      // iterate all non-symbol elements and store in dictionary
+      ElementIterator iter = doc.Elements;
+      while( iter.MoveNext() )
+      {
+        Element element = iter.Current as Element;
+        if( !(element is Symbol) )
+        {
+          Category category = element.Category;
+          if( null != category )
+          {
+            List&lt;Element&gt; elementSet;
+            // If we already have this Key, get its Value (Set)
+            // Otherwise, create the new Key and Value (Set
+            if( sortedElements.ContainsKey( category.Name ) )
+            {
+              elementSet = sortedElements[category.Name];
+            }
+            else
+            {
+              elementSet = new List&lt;Element&gt;();
+              sortedElements.Add( category.Name, elementSet );
+            }
+            // Add the element to the Set
+            elementSet.Add( element );
+          }
+        }
+      }
+      //
+      // todo: export parameters
+      //
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre title="VB Create element sets for each category" class="jtcollapse">
+' Exports list of parameters for each model element to Excel, one sheet per category
+Public Class Lab4_2_ExportParametersToExcel
+    Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+
+        Dim revitApp As Revit.Application = commandData.Application
+        Dim doc As Revit.Document = revitApp.ActiveDocument
+
+        ' First extract and group the data from Revit in a convenient Map class:
+        ' (Key=category name, Val=Set of Elements)
+        '------------------------------------------------------------------------
+        Dim sortedElements As Autodesk.Revit.Collections.Map = revitApp.Create.NewMap()
+        ' Iterate all non-Symbol elements and store in map
+        Dim iter As IEnumerator = doc.Elements
+        Do While (iter.MoveNext())
+            ' We look for all non-Symbol Elements which have a Category
+            Dim element As Revit.Element = iter.Current
+            If Not (TypeOf element Is Symbol) Then
+                Dim category As Category = element.Category
+                If Not (category Is Nothing) Then
+                    Dim elementSet As ElementSet
+                    ' If we already have this Key, get its Value (Set)
+                    ' Otherwise, create the new Key and Value (Set
+                    If sortedElements.Contains(category.Name) Then
+                        elementSet = sortedElements.Item(category.Name)
+                    Else
+                        elementSet = revitApp.Create.NewElementSet()
+                        sortedElements.Insert(category.Name, elementSet)
+                    End If
+                    ' Add the element to the Set
+                    elementSet.Insert(element)
+                End If
+            End If
+        Loop
+        '
+        ' todo: export parameters
+        '
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+</pre>
+
+<para>At this point you can already compile and link the project,
+update the Revit.ini file and run and debug the command
+to analyse the categories and elements collected.</para>
+
+<para>Launch Excel via COM interop and remove the automatically created worksheets,
+as far as possible ... unfortunately, at least one remains, so we have to adjust
+the code populating them to account for the one left:</para>
+
+<pre title="C# Lauch Excel via COM interop" class="jtcollapse">
+  // Launch/Get Excel via COM Interop:
+  X.Application excel = new X.Application();
+  if( null == excel )
+  {
+    LabUtils.ErrorMsg( "Failed to get or start Excel." );
+    return IExternalCommand.Result.Failed;
+  }
+  excel.Visible = true;
+  X.Workbook workbook = excel.Workbooks.Add( Missing.Value );
+  X.Worksheet worksheet;
+  while( 1 &lt; workbook.Sheets.Count ) // we cannot delete all work sheets, excel requires at least one
+  {
+    worksheet = workbook.Sheets.get_Item( 1 ) as X.Worksheet;
+    worksheet.Delete();
+  }
+</pre>
+
+<pre title="VB Lauch Excel via COM interop" class="jtcollapse">
+    ' Export parameters
+    ' Launch/Get Excel (via COM Interop)
+    '-----------------------------------
+    ' Use the following line for Excel 2003 (11.0) and similar in the rest of this lab...
+    Dim excel As MsExcel.Application = New MsExcel.ApplicationClass()
+    '... or this for up to Excel 2002 (10.0):
+    'Dim excel As Excel.Application = New Excel.ApplicationClass()
+    If (excel Is Nothing) Then
+        MsgBox("Failed to get or start Excel!?")
+        Return IExternalCommand.Result.Failed
+    End If
+    excel.Visible = True        ' Make it visible "live" to the user
+
+    ' Add a new work-book and delete the 3 default work-sheets
+    Dim workbook As MsExcel.Workbook = excel.Workbooks.Add()
+    Dim worksheet As MsExcel.Worksheet
+    Do While workbook.Sheets.Count &gt; 1
+        worksheet = workbook.Sheets.Item(1)
+        worksheet.Delete()
+    Loop
+</pre>
+
+<para>Loop through the element sets for each category.
+For each category determine all occurring parameters and use these to create the header.
+Then loop through the elements and export their values one by one:</para>
+
+<pre title="C# Export parameter values to Excel" class="jtcollapse">
+  // Loop all collected Categories and create one worksheet for each except first
+  //KeyCollection
+  List&lt;string&gt; keys = new List&lt;string&gt;( sortedElements.Keys );
+  keys.Sort();
+  keys.Reverse(); // the worksheet added last shows up first in the excel tab
+  bool first = true;
+  foreach( string categoryName in keys )
+  {
+    List&lt;Element&gt; elementSet = sortedElements[categoryName];
+    // create and name the worksheet
+    if( first )
+    {
+      worksheet = workbook.Sheets.get_Item( 1 ) as X.Worksheet;
+      first = false;
+    }
+    else
+    {
+      worksheet = excel.Worksheets.Add( Missing.Value, Missing.Value,
+                  Missing.Value, Missing.Value ) as X.Worksheet;
+    }
+    worksheet.Name = categoryName;
+
+    // we could find the list of Parameter names available for ALL the Elements
+    // in this Set, but let's keep it simple and use all parameters encountered:
+    //Autodesk.Revit.Collections.Set allParamNamesEncountered = app.Create.NewSet();
+    List&lt;string&gt; allParamNamesEncountered = new List&lt;string&gt;();
+    // loop through all the elements passed to the method
+    foreach( Element el in elementSet )
+    {
+      ParameterSet parameters = el.Parameters;
+      if( !parameters.IsEmpty )
+      {
+        // an easier way to loop the parameters than ParameterSetIterator:
+        foreach( Parameter parameter in parameters )
+        {
+          string name = parameter.Definition.Name;
+          if( !allParamNamesEncountered.Contains( name ) )
+          {
+            allParamNamesEncountered.Add( name );
+          }
+        }
+      }
+    }
+    allParamNamesEncountered.Sort();
+
+    // add the HEADER row in Bold
+    worksheet.Cells[1, 1] = "ID";
+    int column = 2;
+    foreach( string paramName in allParamNamesEncountered )
+    {
+      worksheet.Cells[1, column] = paramName;
+      ++column;
+    }
+    worksheet.get_Range( "A1", "Z1" ).Font.Bold = true;
+    worksheet.get_Range( "A1", "Z1" ).EntireColumn.AutoFit();
+    int row = 2;
+    foreach( Element elem in elementSet )
+    {
+      // first column is the element id, which we display as an integer
+      worksheet.Cells[row, 1] = elem.Id.Value;
+      column = 2;
+      foreach( string paramName in allParamNamesEncountered )
+      {
+        string paramValue;
+        try
+        {
+          paramValue = LabUtils.GetParameterValue( elem.get_Parameter( paramName ) );
+        }
+        catch( Exception )
+        {
+          paramValue = "*NA*";
+        }
+        worksheet.Cells[row, column] = paramValue;
+        ++column;
+      }
+      ++row;
+    } // row
+  } // category = worksheet
+</pre>
+
+<pre title="VB Export parameter values to Excel" class="jtcollapse">
+    ' Loop all collected Categories and create one worksheet for each
+    Dim mapIter As Autodesk.Revit.Collections.MapIterator = sortedElements.ForwardIterator
+    Do While (mapIter.MoveNext())
+
+        ' retrieve stored category and ElementSet
+        Dim categoryName As String = mapIter.Key
+        Dim elementSet As Autodesk.Revit.ElementSet = mapIter.Current
+
+        ' create and name the worksheet
+        worksheet = excel.Worksheets.Add()
+        worksheet.Name = categoryName
+
+        ' we could find the list of Parameter names available for ALL the Elements in this Set,
+        '   but let's keep it simple and use all parameters encountered (will Try-Catch later)
+        Dim allParamNamesEncountered As Autodesk.Revit.Collections.Set = app.Create.NewSet()
+
+        ' loop through all the elements passed to the method
+        Dim setIter As IEnumerator = elementSet.ForwardIterator
+        Do While (setIter.MoveNext())
+            Dim el As Autodesk.Revit.Element = setIter.Current
+            Dim parameters As Autodesk.Revit.ParameterSet = el.Parameters
+            If Not (parameters.IsEmpty) Then
+                'Another way to loop the parameters is via ParameterSetIterator:
+                Dim definitionNames As Autodesk.Revit.Collections.Set = app.Create.NewSet()
+                Dim paramIter As Autodesk.Revit.ParameterSetIterator = parameters.ForwardIterator
+                Do While paramIter.MoveNext()
+                    Dim parameter As Autodesk.Revit.Parameter = paramIter.Current
+                    Dim name As String = parameter.Definition.Name
+                    If Not allParamNamesEncountered.Contains(name) Then
+                        allParamNamesEncountered.Insert(name)
+                    End If
+                Loop
+            End If
+        Loop
+
+        ' add the HEADER row in Bold
+        worksheet.Cells(1, 1).Value = "ID"
+        Dim paramName As String
+        Dim column As Integer = 2
+        For Each paramName In allParamNamesEncountered
+            worksheet.Cells(1, column).Value = paramName
+            excel.Columns(column).EntireColumn.AutoFit()
+            column = column + 1
+        Next
+        excel.Rows("1").Font.Bold = True
+
+        ' finally, export a row per each element that belongs to the category
+        Dim elem As Revit.Element
+        Dim row As Integer = 2
+        For Each elem In elementSet
+
+            ' first column is the element id (display it as an integer)
+            worksheet.Cells(row, 1).Value = elem.Id.Value
+            ' the other columns are parameter values
+            column = 2
+            For Each paramName In allParamNamesEncountered
+                Dim paramValue As String
+                Try
+                        paramValue = LabUtils.GetParameterValue(elem.Parameter(paramName))
+                Catch
+                    paramValue = "*NA*"
+                End Try
+                worksheet.Cells(row, column).Value = paramValue
+                column = column + 1
+            Next
+
+            row = row + 1
+
+        Next ' row
+
+    Loop ' categories (worksheets)
+</pre>
+
+<para>Run and debug the command and observe and discuss the results.</para>
+
+<a class="j" href="labs4-3.htm">next</a>
+<a class="j" href="labs4-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs4-3-2.htm">next</a>
+<a class="j" href="labs4-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we create and bind a new shared FireRating parameter to
+all doors.</para>
+
+<para>It is likely that you will be adding shared parameters programmatically
+in other situations as well, so it makes sense to factor out some common
+helper utilities. Add the following shared functions to the
+<code>LabUtils</code> class:</para>
+
+<pre title="C# Helpers for shared parameters" class="jtcollapse">
+#region Helpers for shared parameters
+/// &lt;summary&gt;
+/// Helper to get shared parameters file.
+/// &lt;/summary&gt;
+public static DefinitionFile GetSharedParamsFile( Application app )
+{
+  // Get current shared params file name
+  string sharedParamsFileName;
+  try
+  {
+    sharedParamsFileName = app.Options.SharedParametersFilename;
+  }
+  catch( Exception )
+  {
+    ErrorMsg( "No shared params file set." );
+    return null;
+  }
+  if( 0 == sharedParamsFileName.Length )
+  {
+    string fullPath = LabConstants.gsSharedParamFilePath;
+    StreamWriter stream;
+    stream = new StreamWriter( fullPath );
+    stream.Close();
+    app.Options.SharedParametersFilename = fullPath;
+    sharedParamsFileName = app.Options.SharedParametersFilename;
+  }
+  // Get the current file object and return it
+  DefinitionFile sharedParametersFile;
+  try
+  {
+    sharedParametersFile = app.OpenSharedParameterFile();
+  }
+  catch( Exception )
+  {
+    ErrorMsg( "Cannnot open shared params file." );
+    sharedParametersFile = null;
+  }
+  return sharedParametersFile;
+}
+
+/// &lt;summary&gt;
+/// Helper to get shared params group.
+/// &lt;/summary&gt;
+public static DefinitionGroup GetOrCreateSharedParamsGroup(
+ DefinitionFile sharedParametersFile,
+ string groupName )
+{
+  DefinitionGroup g = sharedParametersFile.Groups.get_Item( groupName );
+  if( null == g )
+  {
+    try
+    {
+      g = sharedParametersFile.Groups.Create( groupName );
+    }
+    catch( Exception )
+    {
+      g = null;
+    }
+  }
+  return g;
+}
+
+/// &lt;summary&gt;
+/// Helper to get shared params definition.
+/// &lt;/summary&gt;
+public static Definition GetOrCreateSharedParamsDefinition(
+  DefinitionGroup defGroup,
+  ParameterType defType,
+  string defName,
+  bool visible )
+{
+  Definition definition = defGroup.Definitions.get_Item( defName );
+  if( null == definition )
+  {
+    try
+    {
+      definition = defGroup.Definitions.Create( defName, defType, visible );
+    }
+    catch( Exception )
+    {
+      definition = null;
+    }
+  }
+  return definition;
+}
+#endregion // Helpers for shared parameters
+</pre>
+
+<pre title="VB Helpers for shared parameters" class="jtcollapse">
+#Region "Helpers for shared parameters"
+
+        ''' &lt;summary&gt;
+        ''' Helper to get shared parameters file.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetSharedParamsFile(ByVal app As Revit.Application) _
+                    As Parameters.DefinitionFile
+            ' Get current shared params file name
+            Dim sharedParamsFileName As String
+            Try
+                sharedParamsFileName = app.Options.SharedParametersFilename
+            Catch
+                MsgBox("No Shared params file set !?")
+                Return Nothing
+            End Try
+
+            If "" = sharedParamsFileName Then
+                Dim fullPath As String = gsSharedParamFilePath
+
+                Dim stream As StreamWriter
+                stream = New StreamWriter(fullPath)
+                stream.Close()
+
+                app.Options.SharedParametersFilename = fullPath
+                sharedParamsFileName = app.Options.SharedParametersFilename
+            End If
+
+            ' Get the current file object and return it
+            Dim sharedParametersFile As Autodesk.Revit.Parameters.DefinitionFile
+            Try
+                sharedParametersFile = app.OpenSharedParameterFile
+            Catch
+                MsgBox("Cannnot open Shared Params file !?")
+                sharedParametersFile = Nothing
+            End Try
+            Return sharedParametersFile
+
+        End Function
+
+        ''' &lt;summary&gt;
+        ''' Helper to get shared params group.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetOrCreateSharedParamsGroup( _
+             ByVal sharedParametersFile As Parameters.DefinitionFile, _
+             ByVal groupName As String) _
+             As Parameters.DefinitionGroup
+
+            Dim msProjectGroup As Autodesk.Revit.Parameters.DefinitionGroup
+            'Get Shared Parameter group
+            msProjectGroup = sharedParametersFile.Groups.Item(groupName)
+            If (msProjectGroup Is Nothing) Then
+                Try
+                    'create shared paramteter group
+                    msProjectGroup = sharedParametersFile.Groups.Create(groupName)
+                Catch
+                    msProjectGroup = Nothing
+                End Try
+            End If
+
+            Return msProjectGroup
+
+        End Function
+
+        ''' &lt;summary&gt;
+        ''' Helper to get shared params definition.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetOrCreateSharedParamsDefinition( _
+         ByVal defGroup As Parameters.DefinitionGroup, _
+         ByVal defType As Parameters.ParameterType, _
+         ByVal defName As String, _
+         ByVal visible As Boolean) As Parameters.Definition
+
+            'Get parameter definition
+            Dim definition As Parameters.Definition = defGroup.Definitions.Item(defName)
+            If definition Is Nothing Then
+                Try
+                    'create parameter definition
+                    definition = defGroup.Definitions.Create(defName, defType, visible)
+                Catch
+                    definition = Nothing
+                End Try
+            End If
+
+            Return definition
+        End Function
+
+#End Region
+</pre>
+
+<para>For clarity, we add the group and definition name constants
+to the <code>LabConstants</code> module:</para>
+
+<pre title="C# Group and definition name constants" class="jtcollapse">
+    // Lab 4_3
+    public const string gsSharedParamFilePath = _temp_dir + "SharedParams.txt";
+    public const string gsSharedParamsGroupAPI = "API Parameters";
+    public const string gsSharedParamsDefFireRating = "API FireRating";
+</pre>
+
+<pre title="VB Group and definition name constants" class="jtcollapse">
+    ' Lab 4_3
+    Public Const gsSharedParamFilePath As String = _temp_dir + "SharedParams.txt"
+    Public Const gsSharedParamsGroupAPI As String = "API Parameters"
+    Public Const gsSharedParamsDefFireRating As String = "API FireRating"
+</pre>
+
+<para>Now we can add a new command class to <code>Labs4</code>.
+All the above helpers are first utilised and then the newly created parameter
+is bound to the doors category for the current Revit document:</para>
+
+<pre title="C# Create and bind shared parameter" class="jtcollapse">
+  /// &lt;summary&gt;
+  /// 4.3.1 Create and bind shared parameter.
+  /// &lt;/summary&gt;
+  public class Lab4_3_1_CreateAndBindSharedParam : IExternalCommand
+  {
+
+    // what element type are we interested in?
+    // standard sample uses BuiltInCategory.OST_Doors, we can also test using
+    // BuiltInCategory.OST_Walls to demonstrate that the same technique
+    // works with system families just as well as with standard ones:
+    static public BuiltInCategory Bic = BuiltInCategory.OST_Doors;
+    //static public BuiltInCategory Bic = BuiltInCategory.OST_Walls;
+
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      // Get the current Shared Params Definition File
+      DefinitionFile sharedParamsFile = LabUtils.GetSharedParamsFile( app );
+      if( null == sharedParamsFile )
+      {
+        LabUtils.ErrorMsg( "Error getting the shared params file." );
+        return IExternalCommand.Result.Failed;
+      }
+      // Get or Create the Shared Params Group
+      DefinitionGroup sharedParamsGroup = LabUtils.GetOrCreateSharedParamsGroup(
+                        sharedParamsFile, LabConstants.gsSharedParamsGroupAPI );
+      if( null == sharedParamsGroup )
+      {
+        LabUtils.ErrorMsg( "Error getting the shared params group." );
+        return IExternalCommand.Result.Failed;
+      }
+      // Get or Create the Shared Params Definition
+      Definition fireRatingParamDef = LabUtils.GetOrCreateSharedParamsDefinition( sharedParamsGroup,
+                            ParameterType.Number, LabConstants.gsSharedParamsDefFireRating, true );
+      if( null == fireRatingParamDef )
+      {
+        LabUtils.ErrorMsg( "Error in creating shared parameter." );
+        return IExternalCommand.Result.Failed;
+      }
+      // create the category set for binding and add the category we are
+      // interested in, doors or walls or whatever:
+      CategorySet catSet = app.Create.NewCategorySet();
+      Category cat = doc.Settings.Categories.get_Item( Bic );
+      try
+      {
+        catSet.Insert( cat );
+      }
+      catch( Exception )
+      {
+        LabUtils.ErrorMsg( string.Format(
+          "Error adding '{0}' category to parameters binding set.", cat.Name ) );
+        return IExternalCommand.Result.Failed;
+      }
+      // Bind the Param
+      try
+      {
+        Binding binding = app.Create.NewInstanceBinding( catSet );
+        // We could check if already bound, but looks like Insert will just ignore it in such case
+        doc.ParameterBindings.Insert( fireRatingParamDef, binding );
+      }
+      catch( Exception )
+      {
+        LabUtils.ErrorMsg( "Error binding shared parameter" );
+        return IExternalCommand.Result.Failed;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre title="VB Create and bind shared parameter" class="jtcollapse">
+''' &lt;summary&gt;
+''' 4.3.1 Create and bind shared parameter.
+''' &lt;/summary&gt;
+Public Class Lab4_3_1_CreateAndBindSharedParam
+    Implements IExternalCommand
+
+    Public Shared Bic As BuiltInCategory = BuiltInCategory.OST_Doors
+
+    Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, _
+                           ByRef message As String, _
+                           ByVal elements As Autodesk.Revit.ElementSet) As Autodesk.Revit.IExternalCommand.Result _
+                 Implements Autodesk.Revit.IExternalCommand.Execute
+
+        Dim app As Revit.Application = commandData.Application
+
+        ' Get the current Shared Params Definition File
+        Dim sharedParamsFile As DefinitionFile = LabUtils.GetSharedParamsFile(app)
+        If (sharedParamsFile Is Nothing) Then
+            MsgBox("Error in getting the Shared Params File?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' Get or Create the Shared Params Group
+        Dim sharedParamsGroup As Parameters.DefinitionGroup
+        sharedParamsGroup = LabUtils.GetOrCreateSharedParamsGroup(sharedParamsFile, gsSharedParamsGroupAPI)
+        If (sharedParamsGroup Is Nothing) Then
+            MsgBox("Error in getting the Shared Params Group?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' Get or Create the Shared Params Definition
+        Dim fireRatingParamDef As Parameters.Definition = LabUtils.GetOrCreateSharedParamsDefinition( _
+         sharedParamsGroup, ParameterType.Number, gsSharedParamsDefFireRating, True)
+        If (fireRatingParamDef Is Nothing) Then
+            MsgBox("Error in creating 'API Added' parameter?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' Create the Category Set for binding and add "Doors"
+        Dim catSet As CategorySet = app.Create.NewCategorySet()
+        Try
+            catSet.Insert(app.ActiveDocument.Settings.Categories.Item(Bic))
+        Catch
+            MsgBox("Error when adding 'Doors' category to parameters binding set?")
+            Return IExternalCommand.Result.Failed
+        End Try
+
+        ' Bind the Param
+        Try
+            Dim binding As Parameters.Binding = app.Create.NewInstanceBinding(catSet)
+            ' We could check if already bound, but looks like Insert will just ignore it in such case
+            app.ActiveDocument.ParameterBindings.Insert(fireRatingParamDef, binding)
+        Catch
+            MsgBox("Error in binding shared parameter !?")
+            Return IExternalCommand.Result.Failed
+        End Try
+
+        MsgBox("Parameter binding Successful!")
+        Return IExternalCommand.Result.Succeeded
+
+    End Function
+End Class
+</pre>
+
+<para>Compile the code, update Revit.ini and test the command. Examine the outcome.</para>
+
+
+<a class="j" href="labs4-3-2.htm">next</a>
+<a class="j" href="labs4-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs4-3-3.htm">next</a>
+<a class="j" href="labs4-3-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we export the door element ids and FireRating parameter
+values to Excel.</para>
+
+<para>Before adding the command, we implement another reusable utility to get the
+gloally unique identifier or GUID for a given shared parameter group and name.
+We will need this later for the GUID argument of the
+<code>Revit.Element.Parameter()</code> method.
+Add the following method to <code>LabUtils</code>:</para>
+
+<pre title="C# Get GUID for a given shared param name" class="jtcollapse">
+    /// &lt;summary&gt;
+    /// Get GUID for a given shared param name.
+    /// &lt;/summary&gt;
+    /// &lt;param name="app"&gt;Revit application&lt;/param&gt;
+    /// &lt;param name="defGroup"&gt;Definition group name&lt;/param&gt;
+    /// &lt;param name="defName"&gt;Definition name&lt;/param&gt;
+    /// &lt;returns&gt;GUID&lt;/returns&gt;
+    public static Guid SharedParamGUID( Application app, string defGroup, string defName )
+    {
+      Guid guid = Guid.Empty;
+      try
+      {
+        Autodesk.Revit.Parameters.DefinitionFile file = app.OpenSharedParameterFile();
+        Autodesk.Revit.Parameters.DefinitionGroup group = file.Groups.get_Item( defGroup );
+        Autodesk.Revit.Parameters.Definition definition = group.Definitions.get_Item( defName );
+        Autodesk.Revit.Parameters.ExternalDefinition externalDefinition = definition as ExternalDefinition;
+        guid = externalDefinition.GUID;
+      }
+      catch( Exception )
+      {
+      }
+      return guid;
+    }
+    #endregion // Helpers for shared parameters
+
+</pre>
+
+<pre title="VB Get GUID for a given shared param name" class="jtcollapse">
+    ''' &lt;summary&gt;
+    ''' Get GUID for a given shared param name.
+    ''' &lt;/summary&gt;
+        Shared Function SharedParamGUID(ByVal app As Revit.Application, _
+                                        ByVal defGroup As String, _
+                                        ByVal defName As String) As Guid
+
+        Dim guid As Guid = guid.Empty
+
+        Try
+            Dim file As Autodesk.Revit.Parameters.DefinitionFile = app.OpenSharedParameterFile
+            Dim group As Autodesk.Revit.Parameters.DefinitionGroup = file.Groups.Item(defGroup)
+            Dim definition As Autodesk.Revit.Parameters.Definition = group.Definitions.Item(defName)
+            Dim externalDefinition As Autodesk.Revit.Parameters.ExternalDefinition = definition
+            guid = externalDefinition.GUID
+        Catch
+        End Try
+
+        Return guid
+
+    End Function
+</pre>
+
+<para>Add the following full command class to <code>Labs4</code>.
+We first launch or get Excel and then loop and export all doors row by row.
+Note how we use the GUID to get the parameter and that we also export the
+doors' standard tag (mark) and level parameters.</para>
+
+<pre title="C# Export all door ids and FireRating param values" class="jtcollapse">
+  #region Lab4_3_2_ExportSharedParamToExcel
+  /// &lt;summary&gt;
+  /// 4.3.2 Export all door ids and FireRating param values to Excel.
+  /// &lt;/summary&gt;
+  public class Lab4_3_2_ExportSharedParamToExcel : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      Category cat = doc.Settings.Categories.get_Item( Lab4_3_1_CreateAndBindSharedParam.Bic );
+      // Launch Excel (same as in Lab 4_2, so we really should have better created some utils...)
+      X.Application excel = new X.ApplicationClass();
+      if( null == excel )
+      {
+        LabUtils.ErrorMsg( "Failed to get or start Excel." );
+        return IExternalCommand.Result.Failed;
+      }
+      excel.Visible = true;
+      X.Workbook workbook = excel.Workbooks.Add( Missing.Value );
+      X.Worksheet worksheet;
+      //while( 1 &lt; workbook.Sheets.Count )
+      //{
+      //  worksheet = workbook.Sheets.get_Item( 0 ) as X.Worksheet;
+      //  worksheet.Delete();
+      //}
+      worksheet = excel.ActiveSheet as X.Worksheet;
+      worksheet.Name = "Revit " + cat.Name;
+      worksheet.Cells[1, 1] = "ID";
+      worksheet.Cells[1, 2] = "Level";
+      worksheet.Cells[1, 3] = "Tag";
+      worksheet.Cells[1, 4] = LabConstants.gsSharedParamsDefFireRating;
+      worksheet.get_Range( "A1", "Z1" ).Font.Bold = true;
+
+      // since walls are not standard system families, implement and use
+      // GetAllModelInstancesForACategory() instead to support both doors
+      // and walls:
+
+      //ElementSet doors = LabUtils.GetAllStandardFamilyInstancesForACategory( app, cat.Name );
+      List&lt;Element&gt; elems = LabUtils.GetAllModelInstancesForACategory(
+        app, Lab4_3_1_CreateAndBindSharedParam.Bic );
+      // Get Shared param Guid
+      Guid paramGuid = LabUtils.SharedParamGUID(
+        app, LabConstants.gsSharedParamsGroupAPI, LabConstants.gsSharedParamsDefFireRating );
+      if( paramGuid.Equals( Guid.Empty ) )
+      {
+        LabUtils.ErrorMsg( "No Shared param found in the file - aborting..." );
+        return IExternalCommand.Result.Failed;
+      }
+      // Loop all elements and export each to an Excel row
+      int row = 2;
+      foreach( Element elem in elems ) {
+        worksheet.Cells[row, 1] = elem.Id.Value; // ID
+        worksheet.Cells[row, 2] = elem.Level.Name; // Level
+        // Tag:
+        Autodesk.Revit.Parameter tagParameter = elem.get_Parameter( BuiltInParameter.ALL_MODEL_MARK );
+        if( null != tagParameter )
+        {
+          worksheet.Cells[row, 3] = tagParameter.AsString();
+        }
+        // FireRating:
+        Parameter parameter = elem.get_Parameter( paramGuid );
+        if( null != parameter )
+        {
+          worksheet.Cells[row, 4] = parameter.AsDouble();
+        }
+        ++row;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion // Lab4_3_2_ExportSharedParamToExcel
+</pre>
+
+<pre title="VB Export all door ids and FireRating param values" class="jtcollapse">
+Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.Runtime
+Imports Autodesk.Revit
+Imports Autodesk.Revit.Parameters
+Imports Microsoft.VisualBasic
+Imports MsExcel = Microsoft.Office.Interop.Excel
+Imports W = System.Windows.Forms
+
+#Region "Lab4_3_2_ExportSharedParamToExcel"
+''' &lt;summary&gt;
+''' 4.3.2 Export all door ids and FireRating param values to Excel.
+''' &lt;/summary&gt;
+Public Class Lab4_3_2_ExportSharedParamToExcel
+    Implements IExternalCommand
+    Public Function Execute( _
+        ByVal commandData As ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As ElementSet) _
+    As IExternalCommand.Result Implements IExternalCommand.Execute
+        Dim app As Revit.Application = commandData.Application
+
+        ' Launch Excel (same as in Lab 4_2, so we really should have better created some utils...)
+        Dim excel As MsExcel.Application = New MsExcel.ApplicationClass()
+        If (excel Is Nothing) Then
+            MsgBox("Failed to get or start Excel!?")
+            Return IExternalCommand.Result.Failed
+        End If
+        excel.Visible = True
+        Dim workbook As MsExcel.Workbook = excel.Workbooks.Add()
+        Dim worksheet As MsExcel.Worksheet
+        Do While workbook.Sheets.Count &gt; 1
+            worksheet = workbook.Sheets.Item(1)
+            worksheet.Delete()
+        Loop
+        worksheet = excel.ActiveSheet
+        worksheet.Name = "Revit Doors"
+        ' Write the header row
+        worksheet.Cells(1, 1).Value = "ID"
+        worksheet.Cells(1, 2).Value = "Level"
+        worksheet.Cells(1, 3).Value = "Tag"
+        worksheet.Cells(1, 4).Value = gsSharedParamsDefFireRating
+        excel.Rows("1").Font.Bold = True
+
+            ' Use our utility from LabUtils to get all Doors
+            Dim doors As List(Of Revit.Element)
+            doors = LabUtils.GetAllModelInstancesForACategory(app, Lab4_3_1_CreateAndBindSharedParam.Bic)
+
+        ' Get Shared param Guid
+        Dim paramGuid As Guid = LabUtils.SharedParamGUID( _
+          app, gsSharedParamsGroupAPI, gsSharedParamsDefFireRating)
+        If paramGuid.Equals(Guid.Empty) Then
+            MsgBox("No Shared param found in the file !? - aborting...")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' Loop all doors and export each to an Excel row
+        Dim door As Revit.Element
+        Dim row As Integer = 2
+        For Each door In doors
+
+            'ID
+            worksheet.Cells(row, 1).Value = door.Id.Value
+
+            'Level
+            worksheet.Cells(row, 2).Value = door.Level.Name
+
+            'Tag
+            Dim tagParameter As Autodesk.Revit.Parameter = _
+             door.Parameter(Autodesk.Revit.Parameters.BuiltInParameter.ALL_MODEL_MARK)
+            If Not (tagParameter Is Nothing) Then
+                worksheet.Cells(row, 3).Value = tagParameter.AsString
+            End If
+
+            '*FireRating*
+            Dim parameter As Autodesk.Revit.Parameter = door.Parameter(paramGuid)
+            If Not (parameter Is Nothing) Then
+                worksheet.Cells(row, 4).Value = parameter.AsDouble
+            End If
+
+            row = row + 1
+
+        Next
+
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+
+#End Region
+</pre>
+
+<para>Compile the code and update Revit.ini.
+Before running this command, add some doors to the model and set their FireRating parameters.
+You may also save the file for use in the next command.</para>
+
+
+<a class="j" href="labs4-3-3.htm">next</a>
+<a class="j" href="labs4-3-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs4-4.htm">next</a>
+<a class="j" href="labs4-3-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we import the modified door FireRating parameter
+values back into the Revit building model.</para>
+
+<para>The third and last command complements the previous one,
+reading the updated FireRating parameter values back in from Excel
+and updating the existing Revit element parameters.
+Add the following full command to <code>Labs4</code>:</para>
+
+<pre title="C# Import updated param values" class="jtcollapse">  #region Lab4_3_3_ImportSharedParamFromExcel
+  /// &lt;summary&gt;
+  /// 4.3.3 Import updated FireRating param values from Excel.
+  /// &lt;/summary&gt;
+  public class Lab4_3_3_ImportSharedParamFromExcel : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      // Let user select the Excel file
+      WinForms.OpenFileDialog dlg = new WinForms.OpenFileDialog();
+      dlg.Title = "Select source Excel file from which to update Revit shared parameters";
+      dlg.Filter = "Excel spreadsheet files (*.xls;*.xlsx)|*.xls;*.xlsx|All files (*)|*";
+      if( WinForms.DialogResult.OK != dlg.ShowDialog() )
+      {
+        return IExternalCommand.Result.Cancelled;
+      }
+      //
+      // Launch/Get Excel via COM Interop:
+      //
+      X.Application excel = new X.Application();
+      if( null == excel )
+      {
+        LabUtils.ErrorMsg( "Failed to get or start Excel." );
+        return IExternalCommand.Result.Failed;
+      }
+      excel.Visible = true;
+      X.Workbook workbook = excel.Workbooks.Open( dlg.FileName,
+        Missing.Value, Missing.Value, Missing.Value,
+        Missing.Value, Missing.Value, Missing.Value, Missing.Value,
+        Missing.Value, Missing.Value, Missing.Value, Missing.Value,
+        Missing.Value, Missing.Value, Missing.Value );
+      X.Worksheet worksheet = workbook.ActiveSheet as X.Worksheet;
+      //
+      // Starting from row 2, loop the rows and extract Id and FireRating param.
+      //
+      int id;
+      double fireRatingValue;
+      int row = 2;
+      while( true )
+      {
+        try
+        {
+          // Extract relevant XLS values
+          X.Range r = worksheet.Cells[row, 1] as X.Range;
+          if( null == r.Value2 )
+          {
+            break;
+          }
+          double d = (double) r.Value2;
+          id = (int) d;
+          if( 0 &gt;= id )
+          {
+            break;
+          }
+          r = worksheet.Cells[row, 4] as X.Range;
+          fireRatingValue = (double) r.Value2;
+          // Get document's door element via Id
+          ElementId elementId;
+          elementId.Value = id;
+          Element door = doc.get_Element( ref elementId );
+          // Set the param
+          if( null != door )
+          {
+            Parameter parameter = door.get_Parameter( LabConstants.gsSharedParamsDefFireRating );
+            parameter.Set( fireRatingValue );
+          }
+        }
+        catch( Exception )
+        {
+          break;
+        }
+        ++row;
+      }
+      //
+      // Set focus back to Revit (there may be a better way, but this works :-)
+      //
+
+#if USE_PROCESS_GET_PROCESSES
+      foreach( Process p in Process.GetProcesses() )
+      {
+        try
+        {
+          if( "REVIT" == p.ProcessName.ToUpper().Substring( 0, 5 ) )
+          {
+            // In VB, we can use AppActivate( p.Id );
+            // Pre-3.0, I think you may need to use p/invoke and call the native Windows
+            // SetForegroundWindow() function directly.
+            // http://www.codeproject.com/csharp/windowhider.asp?df=100
+            break;
+          }
+        }
+        catch( Exception )
+        {
+        }
+      }
+#endif // USE_PROCESS_GET_PROCESSES
+
+      JtRevitWindow w = new JtRevitWindow();
+      w.Activate();
+
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion // Lab4_3_3_ImportSharedParamFromExcel
+</pre>
+
+<pre title="VB Import updated param values" class="jtcollapse">
+Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.Runtime
+Imports Autodesk.Revit
+Imports Autodesk.Revit.Parameters
+Imports Microsoft.VisualBasic
+Imports MsExcel = Microsoft.Office.Interop.Excel
+Imports W = System.Windows.Forms
+
+#Region "Lab4_3_3_ImportSharedParamFromExcel"
+''' &lt;summary&gt;
+''' 4.3.3 Import updated FireRating param values from Excel.
+''' &lt;/summary&gt;
+Public Class Lab4_3_3_ImportSharedParamFromExcel
+    Implements IExternalCommand
+    Public Function Execute( _
+        ByVal commandData As ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+
+        Dim app As Revit.Application = commandData.Application
+
+        ' Let user select the Excel file
+        Dim dlgFileXLS As New W.OpenFileDialog()
+        With dlgFileXLS
+            .Title = "Select the Excel file to update Revit Shared Parameters from"
+            .Filter = "Excel XLS Files (*.xls)|*.xls"
+            If Not .ShowDialog() = W.DialogResult.OK Then
+                Return IExternalCommand.Result.Cancelled
+            End If
+        End With
+
+        ' Launch Excel and open the selected file
+        Dim excel As MsExcel.Application = New MsExcel.ApplicationClass()
+        If (excel Is Nothing) Then
+            MsgBox("Failed to get or start Excel!?")
+            Return IExternalCommand.Result.Failed
+        End If
+        excel.Visible = True
+        Dim workbook As MsExcel.Workbook = excel.Workbooks.Open(dlgFileXLS.FileName)
+        Dim worksheet As MsExcel.Worksheet = workbook.ActiveSheet
+
+        ' Starting from row 2, loop the rows and extract Id and FireRating param.
+        Dim id As Integer
+        Dim fireRatingValue As Double
+        Dim row As Integer = 2
+        Do
+            Try
+                ' Extract relevant XLS values
+                id = worksheet.Cells(row, 1).Value
+                If id &lt;= 0 Then Exit Do
+                fireRatingValue = worksheet.Cells(row, 4).Value
+
+                ' Get document's door element via Id
+                Dim elementId As Autodesk.Revit.ElementId
+                elementId.Value = id
+                Dim door As Autodesk.Revit.Element = app.ActiveDocument.Element(elementId)
+
+                ' Set the param
+                If Not (door Is Nothing) Then
+                    Dim parameter As Parameter = door.Parameter(gsSharedParamsDefFireRating)
+                    parameter.Set(fireRatingValue)
+                End If
+
+            Catch
+                Exit Do
+            End Try
+
+            row = row + 1
+        Loop
+
+        ' Set focus back to Revit (there may be a better way, but this works :-)
+        Dim p, cPs() As Process
+        cPs = Process.GetProcesses()
+        For Each p In cPs
+            Try
+                If p.ProcessName.ToUpper.Substring(0, 5) = "REVIT" Then
+                    AppActivate(p.Id)
+                    Exit For
+                End If
+            Catch
+            End Try
+        Next
+
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+
+#End Region
+</pre>
+
+<para>Compile the code and update Revit.ini again.
+Before running this command, make sure you first export
+some Revit door elements to the Excel sheet using the previous command,
+update some of the FireRating values in Excel and save the file,
+remembering the path which you will need to select it to read it in again.</para>
+
+<a class="j" href="labs4-4.htm">next</a>
+<a class="j" href="labs4-3-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs4-3-1.htm">next</a>
+<a class="j" href="labs4-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we define a shared FireRating parameter and attach it to
+all doors in the model. The current values of the parameter are exported
+to Excel, where they can be analysed and modified, and the updated values
+are imported back into the Revit building model. The same functionality
+is also demonstrated by the SDK FireRating sample.</para>
+
+<para>This Lab consists of three separate commands which provide a full utility to the creation of a shared parameter, and export/import to/from the Excel.</para>
+
+<hr class="jumplist_intro_overline">
+<p class="jumplist_intro" >Topics in this subsection:
+</para>
+<ul>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-3-1.htm">
+Create a shared group with a shared parameter 'FireRating' and bind it to the doors category </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-3-2.htm">
+Export the list of all door element ids and the values of this parameter to Excel </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-3-3.htm">
+Import updated values of the parameter from Excel and update the Revit doors accordingly </a>
+
+</ul>
+
+<table class=FooterTable width=100% border=0 cellspacing=0 cellpadding=4><tr valign=top>
+<td>&nbsp;</td>
+<td align=right>&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="Click here to send a comment about this topic."></span></a>&nbsp;</td>
+</tr></table>&nbsp;
+
+
+
+
+<a class="j" href="labs4-4-2.htm">next</a>
+<a class="j" href="labs4-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para> Add three name string variables to LabConstants class for later use, including one group name and two shared Parameter names </para>
+<pre title="C# Create shared parameter group" class="jtcollapse">    // Lab 4_4
+    public const string sParamGroupName = "Per-doc Params";
+    public const string sParamNameVisible = "Visible per-doc Integer";
+    public const string sParamNameInvisible = "Invisible per-doc Integer";
+</pre>
+<pre title="VB Create shared parameter group" class="jtcollapse">    ' Lab 4_4
+    Public Const sParamGroupName As String = "Per-doc Params"
+    Public Const sParamNameVisible As String = "Visible per-doc Integer"
+    Public Const sParamNameInvisible As String = "Invisible per-doc Integer"
+</pre>
+<para>First create a shared parameter group and two definitions of type Integer.
+All you need are three existing utilities from LabUtils:</para>
+
+<ul>
+<li>GetSharedParamsFile()</li>
+<li>GetOrCreateSharedParamsGroup() and</li>
+<li>GetOrCreateSheredParamsDefinition()</li>
+</ul>
+<pre title="C# Create shared parameter group" class="jtcollapse">
+  #region Lab4_4_1_CreatePerDocParameters
+  /// &lt;summary&gt;
+  /// Command to add and bind a visible and an invisible per-doc parameter.
+  /// &lt;/summary&gt;
+  public class Lab4_4_1_PerDocParams : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+
+      // Get the current Shared Params Definition File
+      DefinitionFile sharedParamsFile = LabUtils.GetSharedParamsFile( app );
+      if( null == sharedParamsFile )
+      {
+        LabUtils.ErrorMsg( "Error getting the shared params file." );
+        return IExternalCommand.Result.Failed;
+      }
+      // Get or Create the Shared Params Group
+      DefinitionGroup sharedParamsGroup = LabUtils.GetOrCreateSharedParamsGroup(
+                               sharedParamsFile, LabConstants.sParamGroupName );
+      if( null == sharedParamsGroup )
+      {
+        LabUtils.ErrorMsg( "Error getting the shared params group." );
+        return IExternalCommand.Result.Failed;
+      }
+
+      //To do: Create the visible and invisible parameter definition
+
+      //To do: Bind the parameter defition to element
+
+      //to do: set value to per doc shared parameters
+
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion // Lab4_4_1_CreatePerDocParameters
+</pre>
+<pre title="VB Create shared parameter group" class="jtcollapse">
+#Region "Lab4_4_1_CreatePerDocParameters"
+''' &lt;summary&gt;
+''' Command to add and bind a visible and an invisible per-doc parameter.
+''' &lt;/summary&gt;
+''' &lt;remarks&gt;&lt;/remarks&gt;
+Public Class Lab4_4_1_PerDocParams
+    Implements IExternalCommand
+
+    Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+            As IExternalCommand.Result Implements IExternalCommand.Execute
+
+        Dim app As Revit.Application = commandData.Application
+        Dim doc As Revit.Document = app.ActiveDocument
+
+        ' Get or create relevant shared params stuff:
+        Dim sharedParamsFile As DefinitionFile = LabUtils.GetSharedParamsFile(app)
+        If (sharedParamsFile Is Nothing) Then
+            MsgBox("Error in getting the Shared Params File?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        Dim sharedParamsGroup As Parameters.DefinitionGroup
+        sharedParamsGroup = LabUtils.GetOrCreateSharedParamsGroup( _
+          sharedParamsFile, LabConstants.sParamGroupName)
+        If (sharedParamsGroup Is Nothing) Then
+            MsgBox("Error in getting the Shared Params Group?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        'To do: Create the visible and invisible parameter definition
+
+        'To do: Bind the parameter defition to element
+
+        'To do: set value to per doc shared parameters
+
+        Return IExternalCommand.Result.Succeeded
+
+    End Function
+
+End Class
+#End Region
+</pre>
+
+<para>When calling the last method, make one parameter visible and the other invisible.</para>
+<pre title="C# Create per doc shared parameter definition" class="jtcollapse">  //  Visible param
+  Definition docParamDefVisible = LabUtils.GetOrCreateSharedParamsDefinition(
+      sharedParamsGroup, ParameterType.Integer, LabConstants.sParamNameVisible, true );
+  if( null == docParamDefVisible )
+  {
+    LabUtils.ErrorMsg( "Error creating visible per-doc parameter." );
+    return IExternalCommand.Result.Failed;
+  }
+  // INVisible param
+  Definition docParamDefInvisible = LabUtils.GetOrCreateSharedParamsDefinition(
+       sharedParamsGroup, ParameterType.Integer, LabConstants.sParamNameInvisible, false );
+  if( null == docParamDefInvisible )
+  {
+    LabUtils.ErrorMsg( "Error creating invisible per-doc parameter." );
+    return IExternalCommand.Result.Failed;
+  }
+</pre>
+<pre class="jtcollapse" title="VB Create per doc shared parameter definition">    ' Visible param
+    Dim docParamDefVisible As Parameters.Definition = LabUtils.GetOrCreateSharedParamsDefinition( _
+    sharedParamsGroup, ParameterType.Integer, LabConstants.sParamNameVisible, True)
+    If (docParamDefVisible Is Nothing) Then
+        MsgBox("Error in creating visible per-doc parameter?")
+        Return IExternalCommand.Result.Failed
+    End If
+
+    'INVisible param
+    Dim docParamDefInvisible As Parameters.Definition = LabUtils.GetOrCreateSharedParamsDefinition( _
+    sharedParamsGroup, ParameterType.Integer, LabConstants.sParamNameInvisible, False)
+    If (docParamDefInvisible Is Nothing) Then
+        MsgBox("Error in creating invisible per-doc parameter?")
+        Return IExternalCommand.Result.Failed
+    End If
+</pre>
+
+<para>Bind these new parameters to the 'Project Information' category
+<code>BuiltInCategory.OST_ProjectInformation</code> in the current model
+(cf. similar code in Lab 4.3.1).</para>
+<pre title="C# bind shared parameter definition" class="jtcollapse">  // Bind the Param
+  try
+  {
+    Document doc = app.ActiveDocument;
+    CategorySet catSet = app.Create.NewCategorySet();
+    catSet.Insert( doc.Settings.Categories.get_Item( BuiltInCategory.OST_ProjectInformation ) );
+    Binding binding = app.Create.NewInstanceBinding( catSet );
+    doc.ParameterBindings.Insert( docParamDefVisible, binding );
+    doc.ParameterBindings.Insert( docParamDefInvisible, binding );
+  }
+  catch( System.Exception e )
+  {
+    LabUtils.ErrorMsg( "Error binding shared parameter: " + e.Message );
+    return IExternalCommand.Result.Failed;
+  }
+</pre>
+<pre title="VB bind shared parameter definition" class="jtcollapse">    ' Bind the params
+    Try
+        Dim catSet As CategorySet = app.Create.NewCategorySet()
+        catSet.Insert(app.ActiveDocument.Settings.Categories.Item( _
+                  BuiltInCategory.OST_ProjectInformation))
+        Dim binding As Parameters.Binding = app.Create.NewInstanceBinding(catSet)
+        app.ActiveDocument.ParameterBindings.Insert(docParamDefVisible, binding)
+        app.ActiveDocument.ParameterBindings.Insert(docParamDefInvisible, binding)
+    Catch e As Exception
+        MsgBox("Error in binding shared parameter: " & e.Message)
+        Return IExternalCommand.Result.Failed
+    End Try
+</pre>
+<para>Create a re-usable utility in LabUtils which will return the singleton
+element instance of 'Project Information' category.</para>
+
+<pre title="C# obtain the Project Information element" class="jtcollapse">    /// &lt;summary&gt;
+    /// Return the one and only project information element using Revit 2009 filtering
+    /// by searching for the "Project Information" category. Only one such element exists.
+    /// &lt;/summary&gt;
+    public static Element GetProjectInfoElem( Application app )
+    {
+      Dim filterCategory As Filter = app.Create.Filter.NewCategoryFilter( _
+          BuiltInCategory.OST_ProjectInformation)
+      ElementIterator i = app.ActiveDocument.get_Elements( filterCategory );
+      i.MoveNext();
+      Element e = i.Current as Element;
+      Debug.Assert( null != e, "expected valid project information element" );
+      Debug.Assert( !i.MoveNext(), "expected one single element to be returned" );
+      return e;
+    }
+</pre>
+<pre title="VB obtain the Project Information element" class="jtcollapse">    ''' &lt;summary&gt;
+    ''' Return the one and only project information element using Revit 2009 filtering
+    ''' by searching for the "Project Information" category. Only one such element exists.
+    ''' &lt;/summary&gt;
+    Public Shared Function GetProjectInfoElem( _
+        ByVal doc As Revit.Document, _
+        ByRef app As Revit.Application) As Revit.Element
+
+        Dim filterCategory As Filter = app.Create.Filter.NewCategoryFilter( _
+          BuiltInCategory.OST_ProjectInformation)
+        Dim elements As New List(Of Element)
+
+        'it should return only one element in the collection.
+        Dim nRetVal As Integer
+
+        nRetVal = doc.Elements(filterCategory, elements)
+
+        ' Loop all elements
+        Dim elem As Revit.Element
+
+        For Each elem In elements
+            ' Return the first match (it's a singleton!)
+            If (Not (elem Is Nothing)) Then
+                Return elem
+            End If
+        Next
+
+        Return Nothing
+
+    End Function
+</pre>
+<para>Use the above utility to retrieve the 'ProjectInfo' element,
+and set the value for the new shared parameter value.</para>
+<pre title="C# set shared parameter value" class="jtcollapse">  // Set the initial values
+  // Get the singleton Project Info Element
+  Element projInfoElem = LabUtils.GetProjectInfoElem( app );
+
+  if( null == projInfoElem )
+  {
+    LabUtils.ErrorMsg( "No project info elem found. Aborting command..." );
+    return IExternalCommand.Result.Failed;
+  }
+  //  For simplicity, access params by name rather than by GUID:
+  projInfoElem.get_Parameter( LabConstants.sParamNameVisible ).Set( 55 );
+  projInfoElem.get_Parameter( LabConstants.sParamNameInvisible ).Set( 0 );
+</pre>
+<pre title="VB set shared parameter value" class="jtcollapse">    ' Set the initial values
+    '-----------------------
+
+    ' Get the singleton Project Info Element
+
+    Dim projInfoElem As Revit.Element = LabUtils.GetProjectInfoElem(doc, app)
+    If projInfoElem Is Nothing Then
+        MsgBox("NO project Info Elem found !? Aborting command...")
+        Return IExternalCommand.Result.Failed
+    End If
+
+    ' For simplicity, access params by name rather than by GUID:
+    projInfoElem.Parameter(LabConstants.sParamNameVisible).Set(55)
+    projInfoElem.Parameter(LabConstants.sParamNameInvisible).Set(0)
+</pre>
+
+
+<a class="j" href="labs4-4-2.htm">next</a>
+<a class="j" href="labs4-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs5-1.htm">next</a>
+<a class="j" href="labs4-4-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this lab, we will increment the invisible parameter value by the following steps</para>
+
+<ul>
+<li>Use the GetProjectInformationElement() utility to get the element.</li>
+<li>Display the current shared parameter value.</li>
+<li>Increment the value by 1.</li>
+<li>Display the new shared parameter value.</li>
+</ul>
+<pre title="C# increment hidden shared parameter value" class="jtcollapse">#region Lab4_4_2_IncrementPerDocParameters
+  /// &lt;summary&gt;
+  /// Command to increment the invisible per-doc param
+  /// &lt;/summary&gt;
+  public class Lab4_4_2_PerDocParams : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      // Get the singleton Project Info Element
+      Element projInfoElem = LabUtils.GetProjectInfoElem( app );
+      if( null == projInfoElem )
+      {
+        LabUtils.ErrorMsg( "No project info elem found. Aborting command..." );
+        return IExternalCommand.Result.Failed;
+      }
+      // For simplicity, access invisible param by name rather than by GUID:
+      try
+      {
+        Parameter param = projInfoElem.get_Parameter( LabConstants.sParamNameInvisible );
+        // report OLD value
+        int iOldValue = param.AsInteger();
+        LabUtils.ErrorMsg( "OLD value = " + iOldValue.ToString() );
+        // set and report NEW value
+        param.Set( iOldValue + 1 );
+        LabUtils.ErrorMsg( "NEW value = " + param.AsInteger().ToString() );
+      }
+      catch( System.Exception e )
+      {
+        LabUtils.ErrorMsg( "Failed: " + e.Message );
+        return IExternalCommand.Result.Failed;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion // Lab4_4_2_IncrementPerDocParameters
+</pre>
+<pre title="VB increment hidden shared parameter value" class="jtcollapse">#Region "Lab4_4_2_IncrementPerDocParameters"
+''' &lt;summary&gt;
+''' Command to increment the invisible per-doc param
+''' &lt;/summary&gt;
+''' &lt;remarks&gt;&lt;/remarks&gt;
+Public Class Lab4_4_2_PerDocParams
+    Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+
+        Dim app As Revit.Application = commandData.Application
+        Dim doc As Revit.Document = app.ActiveDocument
+
+        ' Get the singleton Project Info Element
+        Dim projInfoElem As Revit.Element = LabUtils.GetProjectInfoElem(doc, app)
+        If projInfoElem Is Nothing Then
+            MsgBox("NO project Info Elem found !? Aborting command...")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' For simplicity, access invisible param by name rather than by GUID:
+        Try
+            Dim param As Parameter = projInfoElem.Parameter(LabConstants.sParamNameInvisible)
+            ' report OLD value
+            Dim iOldValue As Integer = param.AsInteger
+            MsgBox("OLD value = " & iOldValue)
+            ' set and report NEW value
+            param.Set(iOldValue + 1)
+            MsgBox("NEW value = " & param.AsInteger)
+
+        Catch e As Exception
+            MsgBox("Failed!? : " & e.Message)
+            Return IExternalCommand.Result.Failed
+        End Try
+
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+#End Region
+
+</pre>
+
+<a class="j" href="labs5-1.htm">next</a>
+<a class="j" href="labs4-4-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+
+<a class="j" href="labs4-4-1.htm">next</a>
+<a class="j" href="labs4-3-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<para>In this section, we address adding per-document data, in contrast to
+the per-element data we have been discussing until now. In a nutshell,
+we suggest storing document data on an element as well, simply using a
+singleton element, i.e. one that appears only once per document.</para>
+
+<para><b>Problem:</b> We need a strategy to persistently store per-document or per-model data.</para>
+<para><b>Solution:</b> Bind (hidden or visible) shared parameters to the singleton element of 'Project Information' category.</para>
+
+<para>We implement two commands to test this concept, to <a href="#1">initialise</a> and <a href="#2">increment</a>.</para>
+
+<hr class="jumplist_intro_overline">
+<p class="jumplist_intro" >Topics in this subsection:
+</para>
+<ul>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-4-1.htm">
+Create and Bind Shared Parameters to 'Project Information' Element </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-3-3.htm">
+Increment Hidden Shared Parameter Value </a>
+
+</ul>
+
+<table class=FooterTable width=100% border=0 cellspacing=0 cellpadding=4><tr valign=top>
+<td>&nbsp;</td>
+<td align=right>&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="Click here to send a comment about this topic."></span></a>&nbsp;</td>
+</tr></table>&nbsp;
+
+
+
+<para>
+In this section, we will take a look at parameters of an element.  We will learn how to retrieve parameter types and its values, andhow to define and add shared parameters.
+We'll also look how to export/import parameter values of a given model to/from an Excel file.
+</para>
+
+<hr class="jumplist_intro_overline">
+<p class="jumplist_intro" >Topics in this section:
+</para>
+<ul>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-1.htm">
+List all Parameters for Selected Elements </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-2.htm">
+Export All Element Parameters Sorted By Element Category </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-3.htm">
+Shared Parameter: FireRating Example </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-4.htm">
+Per-document Data </a>
+</ul>
+
+<table class=FooterTable width=100% border=0 cellspacing=0 cellpadding=4><tr valign=top>
+<td>&nbsp;</td>
+<td align=right>&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="Click here to send a comment about this topic."></span></a>&nbsp;</td>
+</tr></table>&nbsp;
+
+
+
+
+
+<a class="j" href="labs5-2.htm">next</a>
+<a class="j" href="labs4-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<para>Groups of elements are useful when users need to create entities that
+represent repeating layouts or are common to many building projects.
+In this lab, we shall list all the existing groups in a Revit model and
+display their group Id and group type. This can be done by filtering all the
+elements of Group type and displaying the property of each. The latter part of
+the lab focuses on listing all the available GroupTypes and listing the
+properties of each GroupType element. It will also cover extracting all the
+'Model' group types from the Revit model and displaying their names.</para>
+
+<para>Using the new filtering mechanism in Revit 2009, we can select all
+elements of 'Group' type only.
+This avoids iterating through all the elements in the model and thus is
+a huge performance advantage. Once we collect
+all the group elements, we will simply display some of the properties
+like Id, Name etc. of each group:</para>
+
+<pre class="jtcollapse" title="C# List all groups in model">
+using RvtElement = Autodesk.Revit.Element;
+public class Lab5_1_GroupsAndGroupTypes : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+
+      // List all Group Elements
+      List&lt;RvtElement&gt; groups = new List&lt;RvtElement&gt;();
+      Filter filterType = app.Create.Filter.NewTypeFilter( typeof( Group ) );
+      app.ActiveDocument.get_Elements( filterType, groups );
+
+      string sMsg = "All GROUPS in the doc are:\r\n";
+      foreach( Group grp in groups )
+      {
+        sMsg += "\r\n  Id=" + grp.Id.Value.ToString() + "; Type=" + grp.GroupType.Name;
+      }
+      LabUtils.InfoMsg( sMsg );
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre class="jtcollapse" title="VB List all groups in model">    Public Class Lab5_1_GroupsAndGroupTypes
+        Implements IExternalCommand
+
+        Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, _
+        ByRef message As String, ByVal elements As Autodesk.Revit.ElementSet) As Autodesk.Revit.IExternalCommand.Result _
+        Implements Autodesk.Revit.IExternalCommand.Execute
+
+            Dim app As Revit.Application = commandData.Application
+
+            ' List all Group Elements using filtering mechanism in 2009
+            Dim groups As New List(Of Element)
+            Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(Group))
+            Dim iRetVal As Integer = app.ActiveDocument.Elements(filterType, groups)
+
+            Dim sMsg As String = "All GROUPS in the doc are:" & vbCrLf
+            Dim grp As Group
+            For Each grp In groups
+                sMsg += vbCrLf + "  Id=" & grp.Id.Value.ToString & "; Type=" & grp.GroupType.Name
+            Next
+            MsgBox(sMsg)
+
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+</pre>
+
+<para>Groups can be of Model and Detail types and these are referred to as GroupTypes.
+Model groups contain model elements and Detail groups contain view-specific elements. We shall use filtering mechanism available in
+Revit 2009 again to get all the elements of 'GroupType' type and list their Built-in parameters (for example, we can use
+<code>symbol_family_name_param</code> built-in parameter to extract the GroupType family name).</para>
+
+<para>Further, we shall attempt to extract the name of each model group type in the Revit
+model. For this, you can use the <code>NewLogicAndFilter</code> to filter out elements which are
+of 'GroupType' AND family name 'Model Group'. Once we have all
+the model group types listed, we can directly display the Name property from the
+GroupType element:</para>
+
+<pre class="jtcollapse" title="C# List all groups types in model">    // List all Group Type Elements
+    List&lt;Element&gt; groupTypes = new List&lt;Element&gt;();
+    Filter filterType1 = app.Create.Filter.NewTypeFilter( typeof( GroupType ) );
+    app.ActiveDocument.get_Elements( filterType1, groupTypes );
+
+    sMsg = "All GROUP TYPES in the doc are:\r\n";
+    foreach( GroupType grpTyp in groupTypes )
+    {
+      // determine the GroupType system family
+      // (cf. Labs3 for standard symbols):
+      Parameter p = grpTyp.get_Parameter(BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM);
+      string famName = null == p ? "?" : p.AsString();
+      sMsg += "\r\n  Name=" + grpTyp.Name + "; Id=" + grpTyp.Id.Value.ToString() + "; Family=" + famName;
+    }
+    LabUtils.InfoMsg( sMsg );
+
+    List&lt;Element&gt; modelGroupTypes = new List&lt;Element&gt;();
+    Filter filterType2 = app.Create.Filter.NewTypeFilter( typeof( GroupType ) );
+    Filter filterParam = app.Create.Filter.NewParameterFilter(
+      BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM, Autodesk.Revit.Enums.CriteriaFilterType.Equal, "Model Group" );
+    Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterType2, filterParam );
+    app.ActiveDocument.get_Elements( filterAnd, modelGroupTypes );
+
+    sMsg = "All *MODEL* GROUP TYPES in the doc are:\r\n";
+    foreach( GroupType grpTyp in modelGroupTypes )
+    {
+      sMsg += "\r\n  Name=" + grpTyp.Name + "; Id=" + grpTyp.Id.Value.ToString();
+    }
+    LabUtils.InfoMsg( sMsg );
+</pre>
+
+<pre class="jtcollapse" title="VB List all groups types in model">    ' List all Group Type Elements
+    Dim groupTypes As New List(Of Element)
+    Dim filterType1 As Filter = app.Create.Filter.NewTypeFilter(GetType(GroupType))
+    Dim iRetVal1 As Integer = app.ActiveDocument.Elements(filterType1, groupTypes)
+
+    sMsg = "All GROUP TYPES in the doc are:" & vbCrLf
+    Dim grpTyp As GroupType
+    For Each grpTyp In groupTypes
+        ' To Determine the GroupType system Family,
+        ' we need the following (as in Labs3 for standard Symbols):
+        Dim famName As String = "?"
+        Dim p As Parameter = grpTyp.Parameter(Parameters.BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM)
+        If Not p Is Nothing Then
+            famName = p.AsString
+        End If
+        sMsg += vbCrLf + "  Name=" & grpTyp.Name & "; Id=" & grpTyp.Id.Value.ToString & "; Family=" & famName
+    Next
+    MsgBox(sMsg)
+
+    ' Typically, only "Model" types will be needed,
+    Dim modelGroupTypes As New List(Of Element)
+    Dim filterType2 As Filter = app.Create.Filter.NewTypeFilter(GetType(GroupType))
+    Dim filterParam = app.Create.Filter.NewParameterFilter( _
+        BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM, CriteriaFilterType.Equal, "Model Group")
+    Dim filter As Filter = app.Create.Filter.NewLogicAndFilter(filterType2, filterParam)
+    Dim n As Integer = app.ActiveDocument.Elements(filter, modelGroupTypes)
+
+    sMsg = "All *MODEL* GROUP TYPES in the doc are:" & vbCrLf
+    For Each grpTyp In modelGroupTypes
+        sMsg += vbCrLf + "  Name=" & grpTyp.Name & "; Id=" & grpTyp.Id.Value.ToString
+    Next
+    MsgBox(sMsg)
+</pre>
+
+<para>Build the project, adjust the ini file and examine the output with various pre-existing model groups and types as displayed in the UI.</para>
+
+<a class="j" href="labs5-2.htm">next</a>
+<a class="j" href="labs4-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs5-3.htm">next</a>
+<a class="j" href="labs5-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<para>In this lab, we shall write code to swap group types for selected
+groups with other existing model group types in the Revit model.
+This can be done by assigning the GroupType property of the group element
+to some other model group type extracted using filters in Revit.</para>
+
+<para>The first step would be to create a list of all the existing
+model group types in the Revit model. We can again use
+the new filtering mechanism here to create a <code>NewLogicAndFilter</code>
+type filter and set the filter based on 'GroupType' type AND
+family symbol name equals "Model Group".</para>
+
+<pre class="jtcollapse" title="C# List all model group types">    List&lt;Element&gt; elements = new List&lt;Element&gt;();
+    Filter filterType = app.Create.Filter.NewTypeFilter( typeof( GroupType ) );
+    Filter filterParam = app.Create.Filter.NewParameterFilter(
+    BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM, CriteriaFilterType.Equal,
+    LabConstants.gsGroupTypeModel );
+    Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterType, filterParam );
+    app.ActiveDocument.get_Elements( filterAnd, elements );
+</pre>
+
+<pre class="jtcollapse" title="VB List all model group types">    Dim elements As New List(Of Element)
+    Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(GroupType))
+    Dim filterParam = app.Create.Filter.NewParameterFilter(
+    BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM, CriteriaFilterType.Equal, LabConstants.gsGroupTypeModel)
+    Dim filter As Filter = app.Create.Filter.NewLogicAndFilter(filterType, filterParam)
+    Dim n As Integer = app.ActiveDocument.Elements(filter, elements)
+</pre>
+
+<para>Next, with each selected group, we will swap the group type with other
+model group types which we extracted using element filters in the step above.
+This swapping can be achieved simply by using the <code>GroupType</code>
+property of each selected group.
+Each group type swapping is done after confirmation from the user.</para>
+
+<pre class="jtcollapse" title="C# Swap group types">    public class Lab5_2_SwapGroupTypes : IExternalCommand
+    {
+      public IExternalCommand.Result Execute(
+        ExternalCommandData commandData,
+        ref string message,
+        ElementSet elements )
+        {
+          Application app = commandData.Application;
+          // Get all Group Types using the previous code snippet in this lab
+          List&lt;RvtElement&gt; gts = LabUtils.GetAllModelGroupTypes( app );
+          if( 0 == gts.Count )
+          {
+            LabUtils.ErrorMsg( "No Model Group Types in this model." );
+            return IExternalCommand.Result.Cancelled;
+          }
+          string sMsg;
+          foreach( RvtElement elem in app.ActiveDocument.Selection.Elements )
+          {
+            // Check for Group instance
+            if( elem is Group )
+            {
+              Group gp = elem as Group;
+
+              // Offer simple message box to swap the type
+              // (one-by-one, stop if user confirms the change)
+              foreach( GroupType gt in gts )
+              {
+                sMsg = "Swap OLD Type=" + gp.GroupType.Name
+                  + " with NEW Type=" + gt.Name
+                  + " for Group Id=" + gp.Id.Value.ToString() + "?";
+                switch( LabUtils.QuestionCancelMsg( sMsg ) )
+                {
+                  case WinForms.DialogResult.Yes:
+                    gp.GroupType = gt;
+                    LabUtils.InfoMsg( "Group type successfully swapped." );
+                    return IExternalCommand.Result.Succeeded;
+                  case WinForms.DialogResult.Cancel:
+                    LabUtils.InfoMsg( "Command cancelled!" );
+                    return IExternalCommand.Result.Cancelled;
+                   // just continue with the For Loop
+                }
+              }
+            }
+          }
+          return IExternalCommand.Result.Succeeded;
+        }
+    }
+</pre>
+
+<pre class="jtcollapse" title="VB Swap group types">    Public Class Lab5_2_SwapGroupTypes
+        Implements IExternalCommand
+        Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, ByRef message As String, ByVal elements As Autodesk.Revit.ElementSet) As Autodesk.Revit.IExternalCommand.Result Implements Autodesk.Revit.IExternalCommand.Execute
+
+            Dim app As Revit.Application = commandData.Application
+
+            ' First get all Group Types of Model Family
+            'Get all Group Types using the previous code snippet in this lab
+            Dim gts As List(Of Element) = LabUtils.GetAllModelGroupTypes(app)
+            'Dim gts As ElementSet = LabUtils.GetAllGroupTypes(app)
+
+            If gts.Count = 0 Then
+                MsgBox("No Model Group Types in this model!")
+                Return IExternalCommand.Result.Cancelled
+            End If
+
+            ' Loop through selection
+            Dim elem As Revit.Element
+            If (app.ActiveDocument.Selection.Elements.Size = 0) Then
+                MsgBox("No Group has been selected!")
+            Else
+                For Each elem In app.ActiveDocument.Selection.Elements
+
+                    ' Check for Group instance
+                    If TypeOf elem Is Group Then
+                        Dim gp As Group = elem
+
+                        ' Offer simple message box to swap the type
+                        ' (one-by-one, stop if user confirms the change)
+                        Dim gt As GroupType
+                        For Each gt In gts
+                            Select Case (MsgBox("Swap OLD Type=" & gp.GroupType.Name & " with NEW Type=" & gt.Name & " for Group Id=" & gp.Id.Value.ToString & "?", MsgBoxStyle.YesNoCancel))
+                                Case MsgBoxResult.Yes
+                                    gp.GroupType = gt
+                                    MsgBox("Group type successfully swapped!")
+                                    Exit For
+                                Case MsgBoxResult.Cancel
+                                    MsgBox("Command cancelled!")
+                                    Return IExternalCommand.Result.Cancelled
+                                Case MsgBoxResult.No
+                                    ' just continue with the For Loop
+                            End Select
+                        Next
+                    End If
+
+                Next
+            End If
+
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+</pre>
+
+<para>Build the project, adjust the ini file and examine the output
+in a model with various pre-existing model group types.</para>
+
+<a class="j" href="labs5-3.htm">next</a>
+<a class="j" href="labs5-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs6.htm">next</a>
+<a class="j" href="labs5-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this section, we will extract some elementary information from
+the room objects in a Revit model and also list their boundaries.
+To display the information associated with each room, we can iterate
+through all the Room type elements in the model and display the
+parameters associated with each.</para>
+
+<para>Using the new filtering mechanism in Revit 2009, we can select all
+elements of 'Room' type only. Once we have the set of Room elements,
+use the <code>get_Parameter</code> method in C# and <code>Parameter</code>
+in VB.Net on each Room element to extract information like the Name and
+Number associated with it.</para>
+
+<pre class="jtcollapse" title="C# List some parameters of Room object">
+  /// &lt;summary&gt;
+  /// List room boundaries.
+  /// &lt;/summary&gt;
+  public class Lab5_3_Rooms : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+
+      // List all Room Elements
+      List&lt;RvtElement&gt; rooms = LabUtils.GetAllRooms(app);
+      if( 0 == rooms.Count )
+      {
+        LabUtils.InfoMsg( "There are no rooms in this model!" );
+      }
+      else
+      {
+        foreach( Room room in rooms )
+        {
+          // Some identification parameters
+          // (there are probably built-in Params for this, but this works :-)
+
+          Parameter p = room.get_Parameter( "Name" );
+          string roomName = null == p ? "?" : p.AsString();
+
+          p = room.get_Parameter( "Number" );
+          string roomNumber = null == p ? "?" : p.AsString();
+
+          string sMsg = "Room Id=" + room.Id.Value.ToString()
+            + " Name=" + roomName + " Number=" + roomNumber + "\r\n";
+
+          LabUtils.InfoMsg( sMsg );
+        }
+      }
+    return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+ <pre class="jtcollapse" title="VB List some parameters of Room object">
+    ''' <summary>
+    ''' List room boundaries.
+    ''' </summary>
+    Public Class Lab5_3_Rooms
+        Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+
+            Dim app As Revit.Application = commandData.Application
+            Dim rm As Room
+
+            ' List all Room Elements
+            Dim rooms As List(Of Element) = LabUtils.GetAllRooms(app)
+            If (0 = rooms.Count) Then
+                MsgBox("There are no rooms in this model!")
+            Else
+                For Each rm In rooms
+
+                    ' Some identification Parameters
+                    ' (there are probably built-in Params for this, but this works :-)
+
+                    Dim roomName As String = "?"
+                    Dim p As Parameter = rm.Parameter("Name")
+                    If Not p Is Nothing Then
+                        roomName = p.AsString
+                    End If
+
+                    Dim roomNumber As String = "?"
+                    p = rm.Parameter("Number")
+                    If Not p Is Nothing Then
+                        roomNumber = p.AsString
+                    End If
+
+                    Dim sMsg As String = "Room Id=" & rm.Id.Value.ToString & " Name=" & roomName & " Number=" & roomNumber & vbCrLf
+                    MsgBox(sMsg)
+                Next
+            End If
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+</pre>
+
+<para>Extracting the Room boundary is a bit more complex.</para>
+
+<para>The room boundary property is of BoundarySegmentArrayArray type which is an array of
+BoundarySegmentArray objects. Each BoundarySegmentArray makes up a circuit or a continuous
+line in which one segment joins next. BoundarySegmentArray comprises of BoundarySegment
+objects which make up the region and can be of line or arc type. Room boundary will
+return null if the room is not in an enclosed region or only exists in the schedule.
+Using each of the room objects obtained in the previous section in this lab, we
+can extract the boundary property as follows:</para>
+
+<pre class="jtcollapse" title="C# List all boundaries of a room">
+    // Loop all boundaries of this room
+    BoundarySegmentArrayArray boundaries = room.Boundary;
+    // Check to ensure room has boundary
+    if (null != boundaries)
+    {
+      int iB = 0;
+      foreach (BoundarySegmentArray boundary in boundaries)
+      {
+        ++iB;
+        sMsg += "\r\n    Boundary " + iB + ":";
+        int iSeg = 0;
+        foreach (BoundarySegment segment in boundary)
+        {
+          ++iSeg;
+
+          // Segment's curve
+          Curve crv = segment.Curve;
+          if (crv is Line) // LINE
+          {
+            Line line = crv as Line;
+            XYZ ptS = line.get_EndPoint(0);
+            XYZ ptE = line.get_EndPoint(1);
+            sMsg += "\r\n        Segment " + iSeg + " is a LINE: "
+              + LabUtils.PointString(ptS) + " ; "
+              + LabUtils.PointString(ptE);
+          }
+          else if (crv is Arc) // ARC
+          {
+            Arc arc = crv as Arc;
+            XYZ ptS = arc.get_EndPoint(0);
+            XYZ ptE = arc.get_EndPoint(1);
+            double r = arc.Radius;
+            sMsg += "\r\n        Segment " + iSeg + " is an ARC:"
+              + LabUtils.PointString(ptS) + " ; "
+              + LabUtils.PointString(ptE) + " ; R=" + r;
+          }
+        }
+      }
+    }
+</pre>
+
+<pre class="jtcollapse" title="VB List all boundaries of a room">
+    ' Loop all Boundaries of this Room
+    Dim boundaries As Rooms.BoundarySegmentArrayArray = rm.Boundary
+    ' Check to ensure the room has boundary
+    If Not (boundaries Is Nothing) Then
+
+        Dim iB As Integer = 0
+        Dim boundary As Rooms.BoundarySegmentArray
+        For Each boundary In boundaries
+
+            ' Msg
+            iB += 1
+            sMsg += vbCrLf & "    Boundary " & iB & ":"
+
+            ' Loop through all Segments of that Boundary
+            Dim iSeg As Integer = 0
+            Dim segment As Rooms.BoundarySegment
+            For Each segment In boundary
+                iSeg += 1
+
+                ' Segment's curve
+                Dim crv As Geometry.Curve = segment.Curve
+
+                If TypeOf crv Is Geometry.Line Then                     'LINE
+
+                    Dim line As Geometry.Line = crv
+                    Dim ptS As Geometry.XYZ = line.EndPoint(0)
+                    Dim ptE As Geometry.XYZ = line.EndPoint(1)
+
+                    sMsg += vbCrLf & "        Segment " & iSeg & " is a LINE:" & _
+                       ptS.X & ", " & ptS.Y & ", " & ptS.Z & " ; " & _
+                       ptE.X & ", " & ptE.Y & ", " & ptE.Z
+
+                ElseIf TypeOf crv Is Geometry.Arc Then                      'ARC
+
+                    Dim arc As Geometry.Arc = crv
+                    Dim ptS As Geometry.XYZ = arc.EndPoint(0)
+                    Dim ptE As Geometry.XYZ = arc.EndPoint(1)
+                    Dim r As Double = arc.Radius
+
+                    sMsg += vbCrLf & "        Segment " & iSeg & " is an ARC:" & _
+                       ptS.X & ", " & ptS.Y & ", " & ptS.Z & " ; " & _
+                       ptE.X & ", " & ptE.Y & ", " & ptE.Z & " ; R=" & r
+
+                End If
+            Next
+        Next
+    End If
+</pre>
+
+<para>Build the project, adjust the ini file and examine the output in a
+model with a few room instances with different types of boundary segments.</para>
+
+<a class="j" href="labs6.htm">next</a>
+<a class="j" href="labs5-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<para>
+In this section, we will take a look at group and group types.  We'll also learn how to obtain the boundaries of a room.
+</para>
+
+<hr class="jumplist_intro_overline">
+<p class="jumplist_intro" >Topics in this section:
+</para>
+<ul>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs5-1.htm">
+List all Groups and Group Types </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs5-2.htm">
+Swap Group Types for Selected Groups </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs5-3.htm">
+List Room Boundaries </a>
+
+</ul>
+
+<table class=FooterTable width=100% border=0 cellspacing=0 cellpadding=4><tr valign=top>
+<td>&nbsp;</td>
+<td align=right>&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="Click here to send a comment about this topic."></span></a>&nbsp;</td>
+</tr></table>&nbsp;
+
+
+
+
+
+<a class="j" href="labs6-2.htm">next</a>
+<a class="j" href="labs6.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this lab, we will create a simple external application, which only shows a hello message box when Revit starts up. External application provides an opportunity to do initialization tasks when Revit starts up, and do final clean up tasks when Revit shuts down.</para>
+
+<para>First of all, create a class derived from the IExternalApplication interface. The interface has two methods, OnStartup() and OnShutdown().  OnStartup() is called when Revit starts up, and OnShutdown() is called when Revit shuts down. Implement the two methods in a new class.</para>
+
+<pre class="jtcollapse" title="C# external application">
+#region Namespaces
+using System;
+using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+using WinForms = System.Windows.Forms;
+using Autodesk.Revit;
+using Autodesk.Revit.Elements;
+using Autodesk.Revit.Symbols;
+using Autodesk.Revit.Events;
+using System.Diagnostics;
+#endregion // Namespaces
+
+namespace Labs
+{
+  public class Lab6_1_HelloWorldExternalApplication : IExternalApplication
+  {
+    public IExternalApplication.Result OnStartup(
+      ControlledApplication a )
+    {
+      return IExternalApplication.Result.Succeeded;
+    }
+
+    public IExternalApplication.Result OnShutdown(
+      ControlledApplication a )
+    {
+      return IExternalApplication.Result.Succeeded;
+    }
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB external application">
+#Region "Namespaces"
+Imports Microsoft.VisualBasic
+Imports System
+Imports System.Collections.Generic
+Imports System.IO
+Imports WinForms = System.Windows.Forms
+Imports Autodesk.Revit
+Imports Autodesk.Revit.Events
+Imports System.Diagnostics
+#End Region
+
+Namespace Labs
+    Public Class Lab6_1_HelloWorldExternalApplication
+        Implements IExternalApplication
+
+        Public Function OnStartup(ByVal a As ControlledApplication) _
+            As IExternalApplication.Result _
+            Implements IExternalApplication.OnStartup
+
+            Return IExternalApplication.Result.Succeeded
+
+        End Function
+
+        Public Function OnShutdown(ByVal a As ControlledApplication) _
+            As IExternalApplication.Result _
+            Implements IExternalApplication.OnShutdown
+
+            Return IExternalApplication.Result.Succeeded
+
+        End Function
+
+    End Class
+End Namespace
+</pre>
+
+<para>The project should already compile, link and load into Revit properly, but does not have any visible effect when run.</para>
+
+<para>Add code to display the hello message box:</para>
+
+<pre class="jtcollapse" title="C# hello world external application">
+  public class Lab6_1_HelloWorldExternalApplication : IExternalApplication
+  {
+    public IExternalApplication.Result OnStartup(
+      ControlledApplication a )
+    {
+      LabUtils.InfoMsg( "Hello World from an external application in C#." );
+      return IExternalApplication.Result.Succeeded;
+    }
+
+    public IExternalApplication.Result OnShutdown(
+      ControlledApplication a )
+    {
+      return IExternalApplication.Result.Succeeded;
+    }
+  }
+
+</pre>
+
+<pre class="jtcollapse" title="VB hello world external application">
+      Public Class Lab6_1_HelloWorldExternalApplication
+        Implements IExternalApplication
+
+        Public Function OnStartup(ByVal a As ControlledApplication) _
+            As IExternalApplication.Result _
+            Implements IExternalApplication.OnStartup
+
+            MsgBox("Hello World from an external application in VB.")
+            Return IExternalApplication.Result.Succeeded
+
+        End Function
+
+        Public Function OnShutdown(ByVal a As ControlledApplication) _
+            As IExternalApplication.Result _
+            Implements IExternalApplication.OnShutdown
+
+            Return IExternalApplication.Result.Succeeded
+
+        End Function
+
+    End Class
+</pre>
+
+<para>The project should still compile and link properly.</para>
+
+<para>We need to let Revit know how to load this external applications.
+The loading settings are similar to the ones required to load an external command, except the key names are different.
+Replace the prefix "EC" with "EA", which means External Application.
+Add the entries below to Revit.ini.
+The name and description are not required for external applications, since they define their own user interface.</para>
+
+<pre>
+[ExternalApplications]
+EACount=1
+EAAssembly1=C:\tmp\revit\LabsCode\LabsCode\bin\Debug\LabsCode.dll
+EAClassName1=Labs.Lab6_1_HelloWorldExternalApplication
+</pre>
+
+<para>You <em>must</em> adjust the full assembly path and fully qualified class name including the namespace prefix settings to match your project or the application cannot be loaded by Revit.</para>
+
+<para>Restart Revit. The Hello message box will be shown automatically.</para>
+
+<a class="j" href="labs6-2.htm">next</a>
+<a class="j" href="labs6.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+
+<a class="j" href="labs6-3.htm">next</a>
+<a class="j" href="labs6-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<para>In this lab, we shall write code that adds user controls to the Ribbon panel, through which your External Commands can be called.
+As an example, we will be using the external commands created in Lab 1, and hook them up to our Ribbon controls.</para>
+
+<para>First of all, we need to determine the path of our add-in DLL, so we can provide the absolute path to the images that we will be using.</para>
+
+<pre class="jtcollapse" title="C# Image Path">
+void CreateRibbonItems( ControlledApplication a )
+{
+  string addInPath = typeof(Lab6_2_Ribbon).Assembly.Location;
+  string imgDir = Path.Combine(Path.GetDirectoryName(addInPath), "img");
+
+
+}
+</pre>
+
+<pre class="jtcollapse" title="VB Image Path">
+Public Sub CreateRibbonItems(ByVal a As ControlledApplication)
+    Dim addInPath As String = GetType(Lab6_2_Ribbon).Assembly.Location
+    Dim imgDir As String = Path.Combine(Path.GetDirectoryName(addInPath), "img")
+
+End Sub
+</pre>
+
+<para>Then we specify all the button names and image paths that we need.</para>
+
+<pre class="jtcollapse" title="C# Button Names">  const string panelName = "Lab 6 Panel";
+
+  const string cmd1 = "Labs.Lab1_1_HelloWorld";
+  const string name1 = "HelloWorld";
+  const string text1 = "Hello World";
+  const string tooltip1 = "Run Lab1_1_HelloWorld command";
+  const string img1 = "ImgHelloWorld.png";
+  const string img31 = "ImgHelloWorldSmall.png";
+
+  const string cmd2 = "Labs.Lab1_2_CommandArguments";
+  const string name2 = "CommandArguments";
+  const string text2 = "Command Arguments";
+  const string tooltip2 = "Run Lab1_2_CommandArguments command";
+  const string img2 = "ImgCommandArguments.png";
+  const string img32 = "ImgCommandArgumentsSmall.png";
+
+  const string name3 = "Lab1Commands";
+  const string text3 = "Lab 1 Commands";
+  const string tooltip3 = "Run a Lab 1 command";
+  const string img33 = "ImgCommandSmall.png";
+</pre>
+
+<pre class="jtcollapse" title="VB Button Names">  Dim panelName As String = "Lab 6 Panel"
+
+  Dim cmd1 As String = "Labs.Lab1_1_HelloWorld"
+  Dim name1 As String = "HelloWorld"
+  Dim text1 As String = "Hello World"
+  Dim tooltip1 As String = "Run Lab1_1_HelloWorld command"
+  Dim img1 As String = "ImgHelloWorld.png"
+  Dim img31 As String = "ImgHelloWorldSmall.png"
+
+  Dim cmd2 As String = "Labs.Lab1_2_CommandArguments"
+  Dim name2 As String = "CommandArguments"
+  Dim text2 As String = "Command Arguments"
+  Dim tooltip2 As String = "Run Lab1_2_CommandArguments command"
+  Dim img2 As String = "ImgCommandArguments.png"
+  Dim img32 As String = "ImgCommandArgumentsSmall.png"
+
+  Dim name3 As String = "Lab1Commands"
+  Dim text3 As String = "Lab 1 Commands"
+  Dim tooltip3 As String = "Run a Lab 1 command"
+  Dim img33 As String = "ImgCommandSmall.png"
+</pre>
+
+<para>Before we can add our controls, we need to create a Ribbon Panel for them using <code>CreateRibbonPanel</code>. At the moment we can only add Panels to the AddOns Tab of the Ribbon.</para>
+
+<pre class="jtcollapse" title="C# Create Ribbon Panel">  RibbonPanel panel = a.CreateRibbonPanel(panelName);
+</pre>
+
+<pre class="jtcollapse" title="VB Create Ribbon Panel">  Dim panel As RibbonPanel = a.CreateRibbonPanel(panelName)
+</pre>
+
+<para>Now we can start adding our controls. </para>
+
+<para>At the moment, you can only create a push button or a pulldown button.
+Their size depends on whether they were added using the <code>AddPushButton/AddPulldownButton</code> or <code>AddStackedButtons</code> function.
+Let's add a simple large button to the panel to invoke the Lab 1 Hello World command.</para>
+
+<pre class="jtcollapse" title="C# Create Button">
+  PushButton pb1 = panel.AddPushButton(name1, text1, addInPath, cmd1);
+  pb1.ToolTip = tooltip1;
+  pb1.LargeImage = new BitmapImage(new Uri(Path.Combine(imgDir, img1)));
+</pre>
+
+<pre class="jtcollapse" title="VB Create Button">
+  Dim pb1 As PushButton = panel.AddPushButton(name1, text1, addInPath, cmd1)
+  pb1.ToolTip = tooltip1
+  pb1.LargeImage = New BitmapImage(New Uri(Path.Combine(imgDir, img1)))
+</pre>
+
+<para>We separate the large button from the following small ones.</para>
+
+<pre class="jtcollapse" title="C# Add Separator">
+  panel.AddSeparator();
+</pre>
+
+<pre class="jtcollapse" title="VB Add Separator">
+  panel.AddSeparator()
+</pre>
+
+<para>When adding small, stacked buttons, we need to use <code>PushButtonData/PulldownButtondata</code> to tell <code>AddStackedButtons</code> what to create, and then the function will return the list of created items, containing <code>PushButtons</code> and <code>PulldownButtons</code>.
+The first button will refer to the Hello World command, the second one to the Command Arguments one, and the third one will provide a pulldown menu containing both the Lab 1 commands.</para>
+
+<pre class="jtcollapse" title="C# Add Stacked Buttons">
+  // prepare data for creating stackable buttons
+  PushButtonData pbd1 = new PushButtonData(name1, text1, addInPath, cmd1);
+  pbd1.ToolTip = tooltip1;
+  pbd1.Image = new BitmapImage(new Uri(Path.Combine(imgDir, img31)));
+
+  PushButtonData pbd2 = new PushButtonData(name2, text2, addInPath, cmd2);
+  pbd2.ToolTip = tooltip2;
+  pbd2.Image = new BitmapImage(new Uri(Path.Combine(imgDir, img32)));
+
+  PulldownButtonData pbd3 = new PulldownButtonData(name3, text3);
+  pbd3.ToolTip = tooltip3;
+  pbd3.Image = new BitmapImage(new Uri(Path.Combine(imgDir, img33)));
+
+  // add stackable buttons
+  List&lt;RibbonItem&gt; ribbonItems = panel.AddStackedButtons(pbd1, pbd2, pbd3);
+</pre>
+
+<pre class="jtcollapse" title="VB Add Stacked Buttons">
+  ' prepare data for creating stackable buttons
+  Dim pbd1 As New PushButtonData(name1, text1, addInPath, cmd1)
+  pbd1.ToolTip = tooltip1
+  pbd1.Image = New BitmapImage(New Uri(Path.Combine(imgDir, img31)))
+
+  Dim pbd2 As New PushButtonData(name2, text2, addInPath, cmd2)
+  pbd2.ToolTip = tooltip2
+  pbd2.Image = New BitmapImage(New Uri(Path.Combine(imgDir, img32)))
+
+  Dim pbd3 As New PulldownButtonData(name3, text3)
+  pbd3.ToolTip = tooltip3
+  pbd3.Image = New BitmapImage(New Uri(Path.Combine(imgDir, img33)))
+
+  ' add stackable buttons.
+  Dim ribbonItems As List(Of RibbonItem) = panel.AddStackedButtons(pbd1, pbd2, pbd3)
+</pre>
+
+<para>The last item provided to <code>AddStackedButtons</code> is a <code>PulldownButtonData</code>, so the last item added is a <code>PulldownButton</code>.
+We retrieve that button and fill it up with additional Push Buttons that will pop up when the Pulldown Button is clicked:</para>
+
+<pre class="jtcollapse" title="C# Add Pulldown Buttons">  PulldownButton pb3 = ribbonItems[2] as PulldownButton;
+
+  PushButton pb3_1 = pb3.AddItem(text1, addInPath, cmd1);
+  pb3_1.ToolTip = tooltip1;
+  pb3_1.LargeImage = new BitmapImage(new Uri(Path.Combine(imgDir, img1)));
+
+  PushButton pb3_2 = pb3.AddItem(text2, addInPath, cmd2);
+  pb3_2.ToolTip = tooltip2;
+  pb3_2.LargeImage = new BitmapImage(new Uri(Path.Combine(imgDir, img2)));
+</pre>
+
+<pre class="jtcollapse" title="VB Add Pulldown Buttons">  Dim pb3 As PulldownButton = ribbonItems(2)
+
+  Dim pb3_1 As PushButton = pb3.AddItem(text1, addInPath, cmd1)
+  pb3_1.ToolTip = tooltip1
+  pb3_1.LargeImage = New BitmapImage(New Uri(Path.Combine(imgDir, img1)))
+
+  Dim pb3_2 As PushButton = pb3.AddItem(text2, addInPath, cmd2)
+  pb3_2.ToolTip = tooltip2
+  pb3_2.LargeImage = New BitmapImage(New Uri(Path.Combine(imgDir, img2)))
+</pre>
+
+<para>Before building the project, we need to add references to the PresentationCore and WindowsBase .NET assemblies and use the System.Windows.Media.Imaging namespace.</para>
+
+<para>Now, build the project, adjust the ini file and switch to the Add-Ins tab on the ribbon bar to see the result.</para>
+
+<a class="j" href="labs6-3.htm">next</a>
+<a class="j" href="labs6-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs6-4.htm">next</a>
+<a class="j" href="labs6-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this lab, we create an external application to prevent the document from saving unless the user accepts to do so in a dialogue box.
+The Events API in Revit 2010 has been completely rewritten to be compliant to the .NET event standard.
+With events, now, we can do many interesting tasks.
+Events can now trap before and after various triggering actions (known as "pre" and "post" events).
+Many of the new pre-events are cancellable, offering the API application the ability to prevent the event from taking place.</para>
+
+<para> First, we subscribe to the DocumentSaving event in the external application OnStartup() method, and remove the event handler in OnShutdown() method:</para>
+
+<pre class="jtcollapse" title="C# subscribes to DocumentSaving event">
+public IExternalApplication.Result OnStartup(ControlledApplication a)
+{
+  try
+    {
+      // subscribe to the DocumentSaving event:
+      a.DocumentSaving += new EventHandler&lt;DocumentSavingEventArgs&gt;( app_eventsHandlerMethod );
+    }
+    catch ( Exception ex )
+    {
+      LabUtils.InfoMsg( ex.Message );
+      return IExternalApplication.Result.Failed;
+    }
+    return IExternalApplication.Result.Succeeded;
+}
+</pre>
+
+<pre class="jtcollapse" title="VB subscribes to DocumentSaving event">
+Public Function OnStartup(ByVal a As ControlledApplication) As IExternalApplication.Result _
+        Implements IExternalApplication.OnStartup
+
+    Try
+        AddHandler a.DocumentSaving, AddressOf app_eventsHandlerMethod
+    Catch ex As Exception
+        MsgBox(ex.Message)
+        Return IExternalApplication.Result.Failed
+    End Try
+
+    Return IExternalApplication.Result.Succeeded
+End Function
+</pre>
+
+<para> When Revit shuts down, the event need to be removed in OnShutdown() method:</para>
+
+<pre class="jtcollapse" title="C# remove the event subscription">
+public IExternalApplication.Result OnShutdown(ControlledApplication a )
+  {
+    // remove the event subscription:
+    a.DocumentSaving -= new EventHandler&lt;DocumentSavingEventArgs&gt;( app_eventsHandlerMethod );
+    return IExternalApplication.Result.Succeeded;
+}
+</pre>
+
+<pre class="jtcollapse" title="VB remove the event subscription">
+Public Function OnShutdown( ByVal a As ControlledApplication) As IExternalApplication.Result _
+    Implements IExternalApplication.OnShutdown
+
+    RemoveHandler a.DocumentSaving, AddressOf app_eventsHandlerMethod
+    Return IExternalApplication.Result.Succeeded
+
+End Function
+</pre>
+
+<para>Implement the event handler method app_eventsHandlerMethod.
+If the second argument's Cancel property is set to True, thesave action will be stopped.
+A message box is displayed to let the user make a decision to save the document or not.
+We set the choice of user to Cancel property of the Event argument accordingly.</para>
+
+<pre class="jtcollapse" title="C# prevent document from saving event handler">
+// Show a message to decide whether to save the document.
+public void app_eventsHandlerMethod(object obj, DocumentSavingEventArgs args )
+{
+  if ( args.Cancellable )
+  {
+    // Ask whether to prevent from saving.
+    WinForms.DialogResult dr = WinForms.MessageBox.Show(
+      "Saving event handler was triggered.\r\n"
+      + "Using the pre-event mechanism, we can cancel the save.\r\n"
+      + "Continue saving the document?",
+      "Document Saving Event",
+      WinForms.MessageBoxButtons.YesNo,
+      WinForms.MessageBoxIcon.Question );
+
+      args.Cancel = (dr != WinForms.DialogResult.Yes );
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB prevent document from saving event handler">
+' Show a message to decide whether to save the document.
+Private Sub app_eventsHandlerMethod( _
+            ByVal obj As Object, _
+            ByVal args As Autodesk.Revit.Events.DocumentSavingEventArgs)
+
+    If args.Cancellable Then
+        ' Ask whether to prevent from saving.
+        Dim dr As WinForms.DialogResult = WinForms.MessageBox.Show( _
+            "Saving event handler was triggered." + vbCrLf _
+            + "Using the pre-event mechanism, we can cancel the save." + vbCrLf _
+            + "Continue saving the document?", _
+            "Document Saving Event", _
+            WinForms.MessageBoxButtons.YesNo, _
+            WinForms.MessageBoxIcon.Question)
+
+            args.Cancel = (dr <> WinForms.DialogResult.Yes)
+     End If
+End Sub
+</pre>
+
+<para>Compile and build the application.
+The loading method is the same as Hello World External Application.
+Restart Revit to see the results.
+Open a document from disk, click the save icon or menu item, and note that this will display the dialog as shown below for user input.</para>
+
+<img src="img/labs6-3-01.jpg" alt="Waiting for users' inputs"/>
+
+<para>Clicking "Yes" in the dialog box results in the document being saved, and clicking "No" prevent this.</para>
+
+<a class="j" href="labs6-4.htm">next</a>
+<a class="j" href="labs6-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs7-1.htm">next</a>
+<a class="j" href="labs6-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para> In this lab we will take advantage of DialogBoxShowing event to dismiss dialogs automatically.
+Some Revit API call from an add-in will cause task or message dialogues to be displayed.
+These will require end user interaction to close the dialogue manually before the command execution can continue.
+The DialogBoxShowing event can capture a dialogue before it is displayed and provide a possibility to dismiss it programmatically.
+We will mainly focus on the steps in the event handler function.
+As shown in the previous lab, we shall first, create an external application and subscribe to DialogBoxShowing event in OnStartUp() method, and unsubscribe in the OnShutdown() method.</para>
+
+<pre class="jtcollapse" title="C# Subscribes to the event">
+public class Lab6_4_DismissDialog : IExternalApplication
+{
+  public IExternalApplication.Result OnStartup(
+    ControlledApplication a )
+  {
+    a.DialogBoxShowing
+      += new EventHandler&lt;DialogBoxShowingEventArgs&gt;(
+        DismissDialog );
+
+    return IExternalApplication.Result.Succeeded;
+  }
+
+  public IExternalApplication.Result OnShutdown(
+    ControlledApplication a )
+  {
+    a.DialogBoxShowing
+      -= new EventHandler&lt;DialogBoxShowingEventArgs&gt;(
+        DismissDialog );
+
+    return IExternalApplication.Result.Succeeded;
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB Subscribes to the event">
+Public Class Lab6_4_DismissDialog
+         Implements IExternalApplication
+    Public Function OnStartup(ByVal application As ControlledApplication) As IExternalApplication.Result _
+            Implements IExternalApplication.OnStartup
+
+        AddHandler application.DialogBoxShowing, AddressOf DismissDialog
+
+        Return IExternalApplication.Result.Succeeded
+    End Function
+
+    Public Function OnShutdown(ByVal application As ControlledApplication) As IExternalApplication.Result _
+                    Implements IExternalApplication.OnShutdown
+
+        RemoveHandler application.DialogBoxShowing, AddressOf DismissDialog
+        Return IExternalApplication.Result.Succeeded
+    End Function
+
+End Class
+</pre>
+
+<para>Create the definition of the event handler function and call it DismissDialog().
+The event argument DialogBoxShowingEventArgs class is actually a parent class for more specialised subclasses, namely the MessageBoxShowingEventArgs and TaskDialogShowingEventArgs.
+The actual instance class depends on how the dialog is being handled.
+The frame shown below handles different types of dialogs according to the argument class type.</para>
+
+<pre class="jtcollapse" title="C# Dismiss dialog function main frame">
+public void DismissDialog(
+  object sender,
+  DialogBoxShowingEventArgs e )
+{
+  TaskDialogShowingEventArgs te = e as TaskDialogShowingEventArgs;
+  if ( te != null )
+  {
+    //Identity the dialog and handling task dialog
+  }
+  else
+  {
+    MessageBoxShowingEventArgs msgArgs = e as MessageBoxShowingEventArgs;
+    if ( null != msgArgs ) // this is a message box
+    {
+      //handling message box
+    }
+    else // this is some other dialog, for example, element property dialog.
+    {
+      //Use the HelpId to identify the dialog.
+      if ( e.HelpId == 1002 ) // Element property dialog's HelpId is 1002
+      {
+        //Hanlding element property dialog
+      }
+    }
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB Dismiss dialog function main frame">
+Public Sub DismissDialog(ByVal sender As Object, ByVal e As Autodesk.Revit.Events.DialogBoxShowingEventArgs)
+
+    Dim te As TaskDialogShowingEventArgs = TryCast(e, TaskDialogShowingEventArgs)
+    If te IsNot Nothing Then
+        ' Identity the dialog and handling task dialog
+    Else
+        Dim msgArgs As MessageBoxShowingEventArgs = TryCast(e, MessageBoxShowingEventArgs)
+        If Nothing IsNot msgArgs Then 'If this is a message box.
+            'Handling message box
+        Else ' If this is other kind of dialog, for instance, element property dialog.
+            'Use the HelpId to identify the dialog.
+            If e.HelpId = 1002 Then 'Element property dialog's HelpId is 1002
+                'Handling element property dialog
+            End If
+        End If
+    End If
+End Sub
+</pre>
+
+<para>If it is a task dialog, the latter subclass is used.
+The task dialog event argument provides additional properties to access the dialog id and message being displayed.
+For the task dialog box of "Family Already Exists", the dialogId is TaskDialog_Family_Already_Exists and the message is similar to 'You are trying to load the family...'.
+The TaskDialogShowingEventArgs.OverrideResult() method can mimic the action done to dialog manually.
+Calling e.OverrideResult( 1001 ) means that we dismiss this task dialog with the same effect as clicking "Override the existing version" button.</para>
+
+<pre class="jtcollapse" title="C# Dismiss family override task dialog">
+TaskDialogShowingEventArgs te = e as TaskDialogShowingEventArgs;
+if ( te != null )
+{
+  if ( te.DialogId == "TaskDialog_Family_Already_Exists" )
+  {
+    // In this task dialog, 1001 maps to the first button,
+    // which is the "override the existing version"
+    int iReturn = 1001;
+
+    // Set OverrideResult argument to 1001 mimic clicking the first button.
+    e.OverrideResult( iReturn );
+
+     // 1002 maps the second button in this dialog.
+    // DialogResult.Cancel maps to the cancel button.
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB Dismiss family override task dialog">
+Dim te As TaskDialogShowingEventArgs = TryCast(e, TaskDialogShowingEventArgs)
+If te IsNot Nothing Then
+    If te.DialogId = "TaskDialog_Family_Already_Exists" Then
+        'In this task dialog, 1001 maps the first button.
+        'The button is "override the existing version"
+        Dim iReturn As Integer = 1001
+        'Set OverrideResult argument to 1001 mimic clicking the first button.
+        e.OverrideResult(iReturn)
+        ' 1002 maps the second button in this dialog.
+        ' DialogResult.Cancel maps the cancel button
+    End If
+</pre>
+
+<para>If it is a message box, we set the OverrideResult argument to DialogResult.Yes.
+This dismisses it with the same effect as clicking "Yes".
+If a dialog is neither a task dialog nor a message box, we can identify the dialog by its HelpId.
+Here we dismiss the element property dialog with the effect of clicking "No" button, for which the DialogBoxShowingEventArgs.HelpId is 1002.</para>
+
+<pre class="jtcollapse" title="C# Dismiss dialog code">
+public void DismissDialog( object sender, DialogBoxShowingEventArgs e)
+{
+  TaskDialogShowingEventArgs te = e as TaskDialogShowingEventArgs;
+  if ( te != null )
+  {
+    if ( te.DialogId == "TaskDialog_Family_Already_Exists" )
+    {
+      // In this task dialog, 1001 maps to the first button,
+      // which is the "override the existing version"
+      int iReturn = 1001;
+      // Set OverrideResult argument to 1001 mimic clicking the first button.
+      e.OverrideResult( iReturn );
+    }
+  }
+  else
+  {
+    MessageBoxShowingEventArgs msgArgs = e as MessageBoxShowingEventArgs;
+    if ( null != msgArgs ) // this is a message box
+    {
+      e.OverrideResult( (int) WinForms.DialogResult.Yes );
+      Debug.Print( "Dialog id is {0}\r\nMessage is {1}",
+      msgArgs.HelpId, msgArgs.Message );
+    }
+    else // this is some other dialog, for example, element property dialog.
+    {
+      //Use the HelpId to identify the dialog.
+      if ( e.HelpId == 1002 ) // Element property dialog's HelpId is 1002
+      {
+        e.OverrideResult( (int) WinForms.DialogResult.No );
+        Debug.Print( "We just dismissed the element property dialog "
+              + "and set the return value to No." );
+      }
+    }
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB Dismiss dialog code">
+Public Sub DismissDialog(ByVal sender As Object, ByVal e As Autodesk.Revit.Events.DialogBoxShowingEventArgs)
+
+    Dim te As TaskDialogShowingEventArgs = TryCast(e, TaskDialogShowingEventArgs)
+    If te IsNot Nothing Then
+        If te.DialogId = "TaskDialog_Family_Already_Exists" Then
+            'In this task dialog, 1001 maps the first button.
+            'The button is "override the existing version"
+            Dim iReturn As Integer = 1001
+            'Set OverrideResult argument to 1001 mimic clicking the first button.
+            e.OverrideResult(iReturn)
+        End If
+    Else
+        Dim msgArgs As MessageBoxShowingEventArgs = TryCast(e, MessageBoxShowingEventArgs)
+        If Nothing IsNot msgArgs Then 'If this is a message box.
+            e.OverrideResult(CInt(Fix(WinForms.DialogResult.Yes)))
+            Debug.Print("Dialog id is" & msgArgs.HelpId & Constants.vbCrLf & "; Message is " & msgArgs.Message)
+        Else ' If this is other kind of dialog, for instance, element property dialog.
+            'Use the HelpId to identify the dialog.
+            If e.HelpId = 1002 Then 'Element property dialog's HelpId is 1002
+                e.OverrideResult(CInt(Fix(WinForms.DialogResult.No)))
+                Debug.Print("We just dismissed element property dialog, " & "and set the return value is No")
+            End If
+        End If
+    End If
+End Sub
+</pre>
+
+<para>Build the project.
+Add loading information as mentioned in the previous lab.
+Restart Revit and load an already loaded family manually.
+The loading process is quite fluent.
+The message box and the element property dialogue are not shown.</para>
+
+<para>This example is only for the demonstration of dismissing dialogues.
+Please remove it from Revit.ini after the testing since this might break Revit's existing functionality.</para>
+
+<a class="j" href="labs7-1.htm">next</a>
+<a class="j" href="labs6-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs6-1.htm">next</a>
+<a class="j" href="labs5-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>
+In this section, we will take a look at how to create an external application, how to subscribe to Revit events and how to add your own user controls to the Ribbon panel.
+</para>
+
+<hr class="jumplist_intro_overline">
+<p class="jumplist_intro" >Topics in this section:
+</para>
+<ul>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs6-1.htm">
+Hello World External Application </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs6-2.htm">
+Create Ribbon Controls </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs6-3.htm">
+Prevent Save Event </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs6-4.htm">
+Dismiss Dialogs </a>
+
+</ul>
+
+<a class="j" href="labs6-1.htm">next</a>
+<a class="j" href="labs5-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="labs7-2.htm">next</a>
+<a class="j" href="labs6-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this lab, we shall create a simple loft form using the new conceptual
+design API as shown in the image below -</para>
+<img src="img/labs7-1-01.jpg" alt="New Loft Form"/>
+
+<para>To begin with, we have to be in Family creation environment in Revit
+and specifically, the active document should be the conceptual massing template file.</para>
+
+<pre title="C# Lab7_1_CreateLoftForm command skeleton" class="jtcollapse">
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+using Autodesk.Revit;
+using Autodesk.Revit.Geometry;
+using Autodesk.Revit.Elements;
+using Autodesk.Revit.Enums;
+
+namespace Labs
+{
+  /// &lt;summary&gt;
+  /// Create a loft form using reference points and curve by points.
+  /// &lt;/summary&gt;
+  public class Lab7_1_CreateForm : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements)
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      if (doc.IsFamilyDocument && doc.OwnerFamily.FamilyCategory.Name.Equals("Mass"))
+      {
+        . . .
+
+        return IExternalCommand.Result.Succeeded;
+      }
+      else
+      {
+        System.Windows.Forms.MessageBox.Show("Please load a conceptual massing family document!");
+        return IExternalCommand.Result.Failed;
+      }
+    }
+  }
+}
+</pre>
+
+<pre title="VB Lab7_1_CreateLoftForm command skeleton" class="jtcollapse">
+Imports System
+Imports System.Collections.Generic
+Imports Autodesk.Revit
+Imports Autodesk.Revit.Geometry
+Imports Autodesk.Revit.Elements
+Imports Autodesk.Revit.Enums
+Imports XYZ2 = Autodesk.Revit.Geometry.XYZ
+
+Namespace Labs
+
+#Region "Lab7_1_CreateForm"
+    Public Class Lab7_1_CreateForm
+        Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+
+            Dim app As Application = commandData.Application
+            Dim doc As Document = app.ActiveDocument
+
+            If (doc.IsFamilyDocument And doc.OwnerFamily.FamilyCategory.Name.Equals("Mass")) Then
+
+                . . .
+
+                Return IExternalCommand.Result.Succeeded
+            Else
+                System.Windows.Forms.MessageBox.Show("Please load a conceptual massing family document!")
+                Return IExternalCommand.Result.Failed
+            End If
+        End Function
+    End Class
+#End Region
+</pre>
+
+<para>Next, we shall create an instance of <code>ReferenceArrayArray</code> object which will
+contain all the reference arrays of profiles. The form will eventually be comprised of
+these profiles. To begin with creating the first profile, we shall create an instance of
+the <code>ReferenceArray</code> which will be appended to the <code>ReferenceArrayArray</code> collection.
+Using the <code>Autodesk.Revit.Geometry.XYZ</code> class, we specify three points which will be
+used to create respective three reference points. These reference points will be
+appended in a <code>ReferencePointArray</code> collection and using this collection, we shall create
+a <code>CurveByPoints</code> object. This reference of the geometry curve property of this curve will be
+appended to the <code>ReferenceArray</code> which eventually will be appended to the
+<code>ReferenceArrayArray</code> collection.</para>
+
+<para>Add the following code to create curve by points and reference arrays:</para>
+
+<pre title="C# Create Profile" class="jtcollapse">
+  // Create profiles array
+  ReferenceArrayArray ref_ar_ar = new ReferenceArrayArray();
+
+  // Create first profile
+  ReferenceArray ref_ar = new ReferenceArray();
+
+  int y = 100;
+  int x = 50;
+  XYZ ptA = new XYZ(-x, y, 0);
+  XYZ ptB = new XYZ(x, y, 0);
+  XYZ ptC = new XYZ(0, y + 10, 10);
+  CurveByPoints curve = FormUtils.MakeCurve(app, ptA, ptB, ptC);
+  ref_ar.Append(curve.GeometryCurve.Reference);
+  ref_ar_ar.Append(ref_ar);
+</pre>
+
+<pre title="VB Create Profile" class="jtcollapse">
+    ' Create profiles array
+    Dim ref_ar_ar As New ReferenceArrayArray()
+
+    ' Create first profile
+    Dim ref_ar As New ReferenceArray()
+
+    Dim y As Integer = 100
+    Dim x As Integer = 50
+    Dim ptA As New XYZ2(-x, y, 0)
+    Dim ptB As New XYZ2(x, y, 0)
+    Dim ptC As New XYZ2(0, y + 10, 10)
+    Dim curve As CurveByPoints = FormUtils.MakeCurve(app, ptA, ptB, ptC)
+    ref_ar.Append(curve.GeometryCurve.Reference)
+    ref_ar_ar.Append(ref_ar)
+</pre>
+
+<para>Curve By Points object (created in the utility module in the piece of code above) can be created out of new
+instances of reference points each corresponding to the XYZ points and storing these reference points in the
+<code>ReferencePointArray</code>. This collection can be used an an argument in the <code>NewCurveByPoints</code>
+creation method available on the <code>FamilyCreate</code> method on the active document.</para>
+
+<pre title="C# Make Curve" class="jtcollapse">
+  /// &lt;summary&gt;
+  /// This class is utility class for form creation.
+  /// &lt;/summary&gt;
+  public class FormUtils
+  {
+    /// &lt;summary&gt;
+    /// Create a CurveByPoints element by three points
+    /// &lt;/summary>
+    /// &lt;param name="app"&gt;Revit application&lt;/param&gt;
+    /// &lt;param name="ptA"&gt;point a&lt;/param&gt;
+    /// &lt;param name="ptB"&gt;point b&lt;/param&gt;
+    /// &lt;param name="ptC"&gt;point c&lt;/param&gt;
+    /// &lt;returns&gt;CurveByPoints instance&lt;/returns&gt;
+    public static CurveByPoints MakeCurve(Application app, XYZ ptA, XYZ ptB, XYZ ptC)
+    {
+      Document doc = app.ActiveDocument;
+      ReferencePoint refPtA = doc.FamilyCreate.NewReferencePoint(ptA);
+      ReferencePoint refPtB = doc.FamilyCreate.NewReferencePoint(ptB);
+      ReferencePoint refPtC = doc.FamilyCreate.NewReferencePoint(ptC);
+
+      ReferencePointArray refPtsArray = new ReferencePointArray();
+      refPtsArray.Append(refPtA);
+      refPtsArray.Append(refPtB);
+      refPtsArray.Append(refPtC);
+
+      CurveByPoints curve = doc.FamilyCreate.NewCurveByPoints(refPtsArray);
+      return curve;
+    }
+  }
+</pre>
+
+<pre title="VB Make Curve" class="jtcollapse">
+    ''' &lt;summary&gt;
+    ''' This class is utility class for form creation.
+    ''' &lt;/summary&gt;
+    Public Class FormUtils
+
+        ' Create curve by points element by three points
+        Public Shared Function MakeCurve( _
+            ByVal app As Application, _
+            ByVal ptA As XYZ2, _
+            ByVal ptB As XYZ2, _
+            ByVal ptC As XYZ2) _
+        As CurveByPoints
+            Dim doc As Document = app.ActiveDocument
+            Dim refPtA As ReferencePoint = doc.FamilyCreate.NewReferencePoint(ptA)
+            Dim refPtB As ReferencePoint = doc.FamilyCreate.NewReferencePoint(ptB)
+            Dim refPtC As ReferencePoint = doc.FamilyCreate.NewReferencePoint(ptC)
+
+            Dim refPtsArray As ReferencePointArray = New ReferencePointArray()
+            refPtsArray.Append(refPtA)
+            refPtsArray.Append(refPtB)
+            refPtsArray.Append(refPtC)
+
+            Dim curve As CurveByPoints = doc.FamilyCreate.NewCurveByPoints(refPtsArray)
+
+            Return curve
+        End Function
+
+    End Class
+</pre>
+
+<para>Repeat the steps for profile creation for three other profiles</para>
+
+<pre title="C# Create profiles" class="jtcollapse">
+  // Create second profile
+  ref_ar = new ReferenceArray();
+
+  y = 40;
+  ptA = new XYZ(-x, y, 5);
+  ptB = new XYZ(x, y, 5);
+  ptC = new XYZ(0, y, 25);
+  curve = FormUtils.MakeCurve(app, ptA, ptB, ptC);
+  ref_ar.Append(curve.GeometryCurve.Reference);
+  ref_ar_ar.Append(ref_ar);
+
+  // Create third profile
+  ref_ar = new ReferenceArray();
+
+  y = -20;
+  ptA = new XYZ(-x, y, 0);
+  ptB = new XYZ(x, y, 0);
+  ptC = new XYZ(0, y, 15);
+  curve = FormUtils.MakeCurve(app, ptA, ptB, ptC);
+  ref_ar.Append(curve.GeometryCurve.Reference);
+  ref_ar_ar.Append(ref_ar);
+
+  // Create fourth profile
+  ref_ar = new ReferenceArray();
+
+  y = -60;
+  ptA = new XYZ(-x, y, 0);
+  ptB = new XYZ(x, y, 0);
+  ptC = new XYZ(0, y + 10, 20);
+  curve = FormUtils.MakeCurve(app, ptA, ptB, ptC);
+  ref_ar.Append(curve.GeometryCurve.Reference);
+  ref_ar_ar.Append(ref_ar);
+</pre>
+
+<pre title="VB Create Profiles" class="jtcollapse">
+    ' Create second profile
+    ref_ar = New ReferenceArray()
+
+    y = 40
+    ptA = New XYZ2(-x, y, 5)
+    ptB = New XYZ2(x, y, 5)
+    ptC = New XYZ2(0, y, 25)
+    curve = FormUtils.MakeCurve(app, ptA, ptB, ptC)
+    ref_ar.Append(curve.GeometryCurve.Reference)
+    ref_ar_ar.Append(ref_ar)
+
+    ' Create third profile
+    ref_ar = New ReferenceArray()
+
+    y = -20
+    ptA = New XYZ2(-x, y, 0)
+    ptB = New XYZ2(x, y, 0)
+    ptC = New XYZ2(0, y, 15)
+    curve = FormUtils.MakeCurve(app, ptA, ptB, ptC)
+    ref_ar.Append(curve.GeometryCurve.Reference)
+    ref_ar_ar.Append(ref_ar)
+
+    ' Create fourth profile
+    ref_ar = New ReferenceArray()
+
+    y = -60
+    ptA = New XYZ2(-x, y, 0)
+    ptB = New XYZ2(x, y, 0)
+    ptC = New XYZ2(0, y + 10, 20)
+    curve = FormUtils.MakeCurve(app, ptA, ptB, ptC)
+    ref_ar.Append(curve.GeometryCurve.Reference)
+    ref_ar_ar.Append(ref_ar)
+</pre>
+
+<para>Finally, we can use this <code>ReferenceArrayArray</code> to create the
+new loft form. This form can be created using the
+<code>FamilyCreate.NewLoftForm</code> method available on the document object.</para>
+
+<pre title="C# NewLoftForm Method" class="jtcollapse">
+  Form form = doc.FamilyCreate.NewLoftForm(true, ref_ar_ar);
+  return IExternalCommand.Result.Succeeded;
+</pre>
+
+<pre title="VB Parameter utilities" class="jtcollapse">
+    Dim form As Form = doc.FamilyCreate.NewLoftForm(True, ref_ar_ar)
+    Return IExternalCommand.Result.Succeeded
+</pre>
+
+<para>Compile the code, start Revit, open the new conceptual mass family
+template and run the external command.</para>
+
+<a class="j" href="labs7-2.htm">next</a>
+<a class="j" href="labs6-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<a class="j" href="labs7-3.htm">next</a>
+<a class="j" href="labs7-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this lab, we shall create a divided surface on top of the form we created in the <code>lab 7-1</code> as shown in the
+image below - </para>
+<img src="img/labs7-2-01.jpg" alt="Divided Surface"/>
+
+<para>For this lab, we shall use the Category filter to extract all the mass elements which belong to
+category <code>OST_MassSurface</code>.</para>
+
+<pre title="C# Category Filter for Mass Surface" class="jtcollapse">
+  # region Lab7_2_CreateDividedSurface
+  /// &lt;summary&gt;
+  /// Create a divided surface using reference of a face of the form.
+  /// &lt;/summary&gt;
+  public class Lab7_2_CreateDividedSurface : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements)
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      try
+      {
+        // find forms in the model by filter:
+        Filter filterForm = app.Create.Filter.NewCategoryFilter(BuiltInCategory.OST_MassSurface);
+        List&lt;Autodesk.Revit.Element&gt; forms = new List&lt;Autodesk.Revit.Element&gt;();
+        doc.get_Elements(filterForm, forms);
+        foreach (Form form in forms)
+        {
+          . . .
+        }
+      }
+      catch
+      {
+        return IExternalCommand.Result.Failed;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion
+</pre>
+
+<pre title="Category Filter for Mass Surface" class="jtcollapse">
+    #Region "Lab7_2_CreateDividedSurface"
+    Public Class Lab7_2_CreateDividedSurface
+        Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+            Dim app As Application = commandData.Application
+            Dim doc As Document = app.ActiveDocument
+            Try
+                ' find forms in the model by filter:
+                Dim filterForm As Filter = app.Create.Filter.NewCategoryFilter(BuiltInCategory.OST_MassSurface)
+                Dim forms As New List(Of Autodesk.Revit.Element)()
+                Dim iForms As Integer = doc.Elements(filterForm, forms)
+                For Each form As Form In forms
+                    . . .
+                Next
+            Catch
+                Return IExternalCommand.Result.Failed
+            End Try
+
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+    #End Region
+</pre>
+
+<para>With each of the forms in the model, we shall get access to the geometry
+element of each form which is a collection of Geometry Objects stored in an
+array <code>GeometryObjectArray</code>. With each of the geometry object, working with only
+the ones that are solids, we shall work with each face on the solid and create a
+divided surface on the face(s) using the <code>NewDividedSurface</code> method on the
+<code>FamilyItemFactory</code> instance.</para>
+
+<pre title="C# Divided Surface Creation" class="jtcollapse">
+  // Now, lets create the Divided surface on the loft form
+  Autodesk.Revit.Creation.FamilyItemFactory fac = doc.FamilyCreate;
+  Options options = app.Create.NewGeometryOptions();
+  options.ComputeReferences = true;
+  options.View = doc.ActiveView;
+  Autodesk.Revit.Geometry.Element element = form.get_Geometry(options);
+
+  GeometryObjectArray geoObjectArray = element.Objects;
+  //enum the geometry element
+  for (int j = 0; j < geoObjectArray.Size; j++)
+  {
+    GeometryObject geoObject = geoObjectArray.get_Item(j);
+    Solid solid = geoObject as Solid;
+    foreach (Face face in solid.Faces)
+    {
+      if (face.Reference != null)
+      {
+        if (null != face)
+        {
+          DividedSurface divSurface = fac.NewDividedSurface(face.Reference);
+        }
+      }
+    }
+  }
+</pre>
+
+<pre title="VB Divided Surface Creation" class="jtcollapse">
+    ' Now, lets create the Divided surface on the loft form
+    Dim fac As Autodesk.Revit.Creation.FamilyItemFactory = doc.FamilyCreate
+    Dim options As Autodesk.Revit.Geometry.Options = app.Create.NewGeometryOptions()
+    options.ComputeReferences = True
+    options.View = doc.ActiveView
+    Dim element As Autodesk.Revit.Geometry.Element = form.Geometry(options)
+
+    Dim geoObjectArray As GeometryObjectArray = element.Objects
+    'enum the geometry element
+    For j As Integer = 0 To geoObjectArray.Size - 1
+        Dim geoObject As GeometryObject = geoObjectArray.Item(j)
+        Dim solid As Solid = TryCast(geoObject, Solid)
+        For Each face As Autodesk.Revit.Geometry.Face In solid.Faces
+            If face.Reference IsNot Nothing Then
+                If face IsNot Nothing Then
+                    Dim divSurface As DividedSurface = fac.NewDividedSurface(face.Reference)
+                End If
+            End If
+         Next
+    Next
+</pre>
+
+<para>Compile the code, update Revit.ini and test the command. Examine the outcome.</para>
+
+<a class="j" href="labs7-3.htm">next</a>
+<a class="j" href="labs7-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+
+<a class="j" href="index.htm">next</a>
+<a class="j" href="labs7-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<para>In this lab, we shall change the tiling pattern on the divided surface created using
+<code>Lab 7-2</code> using the built-in enumeration available with the API.
+The output should be similar to the
+image included below.</para>
+
+<img src="img/labs7-3-01.jpg" alt="Tile Pattern"/>
+
+<para>Similar to the previous lab, we shall create a new filter ? a type filter, to extract all the elements
+from the Revit model which are of Form type.
+This can be done using the <code>Filter.NewTypeFilter</code>.</para>
+
+<pre title="C# Type Filter for Form Type" class="jtcollapse">
+  # region Lab7_3_ChangeTilePattern
+  /// &lt;summary&gt;
+  /// Change the tiling pattern of the divided surface using the built-in TilePattern enumeration.
+  /// &lt;/summary&gt;
+  public class Lab7_3_ChangeTilePattern : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements)
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      try
+      {
+        // find forms in the model by filter:
+        Filter filterForm = app.Create.Filter.NewTypeFilter(typeof(Form));
+        List&lt;Autodesk.Revit.Element&gt; forms = new List&lt;Autodesk.Revit.Element&gt;();
+        doc.get_Elements(filterForm, forms);
+        foreach (Form form in forms)
+        {
+          . . .
+        }
+      }
+      catch
+      {
+        return IExternalCommand.Result.Failed;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion
+</pre>
+
+<pre title="Type Filter for Form Type" class="jtcollapse">
+    #Region "Lab7_3_ChangeTilePattern"
+    Public Class Lab7_3_ChangeTilePattern
+        Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+            Dim app As Application = commandData.Application
+            Dim doc As Document = app.ActiveDocument
+            Try
+                ' find forms in the model by filter:
+                Dim filterForm As Filter = app.Create.Filter.NewTypeFilter(GetType(Form))
+                Dim forms As New List(Of Autodesk.Revit.Element)()
+                Dim iForms As Integer = doc.Elements(filterForm, forms)
+                For Each form As Form In forms
+                    . . .
+                Next
+            Catch
+                Return IExternalCommand.Result.Failed
+            End Try
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+    #End Region
+</pre>
+
+<para>Now with each form, we shall get access to the <code>DividedSurfaceData</code> using
+the <code>form.GetDividedSurfaceData</code> method. This divided surface data contains a
+list of references which can be extracted using the <code>GetReferencesWithDividedSurfaces()</code>
+method on the divided surface data. Using the built-in enumeration of tile patterns
+stored in <code>document.Settings</code>, we shall use the <code>ObjectType</code> property on the divided
+surface element to set it to one of the tile patterns available in the built-in
+enumeration. Say, we set the third pattern in the enumeration to the divided surface
+element.</para>
+
+<pre title="C# Divided Surface Creation" class="jtcollapse">
+  // Get access to the divided surface data from the form
+  DividedSurfaceData dsData = form.GetDividedSurfaceData();
+  if (null != dsData)
+  {
+    // get the references associated with the divided surfaces
+    foreach (Reference reference in dsData.GetReferencesWithDividedSurfaces())
+    {
+      DividedSurface divSurface = dsData.GetDividedSurfaceForReference(reference);
+
+      int count = 0;
+      TilePatterns tilepatterns = doc.Settings.TilePatterns;
+      foreach (TilePatternsBuiltIn TilePatternEnum in Enum.GetValues(typeof(TilePatternsBuiltIn)))
+      {
+        if (count.Equals(3))
+        {
+          divSurface.ObjectType = tilepatterns.GetTilePattern(TilePatternEnum);
+          break;
+        }
+        count = count + 1;
+      }
+    }
+  }
+</pre>
+
+<pre title="VB Divided Surface Creation" class="jtcollapse">
+    ' Get access to the divided surface data from the form
+    Dim dsData As DividedSurfaceData = form.GetDividedSurfaceData()
+    If dsData IsNot Nothing Then
+        ' get the references associated with the divided surfaces
+        For Each reference As Reference In dsData.GetReferencesWithDividedSurfaces()
+            Dim divSurface As DividedSurface = dsData.GetDividedSurfaceForReference(reference)
+
+            Dim count As Integer = 0
+            Dim tilepatterns As TilePatterns = doc.Settings.TilePatterns
+            For Each TilePatternEnum As TilePatternsBuiltIn In [Enum].GetValues(GetType(TilePatternsBuiltIn))
+                If count.Equals(3) Then
+                    divSurface.ObjectType = tilepatterns.GetTilePattern(TilePatternEnum)
+                    Exit For
+                End If
+                count = count + 1
+            Next
+        Next
+    End If
+</pre>
+
+<para>Compile the code, update Revit.ini and test the command. Examine the outcome.</para>
+
+<a class="j" href="index.htm">next</a>
+<a class="j" href="labs7-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>

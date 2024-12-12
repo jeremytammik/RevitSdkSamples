@@ -1,0 +1,274 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Dismiss Dialogs</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Create Ribbon Controls">
+Dismiss Dialogs</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs7-1.htm">next</a>
+<a class="j" href="labs6-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p> In this lab we will take advantage of DialogBoxShowing event to dismiss dialogs automatically.
+Some Revit API call from an add-in will cause task or message dialogues to be displayed. 
+These will require end user interaction to close the dialogue manually before the command execution can continue.
+The DialogBoxShowing event can capture a dialogue before it is displayed and provide a possibility to dismiss it programmatically.
+We will mainly focus on the steps in the event handler function. 
+As shown in the previous lab, we shall first, create an external application and subscribe to DialogBoxShowing event in OnStartUp() method, and unsubscribe in the OnShutdown() method.</p>
+
+<pre class="jtcollapse" title="C# Subscribes to the event">
+public class Lab6_4_DismissDialog : IExternalApplication
+{
+  public IExternalApplication.Result OnStartup( 
+    ControlledApplication a )
+  {
+    a.DialogBoxShowing 
+      += new EventHandler&lt;DialogBoxShowingEventArgs&gt;( 
+        DismissDialog );
+
+    return IExternalApplication.Result.Succeeded;
+  }
+    
+  public IExternalApplication.Result OnShutdown( 
+    ControlledApplication a )
+  {
+    a.DialogBoxShowing 
+      -= new EventHandler&lt;DialogBoxShowingEventArgs&gt;(
+        DismissDialog );
+
+    return IExternalApplication.Result.Succeeded;
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB Subscribes to the event">
+Public Class Lab6_4_DismissDialog 
+         Implements IExternalApplication
+    Public Function OnStartup(ByVal application As ControlledApplication) As IExternalApplication.Result _
+            Implements IExternalApplication.OnStartup
+
+        AddHandler application.DialogBoxShowing, AddressOf DismissDialog
+
+        Return IExternalApplication.Result.Succeeded
+    End Function
+        
+    Public Function OnShutdown(ByVal application As ControlledApplication) As IExternalApplication.Result _
+                    Implements IExternalApplication.OnShutdown
+
+        RemoveHandler application.DialogBoxShowing, AddressOf DismissDialog
+        Return IExternalApplication.Result.Succeeded
+    End Function
+        
+End Class
+</pre>
+
+<p>Create the definition of the event handler function and call it DismissDialog(). 
+The event argument DialogBoxShowingEventArgs class is actually a parent class for more specialised subclasses, namely the MessageBoxShowingEventArgs and TaskDialogShowingEventArgs. 
+The actual instance class depends on how the dialog is being handled. 
+The frame shown below handles different types of dialogs according to the argument class type.</p>
+
+<pre class="jtcollapse" title="C# Dismiss dialog function main frame">
+public void DismissDialog( 
+  object sender, 
+  DialogBoxShowingEventArgs e )
+{
+  TaskDialogShowingEventArgs te = e as TaskDialogShowingEventArgs;
+  if ( te != null )
+  {
+    //Identity the dialog and handling task dialog 
+  }
+  else
+  {
+    MessageBoxShowingEventArgs msgArgs = e as MessageBoxShowingEventArgs;
+    if ( null != msgArgs ) // this is a message box
+    {
+      //handling message box
+    }
+    else // this is some other dialog, for example, element property dialog.
+    {
+      //Use the HelpId to identify the dialog.
+      if ( e.HelpId == 1002 ) // Element property dialog's HelpId is 1002
+      {
+        //Hanlding element property dialog
+      }
+    }
+  }
+}    
+</pre> 
+
+<pre class="jtcollapse" title="VB Dismiss dialog function main frame">
+Public Sub DismissDialog(ByVal sender As Object, ByVal e As Autodesk.Revit.Events.DialogBoxShowingEventArgs)
+    
+    Dim te As TaskDialogShowingEventArgs = TryCast(e, TaskDialogShowingEventArgs)
+    If te IsNot Nothing Then  
+        ' Identity the dialog and handling task dialog                                          
+    Else
+        Dim msgArgs As MessageBoxShowingEventArgs = TryCast(e, MessageBoxShowingEventArgs)
+        If Nothing IsNot msgArgs Then 'If this is a message box.
+            'Handling message box
+        Else ' If this is other kind of dialog, for instance, element property dialog.
+            'Use the HelpId to identify the dialog.
+            If e.HelpId = 1002 Then 'Element property dialog's HelpId is 1002
+                'Handling element property dialog
+            End If
+        End If
+    End If
+End Sub
+</pre>
+
+<p>If it is a task dialog, the latter subclass is used.
+The task dialog event argument provides additional properties to access the dialog id and message being displayed. 
+For the task dialog box of "Family Already Exists", the dialogId is TaskDialog_Family_Already_Exists and the message is similar to 'You are trying to load the family...'. 
+The TaskDialogShowingEventArgs.OverrideResult() method can mimic the action done to dialog manually. 
+Calling e.OverrideResult( 1001 ) means that we dismiss this task dialog with the same effect as clicking "Override the existing version" button.</p>
+    
+<pre class="jtcollapse" title="C# Dismiss family override task dialog">      
+TaskDialogShowingEventArgs te = e as TaskDialogShowingEventArgs;
+if ( te != null )
+{
+  if ( te.DialogId == "TaskDialog_Family_Already_Exists" )
+  {
+    // In this task dialog, 1001 maps to the first button,
+    // which is the "override the existing version"
+    int iReturn = 1001;
+
+    // Set OverrideResult argument to 1001 mimic clicking the first button.            
+    e.OverrideResult( iReturn );
+
+     // 1002 maps the second button in this dialog.          
+    // DialogResult.Cancel maps to the cancel button.
+  }
+}    
+</pre> 
+    
+<pre class="jtcollapse" title="VB Dismiss family override task dialog">
+Dim te As TaskDialogShowingEventArgs = TryCast(e, TaskDialogShowingEventArgs)
+If te IsNot Nothing Then
+    If te.DialogId = "TaskDialog_Family_Already_Exists" Then
+        'In this task dialog, 1001 maps the first button. 
+        'The button is "override the existing version"          
+        Dim iReturn As Integer = 1001
+        'Set OverrideResult argument to 1001 mimic clicking the first button.            
+        e.OverrideResult(iReturn)
+        ' 1002 maps the second button in this dialog.          
+        ' DialogResult.Cancel maps the cancel button
+    End If      
+</pre>
+
+<p>If it is a message box, we set the OverrideResult argument to DialogResult.Yes. 
+This dismisses it with the same effect as clicking "Yes". 
+If a dialog is neither a task dialog nor a message box, we can identify the dialog by its HelpId. 
+Here we dismiss the element property dialog with the effect of clicking "No" button, for which the DialogBoxShowingEventArgs.HelpId is 1002.</p>
+
+<pre class="jtcollapse" title="C# Dismiss dialog code">
+public void DismissDialog( object sender, DialogBoxShowingEventArgs e)
+{
+  TaskDialogShowingEventArgs te = e as TaskDialogShowingEventArgs;
+  if ( te != null )
+  {
+    if ( te.DialogId == "TaskDialog_Family_Already_Exists" )
+    {
+      // In this task dialog, 1001 maps to the first button,
+      // which is the "override the existing version"
+      int iReturn = 1001;
+      // Set OverrideResult argument to 1001 mimic clicking the first button.            
+      e.OverrideResult( iReturn );
+    }
+  }
+  else
+  {
+    MessageBoxShowingEventArgs msgArgs = e as MessageBoxShowingEventArgs;
+    if ( null != msgArgs ) // this is a message box
+    {
+      e.OverrideResult( (int) WinForms.DialogResult.Yes );
+      Debug.Print( "Dialog id is {0}\r\nMessage is {1}", 
+      msgArgs.HelpId, msgArgs.Message );
+    }
+    else // this is some other dialog, for example, element property dialog.
+    {
+      //Use the HelpId to identify the dialog.
+      if ( e.HelpId == 1002 ) // Element property dialog's HelpId is 1002
+      {
+        e.OverrideResult( (int) WinForms.DialogResult.No );
+        Debug.Print( "We just dismissed the element property dialog " 
+              + "and set the return value to No." );
+      }
+    }
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB Dismiss dialog code">
+Public Sub DismissDialog(ByVal sender As Object, ByVal e As Autodesk.Revit.Events.DialogBoxShowingEventArgs)
+
+    Dim te As TaskDialogShowingEventArgs = TryCast(e, TaskDialogShowingEventArgs)
+    If te IsNot Nothing Then
+        If te.DialogId = "TaskDialog_Family_Already_Exists" Then
+            'In this task dialog, 1001 maps the first button. 
+            'The button is "override the existing version"          
+            Dim iReturn As Integer = 1001
+            'Set OverrideResult argument to 1001 mimic clicking the first button.            
+            e.OverrideResult(iReturn)                 
+        End If
+    Else
+        Dim msgArgs As MessageBoxShowingEventArgs = TryCast(e, MessageBoxShowingEventArgs)
+        If Nothing IsNot msgArgs Then 'If this is a message box.
+            e.OverrideResult(CInt(Fix(WinForms.DialogResult.Yes)))
+            Debug.Print("Dialog id is" & msgArgs.HelpId & Constants.vbCrLf & "; Message is " & msgArgs.Message)
+        Else ' If this is other kind of dialog, for instance, element property dialog.
+            'Use the HelpId to identify the dialog.
+            If e.HelpId = 1002 Then 'Element property dialog's HelpId is 1002
+                e.OverrideResult(CInt(Fix(WinForms.DialogResult.No)))
+                Debug.Print("We just dismissed element property dialog, " & "and set the return value is No")
+            End If
+        End If
+    End If
+End Sub
+</pre>
+
+<p>Build the project. 
+Add loading information as mentioned in the previous lab. 
+Restart Revit and load an already loaded family manually. 
+The loading process is quite fluent. 
+The message box and the element property dialogue are not shown.</p>
+
+<p>This example is only for the demonstration of dismissing dialogues. 
+Please remove it from Revit.ini after the testing since this might break Revit's existing functionality.</p>
+
+<a class="j" href="labs7-1.htm">next</a>
+<a class="j" href="labs6-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

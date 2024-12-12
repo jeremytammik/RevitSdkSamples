@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AutoJoin.dll</Assembly>
+    <ClientId>ac7c9e70-077e-4693-8f2e-aea13dd2fad3</ClientId>
+    <FullClassName>Revit.SDK.Samples.AutoJoin.CS.Command</FullClassName>
+    <Text>Auto Join</Text>
+    <Description>Automatically join geometry of combinable elements.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

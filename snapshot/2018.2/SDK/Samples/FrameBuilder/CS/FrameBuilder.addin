@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>FrameBuilder.dll</Assembly>
+    <ClientId>22e12823-e4f0-4014-92f5-a9819cb22323</ClientId>
+    <FullClassName>Revit.SDK.Samples.FrameBuilder.CS.Command</FullClassName>
+    <Text>Frame Builder</Text>
+    <Description>Add a new concrete column and beam size.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

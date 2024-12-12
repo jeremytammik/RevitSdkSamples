@@ -1,0 +1,25 @@
+﻿<Raf:WindowBase x:Class="ExtensibleStorageUI.MainWindows"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:Raf="clr-namespace:Autodesk.Revit.UI.ExtensibleStorage.Framework.WPF;assembly=ExtensibleStorageFramework.UI.WPF" 
+                Title="ExtensibleStorageUI" Height="900" Width="900">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="28"></RowDefinition>
+      <RowDefinition Height="*"></RowDefinition>
+      <RowDefinition Height="37"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Menu Grid.Row="0" IsMainMenu="True"></Menu>
+    <DockPanel Grid.Row="1" Name="layout"></DockPanel>
+        <DockPanel Grid.Row="2" Name="Command">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="*"></ColumnDefinition>
+                    <ColumnDefinition Width="175"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="OK" Height="23" Name="btnOk" Width="75" HorizontalAlignment="left" Margin="5,5" Click="btnOk_Click" />
+                <Button Grid.Column="1" Content="Cancel" Height="23" Name="btnCancel" Width="75" HorizontalAlignment="Right" Margin="5,5" Click="btnCancel_Click" />
+            </Grid>        
+        </DockPanel>
+    </Grid>
+</Raf:WindowBase>

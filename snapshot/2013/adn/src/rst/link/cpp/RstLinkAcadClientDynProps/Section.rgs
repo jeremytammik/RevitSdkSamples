@@ -1,0 +1,27 @@
+HKCR
+{
+	Miro.Section.2 = s 'Section Class'
+	{
+		CLSID = s '{0F88B0AA-BAE6-47f2-B8D3-FB8B98A15747}'
+	}
+	Miro.Section = s 'Section Class'
+	{
+		CLSID = s '{0F88B0AA-BAE6-47f2-B8D3-FB8B98A15747}'
+		CurVer = s 'Miro.Section.2'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0F88B0AA-BAE6-47f2-B8D3-FB8B98A15747} = s 'Section Class'
+		{
+			ProgID = s 'Miro.Section.2'
+			VersionIndependentProgID = s 'Miro.Section'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{57BA066C-86BA-4e21-B09B-E6139B3662A6}'
+		}
+	}
+}

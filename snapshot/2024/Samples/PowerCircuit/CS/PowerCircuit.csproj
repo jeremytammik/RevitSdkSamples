@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C6ED7380-B017-4B06-A254-D26A291CBD3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Revit.SDK.Samples.PowerCircuit.CS</RootNamespace>
+    <AssemblyName>PowerCircuit</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="EditCircuitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCircuitForm.Designer.cs">
+      <DependentUpon>EditCircuitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElectricalSystemItem.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="CircuitOperationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CircuitOperationForm.Designer.cs">
+      <DependentUpon>CircuitOperationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CircuitOperationData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectCircuitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectCircuitForm.Designer.cs">
+      <DependentUpon>SelectCircuitForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EditCircuitForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditCircuitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CircuitOperationForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CircuitOperationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectCircuitForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectCircuitForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateCircuit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DisconnectPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditCircuit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddToCircuit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveFromCircuit.png" />
+  </ItemGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+</Project>

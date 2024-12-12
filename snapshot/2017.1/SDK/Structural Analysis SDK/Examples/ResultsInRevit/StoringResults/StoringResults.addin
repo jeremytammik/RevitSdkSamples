@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AssemblyPath</Assembly>
+    <ClientId>7ead6750-de24-4ca4-b063-ba40116e8d53</ClientId>
+    <FullClassName>Revit.SDK.Samples.StoringResults.CS.StoreResults</FullClassName>
+    <Text>Store analitycal results in Revit</Text>
+    <Description>Create and store analitycal results in Revit</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

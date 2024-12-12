@@ -1,0 +1,48 @@
+﻿Application: AppearanceAssetEditing
+Revit Platform: All
+Revit Version: 2018.1
+First Released For: 2018.1
+Programming Language: C#
+Skill Level: Medium
+Category: Materials
+Type: ExternalCommand and ExternalApplication
+
+Subject: Edit appearance asset properties via a small control dialog
+Summary: 
+This sample demonstrates basic usage of the AppearanceAssetEditScope and AssetProperty classes to change the value of an asset property in a given material.
+
+Classes: 
+  Autodesk.Revit.DB.Material
+  Autodesk.Revit.DB.AppearanceAssetElement
+  Autodesk.Revit.DB.Visual.AppearanceAssetEditScope
+  Autodesk.Revit.DB.Visual.AssetPropertyBoolean
+  Autodesk.Revit.DB.Visual.AssetPropertyDoubleArray4d
+  
+  
+Project Files: 
+Command.cs
+It contains the class Command which inherits from interface IExternalCommand and implements the Execute method.
+
+Application.cs
+It contains the class Application which inherits from interface IExternalApplication and implements its methods.
+
+Request.cs
+The class around a variable holding the current request.
+
+RequestHandler.cs
+The class with methods to execute requests made by the dialog user.
+
+AppearanceAssetEditingForm.cs
+The class of our modeless dialog.
+
+Description: 
+This sample demonstrates basic usage of the AppearanceAssetEditScope and AssetProperty classes to change the value of an asset property in a given material. 
+
+Instructions: 
+Open Revit application and execute the command “Show material tint control”.
+1. Click on Arrow button in the modeless dialog to select a painted face in the project.
+     Expected result: If a face is selected and we can identify its material, and that material's schema supports "tint", the dialog buttons are enabled. If we can't identify the material or the material does not support "tint", the buttons are disabled.
+2. Use the command buttons in the modeless dialog to make the tint lighter or darker.
+     Expected result: The element tint color will change. If the tint is minimized (255, 255, 255), the button Lighter is disabled. If the tint is maximized (0 0 0), Darker is disabled.
+
+

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>HelloRevit.dll</Assembly>
+    <ClientId>7d4e1893-3a27-4df2-8075-4fa3754537aa</ClientId>
+    <FullClassName>Revit.SDK.Samples.HelloRevit.CS.Command</FullClassName>
+    <Text>Hello Revit (CS)</Text>
+    <Description>Shows how a basic ExternalCommand can be added to the Revit user interface.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

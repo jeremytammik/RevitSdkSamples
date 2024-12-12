@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0222DA2-F296-4644-A26E-F9EB3B2BBAF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Revit.SDK.Samples.SampleCommandsSteelElements.CS</RootNamespace>
+    <AssemblyName>SampleCommandsSteelElements</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\SampleCommandsSteelElements.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.7</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddRangesToConnectionType.cs" />
+    <Compile Include="BackgroundCalculation.cs" />
+    <Compile Include="RemoveSubelementsFromCustomConnection.cs" />
+    <Compile Include="RemoveElementsFromConnection.cs" />
+    <Compile Include="DeleteConnection.cs" />
+    <Compile Include="CreateWeldPoint.cs" />
+    <Compile Include="CreateShortening.cs" />
+    <Compile Include="CreateShearStudPattern.cs" />
+    <Compile Include="CreatePlateHole.cs" />
+    <Compile Include="CreatePlate.cs" />
+    <Compile Include="CreateCornerCut.cs" />
+    <Compile Include="CreateCopeSkewed.cs" />
+    <Compile Include="CreateContourCut.cs" />
+    <Compile Include="CreateBoltPattern.cs" />
+    <Compile Include="CreateAnchorPattern.cs" />
+    <Compile Include="AddElementsToCustomConnection.cs" />
+    <Compile Include="AddElementsToConnection.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateConnectionDetailedParameters.cs" />
+  </ItemGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Steel.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

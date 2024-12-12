@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+    <Assembly>CivilAlignments.dll</Assembly>
+    <ClientId>b43a0788-6ec3-4233-84ef-d4bd36485bd6</ClientId>
+    <FullClassName>Revit.SDK.Samples.CivilAlignments.CS.CreateAlignmentStationLabelsCmd</FullClassName>
+    <Text>Infrastructure alignments</Text>
+    <Description>Demonstrates the use of API for finding and labeling an infrastructure alignment element.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>CivilAlignments.dll</Assembly>
+    <ClientId>b604f994-3831-47f8-985b-7134bf3c36ac</ClientId>
+    <FullClassName>Revit.SDK.Samples.CivilAlignments.CS.ShowPropertiesCmd</FullClassName>
+    <Text>Infrastructure alignments</Text>
+    <Description>Demonstrates the use of API for listing properties of an infrastructure alignment element and its labels.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+   <AddIn Type="Application">
+    <Name>CivilAlignments</Name>
+    <Assembly>CivilAlignments.dll</Assembly>
+    <ClientId>16f79201-dceb-4621-b63d-76464c05f079</ClientId>
+    <FullClassName>Revit.SDK.Samples.CivilAlignments.CS.CivilAlignmentsApp</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

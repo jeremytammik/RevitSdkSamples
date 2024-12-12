@@ -1,0 +1,26 @@
+<rexf:REXExtensionControl x:Class="REX.ElementReportHTML.Resources.Dialogs.ReportSettingsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:rexf="clr-namespace:REX.Common;assembly=REX.Foundation.WPF"
+    xmlns:rexc="clr-namespace:REX.Controls.WPF;assembly=REX.Controls.WPF"                          
+    Height="200" Width="500">
+    <Control.Resources>
+        <DataTemplate x:Key="IdItemTemplate">
+            <TextBlock Text="{Binding FullName}">                
+            </TextBlock>
+        </DataTemplate>       
+    </Control.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>            
+        <Grid.ColumnDefinitions>            
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="categoriesListBox" Grid.Column="0" Grid.Row="0">            
+        </ListBox>
+        <CheckBox x:Name="idCheckBox" Grid.Column="1" HorizontalAlignment="Left" Width="107" Margin="6,12,0,0" Height="22" VerticalAlignment="Top" Checked="CheckBox_Checked_1" Unchecked="CheckBox_Checked_1">Select by id:</CheckBox>
+        <ComboBox Name="idComboBox" Grid.Column="1" Margin="6,40,12,33" SelectionChanged="idComboBox_SelectionChanged" ItemTemplate="{StaticResource IdItemTemplate}"></ComboBox>
+    </Grid>
+</rexf:REXExtensionControl>

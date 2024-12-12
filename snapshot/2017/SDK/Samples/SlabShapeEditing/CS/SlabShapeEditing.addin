@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>SlabShapeEditing.dll</Assembly>
+    <ClientId>04707e34-39a3-4b3b-89c6-ed8fcf64ebf7</ClientId>
+    <FullClassName>Revit.SDK.Samples.SlabShapeEditing.CS.Command</FullClassName>
+    <Text>SlabShapeEditing</Text>
+    <Description>Create vertex and crease on slab to edit it's shape.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

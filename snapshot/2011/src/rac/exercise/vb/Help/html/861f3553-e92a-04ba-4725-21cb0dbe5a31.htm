@@ -1,0 +1,225 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" /><META NAME="save" CONTENT="history" /><title>Lab2_3_ListWallsAndDoors Class</title><link rel="stylesheet" type="text/css" href="../styles/presentation.css" /><link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" /><script type="text/javascript" src="../scripts/EventUtilities.js"> </script><script type="text/javascript" src="../scripts/SplitScreen.js"> </script><script type="text/javascript" src="../scripts/Dropdown.js"> </script><script type="text/javascript" src="../scripts/script_manifold.js"> </script><script type="text/javascript" src="../scripts/script_feedBack.js"> </script><script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script><script type="text/javascript" src="../scripts/CommonUtilities.js"> </script><meta name="container" content="Labs" /><meta name="file" content="861f3553-e92a-04ba-4725-21cb0dbe5a31" /><meta name="guid" content="861f3553-e92a-04ba-4725-21cb0dbe5a31" /><xml><MSHelp:Attr Name="AssetID" Value="T:Labs.Lab2_3_ListWallsAndDoors" /><MSHelp:TOCTitle Title="Lab2_3_ListWallsAndDoors Class" /><MSHelp:RLTitle Title="Lab2_3_ListWallsAndDoors Class (Labs)" /><MSHelp:Keyword Index="A" Term="T:Labs.Lab2_3_ListWallsAndDoors" /><MSHelp:Keyword Index="A" Term="frlrfLabsLab2_3_ListWallsAndDoorsClassTopic" /><MSHelp:Keyword Index="K" Term="Lab2_3_ListWallsAndDoors class" /><MSHelp:Keyword Index="K" Term="Labs.Lab2_3_ListWallsAndDoors class" /><MSHelp:Keyword Index="K" Term="Lab2_3_ListWallsAndDoors class, about Lab2_3_ListWallsAndDoors class" /><MSHelp:Keyword Index="F" Term="Lab2_3_ListWallsAndDoors" /><MSHelp:Keyword Index="F" Term="Labs.Lab2_3_ListWallsAndDoors" /><MSHelp:Attr Name="HelpPriority" Value="2" /><MSHelp:Attr Name="APIType" Value="Managed" /><MSHelp:Attr Name="APILocation" Value="labs.dll" /><MSHelp:Attr Name="APIName" Value="Labs.Lab2_3_ListWallsAndDoors" /><MSHelp:Attr Name="DevLang" Value="CSharp" /><MSHelp:Attr Name="DevLang" Value="VB" /><MSHelp:Attr Name="DevLang" Value="C++" /><MSHelp:Attr Name="Locale" Value="en-us" /><MSHelp:Attr Name="TopicType" Value="kbSyntax" /><MSHelp:Attr Name="TopicType" Value="apiref" /><MSHelp:Attr Name="Abstract" Value="Retrieving family instances: list all walls and doors. These represent two different kinds of elements: walls are represented by their own specialised System.Type Wall, whereas doors are represented by family instances and need to be ide ..." /><MSHelp:Attr Name="AssemblyVersion" Value="3.0.0.1" /></xml><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"></script></head><body><input type="hidden" id="userDataCache" class="userDataStyle" /><input type="hidden" id="hiddenScrollOffset" /><img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" title="Collapse image" /><img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" title="Expand Image" /><img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" /><img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" /><img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" /><img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" /><img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" title="Copy image" /><img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" title="CopyHover image" /><div id="header"><table id="topTable" cellspacing="0" cellpadding="0"><tr><td><span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0"><img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span><span>    </span><span id="devlangsDropdown" class="filter" tabindex="0"><img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label></span></td></tr></table><div id="devlangsMenu"><input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" /><label class="checkboxLabel" for="CSharpCheckbox">C#</label><br /><input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" /><label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br /><input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" /><label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br /></div><table id="bottomTable" cellpadding="0" cellspacing="0"><tr id="headerTableRow1"><td align="left"><span id="runningHeaderText">Revit API Introduction Labs</span></td></tr><tr id="headerTableRow2"><td align="left"><span id="nsrTitle">Lab2_3_ListWallsAndDoors Class</span></td></tr><tr id="headerTableRow3"><td align="left"><a href="700e3890-0e7c-1a2f-fe43-59783b306cea.htm">Members</a>  <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a>  
+  <span id="headfeedbackarea" class="feedbackhead">
+      <a href="javascript:SubmitFeedback('','Revit API Introduction Labs','','','','%0\dYour%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report,%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed,%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.%0\A%0\d','Customer%20Feedback');">
+        
+        Send Feedback
+      </a>
+	</span>
+</td></tr></table><table id="gradientTable"><tr><td class="nsrBottom" background="../icons/gradient.gif" /></tr></table></div><div id="mainSection"><div id="mainBody"><div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" /><span style="color: DarkGray"> </span><div class="summary">
+ Retrieving family instances: list all walls and doors.
+
+ These represent two different kinds of elements:
+ walls are represented by their own specialised
+ System.Type Wall, whereas doors are represented
+ by family instances and need to be identified by
+ additionally checking the category.
+ <p>
+      Revit uses categories to classify building elements and other groups
+      of objects. The known categories are listed by the built-in categories
+      enumeration. It includes values for walls, doors, windows and many other
+      groups of objects. This is one way of identifying objects in the Revit
+      database.
+    </p><p>
+      Another way of identifying an element is using its System.Type,
+      i.e. class. Walls are represented by their own specialised
+      System.Type Wall, whereas doors and windows are represented
+      by family instances, whose class is FamilyInstace. To tell them
+      apart, we need to aditionally checking their category.
+    </p><p>
+      Many classes of elements are grouped into types and families.
+      There are system families, which are built into Revit, and standard families,
+      which are defined in external files with an RFA filename extension.
+    </p><p>
+      The are many other element properties that also can be used to retrieve
+      specific element collections from the database.
+    </p><p>
+      Walls are defined using a system family, doors and windows by standard families.
+      To retrieve all walls, one can use an element filter checking for the wall category
+      and the dedicated Wall class. For doors or windows, one can use the door and window
+      categories and the FamilyInstance class.
+    </p><p>
+      In this lab, we implement the filtering inline.
+      Afterwards, we can use this code as a template for creating some
+      reusable generic LabUtils methods.
+    </p><p>
+      Implement a new read-only external command Lab2_3_ListWallsAndDoors
+      and add the code to implement the Execute method and access the application
+      app and current document doc.
+    </p><p>
+      Implement a filtered element collector to retrieve and list
+      all walls, for instance by the following steps:
+    </p><ol><li>Instantiate a new FilteredElementCollector variable named walls.</li><li>Retrieve all elements whose System.Type is Wall (hint: use OfClass).</li><li>Instantiate a variable named 'a' as a list of strings to collect the element information and later feed to the approriate LabUtils.InfoMsg overload.</li><li>Loop over the collected elements (hint: you can simply use foreach Wall wall in walls).</li><li>Populate 'a' with some element data such as element id, wall type and wall type kind.</li><li>Display the contents of 'a' using the appropriate LabUtils.InfoMsg overload.</li></ol><p>Here is a possible implementation:</p><span id="cbc_1" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// get all wall elements:</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// we could also call</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// FilteredElementCollector walls = LabUtils.GetElementsOfType(</span>
+<span class="highlight-comment">//   doc, typeof( Wall ), BuiltInCategory.OST_Walls );</span>
+
+FilteredElementCollector walls = <span class="highlight-keyword">new</span> FilteredElementCollector( doc );
+walls.OfClass( <span class="highlight-keyword">typeof</span>( Wall ) );
+
+List&lt;<span class="highlight-keyword">string</span>&gt; a = <span class="highlight-keyword">new</span> List&lt;<span class="highlight-keyword">string</span>&gt;();
+
+<span class="highlight-keyword">foreach</span>( Wall wall <span class="highlight-keyword">in</span> walls )
+{
+  a.Add( <span class="highlight-keyword">string</span>.Format( <span class="highlight-literal">"Id={0}; Kind={1}; Type={2}"</span>,
+    wall.Id.IntegerValue,
+    wall.WallType.Kind.ToString(),
+    wall.WallType.Name ) );
+}
+
+LabUtils.InfoMsg( <span class="highlight-literal">"{0} wall{1} in the model{2}"</span>, a );</pre></div></span><span id="cbc_2" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">' get all wall elements:</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' we could also call</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' Dim walls As FilteredElementCollector =</span>
+<span class="highlight-comment">' LabUtils.GetElementsOfType(doc, GetType(Wall), BuiltInCategory.OST_Walls)</span>
+
+
+<span class="highlight-keyword">Dim</span> walls <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> FilteredElementCollector(doc)
+walls.OfClass(<span class="highlight-keyword">GetType</span>(Wall))
+
+<span class="highlight-keyword">Dim</span> a <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> List(<span class="highlight-keyword">Of</span> <span class="highlight-keyword">String</span>)()
+
+<span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> wall <span class="highlight-keyword">As</span> Wall <span class="highlight-keyword">In</span> walls
+    a.Add(<span class="highlight-keyword">String</span>.Format(<span class="highlight-literal">"Id={0}; Kind={1}; Type={2}"</span>, _
+                        wall.Id.IntegerValue, _
+                        wall.WallType.Kind.ToString(), _
+                        wall.WallType.Name))
+<span class="highlight-keyword">Next</span>
+
+LabUtils.InfoMsg(<span class="highlight-literal">"{0} wall{1} in the model{2}"</span>, a)</pre></div></span><p>This shows how easy and succinct the Revit 2011 element filtering is.</p><p>
+      Implement a similar filter to retrieve and list all doors.
+      In this case, we can use the FamilyInstance System.Type and additionally check for
+      the door category using the OfCategory method and the appropriate built-in category
+      enumeration vlue.
+    </p><span id="cbc_3" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// get all door family instances:</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// we could also call</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// FilteredElementCollector doors = LabUtils.GetElementsOfType(</span>
+<span class="highlight-comment">//   doc, typeof( FamilyInstance ), BuiltInCategory.OST_Doors );</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// or</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// FilteredElementCollector doors = LabUtils.GetFamilyInstances(</span>
+<span class="highlight-comment">//   doc, BuiltInCategory.OST_Doors );</span>
+
+FilteredElementCollector doors = <span class="highlight-keyword">new</span> FilteredElementCollector( doc );
+doors.OfCategory( BuiltInCategory.OST_Doors );
+doors.OfClass( <span class="highlight-keyword">typeof</span>( FamilyInstance ) );
+
+<span class="highlight-keyword">foreach</span>( FamilyInstance door <span class="highlight-keyword">in</span> doors )
+{
+  <span class="highlight-comment">// For family instances, the element name property</span>
+  <span class="highlight-comment">// returns the type name:</span>
+
+  a.Add( <span class="highlight-keyword">string</span>.Format( <span class="highlight-literal">"Id={0}; Type={1}"</span>,
+    door.Id.IntegerValue, door.Name ) );
+}
+
+LabUtils.InfoMsg( <span class="highlight-literal">"{0} door family instance{1} in the model{2}"</span>, a );</pre></div></span><span id="cbc_4" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">' get all door family instances:</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' we could also call</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' Dim doors As FilteredElementCollector =</span>
+<span class="highlight-comment">'   LabUtils.GetElementsOfType(doc, GetType(FamilyInstance), BuiltInCategory.OST_Doors)</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' or</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' Dim doors As FilteredElementCollector =</span>
+<span class="highlight-comment">'   LabUtils.GetFamilyInstances(doc, BuiltInCategory.OST_Doors)</span>
+
+
+<span class="highlight-keyword">Dim</span> doors <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> FilteredElementCollector(doc)
+doors.OfCategory(BuiltInCategory.OST_Doors)
+doors.OfClass(<span class="highlight-keyword">GetType</span>(FamilyInstance))
+
+<span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> door <span class="highlight-keyword">As</span> FamilyInstance <span class="highlight-keyword">In</span> doors
+    <span class="highlight-comment">' For family instances, the element name property</span>
+    <span class="highlight-comment">' returns the type name:</span>
+
+
+    a.Add(<span class="highlight-keyword">String</span>.Format(<span class="highlight-literal">"Id={0}; Type={1}"</span>, _
+                        door.Id.IntegerValue, _
+                        door.Name))
+<span class="highlight-keyword">Next</span>
+
+LabUtils.InfoMsg(<span class="highlight-literal">"{0} door family instance{1} in the model{2}"</span>, a)</pre></div></span><p>
+      Since similar kinds of element retrieval will be needed in other places as well,
+      we can implement the following generic LabUtils methods for it:
+    </p><span id="cbc_5" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">/// &lt;summary&gt;</span>
+<span class="highlight-comment">/// Return all elements of the requested class,</span>
+<span class="highlight-comment">/// i.e. System.Type, matching the given built-in</span>
+<span class="highlight-comment">/// category in the given document.</span>
+<span class="highlight-comment">/// &lt;/summary&gt;</span>
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> FilteredElementCollector
+  GetElementsOfType(
+    Document doc,
+    Type type,
+    BuiltInCategory bic )
+{
+  FilteredElementCollector collector
+    = <span class="highlight-keyword">new</span> FilteredElementCollector( doc );
+
+  collector.OfCategory( bic );
+  collector.OfClass( type );
+
+  <span class="highlight-keyword">return</span> collector;
+}</pre></div></span><span id="cbc_6" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">''' &lt;summary&gt;</span>
+<span class="highlight-comment">''' Return all elements of the requested class in the active document</span>
+<span class="highlight-comment">''' matching the given built-in category.</span>
+<span class="highlight-comment">''' &lt;/summary&gt;</span>
+<span class="highlight-keyword">Public</span> <span class="highlight-keyword">Shared</span> <span class="highlight-keyword">Function</span> GetElementsOfType( _
+    <span class="highlight-keyword">ByVal</span> doc <span class="highlight-keyword">As</span> Document, _
+    <span class="highlight-keyword">ByVal</span> type <span class="highlight-keyword">As</span> Type, _
+    <span class="highlight-keyword">ByVal</span> bic <span class="highlight-keyword">As</span> BuiltInCategory) _
+    <span class="highlight-keyword">As</span> FilteredElementCollector
+
+    <span class="highlight-keyword">Dim</span> collector <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> FilteredElementCollector(doc)
+    collector.OfCategory(bic)
+    collector.OfClass(type)
+    <span class="highlight-keyword">Return</span> collector
+<span class="highlight-keyword">End</span> <span class="highlight-keyword">Function</span></pre></div></span><span id="cbc_7" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">/// &lt;summary&gt;</span>
+<span class="highlight-comment">/// Retrieve all standard family instances for a given category.</span>
+<span class="highlight-comment">/// Todo: Compare this with the FamilyInstanceFilter class.</span>
+<span class="highlight-comment">/// &lt;/summary&gt;</span>
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> FilteredElementCollector GetFamilyInstances(
+  Document doc,
+  BuiltInCategory bic )
+{
+  <span class="highlight-comment">/* 2009:
+  List&lt;Element&gt; elements = new List&lt;Element&gt;();
+  Filter filterType = app.Create.Filter.NewTypeFilter( typeof( FamilyInstance ) );
+  Filter filterCategory = app.Create.Filter.NewCategoryFilter( bic );
+  Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterType, filterCategory );
+  app.ActiveDocument.get_Elements( filterAnd, elements );
+  return elements;
+  */</span>
+
+  <span class="highlight-keyword">return</span> GetElementsOfType( doc, <span class="highlight-keyword">typeof</span>( FamilyInstance ), bic );
+}</pre></div></span><span id="cbc_8" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">''' &lt;summary&gt;</span>
+<span class="highlight-comment">''' Retrieve all standard family instances for a given category.</span>
+<span class="highlight-comment">''' &lt;/summary&gt;</span>
+<span class="highlight-keyword">Shared</span> <span class="highlight-keyword">Function</span> GetFamilyInstances( _
+    <span class="highlight-keyword">ByVal</span> doc <span class="highlight-keyword">As</span> Document, _
+    <span class="highlight-keyword">ByVal</span> bic <span class="highlight-keyword">As</span> BuiltInCategory) _
+<span class="highlight-keyword">As</span> FilteredElementCollector
+
+    <span class="highlight-comment">' For Revit 2009, this was</span>
+    <span class="highlight-comment">'Dim elements As New System.Collections.Generic.List(Of Element)</span>
+    <span class="highlight-comment">'Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(FamilyInstance))</span>
+    <span class="highlight-comment">'Dim filterCategory As Filter = app.Create.Filter.NewCategoryFilter(bic)</span>
+    <span class="highlight-comment">'Dim filterCombination As Filter = app.Create.Filter.NewLogicAndFilter(filterCategory, filterType)</span>
+    <span class="highlight-comment">'Dim nRetVal As Integer = app.ActiveDocument.Elements(filterCombination, elements)</span>
+    <span class="highlight-comment">'Return elements</span>
+
+
+    <span class="highlight-keyword">Return</span> GetElementsOfType(doc, <span class="highlight-keyword">GetType</span>(FamilyInstance), bic)
+<span class="highlight-keyword">End</span> <span class="highlight-keyword">Function</span></pre></div></span><p>Compile, link and load the project as usual.</p></div><p />
+    <b>Namespace:</b> 
+   <a href="715b3539-b2e6-3295-58e6-1481eea1cf44.htm">Labs</a><br />
+    <b>Assembly:</b>
+   <span sdata="assembly">labs</span> (in labs.dll) Version: 3.0.0.1 (3.0.0.1)<h1 class="heading"><span onclick="ExpandCollapse(syntaxToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(syntaxToggle, event)" tabindex="0"><img id="syntaxToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Syntax</span></h1><div id="syntaxSection" class="section" name="collapseableSection" style=""><div id="syntaxCodeBlocks" class="code"><span codeLanguage="CSharp"><table><tr><th>C#</th></tr><tr><td><pre xml:space="preserve"><span class="keyword">public</span> <span class="keyword">class</span> <span class="identifier">Lab2_3_ListWallsAndDoors</span> : <span class="nolink">IExternalCommand</span></pre></td></tr></table></span><span codeLanguage="VisualBasicDeclaration"><table><tr><th>Visual Basic (Declaration)</th></tr><tr><td><pre xml:space="preserve"><span class="keyword">Public</span> <span class="keyword">Class</span> <span class="identifier">Lab2_3_ListWallsAndDoors</span> _
+	<span class="keyword">Implements</span> <span class="nolink">IExternalCommand</span></pre></td></tr></table></span><span codeLanguage="ManagedCPlusPlus"><table><tr><th>Visual C++</th></tr><tr><td><pre xml:space="preserve"><span class="keyword">public</span> <span class="keyword">ref class</span> <span class="identifier">Lab2_3_ListWallsAndDoors</span> : <span class="nolink">IExternalCommand</span></pre></td></tr></table></span></div></div><h1 class="heading"><span onclick="ExpandCollapse(familyToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(familyToggle, event)" tabindex="0"><img id="familyToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Inheritance Hierarchy</span></h1><div id="familySection" class="section" name="collapseableSection" style=""><a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">System<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span></span>Object</a><br />  <span class="selflink">Labs<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span></span>Lab2_3_ListWallsAndDoors</span><br /></div><h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0"><img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span></h1><div id="seeAlsoSection" class="section" name="collapseableSection" style=""><div class="seeAlsoStyle"><a href="700e3890-0e7c-1a2f-fe43-59783b306cea.htm">Lab2_3_ListWallsAndDoors Members</a></div><div class="seeAlsoStyle"><a href="715b3539-b2e6-3295-58e6-1481eea1cf44.htm">Labs Namespace</a></div></div></div><div id="footer"><div class="footerLine"><img width="100%" height="3px" src="../icons/footer.gif" title="Footer image" /></div><A NAME="feedback"></A><span id="fb" class="feedbackcss"> </span>
+ <p /><a href="Copyright (C) 2010 Jeremy Tammik, Autodesk Inc." target="_blank">Copyright (C) 2010 Jeremy Tammik, Autodesk Inc.</a></div></div></body></html>

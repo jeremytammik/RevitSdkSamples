@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>PlacementOptions.dll</Assembly>
+    <ClientId>124db059-d496-46b0-acf2-91ce3a48fb53</ClientId>
+    <FullClassName>Revit.SDK.Samples.PlacementOptions.CS.Command</FullClassName>
+    <Text>Interactive placement of family instance via options</Text>
+    <Description>This sample demonstrates how to place the family instance via options</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

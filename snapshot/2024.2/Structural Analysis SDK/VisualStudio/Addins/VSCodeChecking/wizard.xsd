@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="wizard" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <!-- Root   -->
+  <xsd:element name="wizard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="template" type="TemplateType" minOccurs ="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- Template   -->
+  <xsd:complexType name="TemplateType">
+    <xsd:sequence>
+      <xsd:element name="option" type="OptionType" minOccurs ="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+  </xsd:complexType>
+
+  <!-- Option   -->
+  <xsd:complexType name="OptionType">
+    <xsd:sequence>
+      <xsd:element name="file" type="FileType" minOccurs ="0" maxOccurs="unbounded"/>
+   </xsd:sequence>
+   <xsd:attribute name="name" type="xsd:string"/>
+ </xsd:complexType>
+
+  <!-- File   -->
+  <xsd:complexType name="FileType">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="mode" type="FileMode" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <!-- Enums   -->
+  <xsd:simpleType name="FileMode">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="include"/>
+      <xsd:enumeration value="modify"/>
+      <xsd:enumeration value="reference"/>
+      <xsd:enumeration value="unknown"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ReferencePlane.dll</Assembly>
+    <ClientId>7b9cac98-fb50-4ecd-a966-da3f0d06a144</ClientId>
+    <FullClassName>Revit.SDK.Samples.ReferencePlane.CS.Command</FullClassName>
+    <Text>ReferencePlane</Text>
+    <Description>Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

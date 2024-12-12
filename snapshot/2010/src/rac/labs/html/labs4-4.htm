@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Per-document Data</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+
+<a class="j" href="labs4-4-1.htm">next</a>
+<a class="j" href="labs4-3-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<p>In this section, we address adding per-document data, in contrast to
+the per-element data we have been discussing until now. In a nutshell,
+we suggest storing document data on an element as well, simply using a
+singleton element, i.e. one that appears only once per document.</p>
+
+<p><b>Problem:</b> We need a strategy to persistently store per-document or per-model data.</p>
+<p><b>Solution:</b> Bind (hidden or visible) shared parameters to the singleton element of 'Project Information' category.</p>
+
+<p>We implement two commands to test this concept, to <a href="#1">initialise</a> and <a href="#2">increment</a>.</p>
+
+<hr class="jumplist_intro_overline">
+<p class="jumplist_intro" >Topics in this subsection:
+</p>
+<ul>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-4-1.htm">
+Create and Bind Shared Parameters to 'Project Information' Element </a>
+
+<li class="jumplist_nonav" ><a class="LinkHTML" href="labs4-3-3.htm">
+Increment Hidden Shared Parameter Value </a>
+
+</ul>
+
+<table class=FooterTable width=100% border=0 cellspacing=0 cellpadding=4><tr valign=top>
+<td>&nbsp;</td>
+<td align=right>&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="Click here to send a comment about this topic."></span></a>&nbsp;</td>
+</tr></table>&nbsp;
+
+</body>
+</html>

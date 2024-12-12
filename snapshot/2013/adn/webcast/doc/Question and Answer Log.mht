@@ -1,0 +1,430 @@
+From: "Saved by Windows Internet Explorer 8"
+Subject: Question and Answer Log
+Date: Thu, 17 May 2012 10:11:00 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://fwd150.livemeeting.com/etc/fwd/ca1TRIpws002.rtc.local$9002/pod/78EBA29F-F5D7-7DE2-A0BF-382F289C0B99/qna-fj6pdp5lnjwts-log.html?locale=en_US
+X-MimeOLE: Produced By Microsoft MimeOLE V6.1.7601.17609
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE id=3Dqna-title>Question and Answer Log</TITLE>
+<META content=3D"text/html; charset=3Dutf-8" http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 8.00.7601.17785"></HEAD>
+<BODY>
+<H1 id=3Dqna-header>Meeting Questions and Answers:</H1>
+<H2 id=3Dqna-subject>Subject: Revit API</H2>
+<H2 id=3Dqna-startTime>Start Time:
+<SCRIPT language=3DJavaScript>
+var msTime =3D 'May 17, 2012 08:00 AM -0700';
+  var lTime =3D Date.parse(msTime);
+  var sTime =3D new Date(lTime);
+  var strTime =3D sTime.toLocaleString();
+
+  if (strTime.indexOf('GMT') < 0)
+  {
+    var tzOffset =3D sTime.getTimezoneOffset();
+    var signOffset;
+    if (tzOffset < 0)
+    {
+      signOffset =3D "+";
+      tzOffset =3D tzOffset*(-1);
+    }
+    else
+    {
+      signOffset =3D "-";
+    }
+    var tzMinOffset =3D tzOffset%60;
+    var tzHrOffset =3D (tzOffset-tzMinOffset)/60;
+    strTime +=3D ' GMT' + signOffset + tzHrOffset + ':'+ tzMinOffset;
+  }
+
+  document.write(strTime);
+</SCRIPT>
+ </H2>
+<HR>
+
+<P id=3Dask1>Jeremy Tammik<B> Asked: </B>welcome. this is a sample =
+question=20
+:-)</P>
+<HR>
+
+<P id=3Dask2>Jeremy Tammik Asked: welcome. this is a sample question =
+:-)</P>
+<P id=3Dans2>Jeremy Tammik <B>Answered: </B>here is the answer.</P>
+<HR>
+
+<P id=3Dask1>Matthew Harrison<B> Asked: </B>Are we beginning in 10 =
+minutes?</P>
+<HR>
+
+<P id=3Dask1>Jamie Dupee<B> Asked: </B>audio is very quiet</P>
+<HR>
+
+<P id=3Dask2>Jamie Dupee Asked: audio is very quiet</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>Can you hear the audio =
+now?</P>
+<HR>
+
+<P id=3Dask1>William Song<B> Asked: </B>Can you speak a little =
+louder?</P>
+<HR>
+
+<P id=3Dask1>Jorge Borrego<B> Asked: </B>Would you please speak nearen =
+the=20
+microphone</P>
+<HR>
+
+<P id=3Dask1>Jamie Dupee<B> Asked: </B>It sounds like I can hear someone =
+
+typing?</P>
+<HR>
+
+<P id=3Dchanges>Jorge Borrego<B> Changes Question To: </B>Would you =
+please speak=20
+near the microphone, I hear you far away</P>
+<HR>
+
+<P id=3Dask1>Mikako Harada<B> Asked: </B>Jeremy - could you tell Balaji =
+to speak=20
+up or come close to the microphone?</P>
+<HR>
+
+<P id=3Dchanges>Jamie Dupee<B> Changes Question To: </B>It sounds like I =
+can hear=20
+someone typing? The presenter speaking sounds very much in the =
+background</P>
+<HR>
+
+<P id=3Dask2>Jamie Dupee Asked: It sounds like I can hear someone =
+typing? The=20
+presenter speaking sounds very much in the background</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>I have passed on the =
+message to=20
+speak louder</P>
+<HR>
+
+<P id=3Dask2>William Song Asked: Can you speak a little louder?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>I have passed on the =
+message</P>
+<HR>
+
+<P id=3Ddismissed>Saikat Bhattacharya dismissed the question.</P>
+<HR>
+
+<P id=3Dask2>Jorge Borrego Asked: Would you please speak near the =
+microphone, I=20
+hear you far away</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>I have passed on the =
+message</P>
+<HR>
+
+<P id=3Dask1>S<B> Asked: </B>To hear, i have to make a phone call?</P>
+<HR>
+
+<P id=3Dchanges>S<B> Changes Question To: </B>To hear, i have to make a =
+phone=20
+call?</P>
+<HR>
+
+<P id=3Dask1>S<B> Asked: </B></P>
+<HR>
+
+<P id=3Ddismissed>Saikat Bhattacharya dismissed the question.</P>
+<HR>
+
+<P id=3Dask2>S Asked: To hear, i have to make a phone call?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>The audio should be =
+available=20
+via LiveMeeting as well - if you are not able to hear clearly, you can =
+dial in=20
+to the phone numbers too which were part of the Webcast invite</P>
+<HR>
+
+<P id=3Dask1>Jamie Dupee<B> Asked: </B>the typing is getting louder?</P>
+<HR>
+
+<P id=3Dask2>Jamie Dupee Asked: the typing is getting louder?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>sorry for the =
+incovenience, The=20
+sound seems to have stopped now. I hope this disturbance will not occur=20
+again</P>
+<HR>
+
+<P id=3Dask1>S<B> Asked: </B>the selection of doors and windows are =
+possible with=20
+the use of filer in Revet without API, so what the meaning of it?</P>
+<HR>
+
+<P id=3Dask1>S<B> Asked: </B></P>
+<HR>
+
+<P id=3Dask2>S Asked: the selection of doors and windows are possible =
+with the use=20
+of filer in Revet without API, so what the meaning of it?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>sorry for the =
+confusion, the=20
+filter is part of the API</P>
+<HR>
+
+<P id=3Ddismissed>Saikat Bhattacharya dismissed the question.</P>
+<HR>
+
+<P id=3Dask1>S<B> Asked: </B>Is it right? In revit you can filter all =
+the windows,=20
+but through revit api, you could filter a window with certain size?</P>
+<HR>
+
+<P id=3Dask1>S<B> Asked: </B></P>
+<HR>
+
+<P id=3Dask2>S Asked: Is it right? In revit you can filter all the =
+windows, but=20
+through revit api, you could filter a window with certain size?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>yes that correct, you =
+can use=20
+the FilteredElementCollector and pass in the class (FamilyInstance), =
+category=20
+(OST_Windows) and Type (the specific size) and you should be able to get =
+what=20
+you need.</P>
+<HR>
+
+<P id=3Ddismissed>Saikat Bhattacharya dismissed the question.</P>
+<HR>
+
+<P id=3Dask1>Mikako Harada<B> Asked: </B>Jeremy - I cannot hear you.</P>
+<HR>
+
+<P id=3Ddismissed>Saikat Bhattacharya dismissed the question.</P>
+<HR>
+
+<P id=3Dask1>Nabil Kherouf<B> Asked: </B>Hi How can I scan ( filter the =
+elements)=20
+a certain specific area in the document?</P>
+<HR>
+
+<P id=3Dchanges>Nabil Kherouf<B> Changes Question To: </B>Hi How can I =
+scan (=20
+filter the elements) a certain specific area in the document?</P>
+<HR>
+
+<P id=3Dask1>Nabil Kherouf<B> Asked: </B></P>
+<HR>
+
+<P id=3Dask1>William Song<B> Asked: </B>Is there an API that I can use =
+to edit a=20
+wall profile?</P>
+<HR>
+
+<P id=3Dask2>Nabil Kherouf Asked: Hi How can I scan ( filter the =
+elements) a=20
+certain specific area in the document?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>You can use the=20
+BoundingBoxIntersectsFilter to use a Bounding Box to filter elements =
+contained=20
+in it</P>
+<HR>
+
+<P id=3Dask2>William Song Asked: Is there an API that I can use to edit =
+a wall=20
+profile?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>Sorry this is not =
+possible at=20
+the moment, I would think you can delete the wall and create a new wall =
+in that=20
+location with a profile you desire to workaround this.=20
+http://thebuildingcoder.typepad.com/blog/2011/07/create-gable-wall.html =
+shows=20
+how you can have gable wall - a wall with non-regular profile</P>
+<HR>
+
+<P id=3Dask1>Saikat Bhattacharya<B> Asked: </B>Regarding the Question: =
+Is it=20
+right? In revit you can filter all the windows, but through revit api, =
+you could=20
+filter a window with certain size? &gt;&gt; Response: With the API you =
+can also=20
+filter all the windows if you want to just by using the Class and =
+Category=20
+filter (without specifying any type).</P>
+<HR>
+
+<P id=3Dask2>Saikat Bhattacharya Asked: Regarding the Question: Is it =
+right? In=20
+revit you can filter all the windows, but through revit api, you could =
+filter a=20
+window with certain size? &gt;&gt; Response: With the API you can also =
+filter=20
+all the windows if you want to just by using the Class and Category =
+filter=20
+(without specifying any type).</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>Additional inputs to =
+the=20
+previous reponse to the same question</P>
+<HR>
+
+<P id=3Dask1>William Song<B> Asked: </B>Where to download this video of =
+this=20
+webcast?</P>
+<HR>
+
+<P id=3Dask1>Chris Goemans<B> Asked: </B>With the upcoming release of =
+Visual=20
+Studio version 11, can it be used for programming with the Revit =
+API?</P>
+<HR>
+
+<P id=3Dask2>William Song Asked: Where to download this video of this =
+webcast?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>We will be making the =
+recording=20
+available via the ADN and the API training schedule (the same place =
+where you=20
+registered for this webcast from)</P>
+<HR>
+
+<P id=3Dchanges>Chris Goemans<B> Changes Question To: </B>1. With the =
+upcoming=20
+release of Visual Studio version 11, can it be used for programming with =
+the=20
+Revit API?</P>
+<HR>
+
+<P id=3Dask1>William Song<B> Asked: </B>Is there any api that can be usd =
+to access=20
+Revit DB Link?</P>
+<HR>
+
+<P id=3Dchanges>Chris Goemans<B> Changes Question To: </B>1. With the =
+upcoming=20
+release of Visual Studio version 11, can it be used for programming with =
+the=20
+Revit API? 2. Can the Revit API be used for reading and writing =
+(exporting)=20
+gbXML files?</P>
+<HR>
+
+<P id=3Dask1>alper<B> Asked: </B>Hi I just wonder, If I develop very =
+useful add-in=20
+how can I sell? Is there any way to prome it through autodesk?</P>
+<HR>
+
+<P id=3Dchanges>alper<B> Changes Question To: </B>Hi I just wonder, If I =
+develop=20
+very useful add-in how can I sell? Is there any way to prome it through=20
+autodesk?</P>
+<HR>
+
+<P id=3Dask2>alper Asked: Hi I just wonder, If I develop very useful =
+add-in how=20
+can I sell? Is there any way to prome it through autodesk?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>yes, Please look at =
+the Revit=20
+Exhange Store. Via apps.exchange.autodesk.com</P>
+<HR>
+
+<P id=3Dask1>Chris Goemans<B> Asked: </B></P>
+<HR>
+
+<P id=3Dask1>Sergey Babitsky<B> Asked: </B>Is there planning to add some =
+ability=20
+to select all values of parameter (i mean distinct values) to collect =
+them all=20
+at one query?</P>
+<HR>
+
+<P id=3Dask2>Chris Goemans Asked: 1. With the upcoming release of Visual =
+Studio=20
+version 11, can it be used for programming with the Revit API? 2. Can =
+the Revit=20
+API be used for reading and writing (exporting) gbXML files?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>1. The requirement is =
+to have=20
+.NET framework 4.0</P>
+<HR>
+
+<P id=3Dask1>Dominique Gladeau<B> Asked: </B>how do i start the meeting =
+over from=20
+the start?</P>
+<HR>
+
+<P id=3Dask1>Saikat Bhattacharya<B> Asked: </B>Regarding this question =
+-2. Can the=20
+Revit API be used for reading and writing (exporting) gbXML files? =
+Response: The=20
+API has an Export method on the document object which can help you =
+export to=20
+GBXML format from Revit using API</P>
+<HR>
+
+<P id=3Dask2>Saikat Bhattacharya Asked: Regarding this question -2. Can =
+the Revit=20
+API be used for reading and writing (exporting) gbXML files? Response: =
+The API=20
+has an Export method on the document object which can help you export to =
+GBXML=20
+format from Revit using API</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>responding to query =
+2</P>
+<HR>
+
+<P id=3Dchanges>Sergey Babitsky<B> Changes Question To: </B>Do you =
+planning to add=20
+some ability to select all values of parameter (i mean distinct values) =
+to=20
+collect them all at one query?</P>
+<HR>
+
+<P id=3Dask2>William Song Asked: Is there any api that can be usd to =
+access Revit=20
+DB Link?</P>
+<P id=3Dans2>Mikako Harada <B>Answered: </B>You are talking about DB =
+Link on the=20
+subscription? I don't think there is API for that. But DB link is =
+written in=20
+public API. So you should be able to do the similiar with the API.</P>
+<HR>
+
+<P id=3Dask1>Sergey Babitsky<B> Asked: </B></P>
+<HR>
+
+<P id=3Dask2>Sergey Babitsky Asked: Do you planning to add some ability =
+to select=20
+all values of parameter (i mean distinct values) to collect them all at =
+one=20
+query?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>the filtering =
+mechanism is based=20
+on LINQ queries and I believe this should be possible</P>
+<HR>
+
+<P id=3Dask1>William Song<B> Asked: </B>I do not understand UV =
+coordinate. Is it=20
+the same thing as XY Coordinate?</P>
+<HR>
+
+<P id=3Dask2>William Song Asked: I do not understand UV coordinate. Is =
+it the same=20
+thing as XY Coordinate?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered:=20
+</B>http://en.wikipedia.org/wiki/UV_mapping</P>
+<HR>
+
+<P id=3Dask1>William Song<B> Asked: </B>Can the tree view structure =
+(e.g. the=20
+nodes) in Project Manager be accessed through API?</P>
+<HR>
+
+<P id=3Dask2>William Song Asked: Can the tree view structure (e.g. the =
+nodes) in=20
+Project Manager be accessed through API?</P>
+<P id=3Dans2>Saikat Bhattacharya <B>Answered: </B>You can access =
+specific views=20
+(like plans, sheets etc) but API does not access the tree nodes =
+programmatically=20
+unfortunately</P>
+<H4 id=3Dqna-footer>(Print or Save this page, or copy the page contents =
+to the=20
+clipboard and paste it into a file on your computer.)</H4></BODY></HTML>

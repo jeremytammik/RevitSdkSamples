@@ -1,0 +1,164 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Prevent Save Event</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Create Ribbon Controls">
+Prevent Save Event</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs6-4.htm">next</a>
+<a class="j" href="labs6-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this lab, we create an external application to prevent the document from saving unless the user accepts to do so in a dialogue box.
+The Events API in Revit 2010 has been completely rewritten to be compliant to the .NET event standard.
+With events, now, we can do many interesting tasks.
+Events can now trap before and after various triggering actions (known as "pre" and "post" events).
+Many of the new pre-events are cancellable, offering the API application the ability to prevent the event from taking place.</p>
+
+<p> First, we subscribe to the DocumentSaving event in the external application OnStartup() method, and remove the event handler in OnShutdown() method:</p>
+
+<pre class="jtcollapse" title="C# subscribes to DocumentSaving event">
+public IExternalApplication.Result OnStartup(ControlledApplication a)
+{
+  try
+    {
+      // subscribe to the DocumentSaving event:
+      a.DocumentSaving += new EventHandler&lt;DocumentSavingEventArgs&gt;( app_eventsHandlerMethod );
+    }
+    catch ( Exception ex )
+    {
+      LabUtils.InfoMsg( ex.Message );
+      return IExternalApplication.Result.Failed;
+    }
+    return IExternalApplication.Result.Succeeded;
+}
+</pre>
+
+<pre class="jtcollapse" title="VB subscribes to DocumentSaving event">
+Public Function OnStartup(ByVal a As ControlledApplication) As IExternalApplication.Result _
+        Implements IExternalApplication.OnStartup
+
+    Try
+        AddHandler a.DocumentSaving, AddressOf app_eventsHandlerMethod
+    Catch ex As Exception
+        MsgBox(ex.Message)
+        Return IExternalApplication.Result.Failed
+    End Try
+
+    Return IExternalApplication.Result.Succeeded
+End Function
+</pre>
+
+<p> When Revit shuts down, the event need to be removed in OnShutdown() method:</p>
+
+<pre class="jtcollapse" title="C# remove the event subscription">
+public IExternalApplication.Result OnShutdown(ControlledApplication a )
+  {
+    // remove the event subscription:
+    a.DocumentSaving -= new EventHandler&lt;DocumentSavingEventArgs&gt;( app_eventsHandlerMethod );
+    return IExternalApplication.Result.Succeeded;
+}
+</pre>
+
+<pre class="jtcollapse" title="VB remove the event subscription">
+Public Function OnShutdown( ByVal a As ControlledApplication) As IExternalApplication.Result _
+    Implements IExternalApplication.OnShutdown
+
+    RemoveHandler a.DocumentSaving, AddressOf app_eventsHandlerMethod
+    Return IExternalApplication.Result.Succeeded
+
+End Function
+</pre>
+
+<p>Implement the event handler method app_eventsHandlerMethod.
+If the second argument's Cancel property is set to True, thesave action will be stopped.
+A message box is displayed to let the user make a decision to save the document or not.
+We set the choice of user to Cancel property of the Event argument accordingly.</p>
+
+<pre class="jtcollapse" title="C# prevent document from saving event handler">
+// Show a message to decide whether to save the document.
+public void app_eventsHandlerMethod(object obj, DocumentSavingEventArgs args )
+{
+  if ( args.Cancellable )
+  {
+    // Ask whether to prevent from saving.
+    WinForms.DialogResult dr = WinForms.MessageBox.Show(
+      "Saving event handler was triggered.\r\n"
+      + "Using the pre-event mechanism, we can cancel the save.\r\n"
+      + "Continue saving the document?",
+      "Document Saving Event",
+      WinForms.MessageBoxButtons.YesNo,
+      WinForms.MessageBoxIcon.Question );
+
+      args.Cancel = (dr != WinForms.DialogResult.Yes );
+  }
+}
+</pre>
+
+<pre class="jtcollapse" title="VB prevent document from saving event handler">
+' Show a message to decide whether to save the document.
+Private Sub app_eventsHandlerMethod( _
+            ByVal obj As Object, _
+            ByVal args As Autodesk.Revit.Events.DocumentSavingEventArgs)
+
+    If args.Cancellable Then
+        ' Ask whether to prevent from saving.
+        Dim dr As WinForms.DialogResult = WinForms.MessageBox.Show( _
+            "Saving event handler was triggered." + vbCrLf _
+            + "Using the pre-event mechanism, we can cancel the save." + vbCrLf _
+            + "Continue saving the document?", _
+            "Document Saving Event", _
+            WinForms.MessageBoxButtons.YesNo, _
+            WinForms.MessageBoxIcon.Question)
+
+            args.Cancel = (dr <> WinForms.DialogResult.Yes)
+     End If
+End Sub
+</pre>
+
+<p>Compile and build the application.
+The loading method is the same as Hello World External Application.
+Restart Revit to see the results.
+Open a document from disk, click the save icon or menu item, and note that this will display the dialog as shown below for user input.</p>
+
+<img src="img/labs6-3-01.jpg" alt="Waiting for users' inputs"/>
+
+<p>Clicking "Yes" in the dialog box results in the document being saved, and clicking "No" prevent this.</p>
+
+<a class="j" href="labs6-4.htm">next</a>
+<a class="j" href="labs6-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

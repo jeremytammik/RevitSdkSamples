@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--- Pipe size and roughness units of this document must match the corresponding units in the document. -->
+<RoutingPreferenceBuilder pipeSizeUnits="DUT_FRACTIONAL_INCHES" pipeRoughnessUnits="DUT_DECIMAL_INCHES">
+   
+  <!--- Declare all families to load. If a family already exists in the document, it will be ignored. --> 
+  <Family filename="Cross - Generic.rfa" />
+  <Family filename="Elbow - Generic.rfa" />
+  <Family filename="Cap - Generic.rfa" />
+  <Family filename="Bend - PVC - Sch 40 - DWV.rfa" />
+  <Family filename="Coupling - PVC - Sch 40 - DWV.rfa" />
+  <Family filename="Wye 45 Deg Double - PVC - Sch 40 - DWV.rfa" />
+  <Family filename="Plug - PVC - Sch 40 - DWV.rfa" />
+  <Family filename="Tee Sanitary - PVC - Sch 40 - DWV.rfa" />
+  <Family filename="Coupling - Generic.rfa" />
+  <Family filename="Tee - Generic.rfa" />
+  <Family filename="Transition - Generic.rfa" />
+  <Family filename="Reducer - PVC - Sch 40 - DWV.rfa" />
+  <Family filename="Cross - Welded - Generic.rfa" />
+  <Family filename="Elbow - Welded - Generic.rfa" />
+  <Family filename="Tee - Welded - Generic.rfa" />
+  <Family filename="Transition - Welded - Generic.rfa"/>
+  <Family filename="Wye True - Flanged - GI - Class 250.rfa"/>
+  <Family filename="Tee Round Base - Flanged - GI - Class 250.rfa"/>
+  <Family filename="Coupling - PVC - Sch 40.rfa"/>
+  <Family filename="Flange - Weld Neck - Steel - Class 150.rfa"/>
+
+  <!--- Declare all new Pipe Types to create. If a pipe type already exists in the document, it will be ignored. -->
+  <PipeType name="AnotherPipeType" />
+   
+  <!--- Declare all new Pipe Schedule Types to create. If a pipe schedule type already exists in the document, it will be ignored. -->
+  <PipeScheduleType name="Z"/>
+
+  <!--- Declare all new Pipe Segments to create using materials existing in the document and pipe schedule types that were declared above or already exist in the document. If a Pipe Segment type already exists in the document, it will be ignored. -->
+  <PipeSegment pipeScheduleTypeName="Z" materialName="Carbon Steel" roughness="0.0018">
+    <MEPSize innerDiameter="2.067" nominalDiameter="2" outerDiameter="2.375" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="2.469" nominalDiameter="2.5" outerDiameter="2.875" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="3.068" nominalDiameter="3" outerDiameter="3.5" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="3.548" nominalDiameter="3.5" outerDiameter="4" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="4.026" nominalDiameter="4" outerDiameter="4.5" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="5.047" nominalDiameter="5" outerDiameter="5.563" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="6.065" nominalDiameter="6" outerDiameter="6.625" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="7.981" nominalDiameter="8" outerDiameter="8.625" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="10.02" nominalDiameter="10" outerDiameter="10.75" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="11.938" nominalDiameter="12" outerDiameter="12.75" usedInSizeLists="true" usedInSizing="true" />
+    <MEPSize innerDiameter="13.126" nominalDiameter="14" outerDiameter="14" usedInSizeLists="true" usedInSizing="true" />
+  </PipeSegment>
+
+   <!--- Declare all new routing preferences rules to create using fittings, segments, and pipeTypes declared above or already included in the document. -->
+   <RoutingPreferenceManager pipeTypeName="AnotherPipeType" preferredJunctionType="Tee">
+    <RoutingPreferenceRule description="" ruleGroup="Elbows" minimumSize="All" partName="Elbow - Welded - Generic Standard" />
+     <RoutingPreferenceRule description="" ruleGroup="Segments" minimumSize="0.5" maximumSize="12" partName="Carbon Steel - Z" />
+  </RoutingPreferenceManager>
+</RoutingPreferenceBuilder>

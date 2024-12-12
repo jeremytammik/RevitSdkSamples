@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+       
+       Project Type Guids - Must include {A860303F-1F3F-4691-B57E-529FC101A107};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC} for a C# VSTA project.
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       ProductVersion - The version of Visual Studio.
+       SchemaVersion - The project file schema version.
+       OutputType - Must be "Library" for VSTA.
+       AppDesignerFolder - The folder for application properties.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+       TargetFrameworkVersion - The version of the .NET Framework this project targets.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{A860303F-1F3F-4691-B57E-529FC101A107};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">RevitVSTA</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rooms</RootNamespace>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{BD8C08EF-CDCD-4D0A-AAA5-903B62FA1BF3}</ProjectGuid>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "RevitVSTA" configuration is
+       selected.
+
+       DebugType - If full enables a debugger to be attached to a running program.
+                   If pdbonly allows source code debugging when the program is started in the debugger but will only 
+                   display assembler when the running program is attached to the debugger.
+                   If none debugging is disabled.
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'RevitVSTA|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>True</Optimize>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>..\..\Addin\</OutputPath>
+    <AssemblyName>Rooms</AssemblyName>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AddIn">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+  -->
+  <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomInfoForm.resx">
+      <DependentUpon>RoomInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RoomInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomInfoForm.designer.cs">
+      <DependentUpon>RoomInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomsData.cs" />
+    <Compile Include="ThisApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThisApplication.designer.cs">
+      <DependentUpon>ThisApplication.cs</DependentUpon>
+    </Compile>
+    <None Include="Xml1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Window1.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Window2.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A860303F-1F3F-4691-B57E-529FC101A107}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{C1B21C64-9E6F-4923-A89D-9F958503C1CE}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="Architecture2010" GeneratedCodeNamespace="Rooms">
+          <HostItem Name="ThisApplication" Code="ThisApplication.cs" CanonicalName="ThisApplication" DisplayName="ThisApplication" Blueprint="ThisApplication.Designer.xml" GeneratedCode="ThisApplication.designer.cs" />
+        </Host>
+        <ProjectClient>
+          <HostIdentifier>MEP2011</HostIdentifier>
+          <InProcHost>{f2d1070d-feff-4610-9403-9476ff28253d}</InProcHost>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

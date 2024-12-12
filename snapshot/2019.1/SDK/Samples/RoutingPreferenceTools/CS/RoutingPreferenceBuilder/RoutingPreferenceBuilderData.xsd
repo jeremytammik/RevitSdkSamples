@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="RoutingPreferenceBuilder">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Family">
+               <xs:complexType>
+                  <xs:attribute name="filename" type="xs:string" use="required" />
+               </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="PipeType">
+               <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+               </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="PipeScheduleType">
+               <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+               </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="PipeSegment">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element minOccurs="1" maxOccurs="unbounded" name="MEPSize">
+                        <xs:complexType>
+                           <xs:attribute name="innerDiameter" type="xs:decimal" use="required" />
+                           <xs:attribute name="nominalDiameter" type="xs:decimal" use="required" />
+                           <xs:attribute name="outerDiameter" type="xs:decimal" use="required" />
+                           <xs:attribute name="usedInSizeLists" type="xs:boolean" use="required" />
+                           <xs:attribute name="usedInSizing" type="xs:boolean" use="required" />
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="pipeScheduleTypeName" type="xs:string" use="required" />
+                  <xs:attribute name="materialName" type="xs:string" use="required" />
+                  <xs:attribute name="roughness" type="xs:decimal" use="required" />
+               </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="RoutingPreferenceManager">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element minOccurs="1" maxOccurs="unbounded" name="RoutingPreferenceRule">
+                        <xs:complexType>
+                           <xs:attribute name="description" type="xs:string" use="required" />
+                           <xs:attribute name="ruleGroup" type="xs:string" use="required" />
+                           <xs:attribute name="minimumSize" type="xs:string" use="required" />
+                           <xs:attribute name="maximumSize" type="xs:decimal" use="optional" />
+                           <xs:attribute name="partName" type="xs:string" use="required" />
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="pipeTypeName" type="xs:string" use="required" />
+                  <xs:attribute name="preferredJunctionType" type="xs:string" use="required" />
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+         <xs:attribute name="pipeSizeUnits" type="xs:string" use="required" />
+         <xs:attribute name="pipeRoughnessUnits" type="xs:string" use="required" />
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

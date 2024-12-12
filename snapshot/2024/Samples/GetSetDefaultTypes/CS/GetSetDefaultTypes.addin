@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>GetSetDefaultTypes</Name>
+    <Assembly>GetSetDefaultTypes.dll</Assembly>
+    <AddInId>1869A8A1-A239-41CF-9A79-96234D92DEF4</AddInId>
+    <FullClassName>Revit.SDK.Samples.GetSetDefaultTypes.CS.ThisApplication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

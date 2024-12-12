@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Create MEP Placeholders</Text>
+    <Description>Create MEP placeholder elements</Description>
+    <Assembly>C:\a\lib\revit\2012\adn\webcast\src\MepPlaceholders\MepPlaceholders\bin\Debug\MepPlaceholders.dll</Assembly>
+    <FullClassName>MepPlaceholders.CreatePlaceholders</FullClassName>
+    <ClientId>54b7cf02-64bd-4af5-a701-030a81e6c0d5</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInStructure</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>  </AddIn>
+  <AddIn Type="Command">
+    <Text>Convert MEP Placeholders</Text>
+    <Description>Convert MEP placeholder elements</Description>
+    <Assembly>C:\a\lib\revit\2012\adn\webcast\src\MepPlaceholders\MepPlaceholders\bin\Debug\MepPlaceholders.dll</Assembly>
+    <FullClassName>MepPlaceholders.ConvertPlaceholders</FullClassName>
+    <ClientId>2c834e62-3d55-4aae-95d9-5646a74dcb26</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInStructure</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+</RevitAddIns>

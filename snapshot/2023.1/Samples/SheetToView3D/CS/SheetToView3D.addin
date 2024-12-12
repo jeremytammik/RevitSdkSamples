@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>SheetToView3D.dll</Assembly>
+    <ClientId>7CC405A0-F381-44E7-889B-B99EA7B5EB7F</ClientId>
+    <FullClassName>Revit.SDK.Samples.SheetToView3D.CS.Command</FullClassName>
+    <Text>Sheet To 3D View</Text>
+    <Description>Generate a perspective View3D with its camera at a click on a viewport on a sheet</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

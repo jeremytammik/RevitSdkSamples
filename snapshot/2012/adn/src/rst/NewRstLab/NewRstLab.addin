@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\NewRstLab\bin\Debug\NewRstLab.dll</Assembly>
+    <ClientId>21168E82-E803-4201-A4AF-906E726073B4</ClientId>
+    <FullClassName>NewRstLab.RstLab1_1_LoadCase</FullClassName>
+    <Text>RstLab1_1_LoadCase</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\NewRstLab\bin\Debug\NewRstLab.dll</Assembly>
+    <ClientId>FC6B5857-0430-445f-A086-6FD0DCA39622</ClientId>
+    <FullClassName>NewRstLab.RstLab1_2_LoadsOperation</FullClassName>
+    <Text>RstLab1_2_LoadsOperation</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\NewRstLab\bin\Debug\NewRstLab.dll</Assembly>
+    <ClientId>A3448C8F-3438-4e13-86B3-76118A3CFF55</ClientId>
+    <FullClassName>NewRstLab.RstLab2_1_ListStructuralColumns</FullClassName>
+    <Text>RstLab2_1_ListStructuralColumns</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\NewRstLab\bin\Debug\NewRstLab.dll</Assembly>
+    <ClientId>DF4F501E-A3CD-4677-8AE8-EA497794AF2E</ClientId>
+    <FullClassName>NewRstLab.RstLab2_2_ListStructuralWalls</FullClassName>
+    <Text>RstLab2_2_ListStructuralWalls</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\NewRstLab\bin\Debug\NewRstLab.dll</Assembly>
+    <ClientId>A7487560-8ED1-4ecb-BE7F-7DEAB4E9F007</ClientId>
+    <FullClassName>NewRstLab.RstLab2_3_ListBoundaryConditions</FullClassName>
+    <Text>RstLab2_3_ListBoundaryConditions</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\NewRstLab\bin\Debug\NewRstLab.dll</Assembly>
+    <ClientId>0AB40561-2990-4c03-BB86-45307114F970</ClientId>
+    <FullClassName>NewRstLab.RstLab3_1_GetAnalyticalModel</FullClassName>
+    <Text>RstLab3_1_GetAnalyticalModel</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\NewRstLab\bin\Debug\NewRstLab.dll</Assembly>
+    <ClientId>3A8BD537-6122-436d-84AE-0F5D36E20D45</ClientId>
+    <FullClassName>NewRstLab.RstLab3_2_GetBeamRigidLink</FullClassName>
+    <Text>RstLab3_2_GetBeamRigidLink</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\a\lib\revit\2012\adn\src\rst\NewRstLab\bin\Debug\NewRstLab.dll</Assembly>
+    <ClientId>70A7D65A-69A6-4134-B747-3BC8CFF12E48</ClientId>
+    <FullClassName>NewRstLab.RstLab3_3_EditAnalyticalModel</FullClassName>
+    <Text>RstLab3_3_EditAnalyticalModel</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <VisibilityMode>NotVisibleInArchitecture</VisibilityMode>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleInMEP</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+</RevitAddIns>

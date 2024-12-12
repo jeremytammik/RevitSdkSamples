@@ -1,0 +1,104 @@
+<labs>
+  <lab1-1>
+    <para>Say hello some more!</para>
+
+    <list type="bullet">
+      <item>
+        <description>Revit</description>
+      </item>
+      <item>
+        <description>The Revit SDK</description>
+      </item>
+      <item>
+        <description>Visual Studio</description>
+      </item>
+      <item>
+        <description>Revit API Introduction Labs</description>
+      </item>
+    </list>
+
+    <para>
+      The Revit API Introduction Labs are provided in two versions,
+      as exercises for completing by filling in the missing portions yourself
+      using the information from the SDK documentation and the lab instructions,
+      and a solved version which you can use to peek into if you run into any
+      difficulties.
+    </para>
+
+    <para>
+      In this lab, we explore the development environment, and how to
+      create a skeleton Revit add-in from scratch. We explore the transaction mode
+      and regeneration option attributes, and the add-in manifest information defining
+      the link between Revit and the external command. Also, how the external command
+      can be hooked up with a custom user interface by an external application.
+    </para>
+
+    <para>
+      Before working on this lab, ensure that you have located and had a first
+      look at the following important Revit SDK documentation, which contains all
+      the information required:
+    </para>
+
+    <list type="bullet">
+      <item>
+        <description>Getting Started with the Revit API.doc</description>
+      </item>
+      <item>
+        <description>Revit Platform API Changes and Additions.doc</description>
+      </item>
+      <item>
+        <description>Revit 2011 API Developer Guide.pdf</description>
+      </item>
+      <item>
+        <description>RevitAPI.chm</description>
+      </item>
+    </list>
+
+    <para>
+      To complete this lab, look at the developer guide in the Revit SDK, in the file
+      Revit 2011 API Developer Guide.pdf, and work through the walkthroughs described in
+      Chapter 2, especially 2.2 Hello World and 2.3 Ribbon Panel.
+    </para>
+
+    <para>They show how to:</para>
+
+    <list type="bullet">
+      <item>
+        <description>Set up a new add-in project.</description>
+      </item>
+      <item>
+        <description>Add the Revit API references.</description>
+      </item>
+      <item>
+        <description>Edit the add-in source code.</description>
+      </item>
+      <item>
+        <description>Create an add-in manifest.</description>
+      </item>
+      <item>
+        <description>Load and debug the add-in.</description>
+      </item>
+      <item>
+        <description>Create a custom ribbon panel.</description>
+      </item>
+    </list>
+
+    <para>
+      You can work through the walkthroughs from scatch as described
+      in the developer guisde, or complete the missing code in the skeleton
+      file provided by the Revit API introduction lab exercises.
+    </para>
+
+    <para>
+      The client id for the add-in manifest can be generated using the
+      Visual Studio GuidGen tool or the Guidizer provided by ADN.
+    </para>
+
+    <para>
+      This lab can also be used to explore the TaskDialog class provided
+      for Revit-style message boxes.
+      For further examples of using the Revit API TaskDialog features, please
+      also refer to the HelloRevit SDK sample.
+    </para>
+  </lab1-1>
+</labs>

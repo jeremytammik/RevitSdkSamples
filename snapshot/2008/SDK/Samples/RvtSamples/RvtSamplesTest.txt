@@ -1,0 +1,27 @@
+
+# comment line
+  # comment line with spaces
+SampleOneMenuEntry # comment at end of line
+SampleOneDescription
+SampleOneAssembly
+SampleOneClassname
+
+SampleTwoMenuEntry
+SampleTwoDescription
+SampleTwoAssembly
+SampleTwoClassname
+
+SampleThreeMenuEntry
+SampleThreeDescription
+SampleThreeAssembly
+SampleThreeClassname
+
+/RvtSamples/By Version/2008.0/TestWallThickness
+Test Wall Thickness
+C:/a/lib/revit/2008/sdk/Samples/TestWallThickness/VB.NET/bin/Debug/TestWallThickness.dll
+Revit.SDK.Samples.TestWallThickness.VB.NET.Command
+
+/RvtSamples/By Version/2008.0/TestFloorThickness
+Test Floor Thickness
+C:/a/lib/revit/2008/sdk/Samples/TestFloorThickness/VB.NET/bin/Debug/TestFloorThickness.dll
+Revit.SDK.Samples.TestFloorThickness.VB.NET.Command

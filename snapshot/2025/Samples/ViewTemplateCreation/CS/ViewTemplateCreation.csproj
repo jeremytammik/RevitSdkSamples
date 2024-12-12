@@ -1,0 +1,11 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <RootNamespace>Revit.SDK.Samples.ViewTemplateCreation.CS</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.props" />
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

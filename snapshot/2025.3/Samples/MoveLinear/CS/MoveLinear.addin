@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>MoveLinear.dll</Assembly>
+    <ClientId>597af169-06b1-4420-9388-14e0898ed26f</ClientId>
+    <FullClassName>Revit.SDK.Samples.MoveLinear.CS.Command</FullClassName>
+    <Text>Move Linear</Text>
+    <Description>Move a linear element, such as a structural beam.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

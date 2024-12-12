@@ -1,0 +1,432 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Listing Parameters for an Element</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs4-2.htm">next</a>
+<a class="j" href="labs3-5.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we explore the parameters attached to every Revit element.</p>
+
+<p>Add a new module <code>Labs4</code> to the project and the first command class
+<code>Lab4_1_ParametersForSelectedObjects</code> for this lab.
+Since we will be exporting parameter values to Excel later on in this lab,
+the C# code includes a statement to use that namespace as well.
+For the moment we just loop through all elements in the current selection set:</p>
+
+<pre title="C# Lab4_1_ParametersForSelectedObjects command skeleton" class="jtcollapse">
+using System;
+using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using WinForms = System.Windows.Forms;
+using System.Reflection;
+using Autodesk.Revit;
+using Autodesk.Revit.Elements;
+using Autodesk.Revit.Parameters;
+using X = Microsoft.Office.Interop.Excel;
+
+namespace Labs
+{
+  /// &lt;summary&gt;
+  /// List all parameters for selected elements.
+  /// &lt;/summary&gt;
+  public class Lab4_1_ParametersForSelectedObjects : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Document doc = commandData.Application.ActiveDocument;
+      // Loop all elements in the selection
+      foreach( Element elem in commandData.Application.ActiveDocument.Selection.Elements )
+      {
+        //
+        // todo:
+        //
+        // Loop through and list all UI-visible element parameters
+        //
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+}
+</pre>
+
+<pre title="VB Lab4_1_ParametersForSelectedObjects command skeleton" class="jtcollapse">
+Public Class Lab4_1_ParametersForSelectedObjects
+    Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+        
+        Dim doc As Document = commandData.Application.ActiveDocument
+        ' Loop all elements in the selection
+        Dim elem As Revit.Element
+        For Each elem In commandData.Application.ActiveDocument.Selection.Elements
+
+            '
+            ' todo:
+            '
+            ' Loop through and list all UI-visible element parameters
+            '
+        Next
+
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+</pre>
+
+<p>Compile and link the project and update the Revit.ini file accordingly.
+Look at the elements and their properties in the debugger,
+especially the <code>Parameters</code> property.</p>
+
+<p>Add the following code within the loop to report all
+UI-visible parameters for each element:</p>
+
+<pre title="C# List all element parameters" class="jtcollapse">
+    Element elem2 = elem; // enable us to assign to elem2 in case analyseTypeParameters == true
+    string s = string.Empty;
+
+    // set this variable to false to analyse the element's own parameters,
+    // i.e. instance parameters for a family instance, and set it to true
+    // to analyse a family instance's type parameters:
+    bool analyseTypeParameters = false;
+    if( analyseTypeParameters )
+    {
+      if( elem2 is FamilyInstance )
+      {
+        FamilyInstance inst = elem2 as FamilyInstance;
+        if( null != inst.Symbol )
+        {
+          elem2 = inst.Symbol;
+          s = " type";
+        }
+      }
+      else if( elem2 is Wall )
+      {
+        Wall wall = elem2 as Wall;
+        if( null != wall.WallType )
+        {
+          elem2 = wall.WallType;
+          s = " type";
+        }
+      }
+    }
+
+    // Loop through and list all UI-visible element parameters
+    string sMsg = elem2.Parameters.Size.ToString() + s
+      + " parameters for the selected " + elem2.Category.Name
+      + " (" + elem2.Id.Value.ToString() + "):\r\n";
+    foreach( Parameter param in elem2.Parameters )
+    {
+      string name = param.Definition.Name;
+      string type = param.StorageType.ToString();
+      string value = LabUtils.GetParameterValue2( param, doc );
+      sMsg += "\r\n  Name=" + name + "; Type=" + type + "; Value=" + value;
+    }
+    LabUtils.InfoMsg( sMsg );
+</pre>
+
+<pre title="VB List all element parameters" class="jtcollapse">
+    ' Loop through and list all UI-visible element parameters
+    Dim sMsg As String = "Parameters for the selected " & elem.Category.Name & " (" & elem.Id.Value.ToString & ") are:" & vbCrLf
+    Dim param As Parameter
+    For Each param In elem.Parameters
+        Dim paramName As String = param.Definition.Name
+        Dim paramType As String = param.StorageType.ToString
+        Dim paramValue As String = LabUtils.GetParameterValue2(param, doc)
+        sMsg += vbCrLf & "  Name=" & paramName & "; Type=" & paramType & "; Value=" & paramValue
+    Next
+    MsgBox(sMsg)
+</pre>
+
+<p>The code makes use of a couple of utility functions which we
+need to add to the <code>LabUtils</code> class: the <code>GetParameterValue()</code>
+method retrieves the input parameter's value as string.
+<code>GetParameterValue2()</code> adds the name of the element if the
+for a <code>StorageType.ElementId</code> type parameter.</p>
+
+<pre title="C# Parameter utilities" class="jtcollapse">
+     #region Helpers for parameters
+    /// &lt;summary&gt;
+    /// Helper to return parameter value as string.
+    /// One can also use param.AsValueString() to
+    /// get the user interface representation.
+    /// &lt;/summary&gt;
+    public static string GetParameterValue( Parameter param )
+    {
+      string s;
+      switch( param.StorageType )
+      {
+        case StorageType.Double:
+          //
+          // the internal database unit for all lengths is feet.
+          // for instance, if a given room perimeter is returned as
+          // 102.36 as a double and the display unit is millimeters,
+          // then the length will be displayed as
+          // peri = 102.36220472440
+          // peri * 12 *25.4
+          // 31200 mm
+          //
+          //s = param.AsValueString(); // value seen by user, in display units
+          s = RealString( param.AsDouble() ); // database value, internal units, e.g. feet
+          break;
+        case StorageType.Integer:
+          s = param.AsInteger().ToString();
+          break;
+        case StorageType.String:
+          s = param.AsString();
+          break;
+        case StorageType.ElementId:
+          s = param.AsElementId().Value.ToString();
+          break;
+        case StorageType.None:
+          s = "?NONE?";
+          break;
+        default:
+          s = "?ELSE?";
+          break;
+      }
+      return s;
+    }
+
+    /// &lt;summary&gt;
+    /// Helper to return parameter value as string, with additional
+    /// support for element id to display the element type referred to.
+    /// &lt;/summary&gt;
+    public static string GetParameterValue2( Parameter param, Document doc )
+    {
+      string s;
+      if( StorageType.ElementId == param.StorageType && null != doc )
+      {
+        ElementId id = param.AsElementId();
+        int i = id.Value;
+        s = ( 0 &lt;= i )
+          ? string.Format( "{0}: {1}", i, doc.get_Element( ref id ).Name )
+          : i.ToString();
+      }
+      else
+      {
+        s = GetParameterValue( param );
+      }
+      return s;
+    }
+
+    #endregion // Helpers for parameters
+</pre>
+
+<pre title="VB Parameter utilities" class="jtcollapse">
+  #Region "Helper for Parameters"
+
+        ''' &lt;summary&gt;
+        ''' Helper to return parameter value as string.
+        ''' One can also use param.AsValueString() to
+        ''' get the user interface representation.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetParameterValue(ByVal param As Parameter) As String
+
+            Dim str As String
+            Select Case param.StorageType
+                Case StorageType.Double
+                    str = param.AsDouble.ToString
+                Case StorageType.Integer
+                    str = param.AsInteger.ToString
+                Case StorageType.String
+                    str = param.AsString
+                Case StorageType.ElementId
+                    str = param.AsElementId.Value.ToString
+                Case StorageType.None
+                    str = "?NONE?"
+                Case Else
+                    str = "?ELSE?"
+            End Select
+            Return str
+
+        End Function
+
+        ''' &lt;summary&gt;
+        ''' Helper to return parameter value as string, with additional
+        ''' support for element id to display the element type referred to.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetParameterValue2( _
+            ByVal param As Parameter, _
+            ByVal doc As Document) _
+        As String
+            Dim str As String
+            If StorageType.ElementId = param.StorageType Then
+                Dim id As ElementId = param.AsElementId
+                Dim i As Integer = id.Value
+                If (0 &lt;= i) Then : str = String.Format("{0}: {1}", i, doc.Element(id).Name)
+                Else : str = i.ToString
+                End If
+            Else
+                str = GetParameterValue(param)
+            End If
+            Return str
+        End Function
+
+        ''' &lt;summary&gt;
+        ''' Helper to get *specific* parameter by name.
+        ''' No longer required in 2009, because the element provides
+        ''' direct look-up access by name as well in Revit 2009.
+        ''' &lt;/summary&gt;
+        Shared Function GetElemParam_2008(ByVal elem As Revit.Element, ByVal name As String) As Parameter
+
+            Dim parameters As Autodesk.Revit.ParameterSet = elem.Parameters
+            Dim parameter As Autodesk.Revit.Parameter
+            For Each parameter In parameters
+                If (parameter.Definition.Name = name) Then
+                    Return parameter
+                End If
+            Next
+
+            Return Nothing
+
+        End Function
+
+#End Region
+</pre>
+
+<p>At this point you can compile and link the project again
+and see the list of element properties reported for selected elements.</p>
+
+<p>There are several different methods to access a <em>specific</em> parameter:
+by localised name, by built-in parameter enum, by definition or by GUID.
+Add the following code and note the embedded comments:</p>
+
+<pre title="C# Accessing specific parameters" class="jtcollapse">
+    // If we know WHICH param we are looking for, then:
+    // A) If a standard parameter, we can get it via BuiltInParam signature of Parameter method:
+    Parameter parBuiltIn;
+    try
+    {
+      parBuiltIn = elem.get_Parameter( BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM );
+      if( null == parBuiltIn )
+      {
+        LabUtils.InfoMsg( "FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element." );
+      }
+      else
+      {
+        string parBuiltInName = parBuiltIn.Definition.Name;
+        string parBuiltInType = parBuiltIn.StorageType.ToString();
+        string parBuiltInValue = LabUtils.GetParameterValue2( parBuiltIn, doc );
+        LabUtils.InfoMsg( "FAMILY_BASE_LEVEL_OFFSET_PARAM: Name=" + parBuiltInName
+          + "; Type=" + parBuiltInType + "; Value=" + parBuiltInValue );
+      }
+    }
+    catch( Exception )
+    {
+      LabUtils.InfoMsg( "FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element." );
+    }
+
+    // B) For a Shared parameter, we can get it via "GUID" signature of Parameter method
+    // this will be shown later in Labs 4 ...
+
+    // C) or we can get the parameter by name, since Revit 2009 ... previously we had to
+    // use a GetParameterValue2 utility to loop over all parameters and search for the name
+    // (this works for either standard or shared!):
+    const string paramName = "Base Offset";
+    Parameter parByName = elem.get_Parameter( paramName );
+    if( null == parByName )
+    {
+      LabUtils.InfoMsg( paramName + " is NOT available for this element." );
+    }
+    else
+    {
+      string parByNameName = parByName.Definition.Name;
+      string parByNameType = parByName.StorageType.ToString();
+      string parByNameValue = LabUtils.GetParameterValue2( parByName, doc );
+      LabUtils.InfoMsg( paramName + ": Name=" + parByNameName
+        + "; Type=" + parByNameType + "; Value=" + parByNameValue );
+    }
+</pre>
+
+<pre title="VB Accessing specific parameters" class="jtcollapse">
+    ' If we know WHICH param we are looking for, then:
+    'A) If a standard parameter, we can get it via BuiltInParam signature of Parameter method:
+    Dim parInBuilt As Parameter
+    Try
+        parInBuilt = elem.Parameter(BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM)
+        If Not parInBuilt Is Nothing Then
+            Dim parInBuiltName As String = parInBuilt.Definition.Name
+            Dim parInBuiltType As String = parInBuilt.StorageType.ToString
+            Dim parInBuiltValue As String = LabUtils.GetParameterValue2(parInBuilt, doc)
+            MsgBox("FAMILY_BASE_LEVEL_OFFSET_PARAM: Name=" & parInBuiltName & "; Type=" & parInBuiltType & "; Value=" & parInBuiltValue)
+        Else
+            MsgBox("FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element")
+        End If
+    Catch
+        MsgBox("FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element")
+    End Try
+
+    'B) For a Shared parameter, we can get it via "GUID" signature of Parameter method:
+    ' this will be shown later in Labs 4 ...
+
+    'C) or we can use GetElemParam utility to get it by hard coded-name (this works for either standard or shared!):
+    Const csParamToFind As String = "Base Offset"
+    Dim parByName As Parameter = elem.Parameter(csParamToFind)
+    If parByName Is Nothing Then
+        MsgBox(csParamToFind & " is NOT available for this element")
+    Else
+        Dim parByNameName As String = parByName.Definition.Name
+        Dim parByNameType As String = parByName.StorageType.ToString
+        Dim parByNameValue As String = LabUtils.GetParameterValue2(parByName, doc)
+        MsgBox(csParamToFind & ": Name=" & parByNameName & "; Type=" & parByNameType & "; Value=" & parByNameValue)
+    End If
+</pre>
+
+<p>Compile the code, start Revit, select various elements and run the command.
+Note that built-in parameters are available for some, but not all categories.
+For instance, try Walls, Columns and Furniture.
+The <code>BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM</code> and 'Base Offset'
+parameters used in the sample are available on column elements.</p>
+
+<p>Note that more parameters may be available on any given element than those
+reported by the element's <code>Parameters</code> property ... use the
+<code>BuiltInParamsChecker</code> to discover these as well.</p>
+
+<a class="j" href="labs4-2.htm">next</a>
+<a class="j" href="labs3-5.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

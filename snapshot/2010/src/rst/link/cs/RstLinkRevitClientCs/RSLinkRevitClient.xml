@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RstLinkRevitClient</name>
+    </assembly>
+    <members>
+        <member name="T:RstLinkRevitClient.RSLinkImport">
+            <summary>
+            Import incremental changes from the RstLink intermediate XML file
+            </summary>
+        </member>
+        <member name="M:RstLinkRevitClient.RSLinkImport.GetFamilySymbol_2008(Autodesk.Revit.Document,System.String,System.String)">
+            <summary>
+            Return a FamilySymbol for a given category name and type.
+            (in theory, we can have non-unique solution, i.e. the same 
+            type name for more than one family from this category!)
+            </summary>
+        </member>
+        <member name="M:RstLinkRevitClient.RSLinkImport.GetFamilySymbol(Autodesk.Revit.Application,Autodesk.Revit.BuiltInCategory,System.String)">
+            <summary>
+            Helper to get specified type for a given category.
+            Return a FamilySymbol for a given category name and type.
+            (in theory, we can have non-unique solution, i.e. the same 
+            type name for more than one family from this category!)
+            </summary>
+        </member>
+        <member name="T:RstLinkRevitClient.RSLinkExport">
+            <summary>
+            Export all structural elements to the RstLink intermediate file.
+            Currently, only columns and framing is implemented - skeleton code is in place for others.
+            </summary>
+        </member>
+    </members>
+</doc>

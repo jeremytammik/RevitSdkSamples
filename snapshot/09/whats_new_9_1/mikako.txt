@@ -1,0 +1,135 @@
+From: Mikako Harada
+Sent: Wednesday, October 04, 2006 04:42
+To: AC DevTech BSD
+Cc: Jim Quanci
+Subject: FW: What's New in Autodesk Revit Building 9.1
+
+Attachments: What's New in Revit Building 9.1_Training Guide_FINAL_JULY_2006.pdf; Whats_New_in_Revit_Building_9_9.1_FINAL.ppt
+
+
+FYI - 
+
+though this is for product side, may help us updating the first few slides about Revit presentation.  
+
+- Mikako  
+
+
+
+
+--------------------------------------------------------------------------------
+From: Satoshi Naito 
+Sent: Wednesday, October 04, 2006 10:56 AM
+To: Mikako Harada
+Subject: FW: What's New in Autodesk Revit Building 9.1
+
+
+&#21407;&#30000;&#12373;&#12435;
+
+Revit9.1&#12398;&#24773;&#22577;&#12391;&#12377;&#12290;&#12290;&#12290;
+
+&#20869;&#34276;
+
+
+
+--------------------------------------------------------------------------------
+From: David Mills 
+Sent: Tuesday, October 03, 2006 9:39 PM
+To: Jun Nagase; Satoshi Naito; Takao Kojima
+Subject: RE: What's New in Autodesk Revit Building 9.1
+
+
+Hi Jun,
+
+ 
+
+It was good to see you while you were here in Waltham.  Thanks for making the trip!
+
+ 
+
+Here’s a digital copy of the What’s New in Revit Building 9.1.  It’s OK to forward to Autodesk and Reseller employees.  Just keep in mind that these training documents can not be distributed to customers.
+
+ 
+
+I’ve also attached a copy of the What’s New in Revit Building 9 & 9.1 PPT.  Feel free to update the presentation to fit the Japanese market.  In fact, that would be awesome - can you send me a copy when it’s finished?  
+
+ 
+
+Also, did I send this to the right individuals?  
+
+ 
+
+Dave Mills
+
+ 
+
+o - 781.839.5877
+
+m - 301.237.8967
+
+ 
+
+
+--------------------------------------------------------------------------------
+
+From: Jun Nagase 
+Sent: Monday, October 02, 2006 5:17 AM
+To: David Mills
+Cc: Martin Taurer; Keijiro Kume; Wataru Yamada; Tamayo Matoba; Satoshi Naito; Takao Kojima
+Subject: What's New in Autodesk Revit Building 9.1
+
+ 
+
+Hi David,
+
+ 
+
+Product Support Team in Japan has been requesting for a document describing the difference between RB9 and RB 9.1 fore their use.
+
+Do you have any document you can send to them?  I think the print out you had given to us on 27th, “What’s New in Autodesk Revit Building 9.1” will meet their needs, but I will leave it up to you what to be distributed.
+
+Can you send a file to the following recipients?
+
+Satoshi Naito:    satoshi.naito@autodesk.com
+
+Takao Kojima:    Takao.Kojima@autodesk.com
+
+ 
+
+Also, would it be a problem to modify “Whats_New_in_Revit_Building_90.ppt” based on this document?
+
+Although, 9.1 is a minor upgrade, there are some enhanced/new features which will be an eye-catching for Japanese market.
+
+ 
+
+Please let me know when you have a chance.
+
+ 
+
+Thank you
+
+ 
+
+Jun 
+
+
+
+
+ 
+
+Jun Nagase
+
+ASE
+
+Building Solutions Division
+
+ 
+
+Direct         +81-3-6221-1766
+
+Mobile       +81-90-4010-2443
+
+Fax             +81-3-6221-1789
+
+ 
+
+ 

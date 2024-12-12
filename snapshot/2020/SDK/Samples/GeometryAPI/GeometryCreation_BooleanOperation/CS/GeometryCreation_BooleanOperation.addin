@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>GeometryCreation_BooleanOperation.dll</Assembly>
+    <ClientId>7481f82e-6e6d-4d61-a885-31b8ad23ecc4</ClientId>
+    <FullClassName>Revit.SDK.Samples.GeometryCreation_BooleanOperation.CS.Command</FullClassName>
+    <Text>GeometryCreation_BooleanOperation</Text>
+    <Description>GeometryCreation and BooleanOperation</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>adsk</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

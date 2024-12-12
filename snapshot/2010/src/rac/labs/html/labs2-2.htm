@@ -1,0 +1,246 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Retrieving 3D Model Elements</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs2-3.htm">next</a>
+<a class="j" href="labs2-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>Model elements are generally part of the building and have geometry.
+In this lab we will implement a filter to retrieve all model elements,
+i.e. Revit element instances with a 3D geometrical representation.
+There are several possible approaches to retrieving these elements.
+Here, we will present a method that loops over all document elements uses 
+a combination of different criteria to ensure that only valid model 
+elements are selected. The criteria applied to each element are:</p>
+
+<ul>
+<li>It is not a Symbol object.</li>
+<li>It is not a FamilyBase object.</li>
+<li>It has a valid category.</li>
+<li>Its category is not the built-in category OST_PreviewLegendComponents.</li>
+<li>It has non-null geometry.</li>
+</ul>
+
+<p>The preview legend components inadvertently acquired geometry that is 
+accessible through the API in Revit 2010. Previously, that check was not neccessary.</p>
+
+<p>The comparison of the element category with the built-in preview legend components one
+can be achieved by simply comparing the former's element id value with the latter cast to an integer.</p>
+
+<p>Add a standard external command implementation to the Labs2 module
+to iterate over all document elements:</p>
+
+<pre title="C# Lab2_2_ModelElements command skeleton" class="jtcollapse">
+  #region Lab2_2_ModelElements
+  public class Lab2_2_ModelElements : IExternalCommand
+  {
+    public CmdResult Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      ElementIterator it = doc.Elements;
+      string s = string.Empty;
+      int count = 0;
+      
+      while( it.MoveNext() )
+      {
+        Element e = it.Current as Element;
+      }
+      
+      s = "There are " + count.ToString() + " model elements:" + s;
+      LabUtils.InfoMsg( s );
+      
+      return CmdResult.Failed;
+    }
+  }
+  #endregion // Lab2_2_ModelElements
+</pre>
+
+<pre title="VB Lab2_2_ModelElements command skeleton" class="jtcollapse">
+#Region "Lab2_2_ModelElements"
+    Public Class Lab2_2_ModelElements
+        Implements IExternalCommand
+
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+
+            Dim app As Application = commandData.Application
+            Dim doc As Document = app.ActiveDocument
+
+            Dim it As ElementIterator = doc.Elements
+            Dim s As String = String.Empty
+            Dim count As Integer = 0
+
+            Do While (it.MoveNext())
+                Dim e As Element = it.Current
+            Loop
+
+            s = "There are " & count & " model elements:" & s
+
+            MsgBox(s)
+
+            Return IExternalCommand.Result.Failed
+
+        End Function
+    End Class
+
+#End Region
+</pre>
+
+<p>Compile and link the project and update the Revit.ini file accordingly
+(cf. 'Add_to_Revit_ini.txt'), or load the command with the help of Add-in Manager.</p>
+
+<p>Once this is up and running, you can explore how to add the filter criteria 
+discussed above to skip all the thousands of unwanted non-model elements.
+Here is one example of the while loop enhanced to apply that filter.
+First, we need to declare a gloabl variable or two to compare the preview legend components category:</p>
+
+<pre title="C# model elements filter" class="jtcollapse">
+  public class Lab2_2_ModelElements : IExternalCommand
+  {
+    BuiltInCategory _bicPreviewLegendComponent = BuiltInCategory.OST_PreviewLegendComponents;
+
+    public CmdResult Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      ElementIterator it = doc.Elements;
+      string s = string.Empty;
+      int count = 0;
+
+      Geo.Options opt = app.Create.NewGeometryOptions();
+
+      int iBic = (int) _bicPreviewLegendComponent;
+
+      while( it.MoveNext() )
+      {
+        Element e = it.Current as Element;
+
+        if ( !(e is Symbol)
+          && !(e is FamilyBase)
+          && (null != e.Category)
+          && ( iBic != e.Category.Id.Value )
+          && (null != e.get_Geometry( opt )) )
+        {
+          ++count;
+          s += string.Format( "\r\n  Category={0}; Name={1}; Id={2}",
+            e.Category.Name, e.Name, e.Id.Value.ToString() );
+        }
+      }
+
+      s = "There are " + count.ToString() + " model elements:" + s;
+      LabUtils.InfoMsg( s );
+
+      return CmdResult.Failed;
+    }
+  }
+</pre>
+
+<pre title="VB model elements filter" class="jtcollapse">
+    Public Class Lab2_2_ModelElements
+        Implements IExternalCommand
+
+        Dim _bicPreviewLegendComponent As BuiltInCategory = BuiltInCategory.OST_PreviewLegendComponents
+
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+
+            Dim app As Application = commandData.Application
+            Dim doc As Document = app.ActiveDocument
+
+            Dim it As ElementIterator = doc.Elements
+            Dim s As String = String.Empty
+            Dim count As Integer = 0
+
+            Dim opt As Geometry.Options = app.Create.NewGeometryOptions
+
+            Dim iBic As Integer = _bicPreviewLegendComponent
+
+            Do While (it.MoveNext())
+                Dim e As Element = it.Current
+
+                If Not (TypeOf e Is Symbol) _
+                    And Not (TypeOf e Is FamilyBase) _
+                    And Not (e.Category Is Nothing) _
+                    And Not (iBic = e.Category.Id.Value) Then
+
+                    Dim geo As Geometry.Element = e.Geometry(opt)
+                    If Not (geo Is Nothing) Then
+                        count = count + 1
+                        s += vbCrLf & "  Category=" & e.Category.Name & "; Id=" & e.Id.Value.ToString
+                    End If
+                End If
+
+            Loop
+
+            s = "There are " & count & " model elements:" & s
+
+            MsgBox(s)
+
+            Return IExternalCommand.Result.Failed
+
+        End Function
+    End Class
+</pre>
+
+<p>Run the command, examine and discuss the elements obtained before and after 
+filtering, and what the various items in the filter statement mean,
+with the course instructor and your peers.</p>
+
+<a class="j" href="labs2-3.htm">next</a>
+<a class="j" href="labs2-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

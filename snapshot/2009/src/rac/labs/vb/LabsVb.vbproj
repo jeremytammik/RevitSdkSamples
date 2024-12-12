@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B47C0511-8538-4233-A243-24BF46D6999B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LabsVb</RootNamespace>
+    <AssemblyName>labs</AssemblyName>
+    <MyType>Windows</MyType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>labs.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42025,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>labs.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42025,42032,42036</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=2009.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\Program Files\Revit Architecture 2009\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Autodesk" />
+    <Import Include="Autodesk.Revit" />
+    <Import Include="Autodesk.Revit.Elements" />
+    <Import Include="Autodesk.Revit.Parameters" />
+    <Import Include="Autodesk.Revit.Symbols" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.IO" />
+    <Import Include="System.Reflection" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuiltInParamsChecker.vb" />
+    <Compile Include="Lab3_4_Form.Designer.vb">
+      <DependentUpon>Lab3_4_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lab3_4_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabConstants.vb" />
+    <Compile Include="Labs1.vb" />
+    <Compile Include="Labs2.vb" />
+    <Compile Include="Labs3.vb" />
+    <Compile Include="Labs4.vb" />
+    <Compile Include="Labs5.vb" />
+    <Compile Include="LabUtils.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="WaitCursor.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Lab3_4_Form.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Lab3_4_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

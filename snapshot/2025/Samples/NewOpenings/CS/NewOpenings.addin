@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>NewOpenings.dll</Assembly>
+    <ClientId>a574ee1a-991e-418b-8b4c-25e8a1ed9394</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewOpenings.CS.Command</FullClassName>
+    <Text>New Openings</Text>
+    <Description>Create openings on the selected floor or wall.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

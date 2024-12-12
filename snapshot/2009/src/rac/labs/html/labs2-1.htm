@@ -1,0 +1,279 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Listing Document Elements</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs2-2.htm">next</a>
+<a class="j" href="labs2-0.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this lab, we explore the Revit document elements,
+and implement a class <code>Lab2_1_Elements</code>
+derived from <code>IExternalCommand</code> in the Labs2 module.
+For the Revit element exploration, we will require the use of
+some additional namespaces,
+so we add statements to include these as well.</p>
+
+<pre title="C# Lab2_1_Elements command skeleton" class="jtcollapse">
+using System;
+using System.IO;
+using Autodesk.Revit;
+using Autodesk.Revit.Elements;
+using Geo = Autodesk.Revit.Geometry;
+using Autodesk.Revit.Parameters;
+using Autodesk.Revit.Symbols;
+
+using XYZ = Autodesk.Revit.Geometry.XYZ;
+using XYZArray = Autodesk.Revit.Geometry.XYZArray;
+
+namespace Labs
+{
+  /// &lt;summary&gt;
+  /// List all document elements.
+  /// &lt/summary&lt;
+  public class Lab2_1_Elements : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+}
+</pre>
+
+<pre title="VB Lab2_1_Elements command skeleton" class="jtcollapse">
+Imports System.IO
+Imports Autodesk.Revit.Symbols
+Imports Autodesk.Revit.Collections
+Imports Autodesk.Revit.Geometry
+
+Public Class Lab2_1_Elements
+    Implements IExternalCommand
+
+    Public Function Execute( _
+        ByVal commandData As ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As ElementSet) _
+    As IExternalCommand.Result _
+    Implements IExternalCommand.Execute
+
+        Return IExternalCommand.Result.Succeeded
+
+    End Function
+End Class
+</pre>
+
+<p>Since the output will be too big for a message box, we will redirect it to a text file.
+We define the file pathname in a string constant and implement a separate class to
+manage all the constants, strings and similar resources of our project.
+Add a new class <code>LabConstants</code> to the project by right clicking on the project
+and selecting Add > Class... and then add the following string constant to it:</p>
+
+<pre title="C# LabConstants class" class="jtcollapse">
+namespace Labs
+{
+  class LabConstants
+  {
+    public const string gsFilePathLab2_1 = @"c:\tmp\RevitElements.txt";
+  }
+}
+</pre>
+
+<pre title="VB LabConstants class" class="jtcollapse">
+Namespace Labs
+    Module LabConstants
+        Public gsFilePathLab2_1 As String = "c:\tmp\RevitElements.txt"
+    End Module
+End Namespace
+</pre>
+
+<p>Returning to the <code>Lab2_1_Elements</code> command,
+start by opening the file to write to:</p>
+
+<pre title="C# Open file" class="jtcollapse">
+  // Typical .NET error-checking (should be done everywhere,
+  // but will be omitted for clarity in some of the following
+  // labs unless we expect exceptions)
+  StreamWriter sw;
+  try
+  {
+    sw = new StreamWriter( LabConstants.gsFilePathLab2_1 );
+  }
+  catch( Exception e )
+  {
+    LabUtils.ErrorMsg( "Cannot open " + LabConstants.gsFilePathLab2_1
+      + "; Exception=" + e.Message );
+    return IExternalCommand.Result.Failed;
+  }
+</pre>
+
+<pre title="VB Open file" class="jtcollapse">
+    ' Typical .NET error-checking (should be done everywhere, but will be omitted
+    ' for clarity in some of the following labs unless we expect exceptions)
+    Dim sw As StreamWriter
+    Try
+        sw = New StreamWriter(gsFilePathLab2_1)
+    Catch e As Exception
+        MsgBox("Cannot open " & gsFilePathLab2_1 & "; Exception=" & e.Message)
+        Return IExternalCommand.Result.Failed
+    End Try
+</pre>
+
+<p>Finally, here is standard way of looping all document elements and
+writing some of their properties to the stream.
+Please note that this kind of loop is extremely time-consuming
+and should generally be avoided in an application.
+Further on, we will explore how to use filters to avoid it:</p>
+
+<pre title="C# Loop document elements" class="jtcollapse">
+  try
+  {
+    // *ALL* elements are bundled together and accessible via Document's ElementIterator
+    WaitCursor waitCursor = new WaitCursor();
+    string line;
+    Element elem;
+    ElementIterator iter = commandData.Application.ActiveDocument.Elements;
+    while( iter.MoveNext() )
+    {
+      elem = iter.Current as Element;
+      line = "Id=" + elem.Id.Value.ToString(); // Element Id
+      line += "; Class=" + elem.GetType().Name; // Element class (System.Type)
+      //Debug.WriteLine( line  );
+
+      // The element category is not implemented for all classes,
+      // it may return null; for Family elements, one can sometimes
+      // use the FamilyCategory property instead.
+      string s = string.Empty;
+      if( elem is Family && null != ((Family) elem).FamilyCategory )
+      {
+        s = ((Family) elem).FamilyCategory.Name;
+      }
+      if( 0 == s.Length && null != elem.Category )
+      {
+        s = elem.Category.Name;
+      }
+      if( 0 == s.Length )
+      {
+        s = "?";
+      }
+      line += "; Category=" + s;
+
+      // Element Name (different meaning for different classes, but mostly implemented "logically")
+      // Later, we'll see that more precise info on elements can be obtained in class-specific ways...
+      line += "; Name=" + elem.Name;
+      sw.WriteLine( line );
+    }
+  }
+  catch( Exception e )
+  {
+    message = e.Message;
+    return CmdResult.Failed;
+  }
+</pre>
+
+<pre title="VB Loop document elements" class="jtcollapse">
+    ' *ALL* elements are bundled together and accessible via Document's ElementIterator
+    Dim sLine As String
+    Dim elem As Revit.Element
+    Dim iter As ElementIterator = commandData.Application.ActiveDocument.Elements
+    Do While (iter.MoveNext)
+
+        ' current Element
+        elem = iter.Current
+
+        ' Element Id
+        sLine = "Id=" & elem.Id.Value.ToString
+
+        ' Element class (System.Type)
+        sLine += "; Class=" & elem.GetType.Name
+
+        ' Element Category (not implemented for all classes!)
+        Dim sCatName As String = ""
+        If TypeOf elem Is Family Then
+            Dim f As Family = elem
+            If Not f.FamilyCategory Is Nothing Then
+                sCatName = f.FamilyCategory.Name
+            End If
+        End If
+        If 0 = sCatName.Length And Not elem.Category Is Nothing Then
+            sCatName = elem.Category.Name
+        End If
+        If 0 = sCatName.Length Then
+            sCatName = "?"
+        End If
+        sLine += "; Category=" & sCatName
+
+        ' Element Name (different meaning for different classes, but mostly implemented "logically")
+        ' Later, we'll see that more precise info on elements can be obtained in class-specific ways...
+        Dim sName As String
+
+        sName = elem.Name
+        sLine += "; Name=" & sName
+
+        ' write the Line
+        sw.WriteLine(sLine)
+
+    Loop
+
+</pre>
+
+<p>Don't forget to close the file and return a valid result to Revit:</p>
+
+<pre title="C# Close file and return to Revit" class="jtcollapse">
+  sw.Close();
+  LabUtils.InfoMsg( "Element list has been written to " + LabConstants.gsFilePathLab2_1 + "." );
+</pre>
+
+<pre title="VB Close file and return to Revit" class="jtcollapse">
+    sw.Close()
+    MsgBox("Elements list has been created in " & gsFilePathLab2_1 & "!")
+</pre>
+
+<p>Compile and link the project and update the Revit.ini file accordingly.
+Or load and run the command with the help of Add-in Manager.</p>
+
+<p>Run the command and examine and discuss the contents of the created file
+with the course instructor and your peers.</p>
+
+<a class="j" href="labs2-2.htm">next</a>
+<a class="j" href="labs2-0.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j">copyright &copy; 2007-2008 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

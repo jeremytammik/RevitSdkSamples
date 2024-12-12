@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>PrintLog.dll</Assembly>
+    <ClientId>ca1de3c1-438a-4393-a364-fa6379e72041</ClientId>
+    <FullClassName>Revit.SDK.Samples.PrintLog.CS.Application</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>PrintLog.dll</Assembly>
+    <ClientId>7fada6bf-6763-4d04-92e7-51eb8c0f1974</ClientId>
+    <FullClassName>Revit.SDK.Samples.PrintLog.CS.Command</FullClassName>
+    <Text>Print Log</Text>
+    <Description>Append print information to log</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

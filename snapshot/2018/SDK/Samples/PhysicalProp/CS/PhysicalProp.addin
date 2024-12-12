@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>PhysicalProp.dll</Assembly>
+    <ClientId>9d2f90fb-42f4-4923-a99d-65348c2ff4f7</ClientId>
+    <FullClassName>Revit.SDK.Samples.PhysicalProp.CS.DumpMaterialPhysicalParameters</FullClassName>
+    <Text>Physical Properties</Text>
+    <Description>Dump Material Physical Parameters.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

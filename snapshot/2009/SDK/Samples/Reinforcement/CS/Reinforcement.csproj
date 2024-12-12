@@ -1,0 +1,94 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1DA0A90-58B2-4032-B443-F8C397CE3B49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reinforcement</RootNamespace>
+    <AssemblyName>Reinforcement</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=10.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Revit Structure 2009\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BeamFramReinMaker.cs" />
+    <Compile Include="BeamFramReinMakerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeamFramReinMakerForm.Designer.cs">
+      <DependentUpon>BeamFramReinMakerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeamGeometrySupport.cs" />
+    <Compile Include="ColumnFramReinMaker.cs" />
+    <Compile Include="ColumnFramReinMakerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColumnFramReinMakerForm.Designer.cs">
+      <DependentUpon>ColumnFramReinMakerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColumnGeometrySupport.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="FrameReinMakerFactory.cs" />
+    <Compile Include="FramReinMaker.cs" />
+    <Compile Include="GeomData.cs" />
+    <Compile Include="GeometrySupport.cs" />
+    <Compile Include="GeomUtil.cs" />
+    <Compile Include="ParameterUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BeamFramReinMakerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BeamFramReinMakerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColumnFramReinMakerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ColumnFramReinMakerForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

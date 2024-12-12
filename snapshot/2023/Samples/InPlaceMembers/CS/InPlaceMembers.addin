@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>InPlaceMembers.dll</Assembly>
+    <ClientId>2194e2a9-69bf-494b-8fe1-739c16f43a96</ClientId>
+    <FullClassName>Revit.SDK.Samples.InPlaceMembers.CS.Command</FullClassName>
+    <Text>In-Place Members</Text>
+    <Description>Display In-Place Member's Properties and AnalyticalModel.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

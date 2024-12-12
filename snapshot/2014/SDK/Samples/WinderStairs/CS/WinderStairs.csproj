@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3DEDE48B-7FC9-4923-844C-3AE7A08D55E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Revit.SDK.Samples.WinderStairs.CS</RootNamespace>
+    <AssemblyName>WinderStairs</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\WinderStairs.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=2014.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit Architecture 2014\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI, Version=2014.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit Architecture 2014\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="Winders\WinderSinglePoint.cs" />
+    <Compile Include="Winders\WinderStraight.cs" />
+    <Compile Include="Winders\WinderCorner.cs" />
+    <Compile Include="WinderUpdater.cs" />
+    <Compile Include="Winders\LWinder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Winders\WinderUtil.cs" />
+    <Compile Include="Winders\UWinder.cs" />
+    <Compile Include="Forms\UWinderOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UWinderOptions.Designer.cs">
+      <DependentUpon>UWinderOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Winders\Winder.cs" />
+    <Compile Include="Forms\LWinderOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LWinderOptions.Designer.cs">
+      <DependentUpon>LWinderOptions.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LWinderOptions.resx">
+      <DependentUpon>LWinderOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UWinderOptions.resx">
+      <DependentUpon>UWinderOptions.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Forms\LWinder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Forms\UWinder.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG=..\..\..\..\..\..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.pl
+if exist %FILEFORSAMPLEREG% (perl %FILEFORSAMPLEREG% $(ProjectExt) "$(ProjectPath)" "$(TargetPath)") else echo [POST EVENTS ERROR] ..\..\..\..\..\..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.pl does not exist.</PostBuildEvent>
+  </PropertyGroup>
+</Project>

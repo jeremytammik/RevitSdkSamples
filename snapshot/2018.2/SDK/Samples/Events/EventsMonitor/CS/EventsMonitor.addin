@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>EventsMonitor.dll</Assembly>
+    <ClientId>f24da5a5-87a6-41aa-9afe-456dbcaee906</ClientId>
+    <FullClassName>Revit.SDK.Samples.EventsMonitor.CS.ExternalApplication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

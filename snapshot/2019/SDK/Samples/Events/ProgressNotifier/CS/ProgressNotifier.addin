@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>ProgressNotifier</Text>
+    <Assembly>ProgressNotifier.dll</Assembly>
+    <ClientId>ab2c768a-ec2f-4289-a803-58e35afc5709</ClientId>
+    <FullClassName>Revit.SDK.Samples.ProgressNotifier.CS.Command</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

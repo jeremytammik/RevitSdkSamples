@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ProjectUnit.dll</Assembly>
+    <ClientId>8194f441-ad9f-40fb-a715-5ccd0b496baa</ClientId>
+    <FullClassName>Revit.SDK.Samples.ProjectUnit.CS.Command</FullClassName>
+    <Text>Project Unit</Text>
+    <Description>List all the units in current project and display format information for each.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

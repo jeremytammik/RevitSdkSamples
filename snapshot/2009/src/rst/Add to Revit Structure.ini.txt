@@ -1,0 +1,138 @@
+[ExternalApplications]
+EACount=2
+
+EAName1=Revit Structure Link
+EAClassName1=RSLinkRevitApp.RsApp
+EAAssembly1=RSLinkRevitApp.dll
+EADescription1=Revit Structure Link Sample
+
+EAClassName2=RvtMgdDbg.App
+EAAssembly2=RvtMgdDbg.dll
+
+[ExternalCommands]
+ECCount=25
+
+ECName1=RS Lab1-1 Load Natures, Cases and Combinations
+ECDescription1=Lab1_1...
+ECClassName1=RSSolvedLabsCode.Lab1_1
+ECAssembly1=RSSolvedLabsCode.dll
+
+ECName2=RS Lab1-2 Load Objects - List all
+ECDescription2=Lab1_2...
+ECClassName2=RSSolvedLabsCode.Lab1_2
+ECAssembly2=RSSolvedLabsCode.dll
+
+ECName3=RS Lab1-3 Load Objects - Modify selected
+ECDescription3=Lab1_3...
+ECClassName3=RSSolvedLabsCode.Lab1_3
+ECAssembly3=RSSolvedLabsCode.dll
+
+ECName4=RS Lab1-4 Load Symbols
+ECDescription4=Lab1_4...
+ECClassName4=RSSolvedLabsCode.Lab1_4
+ECAssembly4=RSSolvedLabsCode.dll
+
+ECName5=RS Lab1-5 Point Loads Create
+ECDescription5=Lab1_5...
+ECClassName5=RSSolvedLabsCode.Lab1_5
+ECAssembly5=RSSolvedLabsCode.dll
+
+ECName6=RS Lab2-1 Structural Columns and Framing
+ECDescription6=Lab2_1...
+ECClassName6=RSSolvedLabsCode.Lab2_1
+ECAssembly6=RSSolvedLabsCode.dll
+
+ECName7=RS Lab2-2 Structural Foundations and all Families
+ECDescription7=Lab2_2...
+ECClassName7=RSSolvedLabsCode.Lab2_2
+ECAssembly7=RSSolvedLabsCode.dll
+
+ECName8=RS Lab2-3 Structural Walls Floors and Cont.Footings
+ECDescription8=Lab2_3...
+ECClassName8=RSSolvedLabsCode.Lab2_3
+ECAssembly8=RSSolvedLabsCode.dll
+
+ECName9=RS Lab3 Analytical Model for Selected Elements
+ECDescription9=Lab3...
+ECClassName9=RSSolvedLabsCode.Lab3
+ECAssembly9=RSSolvedLabsCode.dll
+
+ECName10=Built-In Parameters Checker
+ECDescription10=Uses reflection to check for all built-in params enumeration values on the selected element
+ECClassName10=RSSolvedLabsCode.BuiltInParamsChecker
+ECAssembly10=RSSolvedLabsCode.dll
+
+ECName11=Analytical Viewer
+ECDescription11=Draws analytical model for selected or all elements in the viewer window
+ECClassName11=Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+ECAssembly11=AnalyticalViewer.dll
+
+ECName12=Create Beams Columns and Braces
+ECDescription12=Create configurable multi-story Beams Columns and Braces using simple dialog
+ECClassName12=Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.CreateBeamsColumnsBraces
+ECAssembly12=CreateBeamsColumnsBraces.dll
+
+ECName13=RSLink EXPORT
+ECDescription13=Export to RSLink file (from Revit to Acad)
+ECClassName13=RSLinkRevitClient.RSLinkExport
+ECAssembly13=RSLinkRevitClient.dll
+
+ECName14=RSLink IMPORT
+ECDescription14=Import from RSLink result file (from Acad to Revit)
+ECClassName14=RSLinkRevitClient.RSLinkImport
+ECAssembly14=RSLinkRevitClient.dll
+
+ECName15=Revit Reflector
+ECDescription15=Revit Reflector Debug Utility
+ECAssembly15=RevitReflector.dll
+ECClassName15=RevitReflector.Command
+
+ECName16=Rebar - Create Reinforcement
+ECClassName16 = Revit.SDK.Samples.Reinforcement.CS.Command
+ECAssembly16 = Reinforcement.dll
+ECDescription16 = Create bar set in a selected concrete element (beam or column) that does not have any reinforcement.
+
+ECName17=Rebar - Edit AreaReinforcement Parameters
+ECClassName17 = Revit.SDK.Samples.AreaReinParameters.CS.Command
+ECAssembly17 = AreaReinParameters.dll
+ECDescription17 = Show parameters of selected AreaReinforcement and allow user to modify
+
+ECName18=Rebar - List Rebar Parameters
+ECClassName18 = Revit.SDK.Samples.AreaReinParameters.CS.RebarParas
+ECAssembly18 = AreaReinParameters.dll
+ECDescription18 = Show parameters of selected AreaReinforcement and allow user to modify
+
+ECName19=Rebar - Create Section View
+ECClassName19=Revit.SDK.Samples.CreateViewSection.CS.Command
+ECAssembly19=CreateViewSection.dll
+ECDescription19=Create a section view across the mid point of the selected wall, floor or beam
+
+ECName20=Rebar - Create Drafting View
+ECClassName20=Revit.SDK.Samples.CreateViewSection.CS.CreateDraftingView
+ECAssembly20=CreateViewSection.dll
+ECDescription20=Create a new empty drafting view
+
+ECName21=Rebar - Import And Export DWG
+ECClassName21=Revit.SDK.Samples.ImportAndExportForDWG.CS.Command
+ECAssembly21=ImportAndExportForDWG.dll
+ECDescription21=Export current project to dwg files and import a dwg file into revit
+
+ECName22=Rebar - Create Dimension
+ECClassName22=Revit.SDK.Samples.CreateDimensions.CS.Command
+ECAssembly22=CreateDimensions.dll
+ECDescription22=Add a dimension to a selected structure wall from its start to its end
+
+ECName23=Rebar - Tag Beam
+ECClassName23=Revit.SDK.Samples.TagBeam.CS.Command
+ECAssembly23=TagBeam.dll
+ECDescription23=Tag beam's start and end
+
+ECName24=Rebar - Tag Rebar
+ECClassName24=Revit.SDK.Samples.TagBeam.CS.TagRebar
+ECAssembly24=TagBeam.dll
+ECDescription24=Tag selected Rebar
+
+ECName25=Rebar - Create Text
+ECClassName25=Revit.SDK.Samples.TagBeam.CS.CreateText
+ECAssembly25=TagBeam.dll
+ECDescription25=Create a new TextNote instance for selected Rebar

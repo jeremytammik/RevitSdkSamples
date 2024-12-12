@@ -1,0 +1,188 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Retrieving 3D Model Elements</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs2-3.htm">next</a>
+<a class="j" href="labs2-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>Model elements are generally part of the building and have geometry.
+In this lab we will develop a reusable utility to retrieve all model elements,
+i.e. Revit element instances with a 3D geometrical representation.
+We encapsulate it in the previously created utility class <code>LabUtils</code>.</p>
+
+<p>To retrieve all model elements, we ensure that the element has non-empty geometry.
+We also do some checks beforehand to optimize the looping.</p>
+
+<pre title="C# GetAllModelElements() implementation" class="jtcollapse">
+  /// &lt;summary&gt;
+  /// Helper to get all geometrical elements.
+  /// &lt;/summary&gt;
+  public static ElementSet GetAllModelElements( Autodesk.Revit.Application revitApp )
+  {
+    ElementSet elems = revitApp.Create.NewElementSet();
+    Geo.Options opt = revitApp.Create.NewGeometryOptions();
+    opt.DetailLevel = Geo.Options.DetailLevels.Fine;
+    // IEnumerator iter = revitApp.ActiveDocument.Elements // this would also be sufficient
+    ElementIterator iter = revitApp.ActiveDocument.Elements;
+    while( iter.MoveNext() )
+    {
+      Autodesk.Revit.Element elem = iter.Current as Autodesk.Revit.Element;
+      // This single line would probably work if all system families were
+      // exposed as HostObjects, but they are not yet:
+      // if( elem is FamilyInstance }} elem is HostObject )
+      if( !( elem is Symbol || elem is FamilyBase ) )
+      {
+        if( null != elem.Category )
+        {
+          if( null != elem.get_Geometry( opt ) )
+          {
+            elems.Insert( elem );
+          }
+        }
+      }
+    }
+    return elems;
+  }
+</pre>
+
+<pre title="VB GetAllModelElements() implementation" class="jtcollapse">
+    ' Helper to get all geometrical elements
+    Shared Function GetAllModelElements(ByVal revitApp As Revit.Application) As ElementSet
+
+        Dim elems As ElementSet = revitApp.Create.NewElementSet
+        Dim opt As Geometry.Options = revitApp.Create.NewGeometryOptions
+        opt.DetailLevel = Geometry.Options.DetailLevels.Fine
+
+        'Dim iter As IEnumerator = revitApp.ActiveDocument.Elements ' this would also be sufficient
+        Dim iter As ElementIterator = revitApp.ActiveDocument.Elements
+        Do While (iter.MoveNext())
+            Dim elem As Revit.Element = iter.Current
+
+            ' This single line would probably work if all system families were exposed as HostObjects, but they are not yet
+            'If TypeOf elem Is FamilyInstance Or TypeOf elem Is HostObject Then
+            If Not (TypeOf elem Is Symbol OrElse TypeOf elem Is FamilyBase) Then
+                If Not (elem.Category Is Nothing) Then
+                    Dim geo As Geometry.Element = elem.Geometry(opt)
+                    If Not (geo Is Nothing) Then
+                        elems.Insert(elem)
+                    End If
+                End If
+            End If
+
+        Loop
+
+        Return elems
+
+    End Function
+</pre>
+
+<p>Add a standard external command implementation to the Labs2 module
+and call the utility function, then loop over the returned elements and display
+their data:</p>
+
+<pre title="C# Lab2_2_ModelElements command implementation" class="jtcollapse">
+  #region Lab2_2_ModelElements
+  /// &lt;summary&gt;
+  /// List all model elements.
+  /// &lt;/summary&gt;
+  public class Lab2_2_ModelElements : IExternalCommand
+  {
+    public CmdResult Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      string s = string.Empty;
+      ElementSet modelElems = LabUtils.GetAllModelElements( commandData.Application );
+      s += "There are " + modelElems.Size + " model elements:";
+      foreach( Element elem in modelElems )
+      {
+        s += "\r\n  Category=" + elem.Category.Name + "; Id=" + elem.Id.Value.ToString();
+      }
+      LabUtils.InfoMsg( s );
+      return CmdResult.Succeeded;
+    }
+  }
+  #endregion // Lab2_2_ModelElements
+</pre>
+
+<pre title="VB Lab2_2_ModelElements command implementation" class="jtcollapse">
+#Region "Lab2_2_ModelElements"
+    ''' &lt;summary&gt;
+    ''' List all model elements.
+    ''' &lt;/summary&gt;
+    Public Class Lab2_2_ModelElements
+        Implements IExternalCommand
+
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+            As IExternalCommand.Result _
+            Implements IExternalCommand.Execute
+
+            ' Call the utility
+            Dim modelElems As ElementSet = LabUtils.GetAllModelElements(commandData.Application)
+
+            ' List all elems
+            Dim sMsg As String = "There are " & modelElems.Size & " model elements:"
+            Dim elem As Revit.Element
+            For Each elem In modelElems
+                sMsg += vbCrLf & "  Category=" & elem.Category.Name & "; Id=" & elem.Id.Value.ToString
+            Next
+            MsgBox(sMsg)
+
+            Return IExternalCommand.Result.Succeeded
+
+        End Function
+    End Class
+#End Region
+</pre>
+
+<p>Compile and link the project and update the Revit.ini file accordingly
+(cf. 'Add_to_Revit_ini.txt'), or load the command with the help of Add-in Manager.</p>
+
+<p>Run the command and examine and discuss the information displayed in the dialogue
+with the course instructor and your peers.</p>
+
+<a class="j" href="labs2-3.htm">next</a>
+<a class="j" href="labs2-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j">copyright &copy; 2007-2008 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

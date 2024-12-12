@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>VersionChecking.dll</Assembly>
+    <ClientId>7d2f1228-50ee-4993-be9c-5110552b28d8</ClientId>
+    <FullClassName>Revit.SDK.Samples.VersionChecking.CS.Command</FullClassName>
+    <Text>About Revit</Text>
+    <Description>Show the Revit product name, version and build number.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,2080 @@
+Analysis
+EnergyAnalysis Model
+Demonstrates how to use EnergyAnalysisModel API.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\GeometryAPI\EnergyAnalysisModel\CS\bin\Debug\EnergyAnalysisModel.dll
+Revit.SDK.Samples.EnergyAnalysisModel.CS.Command
+
+Annotation
+Tag Rooms
+Auto tag all rooms in a specified level.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AutoTagRooms\CS\bin\Debug\AutoTagRooms.dll
+Revit.SDK.Samples.AutoTagRooms.CS.Command
+
+Annotation
+ColorFill Scheme and Legend creation and modification.
+This sample demonstrates how to create ColorFill scheme, add entries and modify entries for colorFill scheme. It also demonstrates how to create colorFill legend with scheme and modify its appearance.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ColorFill\CS\bin\Debug\ColorFill.dll
+Revit.SDK.Samples.ColorFill.CS.Command
+
+Annotation
+Create Dimensions
+Add a dimension to a selected structural wall from its start to its end. Name the dimensions 'Dimension N' where N is an increasing number for each dimension.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateDimensions\CS\bin\Debug\CreateDimensions.dll
+Revit.SDK.Samples.CreateDimensions.CS.Command
+
+Annotation
+LeaderLineAndDimensionLineSuperposition.
+Using new dimension api to move leader end point. Make the dimension line and leader line to be superposition. 
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DimensionLeaderEnd\CS\bin\Debug\DimensionLeaderEnd.dll
+Revit.SDK.Samples.DimensionLeaderEnd.CS.MoveHorizontally
+
+Annotation
+MoveToPickedPoint.
+Using new dimension api to move leader end point. Move to picked point. 
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DimensionLeaderEnd\CS\bin\Debug\DimensionLeaderEnd.dll
+Revit.SDK.Samples.DimensionLeaderEnd.CS.MoveToPickedPoint
+
+Annotation
+Spot Dimension
+Get all spot dimensions in all views and show their properties.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SpotDimension\CS\bin\Debug\SpotDimension.dll
+Revit.SDK.Samples.SpotDimension.CS.Command
+
+Annotation
+TagBeam - Tag Beam
+Tag beam's start and end.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\TagBeam\CS\bin\Debug\TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.Command
+
+Annotation
+TagBeam - Tag Rebar
+Tag selected Rebar.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\TagBeam\CS\bin\Debug\TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.TagRebar
+
+Annotation
+TagBeam - Create Text
+Create a new TextNote instance for selected Rebar.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\TagBeam\CS\bin\Debug\TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.CreateText
+
+Annotation, Basics
+Capitalize all TextNote elements
+This command iterates through the document and applies the 'AllCaps' formatting to them.  This will show text in upper case characters.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CapitalizeAllTextNotes\CS\bin\Debug\CapitalizeAllTextNotes.dll
+Revit.SDK.Samples.CapitalizeAllTextNotes.CS.Command
+
+Annotation, Basics
+Delete Dimensions
+Delete all unpinned dimensions found in current selection.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DeleteDimensions\CS\bin\Debug\DeleteDimensions.dll
+Revit.SDK.Samples.DeleteDimensions.CS.Command
+
+Annotation, Basics
+In-Canvas controls
+This sample will demonstrate how to create, keep track of and handle clicks on In-Canvas controls.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\InCanvasControlAPI\CS\bin\Debug\InCanvasControlAPI.dll
+Revit.SDK.Samples.InCanvasControlAPI.CS.Command
+
+Annotation, Elements
+Infrastructure alignments
+Demonstrates the use of API for finding and labeling an infrastructure alignment element.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CivilAlignments\CS\bin\Debug\CivilAlignments.dll
+Revit.SDK.Samples.CivilAlignments.CS.CreateAlignmentStationLabelsCmd
+
+Annotation, Elements
+Infrastructure alignments
+Demonstrates the use of API for listing properties of an infrastructure alignment element and its labels.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CivilAlignments\CS\bin\Debug\CivilAlignments.dll
+Revit.SDK.Samples.CivilAlignments.CS.ShowPropertiesCmd
+
+Annotation, Elements, Views
+Create PathOfTravel.
+This sample demonstrated how to create PathOfTravel elements from room(s) to door(s) in a plan view.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PathOfTravel\CS\bin\Debug\PathOfTravel.dll
+Revit.SDK.Samples.PathOfTravelCreation.CS.Command
+
+Basics
+Delete Objects (CS)
+Delete selected elements.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DeleteObject\CS\bin\Debug\DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.CS.Command
+
+Basics
+ErrorHandling
+Demonstrates how to use the error handling framework..
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ErrorHandling\CS\bin\Debug\ErrorHandling.dll
+Revit.SDK.Samples.ErrorHandling.CS.Command
+
+Basics
+ProgressNotifier
+ProgressNotifier
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Events\ProgressNotifier\CS\bin\Debug\ProgressNotifier.dll
+Revit.SDK.Samples.ProgressNotifier.CS.Command
+
+Basics
+Hello Revit (CS)
+Shows how a basic ExternalCommand can be added to the Revit user interface.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\HelloRevit\CS\bin\Debug\HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.CS.Command
+
+Basics
+Journaling
+Show how an external application can participate in the journaling mechanism.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Journaling\CS\bin\Debug\Journaling.dll
+Revit.SDK.Samples.Journaling.CS.Command
+
+Basics
+Show Modeless Form (External Event)
+This sample shows how to utilize an External Event object  in order to communicate with the Revit API from an external  modeless dialog.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ModelessDialog\ModelessForm_ExternalEvent\CS\bin\Debug\ModelessForm_ExternalEvent.dll
+Revit.SDK.Samples.ModelessForm_ExternalEvent.CS.Command
+
+Basics
+Show Modeless Form (Idling Event)
+An applicaiton with a modeless dialog using the Idling event to comunicate with Revit API
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ModelessDialog\ModelessForm_IdlingEvent\CS\bin\Debug\ModelessForm_IdlingEvent.dll
+Revit.SDK.Samples.ModelessForm_IdlingEvent.CS.Command
+
+Basics
+Analyze Wall Face
+This sample shows how to utilize the Applicaiton.Idling event in order to communicate with the Revit API from an external work thread.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\MultiThreading\WorkThread\CS\bin\Debug\WorkThread.dll
+Revit.SDK.Samples.WorkThread.CS.Command
+
+Basics
+Highlight by Phase
+Highlight by Phase.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PhaseSample\VB.NET\bin\Debug\PhaseSample.dll
+Revit.SDK.Samples.PhaseSample.VB.NET.Command
+
+Basics
+Project Information
+Project Information.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ProjectInfo\CS\bin\Debug\ProjectInfo.dll
+Revit.SDK.Samples.ProjectInfo.CS.Command
+
+Basics
+TransactionControl
+Demonstrate how to use transaction control.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\TransactionControl\CS\bin\Debug\TransactionControl.dll
+Revit.SDK.Samples.TransactionControl.CS.Command
+
+Basics, Data Exchange
+Units API
+The sample of Revit Units API.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Units\CS\bin\Debug\Units.dll
+Revit.SDK.Samples.Units.CS.Command
+
+Basics, Elements
+Display Options
+Display Options.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DesignOptionReader\VB.NET\bin\Debug\DesignOptionReader.dll
+Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
+
+Basics, Families
+Interactive placement of family instance via options
+This sample demonstrates how to place the family instance via options
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PlacementOptions\CS\bin\Debug\PlacementOptions.dll
+Revit.SDK.Samples.PlacementOptions.CS.Command
+
+Basics, Families
+RvtCmd_LibraryPaths
+List the Revit library paths.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths
+
+Basics, Families
+RvtCmd_LoadFamilySymbol
+Load a family symbol/type.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol
+
+Basics, Families
+RvtCmd_LoadFamily
+Load a family.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily
+
+Basics, Families
+RvtCmd_Selection
+show how to use selection set.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection
+
+Basics, Families
+RvtCmd_ShowElementData
+show parameters in selected entities.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RevitCommands\VB.NET\bin\Debug\RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
+
+Basics, Geometry
+Display graphics using DirectContext3D
+Select elements whose graphics should be redrawn using DirectContext3D.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DuplicateGraphics\CS\bin\Debug\DuplicateGraphics.dll
+Revit.SDK.Samples.DuplicateGraphics.CS.CommandDuplicateGraphics
+
+Basics, Geometry
+Clear DirectContext3D graphics
+Remove external graphics.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DuplicateGraphics\CS\bin\Debug\DuplicateGraphics.dll
+Revit.SDK.Samples.DuplicateGraphics.CS.CommandClearExternalGraphics
+
+Basics, Geometry
+ReferencePlane
+Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ReferencePlane\CS\bin\Debug\ReferencePlane.dll
+Revit.SDK.Samples.ReferencePlane.CS.Command
+
+Basics, Geometry, Views
+Export 2D views with CustomExporter
+Export 2D views with CustomExporter, using varying options of the exporter.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CustomExporter\Custom2DExporter\CS\bin\Debug\Custom2DExporter.dll
+Revit.SDK.Samples.Custom2DExporter.CS.Command
+
+Basics, Parameters
+About Revit
+Show the Revit product name, version and build number.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\VersionChecking\CS\bin\Debug\VersionChecking.dll
+Revit.SDK.Samples.VersionChecking.CS.Command
+
+Basics, Structure
+Rotate Framing Objects (CS)
+Rotate selected objects, such as beams, braces and columns.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RotateFramingObjects\CS\bin\Debug\RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.CS.RotateFramingObjects
+
+Data Exchange
+Arch Sample - Export to Excel
+Export data to Excel, sorted by categories
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ArchSample\VB.NET\bin\Debug\ArchSample.dll
+Revit.SDK.Samples.ArchSample.VB.NET.Command
+
+Data Exchange
+Import and Export
+Export current project to dwg, dwf(x), gbxml or fbx files and import a dwg or image file into Revit.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ImportExport\CS\bin\Debug\ImportExport.dll
+Revit.SDK.Samples.ImportExport.CS.Command
+
+Data Exchange
+Panel Schedule Sample - Export Data
+Exoport Revit Panle Schedule(s) to CSV file(s) or HTML page(s).
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PanelSchedule\CS\bin\Debug\PanelSchedule.dll
+Revit.SDK.Samples.PanelSchedule.CS.PanelScheduleExport
+
+Data Exchange
+Panel Schedule Sample - View Instance Creation
+Create Panel Schedule View instance for a panel.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PanelSchedule\CS\bin\Debug\PanelSchedule.dll
+Revit.SDK.Samples.PanelSchedule.CS.InstanceViewCreation
+
+Data Exchange
+Panel Schedule Sample - Sheet Instance Creation
+Place Panel Schedule View instance on a sheet view.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PanelSchedule\CS\bin\Debug\PanelSchedule.dll
+Revit.SDK.Samples.PanelSchedule.CS.SheetImport
+
+Data Exchange
+View Printer
+Print user selected printable views.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ViewPrinter\CS\bin\Debug\ViewPrinter.dll
+Revit.SDK.Samples.ViewPrinter.CS.Command
+
+Data Exchange, Families
+DWGFamilyCreation
+Import dwg file into family document.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\DWGFamilyCreation\CS\bin\Debug\DWGFamilyCreation.dll
+Revit.SDK.Samples.DWGFamilyCreation.CS.Command
+
+Elements
+Create CompoundStructure for wall
+This command is to create CompoundStructure for wall.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CompoundStructure\CS\bin\Debug\CompoundStructure.dll
+Revit.SDK.Samples.CompoundStructureCreation.CS.WallCompoundStructure
+
+Elements
+Create and set FillPattern
+Create and set FillPattern or LinePattern to face and grid
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateFillPattern\CS\bin\Debug\CreateFillPattern.dll
+Revit.SDK.Samples.CreateFillPattern.CS.Command
+
+Elements
+Curtain System
+Create curtain systems and edit their curtain grids
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CurtainSystem\CS\bin\Debug\CurtainSystem.dll
+Revit.SDK.Samples.CurtainSystem.CS.Command
+
+Elements
+Curtain Wall and Grid
+Create a curtain wall and edit its grid
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CurtainWallGrid\CS\bin\Debug\CurtainWallGrid.dll
+Revit.SDK.Samples.CurtainWallGrid.CS.Command
+
+Elements
+Datumplane modification
+Datumplane modification
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DatumsModification\CS\bin\Debug\DatumsModification.dll
+Revit.SDK.Samples.DatumsModification.CS.Command
+
+Elements
+Create and modify view filters.
+Create and modify view filters.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ElementFilter\ViewFilters\CS\bin\Debug\ViewFilters.dll
+Revit.SDK.Samples.ViewFilters.CS.Command
+
+Elements
+Extensible Storage Manager
+Extensible Storage Manager
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ExtensibleStorageManager\ExtensibleStorageManager\CS\bin\Debug\ExtensibleStorageManager.dll
+ExtensibleStorageManager.Command
+
+Elements
+ExtensibleStorageUtility-DeleteStorage
+ExtensibleStorageUtility-DeleteStorage
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ExtensibleStorageUtility\CS\bin\Debug\ExtensibleStorageUtility.dll
+Revit.SDK.Samples.ExtensibleStorageUtility.CS.DeleteStorage
+
+Elements
+ExtensibleStorageUtility-QueryStorage
+ExtensibleStorageUtility-QueryStorage
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ExtensibleStorageUtility\CS\bin\Debug\ExtensibleStorageUtility.dll
+Revit.SDK.Samples.ExtensibleStorageUtility.CS.QueryStorage
+
+Elements
+Foundation Slab
+Convert regular floors at the base of the building to octagonal slabs.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FoundationSlab\CS\bin\Debug\FoundationSlab.dll
+Revit.SDK.Samples.FoundationSlab.CS.Command
+
+Elements
+GenerateFloor
+Generate a floor using a selection of walls that make a closed outline.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\GenerateFloor\CS\bin\Debug\GenerateFloor.dll
+Revit.SDK.Samples.GenerateFloor.CS.Command
+
+Elements
+Grid Creation
+Show how to create grids.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\GridCreation\CS\bin\Debug\GridCreation.dll
+Revit.SDK.Samples.GridCreation.CS.Command
+
+Elements
+Create levels
+Show how to get all the levels in a document and how to create and delete a level and set its properties.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\LevelsProperty\CS\bin\Debug\LevelsProperty.dll
+Revit.SDK.Samples.LevelsProperty.CS.Command
+
+Elements
+Model Lines
+Report the number of each model line type and allow the user to specify the shape and sketch plane to create some new model lines.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ModelLines\CS\bin\Debug\ModelLines.dll
+Revit.SDK.Samples.ModelLines.CS.Command
+
+Elements
+New hosted sweep
+Create hosted sweep and modify created hosted sweep
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\NewHostedSweep\CS\bin\Debug\NewHostedSweep.dll
+Revit.SDK.Samples.NewHostedSweep.CS.Command
+
+Elements
+New Openings
+Create openings on the selected floor or wall.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\NewOpenings\CS\bin\Debug\NewOpenings.dll
+Revit.SDK.Samples.NewOpenings.CS.Command
+
+Elements
+NewRoof
+Create or edit footprint roof and extrusion roof.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\NewRoof\CS\bin\Debug\NewRoof.dll
+Revit.SDK.Samples.NewRoof.CS.Command
+
+Elements
+Openings
+Display openings in project, and create model lines along its edges.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Openings\CS\bin\Debug\Openings.dll
+Revit.SDK.Samples.Openings.CS.Command
+
+Elements
+PerformanceAdviserControl
+PerformanceAdviserControl
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PerformanceAdviserControl\CS\bin\Debug\PerformanceAdviserControl.dll
+Revit.SDK.Samples.PerformanceAdviserControl.CS.UICommand
+
+Elements
+Shared Coordinate System
+Display the locations and site information of the project.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SharedCoordinateSystem\CS\bin\Debug\SharedCoordinateSystem.dll
+Revit.SDK.Samples.SharedCoordinateSystem.CS.Command
+
+Elements
+Stairs automation
+A utility sample that creates a series of stairs, stairs runs and stairs landings configurations based upon predefined rules and parameters.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\StairsAutomation\CS\bin\Debug\StairsAutomation.dll
+Revit.SDK.Samples.StairsAutomation.CS.Command
+
+Elements
+Toposolid API Samples
+API samples for toposolid related features.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Toposolid\CS\bin\Debug\Toposolid.dll
+Revit.SDK.Samples.Toposolid.CS.Command
+
+Elements
+Winder Stairs
+API Sketched Winder Stairs
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\WinderStairs\CS\bin\Debug\WinderStairs.dll
+Revit.SDK.Samples.WinderStairs.CS.Command
+
+Elements, Geometry
+Shaft Hole Puncher
+Create shaft opening or create opening on wall, floor or beam.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ShaftHolePuncher\CS\bin\Debug\ShaftHolePuncher.dll
+Revit.SDK.Samples.ShaftHolePuncher.CS.Command
+
+Elements, Geometry
+SlabShapeEditing
+Create vertex and crease on slab to edit it's shape.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SlabShapeEditing\CS\bin\Debug\SlabShapeEditing.dll
+Revit.SDK.Samples.SlabShapeEditing.CS.Command
+
+Elements, Geometry, Structure, UI
+Create Analytical Member
+Create Analytical Member
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.CreateAnalyticalMember
+
+Elements, Geometry, Structure, UI
+Create Analytical Panel
+Create Analytical Panel
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.CreateAnalyticalPanel
+
+Elements, Geometry, Structure, UI
+Add relation
+Add relation
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.AddRelation
+
+Elements, Geometry, Structure, UI
+Update relation
+Update relation
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.UpdateRelation
+
+Elements, Geometry, Structure, UI
+Break relation
+Break relation
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.BreakRelation
+
+Elements, Geometry, Structure, UI
+Modify Panel Contour
+Modify Panel Contour
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.ModifyPanelContour
+
+Elements, Geometry, Structure, UI
+Move an Analytical Panel using ElementTransformUtils
+Move an Analytical Panel using ElementTransformUtils while keeping connectivity
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.MoveAnalyticalPanelUsingElementTransformUtils
+
+Elements, Geometry, Structure, UI
+Move an Analytical Panel using SketchEditScope
+Move an Analytical Panel using SketchEditScope loosing connectivity
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.MoveAnalyticalPanelUsingSketchEditScope
+
+Elements, Geometry, Structure, UI
+Move an Analytical Member using UsingElementTransformUtils
+Move an Analytical Member using UsingElementTransformUtils keeping connectivity
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.MoveAnalyticalMemberUsingElementTransformUtils
+
+Elements, Geometry, Structure, UI
+Move an Analytical Member using SketchEditScope
+Move an Analytical Member using SetCurve loosing connectivity
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.MoveAnalyticalMemberUsingSetCurve
+
+Elements, Geometry, Structure, UI
+Move an Analytical Node using ElementTransformUtils
+Move an Analytical Node using ElementTransformUtils keeping connectivity
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.MoveAnalyticalNodeUsingElementTransformUtils
+
+Elements, Geometry, Structure, UI
+Flip Analytical Member
+Flips an Analytical Member
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.FlipAnalyticalMember
+
+Elements, Geometry, Structure, UI
+Check Connection Status
+Check Connection Status
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.AnalyticalNodeConnStatus
+
+Elements, Geometry, Structure, UI
+Member Forces Analytical Member
+Member Forces Analytical Member
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.MemberForcesAnalyticalMember
+
+Elements, Geometry, Structure, UI
+Release Conditions Analytical Member
+Release Conditions Analytical Member
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.ReleaseConditionsAnalyticalMember
+
+Elements, Geometry, Structure, UI
+Sets OuterContour for Analytical Panels
+Sets OuterContour for Analytical Panels
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.SetOuterContourForPanels
+
+Elements, Geometry, Structure, UI
+Create Analytical Curved Panel
+Create Analytical Curved Panel
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ContextualAnalyticalModel\CS\bin\Debug\ContextualAnalyticalModel.dll
+ContextualAnalyticalModel.CreateAnalyticalCurvedPanel
+
+Elements, Parameters
+Move Linear
+Move a linear element, such as a structural beam.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\MoveLinear\CS\bin\Debug\MoveLinear.dll
+Revit.SDK.Samples.MoveLinear.CS.Command
+
+Elements, Parameters
+Slab Properties (CS)
+Display slab properties.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SlabProperties\CS\bin\Debug\SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.CS.Command
+
+Elements, Parameters
+Span Direction
+Display slab properties (span direction and span direction symbols).
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SpanDirection\CS\bin\Debug\SpanDirection.dll
+Revit.SDK.Samples.SpanDirection.CS.Command
+
+Families
+Create Air Handler
+Create one air handler and add connectors.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\CreateAirHandler\CS\bin\Debug\CreateAirHandler.dll
+Revit.SDK.Samples.CreateAirHandler.CS.Command
+
+Families
+Create Truss
+Create truss in truss family document.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\CreateTruss\CS\bin\Debug\CreateTruss.dll
+Revit.SDK.Samples.CreateTruss.CS.Command
+
+Families
+GenericModelCreation
+The sample show how to create Generic Model family at family document.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\GenericModelCreation\CS\bin\Debug\GenericModelCreation.dll
+Revit.SDK.Samples.GenericModelCreation.CS.Command
+
+Families
+TypeRegeneration
+The command check every type regeneration without any error
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\TypeRegeneration\CS\bin\Debug\TypeRegeneration.dll
+Revit.SDK.Samples.TypeRegeneration.CS.Command
+
+Families
+ValidateParameters
+This command will validate if every type has valid values for certain parameter
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\ValidateParameters\CS\bin\Debug\ValidateParameters.dll
+Revit.SDK.Samples.ValidateParameters.CS.Command
+
+Families
+WindowWizard
+This command is to create window family via wizard
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\WindowWizard\CS\bin\Debug\WindowWizard.dll
+Revit.SDK.Samples.WindowWizard.CS.Command
+
+Families
+In-Place Members
+Display In-Place Member's Properties and AnalyticalModel.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\InPlaceMembers\CS\bin\Debug\InPlaceMembers.dll
+Revit.SDK.Samples.InPlaceMembers.CS.Command
+
+Families
+DividedSurface by intersects
+Customize DividedSurface with intersection elements
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\DividedSurfaceByIntersects\CS\bin\Debug\DividedSurfaceByIntersects.dll
+Revit.SDK.Samples.DividedSurfaceByIntersects.CS.Command
+
+Families
+New Extrusion Form
+The sample show how to create extrusion form at family document.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\NewForm\CS\bin\Debug\NewForm.dll
+Revit.SDK.Samples.NewForm.CS.MakeExtrusionForm
+
+Families
+New Revolve Form
+The sample show how to create revolve form at family document.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\NewForm\CS\bin\Debug\NewForm.dll
+Revit.SDK.Samples.NewForm.CS.MakeRevolveForm
+
+Families
+New Loft Form
+The sample show how to create loft form at family document.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\NewForm\CS\bin\Debug\NewForm.dll
+Revit.SDK.Samples.NewForm.CS.MakeLoftForm
+
+Families
+New Swept Blend Form
+The sample show how to create swept blend form at family document.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\NewForm\CS\bin\Debug\NewForm.dll
+Revit.SDK.Samples.NewForm.CS.MakeSweptBlendForm
+
+Families
+New Cap Form
+The sample show how to create cap form at family document.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\NewForm\CS\bin\Debug\NewForm.dll
+Revit.SDK.Samples.NewForm.CS.MakeCapForm
+
+Families
+Place FamilyInstance by face
+Create family instance on face.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PlaceFamilyInstanceByFace\CS\bin\Debug\PlaceFamilyInstanceByFace.dll
+Revit.SDK.Samples.PlaceFamilyInstanceByFace.CS.Command
+
+Families
+Type Selector
+Retrieve all the types of the selected element, such as a wall and allow the selected element's type to be changed.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\TypeSelector\VB.NET\bin\Debug\TypeSelector.dll
+Revit.SDK.Samples.TypeSelector.VB.NET.Command
+
+Families, MEP
+Create Ductwork Stiffener
+Create Ductwork Stiffener
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateDuctworkStiffener\CS\bin\Debug\CreateDuctworkStiffener.dll
+Revit.SDK.Samples.CreateDuctworkStiffener.CS.Command
+
+Families, Parameters
+AddParameterToFamily
+Sample to show how to automatically add a large set of parameters to a family.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\AutoParameter\CS\bin\Debug\AutoParameter.dll
+Revit.SDK.Samples.AutoParameter.CS.AddParameterToFamily
+
+Families, Parameters
+AddParameterToFamilies
+Sample to show how to automatically add a large set of parameters to multiple family files.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\AutoParameter\CS\bin\Debug\AutoParameter.dll
+Revit.SDK.Samples.AutoParameter.CS.AddParameterToFamilies
+
+Families, Parameters
+Command
+Command
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyParametersOrder\CS\bin\Debug\FamilyParametersOrder.dll
+Revit.SDK.Samples.FamilyParametersOrder.CS.Command
+
+Geometry
+Multithreaded Calculation
+Multithreaded Calculation
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AnalysisVisualizationFramework\MultithreadedCalculation\CS\bin\Debug\MultithreadedCalculation.dll
+Revit.SDK.Samples.MultithreadedCalculation.CS.MultithreadedCalculation
+
+Geometry
+Gradient Results On Surface
+Gradient Results On Surface
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AnalysisVisualizationFramework\SpatialFieldGradient\CS\bin\Debug\SpatialFieldGradient.dll
+Revit.SDK.Samples.AnalysisVisualizationFramework.CS.SpatialFieldGradient
+
+Geometry
+South Facing Walls Without ProjectLocation
+""
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DirectionCalculation\CS\bin\Debug\DirectionCalculation.dll
+Revit.Samples.DirectionCalculation.FindSouthFacingWallsWithoutProjectLocation
+
+Geometry
+South Facing Walls With ProjectLocation
+""
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DirectionCalculation\CS\bin\Debug\DirectionCalculation.dll
+Revit.Samples.DirectionCalculation.FindSouthFacingWallsWithProjectLocation
+
+Geometry
+South Facing Windows Without ProjectLocation
+""
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DirectionCalculation\CS\bin\Debug\DirectionCalculation.dll
+Revit.Samples.DirectionCalculation.FindSouthFacingWindowsWithoutProjectLocation
+
+Geometry
+South Facing Windows With ProjectLocation
+""
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DirectionCalculation\CS\bin\Debug\DirectionCalculation.dll
+Revit.Samples.DirectionCalculation.FindSouthFacingWindowsWithProjectLocation
+
+Geometry
+Auto Join
+Automatically join geometry of combinable elements.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FamilyCreation\AutoJoin\CS\bin\Debug\AutoJoin.dll
+Revit.SDK.Samples.AutoJoin.CS.Command
+
+Geometry
+Find Columns Embedded In Walls
+Find Columns Embedded In Walls
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FindReferencesByDirection\FindColumns\CS\bin\Debug\FindColumns.dll
+Revit.SDK.Samples.FindColumns.CS.Command
+
+Geometry
+Measure Height of Skylight
+Measure Height of Skylight
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FindReferencesByDirection\MeasureHeight\CS\bin\Debug\MeasureHeight.dll
+Revit.SDK.Samples.MeasureHeight.CS.Command
+
+Geometry
+RayTraceBounce
+Find intersection between ray and face and create connecting lines.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FindReferencesByDirection\RaytraceBounce\CS\bin\Debug\RayTraceBounce.dll
+Revit.SDK.Samples.RayTraceBounce.CS.Command
+
+Geometry
+ComputedSymbolGeometry
+Demonstrates how to get the computed symbol geometry.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\GeometryAPI\ComputedSymbolGeometry\CS\bin\Debug\ComputedSymbolGeometry.dll
+Revit.SDK.Samples.ComputedSymbolGeometry.CS.Command
+
+Geometry
+GeometryCreation_BooleanOperation
+GeometryCreation and BooleanOperation
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\GeometryAPI\GeometryCreation_BooleanOperation\CS\bin\Debug\GeometryCreation_BooleanOperation.dll
+Revit.SDK.Samples.GeometryCreation_BooleanOperation.CS.Command
+
+Geometry
+Proximity Detection and Wall Join Control
+The usage of  ElementIntersectsSolidFilter,ElementIntersectsElementFilter and WallUtils
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\GeometryAPI\ProximityDetection_WallJoinControl\CS\bin\Debug\ProximityDetection_WallJoinControl.dll
+Revit.SDK.Samples.ProximityDetection_WallJoinControl.CS.Command
+
+Geometry
+Compute distance to panels
+Compute the distance from a selected object to all panels and store in a panel instance parameter
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\DistanceToPanels\CS\bin\Debug\DistanceToPanels.dll
+Revit.SDK.Samples.DistanceToPanels.CS.SetDistanceParam
+
+Geometry
+Manipulate form
+Show how to manipulate edges and profiles of form
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\ManipulateForm\CS\bin\Debug\ManipulateForm.dll
+Revit.SDK.Samples.ManipulateForm.CS.Command
+
+Geometry
+Measure Panel Area
+Measure curtain panels on divided surfaces and identify panels beyond a user-specified range
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\MeasurePanelArea\CS\bin\Debug\MeasurePanelArea.dll
+Revit.SDK.Samples.MeasurePanelArea.CS.MeasurePanelArea
+
+Geometry
+Compute the length and angle of edges
+Measure curtain panels on divided surfaces, store the length and angle data to parameters
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\PanelEdgeLengthAngle\CS\bin\Debug\PanelEdgeLengthAngle.dll
+Revit.SDK.Samples.PanelEdgeLengthAngle.CS.SetLengthAngleParams
+
+Geometry
+Points Along Parabola
+Points Along Parabola
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\PointCurveCreation\CS\bin\Debug\PointCurveCreation.dll
+Revit.SDK.Samples.PointCurveCreation.CS.PointsParabola
+
+Geometry
+Points On Curve
+Points On Curve
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\PointCurveCreation\CS\bin\Debug\PointCurveCreation.dll
+Revit.SDK.Samples.PointCurveCreation.CS.PointsOnCurve
+
+Geometry
+Points From Text File
+Points From Text File
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\PointCurveCreation\CS\bin\Debug\PointCurveCreation.dll
+Revit.SDK.Samples.PointCurveCreation.CS.PointsFromTextFile
+
+Geometry
+Curve - Sine
+Curve - Sine
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\PointCurveCreation\CS\bin\Debug\PointCurveCreation.dll
+Revit.SDK.Samples.PointCurveCreation.CS.SineCurve
+
+Geometry
+Curve - Catenary
+Curve - Catenary
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\PointCurveCreation\CS\bin\Debug\PointCurveCreation.dll
+Revit.SDK.Samples.PointCurveCreation.CS.CatenaryCurve
+
+Geometry
+Surface - Cyclic
+Surface - Cyclic
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\PointCurveCreation\CS\bin\Debug\PointCurveCreation.dll
+Revit.SDK.Samples.PointCurveCreation.CS.CyclicSurface
+
+Geometry
+Material Quantities
+Material Quantities
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\MaterialQuantities\CS\bin\Debug\MaterialQuantities.dll
+Revit.Samples.MaterialQuantities.Command
+
+Geometry
+AddPredefinedInstance - Point Cloud Engine
+Add predefined instance
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PointCloudEngine\CS\bin\Debug\PointCloudEngine.dll
+Revit.SDK.Samples.CS.PointCloudEngine.AddPredefinedInstanceCommand
+
+Geometry
+Add randomized instance - Point Cloud Engine
+Add randomized instance
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PointCloudEngine\CS\bin\Debug\PointCloudEngine.dll
+Revit.SDK.Samples.CS.PointCloudEngine.AddRandomizedInstanceCommand
+
+Geometry
+Add randomized instance at transform - Point Cloud Engine
+Add randomized instance at transform
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PointCloudEngine\CS\bin\Debug\PointCloudEngine.dll
+Revit.SDK.Samples.CS.PointCloudEngine.AddTransformedInstanceCommand
+
+Geometry
+Serialize point cloud (utility) - Point Cloud Engine
+Serialize point cloud (utility)
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PointCloudEngine\CS\bin\Debug\PointCloudEngine.dll
+Revit.SDK.Samples.CS.PointCloudEngine.SerializePredefinedPointCloud
+
+Geometry
+SolidSolidCut-Cut
+"Let the sphere cut the cube"
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SolidSolidCut\CS\bin\Debug\SolidSolidCut.dll
+Revit.SDK.Samples.SolidSolidCut.CS.Cut
+
+Geometry
+SolidSolidCut-Uncut
+"Remove the cutting relationship between the sphere and the cube"
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SolidSolidCut\CS\bin\Debug\SolidSolidCut.dll
+Revit.SDK.Samples.SolidSolidCut.CS.Uncut
+
+Geometry
+Analytical Viewer
+Display analytical model of one or more selected elements.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Viewers\AnalyticalViewer\VB.NET\bin\Debug\AnalyticalViewer.dll
+Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+
+Geometry
+Element Viewer
+Display wireframe model of one or more selected elements.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Viewers\ElementViewer\VB.NET\bin\Debug\ElementViewer.dll
+Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+
+Geometry
+Revit Viewer
+View geometry information.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Viewers\RevitViewer\VB.NET\bin\Debug\RevitViewer.dll
+Revit.SDK.Samples.RevitViewer.VB.NET.RevitViewer
+
+Geometry
+Room Viewer
+Wireframe viewer for the selected room.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Viewers\RoomViewer\VB.NET\bin\Debug\RoomViewer.dll
+Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+
+Geometry, Structure
+NewPathReinforcement
+Create PathReinforcement on wall or slab.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\NewPathReinforcement\CS\bin\Debug\NewPathReinforcement.dll
+Revit.SDK.Samples.NewPathReinforcement.CS.Command
+
+Geometry, Structure
+Truss
+Create truss, edit profile and truss member of new created truss.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Truss\CS\bin\Debug\Truss.dll
+Revit.SDK.Samples.Truss.CS.Command
+
+Massing
+Set Parameter Values From Image Data
+Set Parameter Values From Image Data
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Massing\ParameterValuesFromImage\CS\bin\Debug\ParameterValuesFromImage.dll
+Revit.SDK.Samples.ParameterValuesFromImage.CS.SetParameterValueWithImageData
+
+Materials
+Edit appearance asset properties via a small control dialog
+This sample demonstrates basic usage of the AppearanceAssetEditScope and AssetProperty classes to change the value of an asset property in a given material. 
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AppearanceAssetEditing\CS\bin\Debug\AppearanceAssetEditing.dll
+Revit.SDK.Samples.AppearanceAssetEditing.CS.Command
+
+Materials
+Material Properties (CS)
+Get the material physical properties of the selected beam, column or brace.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\MaterialProperties\CS\bin\Debug\MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.CS.MaterialProperties
+
+Materials, Parameters
+Physical Properties
+Dump Material Physical Parameters.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PhysicalProp\CS\bin\Debug\PhysicalProp.dll
+Revit.SDK.Samples.PhysicalProp.CS.DumpMaterialPhysicalParameters
+
+MEP
+AutoRoute
+Route ducts and fittings.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AutoRoute\CS\bin\Debug\AutoRoute.dll
+Revit.SDK.Samples.AutoRoute.CS.Command
+
+MEP
+AvoidObstruction
+Resolve the obstructions of pipe with pipe, pipe with beam and pipe with duct.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AvoidObstruction\CS\bin\Debug\AvoidObstruction.dll
+Revit.SDK.Samples.AvoidObstruction.CS.Command
+
+MEP
+Fabrication Part Layout
+Fabrication Part Layout Sample
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.FabricationPartLayout
+
+MEP
+Optimize Straights
+Optimize Straights
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.OptimizeStraights
+
+MEP
+Stretch and Fit
+Stretch and fit
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.StretchAndFit
+
+MEP
+Convert To Fabrication
+Convert Design Elements To Fabrication Parts
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.ConvertToFabrication
+
+MEP
+Buttons and Palette Exclusions
+Exclude Fabrication Service Buttons and Palettes for Routing Operations
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.ButtonPaletteExclusions
+
+MEP
+Ancillaries
+Discover the Ancillaries Associated with a Fabrication Part
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.Ancillaries
+
+MEP
+Get Custom Data
+Discover the Custom data Associated with a Fabrication Config and Part
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.GetCustomData
+
+MEP
+Set Custom Data
+Set Custom data Associated with a Fabrication Config to a Selected Part
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.SetCustomData
+
+MEP
+Export to PCF
+Exports fabrication parts to a PCF file
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.ExportToPCF
+
+MEP
+Export Part Geometry
+Exports fabrication part geometry to a CSV file
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.FabPartGeometry
+
+MEP
+Display Part Info
+Displays fabrication part information
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.PartInfo
+
+MEP
+Detach Hanger Rods
+Detaches hanger rods from their structural host
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.DetachRods
+
+MEP
+Double Rod Lengths
+Doubles the length of the picked hanger rods
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.DoubleRodLength
+
+MEP
+Halve Rod Lengths
+Halves the length of the picked hanger rods
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.HalveRodLength
+
+MEP
+Increase Rod Structure Extension
+Increase the length of the rod as an extension from its hosted structure (by 1ft)
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.IncreaseRodStructureExtension
+
+MEP
+Decrease Rod Structure Extension
+Decrease the length of the rod as an extension from its hosted structure (by 1ft)
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.DecreaseRodStructureExtension
+
+MEP
+Part Renumber
+Renumbers a selection of fabrication parts
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.PartRenumber
+
+MEP
+Split Straight
+Splits a fabrication part straight into two equal pieces
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.SplitStraight
+
+MEP
+Load and Place Next Item File
+Reloads the fabrication configuration and then iterates the item folders and finds the next unloaded item file and lets a user place it in the model
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.LoadAndPlaceNextItemFile
+
+MEP
+Unload Unused Item Files
+Unloads item files that are loaded but are not used in the model
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.UnloadUnusedItemFiles
+
+MEP
+Export to MAJ
+Export Fabrication Parts to a fabrication job (MAJ) file
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.ExportToMAJ
+
+MEP
+Change Service
+Change the service of a selection of Fabrication Parts
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.ChangeService
+
+MEP
+Change Size
+Change the size of a selection of Fabrication Parts
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.ChangeSize
+
+MEP
+Apply Change
+Apply change to the service and the size of a selection of Fabrication Parts
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.ApplyChange
+
+MEP
+Flip Part
+Flips a Fabrication Part to the opposite direction
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FabricationPartLayout\CS\bin\Debug\FabricationPartLayout.dll
+Revit.SDK.Samples.FabricationPartLayout.CS.FlipPart
+
+MEP
+Pressure Loss Report
+Report the pressure loss for the network flow calculation.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\NetworkPressureLossReport\CS\bin\Debug\NetworkPressureLossReport.dll
+Revit.SDK.Samples.NetworkPressureLossReport.Command
+
+MEP
+Power Circuit
+Operate power circuits.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PowerCircuit\CS\bin\Debug\PowerCircuit.dll
+Revit.SDK.Samples.PowerCircuit.CS.Command
+
+MEP
+RoutingPreferenceTools.Analyzer
+RoutingPreferenceTools.Analyzer
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RoutingPreferenceTools\CS\bin\Debug\RoutingPreferenceTools.dll
+Revit.SDK.Samples.RoutingPreferenceTools.CS.Command
+
+MEP
+RoutingPreferenceTools.Builder.CommandReadPreferences
+RoutingPreferenceTools.Builder.CommandReadPreferences
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RoutingPreferenceTools\CS\bin\Debug\RoutingPreferenceTools.dll
+Revit.SDK.Samples.RoutingPreferenceTools.CS.CommandReadPreferences
+
+MEP
+RoutingPreferenceTools.Builder.CommandWritePreferences
+RoutingPreferenceTools.Builder.CommandWritePreferences
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RoutingPreferenceTools\CS\bin\Debug\RoutingPreferenceTools.dll
+Revit.SDK.Samples.RoutingPreferenceTools.CS.CommandWritePreferences
+
+MEP
+TraverseSystem
+Traverse a mechanical or piping system in the direction of flow
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\TraverseSystem\CS\bin\Debug\TraverseSystem.dll
+Revit.SDK.Samples.TraverseSystem.CS.Command
+
+Parameters
+Beam and slab parameter
+Add a new GUID parameter to beam and slab, and use the GUID value to find the right element.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\BeamAndSlabNewParameter\CS\bin\Debug\BeamAndSlabNewParameter.dll
+Revit.SDK.Samples.BeamAndSlabNewParameter.CS.Command
+
+Parameters
+Browse Parameter Bindings
+Browse all the shared parameters bindings used in this project.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\BrowseBindings\VB.NET\bin\Debug\BrowseBindings.dll
+Revit.SDK.Samples.BrowseBindings.VB.NET.Command
+
+Parameters
+CreateShared - Create Shared Parameter
+Create a new shared parameter and assign it to wall categories.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateShared\VB.NET\bin\Debug\CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command1
+
+Parameters
+CreateShared - Set Shared Parameter
+Set the shared parameter.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateShared\VB.NET\bin\Debug\CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command2
+
+Parameters
+Get Deck Properties
+Get deck layer properties.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DeckProperties\CS\bin\Debug\DeckProperties.dll
+Revit.SDK.Samples.DeckProperties.CS.Command
+
+Parameters
+FireRating - Apply Parameter
+Add a new shared parameter to Revit and apply it to all doors.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FireRating\VB.NET\bin\Debug\FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ApplyParameter
+
+Parameters
+FireRating - Export to Excel
+Export fire rating values to an Excel file.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FireRating\VB.NET\bin\Debug\FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ExportFireRating
+
+Parameters
+FireRating - Import from Excel
+Import fire rating values from the Excel file and apply them to doors.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FireRating\VB.NET\bin\Debug\FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ImportFireRating
+
+Parameters
+Create shared parameters
+Create a visible and an invisible parameter.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\InvisibleParam\CS\bin\Debug\InvisibleParam.dll
+Revit.SDK.Samples.InvisibleParam.CS.Command
+
+Parameters
+Element Parameters
+Show the property information of selected element.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ParameterUtils\CS\bin\Debug\ParameterUtils.dll
+Revit.SDK.Samples.ParameterUtils.CS.Command
+
+Parameters
+ReadonlySharedParameters1
+ReadonlySharedParameters1
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ReadonlySharedParameters\CS\bin\Debug\ReadonlySharedParameters.dll
+Revit.SDK.Samples.ReadonlySharedParameters.CS.SetReadonlyCost1
+
+Parameters
+ReadonlySharedParameters2
+ReadonlySharedParameters2
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ReadonlySharedParameters\CS\bin\Debug\ReadonlySharedParameters.dll
+Revit.SDK.Samples.ReadonlySharedParameters.CS.SetReadonlyCost2
+
+Parameters
+Test Floor Thickness
+Show how to retrieve and modify floor thickness.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\TestFloorThickness\VB.NET\bin\Debug\TestFloorThickness.dll
+Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
+
+Parameters
+Test Wall Thickness
+Show how to retrieve and modify wall thickness.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\TestWallThickness\VB.NET\bin\Debug\TestWallThickness.dll
+Revit.SDK.Samples.TestWallThickness.VB.NET.Command
+
+Parameters, Structure
+Create beams, columns and braces (CS)
+Create beams, columns and braces.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateBeamsColumnsBraces\CS\bin\Debug\CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.Command
+
+Parameters, Views
+Create and configure new view template
+Demonstrates the process of creating a new view template from a regular view.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ViewTemplateCreation\CS\bin\Debug\ViewTemplateCreation.dll
+Revit.SDK.Samples.ViewTemplateCreation.CS.Command
+
+Rooms/Spaces
+Create zone and space
+Create space/zone elements and edit zone in Revit MEP.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AddSpaceAndZone\CS\bin\Debug\AddSpaceAndZone.dll
+Revit.SDK.Samples.AddSpaceAndZone.CS.Command
+
+Rooms/Spaces
+Customize door opening expression
+Customize door opening expression based on geometry and your country standard.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DoorSwing\CS\bin\Debug\DoorSwing.dll
+Revit.SDK.Samples.DoorSwing.CS.InitializeCommand
+
+Rooms/Spaces
+Update Door Properties
+Update Door Properties according to geometries.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DoorSwing\CS\bin\Debug\DoorSwing.dll
+Revit.SDK.Samples.DoorSwing.CS.UpdateParamsCommand
+
+Rooms/Spaces
+Update Door Geometries
+Update door geometry according to From/To room property.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\DoorSwing\CS\bin\Debug\DoorSwing.dll
+Revit.SDK.Samples.DoorSwing.CS.UpdateGeometryCommand
+
+Rooms/Spaces
+Roofs Rooms (CS)
+Demonstrates how to check whether Room(Space) has bounding Roof.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RoofsRooms\CS\bin\Debug\RoofsRooms.dll
+Revit.SDK.Samples.RoofsRooms.CS.Command
+
+Rooms/Spaces
+Rooms
+Get and set room information (Number, Tag, Area).
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Rooms\CS\bin\Debug\Rooms.dll
+Revit.SDK.Samples.Rooms.CS.Command
+
+Rooms/Spaces
+Room Schedule
+Room Schedule.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RoomSchedule\CS\bin\Debug\RoomSchedule.dll
+Revit.SDK.Samples.RoomSchedule.Command
+
+Selection
+Pick for Deletion
+This command is to pick element and delete.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Selections\CS\bin\Debug\Selections.dll
+Revit.SDK.Samples.Selections.CS.PickforDeletion
+
+Selection
+Place At Point On Wall Face
+This command is to pick a point on wall face and place a window.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Selections\CS\bin\Debug\Selections.dll
+Revit.SDK.Samples.Selections.CS.PlaceAtPointOnWallFace
+
+Selection
+Place At Picked Face Work plane
+This command is to pick a face, set work plane, then pick a point to create a circle.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Selections\CS\bin\Debug\Selections.dll
+Revit.SDK.Samples.Selections.CS.PlaceAtPickedFaceWorkplane
+
+Selection
+Selection Dialog
+This command is to pick a element and a point from dialog.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Selections\CS\bin\Debug\Selections.dll
+Revit.SDK.Samples.Selections.CS.SelectionDialog
+
+Structure
+Analytical SupportData Information
+Displays the element's support information
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AnalyticalSupportData_Info\CS\bin\Debug\AnalyticalSupportData_Info.dll
+Revit.SDK.Samples.AnalyticalSupportData_Info.CS.Command
+
+Structure
+AreaReinCurve
+Turn off all layers but one. You get some parallel bars. Remove the hooks from one boundary curve so that the bars have hooks only at the other end.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AreaReinCurve\CS\bin\Debug\AreaReinCurve.dll
+Revit.SDK.Samples.AreaReinCurve.CS.Command
+
+Structure
+AreaReinParameters
+Show parameters of selected AreaReinforcement and allow user to modify
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AreaReinParameters\CS\bin\Debug\AreaReinParameters.dll
+Revit.SDK.Samples.AreaReinParameters.CS.Command
+
+Structure
+RebarParameters
+Show all parameters of selected Rebar
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AreaReinParameters\CS\bin\Debug\AreaReinParameters.dll
+Revit.SDK.Samples.AreaReinParameters.CS.RebarParas
+
+Structure
+Boundary Conditions
+Display the BoundaryConditions' parameters or create a new BoundaryConditions instance.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\BoundaryConditions\CS\bin\Debug\BoundaryConditions.dll
+Revit.SDK.Samples.BoundaryConditions.CS.Command
+
+Structure
+Create Beam System
+Create beam system according to the profile made of selected beams.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateBeamSystem\CS\bin\Debug\CreateBeamSystem.dll
+Revit.SDK.Samples.CreateBeamSystem.CS.Command
+
+Structure
+Create Complex Area Reinforcement
+Create complex AreaReinforcement on selected slab.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateComplexAreaRein\CS\bin\Debug\CreateComplexAreaRein.dll
+Revit.SDK.Samples.CreateComplexAreaRein.CS.Command
+
+Structure
+Create simple area reinforcement
+Create simple AreaReinforcement on selected wall or floor.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateSimpleAreaRein\CS\bin\Debug\CreateSimpleAreaRein.dll
+Revit.SDK.Samples.CreateSimpleAreaRein.CS.Command
+
+Structure
+Create wall in beam profile
+Create a profiled wall using the outline generated by a selection of beams defining a vertical profile.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateWallinBeamProfile\CS\bin\Debug\CreateWallinBeamProfile.dll
+Revit.SDK.Samples.CreateWallinBeamProfile.CS.CreateWallinBeamProfile
+
+Structure
+Create walls under beams
+Create simple rectangular walls along and under the path of selected beams.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateWallsUnderBeams\CS\bin\Debug\CreateWallsUnderBeams.dll
+Revit.SDK.Samples.CreateWallsUnderBeams.CS.CreateWallsUnderBeams
+
+Structure
+Create Curved Beam
+Create Curved Beam.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CurvedBeam\CS\bin\Debug\CurvedBeam.dll
+Revit.SDK.Samples.CurvedBeam.CS.Command
+
+Structure
+Frame Builder
+Add a new concrete column and beam size.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\FrameBuilder\CS\bin\Debug\FrameBuilder.dll
+Revit.SDK.Samples.FrameBuilder.CS.Command
+
+Structure
+Structural connection basic operations
+Shows how to perform basic operations on a structural connection.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\GenericStructuralConnection\CS\bin\Debug\GenericStructuralConnection.dll
+Revit.SDK.Samples.GenericStructuralConnection.CS.Command
+
+Structure
+Loads
+Show how to use load case, nature, usage and combination.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Loads\CS\bin\Debug\Loads.dll
+Revit.SDK.Samples.Loads.CS.Loads
+
+Structure
+Multiplanar Rebar
+Demonstrates how to create multiplanar rebar.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\MultiplanarRebar\CS\bin\Debug\MultiplanarRebar.dll
+Revit.SDK.Samples.MultiplanarRebar.CS.Command
+
+Structure
+NewRebar
+Create a rebar on the selected concrete rectangular column or beam.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\NewRebar\CS\bin\Debug\NewRebar.dll
+Revit.SDK.Samples.NewRebar.CS.Command
+
+Structure
+PathReinforcement
+Display path reinforcement properties.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\PathReinforcement\CS\bin\Debug\PathReinforcement.dll
+Revit.SDK.Samples.PathReinforcement.CS.Command
+
+Structure
+RebarContainerAnyShapeType
+Create Rebar Container in a selected concrete element (beam or column) that does not have any reinforcement.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RebarContainerAnyShapeType\CS\bin\Debug\RebarContainerAnyShapeType.dll
+Revit.SDK.Samples.RebarContainerAnyShapeType.CS.Command
+
+Structure
+Add Parameters
+External command to add shared parameters to Rebar
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RebarFreeForm\CS\bin\Debug\RebarFreeForm.dll
+Revit.SDK.Samples.RebarFreeForm.CS.AddSharedParams
+
+Structure
+Create Rebar Free Form
+External command to create a Rebar FreeForm element and external application to implement the custom server used to regenerate the rebar geometry based on constraints
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\RebarFreeForm\CS\bin\Debug\RebarFreeForm.dll
+Revit.SDK.Samples.RebarFreeForm.CS.Command
+
+Structure
+Reinforcement
+Create bar set in a selected concrete element (beam or column) that does not have any reinforcement.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\Reinforcement\CS\bin\Debug\Reinforcement.dll
+Revit.SDK.Samples.Reinforcement.CS.Command
+
+Structure
+Add elements to connection
+Add elements to existing structural connection
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.AddElementsToConnection.CS.Command
+
+Structure
+Add elements to custom connection
+Add elements to existing custom connection
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.AddElementsToCustomConnection.CS.Command
+
+Structure
+Add ranges of applicability to a connection type
+Add ranges of applicability to a connection type
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.AddRangesToConnectionType.CS.Command
+
+Structure
+Create anchor pattern
+Create anchor pattern
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreateAnchorPattern.CS.Command
+
+Structure
+Create bolt pattern
+Create bolt pattern
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreateBoltPattern.CS.Command
+
+Structure
+Create contour cut
+Create contour cut
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreateContourCut.CS.Command
+
+Structure
+Create cope skewed
+Create cope skewed
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreateCopeSkewed.CS.Command
+
+Structure
+Create corner cut
+Create corner cut
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreateCornerCut.CS.Command
+
+Structure
+Create plate
+Create plate
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreatePlate.CS.Command
+
+Structure
+Create plate hole
+Create plate hole
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreatePlateHole.CS.Command
+
+Structure
+Create shear stud pattern
+Create shear stud pattern
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreateShearStudPattern.CS.Command
+
+Structure
+Create shortening
+Create shortening
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreateShortening.CS.Command
+
+Structure
+Create weld point
+Create weld point
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.CreateWeldPoint.CS.Command
+
+Structure
+Delete connection
+Delete connection
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.DeleteConnection.CS.Command
+
+Structure
+Remove elements from structural connection
+Remove elements from structural connection
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.RemoveElementsFromConnection.CS.Command
+
+Structure
+Remove subelements from custom connection
+Remove subelements from custom connection
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.RemoveSubelementsFromCustomConnection.CS.Command
+
+Structure
+Print connection detailed parameters
+Print connection detailed parameters
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.UpdateConnectionDetailedParameters.CS.Command
+
+Structure
+Fabrication transaction and background calculation
+Shows how to handle "Background calculation in progress" exception when trying to start fabrication transaction
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SampleCommandsSteelElements\CS\bin\Debug\SampleCommandsSteelElements.dll
+Revit.SDK.Samples.SampleCommandsSteelElements.BackgroundCalculation.CS.Command
+
+Structure
+StructSample - Frame Wall
+Add columns to the selected walls.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\StructSample\CS\bin\Debug\StructSample.dll
+Revit.SDK.Samples.StructSample.CS.Command
+
+Structure
+Structural Layer Function (CS)
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\StructuralLayerFunction\CS\bin\Debug\StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.CS.Command
+
+View Transforms
+Sheet To 3D View
+Generate a perspective View3D with its camera at a click on a viewport on a sheet
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\SheetToView3D\CS\bin\Debug\SheetToView3D.dll
+Revit.SDK.Samples.SheetToView3D.CS.Command
+
+Views
+All Views
+Generate a new sheet for user selected views
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\AllViews\CS\bin\Debug\AllViews.dll
+Revit.SDK.Samples.AllViews.CS.Command
+
+Views
+Create view section
+Create a section view across the mid point of the selected wall, floor or beam
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateViewSection\CS\bin\Debug\CreateViewSection.dll
+Revit.SDK.Samples.CreateViewSection.CS.Command
+
+Views
+Create drafting view
+Create a new empty drafting view
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\CreateViewSection\CS\bin\Debug\CreateViewSection.dll
+Revit.SDK.Samples.CreateViewSection.CS.CreateDraftingView
+
+Views
+Object Viewer
+Display the selected element in a preview window and generic properties in a grid.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ObjectViewer\CS\bin\Debug\ObjectViewer.dll
+Revit.SDK.Samples.ObjectViewer.CS.Command
+
+Views
+ScheduleAPI
+This sample introduces how to create a view schedule and how to show its data on a sheet.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\ScheduleCreation\CS\bin\Debug\ScheduleCreation.dll
+Revit.SDK.Samples.ScheduleCreation.CS.Command
+
+Views
+Visibility Controller
+Control element visibility by category.
+LargeImage:
+Image:
+C:\Revit SDK 2024.2\Software Development Kit\Samples\VisibilityControl\CS\bin\Debug\VisibilityControl.dll
+Revit.SDK.Samples.VisibilityControl.CS.Command
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+      <Text>Set Parameter Values From Image Data</Text>
+      <Assembly>ParameterValuesFromImage.dll</Assembly>
+      <ClientId>9F405E24-3799-4b56-828F-14842ABE4802</ClientId>
+      <FullClassName>Revit.SDK.Samples.ParameterValuesFromImage.CS.SetParameterValueWithImageData</FullClassName>
+	  <Description>Set Parameter Values From Image Data</Description>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+   </AddIn>
+</RevitAddIns>

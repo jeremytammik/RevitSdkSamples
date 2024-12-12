@@ -1,0 +1,233 @@
+
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" type="text/css" href="style/adsk.panels.css">
+      <link rel="stylesheet" type="text/css" href="style/adsk.panels.custom.css"><script type="text/javascript">
+						var search_loaded = false;
+						var index_loaded = false;
+						var favorites_loaded = false;
+                        
+                        var frameNames = new Array("iframeToc","iframeIndex","iframeSearch","iframeFavorites");
+                        
+                        var tabNames = new Array("tocTab","indexTab","searchTab","favoritesTab");
+
+                        function selectFirstTab() {
+                            for(i = 0; i < frameNames.length; i++)
+                            {
+                                if (document.getElementById(frameNames[i])) {
+                                    selectTab(i);
+                                    break;
+                                }
+                            }
+
+                        }
+
+                        function selectTab(tabNum)
+						{
+							for(i = 0; i < frameNames.length; i++)
+							{
+                                var x = document.getElementById(tabNames[i]);
+                                if (x) {
+                                    if(tabNum != i) {
+                                        x.className="tab_inactive";
+                                        hideSection(frameNames[i]);
+                                    } else {
+                                        x.className="tab_active";
+                                        showSection(frameNames[i]);
+                                    }
+                                }
+							}
+						}
+
+                        function selectTabByName(tabName)
+                        {
+                            for(i = 0; i < frameNames.length; i++)
+							{
+                                var x = document.getElementById(tabNames[i]);
+                                if (x) {
+                                    if(tabName != tabNames[i]) {
+                                        x.className="tab_inactive";
+                                        hideSection(frameNames[i]);
+                                    } else {
+                                        x.className="tab_active";
+                                        showSection(frameNames[i]);
+                                    }
+                                }
+							}
+                        }
+
+						function hideSection(buttonID)
+						{
+							var x = document.getElementById(buttonID);
+                            if (x) {
+                                x.style.visibility = "hidden";
+                                x.style.zIndex="1";
+                                x.style.position="absolute";
+                                x.style.top="0%";
+                            }
+						}
+
+                        function showSection(buttonID)
+                        {
+                            var x = document.getElementById(buttonID);
+                            if (x) {
+                                x.style.visibility = "visible";
+                                x.style.zIndex=3;
+                                x.style.position="relative";
+                                x.style.top="0%";
+                                if (!search_loaded && buttonID == "iframeSearch") {
+                                    var iframe = document.getElementById("iframeSearchFrame");
+                                    if (iframe) {
+                                        if (attachIframeHandler(iframe, hideLoadingMask)) {
+                                            showLoadingMask();
+                                        }
+                                        showLoadingMask();
+                                        setTimeout(function() {
+                                            window.open("search.html?query=" + decodeURIComponent(gup('query')),"iframeSearch");
+                                        }, 10);
+                                        search_loaded = true;
+                                    }
+                                } else if (!index_loaded && buttonID == "iframeIndex") {
+                                    var iframe = document.getElementById("iframeIndexFrame");
+                                    if (iframe) {
+                                        if (attachIframeHandler(iframe, hideLoadingMask)) {
+                                            showLoadingMask();
+                                        }
+                                        setTimeout(function() {
+                                            window.open("indexes.html","iframeIndex");
+                                        }, 10);
+                                        index_loaded = true;
+                                    }
+                                } else if (!favorites_loaded && buttonID == "iframeFavorites") {
+                                    loadFavorites();
+                                }
+                            }
+                        }
+
+                        function loadFavorites() {
+                            var iframe = document.getElementById("iframeFavoritesFrame");
+                            if (iframe) {
+                                if (attachIframeHandler(iframe, hideLoadingMask)) {
+                                    showLoadingMask();
+                                }
+                                setTimeout(function() {
+                                    window.open("favorites.html","iframeFavorites");
+                                }, 10);
+                                favorites_loaded = true;
+                            }
+                        }
+
+                        function attachIframeHandler(iframe, handler) {
+                            if (iframe) {
+                                if (iframe.attachEvent) {
+                                    iframe.attachEvent('onload', handler);
+                                    return true;
+                                } else if (iframe.addEventListener) {
+                                    iframe.addEventListener('load', handler, false);
+                                    return true;
+                                } else {
+                                    var __onload = iframe.onload;
+                                    iframe.onload = function() {
+                                        handler();
+                                        __onload();
+                                    };
+                                    return true;
+                                }
+                            }
+                            return false;
+                        }
+
+                       function hideLoadingMask() {
+                           var loading = document.getElementById("loading");
+                           var loading_mask = document.getElementById("loading-mask");
+                           if (loading && loading_mask) {
+                               loading.style.visibility = "hidden";
+                               loading_mask.style.visibility = "hidden";
+                           }
+                       }
+                       function showLoadingMask() {
+                           var loading = document.getElementById("loading");
+                           var loading_mask = document.getElementById("loading-mask");
+                           if (loading && loading_mask) {
+                               loading.style.visibility = "visible";
+                               loading_mask.style.visibility = "visible";
+                           }
+                       }
+
+                       function afterLoad() {
+                            
+                                
+                                if (!favorites_loaded) {
+                                    loadFavorites();
+                                }
+                            
+
+
+                            try {
+                              if(decodeURIComponent(gup('query')) != null && decodeURIComponent(gup('query')).length > 0)
+                                selectTabByName('searchTab');
+                              else
+                                selectFirstTab();
+                            } catch(ex) {}
+                            hideLoadingMask();
+                        }
+
+                        function gup( name ) {
+                           name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+                           var regexS = "[\\?&]"+name+"=([^&#]*)";
+                           var regex = new RegExp( regexS );
+                           var results = regex.exec( window.location.href );
+                           if( results == null )
+                               return "";
+                           else
+                               return results[1];
+                        }
+                    </script><title>Freeze drawings</title>
+   </head>
+   <body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" scroll="no" onLoad="afterLoad()">
+      <div id="loading-mask"></div>
+      <div id="loading">
+         <div class="loading-indicator"><img src="images/loading.gif" width="32" height="32" style="margin-right:8px;" align="absmiddle" alt="Loading...">Loading...
+         </div>
+      </div>
+      <table cellspacing="1" cellpadding="0" class="contentTable">
+         <tr class="book-title__row">
+            <td height="3%">
+               <div class="book-title">Freeze drawings</div>
+            </td>
+         </tr>
+         <tr>
+            <td height="3%">
+               <table height="100%" width="100%" cellspacing="0" cellpadding="0">
+                  <tr>
+                     <td>
+                        <table class="headermenu" cellspacing="0" cellpadding="0" width="100%" height="100%" id="tabTable">
+                           <tr>
+                              <td align="center" id="tocTab" onClick="javascript: selectTab(0);" class="tab_active"><a class="tabLink">Contents</a></td>
+                              <td align="center" id="indexTab" onClick="javascript: selectTab(1);" class="tab_inactive"><a class="tabLink">Index</a></td>
+                              <td align="center" id="searchTab" onClick="javascript: selectTab(2);" class="tab_inactive"><a class="tabLink">Search</a></td>
+                              <td align="center" id="favoritesTab" onClick="javascript: selectTab(3);" class="tab_inactive"><a class="tabLink">Favorites</a></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td align="center"></td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="tdTOC" height="94%">
+               <div class="hidennFrame" id="iframeToc" style="visibility: visible; zIndex: 3; position: realtive; top: 10%;"><iframe id="iframeTocFrame" frameborder="no" scrolling="no" name="iframeToc" src="contents.html" class="iframeTOC"></iframe></div>
+               <div class="hidennFrame" id="iframeIndex" style="visibility: hidden; zIndex: 1; position: absolute; top: 0%;"><iframe id="iframeIndexFrame" frameborder="no" scrolling="no" name="iframeIndex" class="iframeTOC"></iframe></div>
+               <div class="hidennFrame" id="iframeSearch" style="visibility: hidden; zIndex: 1; position: absolute; top: 0%;"><iframe id="iframeSearchFrame" frameborder="no" scrolling="no" name="iframeSearch" class="iframeTOC" allowTransparency="true"></iframe></div>
+               <div class="hidennFrame" id="iframeFavorites" style="visibility: hidden; zIndex: 1; position: absolute; top: 0%;"><iframe id="iframeFavoritesFrame" frameborder="no" scrolling="no" name="iframeFavorites" class="iframeTOC"></iframe></div>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

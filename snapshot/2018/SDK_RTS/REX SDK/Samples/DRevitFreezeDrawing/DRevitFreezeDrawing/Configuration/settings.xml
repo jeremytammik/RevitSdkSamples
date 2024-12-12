@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ROXML version="1.0">
+   <header>
+      <contents type="configuration" version="1.5"/>
+      <product type="component" category="library" technology=".net" name="REX"/>
+   </header>
+   <settings>
+      <control>
+          <visibility  contexts="structure;archiecture;piping"/>
+          <context name="Revit" subname="Structure" optionlist="" supported="true" version=""/>
+          <context name="Revit" subname="Architecture" optionlist="" supported="true" version=""/>
+          <context name="Revit" subname="MEP" optionlist="" supported="true" version=""/>
+          <context name="Revit" optionlist="" supported="true" version=""/>
+      </control>
+   </settings>
+</ROXML>

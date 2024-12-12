@@ -1,0 +1,1679 @@
+/* Consolidation of many .css files. Controls the pages in the files folder */
+
+body {
+    background-color: #fff;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-style: normal;
+    font-weight: normal;
+    color: #000;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-align: left;
+    text-indent: 0pt;
+    margin: 0;
+    height: 100%;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+div.body_content {
+    margin: 0 12pt;
+}
+
+/* ----------------------------------------------------------------------------
+										Link styles
+ ---------------------------------------------------------------------------- */
+
+a:link, a:active {
+    color: #00289C;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #00289C;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #CE9E08;
+    text-decoration: underline;
+}
+/* Added by Intelliarts as a missing link debugger */
+a.link-without-href:link, a.link-without-href:active {
+    color: #9900FF;
+    text-decoration: none;
+    background-color: #CCCCFF;
+}
+
+a.link-without-href:visited {
+    color: #909090;
+    text-decoration: none;
+    background-color: #E8E8E8;
+}
+
+a.link-without-href:hover {
+    color: #9900FF;
+    text-decoration: underline;
+    background-color: #CCCCFF;
+}
+
+/* ----------------------------------------------------------------------------
+										Table styles
+ ---------------------------------------------------------------------------- */
+
+table {
+    background-color: transparent;
+    margin-top: 5pt;
+    font-size: 10pt;
+
+}
+
+p.table-title {
+    font-weight: bold;
+    color: #338;
+}
+
+p.table-title + table.table {
+    margin-top: -5pt;
+}
+
+/* Table after it's title should have small top margin */
+
+table.table th {
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+/*Head row cells*/
+table.table tr td {
+    vertical-align: top;
+
+}
+
+/*Body cells*/
+
+table.ruled, table.ruled-wide {
+    width: 97%;
+    margin: 1.4em 0;
+    border-bottom: 3px solid #3D3D3D;
+    border-top: 4px solid #3D3D3D;
+    background-color: #F2F2F2;
+}
+
+table.ruled th, table.ruled-wide th {
+    color: white;
+    background-color: #3D3D3D;
+    padding: 4px 10px 7px 12px;
+    vertical-align: middle;
+}
+
+table.ruled td, table.ruled-wide td {
+    padding: 6px 10px 7px 12px;
+    border-bottom: 1px solid #3D3D3D;
+    vertical-align: baseline;
+}
+
+tr.RuledHeading, tr.RuledWideHeading {
+    background-color: transparent;
+}
+
+tr.RuledEvenRow, tr.RuledWideEvenRow {
+    background-color: transparent;
+}
+
+tr.RuledOddRow, tr.RuledWideOddRow {
+    background-color: transparent;
+}
+
+th.table-heading {
+    font-size: 10pt;
+    text-align: left;
+    font-weight: bold;
+    color: #3D3D3D;
+}
+
+/* Unruled Tables */
+
+table.not-ruled, table.not-ruled-wide {
+    width: 97%;
+    margin: 1em 0;
+}
+
+table.not-ruled th, table.not-ruled-wide th {
+    color: #338;
+    padding: 4px 20px 2px 0;
+    vertical-align: text-bottom;
+}
+
+table.not-ruled td, table.not-ruled-wide td {
+    padding: 4px 20px 2px 0;
+    vertical-align: top;
+}
+
+table.not-ruled td div.figure-anchor,
+table.not-ruled-wide td div.figure-anchor {
+    margin-top: 5pt;
+}
+
+/* tables in list elements */
+li table.ruled, li table.ruled-wide, li table.not-ruled, li table.not-ruled-wide {
+   
+}
+
+/* paras within tables */
+table.ruled p, table.ruled-wide p, table.not-ruled p, table.not-ruled-wide p {
+    margin: 2pt 0;
+}
+
+/* div.note_xx within tables */
+table.ruled div.note-note,
+table.ruled-wide div.note-note,
+table.not-ruled div.note-note,
+table.not-ruled-wide div.note-note {
+    margin: 2pt 0;
+}
+
+/* ul's within tables*/
+table.ruled ul, table.ruled-wide ul, table.not-ruled ul, table.not-ruled-wide ul {
+    margin: 6pt 0 0 12pt;
+    list-style-type: disc;
+}
+
+table.ruled ul p, table.ruled-wide ul p, table.not-ruled ul p, table.not-ruled-wide ul p {
+    margin-top: 6pt;
+}
+
+table.ruled ul li, table.ruled-wide ul li, table.not-ruled ul li, table.not-ruled-wide ul li {
+    margin: 4pt 0 0 0;
+}
+
+/* ol's within tables */
+table.ruled ol, table.ruled-wide ol, table.not-ruled ol, table.not-ruled-wide ol {
+    margin: 6pt 0 0 18pt;
+}
+
+table.ruled ol p, table.ruled-wide ol p, table.not-ruled ol p, table.not-ruled-wide ol p {
+    margin-top: 6pt;
+}
+
+table.ruled ol li, table.ruled-wide ol li, table.not-ruled ol li, table.not-ruled-wide ol li {
+    margin: 4pt 0 0 0;
+}
+
+@media print {
+
+    table.ruled-wide th.table-heading {
+        color: #3D3D3D;
+        background-color: transparent;
+        padding-top: 4pt;
+        border-bottom: 4px solid #3D3D3D;
+    }
+
+}
+
+/* @media print */
+
+p.table-body {
+}
+
+/* Paragraph within table body */
+p.table-heading {
+}
+
+/* Paragraph within table body */
+p.table-footing {
+}
+
+/* Paragraph within table body */
+
+/* data table */
+/* also used in dialog box topics */
+table.ref-data {
+    margin: 0;
+    border: none;
+    font-size: 9pt;
+}
+
+/* data table td */
+table.ref-data td {
+    padding: 0 0 12pt 0;
+    width: 0;
+}
+
+/* ----------------------------------------------------------------------------
+										List styles
+ ---------------------------------------------------------------------------- */
+
+ul {
+    margin: 6pt 0 0 12pt;
+    list-style-type: disc;
+}
+
+ul p {
+    margin-top: 6pt;
+}
+
+ul li {
+    margin: 10pt 0 0 6pt;
+}
+
+ul.bullet_no {
+    list-style-type: none;
+}
+
+ol {
+    margin: 6pt 0 0 18pt;
+}
+
+ol p {
+    margin-top: 6pt;
+}
+
+ol li {
+    margin: 10pt 0 0 0;
+    padding-left: 0pt;
+}
+
+div.single_step_instruction ol {
+    list-style-image: url(../images/ac.menuaro.gif);
+}
+
+ /* See-Also cleaned up 2 Dec 11 Patricia McMullen to reflect cleaner HTMl See-Also line deleted 8 Aug 12 Zvi */
+div.see-also ul ul {
+    margin-left: 0px;
+}
+div.see-also li {
+    margin-top: 4pt;
+}
+
+div.see-also {
+    margin-top: 18pt;
+    padding-top: 2pt;
+}
+div.see-also h4.related {
+	color: #338;
+   font-weight: bold;
+   margin: 0;
+   margin-bottom: 22px;
+   font-size: 10pt;
+}
+div.related-links h4.related{
+	margin-left:60px;
+	margin-bottom: 5px;
+	margin-top:20 px;
+	color: #338;
+	font-size: 10pt;
+}
+
+
+span.see-also {
+    color: #338;
+    font-weight: bold;
+}
+
+div.topic-list li {
+    margin-top: 4pt;
+}
+
+div.dl_section {
+    margin-left: 30pt;
+}
+
+/* section titles (break heads within topics) */
+div.dl_section p.title,
+div.dl_section p.section_title_h1,
+div.section p.section_title_h1 {
+    background-color: #959595;
+    font-weight: bold;
+    font-size: 10pt;
+    color: #fff;
+    padding: 2pt 6pt 3pt 4pt;
+    margin-top: 20pt;
+}
+
+div.section h2 {
+    background-color: #959595;
+    font-weight: bold;
+    font-size: 10pt;
+    color: #fff;
+    padding: 2pt 6pt 3pt 4pt;
+    margin-top: 20pt;
+}
+
+@media print {
+
+    div.dl_section p.title,
+    div.dl_section p.section_title_h1,
+    div.section p.section_title_h1 {
+        background-color: transparent;
+        padding-left: 0pt;
+    }
+
+}
+
+dl {
+}
+
+dl p {
+    margin-top: 6pt;
+}
+
+dt {
+    margin-top: 12pt;
+    margin-bottom: 0px;
+}
+
+dd {
+    margin-top: 0pt;
+    margin-bottom: 0px;
+}
+
+ul.jumplist {
+    margin-left: 10pt;
+    margin-bottom: 10pt;
+}
+
+ol[start] {
+    margin-top: 2pt
+}
+
+/* continued list */
+
+div.list-intro {
+    font-size: 10pt;
+    margin-bottom: 5pt;
+    font-weight: bold;
+    color: #990000;
+}
+
+div.enclosed-list {
+    margin-top: -5pt;
+    padding: 0 0 0 15pt;
+}
+
+/* Block to indent enclosed lists */
+
+div.enclosed-list div.list-intro {
+    padding-top: 10pt;
+}
+
+/* Subsequent list into */
+
+div.enclosed-list ul {
+    margin: 0;
+}
+
+div.enclosed-list ol {
+    margin: 0;
+}
+
+div.topic-list h4.related {
+    font-weight: bold;
+    font-size: 10pt;
+    color: #338;
+    margin: 16pt 0 8pt 0;
+}
+
+div.topic-list {
+    font-size: 10pt;
+    padding: 0;
+}
+
+.topiclist-litem {
+    margin-bottom: 6pt;
+}
+
+/* definition list */
+table.dl {
+    font-size: 10pt;
+}
+
+/* in a definition list, a term-definition pair */
+tr.dl-pair {
+}
+
+td.term {
+    width: 100pt;
+    vertical-align: baseline;
+    padding: 0 12pt 0 0;
+}
+
+td.definiton {
+    vertical-align: baseline;
+    padding: 0;
+}
+
+/* What's New DL styles */
+dl.dl-WN dt {
+                float: left;
+   width: 25%;
+   margin: 1em 0 0 0;
+}
+dl.dl-WN dd {
+                float: right;
+   width: 65%;
+   margin: 1em 0 0 0;
+}
+dl.dl-WN div.definition p {
+                margin:0;
+}
+div.clear {
+                clear: both;
+}
+
+/* Civil 3D quick reference sections */
+
+div.section {
+    margin-top: 12pt;
+}
+
+span.term {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #36c;
+}
+
+div.definition {
+    margin-bottom: 10pt;
+}
+
+div.definition p {
+    margin-top: 4pt;
+}
+
+div.definition ul {
+    margin-top: 0pt;
+}
+
+div.definition li {
+    margin-top: 4pt;
+}
+
+/* definition links (glossary links) */
+span.term a {
+    color: green; /* 'green' = #070 */
+    text-decoration: none;
+    border-bottom: 1px dotted green;
+}
+
+/* definition links */
+span.term a:visited {
+    color: green;
+}
+
+/* collapsible */
+
+div.collapsible {
+    margin-top: 10pt;
+    margin-bottom: 5pt;
+}
+
+img.collapsible {
+    cursor: pointer;
+}
+
+div.collapsible-section {
+}
+
+span.collapsible-section-title {
+    color: #027;
+    font-size: 10pt;
+    font-weight: bold;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+/* ----------------------------------------------------------------------------
+										Note styles
+ ---------------------------------------------------------------------------- */
+
+div.note-note, 
+div.note-warning, 
+div.note-tip, 
+div.note-related, 
+div.note-important, 
+div.note-bestpractice {
+margin-top: 10pt;
+margin-bottom: 0px;
+}
+
+/* Notes within table */
+table.table div.note-note, 
+table.table div.note-warning, 
+table.table div.note-tip, 
+table.table div.note-related, 
+table.table div.note-important, 
+table.table div.note-bestpractice {
+padding-top: 5px;
+padding-bottom: 5px;
+font-size: 9pt;
+}
+/* Notes within lists */
+
+li div.note-note, 
+li div.note-warning, 
+li div.note-tip, 
+li div.note-related, 
+li div.note-important, 
+li div.note-bestpractice {
+margin-left: 0pt;
+margin-top: 2pt;
+margin-bottom: 8pt;
+}
+
+/*  Note label styles */
+div.note-important span.label {
+color: #c00;
+font-size: 9pt;
+font-weight: bold;
+padding-right: 5px;
+}
+
+div.note-warning span.label {
+color: #c00;
+font-size: 9pt;
+font-weight: bold;
+padding-right: 5px;
+}
+
+div.note-note span.label {
+color: #338;
+font-size: 9pt;
+font-weight: bold;
+padding-right: 5px;
+}
+
+div.note-tip span.label {
+color: #338;
+font-size: 9pt;
+font-weight: bold;
+padding-right: 5px;
+}
+
+div.note-related span.label {
+color: #027;
+font-size: 9pt;
+font-weight: bold;
+padding-right: 5px;
+}
+
+div.note-important span.label {
+color: #c00;
+font-size: 9pt;
+font-weight: bold;
+padding-right: 5px;
+}
+
+div.note-bestpractice span.label {
+color: #c00;
+font-size: 9pt;
+font-weight: bold;
+padding-right: 5px;
+}
+
+/* ---------------------------------------------------------------------------------------------
+                                        Code elements
+ --------------------------------------------------------------------------------------------- */
+span.code, 
+div.codeBlock, 
+p.codeLine, 
+p.codeComment, 
+span.codeLiteral {
+font-family: "Courier New", Courier, monospace;
+font-size: 10pt;
+font-style: normal;
+font-weight: normal;
+}
+
+span.code {}
+
+div.codeBlock div.codeBlock {
+margin-left: 30pt;
+} /* Only descendant code blocks should have indents */
+
+p.codeLine, 
+p.codeComment {
+padding: 1px;
+margin: 1px;
+}
+
+p.codeSpace {}
+
+span.codeLiteral {}
+
+div.codeBlock {
+margin-top: 8pt;
+padding: 8pt;
+background-color: #f7f7f7;
+}
+/* Fixes word wrap in code block */
+pre {
+  white-space: pre;
+  overflow: auto;
+  word-wrap: normal; 
+}
+
+div.codeBlock pre.codeLine {
+margin-top: 0pt;
+margin-bottom: 0pt;
+}
+
+@media print {
+
+    div.codeBlock {
+    background: #fff;
+    border: 1px solid #000;
+    }
+
+} /* @media print */
+
+
+/* ---------------------------------------------------------------------------------------------
+							Charspan
+--------------------------------------------------------------------------------------------- */
+span.charspan-keyboardEntry {}
+
+span.charspan-strong {
+font-weight: bold;
+}
+
+span.charspan-special {}
+
+/*
+Note that CharSpan[@class='Emphasis'], CharSpan[@class='Subscript'] and CharSpan[@class='Superscript'] elements
+are being formatted as <em>, <sub> and <sub> html elements so please change element css definitions instead of class
+*/
+
+/* ---------------------------------------------------------------------------------------------
+							Emphasis
+--------------------------------------------------------------------------------------------- */
+em, em.mild {
+font-style: italic;
+}
+
+em.strong {
+font-style: normal;
+font-weight: bold;
+}
+
+em.extreme {
+font-style: italic;
+font-weight: bold;
+}
+
+/* ---------------------------------------------------------------------------------------------
+							UIString
+--------------------------------------------------------------------------------------------- */
+span.uis-promptMessage {
+font-style: normal;
+font-weight: bold;
+}
+
+span.uis-dialogCaption {
+font-style: normal;
+font-weight: bold;
+}
+
+span.uis-entryField {
+font-style: normal;
+font-weight: bold;
+}
+
+span.uis-menuText {}
+
+span.uis-stringTable {}
+
+span.uis-unspecified {}
+
+/* -------------------------------------------------------------------------------------------
+							Comments
+------------------------------------------------------------------------------------------- */
+div.comments-editor {
+font-weight: bold;
+color: red;
+}
+
+div.comments-localizer {
+font-weight: bold;
+color: red;
+}
+
+div.comments-special {
+font-weight: bold;
+color: red;
+}
+
+div.comments-author {
+color: #cc0000;
+margin-left: 24pt;
+margin-right: 48pt;
+}
+
+/* ------------------------------------------------------------------------------------------
+							Misc
+------------------------------------------------------------------------------------------ */
+.title, 
+.list-intro {
+font-weight: bold;
+color: #990000;
+margin-top: 10pt;
+margin-bottom: -5pt;
+}
+
+p.title {
+font-weight: bold;
+font-size: 10pt;
+color: #338;
+margin: 16pt 0 0 0;
+}
+
+p.section_title_h1 {
+font-weight: bold;
+font-size: 10pt;
+color: #338;
+margin: 16pt 0 0 0;
+
+}
+
+p.list-intro {
+font-weight: bold;
+font-size: 10pt;
+color: #338;
+margin: 16pt 0 0 0;
+
+}
+
+p.prompt {
+margin-left: 12pt;
+color: #00c;
+}
+
+p.entryField {
+font-style: normal;
+font-weight: bold;
+} 	/* The same as 'uis-entryField'? */
+
+span.keyboardEntry { } 	/* The same as 'charspan-keyboardEntry'? */
+
+span.keyCaps {
+font-style: normal;
+font-weight: bold;
+}
+
+span.filePath {
+font-style: italic;
+}
+
+span.appSetting {}
+
+span.bookTitle {}
+
+span.coord {}
+
+span.codeIdentifier {}
+
+span.dialogCaption{
+font-style: italic;
+}
+
+span.menuText{
+font-style: normal;
+font-weight: bold;
+}
+
+span.glyphCopyright {}
+
+span.glyphTM {}
+
+span.glyphArrow {}
+
+span.glyphEllipsis {}
+
+span.glyphSpecial {}
+
+span.glyphRegistered {}
+
+span.glyph_additional {
+font-family: Symbol;
+}
+span.glyph_square {
+font-family: Wingdings;
+}
+
+a.webLink {}
+
+span.fileName {}
+
+span.term {
+font-size: 10pt;
+font-weight: bold;
+color: #36c;
+}
+
+dd div.definition { }
+
+dd div.brief_example {
+font-size: 9pt;
+color: #000;
+background-color : #77aacc;
+padding: 7pt 15pt;
+margin: 0pt;
+}
+
+div.section {}
+
+p.summary {}
+/* -----------------------------------------------------------------------------------------------
+   New DITA tags
+----------------------------------------------------------------------------------------------- */
+
+span.MenuCascade {
+}
+/* -----------------------------------------------------------------------------------------------
+								Topic heading elements
+ ----------------------------------------------------------------------------------------------- */
+
+/* head region */
+div.head {
+font-family: arial;
+background-color: #000000;
+margin: 0;
+width: 100%;
+background-image: url(../images/product_name.gif);
+background-repeat: no-repeat;
+background-position: 15px 14px;
+}
+
+@media print {
+
+   div.head {
+   background-image: none;
+   }
+
+} /* @media print */
+
+/* head block - sets head region margins */
+div.head-block {
+padding-top: 2pt;
+}
+
+/* nav group - contains browse buttons */
+div.nav-group {
+position: relative;
+height: 30px;
+}
+
+@media print {
+
+   div.nav-group {
+   display: none;
+   }
+
+} /* @media print */
+
+/* ask-me stuff */
+
+form.ask-me {
+width: 275px;
+padding: 0px;
+margin: 0px;
+height: 0px;
+float: left;
+}
+
+input.ask-me-image {
+cursor:  pointer;
+margin: 2pt 0;
+height: 21px;
+}
+
+input.ask-me-text {
+width: 160pt;
+padding: 1pt 0 0 5px;
+height: 23px;
+margin-bottom: 2pt;
+}
+
+/* link to parent topic */
+
+div.head-parent-link span.head-parent-link {
+font-weight: normal;
+font-style: normal;
+font-family: verdana;
+font-size: 8pt;
+}
+
+div.head-parent-link a {
+color: #347;
+text-decoration: underline;
+}
+
+div.head-parent-link a:hover {
+color: #347;
+text-decoration: underline;
+}
+
+div.head-parent-link a:visited {
+color: #347;
+text-decoration: underline;
+}
+
+/* browse button set */
+div.browse {
+position: absolute;
+right: 0px;
+padding: 10px 12px 1px 0;
+}
+
+/* browse button */
+div.browse div {
+float: left;
+}
+
+/* home button separator */
+div.browse span.home-button-separator {
+float: left;
+}
+
+/* browse button images */
+div.browse img {
+margin-left: 2px;
+}
+
+/* browse button info bar */
+div.button-info {
+text-align: right;
+font-size: 8pt;
+height: 15px;
+}
+
+/* browse button info text */
+span#infoline {
+padding: 1px 15px 1px 0;
+/*visibility: hidden;*/
+color: #959595;
+width: 100%;
+text-align: right;
+}
+
+/* bread crumbs */
+
+div.ancestry {
+color: #959595;
+background-color: #212121;
+margin: 2px 0 0 0;
+padding: 1px 0 5px 17px;
+font-size: 8pt;
+}
+
+div.ancestry a {
+color: #959595;
+text-decoration: none;
+}
+
+div.ancestry a:link {
+color: #959595;
+text-decoration: none;
+}
+
+div.ancestry a:visited {
+color: #959595;
+text-decoration: none;
+}
+
+div.ancestry a:hover {
+text-decoration: underline;
+color: white;
+}
+
+@media print {
+
+    div.ancestry {
+    display: none;
+    }
+
+} /* @media print */
+
+/* head-text bar */
+div.head-text {
+background-color: #3d3d3d;
+padding: 8px 18px 8px 16px;
+/*height: 40px;*/
+}
+
+/* head-text */
+div.head-text span {
+color: #fff;
+font-size: 16pt;
+line-height: 18pt;
+}
+
+@media print {
+
+   div.head-text span {
+   font-size: 18pt;
+   color: #666;
+   filter: glow-off;
+   }
+
+} /* @media print */
+
+/* collapse-expand block */
+/* contains the collapse block () and the expand block (), only 
+   one of which is visible depending on collapse-expand state */
+div.collapse-expand {
+width: 200px;
+float: right;
+font-weight: normal;
+white-space: nowrap;
+position: relative;
+top: -6px;
+}
+
+@media print {
+
+    div.collapse-expand {
+    display: none;
+    }
+
+} /* @media print */
+
+/* collapse block */
+/* initial state: hidden */
+div#collapseAllSection {
+display: none;
+}
+
+/* expand block */
+/* initial state: hidden */
+div#expandAllSection {
+display: none;
+}
+
+/* collapse-expand images */
+img.expandcollapse_img {
+display: none;
+}
+
+/* collapse-expand label */
+div.collapse-expand-label {
+text-align: right;
+width: 100%;
+position: absolute;
+top: -4px;
+right: 0px;
+padding: 0px;
+margin: 0px;
+}
+
+div.collapse-expand-label span {
+font-weight: normal;
+color: #959595;
+cursor: pointer;
+font-size: 10px
+}
+
+/* collapse-expand description */
+div.collapse-expand-description {
+font-weight: normal;
+color: #959595;
+text-align: right;
+width: 100%;
+position: absolute;
+top: 15px;
+right: 0px;
+padding: 0px 0 0 10px;
+margin: 0px;
+}
+
+
+/*--new added by patricia 11/3/2011--*/
+div.head-text h1 {
+color: #fff;
+font-size: 16pt;
+line-height: 18pt;
+font-weight: normal;
+margin: 0;
+padding: 0;
+}
+
+
+/* -----------------------------------------------------------------------------------------------
+                                               Head Tabs elements
+ ----------------------------------------------------------------------------------------------- */
+
+/* head tabs */
+div.head-tabs {
+background-image: url(../images/tab-bkg.gif);
+background-color: #fff;
+}
+
+/* head-tab table */
+div.head-tabs table {
+font-size: 10pt;
+margin: 0px;
+padding: 0px;
+background: transparent;
+border: none;
+}
+
+/* head-tab row */
+div.head-tabs tr {
+vertical-align: middle;
+height: 28px;
+}
+
+@media print {
+
+    div.head-tabs table {
+    margin-left: 2px;
+    }
+
+    div.head-tabs tr {
+    position: relative;
+    left: -2px;
+    }
+
+}
+
+/* head-tab */
+div.head-tabs td {
+border-right: 0;
+padding: 0;
+}
+
+/* head-tab sides */
+td.tab-edge {
+background-color: #fff;
+display: inline;
+padding: 0;
+border-right: 0;
+}
+
+@media print {
+
+    td.tab-edge {
+        display: none;
+    }
+
+} /* @media print */
+
+/* head-tab, selectable */
+td.tab {
+background-image: url(../images/tab-bkg2.gif);
+padding: 0 1em;
+cursor: pointer;
+vertical-align: middle;
+}
+
+@media print {
+
+    td.tab {
+    border: none;
+    background-image: none;
+    }
+
+} /* @media print */
+
+/* head-tab, selected */
+td.tab-active {
+background-color: #fff;
+cursor: default;
+vertical-align: middle;
+background-image: url(../images/tab-bkg-xn.gif);
+background-repeat: repeat;
+}
+
+@media print {
+
+    td.tab-active {
+    border: none;
+    background-image: none;
+    }
+
+} /* @media print */
+
+/* head-tab bodies, dimmed */
+td.tab-disabled {
+padding: 0 1em;
+background-image: url(../images/tab-bkg-o.gif);
+cursor: default;
+vertical-align: middle;
+}
+
+/* head-tab text */
+td.tab span {
+color: #0033BB;
+text-decoration: underline;
+width: 100%;
+padding: 0px;
+}
+
+@media print {
+
+    td.tab span {
+    color: #666;
+    }
+
+} /* @media print */
+
+/* head-tab text, selected */
+td.tab-active span {
+color: #000;
+font-weight: bold;
+padding: 0px;
+position: relative;
+top: 0px;
+}
+
+/* head-tab text, dimmed */
+td.tab-disabled span {
+width: 100%;
+color: #666;
+position: relative;
+top: 0px;
+visibility: hidden;
+}
+
+/* head-region bottom margin */
+div.head-margin {
+line-height: 0pt;
+padding-bottom: 6pt;
+}
+
+/* Temporary fix for grey lines in Quick Reference Tabs */
+div.quickReferenceList div.section p.section_title_h1  {
+  background-color: #FFFFFF
+}
+
+/* -----------------------------------------------------------------------------------------------
+								Topic footing (comments section) elements
+ ----------------------------------------------------------------------------------------------- */
+
+div.footer-block {
+margin: 25pt 0 20pt 0;
+border-top: 2px #959595 solid;
+border-bottom: 2px #959595 solid;
+text-align: right;
+padding: 8px 15px 14px 0;
+display: block;
+}
+
+
+@media print {
+
+   div.footer-block {
+   display: none;
+   }
+
+}  /* @media print */
+
+/* -----------------------------------------------------------------------------------------------
+								Art related elements
+ ----------------------------------------------------------------------------------------------- */
+
+p.figure-title {
+margin: 6pt 0 16pt 0;
+padding: 4pt 8pt 5pt 0;
+font-weight: bold;
+}
+
+div.figure-anchor {
+margin-top: 16pt;
+}
+
+/* -----------------------------------------------------------------------------------------------
+                                                DynamicHelp elements
+ ----------------------------------------------------------------------------------------------- */
+
+span.AltContentHidden {
+display: none;
+}
+
+span.RelatedContentHidden {
+display: none;
+}
+
+span.DefaultContentHidden {
+display: none;
+}
+
+/* -----------------------------------------------------------------------------------------------
+   Workflow tables
+----------------------------------------------------------------------------------------------- */
+
+table.workflow {
+text-align: center;
+border-collapse: collapse;
+margin: 10pt 10pt 0 0;
+
+}
+
+tr.task {
+vertical-align: middle;
+height: 1px;
+}
+
+/* set min width of columns */
+div.task-title-min-width {
+height: 1px;
+width: 257px;
+}
+
+div.task-summary-min-width {
+width: 300px;
+}
+
+/* task-title column */
+td.task-title {
+height: 56px;
+background-image: url(../images/task-button-middle.png);
+background-repeat: repeat;
+padding: 0 17px 10px 10px;
+}
+
+td.task-title-top {
+height: 18px;
+background-image: url(../images/task-button-top.png);
+background-repeat: no-repeat;
+padding: 0;
+font-size: 10pt;
+}
+
+td.task-title-bottom {
+height: 25px;
+background-image: url(../images/task-button-bottom.png);
+background-repeat: no-repeat;
+padding: 0;
+font-size: 10pt;
+}
+
+td.task-title-last {
+height: 56px;
+background-image: url(../images/task-button-middle.png);
+background-repeat: repeat;
+padding: 0 17px 10px 10px;
+}
+
+div.task-title {
+font-family: helvetica, arial;
+font-size: 10pt;
+line-height: 11pt;
+font-weight: bold;
+color: #383838;
+}
+
+div.task-title a,
+div.task-title-last a {
+/* div.task-title-last selectors, here and in the next four rules, are    */
+/* compensating for an xsl defect - delete them when the defect is fixed  */
+font-weight: bold;
+display: block;
+}
+
+div.task-title a:link,
+div.task-title-last a:link {
+color: #46a;
+text-decoration: none;
+}
+
+div.task-title a:visited,
+div.task-title-last a:visited {
+color: #46a;
+text-decoration: none;
+}
+
+div.task-title a:hover,
+div.task-title-last a:hover {
+text-decoration: underline;
+}
+
+div.task-title a:active,
+div.task-title-last a:active {
+color: #e24;
+text-decoration: none;
+}
+
+/* task-link column */
+td.task-link {
+width: 30px;
+}
+
+td.task-link img {
+position: relative;
+top: -1px;
+}
+
+/* task-summary column */
+td.task-summary {
+font-family: helvetica, arial;
+padding: 4pt 10pt;
+background: #e6eada;
+text-align: left;
+width: 100%;
+}
+
+span.task-summary {
+font-size: 10pt;
+line-height: 11pt;
+}
+
+/* task-arrow */
+tr.task-arrow {
+font-size: 8pt;
+}
+
+td.task-arrow-left img {
+position: relative;
+left: -2px;
+}
+
+.hilite {
+background-color: #ff0;
+}
+
+.hilite1 {
+background-color: #f3f;
+}
+
+div.section p.section_title_h2,
+div.section p.section_title_h3 {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #990000;
+    margin: 10pt 0 6pt 0;
+}
+
+div.section div.section h3,
+div.section div.section h4 {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #990000;
+    margin: 10pt 0 6pt 0;
+}
+
+/* -----------------------------------------------------------------------------------------------
+   Reference Pages
+----------------------------------------------------------------------------------------------- */
+.qrEntryHeadTitle, .qrEntryTitle, .qrTitle {
+    padding: 3pt 2pt 3pt 2pt;
+    margin: 5pt 0;
+}
+
+.qrEntryHeadTitle, .qrEntryTitle {
+    font-weight:bold;
+    color:white;
+ }
+
+.qrEntryHeadTitle, .qrEntryTitle, .qrEntryValue {
+   padding-left: 7pt;
+}
+
+a.qrItemLink {
+display: none;
+color: #333399;
+text-decoration:none;
+}
+
+.qrEntryHeadTitle {
+    background-color: #3366AA;
+}
+
+.qrEntryTitle {
+    background-color: #6699CC;
+}
+.qrTitle {
+display: none;
+color:#993333;
+background-color: #FFAA66;
+vertical-align: middle;
+text-align : center;
+}
+
+div.qrentryheadtitle {
+background-color: #35a;
+}
+
+div.qrentrytitle {
+background-color: transparent;
+color: #038;
+font-size: 10pt;
+padding: 0;
+margin: 8pt 0 0 0;
+}
+
+div.qrentryvalue {
+padding: 0;
+margin-top: 4pt;
+}
+
+div.qrentryvalue img.qricon {
+margin-top: 4px;
+}
+hr.qr-line1 {
+display: none;
+height:3px;
+color:#FFAA66;
+}
+
+hr.qr-line2 {
+display: none;
+height:3px;
+color:#3366AA;
+}
+
+
+/* -----------------------------------------------------------------------------------------------
+   Workflow links based on content-type="sequence" 
+----------------------------------------------------------------------------------------------- */
+
+div.parentlink {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div.previouslink {
+    margin-bottom: 5px;
+}
+/* Revit OneHelp mockup CSS 18-01-2012 */
+/* Please contact Joshua Ledwell (joshua.ledwell@autodesk.com) with any questions. */
+
+/* classes output to the wiki:					*/
+/* RAC = Revit Architecture			 	*/
+/* RST = Revit Structure			 	*/
+/* RME = Revit MEP			 		*/
+/* 								*/
+/* RACST = Revit Architecture + Revit Structure	*/
+/* RACME = Revit Architecture + Revit MEP		*/
+/* RSTME = Revit Structure + Revit MEP		*/
+/* new badging adding for Revit One Box badging */
+
+.revit-legend {
+    background: none repeat scroll 0 0 #DADADA;
+    border: 0 solid #999999;
+    font-size: 11px;
+    line-height: 1;
+    margin: 0 1.5em 0 0;
+    padding: 0;
+}
+.revit-legend ul {
+    list-style-type: none;
+    padding: 0.4em 0;
+}
+.revit-legend li {
+    display: inline;
+    line-height: 1.5;
+    margin: 0 1em 0 0;
+    padding: 0;
+}
+.revit-legend li img {
+    margin: 2px 6px -2px 0;
+}
+.clearfix {
+    margin-top: 1em;
+    width: 100%;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.mappings-icon {
+    float: left;
+    margin: 0 0.2em 0 0;
+    width: 18px;
+}
+
+/* updated 9-2-2011 for Revit One Box badging */ 
+.RAC, .RME, .RST, .RACME, .RACST, .RSTME, .ROB {
+    display: block;
+    margin: 0 0 0 1.5em;
+    padding-left: 0.2em;
+}
+.RAC {
+    border-left: medium solid #1D52AB;
+}
+.RME {
+    border-left: medium solid #EC6A00;
+}
+.RST {
+    border-left: medium solid #009000;
+}
+
+/* updated 9-2-2011 for Revit One Box badging */
+.ROB {  
+    border-left: medium solid #9955AA;
+}
+ 
+.RACME, .RACST, .RSTME {
+    border-left: medium solid #888888;
+}
+
+
+/* updated 9-2-2011 for Revit One Box badging 
+Reversed order with below to solve problem of bullets showing through nested lists 11-10-11*/ 
+.RAC * li, .RST * li, .RME * li, .ROB * li,.RACME * li, .RACST * li, .RSTME * li {
+    list-style-position: outside;
+} 
+/* updated 9-2-2011 for Revit One Box badging */ 
+.RAC li, .RST li, .RME li, .ROB li, .RACME li, .RACST li, .RSTME li {
+    list-style-position: inside;
+    margin: 0 !important;
+}
+
+
+
+/* updated 9-2-2011 for Revit One Box badging */ 
+.RAC p, .RST p, .RME p, .ROB p, .RACME p, .RACST p, .RSTME p {
+    margin: 0 0 1em;
+}
+
+/* updated 9-2-2011 for Revit One Box badging */ 
+.RAC div.collapsible, .RST div.collapsible, .RME div.collapsible, .ROB div.collapsible, .RACME div.collapsible, .RACST div.collapsible, .RSTME div.collapsible {
+    margin-top: 0;
+}

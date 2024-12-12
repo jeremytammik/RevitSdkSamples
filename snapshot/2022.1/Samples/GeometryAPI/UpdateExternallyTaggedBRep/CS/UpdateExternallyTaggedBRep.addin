@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   
+   <AddIn Type="Application">
+    <Name>UpdateExternallyTaggedBRep</Name>
+    <Assembly>UpdateExternallyTaggedBRep.dll</Assembly>
+    <ClientId>194a3f81-226a-4c06-99de-c57c3873b231</ClientId>
+    <FullClassName>Revit.SDK.Samples.UpdateExternallyTaggedBRep.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>PathOfTravel.dll</Assembly>
+    <ClientId>79250234-920b-4328-846b-5082f41b001a</ClientId>
+    <FullClassName>Revit.SDK.Samples.PathOfTravelCreation.CS.Command</FullClassName>
+    <Text>Create PathOfTravel.</Text>
+    <Description>This sample demonstrated how to create PathOfTravel elements from room(s) to door(s) in a plan view.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

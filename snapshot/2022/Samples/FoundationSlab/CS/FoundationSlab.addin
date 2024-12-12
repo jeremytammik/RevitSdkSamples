@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>FoundationSlab.dll</Assembly>
+    <ClientId>1efe6d77-3894-41f3-b56c-882a8bea5b40</ClientId>
+    <FullClassName>Revit.SDK.Samples.FoundationSlab.CS.Command</FullClassName>
+    <Text>Foundation Slab</Text>
+    <Description>Convert regular floors at the base of the building to octagonal slabs.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

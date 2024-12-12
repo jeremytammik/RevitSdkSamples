@@ -1,0 +1,38 @@
+list of 14 top features
+
+presenting four of them:
+
+displacement set aka exploded view
+non-rect crop region
+global params
+schedule improvements
+
+multi-reference annotation
+
+themes
+
+scalability
+analysis
+suites and interop
+design/construction/fabrication
+
+not all commands are postable, because sometimes revit expects a certain sequence
+
+conditional commands are not yet on the list
+
+only top-level commands currenly supported
+
+api demos
+
+1. copy and paste api
+within the same doc
+one view to another
+also across documents and views in different docs
+
+2. post command: ask for new revision on save if doc was changed
+
+3. schedule contents: read cell by cell, populate html
+formatting using updater to colour alternate columns
+
+
+

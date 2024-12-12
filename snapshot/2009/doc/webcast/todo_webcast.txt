@@ -1,0 +1,369 @@
+Revit Programming Introduction
+
+look at 
+  C:\a\j\adn\train\revit\2008\telecon.txt
+  C:\a\j\adn\devdays\2007\AEC\webcast\todo_webcast.txt
+  C:\a\j\adn\train\revit\2009\doc\RST_API_notes.rtf
+
+revit:
+
+https://www.livemeeting.com/cc/autodesklearning/join?id=5MMQ47&role=present&pw=RevitAPIPresent
+https://www.livemeeting.com/cc/autodesklearning/join?id=5MMQ47&role=attend&pw=RevitAPIAttend
+
+rst:
+
+https://www.livemeeting.com/cc/autodesklearning/join?id=WDBS3K&role=present&pw=RevitStructurePresent
+
+Jeremy Tammik
+jeremy.tammik@eur.autodesk.com
+Autodesk
+
+first conference line is jim's see details below.
+second conference line is keans, see C:\a\doc\conf_call\kean.htm
+
+  de 0800-101-7056  participant passcode 9672646 leader code 2026602 for jim (jeremy)
+  de 0800-101-7056  participant passcode 2354092 leader code 6448486 for kean (mikako)
+
+DIAL-IN NUMBERS & PASSCODES:
+  Toll Numbers:	
+    AUSTRALIA	61-2-8211-1393
+    AUSTRIA	43-1-92-86-509
+    BELGIUM	32-2-400-1326
+    FINLAND	358-106-33-199
+    FRANCE	33-1-70-70-84-56
+    GERMANY	49-69-2222-3468
+    GREECE	30-80-1-100-0672
+    HONG KONG	852-2286-5639
+    IRELAND	353-1-247-5394
+    ITALY	39-02-3604-7040
+    JAPAN	81-3-5539-5161
+    LUXEMBOURG	352-27-000-1348
+    NETHERLANDS	31-20-717-6858
+    NEW ZEALAND	64-9-970-4657
+    NORWAY	47-21-59-00-48
+    SINGAPORE	65-6883-9205
+    SOUTH KOREA	82-2-6744-1059
+    SPAIN	34-91-414-0092
+    SWEDEN	46-8-505-98-267
+    SWITZERLAND	41-44-580-3897
+    TAIWAN	886-2-2795-7355
+    UNITED KINGDOM	44-20-7108-6391
+    USA	1-210-795-0625
+  		
+  Toll Free Numbers:	
+    AUSTRALIA	1-800-098-324
+    AUSTRIA	0800-677-287
+    BELGIUM	0800-4-9731
+    CHINA A	10800-712-1298
+    CHINA B	10800-120-1298
+    DENMARK	8088-5429
+    FINLAND	0800-1-15768
+    FRANCE	805-100-984
+    GERMANY	0800-101-7056
+    GREECE	00800-12-6810
+    HONG KONG	800-908-205
+    HUNGARY	06-800-17566
+    INDONESIA	001-803-011-3650
+    IRELAND	1800-932-054
+    ISRAEL	1-80-9214709
+    ITALY	0800-906-465
+    JAPAN	0034-800-400652
+    MALAYSIA	1-800-81-2059
+    NETHERLANDS	0800-343-4363
+    NEW ZEALAND	0800-441-452
+    NORWAY	800-10129
+    POLAND	00-800-1211769
+    PORTUGAL	8008-15135
+    SINGAPORE	800-120-4246
+    SOUTH AFRICA	080-09-92282
+    SOUTH KOREA	00798-14800-6608
+    SPAIN	800-099-728
+    SWEDEN	0200-893-410
+    SWITZERLAND	0800-001-215
+    TAIWAN	00801-137-662
+    THAILAND	001-800-1206-65425
+    UNITED KINGDOM	0800-279-9632
+    USA	866-617-3597
+                                      
+  Participant Passcode:    9672646            
+
+
+set up audio and recording:
+
+  C:\a\doc\livemeeting\LiveMeeting Setup.zip
+
+  live meeting scheduling: usr quancij pwd autodesk
+
+  set up at least one minute before you start recording
+
+  voice and video > options > connect telephone and computer audio
+
+  enter the key sequence to connect phone conference and live meeting audio: 
+  ppppp9672646ppppppppp9672646#pppppppppppppp#
+
+  recording > to service > record
+
+
+in-conference features:
+  All participants must use a touch-tone phone to participate in an Instant Meeting conference. The following features are available for you to use during an active conference: 
+  *1 for a private pre-recorded help menu. A recorded message will play listing the available touch- tone features. 
+  *2 for a roll call (conference). A playback of the participants' names who have joined the call will be played into the conference. This feature is only available when Name Record feature is set to "yes." 
+  *3 for a roll call (private). A playback of the participants' names who have joined the call will be announced to the initiator only. This feature is only available when Name Record feature is set to "yes." 
+  *4 to mute or unmute the entire conference (except for your line). 
+  *5 to enable Conference Continuation. This allows you to determine if the active conference can continue after you disconnect. In order to use this feature, Auto Continuation must be set to "yes." 
+  *6 to mute or unmute your line. 
+  *7 to lock or unlock the conference. If you lock the call, those attempting to join will hear a prompt indicating the conference has been "secured." 
+  *8 to dial out to additional participants within North America. 
+  *9 for Entry/Exit options. You can specify how the entry and exit of participants are announced for the active conference: by tone, by recorded name, or by silent entry. 
+
+2008-05-06:
+
+- rac webcast
+  # add section on new samples
+  # no vsta installed! - mikako will show
+  # add section of vsta
+  # prepare vsta demo
+  # display the slides on RvtMgdDbg
+  # add mikako's changes, send out updated ppt
+  # dry run beforehand, also to hook up the two conference calls?
+  # clean up ppt
+  # clean up labs
+  # check how to find RvtMgdDbg on adn, add url to slides
+  # test run all labs before webcast!
+  # test run all new samples before webcast!
+  # set up vs font, resolution, webcast
+
+Question: is some one there
+Answer: yes
+Question: Hallo Jeremy, Kannst Du anschliessend an die Präsentation die Präsentation als AVI schicken?
+Answer: Hi Ibrahim, This is Saikat - Jeremy might not be able to see this section now but I will pass on your message after the webcast
+Question: so will i be able to speak in the mic and talk to him
+Answer: The webcast will be in silent mode and so I dont think you will be able to talk while the presentation going on, but if you have questions please use this method to ask your doubts
+Question: The question was: Can you give us the presentation as avi afterwords?
+Answer: It will be uploaded on the ADN website very soon
+Question: Thank you.
+Answer: you are most welcome
+Question: Can i record the meeting on my computer
+Answer: sorry I am not sure if you have the option, you can check it out
+Question: can I have a record of this meeting?
+Answer: yes it will be posted on the ADN website very soon
+Question: can you inform me with the directory, when the record of this meeting is posted on the ADN website
+Answer: on ADN website if you search with Revit webcast I am sure you will come across this - another way would be to go to Knowledgebase under revit section on ADN and there you shd be able to find the recording
+Question: Can we use VS 2008 as well?
+Answer: Sorry I have not tested it with VS 2008 as yet, thus I wont be able to answer that
+Question: I got disconnected after asking whether Visual Studio 2008 will work instead of 2005.
+Answer: Sorry I have not tested it with VS 2008 as yet, thus I wont be able to answer that.
+Question: Thanks, do you know if Microsot allows older version installs from VS2008 licenses?
+Answer: I am not sure again about this one - some search online might have answer to this in some discussion forums
+Question: Will there be a 5-minute break soon? Thank you.
+Answer: there is one break for sure but it may be in a while
+Question: Okay, thanks.
+Answer: :)
+Question: why is the graphics on top of the text on the slides?
+Answer: thats strange, I can see the text on top of the graphics in the slides...
+Question: I believe you can use VS2008, just turn it onto .Net 2.0 mode to ensure compatibility.
+Answer: great, thanks for sharing the information. It is good to know
+Question: can you ask, at the end of the meeting, the jobs of the attendants? architects, engineers, constructors as a small survey? thanks
+Answer: i hve forwarded your req to Jeremy but at this point of time adding new poll might not be possible,. Since this is a good and relevant question, we can include it in future webcasts
+Question: Is Revit 2009 SDK available to public without ADN subscription? If so what is the URL? Thanks.
+Answer: 2009 SDK is included in the Revit installer under Tools and Utilities section, you can get it from there.
+Question: thanks and you made big effort, thanks again!
+Answer: you are welcome
+Question: I have not audiio, Norm Taylor
+Answer: i have conveyed the msg
+Question: no audio in the conference call center...can you call back into the conference center
+Answer: i have conveyed the msg, can you hear the audio now?
+Question: No audio.
+Answer: can u use the pc audio (web) one for now
+Question: For those who dont have audio, they have to call the conference number for their country and use Participant Passcode: 9672646 USA # is 866-617-3597
+Answer: thanks
+Question: Following the break the phone line I am on has no voice audio. Do you know why the audio has stopped?
+Answer: can u use the PC audio (web) for now
+Question: In Revit 2008 SDK, we could not see a railing geometry with the ObjectViewer II sample application. I am not sure what we missed but do you know if it is possible to see it in 2009 SDK?
+Answer: offhand I would not be able to answer that, can you please check it and if you see it missing, please log it as a case using Dev help online (DHO) on ADN website and we shall look into it
+Question: OK I will check and try to report it but I don't have an ADN account...can I email to any of you about it?
+Private Answer: I am not sure if I can do that , why dont you give me your email address and I shall get back if I can respond to you directly incase you have any issues
+Question: Audio is not coming through the phone only the web
+Answer: can you pl try with (USA)866-617-3597 Participant Passcode: 9672646
+Question: Is it possible to get some sample code for instantiating the dbapplication object in RevitNet.dll If so, please e-mail resources/links to lmsinger@integrateddbm.com
+Private Answer: can you please elaborate on this question
+Question: How do you instantiate a new DbApplication object in the RevitNet.dll?
+Private Answer: you can access the Application object using commandData.Application (commandData can be accessed from the Iexternalcommand implementation method param)
+Question: Refering to ObjectViewer II question, my email is wyan@archmail.tamu.edu . Thanks a lot.
+Private Answer: I shall have a look at the sample with railing object and get back to you soon.
+Question: We are already using that method. We had some individual meetings with AutoDesk where they suggested using the RevitNet.dll for our purposes. Do we have any samples for this dll, specifically the DbApplication?
+Private Answer: I am not aware of this dll to be the part of official API dll. And as far as i know for the same reason the SDK does not contain any samples which use this DLL
+Question: Thanks a lot. Another question: using Revit API, can we access texture mapping parameters such as texture image URL and UV coordinates?
+Answer: I am not really sure, you can try checking it out using the RvtMgdDbg tool on a given element to see what all parameters are exposed
+Question: which is the difference between to get the data from a single revit "schedule" and to get it from the external applications showed here?
+Private Answer: Hi Danny: I am not sure I understood the question completely - can you elaborate on what you mean by Single revit schedule
+Question: Is it possible to directly access .rvt data using API without running Revit?
+Private Answer: unfortunately out of proc access is not possible nor supported at the moment
+Question: Conference calling center is still not working
+Answer: can you please try using the PC audio for now
+Question: what advantages does the ADN have over just using the SDK with free utilities. What benefits do you get (I need to justifty it to my boss...)
+Private Answer: can you pl have a look at this link: http://usa.autodesk.com/adsk/servlet/index?siteID=123112&id=723353
+Question: Why use VSTA not API?
+Private Answer: VSTA also uses the API but there are many advantages of using VSTA - its is good for a quick testing of your code and that you do not need to register the macros in Revit.ini, or add RevitAPI.dll as a reference.
+Question: The pc audio keeps dropping...did I hear correctly that macros cannot be shared among users unless embedded as document type?
+Private Answer: Anyone who opens the .rvt can run the macros, provided the person using the macro and the person who built the macro have both installed VSTA for their respective Revit products.
+Question: so it the VSTA is for testing, but the final is better use API?
+Private Answer: as i said both use the API, you can embed macros in rvt files and share the rvt files with other users and they can run ur macros to do some specific functionality...so its not just for testing. if you have used VBA before for other autodesk products, this is pretty much the same as that. Pl have a look a the SDK files which contain some DOCS on this
+Question: Is there an external file format for macros for sharing with other projects, offices, etc.? Or can the macros be imported from other RVT files?
+Private Answer: Applicationlevel macros are available to all opened Revit projects in the current instance of the Revit application and Documentlevel macros are embedded in the currently open projects .rvt file. Anyone who opens the .rvt can run the macros, provided the person using the macro and the person who built the macro have both installed VSTA for their respective Revit products. On disk, Applicationlevel macro projects are stored in a subfolder of the Revit installation directory. For example: C:\Program Files\Revit Architecture 2009\Program\VstaMacros\AppAddIns\defaultAddIns\...Documentlevel macro projects are stored within an .rvt file. On disk, when the associated .rvt project opens, any built and saved macro(s) are stored temporarily in: C:\Program Files\Revit Architecture 2009\Program\VstaMacros\DocAddIns\defaultAddIns\... However, these Documentlevel macro files are deleted from your local computer when their corresponding Revit project document (.rvt) closes. The saved Documentlevel macros are stored in the .rvt file.
+Question: So to share Application level macros, we would have to script copies out to users local hard drives? Would the application have to be restarted to see new app level macros which have been copied to the local folder?
+Private Answer: I would think so, but honestly I have not tried it out yet.
+Question: Thanks
+Answer: np :
+Question: Sorry this question is probably too specific. Just if you happen to know it: is there a way to access the information of which two rooms (room numbers) that a door is connecting using API? Thanks.
+Answer: it is possible. Please check out the Revit API User manual (page 256 onwards) . This doc is available on ADN
+Question: Thanks,
+Answer: welcome
+Question: Can I animate my view using API?
+Answer: sorry that is not possible presently
+Question: where can I download the record of this meeting? please inform me the web address
+Answer: it will be made available on ADN website, please do a search on revit webcast in couple of days
+Question: what is the address for the ADN wedsite?
+Private Answer: adn.autodesk.com
+Question: Can mental ray material appearances be created through the API?
+Answer: Not at the moment
+Question: Can we have the recorded video without ADN account? That will be really helpful.
+Answer: can u mail to your training coordinatore
+Question: if I am not a ADN Member, can I still have a record of this meeting?
+Answer: can you please email the person who invited you to this session, he might be able to help you with this
+
+2008-05-13:
+
+Polls at beginning
+
+  1. What category best describes your main professional activity?
+
+  Architect
+  Engineer
+  Constructor
+  Programmer
+  Manager
+  Other
+
+  2. How would you rate your level of experience with the Revit products?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  3. How would you rate your level of experience with the Revit API?
+
+  Very experienced
+  Quite experienced
+  Not experienced
+
+  4. Which statement best describes you?
+
+  This topic directly affects my work today
+  I expect this topic to be useful to me in the future
+  I'm evaluating this technology
+  None of the above
+
+Polls at end
+
+  5. How was the audio quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  6. How was the visual quality of the presentation?
+
+  Good
+  Acceptable
+  Poor
+
+  7. How do you rate the presentation material?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  8. How do you rate the presentation delivery?
+
+  Excellent
+  Good
+  Okay
+  Poor
+
+  9. Would you recommend this webcast to a friend or colleague?
+
+  Yes
+  No
+
+- rst webcast
+  # update labs for 2009, add filtering, port to C#
+  # update link sample for 2009, add filtering, port to C#
+  # update ppt accordingly
+  # add section on new samples
+  - update ppt message box screen snapshots
+  - add note that enhanced samples are part of standard sdk
+  - test run all labs before webcast!
+  - test run link before webcast!
+  - test run all new samples before webcast!
+  - reboot, disable vpn
+  - set up resolution 1024 x 768
+  - set up webcast audio
+
+Polls at beginning
+
+  1. What category describes your main professional activity?
+
+  Architect - 0%
+  Engineer  - 42.9%
+  Constructor - 0%
+  Programmer - 28.6%
+  Manager - 14.3%
+  Other - 14.3%
+
+  2. How would you rate your level of experience with the Revit products?
+
+  Very experienced - 14.3%
+  Quite experienced - 28.6%
+  Not experienced - 57.1%
+
+  3. How would you rate your level of experience with the Revit API?
+
+  Very experienced - 0%
+  Quite experienced - 14%
+  Not experienced - 85%
+
+  4. Which statement best describes you?
+
+  This topic directly affects my work today - 42.9%
+  I expect this topic to be useful to me in the future - 42.9%
+  I'm evaluating this technology - 14.3%
+  None of the above - 0%
+
+Polls at end
+
+  4. How was the audio quality of the presentation?
+
+  Good - 100%
+  Acceptable - 0%
+  Poor - 0%
+
+  5. How was the visual quality of the presentation?
+
+  Good - 100%
+  Acceptable - 0%
+  Poor - 0%
+
+  6. How do you rate the presentation material?
+
+  Excellent - 66.7%
+  Good - 33.3%
+  Okay - 0%
+  Poor - 0%
+
+  7. Would you recommend this webcast to a friend or colleague?
+
+  Yes - 100%
+  No - 0%
+

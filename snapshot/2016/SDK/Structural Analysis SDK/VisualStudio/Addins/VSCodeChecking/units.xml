@@ -1,0 +1,1268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Units>
+  <Unit name="UT_Length">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Area">
+    <DisplayUnit name="DUT_ACRES" />
+    <DisplayUnit name="DUT_HECTARES" />
+    <DisplayUnit name="DUT_SQUARE_FEET" />
+    <DisplayUnit name="DUT_SQUARE_METERS" />
+    <DisplayUnit name="DUT_SQUARE_INCHES" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS" />
+  </Unit>
+  <Unit name="UT_Volume">
+    <DisplayUnit name="DUT_CUBIC_YARDS" />
+    <DisplayUnit name="DUT_CUBIC_FEET" />
+    <DisplayUnit name="DUT_CUBIC_METERS" />
+    <DisplayUnit name="DUT_CUBIC_INCHES" />
+    <DisplayUnit name="DUT_CUBIC_CENTIMETERS" />
+    <DisplayUnit name="DUT_CUBIC_MILLIMETERS" />
+    <DisplayUnit name="DUT_LITERS" />
+    <DisplayUnit name="DUT_GALLONS_US" />
+  </Unit>
+  <Unit name="UT_Angle">
+    <DisplayUnit name="DUT_DECIMAL_DEGREES" />
+    <DisplayUnit name="DUT_DEGREES_AND_MINUTES" />
+    <DisplayUnit name="DUT_RADIANS" />
+    <DisplayUnit name="DUT_GRADS" />
+  </Unit>
+  <Unit name="UT_Number">
+    <DisplayUnit name="DUT_GENERAL" />
+    <DisplayUnit name="DUT_FIXED" />
+    <DisplayUnit name="DUT_PERCENTAGE" />
+    <DisplayUnit name="DUT_RATIO_10" />
+    <DisplayUnit name="DUT_RATIO_12" />
+    <DisplayUnit name="DUT_SLOPE_DEGREES" />
+    <DisplayUnit name="DUT_RISE_OVER_INCHES" />
+    <DisplayUnit name="DUT_RISE_OVER_FOOT" />
+    <DisplayUnit name="DUT_RISE_OVER_MMS" />
+    <DisplayUnit name="DUT_CURRENCY" />
+    <DisplayUnit name="DUT_RISE_OVER_120_INCHES" />
+    <DisplayUnit name="DUT_1_RATIO" />
+    <DisplayUnit name="DUT_RISE_OVER_10_FEET" />
+    <DisplayUnit name="DUT_PER_MILLE" />
+  </Unit>
+  <Unit name="UT_SheetLength">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_SiteAngle">
+    <DisplayUnit name="DUT_DECIMAL_DEGREES" />
+    <DisplayUnit name="DUT_DEGREES_AND_MINUTES" />
+    <DisplayUnit name="DUT_RADIANS" />
+    <DisplayUnit name="DUT_GRADS" />
+  </Unit>
+  <Unit name="UT_HVAC_Density">
+    <DisplayUnit name="DUT_KILOGRAMS_PER_CUBIC_METER" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_CUBIC_INCH" />
+  </Unit>
+  <Unit name="UT_HVAC_Energy">
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS" />
+    <DisplayUnit name="DUT_CALORIES" />
+    <DisplayUnit name="DUT_KILOCALORIES" />
+    <DisplayUnit name="DUT_JOULES" />
+    <DisplayUnit name="DUT_KILOWATT_HOURS" />
+    <DisplayUnit name="DUT_THERMS" />
+    <DisplayUnit name="DUT_NEWTON_METERS" />
+    <DisplayUnit name="DUT_DECANEWTON_METERS" />
+    <DisplayUnit name="DUT_KILONEWTON_METERS" />
+    <DisplayUnit name="DUT_MEGANEWTON_METERS" />
+    <DisplayUnit name="DUT_KIP_FEET" />
+    <DisplayUnit name="DUT_KILOGRAM_FORCE_METERS" />
+    <DisplayUnit name="DUT_TONNE_FORCE_METERS" />
+    <DisplayUnit name="DUT_POUND_FORCE_FEET" />
+    <DisplayUnit name="DUT_KILOJOULES" />
+  </Unit>
+  <Unit name="UT_HVAC_Friction">
+    <DisplayUnit name="DUT_INCHES_OF_WATER_PER_100FT" />
+    <DisplayUnit name="DUT_PASCALS_PER_METER" />
+    <DisplayUnit name="DUT_FEET_OF_WATER_PER_100FT" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_CUBIC_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_KIPS_PER_CUBIC_INCH" />
+    <DisplayUnit name="DUT_KIPS_PER_CUBIC_FOOT" />
+  </Unit>
+  <Unit name="UT_HVAC_Power">
+    <DisplayUnit name="DUT_WATTS" />
+    <DisplayUnit name="DUT_KILOWATTS" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_SECOND" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR" />
+    <DisplayUnit name="DUT_CALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_KILOCALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_VOLT_AMPERES" />
+    <DisplayUnit name="DUT_KILOVOLT_AMPERES" />
+    <DisplayUnit name="DUT_HORSEPOWER" />
+    <DisplayUnit name="DUT_TON_OF_REFRIGERATION" />
+  </Unit>
+  <Unit name="UT_HVAC_Power_Density">
+    <DisplayUnit name="DUT_WATTS_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_WATTS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR_SQUARE_FOOT" />
+  </Unit>
+  <Unit name="UT_HVAC_Pressure">
+    <DisplayUnit name="DUT_INCHES_OF_WATER" />
+    <DisplayUnit name="DUT_PASCALS" />
+    <DisplayUnit name="DUT_KILOPASCALS" />
+    <DisplayUnit name="DUT_MEGAPASCALS" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_INCHES_OF_MERCURY" />
+    <DisplayUnit name="DUT_MILLIMETERS_OF_MERCURY" />
+    <DisplayUnit name="DUT_ATMOSPHERES" />
+    <DisplayUnit name="DUT_BARS" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_DECANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_MEGANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_TONNES_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_FEET_OF_WATER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_CENTIMETER" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_MILLIMETER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_MILLIMETER" />
+  </Unit>
+  <Unit name="UT_HVAC_Temperature">
+    <DisplayUnit name="DUT_FAHRENHEIT" />
+    <DisplayUnit name="DUT_CELSIUS" />
+    <DisplayUnit name="DUT_KELVIN" />
+    <DisplayUnit name="DUT_RANKINE" />
+  </Unit>
+  <Unit name="UT_HVAC_Velocity">
+    <DisplayUnit name="DUT_FEET_PER_MINUTE" />
+    <DisplayUnit name="DUT_METERS_PER_SECOND" />
+    <DisplayUnit name="DUT_CENTIMETERS_PER_MINUTE" />
+    <DisplayUnit name="DUT_FEET_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND_SQUARE_METER" />
+    <DisplayUnit name="DUT_KILOMETERS_PER_HOUR" />
+    <DisplayUnit name="DUT_MILES_PER_HOUR" />
+  </Unit>
+  <Unit name="UT_HVAC_Airflow">
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_METERS_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_METERS_PER_HOUR" />
+    <DisplayUnit name="DUT_GALLONS_US_PER_MINUTE" />
+    <DisplayUnit name="DUT_GALLONS_US_PER_HOUR" />
+  </Unit>
+  <Unit name="UT_HVAC_DuctSize">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_HVAC_CrossSection">
+    <DisplayUnit name="DUT_ACRES" />
+    <DisplayUnit name="DUT_HECTARES" />
+    <DisplayUnit name="DUT_SQUARE_FEET" />
+    <DisplayUnit name="DUT_SQUARE_METERS" />
+    <DisplayUnit name="DUT_SQUARE_INCHES" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS" />
+  </Unit>
+  <Unit name="UT_HVAC_HeatGain">
+    <DisplayUnit name="DUT_WATTS" />
+    <DisplayUnit name="DUT_KILOWATTS" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_SECOND" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR" />
+    <DisplayUnit name="DUT_CALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_KILOCALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_VOLT_AMPERES" />
+    <DisplayUnit name="DUT_KILOVOLT_AMPERES" />
+    <DisplayUnit name="DUT_HORSEPOWER" />
+    <DisplayUnit name="DUT_TON_OF_REFRIGERATION" />
+  </Unit>
+  <Unit name="UT_Electrical_Current">
+    <DisplayUnit name="DUT_AMPERES" />
+    <DisplayUnit name="DUT_KILOAMPERES" />
+    <DisplayUnit name="DUT_MILLIAMPERES" />
+  </Unit>
+  <Unit name="UT_Electrical_Potential">
+    <DisplayUnit name="DUT_VOLTS" />
+    <DisplayUnit name="DUT_KILOVOLTS" />
+    <DisplayUnit name="DUT_MILLIVOLTS" />
+  </Unit>
+  <Unit name="UT_Electrical_Frequency">
+    <DisplayUnit name="DUT_HERTZ" />
+    <DisplayUnit name="DUT_CYCLES_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND_CUBIC_METER" />
+  </Unit>
+  <Unit name="UT_Electrical_Illuminance">
+    <DisplayUnit name="DUT_LUX" />
+    <DisplayUnit name="DUT_FOOTCANDLES" />
+  </Unit>
+  <Unit name="UT_Electrical_Luminous_Flux">
+    <DisplayUnit name="DUT_LUMENS" />
+  </Unit>
+  <Unit name="UT_Electrical_Power">
+    <DisplayUnit name="DUT_WATTS" />
+    <DisplayUnit name="DUT_KILOWATTS" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_SECOND" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR" />
+    <DisplayUnit name="DUT_CALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_KILOCALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_VOLT_AMPERES" />
+    <DisplayUnit name="DUT_KILOVOLT_AMPERES" />
+    <DisplayUnit name="DUT_HORSEPOWER" />
+    <DisplayUnit name="DUT_TON_OF_REFRIGERATION" />
+  </Unit>
+  <Unit name="UT_HVAC_Roughness">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Force">
+    <DisplayUnit name="DUT_NEWTONS" />
+    <DisplayUnit name="DUT_DECANEWTONS" />
+    <DisplayUnit name="DUT_KILONEWTONS" />
+    <DisplayUnit name="DUT_MEGANEWTONS" />
+    <DisplayUnit name="DUT_KIPS" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE" />
+    <DisplayUnit name="DUT_TONNES_FORCE" />
+    <DisplayUnit name="DUT_POUNDS_FORCE" />
+    <DisplayUnit name="DUT_NEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECANEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_KILONEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_MEGANEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_KIP_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAM_FORCE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_TONNE_FORCE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_POUND_FORCE_FEET_PER_FOOT" />
+  </Unit>
+  <Unit name="UT_LinearForce">
+    <DisplayUnit name="DUT_NEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_DECANEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_MEGANEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_KIPS_PER_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE_PER_METER" />
+    <DisplayUnit name="DUT_TONNES_FORCE_PER_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_FOOT" />
+    <DisplayUnit name="DUT_KIPS_PER_INCH" />
+  </Unit>
+  <Unit name="UT_AreaForce">
+    <DisplayUnit name="DUT_INCHES_OF_WATER" />
+    <DisplayUnit name="DUT_PASCALS" />
+    <DisplayUnit name="DUT_KILOPASCALS" />
+    <DisplayUnit name="DUT_MEGAPASCALS" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_INCHES_OF_MERCURY" />
+    <DisplayUnit name="DUT_MILLIMETERS_OF_MERCURY" />
+    <DisplayUnit name="DUT_ATMOSPHERES" />
+    <DisplayUnit name="DUT_BARS" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_DECANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_MEGANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_TONNES_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_FEET_OF_WATER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_CENTIMETER" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_MILLIMETER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_MILLIMETER" />
+  </Unit>
+  <Unit name="UT_Moment">
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS" />
+    <DisplayUnit name="DUT_CALORIES" />
+    <DisplayUnit name="DUT_KILOCALORIES" />
+    <DisplayUnit name="DUT_JOULES" />
+    <DisplayUnit name="DUT_KILOWATT_HOURS" />
+    <DisplayUnit name="DUT_THERMS" />
+    <DisplayUnit name="DUT_NEWTON_METERS" />
+    <DisplayUnit name="DUT_DECANEWTON_METERS" />
+    <DisplayUnit name="DUT_KILONEWTON_METERS" />
+    <DisplayUnit name="DUT_MEGANEWTON_METERS" />
+    <DisplayUnit name="DUT_KIP_FEET" />
+    <DisplayUnit name="DUT_KILOGRAM_FORCE_METERS" />
+    <DisplayUnit name="DUT_TONNE_FORCE_METERS" />
+    <DisplayUnit name="DUT_POUND_FORCE_FEET" />
+    <DisplayUnit name="DUT_KILOJOULES" />
+  </Unit>
+  <Unit name="UT_ForceScale">
+    <DisplayUnit name="DUT_METERS_PER_KILONEWTON" />
+    <DisplayUnit name="DUT_FEET_PER_KIP" />
+  </Unit>
+  <Unit name="UT_LinearForceScale">
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_KILONEWTON" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_KIP" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE_TON_OF_REFRIGERATION" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND_KILOWATTS" />
+  </Unit>
+  <Unit name="UT_AreaForceScale">
+    <DisplayUnit name="DUT_CUBIC_METERS_PER_KILONEWTON" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_KIP" />
+  </Unit>
+  <Unit name="UT_MomentScale">
+    <DisplayUnit name="DUT_INV_KILONEWTONS" />
+    <DisplayUnit name="DUT_INV_KIPS" />
+  </Unit>
+  <Unit name="UT_Electrical_Apparent_Power">
+    <DisplayUnit name="DUT_WATTS" />
+    <DisplayUnit name="DUT_KILOWATTS" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_SECOND" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR" />
+    <DisplayUnit name="DUT_CALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_KILOCALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_VOLT_AMPERES" />
+    <DisplayUnit name="DUT_KILOVOLT_AMPERES" />
+    <DisplayUnit name="DUT_HORSEPOWER" />
+    <DisplayUnit name="DUT_TON_OF_REFRIGERATION" />
+  </Unit>
+  <Unit name="UT_Electrical_Power_Density">
+    <DisplayUnit name="DUT_WATTS_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_WATTS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR_SQUARE_FOOT" />
+  </Unit>
+  <Unit name="UT_Piping_Density">
+    <DisplayUnit name="DUT_KILOGRAMS_PER_CUBIC_METER" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_CUBIC_INCH" />
+  </Unit>
+  <Unit name="UT_Piping_Flow">
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_METERS_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_METERS_PER_HOUR" />
+    <DisplayUnit name="DUT_GALLONS_US_PER_MINUTE" />
+    <DisplayUnit name="DUT_GALLONS_US_PER_HOUR" />
+  </Unit>
+  <Unit name="UT_Piping_Friction">
+    <DisplayUnit name="DUT_INCHES_OF_WATER_PER_100FT" />
+    <DisplayUnit name="DUT_PASCALS_PER_METER" />
+    <DisplayUnit name="DUT_FEET_OF_WATER_PER_100FT" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_CUBIC_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_KIPS_PER_CUBIC_INCH" />
+    <DisplayUnit name="DUT_KIPS_PER_CUBIC_FOOT" />
+  </Unit>
+  <Unit name="UT_Piping_Pressure">
+    <DisplayUnit name="DUT_INCHES_OF_WATER" />
+    <DisplayUnit name="DUT_PASCALS" />
+    <DisplayUnit name="DUT_KILOPASCALS" />
+    <DisplayUnit name="DUT_MEGAPASCALS" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_INCHES_OF_MERCURY" />
+    <DisplayUnit name="DUT_MILLIMETERS_OF_MERCURY" />
+    <DisplayUnit name="DUT_ATMOSPHERES" />
+    <DisplayUnit name="DUT_BARS" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_DECANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_MEGANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_TONNES_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_FEET_OF_WATER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_CENTIMETER" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_MILLIMETER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_MILLIMETER" />
+  </Unit>
+  <Unit name="UT_Piping_Temperature">
+    <DisplayUnit name="DUT_FAHRENHEIT" />
+    <DisplayUnit name="DUT_CELSIUS" />
+    <DisplayUnit name="DUT_KELVIN" />
+    <DisplayUnit name="DUT_RANKINE" />
+  </Unit>
+  <Unit name="UT_Piping_Velocity">
+    <DisplayUnit name="DUT_FEET_PER_MINUTE" />
+    <DisplayUnit name="DUT_METERS_PER_SECOND" />
+    <DisplayUnit name="DUT_CENTIMETERS_PER_MINUTE" />
+    <DisplayUnit name="DUT_FEET_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND_SQUARE_METER" />
+    <DisplayUnit name="DUT_KILOMETERS_PER_HOUR" />
+    <DisplayUnit name="DUT_MILES_PER_HOUR" />
+  </Unit>
+  <Unit name="UT_Piping_Viscosity">
+    <DisplayUnit name="DUT_PASCAL_SECONDS" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_FOOT_SECOND" />
+    <DisplayUnit name="DUT_CENTIPOISES" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_FOOT_HOUR" />
+  </Unit>
+  <Unit name="UT_PipeSize">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Piping_Roughness">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Stress">
+    <DisplayUnit name="DUT_INCHES_OF_WATER" />
+    <DisplayUnit name="DUT_PASCALS" />
+    <DisplayUnit name="DUT_KILOPASCALS" />
+    <DisplayUnit name="DUT_MEGAPASCALS" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_INCHES_OF_MERCURY" />
+    <DisplayUnit name="DUT_MILLIMETERS_OF_MERCURY" />
+    <DisplayUnit name="DUT_ATMOSPHERES" />
+    <DisplayUnit name="DUT_BARS" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_DECANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_MEGANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_TONNES_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_FEET_OF_WATER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_CENTIMETER" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_MILLIMETER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_MILLIMETER" />
+  </Unit>
+  <Unit name="UT_UnitWeight">
+    <DisplayUnit name="DUT_INCHES_OF_WATER_PER_100FT" />
+    <DisplayUnit name="DUT_PASCALS_PER_METER" />
+    <DisplayUnit name="DUT_FEET_OF_WATER_PER_100FT" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_CUBIC_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_KIPS_PER_CUBIC_INCH" />
+    <DisplayUnit name="DUT_KIPS_PER_CUBIC_FOOT" />
+  </Unit>
+  <Unit name="UT_ThermalExpansion">
+    <DisplayUnit name="DUT_INV_FAHRENHEIT" />
+    <DisplayUnit name="DUT_INV_CELSIUS" />
+    <DisplayUnit name="DUT_MICROMETERS_PER_METER_CELSIUS" />
+    <DisplayUnit name="DUT_MICROINCHES_PER_INCH_FAHRENHEIT" />
+  </Unit>
+  <Unit name="UT_LinearMoment">
+    <DisplayUnit name="DUT_NEWTONS" />
+    <DisplayUnit name="DUT_DECANEWTONS" />
+    <DisplayUnit name="DUT_KILONEWTONS" />
+    <DisplayUnit name="DUT_MEGANEWTONS" />
+    <DisplayUnit name="DUT_KIPS" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE" />
+    <DisplayUnit name="DUT_TONNES_FORCE" />
+    <DisplayUnit name="DUT_POUNDS_FORCE" />
+    <DisplayUnit name="DUT_NEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECANEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_KILONEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_MEGANEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_KIP_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAM_FORCE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_TONNE_FORCE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_POUND_FORCE_FEET_PER_FOOT" />
+  </Unit>
+  <Unit name="UT_LinearMomentScale">
+    <DisplayUnit name="DUT_METERS_PER_KILONEWTON" />
+    <DisplayUnit name="DUT_FEET_PER_KIP" />
+  </Unit>
+  <Unit name="UT_ForcePerLength">
+    <DisplayUnit name="DUT_NEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_DECANEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_MEGANEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_KIPS_PER_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE_PER_METER" />
+    <DisplayUnit name="DUT_TONNES_FORCE_PER_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_FOOT" />
+    <DisplayUnit name="DUT_KIPS_PER_INCH" />
+  </Unit>
+  <Unit name="UT_ForceLengthPerAngle">
+    <DisplayUnit name="DUT_KIP_FEET_PER_DEGREE" />
+    <DisplayUnit name="DUT_KILONEWTON_METERS_PER_DEGREE" />
+  </Unit>
+  <Unit name="UT_LinearForcePerLength">
+    <DisplayUnit name="DUT_INCHES_OF_WATER" />
+    <DisplayUnit name="DUT_PASCALS" />
+    <DisplayUnit name="DUT_KILOPASCALS" />
+    <DisplayUnit name="DUT_MEGAPASCALS" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_INCHES_OF_MERCURY" />
+    <DisplayUnit name="DUT_MILLIMETERS_OF_MERCURY" />
+    <DisplayUnit name="DUT_ATMOSPHERES" />
+    <DisplayUnit name="DUT_BARS" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_DECANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_MEGANEWTONS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_TONNES_FORCE_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_FEET_OF_WATER" />
+    <DisplayUnit name="DUT_KIPS_PER_SQUARE_INCH" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_CENTIMETER" />
+    <DisplayUnit name="DUT_NEWTONS_PER_SQUARE_MILLIMETER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_SQUARE_MILLIMETER" />
+  </Unit>
+  <Unit name="UT_LinearForceLengthPerAngle">
+    <DisplayUnit name="DUT_KIP_FEET_PER_DEGREE_PER_FOOT" />
+    <DisplayUnit name="DUT_KILONEWTON_METERS_PER_DEGREE_PER_METER" />
+  </Unit>
+  <Unit name="UT_AreaForcePerLength">
+    <DisplayUnit name="DUT_INCHES_OF_WATER_PER_100FT" />
+    <DisplayUnit name="DUT_PASCALS_PER_METER" />
+    <DisplayUnit name="DUT_FEET_OF_WATER_PER_100FT" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_CUBIC_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_KIPS_PER_CUBIC_INCH" />
+    <DisplayUnit name="DUT_KIPS_PER_CUBIC_FOOT" />
+  </Unit>
+  <Unit name="UT_Piping_Volume">
+    <DisplayUnit name="DUT_CUBIC_YARDS" />
+    <DisplayUnit name="DUT_CUBIC_FEET" />
+    <DisplayUnit name="DUT_CUBIC_METERS" />
+    <DisplayUnit name="DUT_CUBIC_INCHES" />
+    <DisplayUnit name="DUT_CUBIC_CENTIMETERS" />
+    <DisplayUnit name="DUT_CUBIC_MILLIMETERS" />
+    <DisplayUnit name="DUT_LITERS" />
+    <DisplayUnit name="DUT_GALLONS_US" />
+  </Unit>
+  <Unit name="UT_HVAC_Viscosity">
+    <DisplayUnit name="DUT_PASCAL_SECONDS" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_FOOT_SECOND" />
+    <DisplayUnit name="DUT_CENTIPOISES" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_FOOT_HOUR" />
+  </Unit>
+  <Unit name="UT_HVAC_CoefficientOfHeatTransfer">
+    <DisplayUnit name="DUT_WATTS_PER_SQUARE_METER_KELVIN" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR_SQUARE_FOOT_FAHRENHEIT" />
+  </Unit>
+  <Unit name="UT_HVAC_Airflow_Density">
+    <DisplayUnit name="DUT_FEET_PER_MINUTE" />
+    <DisplayUnit name="DUT_METERS_PER_SECOND" />
+    <DisplayUnit name="DUT_CENTIMETERS_PER_MINUTE" />
+    <DisplayUnit name="DUT_FEET_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND_SQUARE_METER" />
+    <DisplayUnit name="DUT_KILOMETERS_PER_HOUR" />
+    <DisplayUnit name="DUT_MILES_PER_HOUR" />
+  </Unit>
+  <Unit name="UT_Slope">
+    <DisplayUnit name="DUT_GENERAL" />
+    <DisplayUnit name="DUT_FIXED" />
+    <DisplayUnit name="DUT_PERCENTAGE" />
+    <DisplayUnit name="DUT_RATIO_10" />
+    <DisplayUnit name="DUT_RATIO_12" />
+    <DisplayUnit name="DUT_SLOPE_DEGREES" />
+    <DisplayUnit name="DUT_RISE_OVER_INCHES" />
+    <DisplayUnit name="DUT_RISE_OVER_FOOT" />
+    <DisplayUnit name="DUT_RISE_OVER_MMS" />
+    <DisplayUnit name="DUT_CURRENCY" />
+    <DisplayUnit name="DUT_RISE_OVER_120_INCHES" />
+    <DisplayUnit name="DUT_1_RATIO" />
+    <DisplayUnit name="DUT_RISE_OVER_10_FEET" />
+    <DisplayUnit name="DUT_PER_MILLE" />
+  </Unit>
+  <Unit name="UT_HVAC_Cooling_Load">
+    <DisplayUnit name="DUT_WATTS" />
+    <DisplayUnit name="DUT_KILOWATTS" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_SECOND" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR" />
+    <DisplayUnit name="DUT_CALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_KILOCALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_VOLT_AMPERES" />
+    <DisplayUnit name="DUT_KILOVOLT_AMPERES" />
+    <DisplayUnit name="DUT_HORSEPOWER" />
+    <DisplayUnit name="DUT_TON_OF_REFRIGERATION" />
+  </Unit>
+  <Unit name="UT_HVAC_Cooling_Load_Divided_By_Area">
+    <DisplayUnit name="DUT_WATTS_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_WATTS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR_SQUARE_FOOT" />
+  </Unit>
+  <Unit name="UT_HVAC_Cooling_Load_Divided_By_Volume">
+    <DisplayUnit name="DUT_WATTS_PER_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_WATTS_PER_CUBIC_METER" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR_CUBIC_FOOT" />
+  </Unit>
+  <Unit name="UT_HVAC_Heating_Load">
+    <DisplayUnit name="DUT_WATTS" />
+    <DisplayUnit name="DUT_KILOWATTS" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_SECOND" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR" />
+    <DisplayUnit name="DUT_CALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_KILOCALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_VOLT_AMPERES" />
+    <DisplayUnit name="DUT_KILOVOLT_AMPERES" />
+    <DisplayUnit name="DUT_HORSEPOWER" />
+    <DisplayUnit name="DUT_TON_OF_REFRIGERATION" />
+  </Unit>
+  <Unit name="UT_HVAC_Heating_Load_Divided_By_Area">
+    <DisplayUnit name="DUT_WATTS_PER_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_WATTS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR_SQUARE_FOOT" />
+  </Unit>
+  <Unit name="UT_HVAC_Heating_Load_Divided_By_Volume">
+    <DisplayUnit name="DUT_WATTS_PER_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_WATTS_PER_CUBIC_METER" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR_CUBIC_FOOT" />
+  </Unit>
+  <Unit name="UT_HVAC_Airflow_Divided_By_Volume">
+    <DisplayUnit name="DUT_HERTZ" />
+    <DisplayUnit name="DUT_CYCLES_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND_CUBIC_METER" />
+  </Unit>
+  <Unit name="UT_HVAC_Airflow_Divided_By_Cooling_Load">
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_KILONEWTON" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_KIP" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE_TON_OF_REFRIGERATION" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND_KILOWATTS" />
+  </Unit>
+  <Unit name="UT_HVAC_Area_Divided_By_Cooling_Load">
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_TON_OF_REFRIGERATION" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_KILOWATTS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_THOUSAND_BRITISH_THERMAL_UNITS_PER_HOUR" />
+  </Unit>
+  <Unit name="UT_WireSize">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_HVAC_Slope">
+    <DisplayUnit name="DUT_GENERAL" />
+    <DisplayUnit name="DUT_FIXED" />
+    <DisplayUnit name="DUT_PERCENTAGE" />
+    <DisplayUnit name="DUT_RATIO_10" />
+    <DisplayUnit name="DUT_RATIO_12" />
+    <DisplayUnit name="DUT_SLOPE_DEGREES" />
+    <DisplayUnit name="DUT_RISE_OVER_INCHES" />
+    <DisplayUnit name="DUT_RISE_OVER_FOOT" />
+    <DisplayUnit name="DUT_RISE_OVER_MMS" />
+    <DisplayUnit name="DUT_CURRENCY" />
+    <DisplayUnit name="DUT_RISE_OVER_120_INCHES" />
+    <DisplayUnit name="DUT_1_RATIO" />
+    <DisplayUnit name="DUT_RISE_OVER_10_FEET" />
+    <DisplayUnit name="DUT_PER_MILLE" />
+  </Unit>
+  <Unit name="UT_Piping_Slope">
+    <DisplayUnit name="DUT_GENERAL" />
+    <DisplayUnit name="DUT_FIXED" />
+    <DisplayUnit name="DUT_PERCENTAGE" />
+    <DisplayUnit name="DUT_RATIO_10" />
+    <DisplayUnit name="DUT_RATIO_12" />
+    <DisplayUnit name="DUT_SLOPE_DEGREES" />
+    <DisplayUnit name="DUT_RISE_OVER_INCHES" />
+    <DisplayUnit name="DUT_RISE_OVER_FOOT" />
+    <DisplayUnit name="DUT_RISE_OVER_MMS" />
+    <DisplayUnit name="DUT_CURRENCY" />
+    <DisplayUnit name="DUT_RISE_OVER_120_INCHES" />
+    <DisplayUnit name="DUT_1_RATIO" />
+    <DisplayUnit name="DUT_RISE_OVER_10_FEET" />
+    <DisplayUnit name="DUT_PER_MILLE" />
+  </Unit>
+  <Unit name="UT_Currency">
+    <DisplayUnit name="DUT_GENERAL" />
+    <DisplayUnit name="DUT_FIXED" />
+    <DisplayUnit name="DUT_PERCENTAGE" />
+    <DisplayUnit name="DUT_RATIO_10" />
+    <DisplayUnit name="DUT_RATIO_12" />
+    <DisplayUnit name="DUT_SLOPE_DEGREES" />
+    <DisplayUnit name="DUT_RISE_OVER_INCHES" />
+    <DisplayUnit name="DUT_RISE_OVER_FOOT" />
+    <DisplayUnit name="DUT_RISE_OVER_MMS" />
+    <DisplayUnit name="DUT_CURRENCY" />
+    <DisplayUnit name="DUT_RISE_OVER_120_INCHES" />
+    <DisplayUnit name="DUT_1_RATIO" />
+    <DisplayUnit name="DUT_RISE_OVER_10_FEET" />
+    <DisplayUnit name="DUT_PER_MILLE" />
+  </Unit>
+  <Unit name="UT_Electrical_Efficacy">
+    <DisplayUnit name="DUT_LUMENS_PER_WATT" />
+  </Unit>
+  <Unit name="UT_Electrical_Wattage">
+    <DisplayUnit name="DUT_WATTS" />
+    <DisplayUnit name="DUT_KILOWATTS" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_SECOND" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR" />
+    <DisplayUnit name="DUT_CALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_KILOCALORIES_PER_SECOND" />
+    <DisplayUnit name="DUT_VOLT_AMPERES" />
+    <DisplayUnit name="DUT_KILOVOLT_AMPERES" />
+    <DisplayUnit name="DUT_HORSEPOWER" />
+    <DisplayUnit name="DUT_TON_OF_REFRIGERATION" />
+  </Unit>
+  <Unit name="UT_Color_Temperature">
+    <DisplayUnit name="DUT_FAHRENHEIT" />
+    <DisplayUnit name="DUT_CELSIUS" />
+    <DisplayUnit name="DUT_KELVIN" />
+    <DisplayUnit name="DUT_RANKINE" />
+  </Unit>
+  <Unit name="UT_DecSheetLength">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Electrical_Luminous_Intensity">
+    <DisplayUnit name="DUT_CANDELAS" />
+  </Unit>
+  <Unit name="UT_Electrical_Luminance">
+    <DisplayUnit name="DUT_FOOTLAMBERTS" />
+    <DisplayUnit name="DUT_CANDELAS_PER_SQUARE_METER" />
+  </Unit>
+  <Unit name="UT_HVAC_Area_Divided_By_Heating_Load">
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_TON_OF_REFRIGERATION" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_KILOWATTS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_THOUSAND_BRITISH_THERMAL_UNITS_PER_HOUR" />
+  </Unit>
+  <Unit name="UT_HVAC_Factor">
+    <DisplayUnit name="DUT_GENERAL" />
+    <DisplayUnit name="DUT_FIXED" />
+    <DisplayUnit name="DUT_PERCENTAGE" />
+    <DisplayUnit name="DUT_RATIO_10" />
+    <DisplayUnit name="DUT_RATIO_12" />
+    <DisplayUnit name="DUT_SLOPE_DEGREES" />
+    <DisplayUnit name="DUT_RISE_OVER_INCHES" />
+    <DisplayUnit name="DUT_RISE_OVER_FOOT" />
+    <DisplayUnit name="DUT_RISE_OVER_MMS" />
+    <DisplayUnit name="DUT_CURRENCY" />
+    <DisplayUnit name="DUT_RISE_OVER_120_INCHES" />
+    <DisplayUnit name="DUT_1_RATIO" />
+    <DisplayUnit name="DUT_RISE_OVER_10_FEET" />
+    <DisplayUnit name="DUT_PER_MILLE" />
+  </Unit>
+  <Unit name="UT_Electrical_Temperature">
+    <DisplayUnit name="DUT_FAHRENHEIT" />
+    <DisplayUnit name="DUT_CELSIUS" />
+    <DisplayUnit name="DUT_KELVIN" />
+    <DisplayUnit name="DUT_RANKINE" />
+  </Unit>
+  <Unit name="UT_Electrical_CableTraySize">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Electrical_ConduitSize">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Reinforcement_Volume">
+    <DisplayUnit name="DUT_CUBIC_YARDS" />
+    <DisplayUnit name="DUT_CUBIC_FEET" />
+    <DisplayUnit name="DUT_CUBIC_METERS" />
+    <DisplayUnit name="DUT_CUBIC_INCHES" />
+    <DisplayUnit name="DUT_CUBIC_CENTIMETERS" />
+    <DisplayUnit name="DUT_CUBIC_MILLIMETERS" />
+    <DisplayUnit name="DUT_LITERS" />
+    <DisplayUnit name="DUT_GALLONS_US" />
+  </Unit>
+  <Unit name="UT_Reinforcement_Length">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Electrical_Demand_Factor">
+    <DisplayUnit name="DUT_GENERAL" />
+    <DisplayUnit name="DUT_FIXED" />
+    <DisplayUnit name="DUT_PERCENTAGE" />
+    <DisplayUnit name="DUT_RATIO_10" />
+    <DisplayUnit name="DUT_RATIO_12" />
+    <DisplayUnit name="DUT_SLOPE_DEGREES" />
+    <DisplayUnit name="DUT_RISE_OVER_INCHES" />
+    <DisplayUnit name="DUT_RISE_OVER_FOOT" />
+    <DisplayUnit name="DUT_RISE_OVER_MMS" />
+    <DisplayUnit name="DUT_CURRENCY" />
+    <DisplayUnit name="DUT_RISE_OVER_120_INCHES" />
+    <DisplayUnit name="DUT_1_RATIO" />
+    <DisplayUnit name="DUT_RISE_OVER_10_FEET" />
+    <DisplayUnit name="DUT_PER_MILLE" />
+  </Unit>
+  <Unit name="UT_HVAC_DuctInsulationThickness">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_HVAC_DuctLiningThickness">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_PipeInsulationThickness">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_HVAC_ThermalResistance">
+    <DisplayUnit name="DUT_HOUR_SQUARE_FOOT_FAHRENHEIT_PER_BRITISH_THERMAL_UNIT" />
+    <DisplayUnit name="DUT_SQUARE_METER_KELVIN_PER_WATT" />
+  </Unit>
+  <Unit name="UT_HVAC_ThermalMass">
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNIT_PER_FAHRENHEIT" />
+    <DisplayUnit name="DUT_JOULES_PER_KELVIN" />
+    <DisplayUnit name="DUT_KILOJOULES_PER_KELVIN" />
+  </Unit>
+  <Unit name="UT_Acceleration">
+    <DisplayUnit name="DUT_METERS_PER_SECOND_SQUARED" />
+    <DisplayUnit name="DUT_KILOMETERS_PER_SECOND_SQUARED" />
+    <DisplayUnit name="DUT_INCHES_PER_SECOND_SQUARED" />
+    <DisplayUnit name="DUT_FEET_PER_SECOND_SQUARED" />
+    <DisplayUnit name="DUT_MILES_PER_SECOND_SQUARED" />
+  </Unit>
+  <Unit name="UT_Bar_Diameter">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Crack_Width">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Displacement_Deflection">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Energy">
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS" />
+    <DisplayUnit name="DUT_CALORIES" />
+    <DisplayUnit name="DUT_KILOCALORIES" />
+    <DisplayUnit name="DUT_JOULES" />
+    <DisplayUnit name="DUT_KILOWATT_HOURS" />
+    <DisplayUnit name="DUT_THERMS" />
+    <DisplayUnit name="DUT_NEWTON_METERS" />
+    <DisplayUnit name="DUT_DECANEWTON_METERS" />
+    <DisplayUnit name="DUT_KILONEWTON_METERS" />
+    <DisplayUnit name="DUT_MEGANEWTON_METERS" />
+    <DisplayUnit name="DUT_KIP_FEET" />
+    <DisplayUnit name="DUT_KILOGRAM_FORCE_METERS" />
+    <DisplayUnit name="DUT_TONNE_FORCE_METERS" />
+    <DisplayUnit name="DUT_POUND_FORCE_FEET" />
+    <DisplayUnit name="DUT_KILOJOULES" />
+  </Unit>
+  <Unit name="UT_Structural_Frequency">
+    <DisplayUnit name="DUT_HERTZ" />
+    <DisplayUnit name="DUT_CYCLES_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND_CUBIC_METER" />
+  </Unit>
+  <Unit name="UT_Mass">
+    <DisplayUnit name="DUT_KILOGRAMS_MASS" />
+    <DisplayUnit name="DUT_TONNES_MASS" />
+    <DisplayUnit name="DUT_POUNDS_MASS" />
+  </Unit>
+  <Unit name="UT_Mass_per_Unit_Length">
+    <DisplayUnit name="DUT_KILOGRAMS_MASS_PER_METER" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_FOOT" />
+  </Unit>
+  <Unit name="UT_Moment_of_Inertia">
+    <DisplayUnit name="DUT_FEET_TO_THE_FOURTH_POWER" />
+    <DisplayUnit name="DUT_INCHES_TO_THE_FOURTH_POWER" />
+    <DisplayUnit name="DUT_MILLIMETERS_TO_THE_FOURTH_POWER" />
+    <DisplayUnit name="DUT_CENTIMETERS_TO_THE_FOURTH_POWER" />
+    <DisplayUnit name="DUT_METERS_TO_THE_FOURTH_POWER" />
+  </Unit>
+  <Unit name="UT_Surface_Area">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Period">
+    <DisplayUnit name="DUT_MILISECONDS" />
+    <DisplayUnit name="DUT_SECONDS" />
+    <DisplayUnit name="DUT_MINUTES" />
+    <DisplayUnit name="DUT_HOURS" />
+  </Unit>
+  <Unit name="UT_Pulsation">
+    <DisplayUnit name="DUT_RADIANS_PER_SECOND" />
+  </Unit>
+  <Unit name="UT_Reinforcement_Area">
+    <DisplayUnit name="DUT_ACRES" />
+    <DisplayUnit name="DUT_HECTARES" />
+    <DisplayUnit name="DUT_SQUARE_FEET" />
+    <DisplayUnit name="DUT_SQUARE_METERS" />
+    <DisplayUnit name="DUT_SQUARE_INCHES" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS" />
+  </Unit>
+  <Unit name="UT_Reinforcement_Area_per_Unit_Length">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Reinforcement_Cover">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Reinforcement_Spacing">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Rotation">
+    <DisplayUnit name="DUT_DECIMAL_DEGREES" />
+    <DisplayUnit name="DUT_DEGREES_AND_MINUTES" />
+    <DisplayUnit name="DUT_RADIANS" />
+    <DisplayUnit name="DUT_GRADS" />
+  </Unit>
+  <Unit name="UT_Section_Area">
+    <DisplayUnit name="DUT_ACRES" />
+    <DisplayUnit name="DUT_HECTARES" />
+    <DisplayUnit name="DUT_SQUARE_FEET" />
+    <DisplayUnit name="DUT_SQUARE_METERS" />
+    <DisplayUnit name="DUT_SQUARE_INCHES" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS" />
+  </Unit>
+  <Unit name="UT_Section_Dimension">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Section_Modulus">
+    <DisplayUnit name="DUT_CUBIC_YARDS" />
+    <DisplayUnit name="DUT_CUBIC_FEET" />
+    <DisplayUnit name="DUT_CUBIC_METERS" />
+    <DisplayUnit name="DUT_CUBIC_INCHES" />
+    <DisplayUnit name="DUT_CUBIC_CENTIMETERS" />
+    <DisplayUnit name="DUT_CUBIC_MILLIMETERS" />
+    <DisplayUnit name="DUT_LITERS" />
+    <DisplayUnit name="DUT_GALLONS_US" />
+  </Unit>
+  <Unit name="UT_Section_Property">
+    <DisplayUnit name="DUT_METERS" />
+    <DisplayUnit name="DUT_CENTIMETERS" />
+    <DisplayUnit name="DUT_MILLIMETERS" />
+    <DisplayUnit name="DUT_DECIMAL_FEET" />
+    <DisplayUnit name="DUT_FEET_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_FRACTIONAL_INCHES" />
+    <DisplayUnit name="DUT_DECIMAL_INCHES" />
+    <DisplayUnit name="DUT_METERS_CENTIMETERS" />
+    <DisplayUnit name="DUT_SQUARE_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_INCHES_PER_FOOT" />
+    <DisplayUnit name="DUT_SQUARE_MILLIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_CENTIMETERS_PER_METER" />
+    <DisplayUnit name="DUT_SQUARE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECIMETERS" />
+  </Unit>
+  <Unit name="UT_Structural_Velocity">
+    <DisplayUnit name="DUT_FEET_PER_MINUTE" />
+    <DisplayUnit name="DUT_METERS_PER_SECOND" />
+    <DisplayUnit name="DUT_CENTIMETERS_PER_MINUTE" />
+    <DisplayUnit name="DUT_FEET_PER_SECOND" />
+    <DisplayUnit name="DUT_CUBIC_FEET_PER_MINUTE_SQUARE_FOOT" />
+    <DisplayUnit name="DUT_LITERS_PER_SECOND_SQUARE_METER" />
+    <DisplayUnit name="DUT_KILOMETERS_PER_HOUR" />
+    <DisplayUnit name="DUT_MILES_PER_HOUR" />
+  </Unit>
+  <Unit name="UT_Warping_Constant">
+    <DisplayUnit name="DUT_FEET_TO_THE_SIXTH_POWER" />
+    <DisplayUnit name="DUT_INCHES_TO_THE_SIXTH_POWER" />
+    <DisplayUnit name="DUT_MILLIMETERS_TO_THE_SIXTH_POWER" />
+    <DisplayUnit name="DUT_CENTIMETERS_TO_THE_SIXTH_POWER" />
+    <DisplayUnit name="DUT_METERS_TO_THE_SIXTH_POWER" />
+  </Unit>
+  <Unit name="UT_Weight">
+    <DisplayUnit name="DUT_NEWTONS" />
+    <DisplayUnit name="DUT_DECANEWTONS" />
+    <DisplayUnit name="DUT_KILONEWTONS" />
+    <DisplayUnit name="DUT_MEGANEWTONS" />
+    <DisplayUnit name="DUT_KIPS" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE" />
+    <DisplayUnit name="DUT_TONNES_FORCE" />
+    <DisplayUnit name="DUT_POUNDS_FORCE" />
+    <DisplayUnit name="DUT_NEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_DECANEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_KILONEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_MEGANEWTON_METERS_PER_METER" />
+    <DisplayUnit name="DUT_KIP_FEET_PER_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAM_FORCE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_TONNE_FORCE_METERS_PER_METER" />
+    <DisplayUnit name="DUT_POUND_FORCE_FEET_PER_FOOT" />
+  </Unit>
+  <Unit name="UT_Weight_per_Unit_Length">
+    <DisplayUnit name="DUT_NEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_DECANEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_KILONEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_MEGANEWTONS_PER_METER" />
+    <DisplayUnit name="DUT_KIPS_PER_FOOT" />
+    <DisplayUnit name="DUT_KILOGRAMS_FORCE_PER_METER" />
+    <DisplayUnit name="DUT_TONNES_FORCE_PER_METER" />
+    <DisplayUnit name="DUT_POUNDS_FORCE_PER_FOOT" />
+    <DisplayUnit name="DUT_KIPS_PER_INCH" />
+  </Unit>
+  <Unit name="UT_HVAC_ThermalConductivity">
+    <DisplayUnit name="DUT_WATTS_PER_METER_KELVIN" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_HOUR_FOOT_FAHRENHEIT" />
+  </Unit>
+  <Unit name="UT_HVAC_SpecificHeat">
+    <DisplayUnit name="DUT_JOULES_PER_GRAM_CELSIUS" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_POUND_FAHRENHEIT" />
+    <DisplayUnit name="DUT_JOULES_PER_KILOGRAM_CELSIUS" />
+  </Unit>
+  <Unit name="UT_HVAC_SpecificHeatOfVaporization">
+    <DisplayUnit name="DUT_JOULES_PER_GRAM" />
+    <DisplayUnit name="DUT_BRITISH_THERMAL_UNITS_PER_POUND" />
+  </Unit>
+  <Unit name="UT_HVAC_Permeability">
+    <DisplayUnit name="DUT_NANOGRAMS_PER_PASCAL_SECOND_SQUARE_METER" />
+    <DisplayUnit name="DUT_GRAINS_PER_HOUR_SQUARE_FOOT_INCH_MERCURY" />
+  </Unit>
+  <Unit name="UT_Electrical_Resistivity">
+    <DisplayUnit name="DUT_OHM_METERS" />
+  </Unit>
+  <Unit name="UT_MassDensity">
+    <DisplayUnit name="DUT_KILOGRAMS_PER_CUBIC_METER" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_CUBIC_FOOT" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_CUBIC_INCH" />
+  </Unit>
+  <Unit name="UT_MassPerUnitArea">
+    <DisplayUnit name="DUT_KILOGRAMS_MASS_PER_SQUARE_METER" />
+    <DisplayUnit name="DUT_POUNDS_MASS_PER_SQUARE_FOOT" />
+  </Unit>
+  <Unit name="UT_Custom">
+    <DisplayUnit name="DUT_CUSTOM" />
+  </Unit>
+</Units>

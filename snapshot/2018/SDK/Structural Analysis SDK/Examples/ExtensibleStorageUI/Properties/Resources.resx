@@ -1,0 +1,1059 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CategoryCheckBox" xml:space="preserve">
+    <value>Category CheckBox</value>
+  </data>
+  <data name="CategoryCheckBoxToolTips" xml:space="preserve">
+    <value>The status of the Category CheckBox drives the status of controls stacked to  this category. Enable it will enable all controls, disable it will disable all controls. </value>
+  </data>
+  <data name="CheckBoxUnchecked" xml:space="preserve">
+    <value>CheckBox Unchecked</value>
+  </data>
+  <data name="CheckBoxUncheckedToolTips" xml:space="preserve">
+    <value>CheckBox with the default value set to unchecked.  </value>
+  </data>
+  <data name="CheckListDouble" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="CheckListDoubleToolTips" xml:space="preserve">
+    <value>CheckedList supporting double values.
+The unit type is set to length (DUT_METERS). 
+Checked items values are stored in DUT_METERS.
+This comboBox is filled using "DataSourceDoubleList" data source.
+"DataSourceDoubleList" is based on doubleList values {10.0, 20.0, 30.0, 40.0}.
+Values are exposed on the UI based on Revit project units settings.  
+Revit project unit formatting won't be applyed on the UI (use Unit CheckedList to achieve this).</value>
+  </data>
+  <data name="CheckListRebar" xml:space="preserve">
+    <value>Rebar Type</value>
+  </data>
+  <data name="CheckListRebarToolTips" xml:space="preserve">
+    <value>Element CheckedList supporting Rebar type values.
+This Element CheckedList is filled using "DataSourceRebarList" data source.
+ "DataSourceRebarList" is the list of Rebars from current document.</value>
+  </data>
+  <data name="CheckListString" xml:space="preserve">
+    <value>String</value>
+  </data>
+  <data name="CheckListStringToolTips" xml:space="preserve">
+    <value>CheckedList supporting string values.
+This CheckedList is filled using "DataSourceStringList" data source.
+"DataSourceStringList" is based on stringList values {"Choice 1", "Choice 2", "Choice 3", "Choice 4"}.</value>
+  </data>
+  <data name="Choice1" xml:space="preserve">
+    <value>This is my choice 1</value>
+  </data>
+  <data name="Choice2" xml:space="preserve">
+    <value>This is my choice 2</value>
+  </data>
+  <data name="Choice3" xml:space="preserve">
+    <value>This is my choice 3</value>
+  </data>
+  <data name="ComboBoxDouble" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="ComboBoxDoubleToolTips" xml:space="preserve">
+    <value>ComboBox supporting double values.
+The unit type is set to length (DUT_METERS). 
+ Selected index value is stored in DUT_METERS.
+This comboBox is filled using "DataSourceDoubleList" data source.
+"DataSourceDoubleList" is based on doubleList values {10.0, 20.0, 30.0, 40.0}.</value>
+  </data>
+  <data name="ComboBoxEnumImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ComboBoxEnumImageToolTips" xml:space="preserve">
+    <value>ComboBox supporting some  images based on an Enum defined on the constructor. 
+Images are part of the resources of this component and an association is done by key. </value>
+  </data>
+  <data name="ComboBoxEnumImageText" xml:space="preserve">
+    <value>Image and Text</value>
+  </data>
+  <data name="ComboBoxEnumImageTextToolTips" xml:space="preserve">
+    <value>ComboBox supporting some  images and associated strings based on an Enum. 
+Images and strings are part of the resources of this component.</value>
+  </data>
+  <data name="ComboBoxEnumText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="ComboBoxEnumTextToolTips" xml:space="preserve">
+    <value>EnumControl supporting  strings values presented as ComboBox.
+This comboBox is filled using AnEnumLocalized.
+Strings associated to [Choice1,Choice2,Choice3] are part of the resources file.
+On the UI are visible strings "This is my choice 1","This is my choice 2","This is my choice 3"
+Enum field is stored as integer with default enumerator values.</value>
+  </data>
+  <data name="ComboBoxString" xml:space="preserve">
+    <value>String</value>
+  </data>
+  <data name="ComboBoxStringToolTips" xml:space="preserve">
+    <value>ComboBox supporting string values.
+This comboBox is filled using "DataSourceStringList" data source.
+"DataSourceStringList" is based on stringList values {"Choice 1", "Choice 2", "Choice 3", "Choice 4"}.</value>
+  </data>
+  <data name="ListElementID" xml:space="preserve">
+    <value>ElementID</value>
+  </data>
+  <data name="ListElementIDToolTips" xml:space="preserve">
+    <value>ComboBox supporting some element IDs based on "DataSourceElementIdList" data source. This data source is based on the ElementId of the first five RebarType found on the current Revit project.</value>
+  </data>
+  <data name="ListTextBoxString" xml:space="preserve">
+    <value>TextBox String</value>
+  </data>
+  <data name="ListTextBoxStringToolTips" xml:space="preserve">
+    <value>TextBox supporting a list of string values
+The separator is ";" character. 
+These values are initialized via the constructor to {"this is a first text", "this is a second text"}.</value>
+  </data>
+  <data name="ListUnitTextBoxDouble" xml:space="preserve">
+    <value>Unit Double</value>
+  </data>
+  <data name="ListUnitTextBoxDoubleToolTips" xml:space="preserve">
+    <value>Unit TextBox supporting a list of double value
+The separator is ";" character.
+The unit type is set to  length (DUT_METERS). 
+These values are stored in DUT_METERS.
+These values are initialized via the constructor to {10.0, 20.0} DUT_METERS.</value>
+  </data>
+  <data name="NumericUpDownDouble" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="NumericUpDownDoubleToolTips" xml:space="preserve">
+    <value>NumericUpDown supporting a double value.
+The unit type is set to  length (DUT_METERS). 
+This value is stored in DUT_METERS.
+No Unit are displayed on the UI
+The step is set to 5 DUT_METERS.
+The minimal value is set to 0 DUT_METERS. 
+The maximal value is set to 100 DUT_METERS.</value>
+  </data>
+  <data name="NumericUpDownDoubleUnit" xml:space="preserve">
+    <value>Unit  Double</value>
+  </data>
+  <data name="NumericUpDownDoubleUnitToolTips" xml:space="preserve">
+    <value>Unit NumericUpDown supporting a double value.
+The unit type is set to  length (DUT_FEET_FRACTIONAL_INCHES). 
+This value is stored in DUT_FEET_FRACTIONAL_INCHES.
+The step is set to 5 DUT_FEET_FRACTIONAL_INCHES.
+The minimal value is set to -100 DUT_FEET_FRACTIONAL_INCHES. 
+The maximal value is set to 100 DUT_FEET_FRACTIONAL_INCHES.</value>
+  </data>
+  <data name="NumericUpDownDoubleUnitVolume" xml:space="preserve">
+    <value>Unit Double</value>
+  </data>
+  <data name="NumericUpDownDoubleUnitVolumeToolTips" xml:space="preserve">
+    <value>Unit NumericUpDown supporting a double value.
+The unit type is set to volume (DUT_CUBIC_METERS)
+This value is stored in DUT_CUBIC_METERS.
+Validation value and step are set in DUT_CUBIC_FEET.
+The step is set to 1 DUT_CUBIC_FEET.
+The minimal value is set to 0 DUT_CUBIC_FEET. 
+The maximal value is set to 100 DUT_CUBIC_FEET.</value>
+  </data>
+  <data name="NumericUpDownInt" xml:space="preserve">
+    <value>Integer</value>
+  </data>
+  <data name="NumericUpDownIntToolTips" xml:space="preserve">
+    <value>NumericUpDown supporting an integer value.
+No Unit are displayed on the UI.
+The step is set to 1.
+The minimal value is set to 10. 
+The maximal value is set to 20.</value>
+  </data>
+  <data name="OptionListEnumImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="OptionListEnumImageToolTips" xml:space="preserve">
+    <value>OptionList supporting some  images based on an Enum defined on the constructor. 
+ Images are part of the resources of this component and an association is done by key. </value>
+  </data>
+  <data name="OptionListEnumImageText" xml:space="preserve">
+    <value>Image and Text</value>
+  </data>
+  <data name="OptionListEnumImageTextToolTips" xml:space="preserve">
+    <value>EnumControl supporting  strings values and images presented as OptionList(List).
+Strings associated to AnEnumLocalized.Choice1, AnEnumLocalized.Choice2, AnEnumLocalized.Choice3 are part of the resources file.
+On the UI are visible strings "This is my choice 1","This is my choice 2","This is my choice 3"
+Enum field is stored as integer with default enumerator values.
+Uri for associated images are returned by the GetResourceImage(string key) function.</value>
+  </data>
+  <data name="OptionListEnumText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="OptionListEnumTextToolTips" xml:space="preserve">
+    <value>EnumControl supporting  strings values presented as OptionList(List).
+Strings associated to [Choice1,Choice2,Choice3] are part of the resources file.
+On the UI are visible strings "This is my choice 1","This is my choice 2","This is my choice 3"
+Enum field is stored as integer with default enumerator values.</value>
+  </data>
+  <data name="TextBoxDouble" xml:space="preserve">
+    <value> Double</value>
+  </data>
+  <data name="TextBoxDoubleCalculated" xml:space="preserve">
+    <value>Double Calculated Value</value>
+  </data>
+  <data name="TextBoxDoubleCalculatedToolTips" xml:space="preserve">
+    <value>TextBox supporting a double value.
+The unit type is set to  length (DUT_METERS). 
+This value is stored in DUT_METERS.
+This value is initialized and calculated via the constructor in DUT_METERS.
+This control is disabled on the UI.</value>
+  </data>
+  <data name="TextBoxDoubleToolTips" xml:space="preserve">
+    <value>TextBox supporting a double value.
+The unit type is set to  length (DUT_METERS). 
+This value is stored in DUT_METERS.
+This value is initialized via the constructor to 25.0 DUT_METERS.
+This value will be exposed on the UI based on Revit project units settings.  
+Revit project unit formatting won't be appled on the UI (use UnitTextBox to achieve this).</value>
+  </data>
+  <data name="TextBoxInteger32" xml:space="preserve">
+    <value> Integer32</value>
+  </data>
+  <data name="TextBoxInteger32ToolTips" xml:space="preserve">
+    <value>TextBox supporting an integer value((int32).
+ This value is initialized via the constructor to 2.</value>
+  </data>
+  <data name="XYZTextBox" xml:space="preserve">
+    <value>XYZ TextBox</value>
+  </data>
+  <data name="XYZTextBoxToolTips" xml:space="preserve">
+    <value>XYZTextBox supporting a XYZ value.
+The unit type is set to  length (DUT_METERS). 
+This value is stored in DUT_METERS.
+ This value is initialized via the constructor to (5, 5, 5) DUT_METERS.
+On the UI semi colomns as X;Y;Z separator</value>
+  </data>
+  <data name="TextBoxString" xml:space="preserve">
+    <value>String</value>
+  </data>
+  <data name="TextBoxStringToolTips" xml:space="preserve">
+    <value>TextBox supporting a string value.
+This value is initialized via the constructor to "A string for TextBoxString control".</value>
+  </data>
+  <data name="ToggleButtonEnumImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ToggleButtonEnumImageToolTips" xml:space="preserve">
+    <value>Toggle Button supporting some  images based on an Enum defined on the constructor. 
+Images are part of the resources of this component and an association is done by key. </value>
+  </data>
+  <data name="ToggleButtonEnumImageText" xml:space="preserve">
+    <value>Image and Text</value>
+  </data>
+  <data name="ToggleButtonEnumImageTextToolTips" xml:space="preserve">
+    <value>EnumControl supporting  strings values and images presented as ToggleButton.
+Strings associated to AnEnumLocalized.Choice1, AnEnumLocalized.Choice2, AnEnumLocalized.Choice3 are part of the resources file.
+On the UI are visible strings "This is my choice 1","This is my choice 2","This is my choice 3"
+Enum field is stored as integer with default enumerator values.
+Uri for associated images are returned by the GetResourceImage(string key) function.</value>
+  </data>
+  <data name="ToggleButtonEnumText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="ToggleButtonEnumTextToolTips" xml:space="preserve">
+    <value>EnumControl supporting  strings values presented as ToggleButton.
+Strings associated to [Choice1,Choice2,Choice3] are part of the resources file.
+On the UI are visible strings "This is my choice 1","This is my choice 2","This is my choice 3"
+Enum field is stored as integer with default enumerator values.</value>
+  </data>
+  <data name="UnitCheckListDouble" xml:space="preserve">
+    <value>Unit Double</value>
+  </data>
+  <data name="UnitCheckListDoubleToolTips" xml:space="preserve">
+    <value>Unit CheckedList supporting double values.
+The unit type is set to length (DUT_METERS). 
+Checked item values are stored in DUT_METERS.
+This CheckedList is filled using "DataSourceDoubleList" data source.
+"DataSourceDoubleList" is based on doubleList values {10.0, 20.0, 30.0, 40.0}.</value>
+  </data>
+  <data name="UnitTextBoxDouble" xml:space="preserve">
+    <value> Double</value>
+  </data>
+  <data name="UnitTextBoxDoubleToolTips" xml:space="preserve">
+    <value>Unit TextBox supporting a double value.
+The unit type is set to  length (DUT_METERS). 
+This value is stored in DUT_METERS.
+this value is initialized via the constructor to 10.0 DUT_METERS.</value>
+  </data>
+  <data name="UnitTextBoxDoubleIsNotEnabled" xml:space="preserve">
+    <value>Double Disabled</value>
+  </data>
+  <data name="UnitTextBoxDoubleIsNotEnabledToolTips" xml:space="preserve">
+    <value>Unit TextBox supporting a double value.
+The unit type is set to length (DUT_METERS). 
+This value is stored in DUT_METERS.
+This value is initialized via the constructor to 5 x10 in DUT_FRACTIONAL_INCHES.
+This control is disabled on the UI.</value>
+  </data>
+  <data name="UnitTextBoxDoubleMaxValueSet" xml:space="preserve">
+    <value>Double Max Value</value>
+  </data>
+  <data name="UnitTextBoxDoubleMaxValueSetToolTips" xml:space="preserve">
+    <value>Unit TextBox supporting a double value.
+The unit type is set to  length (DUT_DECIMAL_FEET). 
+This value is stored in DUT_DECIMAL_FEET.
+This value is initialized via the constructor to 100.0 DUT_DECIMAL_FEET.
+The maximal value is set to 100 DUT_METERS.</value>
+  </data>
+  <data name="UnitTextBoxDoubleMinValueSet" xml:space="preserve">
+    <value>Double Min Value</value>
+  </data>
+  <data name="UnitTextBoxDoubleMinValueSetToolTips" xml:space="preserve">
+    <value>Unit TextBox supporting a double value.
+The unit type is set to  length (DUT_METERS). 
+This value is stored in DUT_METERS.
+This value is initialized via the constructor to 15.0 DUT_METERS.
+The minimal value is set to 10 DUT_METERS.</value>
+  </data>
+  <data name="CheckBoxChecked" xml:space="preserve">
+    <value>CheckBox Checked</value>
+  </data>
+  <data name="CheckBoxCheckedToolTips" xml:space="preserve">
+    <value>CheckBox with the default value set to Checked.  </value>
+  </data>
+  <data name="TextBoxBoolean" xml:space="preserve">
+    <value>Boolean</value>
+  </data>
+  <data name="TextBoxBooleanToolTips" xml:space="preserve">
+    <value>TextBox supporting a boolean.
+This value is initialized via the constructor to true.</value>
+  </data>
+  <data name="TextBoxGuid" xml:space="preserve">
+    <value>Guid</value>
+  </data>
+  <data name="TextBoxGuidToolTips" xml:space="preserve">
+    <value>This value is initialized via the constructor to {00000000-0000-0000-0000-000000000000}.</value>
+  </data>
+  <data name="TextBoxInteger16" xml:space="preserve">
+    <value> Integer16</value>
+  </data>
+  <data name="TextBoxInteger16ToolTips" xml:space="preserve">
+    <value>TextBox supporting an integer value(int16).
+ This value is initialized via the constructor to 2.</value>
+  </data>
+  <data name="TextBoxElementId" xml:space="preserve">
+    <value>ElementId</value>
+  </data>
+  <data name="TextBoxElementIdToolTips" xml:space="preserve">
+    <value>TextBox supporting an ElementId.
+This value is initialized to the active element.</value>
+  </data>
+  <data name="TextBoxUV" xml:space="preserve">
+    <value>UV</value>
+  </data>
+  <data name="TextBoxUVToolTips" xml:space="preserve">
+    <value>TextBox supporting a UV value.
+The unit type is set to  length (DUT_METERS). 
+This value is stored in DUT_METERS.
+This value is initialized via the constructor to (5, 5) DUT_METERS.
+On the UI the format  is (U,V)
+Revit project unit formatting won't be appled on the UI (use UnitTextBox to achieve this).</value>
+  </data>
+  <data name="TextBoxXYZ" xml:space="preserve">
+    <value>XYZ</value>
+  </data>
+  <data name="TextBoxXYZToolTips" xml:space="preserve">
+    <value>TextBox supporting a XYZ value.
+The unit type is set to  length (DUT_METERS). 
+This value is stored in DUT_METERS.
+This value is initialized via the constructor to (5, 5, 5) DUT_METERS.
+On the UI the format  is (X,Y,Z)
+Revit project unit formatting won't be appled on the UI (use XYZTextBox to achieve this).</value>
+  </data>
+  <data name="DefaultTextBox" xml:space="preserve">
+    <value>Default TextBox</value>
+  </data>
+  <data name="UnitTextBox" xml:space="preserve">
+    <value>Unit TextBox</value>
+  </data>
+  <data name="CheckListXYZ" xml:space="preserve">
+    <value>XYZ</value>
+  </data>
+  <data name="CheckListXYZToolTips" xml:space="preserve">
+    <value>CheckedList supporting XYZ values.
+This CheckedList is filled using "DataSourceXYZList" data source.
+"DataSourceUVList" is based on uvList values {(1, 1),(2, 2), (3, 3)}.</value>
+  </data>
+  <data name="CheckListBool" xml:space="preserve">
+    <value>Boolean</value>
+  </data>
+  <data name="CheckListBoolToolTips" xml:space="preserve">
+    <value>CheckedList supporting boolean values.
+This CheckedList is filled using "DataSourceBoolList" data source.
+"DataSourceBoolList" is based on boolList values {true,false}.</value>
+  </data>
+  <data name="CheckListGuid" xml:space="preserve">
+    <value>Guid</value>
+  </data>
+  <data name="CheckListGuidToolTips" xml:space="preserve">
+    <value>CheckedList supporting boolean values.
+This CheckedList is filled using "DataSourceGuidList" data source.
+"DataSourceGuidList" is based on guidList values {"6AED35BD-9143-4AAB-B568-7FC69C946824"), ("F6F9D635-6AF3-4336-9D52-E734DFA9F97E"), ("E72993A5-CDFE-4501-9A34-D3A6DA407CD6") }</value>
+  </data>
+  <data name="CheckListInt16" xml:space="preserve">
+    <value>Integer16</value>
+  </data>
+  <data name="CheckListInt16ToolTips" xml:space="preserve">
+    <value>CheckedList supporting int16 values.
+This CheckedList is filled using "DataSourceInt16List" data source.
+"DataSourceInt16List" is based on int16List values {1,2,3,4}.</value>
+  </data>
+  <data name="CheckListInt32" xml:space="preserve">
+    <value>Integer32</value>
+  </data>
+  <data name="CheckListInt32ToolTips" xml:space="preserve">
+    <value>CheckedList supporting int32 values.
+This CheckedList is filled using "DataSourceInt32List" data source.
+"DataSourceInt32List" is based on int32List values {1,2,3,4}.</value>
+  </data>
+  <data name="CheckListUV" xml:space="preserve">
+    <value>UV</value>
+  </data>
+  <data name="CheckListUVToolTips" xml:space="preserve">
+    <value>CheckedList supporting UV values.
+This CheckedList is filled using "DataSourceUVList" data source.
+"DataSourceUVList" is based on uvList values {(1, 1),(2, 2), (3, 3)}.</value>
+  </data>
+  <data name="ComboBoxBool" xml:space="preserve">
+    <value>Boolean</value>
+  </data>
+  <data name="ComboBoxBoolToolTips" xml:space="preserve">
+    <value>ComboBox supporting bool values.
+This comboBox is filled using "DataSourceBoolList" data source.
+"DataSourceBoolList" is based on boolList values {true,false}.</value>
+  </data>
+  <data name="ComboBoxEnumTextNotLocalized" xml:space="preserve">
+    <value>Text Not Localized</value>
+  </data>
+  <data name="ComboBoxEnumTextNotLocalizedToolTips" xml:space="preserve">
+    <value>EnumControl supporting  strings values presented as ComboBox.
+This comboBox is filled using AnEnumNotLocalized.
+Strings associated to [Item1,Item2,Item3] are not part of the resources file.
+On the UI are visible strings "Item1","Item2","Item3".
+Enum field is stored as integer with defined enumerator values.</value>
+  </data>
+  <data name="ComboBoxGuid" xml:space="preserve">
+    <value>Guid</value>
+  </data>
+  <data name="ComboBoxGuidToolTips" xml:space="preserve">
+    <value>ComboBox supporting guid values.
+This comboBox is filled using "DataSourceGuidList" data source.
+ "DataSourceGuidList" is based on guidList values {"6AED35BD-9143-4AAB-B568-7FC69C946824"),"F6F9D635-6AF3-4336-9D52-E734DFA9F97E", "E72993A5-CDFE-4501-9A34-D3A6DA407CD6" ;.</value>
+  </data>
+  <data name="ComboBoxInt16" xml:space="preserve">
+    <value>Integer16</value>
+  </data>
+  <data name="ComboBoxInt16ToolTips" xml:space="preserve">
+    <value>ComboBox supporting int16 values.
+This comboBox is filled using "DataSourceInt16List" data source.
+ "DataSourceInt16List" is based on int16List values {1,2,3,4}.</value>
+  </data>
+  <data name="ComboBoxInt32" xml:space="preserve">
+    <value>Integer32</value>
+  </data>
+  <data name="ComboBoxInt32ToolTips" xml:space="preserve">
+    <value>ComboBox supporting int32 values.
+This comboBox is filled using "DataSourceInt32List" data source.
+"DataSourceInt32List" is based on int32List values {1,2,3,4}.</value>
+  </data>
+  <data name="ComboBoxRebar" xml:space="preserve">
+    <value>Rebar Type</value>
+  </data>
+  <data name="ComboBoxRebarToolTips" xml:space="preserve">
+    <value>ComboBox supporting Rebar type values.
+This Element ComboBox is filled using "DataSourceRebarList" data source.
+"DataSourceRebarList" is the list of Rebars from current document.</value>
+  </data>
+  <data name="ComboBoxUV" xml:space="preserve">
+    <value>UV</value>
+  </data>
+  <data name="ComboBoxUVToolTips" xml:space="preserve">
+    <value>ComboBox supporting UV values.
+This comboBox is filled using "DataSourceUVList" data source.
+"DataSourceUVList" is based on uvList values {(1,1),(2,2),(3,3)}.</value>
+  </data>
+  <data name="ComboBoxXYZ" xml:space="preserve">
+    <value>XYZ</value>
+  </data>
+  <data name="ComboBoxXYZToolTips" xml:space="preserve">
+    <value>ComboBox supporting XYZ values.
+This comboBox is filled using "DataSourceXYZList" data source.
+"DataSourceXYZList" is based on xyzList values {(1,1,1),(2,2,2),(3,3,3)}.</value>
+  </data>
+  <data name="ComboBoxElementId" xml:space="preserve">
+    <value>ElementId</value>
+  </data>
+  <data name="ComboBoxElementIDToolTips" xml:space="preserve">
+    <value>ComboBox supporting ElementId values.
+Selected index value is stored as ElementId.
+This comboBox is filled using "DataSourceElementIdList" data source.
+"DataSourceElementIdList" is the list of ElementID for the first five rebars form the current document</value>
+  </data>
+  <data name="UnitComboBoxDouble" xml:space="preserve">
+    <value>Unit Double</value>
+  </data>
+  <data name="UnitComboBoxDoubleConstructor" xml:space="preserve">
+    <value>Unit Double (inline)</value>
+  </data>
+  <data name="UnitComboBoxDoubleConstructorToolTips" xml:space="preserve">
+    <value>Unit ComboBox supporting double values.
+The unit type is set to length (DUT_METERS). 
+Selected index value is stored in DUT_METERS.
+This comboBox is filled inline using {5,10,15,20}</value>
+  </data>
+  <data name="UnitComboBoxDoubleToolTips" xml:space="preserve">
+    <value> Unit ComboBox supporting double values.
+The unit type is set to length (DUT_METERS). 
+Selected index value is stored in DUT_METERS.
+This comboBox is filled using "DataSourceDoubleList" data source.
+ "DataSourceDoubleList" is based on doubleList values {10.0, 20.0, 30.0, 40.0}.</value>
+  </data>
+  <data name="ComboBoxEnumImageTextNotLocalized" xml:space="preserve">
+    <value>Image and Text not Localized</value>
+  </data>
+  <data name="ComboBoxEnumImageTextNotLocalizedTooltips" xml:space="preserve">
+    <value>EnumControl supporting  images and text presented as OptionList(List).
+Uri for associated images are returned by the GetResourceImage(string key) function.
+Text are coming from the not transalted enum</value>
+  </data>
+  <data name="ListTextBoxBool" xml:space="preserve">
+    <value>Boolean</value>
+  </data>
+  <data name="ListTextBoxBoolToolTips" xml:space="preserve">
+    <value>TextBox supporting a list of boolean values
+The separator is ";" character. 
+These values are initialized via the constructor to {true,false}.</value>
+  </data>
+  <data name="ListTextBoxDouble" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="ListTextBoxDoubleElementIdToolTips" xml:space="preserve">
+    <value>TextBox supporting a list of ElementId values
+The separator is ";" character. 
+These values are initialized via the constructor with the first 5 rebar type Elementd from project.</value>
+  </data>
+  <data name="ListTextBoxDoubleToolTips" xml:space="preserve">
+    <value>TextBox supporting a list of double values
+The separator is ";" character. 
+These values are initialized via the constructor to {10,20,30}.</value>
+  </data>
+  <data name="ListTextBoxElementId" xml:space="preserve">
+    <value>ElementId</value>
+  </data>
+  <data name="ListTextBoxGuid" xml:space="preserve">
+    <value>Guid</value>
+  </data>
+  <data name="ListTextBoxGuidToolTips" xml:space="preserve">
+    <value>TextBox supporting a list of Guid values
+The separator is ";" character. 
+These values are initialized via the constructor to {("6AED35BD-9143-4AAB-B568-7FC69C946824"),("F6F9D635-6AF3-4336-9D52-E734DFA9F97E"), ("E72993A5-CDFE-4501-9A34-D3A6DA407CD6")}.</value>
+  </data>
+  <data name="ListTextBoxInt16" xml:space="preserve">
+    <value>Integer16</value>
+  </data>
+  <data name="ListTextBoxInt16ToolTips" xml:space="preserve">
+    <value>TextBox supporting a list of int16 values
+The separator is ";" character. 
+These values are initialized via the constructor to {1,2,3}.</value>
+  </data>
+  <data name="ListTextBoxInt32" xml:space="preserve">
+    <value>Integer32</value>
+  </data>
+  <data name="ListTextBoxInt32ToolTips" xml:space="preserve">
+    <value>TextBox supporting a list of int32 values
+The separator is ";" character. 
+ These values are initialized via the constructor to {1,2,3}.</value>
+  </data>
+  <data name="ListTextBoxUV" xml:space="preserve">
+    <value>UV</value>
+  </data>
+  <data name="ListTextBoxUVToolTips" xml:space="preserve">
+    <value>TextBox supporting a list of UV values
+ The separator is ";" character. 
+These values are initialized via the constructor to {UV(1,1),UV(2,2)}.</value>
+  </data>
+  <data name="ListTextBoxXYZ" xml:space="preserve">
+    <value>XYZ</value>
+  </data>
+  <data name="ListTextBoxXYZToolTips" xml:space="preserve">
+    <value>TextBox supporting a list of XYZ values
+The separator is ";" character. 
+These values are initialized via the constructor to {XYZ(1,1,1),XYZ(2,2,2)}.</value>
+  </data>
+  <data name="ListUnitTextBoxMaxItemSet" xml:space="preserve">
+    <value>Double Max Items</value>
+  </data>
+  <data name="ListUnitTextBoxMaxItemSetToolTips" xml:space="preserve">
+    <value>Unit TextBox supporting a list of double value
+The separator is ";" character. 
+Number of items is limited to 5; 
+The unit type is set to  length (DUT_METERS). 
+These values are stored in DUT_METERS.
+These values are initialized via the constructor to {10.0, 20.0,30.0,40.0,50.0} DUT_METERS.</value>
+  </data>
+  <data name="ListUnitTextBoxMaxValueSet" xml:space="preserve">
+    <value>Double Max Value</value>
+  </data>
+  <data name="ListUnitTextBoxMaxValueSetToolTips" xml:space="preserve">
+    <value>Unit TextBox supporting a list of double value
+The separator is ";" character. 
+The unit type is set to  length (DUT_METERS). 
+These values are stored in DUT_METERS.
+These values should be lower than 100 in DUT_METERS.
+These values are initialized via the constructor to {10.0, 20.0} DUT_METERS.</value>
+  </data>
+  <data name="ListUnitTextBoxMinItemSet" xml:space="preserve">
+    <value>Double Min Items</value>
+  </data>
+  <data name="ListUnitTextBoxMinItemSetSetToolTips" xml:space="preserve">
+    <value>Unit TextBox supporting a list of double value
+The separator is ";" character. 
+Number of items should be superior to 2; 
+The unit type is set to  length (DUT_METERS). 
+These values are stored in DUT_METERS.
+ These values are initialized via the constructor to {10.0, 20.0} DUT_METERS.</value>
+  </data>
+  <data name="ListUnitTextBoxMinValueSet" xml:space="preserve">
+    <value>Double Min Value</value>
+  </data>
+  <data name="ListUnitTextBoxMinValueSetToolTips" xml:space="preserve">
+    <value>Unit TextBox supporting a list of double value
+The separator is ";" character. 
+Number of items should be superior to 2; 
+The unit type is set to  length (DUT_METERS). 
+These values are stored in DUT_METERS.  
+These values are initialized via the constructor to {10.0, 20.0} DUT_METERS.</value>
+  </data>
+  <data name="RadioButtonEnumImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="RadioButtonEnumImageText" xml:space="preserve">
+    <value>Image and Text</value>
+  </data>
+  <data name="RadioButtonEnumImageTextToolTips" xml:space="preserve">
+    <value>EnumControl supporting  strings values and images presented as OptionList(RadioButton).
+Strings associated to AnEnumLocalized.Choice1, AnEnumLocalized.Choice2, AnEnumLocalized.Choice3 are part of the resources file.
+On the UI are visible strings "This is my choice 1","This is my choice 2","This is my choice 3"
+Enum field is stored as integer with default enumerator values.
+Uri for associated images are returned by the GetResourceImage(string key) function.</value>
+  </data>
+  <data name="RadioButtonEnumImageToolTips" xml:space="preserve">
+    <value> EnumControl supporting  images presented as OptionList(RadioButton).
+Uri for associated images are returned by the GetResourceImage(string key) function.</value>
+  </data>
+  <data name="RadioButtonEnumText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="RadioButtonEnumTextToolTips" xml:space="preserve">
+    <value> EnumControl supporting  strings values presented as OptionList(RadioButton).
+Strings associated to [Choice1,Choice2,Choice3] are part of the resources file.
+On the UI are visible strings "This is my choice 1","This is my choice 2","This is my choice 3"
+ Enum field is stored as integer with default enumerator values.</value>
+  </data>
+  <data name="GridCheckBoxBool" xml:space="preserve">
+    <value>Boolean</value>
+  </data>
+  <data name="GridCheckBoxBoolToolTips" xml:space="preserve">
+    <value>Grid  CheckBox supporting a  boolean.</value>
+  </data>
+  <data name="GridComboBoxBool" xml:space="preserve">
+    <value>Bool</value>
+  </data>
+  <data name="GridComboBoxBoolToolTips" xml:space="preserve">
+    <value>Grid ComboBox supporting boolean values. 
+ComboBox is filled using  "DataSourceBoolList" data source.
+Default value is set to true.</value>
+  </data>
+  <data name="GridComboBoxDouble" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="GridComboBoxDoubleToolTips" xml:space="preserve">
+    <value> Grid ComboBox supporting some double values. 
+ComboBox is filled using  "ComboBoxDouble" data source [10,20,30,40].</value>
+  </data>
+  <data name="GridComboBoxGuid" xml:space="preserve">
+    <value>Guid</value>
+  </data>
+  <data name="GridComboBoxGuidToolTips" xml:space="preserve">
+    <value>Grid ComboBox supporting guid values. 
+ComboBox is filled using  "DataSourceGuidList" data source.
+Default value is set using GUIDDefaultValueProvider</value>
+  </data>
+  <data name="GridComboBoxInt16" xml:space="preserve">
+    <value>Integer16</value>
+  </data>
+  <data name="GridComboBoxInt16ToolTips" xml:space="preserve">
+    <value>     Grid ComboBox supporting integer16 values. 
+ComboBox is filled using  "DataSourceInt16List" data source.
+Default value is set using Int16DefaultValueProvider</value>
+  </data>
+  <data name="GridComboBoxInt32" xml:space="preserve">
+    <value>Integer32</value>
+  </data>
+  <data name="GridComboBoxInt32ToolTips" xml:space="preserve">
+    <value>Grid ComboBox supporting integer32 values. 
+ComboBox is filled using  "DataSourceInt32List" data source.
+Default value is set to 1.</value>
+  </data>
+  <data name="GridComboBoxString" xml:space="preserve">
+    <value>String</value>
+  </data>
+  <data name="GridComboBoxStringToolTips" xml:space="preserve">
+    <value>Grid ComboBox supporting string values. 
+ComboBox is filled using  "DataSourceStringList" data source.
+Default value is set to "Choice 1".</value>
+  </data>
+  <data name="GridComboBoxUV" xml:space="preserve">
+    <value>UV</value>
+  </data>
+  <data name="GridComboBoxUVToolTips" xml:space="preserve">
+    <value>  Grid ComboBox supporting UV values. 
+ComboBox is filled using  "DataSourceUVList" data source. 
+Default value is set using UVDefaultValueProvider</value>
+  </data>
+  <data name="GridComboBoxXYZ" xml:space="preserve">
+    <value>XYZ</value>
+  </data>
+  <data name="GridComboBoxXYZToolTips" xml:space="preserve">
+    <value>  Grid ComboBox supporting some XYZ values. 
+ComboBox is filled using  "DataSourceXYZList" data source. 
+Default value is set using XYZDefaultValueProvider</value>
+  </data>
+  <data name="GridEnumComboboxImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="GridEnumComboboxImageText" xml:space="preserve">
+    <value>Text and Image </value>
+  </data>
+  <data name="GridEnumComboboxImageTextToolTips" xml:space="preserve">
+    <value> Grid Enum ComboBox supporting image and text. 
+ Default value is set to Choice 1 </value>
+  </data>
+  <data name="GridEnumComboboxImageToolTips" xml:space="preserve">
+    <value>  Grid Enum ComboBox supporting image. 
+ Default value is set to Choice 3 </value>
+  </data>
+  <data name="GridEnumComboboxText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="GridEnumComboboxTextToolTips" xml:space="preserve">
+    <value> Grid Enum ComboBox supporting text. 
+ Default value is set to Choice 2 </value>
+  </data>
+  <data name="GridEnumOptionListImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="GridEnumOptionListImageText" xml:space="preserve">
+    <value>Text and Image </value>
+  </data>
+  <data name="GridEnumOptionListImageTextToolTips" xml:space="preserve">
+    <value> Grid Enum OptionList supporting image and text. 
+ Default value is set to Choice 1 </value>
+  </data>
+  <data name="GridEnumOptionListImageToolTips" xml:space="preserve">
+    <value>  Grid Enum OptionList supporting image. 
+ Default value is set to Choice 3 </value>
+  </data>
+  <data name="GridEnumOptionListText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="GridEnumOptionListTextToolTips" xml:space="preserve">
+    <value> Grid Enum OptionList supporting text. 
+ Default value is set to Choice 2 </value>
+  </data>
+  <data name="GridEnumToggleButtonImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="GridEnumToggleButtonImageText" xml:space="preserve">
+    <value>Text and Image </value>
+  </data>
+  <data name="GridEnumToggleButtonImageTextToolTips" xml:space="preserve">
+    <value> Grid Enum ToggleButton supporting image and text. 
+ Default value is set to Choice 1 </value>
+  </data>
+  <data name="GridEnumToggleButtonImageToolTips" xml:space="preserve">
+    <value>  Grid Enum ToggleButton supporting image. 
+ Default value is set to Choice 3 </value>
+  </data>
+  <data name="GridEnumToggleButtonText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="GridEnumToggleButtonTextToolTips" xml:space="preserve">
+    <value> Grid Enum ToggleButton supporting text. 
+ Default value is set to Choice 2 </value>
+  </data>
+  <data name="GridKeyComboBoxString" xml:space="preserve">
+    <value>ComboBox String</value>
+  </data>
+  <data name="GridKeyComboBoxStringToolTips" xml:space="preserve">
+    <value>Grid Key ComboBox supporting a  key defined as a string and a value defined as string. 
+ComboBox is filled using  "ComboBoxString" data source (Choice 1,Choice 2,Choice 3, Choice 4). </value>
+  </data>
+  <data name="GridKeyTextBoxString" xml:space="preserve">
+    <value>TextBox String</value>
+  </data>
+  <data name="GridKeyTextBoxStringDouble" xml:space="preserve">
+    <value>String Double</value>
+  </data>
+  <data name="GridKeyTextBoxStringDoubleToolTips" xml:space="preserve">
+    <value>Grid Key TextBox supporting a key defined as string and a value defined as double. 
+Default value is set to 10. Default key is set to 1 and will be incremented after each addition. 
+Key are ckecked and validate on runtime to avoid duplication.    </value>
+  </data>
+  <data name="GridKeyTextBoxStringToolTips" xml:space="preserve">
+    <value>Grid Key TextBox supporting a key defined as string and value defined as string. 
+Default value is set to "Choice 1" . 
+Default key is set to 1 and will be incremented after each addition. Key are ckecked and validate on runtime to avoid duplication.    </value>
+  </data>
+  <data name="GridKeyTextBoxStringUnitDouble" xml:space="preserve">
+    <value>String Unit Double</value>
+  </data>
+  <data name="GridKeyTextBoxStringUnitDoubleToolTips" xml:space="preserve">
+    <value>Grid Key TextBox supporting a key defined as string and value defined as double, the unit type is set to length (meters). 
+Default value is set to 10.0 .
+ Default key is set to 1 and will be incremented after each addition.</value>
+  </data>
+  <data name="GridTextBoxBool" xml:space="preserve">
+    <value>Boolean</value>
+  </data>
+  <data name="GridTextBoxBoolToolTips" xml:space="preserve">
+    <value>Grid TextBox supporting a value defined as boolean.
+Boolean is set to true per default. </value>
+  </data>
+  <data name="GridTextBoxDouble" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="GridTextBoxDoubleToolTips" xml:space="preserve">
+    <value>Grid  TextBox supporting a value defined as double. </value>
+  </data>
+  <data name="GridTextBoxGuid" xml:space="preserve">
+    <value>Guid</value>
+  </data>
+  <data name="GridTextBoxGuidToolTips" xml:space="preserve">
+    <value>Grid TextBox supporting a value defined as guid.
+Default guid is provided by the GUIDDefaultValueProvider</value>
+  </data>
+  <data name="GridTextBoxInt16" xml:space="preserve">
+    <value>Integer16</value>
+  </data>
+  <data name="GridTextBoxInt16ToolTips" xml:space="preserve">
+    <value>Grid TextBox supporting a value defined as integer16. 
+Default integer is provided by the IntDefaultValueProvider (2).</value>
+  </data>
+  <data name="GridTextBoxInt32" xml:space="preserve">
+    <value>Integer32</value>
+  </data>
+  <data name="GridTextBoxInt32ToolTips" xml:space="preserve">
+    <value>Grid TextBox supporting a value defined as integer32.
+Integer is set to 5 per default.</value>
+  </data>
+  <data name="GridTextBoxString" xml:space="preserve">
+    <value>String</value>
+  </data>
+  <data name="GridTextBoxStringToolTips" xml:space="preserve">
+    <value>Grid TextBox supporting a value defined as string.
+String is set to "Choice 1" per default.</value>
+  </data>
+  <data name="GridTextBoxUV" xml:space="preserve">
+    <value>UV</value>
+  </data>
+  <data name="GridTextBoxUVToolTips" xml:space="preserve">
+    <value>Grid TextBox supporting a value defined as UV. 
+Default UV is provided by the UVDefaultValueProvider (1,1).</value>
+  </data>
+  <data name="GridTextBoxXYZ" xml:space="preserve">
+    <value>XYZ</value>
+  </data>
+  <data name="GridTextBoxXYZRemoveNotAllow" xml:space="preserve">
+    <value>XYZ locked</value>
+  </data>
+  <data name="GridTextBoxXYZRemoveNotAllowTooltips" xml:space="preserve">
+    <value>Grid  TextBox supporting a value defined as XYZ. 
+Default values are for the first point 1 (1,1,1) and for the point 2 (2,2,2).
+Point 1 and 2 are defined on the constructor.</value>
+  </data>
+  <data name="GridTextBoxXYZToolTips" xml:space="preserve">
+    <value>Grid TextBox supporting a value defined as XYZ. 
+Default XYZ is provided by the XYZDefaultValueProvider (1,1,1).</value>
+  </data>
+  <data name="GridUnitTextBoxDouble" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="GridUnitTextBoxDoubleToolTips" xml:space="preserve">
+    <value>Grid  TextBox supporting a value defined as double.
+Default value is set to 10.0.</value>
+  </data>
+  <data name="GridXYZTextBox" xml:space="preserve">
+    <value>XYZ</value>
+  </data>
+  <data name="GridXYZTextBoxToolTips" xml:space="preserve">
+    <value>Grid TextBox supporting a value defined as XYZ. 
+Default XYZ is provided by the XYZDefaultValueProvider (1,1,1).</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>something</value>
+  </data>
+  <data name="DoubleNotSerialized" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="DoubleNotSerializedToolTips" xml:space="preserve">
+    <value>Double not serialized</value>
+  </data>
+  <data name="SubSchemaDictionary" xml:space="preserve">
+    <value>Dictionary</value>
+  </data>
+  <data name="SubSchemaDictionaryDialogTitle" xml:space="preserve">
+    <value>Dictionary of schemas</value>
+  </data>
+  <data name="SubSchemaDictionaryText" xml:space="preserve">
+    <value>Show a Dictionary schema embedded</value>
+  </data>
+  <data name="SubSchemaDictionaryToolTips" xml:space="preserve">
+    <value>Dictionary of schemas embedded on an additional dialog launch by clicking the ellipse button</value>
+  </data>
+  <data name="SubSchemaEmbedded" xml:space="preserve">
+    <value>Embedded</value>
+  </data>
+  <data name="SubSchemaList" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="SubSchemaListDialogTitle" xml:space="preserve">
+    <value>List of schemas</value>
+  </data>
+  <data name="SubSchemaListText" xml:space="preserve">
+    <value>Show a list schema embedded</value>
+  </data>
+  <data name="SubSchemaListToolTips" xml:space="preserve">
+    <value>List of schemas embedded on an additional dialog launch by clicking the ellipse button</value>
+  </data>
+  <data name="SubSchemaSimple" xml:space="preserve">
+    <value>Simple</value>
+  </data>
+  <data name="SubSchemaSimpleDialogTitle" xml:space="preserve">
+    <value>Schema</value>
+  </data>
+  <data name="SubSchemaSimpleText" xml:space="preserve">
+    <value>Show a schema embedded</value>
+  </data>
+  <data name="SubSchemaSimpleToolTips" xml:space="preserve">
+    <value>Schema embedded on an additional dialog launch by clicking the ellipse button</value>
+  </data>
+</root>

@@ -1,0 +1,96 @@
+NewRstLab Outline
+
+Load group functionalities 
+
+RstLab1_1_LoadCase
+
+Functionality: 
+
+1.	Get all LoadCase objects, and show their names
+2.	Create a LoadUsage MainTainLoad if it doesnt exist.
+3.	Get all LoadCombination objects, and show their details
+
+How to use: Open any document that contains LoadCombination. ModelForNewRstLabCommands.rvt file can be used. start this command.
+
+RstLab1_2_LoadsOperation
+
+Functionality:
+
+1.	Get one point load type
+2.	Create point load with force and moment using this type from the picking point.
+3.	Get all point loads and show their property value.
+4.	Change one point loads force, show the changes in messagebox.
+
+How to use: Open ModelForNewRstLabCommands.rvt file, start the command, pick a point.
+
+RstLab2_1_ListStructuralColumns
+
+Functionality:
+
+1.	Get all structural columns and show their details.
+
+How to use: Open any document that contains structural columns, ModelForNewRstLabCommands.rvt can be used. Start the command.
+
+RstLab2_2_ListStructuralWalls
+
+Functionality:
+
+1.	List all structural wall and their details
+
+How to use: Open any document that contains structural walls, ModelForNewRstLabCommands.rvt can be used. Start the command.
+
+RstLab3_1_GetAnalyticalModel
+
+Functionality:
+
+1.	Display the selected beam/braces analytical curve, support information
+
+How to use: 
+Open any document that contains structural beam/brace. Make sure that structural Settings has checked Member supports. ModelForNewRstLabCommands.rvt can be used. Start the command. Select a beam/brace.
+
+RstLab3_2_GetBeamRigidLink
+
+Functionality:
+
+1.	Display the rigid link curve of a selected beam.
+
+How to use: Open a model that has a beam, and this beam has rigid link. ModelForNewRstLabCommands.rvt can be used. Start the command, and pick a beam.
+
+RstLab3_3_EditAnalyticalModel
+
+Functionality:
+
+1.	Offset a selected columns analytical model
+2.	Change the vertical projection to top of physical for a selected column.
+
+How to use: 
+
+1.	Open any document that has structural column.
+2.	Start the command
+3.	Pick a column.
+4.	Pick another column.
+
+RstLab4_1_CreateRebarShape
+
+Functionality:
+
+1.	Create a 5 segment rebar shape.
+
+How to use:
+
+1.	Open any structural document.
+2.	Run this command.
+
+
+RstLab4_2_CreateRebar
+
+Functionality:
+
+1.	Create rebar for a selected column
+2.	Change the layout of the rebar along the full column.
+
+How to use:
+
+1.	In the document we work on Lab4_1
+2.	Start this command
+3.	Select a concrete structural column.

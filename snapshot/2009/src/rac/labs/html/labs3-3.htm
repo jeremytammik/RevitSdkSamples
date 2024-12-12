@@ -1,0 +1,211 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Determining Instance Type and Family</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs3-4.htm">next</a>
+<a class="j" href="labs3-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we determine the family and type of a family instance element.
+We look at two simple scenarios.
+In Lab 3-1, we listed all symbols by looping over the contents of the symbols
+property for each family found in the model.
+Here, we first list all loaded standard family symbols belonging to a category,
+such as 'Windows'.
+For this we can use the new filter type called <code>NewLogicAndFilter</code>,
+which lists all elements based on filter criteria which matches the 'Windows'
+category AND the 'FamilySymbol' type. Once we have the loaded family symbols,
+we can directly access the Family and Name properties to display them.</p>
+
+<pre title="C# List all symbols for a category" class="jtcollapse">  /// &lt;summary&gt;
+  /// For a selected family instance in the model, determine
+  /// its type and family using Revit 2009 filtering.
+  /// &lt;/summary&gt;
+  public class Lab3_3_DetermineInstanceTypeAndFamily : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements)
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      // Use the filtering mechanism to report all FamilySymbol objects of "Windows" category.
+      BuiltInCategory bic = BuiltInCategory.OST_Windows;
+      List&lt;Element&gt; familySymbols = new List&lt;Element&gt;();
+
+      Filter filterCategory = app.Create.Filter.NewCategoryFilter( bic );
+      Filter filterType = app.Create.Filter.NewTypeFilter( typeof( FamilySymbol ) );
+      Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterCategory, filterType );
+      app.ActiveDocument.get_Elements( filterAnd, familySymbols );
+
+      string sMsg = "The loaded windows family symbols in the model are:";
+      foreach( Element elem in familySymbols )
+      {
+        FamilySymbol symb = elem as FamilySymbol;
+        sMsg += "\r\n    " + symb.Name + ", Id=" + symb.Id.Value.ToString();
+        Family fam = symb.Family;
+        sMsg += "; Family name=" + fam.Name + ", Family Id=" + fam.Id.Value.ToString();
+      }
+      LabUtils.InfoMsg( sMsg );
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre title="VB List all symbols for a category" class="jtcollapse">    Public Class Lab3_3_DetermineInstanceTypeAndFamily
+        Implements IExternalCommand
+
+        Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, ByRef message As String, ByVal elements As Autodesk.Revit.ElementSet) As Autodesk.Revit.IExternalCommand.Result Implements Autodesk.Revit.IExternalCommand.Execute
+
+            Dim app As Autodesk.Revit.Application = commandData.Application
+            Dim doc As Revit.Document = commandData.Application.ActiveDocument
+
+            ' Use the filtering mechanism to report all FamilySymbol objects of "Windows" category.
+            Dim sMsg As String = " Windows Family Symbols in the model are:"
+            Dim bic As BuiltInCategory = BuiltInCategory.OST_Windows
+
+            Dim familySymbols As New List(Of Element)
+            Dim filterCategory As Filter = app.Create.Filter.NewCategoryFilter(bic)
+            Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(FamilySymbol))
+            Dim filter As Filter = app.Create.Filter.NewLogicAndFilter(filterCategory, filterType)
+            Dim rVal As Integer = app.ActiveDocument.Elements(filter, familySymbols)
+
+            Dim elem As Element
+            For Each elem In familySymbols
+                Dim symb As FamilySymbol = elem
+                sMsg += vbCrLf & "  " & symb.Name & ", Id=" & symb.Id.Value.ToString
+                Dim fam As Family = symb.Family
+                sMsg += "; Family name=" & fam.Name & ", Family Id=" & fam.Id.Value.ToString
+            Next
+            MsgBox(sMsg)
+
+            Return IExternalCommand.Result.Succeeded
+        End Function
+     End Class
+</pre>
+
+<p>Build the project, adjust the ini file and examine the output
+in a model with a few windows instances.
+Notice the intriguing fact that some of the family symbols are
+listed multiple times if used for any instances.</p>
+
+<h3>Why do two different family symbols have the same name?</h3>
+
+<p>In Revit, a symbol represents geometry, and we have the concept
+of master and slave family symbols.</p>
+
+<p>Consider two window instances of the same type, but inserted into walls of different types.
+Now, these two window instances refer to the same family symbol and count as being of the
+same type, but it is clear that they cannot possibly use the same symbol geometry,
+since they have different thickness. Hence master and slave symbols are used.</p>
+
+<p>For instance, if there is no door instance in project, there will be only
+one master symbol for 36"x84" doors.
+Now, if the user draws a wall and places a door into it, Revit will create a
+slave symbol for 36"x84".
+If she then draws a different type of wall and places a new door of the same
+type in this new wall, Revit will create another slave symbol for 36"x84".
+Then there will be one master symbol and two slave symbols in the project.</p>
+
+<p>There is currently no API to query the symbol whether it is master or slave.</p>
+
+<p>Both of the symbols have the same parent family class instance and either are
+usable for editing existing or creating new instances,
+so there is no issue with this.</p>
+
+<p>Let us add some code that shows the symbol and family for any selected windows:</p>
+
+<pre title="C# List window family and type" class="jtcollapse">  // Now loop the selection set and check for standard Family Instances of "Windows" category
+  Categories categories = doc.Settings.Categories;
+  Category catWindows = categories.get_Item( bic );
+  foreach( Element elem2 in doc.Selection.Elements )
+  {
+    if( elem2 is FamilyInstance )
+    {
+      FamilyInstance inst = elem2 as FamilyInstance;
+      if( null != inst.Category && inst.Category.Id.Equals( catWindows.Id ) )
+      {
+        sMsg = "Selected window Id=" + elem2.Id.Value.ToString();
+        FamilySymbol fs = inst.Symbol;
+        sMsg += "\r\n  FamilySymbol = " + fs.Name + "; Id=" + fs.Id.Value.ToString();
+        Family f = fs.Family;
+        sMsg += "\r\n  Family = " + f.Name + "; Id=" + f.Id.Value.ToString();
+        LabUtils.InfoMsg( sMsg );
+      }
+    }
+  }
+</pre>
+
+<pre title="VB List window family and type" class="jtcollapse">    ' Now loop the selection set and check for standard
+    ' family instances of "Windows" category
+    Dim categories As Categories = doc.Settings.Categories
+    Dim catWindows As Category = categories.Item(bic)
+    For Each elem In doc.Selection.Elements
+        If TypeOf elem Is FamilyInstance Then
+            Dim inst As FamilyInstance = elem
+            Dim catInst As Category = Nothing
+            If (inst.Category Is Nothing) Then
+                catInst = Nothing
+            Else
+                catInst = inst.Category
+            End If
+            ' Check if the element category id is same as Windows category id
+            If (Not catInst Is Nothing) AndAlso catInst.Id.Equals(catWindows.Id) Then
+
+                sMsg = "Selected Window Id=" & elem.Id.Value.ToString & vbCrLf
+                Dim fs1 As FamilySymbol = inst.Symbol
+                sMsg += "  FamilySymbol = " & fs1.Name & "; Id=" & fs1.Id.Value.ToString & vbCrLf
+                Dim f1 As Family = fs1.Family
+                sMsg += "  Family = " & f1.Name & "; Id=" & f1.Id.Value.ToString
+                ' Report each Window data
+                MsgBox(sMsg)
+            End If
+        End If
+    Next
+</pre>
+
+<p>Rebuild the solution, preselect some window instances and run the command again.
+Discuss the code with the course instructor and your peers.</p>
+
+<a class="j" href="labs3-4.htm">next</a>
+<a class="j" href="labs3-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j">copyright &copy; 2007-2008 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

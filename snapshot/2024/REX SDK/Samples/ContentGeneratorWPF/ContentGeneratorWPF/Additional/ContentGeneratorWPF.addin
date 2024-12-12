@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>P:\ContentGeneratorWPF\ContentGeneratorWPF\bin\Release\ContentGeneratorWPF.dll</Assembly>
+    <ClientId>fa27b977-f7a1-4601-bce0-e5b93ba8a371</ClientId>
+    <FullClassName>REX.ContentGeneratorWPF.DirectRevitAccess</FullClassName>
+    <Text>ContentGeneratorWPF</Text>
+    <Description>ContentGeneratorWPF</Description>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

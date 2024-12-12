@@ -1,0 +1,27 @@
+HKCR
+{
+	Miro.RevitID.2 = s 'RevitID Class'
+	{
+		CLSID = s '{B44BF477-78EF-4455-AB16-69FDD5668484}'
+	}
+	Miro.RevitID = s 'RevitID Class'
+	{
+		CLSID = s '{B44BF477-78EF-4455-AB16-69FDD5668484}'
+		CurVer = s 'Miro.RevitID.2'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B44BF477-78EF-4455-AB16-69FDD5668484} = s 'RevitID Class'
+		{
+			ProgID = s 'Miro.RevitID.2'
+			VersionIndependentProgID = s 'Miro.RevitID'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{57BA066C-86BA-4e21-B09B-E6139B3662A6}'
+		}
+	}
+}

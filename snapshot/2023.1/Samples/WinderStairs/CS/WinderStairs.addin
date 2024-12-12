@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>WinderStairs.dll</Assembly>
+    <ClientId>62426733-26fb-4f2b-89da-93e1be7fe549</ClientId>
+    <FullClassName>Revit.SDK.Samples.WinderStairs.CS.Command</FullClassName>
+    <Text>Winder Stairs</Text>
+    <Description>API Sketched Winder Stairs</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

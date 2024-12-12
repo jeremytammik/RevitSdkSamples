@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+      <Text>South Facing Walls Without ProjectLocation</Text>
+      <Assembly>FindSouthFacing.dll</Assembly>
+      <ClientId>8B29D56B-7B9A-4c79-8A38-B1C13B921877</ClientId>
+      <FullClassName>Revit.Samples.FindSouthFacing.FindSouthFacingWallsWithoutProjectLocation</FullClassName>
+   </AddIn>
+   <AddIn Type="Command">
+      <Text>South Facing Walls With ProjectLocation</Text>
+      <Assembly>FindSouthFacing.dll</Assembly>
+      <ClientId>6CADE602-7F32-496c-AA37-CEE4B0EE6087</ClientId>
+      <FullClassName>Revit.Samples.FindSouthFacing.FindSouthFacingWallsWithProjectLocation</FullClassName>
+   </AddIn>
+   <AddIn Type="Command">
+      <Text>South Facing Windows Without ProjectLocation</Text>
+      <Assembly>FindSouthFacing.dll</Assembly>
+      <ClientId>AB3588F5-1CD1-4693-9DF0-C0890C811B21</ClientId>
+      <FullClassName>Revit.Samples.FindSouthFacing.FindSouthFacingWindowsWithoutProjectLocation</FullClassName>
+   </AddIn>
+   <AddIn Type="Command">
+      <Text>South Facing Windows With ProjectLocation</Text>
+      <Assembly>FindSouthFacing.dll</Assembly>
+      <ClientId>BFECDEA2-C384-4bcc-965E-EA302BA309AA</ClientId>
+      <FullClassName>Revit.Samples.FindSouthFacing.FindSouthFacingWindowsWithProjectLocation</FullClassName>
+   </AddIn>
+</RevitAddIns>

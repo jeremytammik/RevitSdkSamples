@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>TestFloorThickness.dll</Assembly>
+    <ClientId>7171b688-cb67-443d-9722-0fd04a861a81</ClientId>
+    <FullClassName>Revit.SDK.Samples.TestFloorThickness.VB.NET.Command</FullClassName>
+    <Text>Test Floor Thickness</Text>
+    <Description>Show how to retrieve and modify floor thickness.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

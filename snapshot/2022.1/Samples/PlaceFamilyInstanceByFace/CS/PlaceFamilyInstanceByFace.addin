@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>PlaceFamilyInstanceByFace.dll</Assembly>
+    <ClientId>019074e0-62a3-4a7d-96db-7ad184af64e3</ClientId>
+    <FullClassName>Revit.SDK.Samples.PlaceFamilyInstanceByFace.CS.Command</FullClassName>
+    <Text>Place FamilyInstance by face</Text>
+    <Description>Create family instance on face.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

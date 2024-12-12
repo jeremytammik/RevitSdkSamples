@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ASCE_7_10UI</Name>
+    <Assembly>AssemblyPath</Assembly>
+    <AddInId>acb459a9-5620-4297-9718-41f987a0c0b8</AddInId>
+    <FullClassName>ASCE_7_10.RevitApplicationUI</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk,www.Autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

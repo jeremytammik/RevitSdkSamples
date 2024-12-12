@@ -1,0 +1,372 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Exporting All Element Parameters Sorted by Element Category</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs4-3.htm">next</a>
+<a class="j" href="labs4-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we export all parameters of all elements in the Revit model
+to Excel, sorted by category into different sheets.
+We create a separate sheet per each category.
+The first row of the sheet is a header listing the parameter
+names for the given category.
+It is followed by a row of values for each element.
+Note that we need to reference the Excel COM library.
+There is no native .NET API available for the Microsoft Office products,
+so we use COM via COM callable wrappers, also known as COM-Interop in .NET.</p>
+
+<p>We implement a new command <code>Lab4_2_ExportParametersToExcel</code>.
+In a first step, we iterate over all elements and sort them into
+separate element sets, one for each category:</p>
+
+<pre title="C# Create element sets for each category" class="jtcollapse">
+  /// &lt;summary&gt;
+  /// Export all parameters for each model element to Excel, one sheet per category.
+  /// &lt;/summary&gt;
+public class Lab4_2_ExportParametersToExcel : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+
+      // extract and group the data from Revit in a dictionary, where
+      // the key is the category name and the value is a list of elements.
+      //Autodesk.Revit.Collections.Map sortedElements = app.Create.NewMap();
+      Dictionary&lt;string, List&lt;Element&gt;&gt; sortedElements = new Dictionary&lt;string, List&lt;Element&gt;&gt;();
+      // iterate all non-symbol elements and store in dictionary
+      ElementIterator iter = doc.Elements;
+      while( iter.MoveNext() )
+      {
+        Element element = iter.Current as Element;
+        if( !(element is Symbol) )
+        {
+          Category category = element.Category;
+          if( null != category )
+          {
+            List&lt;Element&gt; elementSet;
+            // If we already have this Key, get its Value (Set)
+            // Otherwise, create the new Key and Value (Set
+            if( sortedElements.ContainsKey( category.Name ) )
+            {
+              elementSet = sortedElements[category.Name];
+            }
+            else
+            {
+              elementSet = new List&lt;Element&gt;();
+              sortedElements.Add( category.Name, elementSet );
+            }
+            // Add the element to the Set
+            elementSet.Add( element );
+          }
+        }
+      }
+      //
+      // todo: export parameters
+      //
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre title="VB Create element sets for each category" class="jtcollapse">
+' Exports list of parameters for each model element to Excel, one sheet per category
+Public Class Lab4_2_ExportParametersToExcel
+    Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+
+        Dim revitApp As Revit.Application = commandData.Application
+        Dim doc As Revit.Document = revitApp.ActiveDocument
+
+        ' First extract and group the data from Revit in a convenient Map class:
+        ' (Key=category name, Val=Set of Elements)
+        '------------------------------------------------------------------------
+        Dim sortedElements As Autodesk.Revit.Collections.Map = revitApp.Create.NewMap()
+        ' Iterate all non-Symbol elements and store in map
+        Dim iter As IEnumerator = doc.Elements
+        Do While (iter.MoveNext())
+            ' We look for all non-Symbol Elements which have a Category
+            Dim element As Revit.Element = iter.Current
+            If Not (TypeOf element Is Symbol) Then
+                Dim category As Category = element.Category
+                If Not (category Is Nothing) Then
+                    Dim elementSet As ElementSet
+                    ' If we already have this Key, get its Value (Set)
+                    ' Otherwise, create the new Key and Value (Set
+                    If sortedElements.Contains(category.Name) Then
+                        elementSet = sortedElements.Item(category.Name)
+                    Else
+                        elementSet = revitApp.Create.NewElementSet()
+                        sortedElements.Insert(category.Name, elementSet)
+                    End If
+                    ' Add the element to the Set
+                    elementSet.Insert(element)
+                End If
+            End If
+        Loop
+        '
+        ' todo: export parameters
+        '
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+</pre>
+
+<p>At this point you can already compile and link the project,
+update the Revit.ini file and run and debug the command
+to analyse the categories and elements collected.</p>
+
+<p>Launch Excel via COM interop and remove the automatically created worksheets,
+as far as possible ... unfortunately, at least one remains, so we have to adjust
+the code populating them to account for the one left:</p>
+
+<pre title="C# Lauch Excel via COM interop" class="jtcollapse">
+  // Launch/Get Excel via COM Interop:
+  X.Application excel = new X.Application();
+  if( null == excel )
+  {
+    LabUtils.ErrorMsg( "Failed to get or start Excel." );
+    return IExternalCommand.Result.Failed;
+  }
+  excel.Visible = true;
+  X.Workbook workbook = excel.Workbooks.Add( Missing.Value );
+  X.Worksheet worksheet;
+  while( 1 &lt; workbook.Sheets.Count ) // we cannot delete all work sheets, excel requires at least one
+  {
+    worksheet = workbook.Sheets.get_Item( 1 ) as X.Worksheet;
+    worksheet.Delete();
+  }
+</pre>
+
+<pre title="VB Lauch Excel via COM interop" class="jtcollapse">
+    ' Export parameters
+    ' Launch/Get Excel (via COM Interop)
+    '-----------------------------------
+    ' Use the following line for Excel 2003 (11.0) and similar in the rest of this lab...
+    Dim excel As MsExcel.Application = New MsExcel.ApplicationClass()
+    '... or this for up to Excel 2002 (10.0):
+    'Dim excel As Excel.Application = New Excel.ApplicationClass()
+    If (excel Is Nothing) Then
+        MsgBox("Failed to get or start Excel!?")
+        Return IExternalCommand.Result.Failed
+    End If
+    excel.Visible = True        ' Make it visible "live" to the user
+
+    ' Add a new work-book and delete the 3 default work-sheets
+    Dim workbook As MsExcel.Workbook = excel.Workbooks.Add()
+    Dim worksheet As MsExcel.Worksheet
+    Do While workbook.Sheets.Count &gt; 1
+        worksheet = workbook.Sheets.Item(1)
+        worksheet.Delete()
+    Loop
+</pre>
+
+<p>Loop through the element sets for each category.
+For each category determine all occurring parameters and use these to create the header.
+Then loop through the elements and export their values one by one:</p>
+
+<pre title="C# Export parameter values to Excel" class="jtcollapse">
+  // Loop all collected Categories and create one worksheet for each except first
+  //KeyCollection
+  List&lt;string&gt; keys = new List&lt;string&gt;( sortedElements.Keys );
+  keys.Sort();
+  keys.Reverse(); // the worksheet added last shows up first in the excel tab
+  bool first = true;
+  foreach( string categoryName in keys )
+  {
+    List&lt;Element&gt; elementSet = sortedElements[categoryName];
+    // create and name the worksheet
+    if( first )
+    {
+      worksheet = workbook.Sheets.get_Item( 1 ) as X.Worksheet;
+      first = false;
+    }
+    else
+    {
+      worksheet = excel.Worksheets.Add( Missing.Value, Missing.Value,
+                  Missing.Value, Missing.Value ) as X.Worksheet;
+    }
+    worksheet.Name = categoryName;
+
+    // we could find the list of Parameter names available for ALL the Elements
+    // in this Set, but let's keep it simple and use all parameters encountered:
+    //Autodesk.Revit.Collections.Set allParamNamesEncountered = app.Create.NewSet();
+    List&lt;string&gt; allParamNamesEncountered = new List&lt;string&gt;();
+    // loop through all the elements passed to the method
+    foreach( Element el in elementSet )
+    {
+      ParameterSet parameters = el.Parameters;
+      if( !parameters.IsEmpty )
+      {
+        // an easier way to loop the parameters than ParameterSetIterator:
+        foreach( Parameter parameter in parameters )
+        {
+          string name = parameter.Definition.Name;
+          if( !allParamNamesEncountered.Contains( name ) )
+          {
+            allParamNamesEncountered.Add( name );
+          }
+        }
+      }
+    }
+    allParamNamesEncountered.Sort();
+
+    // add the HEADER row in Bold
+    worksheet.Cells[1, 1] = "ID";
+    int column = 2;
+    foreach( string paramName in allParamNamesEncountered )
+    {
+      worksheet.Cells[1, column] = paramName;
+      ++column;
+    }
+    worksheet.get_Range( "A1", "Z1" ).Font.Bold = true;
+    worksheet.get_Range( "A1", "Z1" ).EntireColumn.AutoFit();
+    int row = 2;
+    foreach( Element elem in elementSet )
+    {
+      // first column is the element id, which we display as an integer
+      worksheet.Cells[row, 1] = elem.Id.Value;
+      column = 2;
+      foreach( string paramName in allParamNamesEncountered )
+      {
+        string paramValue;
+        try
+        {
+          paramValue = LabUtils.GetParameterValue( elem.get_Parameter( paramName ) );
+        }
+        catch( Exception )
+        {
+          paramValue = "*NA*";
+        }
+        worksheet.Cells[row, column] = paramValue;
+        ++column;
+      }
+      ++row;
+    } // row
+  } // category = worksheet
+</pre>
+
+<pre title="VB Export parameter values to Excel" class="jtcollapse">
+    ' Loop all collected Categories and create one worksheet for each
+    Dim mapIter As Autodesk.Revit.Collections.MapIterator = sortedElements.ForwardIterator
+    Do While (mapIter.MoveNext())
+
+        ' retrieve stored category and ElementSet
+        Dim categoryName As String = mapIter.Key
+        Dim elementSet As Autodesk.Revit.ElementSet = mapIter.Current
+
+        ' create and name the worksheet
+        worksheet = excel.Worksheets.Add()
+        worksheet.Name = categoryName
+
+        ' we could find the list of Parameter names available for ALL the Elements in this Set,
+        '   but let's keep it simple and use all parameters encountered (will Try-Catch later)
+        Dim allParamNamesEncountered As Autodesk.Revit.Collections.Set = app.Create.NewSet()
+
+        ' loop through all the elements passed to the method
+        Dim setIter As IEnumerator = elementSet.ForwardIterator
+        Do While (setIter.MoveNext())
+            Dim el As Autodesk.Revit.Element = setIter.Current
+            Dim parameters As Autodesk.Revit.ParameterSet = el.Parameters
+            If Not (parameters.IsEmpty) Then
+                'Another way to loop the parameters is via ParameterSetIterator:
+                Dim definitionNames As Autodesk.Revit.Collections.Set = app.Create.NewSet()
+                Dim paramIter As Autodesk.Revit.ParameterSetIterator = parameters.ForwardIterator
+                Do While paramIter.MoveNext()
+                    Dim parameter As Autodesk.Revit.Parameter = paramIter.Current
+                    Dim name As String = parameter.Definition.Name
+                    If Not allParamNamesEncountered.Contains(name) Then
+                        allParamNamesEncountered.Insert(name)
+                    End If
+                Loop
+            End If
+        Loop
+
+        ' add the HEADER row in Bold
+        worksheet.Cells(1, 1).Value = "ID"
+        Dim paramName As String
+        Dim column As Integer = 2
+        For Each paramName In allParamNamesEncountered
+            worksheet.Cells(1, column).Value = paramName
+            excel.Columns(column).EntireColumn.AutoFit()
+            column = column + 1
+        Next
+        excel.Rows("1").Font.Bold = True
+
+        ' finally, export a row per each element that belongs to the category
+        Dim elem As Revit.Element
+        Dim row As Integer = 2
+        For Each elem In elementSet
+
+            ' first column is the element id (display it as an integer)
+            worksheet.Cells(row, 1).Value = elem.Id.Value
+            ' the other columns are parameter values
+            column = 2
+            For Each paramName In allParamNamesEncountered
+                Dim paramValue As String
+                Try
+                        paramValue = LabUtils.GetParameterValue(elem.Parameter(paramName))
+                Catch
+                    paramValue = "*NA*"
+                End Try
+                worksheet.Cells(row, column).Value = paramValue
+                column = column + 1
+            Next
+
+            row = row + 1
+
+        Next ' row
+
+    Loop ' categories (worksheets)
+</pre>
+
+<p>Run and debug the command and observe and discuss the results.</p>
+
+<a class="j" href="labs4-3.htm">next</a>
+<a class="j" href="labs4-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

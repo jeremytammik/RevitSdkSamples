@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<BODY>
+<OBJECT type="text/site properties">
+  <param name="Foreground" value="0x80">
+  <param name="Window Styles" value="0x800025">
+</OBJECT>
+<UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Introduction">
+    <param name="Local" value="labs0-0-introduction.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Before You Begin">
+      <param name="Local" value="labs0-1-beforeYouBegin.htm">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Lab1 - Project Settings &amp; External Command ">
+    <param name="Local" value="labs1-0-applicationSetup.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Hello World in VB.NET ">
+      <param name="Local" value="labs1-1-vb.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Hello World in C#">
+      <param name="Local" value="labs1-1-cs.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Command Arguments">
+      <param name="Local" value="labs1-2.htm">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Lab2 - Revit Database and Elements">
+    <param name="Local" value="labs2-1.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Create a Little Hourse">
+      <param name="Local" value="labs2-0.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Document Elements">
+      <param name="Local" value="labs2-1.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Model Elements">
+      <param name="Local" value="labs2-2.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Family Instances">
+      <param name="Local" value="labs2-3.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Edit Family Instances">
+      <param name="Local" value="labs2-4.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Categories ">
+      <param name="Local" value="labs2-5.htm">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Lab3 - Families and Types">
+    <param name="Local" value="labs3-1.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="List all Loaded Families and Types">
+      <param name="Local" value="labs3-1.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Load Family and Family Type ">
+      <param name="Local" value="labs3-2.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Determine Instance Type and Family ">
+      <param name="Local" value="labs3-3.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Change the Type of Standard Instance ">
+      <param name="Local" value="labs3-4.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="List Wall and Floor Types and Change the Type of System Instances ">
+      <param name="Local" value="labs3-5.htm">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Lab4 - Parameters ">
+    <param name="Local" value="labs4-1.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="List all Parameters for Selected Elements">
+      <param name="Local" value="labs4-1.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Export All Element Parameters Sorted by Element Category">
+      <param name="Local" value="labs4-2.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Shared Parameter: FireRating Example ">
+      <param name="Local" value="labs4-3.htm">
+      </OBJECT>
+    <UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Create and Bind Shared Parameter">
+        <param name="Local" value="labs4-3.htm">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Export Element Ids and Parameter values ">
+        <param name="Local" value="labs4-3.htm">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Import Updated Parameter Values ">
+        <param name="Local" value="labs4-3.htm">
+        </OBJECT>
+    </UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Per-document Data ">
+      <param name="Local" value="labs4-4.htm">
+      </OBJECT>
+    <UL>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Create and Bind Shared Parameter">
+        <param name="Local" value="labs4-4.htm">
+        </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+        <param name="Name" value="Increment Parameter Value ">
+        <param name="Local" value="labs4-4.htm">
+        </OBJECT>
+    </UL>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Lab5 - Groups and Geometry ">
+    <param name="Local" value="labs5-1.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="List all Groups and Group Types in the Model ">
+      <param name="Local" value="labs5-1.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Swap Group Types for Selected Groups ">
+      <param name="Local" value="labs5-2.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="List Room Boundaries ">
+      <param name="Local" value="labs5-3.htm">
+      </OBJECT>
+  </UL>
+</UL>
+</BODY>
+</HTML>

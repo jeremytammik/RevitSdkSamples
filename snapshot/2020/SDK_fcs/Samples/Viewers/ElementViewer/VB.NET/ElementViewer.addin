@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ElementViewer.dll</Assembly>
+    <ClientId>e4fcf32b-ad45-4253-8899-f6fc085138a1</ClientId>
+    <FullClassName>Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer</FullClassName>
+    <Text>Element Viewer</Text>
+    <Description>Display wireframe model of one or more selected elements.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<VendorId>adsk</VendorId>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

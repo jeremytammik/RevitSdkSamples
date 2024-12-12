@@ -1,0 +1,24 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <RootNamespace>Revit.Test.CSTemplate</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.props" />
+  <!--In this property group - override values from SDKSamples.props-->
+  <PropertyGroup>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.targets" />
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

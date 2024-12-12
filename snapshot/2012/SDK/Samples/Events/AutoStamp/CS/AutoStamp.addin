@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>AutoStamp.dll</Assembly>
+    <ClientId>db79ebee-5b62-4191-93ab-6f0f94f06cc4</ClientId>
+    <FullClassName>Revit.SDK.Samples.AutoStamp.CS.Application</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

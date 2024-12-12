@@ -1,0 +1,99 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\deflang1033\deflangfe2052{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset0 Times New Roman;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\ltrpar\nowidctlpar\b\f0\fs20 Application:\b0  NewRebar\line\b Revit Platform:\b0  Structure\line\b Revit Version:\b0  2011.0\line\b First Released For:\b0  2009.0\line\b Programming Language:\b0  C#\line\b Skill Level:\b0  High\line\b Category:\b0  Structure\line\b Type:\b0  ExternalCommand\line\line\b Subject:\b0  Create Rebar and ReabrShapes.\line\b Summary:\b0  \line This sample will demonstrate how to create rebar via NewRebar (RebarShape rebarShape, RebarBarType rebarType, Element host, XYZ origin, XYZ xVec, XYZ yVec) and how to customize RebarShape (include straight segment and arc shape).\par
+\par
+\b Classes:\b0  \par
+\pard\ltrpar\nowidctlpar\fi360 Autodesk.Revit.UI.IExternalCommand \par
+Autodesk.Revit.Creation.Document\f1\par
+\f0 Autodesk.Revit.DB\f1 .\f0 FamilyInstance\f1\par
+\f0 Autodesk.Revit.DB.Structure.Rebar\f1\par
+\f0 Autodesk.Revit.DB.Structure.RebarShape\f1\par
+\f0 Autodesk.Revit.DB.Structure\f1 .\f0 RebarShapeDefinition\f1\par
+\f0 Autodesk.Revit.DB.Structure.RebarShapeDefinitionByArc\f1\par
+\f0 Autodesk.Revit.DB.Structure.RebarShapeDefinitionBySegments\par
+Autodesk.Revit.DB.Structure.StructuralType\par
+Autodesk.Revit.DB\f1 .\f0 Parameter\f1\par
+\f0 Autodesk.Revit.DB\f1 .\f0 DefinitionGroup\f1\par
+\f0 Autodesk.Revit.DB\f1 .\f0 ExternalDefinition\par
+Autodesk.Revit.DB.Solid\f1\par
+\pard\ltrpar\nowidctlpar\li720\f0\par
+\pard\ltrpar\nowidctlpar\b Project Files:\b0  \par
+Command.cs\par
+This is the entrance of this sample. It implements IExternalCommand Execute method.\f1\par
+\pard\ltrpar\nowidctlpar\li360\par
+\pard\ltrpar\nowidctlpar\f0 RebarCreator.cs\f1\par
+\f0 Class RebarCreator is defined in this file and it wraps the creation of Rebar. Its "Execute" method shows the main dialog for user and after that a Rebar will be created if user click OK button on the main dialog.\f1\par
+\par
+\f0 RebarShapeDef.cs\f1\par
+\f0 Class RebarShapeDef is defined in this file and it wraps RebarShapeDefinition object. It will be inherited by two classes: RebarShapeDefByArc and RebarShapeDefBySegment\f1 .\par
+\par
+\f0 RebarShapeDefByArc.cs\f1\par
+\f0 Class RebarShapeDefByArc is defined in this file and it wraps RebarShapeDefinitionByArc object\f1 .\par
+\par
+\f0 RebarShapeDefBySegment.cs\f1\par
+\f0 Class RebarShapeDefBySegment is defined in this file and it wraps RebarShapeDefinitionBySegments object\f1 .\par
+\f0\par
+RebarShapeParameter.cs\par
+Class RebarShapeParameter is defined in this file and it wraps an Autodesk.Revit.Parameter object which will be added to RebarShape definition. This is an abstract class and it will be inherited by two classes: RebarShapeParameterDouble and RebarShapeParameterFormula.\par
+\par
+RebarShapeParameterDouble.cs\par
+Class RebarShapeParameterDouble is defined in this file and it wraps a double parameter which will be added to RebarShape definition.\par
+\par
+RebarShapeParameterFormula.cs\par
+Class RebarShapeParameterFormula is defined in this file and it wraps a formula parameter which will be added to RebarShape definition.\par
+\par
+ConstraintOnRebarShape.cs\par
+Class ConstraintOnRebarShape is defined in this file and it wraps a constraint on Rebar Shape. It will be inherited by two classes: ConstraintOnSegmentShape and ConstraintOnArcShape.\par
+\par
+ConstraintOnSegmentShape.cs\par
+This file defines a series of classes which inherits from ConstraintOnSegmentShape. Each one can add a constraint to RebarShapeDefinitionBySegments.\par
+\par
+ConstraintOnArcShape.cs\par
+This file defines a series of classes which inherits from ConstraintOnArcShape. Each one can add a constraint to RebarShapeDefinitionByArc.\par
+\par
+GeometrySupport.cs\par
+Class GeometrySupport is defined in this file and it can be used to compute and store geometry information.\f1\par
+\par
+\f0 GeomUtil.cs\par
+Class GeomUtil is defined in this file and it provides the basic geometry operations\f1 .\par
+\par
+\f0 NewRebarForm.cs\f1\par
+\f0 This form is the main entrance for user to operate the Rebar creation.\f1\par
+\par
+\f0 NewRebarShapeForm.cs\f1\par
+\f0 This form is provided for user to define a new RebarShape.\f1\par
+\par
+\f0 AddParameterForm.cs\f1\par
+\f0 This form provides an entrance for user to add parameters to RebarShape.\f1\par
+\par
+\f0 AddConstraintForm.cs\par
+This form provides an entrance for user to add constraints to RebarShape.\f1\par
+\f0\par
+\b Description:\b0  \par
+This sample will demonstrate how to create rebar via NewRebar (RebarShape rebarShape, RebarBarType rebarType, Element host, XYZ origin, XYZ xVec, XYZ yVec) and how to customize RebarShape (include straight segment and arc shape). This sample will cover methods ScaleToBox and SetLayoutRuleWithoutExaminingHost of Rebar and almost all methods and properties of RebarShape. \par
+\par
+\b Instructions:\cf1\b0  \cf0\f1\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360\f0 1.\tab How to create a rebar?\par
+\pard\ltrpar\nowidctlpar\fi-420\li840\tx840 1)\tab Open or new a Revit project and make sure some concrete Beams or Columns without any rebar and with a rectangular shape are placed. A sample project file NewRebar.rvt is available in the sample\rquote s folder.\par
+2)\tab Select a concrete Beam or Column without any rebar and with a rectangular shape.\par
+\pard\ltrpar\nowidctlpar\fi-420\li840 3)\tab Invoke this command and the main dialog will be shown.\par
+4)\tab In the main dialog, select a RebarShape and a RebarBarType from the ComboBox, then click OK button, a rebar will be created on the selected Beam or Column.\f1\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360\f0 2.\tab How to customize a rebar shape by segments?\f1\par
+\pard\ltrpar\nowidctlpar\fi-420\li840\tx840\f0 1)\tab In the main dialog, give a rebar shape name and click radio Button by segments and input the segments number in the Text Box, then click \ldblquote Create Rebar Shape\rdblquote  button, a form named \ldblquote Create RebarShape\rdblquote  will be shown.\f1\par
+\pard\ltrpar\nowidctlpar\fi-420\li840\f0 2)\tab In the \ldblquote Create RebarShape\rdblquote  form, parameters and constraints can be added to customize the rebar shape. Click button \ldblquote Add parameter\rdblquote  will present a dialog to add parameter and click button \ldblquote Add Constraint\rdblquote  will present a dialog to add constraint. After that, the parameter or the constraint will be displayed in the property grid, the parameter value and the constraints value can be changed from the property grid.\par
+\pard\ltrpar\nowidctlpar\fi-420\li840\tx840 3)\tab As for how to add parameters and constraints, here are some advice: \f1\par
+\pard\ltrpar\nowidctlpar\fi-420\li1620\tx1620\f0 a)\tab Each edge must have a length constraint and a direction constraint.\par
+\pard\ltrpar\nowidctlpar\fi-420\li1620 b)\tab Each vertex must have a bend constraint.\par
+c)\tab Listening constraints are not necessary.\par
+\pard\ltrpar\nowidctlpar\li720\f1\par
+\pard\ltrpar\nowidctlpar\fi-420\li840\tx840\f0 4)\tab After parameters and constraints are added, click OK button to submit the customize rebar shape.\par
+\pard\ltrpar\nowidctlpar  \par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360 3.\tab How to customize a rebar shape by arc?\f1\par
+\pard\ltrpar\nowidctlpar\fi-420\li840\tx840\f0 1)\tab In the main dialog, give a rebar shape name and click radio Button by arc and select the arc type from the ComboBox, then click \ldblquote Create rebar shape\rdblquote  button, a form named \ldblquote Create RebarShape\rdblquote  will be shown.\par
+\pard\ltrpar\nowidctlpar\fi-420\li840 2)\tab In the \ldblquote Create RebarShape\rdblquote  form, parameters and constraints can be added to customize the rebar shape. Click button \ldblquote Add Parameter\rdblquote  will present a dialog to add parameter and click button \ldblquote Add Constraint\rdblquote  will present a dialog to add constraint. After that, the parameter or the constraint will be displayed in the property grid, the parameter value and the constraints value can be changed from the property grid.\par
+\pard\ltrpar\nowidctlpar\fi-420\li840\tx840 3)\tab After parameters and constraints are added, click OK button to submit the customize rebar shape.\f1\par
+\pard\ltrpar\nowidctlpar\par
+\b\f0 Customize Rebar Shapes Step by step:\par
+\b0 Under folder \ldblquote Customize RebarShapes Step by step\rdblquote , there are four help doc to help user customize Rebar Shapes step by step. \f1\par
+}
+ 

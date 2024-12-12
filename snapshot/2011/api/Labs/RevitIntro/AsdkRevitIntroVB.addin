@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  
+  <!-- 1_HelloWorld -->
+  
+  <AddIn Type="Command">
+    <Text>Hello World</Text>    
+    <FullClassName>RevitIntroVB.HelloWorld</FullClassName>
+    <Assembly>D:\RevitAPI 2011\Training\Labs\Revit Intro Labs\RevitIntro\RevitIntro\bin\Debug\RevitIntroVB.dll</Assembly>
+    <AddInId>0B997216-52F3-412a-8A97-58558DC62D1E</AddInId>
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Text>Hello World Simple</Text>    
+    <FullClassName>RevitIntroVB.HelloWorldSimple</FullClassName>    
+    <Assembly>D:\RevitAPI 2011\Training\Labs\Revit Intro Labs\RevitIntro\RevitIntro\bin\Debug\RevitIntroVB.dll</Assembly>
+    <AddInId>4A5E07FD-4097-489d-A1AE-678057E6C4AA</AddInId>
+  </AddIn>
+
+  <AddIn Type="Application">
+    <Name>Hello World App</Name>    
+    <FullClassName>RevitIntroVB.HelloWorldApp</FullClassName>    
+    <Assembly>D:\RevitAPI 2011\Training\Labs\Revit Intro Labs\RevitIntro\RevitIntro\bin\Debug\RevitIntroVB.dll</Assembly>
+    <AddInId>08E8EFB1-FCC1-4b99-AD14-93523EE229AA</AddInId>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Text>Command Data</Text>    
+    <FullClassName>RevitIntroVB.CommandData</FullClassName>
+    <Assembly>D:\RevitAPI 2011\Training\Labs\Revit Intro Labs\RevitIntro\RevitIntro\bin\Debug\RevitIntroVB.dll</Assembly>
+    <AddInId>AA90426A-E8AA-45b4-84AF-861E865871AE</AddInId>
+  </AddIn>
+  
+  <!-- 2_DBElement -->
+  <AddIn Type="Command">
+    <Text>DB Element</Text>    
+    <FullClassName>RevitIntroVB.DBElement</FullClassName>
+    <Assembly>D:\RevitAPI 2011\Training\Labs\Revit Intro Labs\RevitIntro\RevitIntro\bin\Debug\RevitIntroVB.dll</Assembly>
+    <AddInId>827AC040-6F44-4c03-82FE-292705580800</AddInId>
+  </AddIn>
+
+  <!-- 3_ElementFiltering -->
+  <AddIn Type="Command">
+    <Text>Element Filtering</Text>    
+    <FullClassName>RevitIntroVB.ElementFiltering</FullClassName>    
+    <Assembly>D:\RevitAPI 2011\Training\Labs\Revit Intro Labs\RevitIntro\RevitIntro\bin\Debug\RevitIntroVB.dll</Assembly>
+    <AddInId>D548CBDD-5109-4ab4-872A-A8DA8970ABF1</AddInId>
+  </AddIn>
+
+  <!-- 4_ElementModification -->
+  <AddIn Type="Command">
+    <Text>Element Modification</Text>
+    <FullClassName>RevitIntroVB.ElementModification</FullClassName>
+    <Assembly>D:\RevitAPI 2011\Training\Labs\Revit Intro Labs\RevitIntro\RevitIntro\bin\Debug\RevitIntroVB.dll</Assembly>
+    <AddInId>053E6E1B-88AD-41d5-8E08-248DC563E2FD</AddInId>
+  </AddIn>
+
+  <!-- 5_ModelCreation -->
+  <AddIn Type="Command">
+    <Text>Model Creation</Text>
+    <FullClassName>RevitIntroVB.ModelCreation</FullClassName>
+    <Assembly>D:\RevitAPI 2011\Training\Labs\Revit Intro Labs\RevitIntro\RevitIntro\bin\Debug\RevitIntroVB.dll</Assembly>
+    <AddInId>C908B97F-D2FD-41f2-BC2B-82F4566B2A91</AddInId>
+  </AddIn>
+  
+</RevitAddIns>

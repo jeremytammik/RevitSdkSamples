@@ -1,0 +1,16 @@
+﻿<Project Sdk="">
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.props" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\ExportPDFSettingsSample.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Release\ExportPDFSettingsSample.XML</DocumentationFile>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

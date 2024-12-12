@@ -1,0 +1,99 @@
+' 
+'  (C) Copyright 2003-2007 by Autodesk, Inc.
+' 
+'  Permission to use, copy, modify, and distribute this software in
+'  object code form for any purpose and without fee is hereby gran
+'  provided that the above copyright notice appears in all copies an
+'  that both that copyright notice and the limited warranty and
+'  restricted rights notice below appear in all supporting
+'  documentation.
+
+'  AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH
+'  AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WAR
+'  MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE
+'  DOES NOT WARRANT THAT THE OPERATION OF THE PRO
+'  UNINTERRUPTED OR ERROR FREE.
+' 
+'  Use, duplication, or disclosure by the U.S. Government is subject 
+'  restrictions set forth in FAR 52.227-19 (Commercial Computer
+'  Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+'  (Rights in Technical Data and Computer Software), as applicable.
+' 
+Imports System
+Imports System.Windows.Forms
+Imports System.Collections
+
+Imports Autodesk.Revit
+Imports Autodesk.Revit.Elements
+Imports Autodesk.Revit.Structural.Enums
+
+''' <summary>
+''' Delete the elements that were selected
+''' </summary>
+Public Class Command
+    Implements Autodesk.Revit.IExternalCommand
+
+    ''' <summary>
+    '''  Implement this method as an external command for Revit.
+    '''  </summary>
+    '''  <param name="commandData">An object that is passed to the external application 
+    '''  which contains data related to the command, 
+    '''  such as the application object and active view.</param>
+    '''  <param name="message">A message that can be set by the external application 
+    '''  which will be displayed if a failure or cancellation is returned by 
+    '''  the external command.</param>
+    '''  <param name="elements">A set of elements to which the external application 
+    '''  can add elements that are to be highlighted in case of failure or cancellation.</param>
+    '''  <returns>Return the status of the external command. 
+    '''  A result of Succeeded means that the API external method functioned as expected. 
+    '''  Cancelled can be used to signify that the user cancelled the external operation 
+    '''  at some point. Failure should be returned if the application is unable to proceed with 
+    '''  the operation.</returns>
+    Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, _
+    ByRef message As String, ByVal elements As Autodesk.Revit.ElementSet) _
+    As Autodesk.Revit.IExternalCommand.Result _
+    Implements Autodesk.Revit.IExternalCommand.Execute
+
+        Dim revit As Autodesk.Revit.Application = commandData.Application
+
+        Dim collection As ElementSet = revit.ActiveDocument.Selection.Elements
+        'check user selection
+        If collection.Size < 1 Then
+            message = "Please select object before delete."
+            Return IExternalCommand.Result.Cancelled
+        End If
+
+        Dim isError As Boolean = True
+        Try
+            'delete selection
+            Dim e As IEnumerator = collection.GetEnumerator()
+            Dim MoreValue As Boolean = e.MoveNext()
+
+            While MoreValue
+                If TypeOf e.Current Is Autodesk.Revit.Element Then
+                    Dim component As Autodesk.Revit.Element = e.Current
+                    revit.ActiveDocument.Delete(component)
+                    MoreValue = e.MoveNext()
+                End If
+            End While
+
+            isError = False
+
+        Catch
+            'if revit threw an exception, try to catch it
+            For Each c As Autodesk.Revit.Element In collection
+                elements.Insert(c)
+            Next
+
+            message = "object(s) can't be deleted."
+            Return IExternalCommand.Result.Failed
+        Finally
+            ' if revit threw an exception, display error and return failed
+            If isError Then
+                MessageBox.Show("Delete failed.")
+            End If
+
+        End Try
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class

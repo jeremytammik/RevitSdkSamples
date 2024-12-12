@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Reinforcement.dll</Assembly>
+    <ClientId>cc1d65d3-2fa1-4afb-a82b-b6c8ed2c56a9</ClientId>
+    <FullClassName>Revit.SDK.Samples.Reinforcement.CS.Command</FullClassName>
+    <Text>Reinforcement</Text>
+    <Description>Create bar set in a selected concrete element (beam or column) that does not have any reinforcement.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>SharedCoordinateSystem.dll</Assembly>
+    <ClientId>56ce972e-d4d5-4631-ad35-6f280747abe3</ClientId>
+    <FullClassName>Revit.SDK.Samples.SharedCoordinateSystem.CS.Command</FullClassName>
+    <Text>Shared Coordinate System</Text>
+    <Description>Display the locations and site information of the project.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

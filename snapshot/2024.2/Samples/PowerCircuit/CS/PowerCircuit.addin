@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>PowerCircuit.dll</Assembly>
+    <ClientId>50d17b09-b79d-4f5d-858d-9dab1e33230b</ClientId>
+    <FullClassName>Revit.SDK.Samples.PowerCircuit.CS.Command</FullClassName>
+    <Text>Power Circuit</Text>
+    <Description>Operate power circuits.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

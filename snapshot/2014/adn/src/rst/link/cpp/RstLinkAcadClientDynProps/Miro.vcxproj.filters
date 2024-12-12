@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{fd878611-f7d0-4aa3-a70d-8011bb3c5a12}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;idl;odl</Extensions>
+    </Filter>
+    <Filter Include="Include Files">
+      <UniqueIdentifier>{83146f20-7448-4cd9-a485-1c34ef40627e}</UniqueIdentifier>
+      <Extensions>h;hh;hxx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{ac6d8387-af1d-4a49-ab0b-dae4b2215665}</UniqueIdentifier>
+      <Extensions>rc;ico;bmp;cur;jpg;gif</Extensions>
+    </Filter>
+    <Filter Include="Miscellaneous Files">
+      <UniqueIdentifier>{8b8cb67f-667c-4bec-bb8c-44ae4b637397}</UniqueIdentifier>
+      <Extensions>reg;rgs;mak;clw;vsdir;vsz;css;inf;vcproj;csproj</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="acrxEntryPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DocData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Force.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Miro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RevitID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Section.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Usage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Miro.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DocData.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Force.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RevitID.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Section.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Usage.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Miro.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Force.rgs">
+      <Filter>Miscellaneous Files</Filter>
+    </None>
+    <None Include="Miro.rgs">
+      <Filter>Miscellaneous Files</Filter>
+    </None>
+    <None Include="RevitID.rgs">
+      <Filter>Miscellaneous Files</Filter>
+    </None>
+    <None Include="Section.rgs">
+      <Filter>Miscellaneous Files</Filter>
+    </None>
+    <None Include="Usage.rgs">
+      <Filter>Miscellaneous Files</Filter>
+    </None>
+    <None Include="Miro.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

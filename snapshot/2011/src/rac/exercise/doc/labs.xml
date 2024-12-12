@@ -1,0 +1,931 @@
+<?xml version="1.0"?>
+<labs>
+  <lab name="1-1">
+    <para>
+      Prerequisites for the Revit API Introduction labs are
+      the following installed components:
+    </para>
+
+    <list type="bullet">
+      <item>
+        <description>Revit</description>
+      </item>
+      <item>
+        <description>The Revit SDK</description>
+      </item>
+      <item>
+        <description>Visual Studio</description>
+      </item>
+      <item>
+        <description>Revit API Introduction Labs</description>
+      </item>
+    </list>
+
+    <para>
+      The Revit API Introduction Labs are provided in two versions,
+      as exercises for completing by filling in the missing portions yourself
+      using the information from the SDK documentation and the lab instructions,
+      and a solved version which you can use to peek into if you run into any
+      difficulties.
+    </para>
+
+    <para>
+      In this lab, we explore the development environment, and how to
+      create a skeleton Revit add-in from scratch. We explore the transaction mode
+      and regeneration option attributes, and the add-in manifest information defining
+      the link between Revit and the external command. Also, how the external command
+      can be hooked up with a custom user interface by an external application.
+    </para>
+
+    <para>
+      Before working on this lab, ensure that you have located and had a first
+      look at the following important Revit SDK documentation, which contains all
+      the information required:
+    </para>
+
+    <list type="bullet">
+      <item>
+        <description>Getting Started with the Revit API.doc</description>
+      </item>
+      <item>
+        <description>Revit Platform API Changes and Additions.doc</description>
+      </item>
+      <item>
+        <description>Revit 2011 API Developer Guide.pdf</description>
+      </item>
+      <item>
+        <description>RevitAPI.chm</description>
+      </item>
+    </list>
+
+    <para>
+      To complete this lab, look at the developer guide in the Revit SDK, in the file
+      Revit 2011 API Developer Guide.pdf, and work through the walkthroughs described in
+      Chapter 2, especially 2.2 Hello World and 2.3 Ribbon Panel.
+    </para>
+
+    <para>They show how to:</para>
+
+    <list type="bullet">
+      <item>
+        <description>Set up a new add-in project.</description>
+      </item>
+      <item>
+        <description>Add the Revit API references.</description>
+      </item>
+      <item>
+        <description>Edit the add-in source code.</description>
+      </item>
+      <item>
+        <description>Create an add-in manifest.</description>
+      </item>
+      <item>
+        <description>Load and debug the add-in.</description>
+      </item>
+      <item>
+        <description>Create a custom ribbon panel.</description>
+      </item>
+    </list>
+
+    <para>
+      You can work through the walkthroughs from scatch as described
+      in the developer guisde, or complete the missing code in the skeleton
+      file provided by the Revit API introduction lab exercises.
+    </para>
+
+    <para>
+      The client id for the add-in manifest can be generated using the
+      Visual Studio GuidGen tool or the Guidizer provided by ADN.
+    </para>
+
+    <para>
+      This lab can also be used to explore the TaskDialog class provided
+      for Revit-style message boxes.
+      For further examples of using the Revit API TaskDialog features, please
+      also refer to the HelloRevit SDK sample.
+    </para>
+  </lab>
+
+  <lab name="1-1-remarks">
+    <remarks>
+      <para>Say hello some more!</para>
+      <para>Some remarks on Lab 1-1.</para>
+    </remarks>
+  </lab>
+
+  <lab name="1-2">
+    <para>
+      Implement a new external command implementation class named
+      Lab1_2_CommandArguments and its Execute method analogously to the
+      class you implemented in the previous lab.
+    </para>
+
+    <para>
+      The first argument to the Execute method is the command data
+      object which is used to access the application object, from it the
+      current view and document, and from it in turn all or the currently
+      selected elements.
+    </para>
+
+    <para>
+      Let's first report some data about the current application,
+      document and view. Add something like the following to the Execute
+      function body. We make use of the LabUtils InfoMsg method, which
+      is provided in the Revit API Introduction labs source code and
+      provides various wrappers for the Revit task dialogue that
+      we used in Lab 1-1:
+    </para>
+
+    <code lang="cs" source="../cs/Labs1.cs" region="1.2.a. Examine command data input argument"/>
+    <code lang="vb" source="../vb/Labs1.vb" region="1.2.a. Examine command data input argument"/>
+
+    <para>
+      We can use the System.Windows.Forms MessageBox.Show() method
+      to display meassages to users, or the Revit task dialogue like in
+      Lab 1-1. Since it is cumbersome to add an additional argument for
+      the caption each time we call it, we implement some message box
+      helper methods in a separate class LabUtils and call thos instead.
+    </para>
+
+    <para>
+      To list all the currently selected elements, we can use the
+      Selection property on the UIDocument object. This property further
+      exposes an Elements property which returns an element set containing
+      the selected elements. This provided access to the predefined element
+      selection set. We use another LabUtils task dialogue wrapper which
+      populates the main instruction with a message and the contents with
+      a list of strings:
+    </para>
+
+    <code lang="cs" source="../cs/Labs1.cs" region="1.2.b. List selection set content"/>
+    <code lang="vb" source="../vb/Labs1.vb" region="1.2.b. List selection set content"/>
+
+    <para>
+      The last two arguments to the Execute method are return arguments
+      and used only when returning a Cancelled or Failed status to Revit, so
+      that a meaningful message can be displayed in the standard user interface
+      dialogue box and the relevant elements can be highlighted on the graphics
+      screen. To simulate an error condition and display the result of populating
+      these, add the following code:
+    </para>
+
+    <code lang="cs" source="../cs/Labs1.cs" region="1.2.c. Populate return arguments"/>
+    <code lang="vb" source="../vb/Labs1.vb" region="1.2.c. Populate return arguments"/>
+
+    <para>
+      Build the project and adjust the add-in manifest file to include
+      the new command, e.g. by adding the following entries in addition to
+      the existing ones from the Hello World walkthrough:
+    </para>
+
+    <code lang="xml" source="../Labs.addin" region="Lab 1-2"/>
+
+    <para>
+      Now start up Revit, pre-select some elements and run the
+      new Lab 1-2 command. It will display the app, doc and view data, then
+      the currently selected elements, and finally an error reported on the
+      first one of the elements in this set.
+    </para>
+  </lab>
+
+  <lab name="2-0">
+    <para>
+      This lab's external command creates a simple building containing
+      four walls, two windows, a door, a floor, a roof and a room. Commands
+      defined in the following labs can run on this model. This lab needs to
+      make use of some features which will not be discussed fully until later on.
+    </para>
+
+    <para>
+      This lab makes use of the utility class LabUtils which is provided
+      in the exercise project and includes various reusable helper functions.
+      In the following labs, further utilities will be added to this class.
+      It also uses some constants defined by the LabConstants class:
+    </para>
+
+    <code lang="cs" source="../cs/LabConstants.cs" region="2.0"/>
+    <code lang="vb" source="../vb/LabConstants.vb" region="2.0"/>
+  </lab>
+
+  <lab name="2-1">
+    <para>
+      The main contents of a Revit project database is its elements collection.
+      This includes both building elements representing physical objects as well as
+      supporting elements such as various internal definitions, families and types,
+      which are not part of the visible building model.
+    </para>
+
+    <para>
+      In this lab, we explore the collection of all Revit document elements
+      and implement a second external command class Lab2_1_Elements derived
+      from IExternalCommand in the Labs2 module. Since we do nothing to modify
+      the database, we set this command's transaction mode to read-only.
+    </para>
+
+    <para>
+      Since the output will be much too large for a message box,
+      we will redirect it to a text file.
+    </para>
+
+    <para>
+      The exercise version of the Labs2 module already references the additional
+      required namespaces such as System.IO, and the class LabConstants defines string
+      constants for the output filename and directory:
+    </para>
+
+    <code lang="cs" source="../cs/LabConstants.cs" region="2.1 Revit element listing output file constants"/>
+    <code lang="vb" source="../vb/LabConstants.vb" region="2.1 Revit element listing output file constants"/>
+
+    <para>
+      Returning to the Lab2_1_Elements command, start by accessing
+      the current Revit document to read elements from and opening the
+      output file to write to:
+    </para>
+
+    <code lang="cs" source="../cs/Labs2.cs" region="2.1.a. Access Revit doc and open output file"/>
+    <code lang="vb" source="../vb/Labs2.vb" region="2.1.a. Access Revit doc and open output file"/>
+
+    <para>
+      In Revit 2011, we no longer have direct access to the entire unfiltered
+      Revit elements collection, because generally the Revit API does not expect
+      an application to ever need to iterate over all elements. To retrieve them
+      all anyway, we need to use a trick: ask for all elements fulfilling a specific
+      criterion and unite them with all elements NOT fulfilling the same
+      criterion:
+    </para>
+
+    <code lang="cs" source="../cs/Labs2.cs" region="2.1.b. Set up element collector to retrieve all elements"/>
+    <code lang="vb" source="../vb/Labs2.vb" region="2.1.b. Set up element collector to retrieve all elements"/>
+
+    <para>
+      Loop over the returned elements, list some of the generic
+      identification properties to the output file, and close it when
+      done:
+    </para>
+
+    <code lang="cs" source="../cs/Labs2.cs" region="2.1.c."/>
+    <code lang="vb" source="../vb/Labs2.vb" region="2.1.c."/>
+
+    <para>
+      The Execute method can safely return a Failed result code,
+      since the database has not been modified. This aboorts the automatic
+      transaction that was created by the Revit API due to the automatic
+      transaction mode attribute setting.
+    </para>
+
+    <para>
+      Compile and link the project and update the add-in manifest
+      file accordingly, as descibed for lab 1-2. Or load and run the
+      command with the help of the Add-in Manager, if you prefer.
+    </para>
+
+    <para>
+      Run the command and examine and discuss the contents of the
+      created output file with the course instructor and your peers.
+    </para>
+
+    <para>
+      Save the first output file under a different name, add a
+      couple of new elements to the Revit model, run the command again
+      to generate a new output file, and compare the two.
+    </para>
+  </lab>
+
+  <lab name="2-2">
+    <para>
+      Model elements are generally part of the building and have geometry.
+      In this lab we will implement a filter to retrieve all model elements,
+      i.e. Revit element instances with a 3D geometrical representation.
+      There are several possible approaches to retrieving these elements.
+      Here, we will present a method that
+      uses a combination of different criteria to ensure that only valid
+      model elements are selected. The criteria applied to each element are:
+    </para>
+
+    <list type="bullet">
+      <item>
+        <description>It is not an ElementType object</description>
+      </item>
+      <item>
+        <description>It has a valid category</description>
+      </item>
+      <item>
+        <description>The category has material quantities</description>
+      </item>
+    </list>
+
+    <para>To complete this lab, perform the following steps:</para>
+
+    <list type="number">
+      <item>
+        <description>Add a new read-only external command implementation named Lab2_2_ModelElements to the Labs2 module.</description>
+      </item>
+      <item>
+        <description>Implement code to access the Revit application and current document.</description>
+      </item>
+      <item>
+        <description>Instantiate a new FilteredElementCollector variable named collector.</description>
+      </item>
+      <item>
+        <description>Retrieve all elements that are not of type ElementType (hint: use WhereElementIsNotElementType).</description>
+      </item>
+      <item>
+        <description>Instantiate a variable named 'a' as a list of strings to collect the element information and later feed to the approriate LabUtils.InfoMsg overload.</description>
+      </item>
+      <item>
+        <description>Loop over the collected elements (hint: you can simply use foreach Element e in collector).</description>
+      </item>
+      <item>
+        <description>Ignore all elements with an invalid, i.e. null, category.</description>
+      </item>
+      <item>
+        <description>Ignore all elements whose category does not have material quantities, cf. the Category.HasMaterialQuantities property.</description>
+      </item>
+      <item>
+        <description>Populate 'a' with some element data such as category name, element name, and element id.</description>
+      </item>
+      <item>
+        <description>Display the contents of 'a' using the appropriate LabUtils.InfoMsg overload.</description>
+      </item>
+      <item>
+        <description>Return a Failed result code, since we did nothing to modify the database.</description>
+      </item>
+    </list>
+
+    <para>Here is one possible implementation of these steps:</para>
+
+    <code lang="cs" source="../cs/Labs2.cs" region="2.2"/>
+    <code lang="vb" source="../vb/Labs2.vb" region="2.2"/>
+
+    <para>
+      Compile, link and load the project as usual.
+      Step through the code in the debugger and examine how many elements are
+      eliminated by the various filtering steps.
+    </para>
+
+    <para>
+      A useful additional functionality would be to differentiate
+      between visible and hidden elements.
+    </para>
+  </lab>
+
+  <lab name="2-2-remarks">
+    <remarks>
+      <para>A useful additional functionality would be to differentiate between visible and hidden elements.</para>
+
+      <para>
+        If you are just looking for Walls, Windows and Doors, I would use a filter
+        that collects those items (LogicalOrFilter). If you are looking to exclude
+        certain types, like GraphicsStyles and Views and Levels, you can do that
+        also using LogicalAndFilters. You could also try the BoundingBox filters,
+        I think those will skip elements like GraphicsStyles and Materials and
+        Annotations which don’t have geometry, but not elements like Levels and Views.
+        I would get the bounding box of a default 3D view, and use the bounding box
+        filter which passes elements inside or intersecting it.
+      </para>
+    </remarks>
+  </lab>
+
+  <lab name="2-3">
+    <para>
+      Revit uses categories to classify building elements and other groups
+      of objects. The known categories are listed by the built-in categories
+      enumeration. It includes values for walls, doors, windows and many other
+      groups of objects. This is one way of identifying objects in the Revit
+      database.
+    </para>
+
+    <para>
+      Another way of identifying an element is using its System.Type,
+      i.e. class. Walls are represented by their own specialised
+      System.Type Wall, whereas doors and windows are represented
+      by family instances, whose class is FamilyInstace. To tell them
+      apart, we need to aditionally checking their category.
+    </para>
+
+    <para>
+      Many classes of elements are grouped into types and families.
+      There are system families, which are built into Revit, and standard families,
+      which are defined in external files with an RFA filename extension.
+    </para>
+
+    <para>
+      The are many other element properties that also can be used to retrieve
+      specific element collections from the database.
+    </para>
+
+    <para>
+      Walls are defined using a system family, doors and windows by standard families.
+      To retrieve all walls, one can use an element filter checking for the wall category
+      and the dedicated Wall class. For doors or windows, one can use the door and window
+      categories and the FamilyInstance class.
+    </para>
+
+    <para>
+      In this lab, we implement the filtering inline.
+      Afterwards, we can use this code as a template for creating some
+      reusable generic LabUtils methods.
+    </para>
+
+    <para>
+      Implement a new read-only external command Lab2_3_ListWallsAndDoors
+      and add the code to implement the Execute method and access the application
+      app and current document doc.
+    </para>
+
+    <para>
+      Implement a filtered element collector to retrieve and list
+      all walls, for instance by the following steps:
+    </para>
+
+    <list type="number">
+      <item>
+        <description>Instantiate a new FilteredElementCollector variable named walls.</description>
+      </item>
+      <item>
+        <description>Retrieve all elements whose System.Type is Wall (hint: use OfClass).</description>
+      </item>
+      <item>
+        <description>Instantiate a variable named 'a' as a list of strings to collect the element information and later feed to the approriate LabUtils.InfoMsg overload.</description>
+      </item>
+      <item>
+        <description>Loop over the collected elements (hint: you can simply use foreach Wall wall in walls).</description>
+      </item>
+      <item>
+        <description>Populate 'a' with some element data such as element id, wall type and wall type kind.</description>
+      </item>
+      <item>
+        <description>Display the contents of 'a' using the appropriate LabUtils.InfoMsg overload.</description>
+      </item>
+    </list>
+
+    <para>Here is a possible implementation:</para>
+
+    <code lang="cs" source="../cs/Labs2.cs" region="2.3.a"/>
+    <code lang="vb" source="../vb/Labs2.vb" region="2.3.a"/>
+
+    <para>This shows how easy and succinct the Revit 2011 element filtering is.</para>
+
+    <para>
+      Implement a similar filter to retrieve and list all doors.
+      In this case, we can use the FamilyInstance System.Type and additionally check for
+      the door category using the OfCategory method and the appropriate built-in category
+      enumeration vlue.
+    </para>
+
+    <code lang="cs" source="../cs/Labs2.cs" region="2.3.b"/>
+    <code lang="vb" source="../vb/Labs2.vb" region="2.3.b"/>
+
+    <para>
+      Since similar kinds of element retrieval will be needed in other places as well,
+      we can implement the following generic LabUtils methods for it:
+    </para>
+
+    <code lang="cs" source="../cs/LabUtils.cs" region="GetElementsOfType"/>
+    <code lang="vb" source="LabUtils.vb" region="GetElementsOfType"/>
+
+    <code lang="cs" source="../cs/LabUtils.cs" region="GetFamilyInstances"/>
+    <code lang="vb" source="LabUtils.vb" region="GetFamilyInstances"/>
+
+    <para>Compile, link and load the project as usual.</para>
+  </lab>
+
+  <lab name="2-4">
+    <para>
+      In this lab, we select all doors in current document,
+      move them up by 0.2 feet via the Document.Move method and widen
+      them by one foot by changing the WINDOW_WIDTH parameter value.
+    </para>
+
+    <para>
+      Add a new command named Lab2_4_EditFamilyInstance to the Labs2 module.
+      Retrieve all doors in the current document using a filtered collector like
+      in the previous lab, either explicitly instantiating it and asking for
+      the appropriate category and System.Type, or using one of the LabUtils
+      methods such as GetElementsOfType or (most efficiently) GetFamilyInstances.
+    </para>
+
+    <para>
+      Go through the returned elements and move each door up using
+      the Document.Move method. Increasing the door width can be achieved
+      by changing the value of the built-in parameter WINDOW_WIDTH. Note
+      that this parameter is on the door symbol, i.,e a type parameter.
+      What happens if there are many doors in the model?
+      In what way does this behaviour depend on the regeneration option?
+    </para>
+
+    <para>
+      Since this command modifies the database, we need to return a
+      Succeeded result code or the changes will be discarded.
+    </para>
+
+    <code lang="cs" source="../cs/Labs2.cs" region="2.4"/>
+    <code lang="vb" source="../vb/Labs2.vb" region="2.4"/>
+
+    <para>
+      Before running the command, please ensure that there is at least
+      one door in the model.
+    </para>
+  </lab>
+
+  <lab name="2-5">
+    <para>This makes use of the following new functionality:</para>
+
+    <list type="number">
+      <item>
+        <description>Pre-selection and interactive prompted selection process.</description>
+      </item>
+      <item>
+        <description>Read access to wall parameters, and modification of wall location.</description>
+      </item>
+      <item>
+        <description>Making use of LINQ in a filtered element query.</description>
+      </item>
+    </list>
+
+    <para>
+      To run this command, select a wall.
+      It must be constrained to a level at the top, e.g. using Element Properties...
+      &gt; Constraints &gt; Top Constraint, otherwise an error message is displayed.
+      Load the column family named "M_Wood Timber Column" and the type named
+      "191 x 292mm" prior to running the command, or else use the
+      error message displayed to explain about the missing family,
+      or modify the names to refer to some family
+      type that is loaded. The selected wall is used to define three columns
+      at its end and mid points, then the wall is moved out of the way to
+      clearly display the columns.
+    </para>
+  </lab>
+
+  <lab name="3-1">
+    <para>
+      In this section, we list all loaded families and family instances in the current document.
+      Each family defines a set of types, also called symbols.
+      The Revit API uses the ElementType to represent these types in a project file.
+      Prior to the Revit 2011 API, the ElementType class was called Symbol.
+    </para>
+    <para>
+      To list them, we retrieve all the family instances in the document.
+      They represent the standard families loaded and available in the current model.
+      Let's first see how we can get the family objects and try to determine their category.
+      We have added a new module named Labs3 to the project and a standard command class
+      implementation Lab3_1_StandardFamiliesAndTypes to it in which we implement this functionalty.
+    </para>
+    <para>
+      Instantiate a filtered element collector for this document and retrieve all Family objects.
+      Iterate over the result and list their Name, Category and FamilyCategory properties:
+    </para>
+
+    <code lang="cs" source="../cs/Labs3.cs" region="3.1.a"/>
+    <code lang="vb" source="../vb/Labs3.vb" region="3.1.a"/>
+
+    <para>
+      Compile and run the command.
+      As we can see from the message box, all the categories are listed as "?",
+      showing that this property is not implemented for family class.
+    </para>
+
+    <para>
+      Because the Category property is not implemented for family
+      objects, and it is often useful to determine a family instance's category,
+      the Revit API has defined an additional property FamilyCategory
+      to query it. Unfortunately, the value of this property is defined in the
+      content, and some legacy content does not specify a value for it,
+      so even this property does not always reliably return the value you
+      might expect.
+    </para>
+
+    <para>
+      In order to reliably determine a family's category, we can retrieve the
+      contained symbols or types and determine their category.
+      The following code demonstrates this and also reports
+      all types available in each family, displaying one message box per family.
+    </para>
+
+    <code lang="cs" source="../cs/Labs3.cs" region="3.1.b"/>
+    <code lang="vb" source="../vb/Labs3.vb" region="3.1.b"/>
+
+    <para>
+      Now a valid category name is reported for all families.
+      The looping continues displaying all types contained in each family
+      in one message box each as long as you click 'OK'.
+      Click 'Cancel' to terminate.
+    </para>
+  </lab>
+
+  <lab name="3-2">
+    <para>
+      This lab shows how to load a new entire family or
+      a single family instance into the current document.
+      The document object provides straightforward methods to load either a whole RFA file
+      or just a specific symbol from it.
+      The file and symbol name to load are defined by the LabConstants class.
+      You may need to change the paths and family names to make sure the
+      RFA files and the corresponding TXT catalog files exist on your machine.
+    </para>
+
+    <para>Loading an entire family:</para>
+
+    <code lang="cs" source="../cs/Labs3.cs" region="3.2.a"/>
+    <code lang="vb" source="../vb/Labs3.vb" region="3.2.a"/>
+
+    <para>Loading an individual type:</para>
+    
+    <code lang="cs" source="../cs/Labs3.cs" region="3.2.b"/>
+    <code lang="vb" source="../vb/Labs3.vb" region="3.2.b"/>
+
+  </lab>
+
+  <lab name="3-3">
+    <para>
+      This lab shows how to determine the family and type of a family instance element.
+      We look at two simple scenarios.
+      In Lab 3-1, we listed all symbols by looping over the contents of the symbols
+      property for each family found in the model.
+      Here, we first list all loaded standard family symbols belonging to a category,
+      such as 'Windows'.
+      For this we can filter for all elements which match the 'Windows'
+      category AND the 'FamilySymbol' type. Once we have retrieved the loaded family symbols,
+      we can directly access their Family and Name properties to display them.
+    </para>
+
+    <code lang="cs" source="../cs/Labs3.cs" region="3.3"/>
+    <code lang="vb" source="../vb/Labs3.vb" region="3.3"/>
+
+    <para>
+      Build, load and run the command and examine the output
+      in a model with a few windows instances.
+      Notice the intriguing fact that some of the family symbols are
+      listed multiple times if used for any instances.
+    </para>
+
+    <para>Why do two different family symbols have the same name?</para>
+
+    <para>
+      In Revit, a symbol represents geometry, and we have the concept
+      of master and slave family symbols.
+    </para>
+
+    <para>
+      Consider two window instances of the same type, but inserted into walls of different types.
+      Now, these two window instances refer to the same family symbol and count as being of the
+      same type, but it is clear that they cannot possibly use the same symbol geometry,
+      since they have different thickness. Hence master and slave symbols are used.
+    </para>
+
+    <para>
+      For instance, if there is no door instance in project, there will be only
+      one master symbol for 36"x84" doors.
+      Now, if the user draws a wall and places a door into it, Revit will create a
+      slave symbol for 36"x84".
+      If she then draws a different type of wall and places a new door of the same
+      type in this new wall, Revit will create another slave symbol for 36"x84".
+      Then there will be one master symbol and two slave symbols in the project.
+    </para>
+
+    <para>There is currently no API to query the symbol whether it is master or slave.</para>
+
+    <para>
+      Both of the symbols have the same parent family class instance and either are
+      usable for editing existing or creating new instances,
+      so there is no issue with this.
+    </para>
+  </lab>
+
+  <lab name="3-4">
+    <para>
+      In this section, we change the type of a standard family instance element.
+      We make use of a windows form that displays all available families and types
+      for the category of the single selected instance. Since the lab involves some
+      user interface elements, it may take too long for a hands-on lab. If so,
+      compile and debug the solved lab and discuss the code and its comments
+      with the instructor and your peers. If you are confident with windows forms
+      development, you may try to design similar code in your own project as well.
+      The relevant code in the command does three things:
+    </para>
+
+    <list type="bullet">
+      <item>
+        <description>Ensure a single instance element is selected and determine its category.</description>
+      </item>
+      <item>
+        <description>Collect all types applicable to this category and sort them into a dictionary mapping the family name to a list of its types.</description>
+      </item>
+      <item>
+        <description>Display the form, allow the user to select a family and a type, and assign this type to the instance.</description>
+      </item>
+    </list>
+
+    <para>
+      Before proceeding with the selected instance change, we need to ensure
+      that only a single element is selected. We also need to
+      ensure that the element is of FamilyInstance type.
+    </para>
+
+    <para>
+      To create the dictionary of relevant families with a list of all the
+      symbols of each, we can use the new filtering mechanism to create a type filter
+      (of Family type). With this set of family elements, we will match the category
+      of the family (or the symbol, as the case might be) with that of
+      the selected family instance element. It is a good practice to check for
+      category match against category id or built-in category instead of category name.
+    </para>
+
+    <para>Displaying the form and assigning the selected type is short and sweet.</para>
+
+  </lab>
+
+  <lab name="3-5">
+    <para>
+      In this section, we list system types and change the type of a system family instance element.
+      All the previous labs in this section dealt with the <em>standard</em> families and instances.
+      In this lab, we show more or less the same issues for <em>system</em> families, which are
+      often host objects, such as walls and floors. Wall is the most comprehensively exposed
+      host object so far in the Revit API. Specific and dedicated classes, methods and
+      properties are available which makes them somewhat simpler to use than standard
+      family instances.
+    </para>
+
+    <para>
+      Add a new command class to the Lab3 module, e.g. Lab3_5_WallAndFloorTypes.
+      First we will enumerate all available wall types.
+      This is simple thanks to the dedicated property on the document object.
+      We will also store the last one in order to change the
+      selected wall's type later without any complex user interface:
+    </para>
+
+    <para>
+      Implement the same functionality for floor types.
+      Since Revit 2008, the document class has a FloorTypes property
+      and we can use this to retrieve the collection of all the floor types.
+      However from 9.0 version, the "Foundation Slab" system family
+      from the "Structural Foundations" category also contain FloorType class instances.
+    </para>
+
+    <para>
+      In the C# sample, we loop through all the FloorTypes listed in the document and
+      then check if the category of the floor type is same as built-in category of Floor.
+      This is done by comparing the category id of the floor type element with that of
+      the built-in Floors category. Please note that from Revit 2009 onwards,
+      category ids need to be used to compare categories, instead of comparing categories
+      with each other directly.
+    </para>
+
+    <para>
+      In the VB.Net sample, the approach is more performance centric,
+      where we use a compound filter called NewLogicAndFilter
+      and use that to filter elements of FloorType AND
+      built-in category Floors to avoid structural foundation floor slabs.
+    </para>
+
+    <para>
+      Modifying the wall and floor type of an instance are simple nowaday,
+      since the WallType and FloorType properties are availablke, respectively.
+    </para>
+  </lab>
+
+  <lab name="4-1">
+    <para>This lab explores the parameters attached to every Revit element.</para>
+
+    <para>
+      Add a new module <code>Labs4</code> to the project and the first command class
+      <code>Lab4_1_ParametersForSelectedObjects</code> for this lab.
+      Since we will be exporting parameter values to Excel later on in this lab,
+      the C# code includes a statement to use that namespace as well.
+      For the moment we just loop through all elements in the current selection set,
+      iterate over their parameter collection, and display the names, types and values
+      of each paramter:
+    </para>
+
+    <para>
+      Compile, load and run the command.
+      Look at the elements and their properties in the debugger,
+      especially the <code>Parameters</code> property.
+    </para>
+
+    <para>
+      Add code within the loop to report all
+      UI-visible parameters for each element.
+    </para>
+
+    <code lang="cs" source="../cs/Labs4.cs" region="4.1.a"/>
+    <code lang="vb" source="../vb/Labs4.vb" region="4.1.a"/>
+
+    <para>
+      At this point you can compile and link the project again
+      and see the list of element properties reported for selected elements.
+    </para>
+
+    <para>
+      There are several different methods to access a <em>specific</em> parameter:
+      by localised name, by built-in parameter enum, by definition or by GUID.
+    </para>
+
+    <code lang="cs" source="../cs/Labs4.cs" region="4.1.b"/>
+    <code lang="vb" source="../vb/Labs4.vb" region="4.1.b"/>
+
+    <para>
+      Compile, load and launch the command, selecting various elements first.
+      Note that built-in parameters are available for some, but not all categories.
+      For instance, try Walls, Columns and Furniture.
+      The <code>BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM</code> and 'Base Offset'
+      parameters used in the sample are available on column elements.
+    </para>
+
+    <para>
+      Note that more parameters may be available on any given element than those
+      reported by the element's <code>Parameters</code> property ... use the
+      <code>BuiltInParamsChecker</code> to discover these as well.
+    </para>
+  </lab>
+
+  <lab name="4-2">
+    <para>
+      This lab shws how to export all parameters of all elements in the Revit model
+      to Excel, sorted by category into different sheets.
+      We create a separate sheet per each category.
+      The first row of the sheet is a header listing the parameter
+      names for the given category.
+      It is followed by a row of values for each element.
+      Note that we need to reference the Excel COM library.
+      There is no native .NET API available for the Microsoft Office products,
+      so we use COM via COM callable wrappers, also known as COM-Interop in .NET.
+    </para>
+
+    <para>
+      We implement a new command <code>Lab4_2_ExportParametersToExcel</code>.
+      In a first step, we iterate over all elements and sort them into
+      separate element sets, one for each category.
+    </para>
+
+    <para>
+      At this point you can already compile and link the project,
+      load and debug the command
+      to analyse the categories and elements collected.
+    </para>
+
+    <para>
+      Launch Excel via COM interop and remove the automatically created worksheets,
+      as far as possible ... unfortunately, at least one remains, so we have to adjust
+      the code populating them to account for the one left.
+    </para>
+
+    <para>
+      Loop through the element sets for each category.
+      For each category determine all occurring parameters and use these to create the header.
+      Then loop through the elements and export their values one by one.
+    </para>
+  </lab>
+
+  <lab name="4-3-1">
+  </lab>
+
+  <lab name="4-3-2">
+  </lab>
+
+  <lab name="4-3-3">
+  </lab>
+
+  <lab name="4-4-1">
+  </lab>
+
+  <lab name="4-4-2">
+  </lab>
+
+  <!--
+  <lab name="5-1">
+  </lab>
+
+  <lab name="5-2">
+  </lab>
+
+  <lab name="5-3">
+  </lab>
+
+  <lab name="6-1">
+  </lab>
+
+  <lab name="6-2">
+  </lab>
+
+  <lab name="6-3">
+  </lab>
+
+  <lab name="6-4">
+  </lab>
+
+  <lab name="6-5">
+  </lab>
+
+  <lab name="7-1">
+  </lab>
+
+  <lab name="7-2">
+  </lab>
+
+  <lab name="7-3">
+  </lab>
+  -->
+
+</labs>
+

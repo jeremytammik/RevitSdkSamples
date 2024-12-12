@@ -1,0 +1,40 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <RootNamespace>Revit.SDK.Samples.NewHostedSweep.CS</RootNamespace>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Images\CBChecked.bmp" />
+    <Content Include="Images\CBIndeterminate.bmp" />
+    <Content Include="Images\CBUnchecked.bmp" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HostedSweepModifyForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HostedSweepModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EdgeFetchForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EdgeFetchForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+</Project>

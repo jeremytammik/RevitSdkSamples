@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ArchSample.dll</Assembly>
+    <ClientId>ab92bd24-7a12-4ace-9c36-50f4c8fb518b</ClientId>
+    <FullClassName>Revit.SDK.Samples.ArchSample.VB.NET.Command</FullClassName>
+    <Text>Arch Sample - Export to Excel</Text>
+    <Description>Export data to Excel, sorted by categories</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

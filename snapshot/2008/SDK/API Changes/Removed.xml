@@ -1,0 +1,487 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='xsl/frame.xsl'?>
+<APIDifferent>
+  <AddClass>
+    <Class Name="PathReinforcementCurve">
+      <FullName>Autodesk.Revit.Elements.PathReinforcementCurve</FullName>
+      <Members>
+        <Properties>
+          <Property Name="Curve">
+            <Declare>Autodesk.Revit.Geometry.Curve Curve</Declare>
+          </Property>
+          <Property Name="BoundingBox">
+            <Declare>Autodesk.Revit.Geometry.BoundingBoxXYZ BoundingBox [Autodesk.Revit.Elements.View]</Declare>
+          </Property>
+          <Property Name="ObjectType">
+            <Declare>Autodesk.Revit.Symbol ObjectType</Declare>
+          </Property>
+          <Property Name="Group">
+            <Declare>Autodesk.Revit.Elements.Group Group</Declare>
+          </Property>
+          <Property Name="Pinned">
+            <Declare>Boolean Pinned</Declare>
+          </Property>
+          <Property Name="Geometry">
+            <Declare>Autodesk.Revit.Geometry.Element Geometry [Autodesk.Revit.Geometry.Options]</Declare>
+          </Property>
+          <Property Name="PhaseDemolished">
+            <Declare>Autodesk.Revit.Elements.Phase PhaseDemolished</Declare>
+          </Property>
+          <Property Name="PhaseCreated">
+            <Declare>Autodesk.Revit.Elements.Phase PhaseCreated</Declare>
+          </Property>
+          <Property Name="DesignOption">
+            <Declare>Autodesk.Revit.Elements.DesignOption DesignOption</Declare>
+          </Property>
+          <Property Name="Level">
+            <Declare>Autodesk.Revit.Elements.Level Level</Declare>
+          </Property>
+          <Property Name="Document">
+            <Declare>Autodesk.Revit.Document Document</Declare>
+          </Property>
+          <Property Name="Location">
+            <Declare>Autodesk.Revit.Location Location</Declare>
+          </Property>
+          <Property Name="Parameters">
+            <Declare>Autodesk.Revit.ParameterSet Parameters</Declare>
+          </Property>
+          <Property Name="Parameter">
+            <Declare>Autodesk.Revit.Parameter Parameter [Autodesk.Revit.Parameters.BuiltInParameter]</Declare>
+          </Property>
+          <Property Name="Parameter">
+            <Declare>Autodesk.Revit.Parameter Parameter [Autodesk.Revit.Parameters.Definition]</Declare>
+          </Property>
+          <Property Name="Parameter">
+            <Declare>Autodesk.Revit.Parameter Parameter [System.Guid]</Declare>
+          </Property>
+          <Property Name="Category">
+            <Declare>Autodesk.Revit.Category Category</Declare>
+          </Property>
+          <Property Name="Name">
+            <Declare>System.String Name</Declare>
+          </Property>
+          <Property Name="Id">
+            <Declare>Autodesk.Revit.ElementId Id</Declare>
+          </Property>
+          <Property Name="IsReadOnly">
+            <Declare>Boolean IsReadOnly</Declare>
+          </Property>
+        </Properties>
+        <Methods>
+          <Method Name="get_Curve">
+            <Declare>Autodesk.Revit.Geometry.Curve get_Curve()</Declare>
+          </Method>
+          <Method Name="get_Id">
+            <Declare>Autodesk.Revit.ElementId get_Id()</Declare>
+          </Method>
+          <Method Name="get_Name">
+            <Declare>System.String get_Name()</Declare>
+          </Method>
+          <Method Name="set_Name">
+            <Declare>Void set_Name(System.String)</Declare>
+          </Method>
+          <Method Name="get_Category">
+            <Declare>Autodesk.Revit.Category get_Category()</Declare>
+          </Method>
+          <Method Name="get_Parameter">
+            <Declare>Autodesk.Revit.Parameter get_Parameter(Autodesk.Revit.Parameters.BuiltInParameter)</Declare>
+          </Method>
+          <Method Name="get_Parameter">
+            <Declare>Autodesk.Revit.Parameter get_Parameter(Autodesk.Revit.Parameters.Definition)</Declare>
+          </Method>
+          <Method Name="get_Parameter">
+            <Declare>Autodesk.Revit.Parameter get_Parameter(System.Guid)</Declare>
+          </Method>
+          <Method Name="get_Parameters">
+            <Declare>Autodesk.Revit.ParameterSet get_Parameters()</Declare>
+          </Method>
+          <Method Name="get_Location">
+            <Declare>Autodesk.Revit.Location get_Location()</Declare>
+          </Method>
+          <Method Name="get_Document">
+            <Declare>Autodesk.Revit.Document get_Document()</Declare>
+          </Method>
+          <Method Name="get_Level">
+            <Declare>Autodesk.Revit.Elements.Level get_Level()</Declare>
+          </Method>
+          <Method Name="get_DesignOption">
+            <Declare>Autodesk.Revit.Elements.DesignOption get_DesignOption()</Declare>
+          </Method>
+          <Method Name="get_PhaseCreated">
+            <Declare>Autodesk.Revit.Elements.Phase get_PhaseCreated()</Declare>
+          </Method>
+          <Method Name="get_PhaseDemolished">
+            <Declare>Autodesk.Revit.Elements.Phase get_PhaseDemolished()</Declare>
+          </Method>
+          <Method Name="get_Geometry">
+            <Declare>Autodesk.Revit.Geometry.Element get_Geometry(Autodesk.Revit.Geometry.Options)</Declare>
+          </Method>
+          <Method Name="get_Pinned">
+            <Declare>Boolean get_Pinned()</Declare>
+          </Method>
+          <Method Name="get_Group">
+            <Declare>Autodesk.Revit.Elements.Group get_Group()</Declare>
+          </Method>
+          <Method Name="get_ObjectType">
+            <Declare>Autodesk.Revit.Symbol get_ObjectType()</Declare>
+          </Method>
+          <Method Name="get_BoundingBox">
+            <Declare>Autodesk.Revit.Geometry.BoundingBoxXYZ get_BoundingBox(Autodesk.Revit.Elements.View)</Declare>
+          </Method>
+          <Method Name="get_IsReadOnly">
+            <Declare>Boolean get_IsReadOnly()</Declare>
+          </Method>
+          <Method Name="Dispose">
+            <Declare>Void Dispose()</Declare>
+          </Method>
+          <Method Name="GetType">
+            <Declare>System.Type GetType()</Declare>
+          </Method>
+          <Method Name="ToString">
+            <Declare>System.String ToString()</Declare>
+          </Method>
+          <Method Name="Equals">
+            <Declare>Boolean Equals(System.Object)</Declare>
+          </Method>
+          <Method Name="GetHashCode">
+            <Declare>Int32 GetHashCode()</Declare>
+          </Method>
+        </Methods>
+        <Events />
+      </Members>
+    </Class>
+    <Enum Name="DisplayUnitType">
+      <FullName>Autodesk.Revit.Parameters.DisplayUnitType</FullName>
+      <Members>
+        <EnumName>Meters</EnumName>
+        <EnumName>Centimeters</EnumName>
+        <EnumName>Millimeters</EnumName>
+        <EnumName>DecimalFeet</EnumName>
+        <EnumName>FeetFractionalInches</EnumName>
+        <EnumName>FractionalInches</EnumName>
+        <EnumName>DecimalInches</EnumName>
+        <EnumName>MetersCentimeters</EnumName>
+        <EnumName>SquareFeet</EnumName>
+        <EnumName>SquareInches</EnumName>
+        <EnumName>SquareMeters</EnumName>
+        <EnumName>SquareCentimeters</EnumName>
+        <EnumName>SquareMillimeters</EnumName>
+        <EnumName>Acres</EnumName>
+        <EnumName>Hectares</EnumName>
+        <EnumName>CubicYards</EnumName>
+        <EnumName>CubicFeet</EnumName>
+        <EnumName>CubicInches</EnumName>
+        <EnumName>CubicMeters</EnumName>
+        <EnumName>CubicCentimeters</EnumName>
+        <EnumName>CubicMillimeters</EnumName>
+        <EnumName>Liters</EnumName>
+        <EnumName>GallonsUS</EnumName>
+        <EnumName>DecimalDegrees</EnumName>
+        <EnumName>DegreeAndMinutes</EnumName>
+        <EnumName>General</EnumName>
+        <EnumName>Fixed</EnumName>
+        <EnumName>Percentage</EnumName>
+        <EnumName>KilogramsPerCubicMeter</EnumName>
+        <EnumName>PoundsMassPerCubicFoot</EnumName>
+        <EnumName>PoundsMassPerCubicInch</EnumName>
+        <EnumName>BritishThermalUnits</EnumName>
+        <EnumName>Calories</EnumName>
+        <EnumName>Kilocalories</EnumName>
+        <EnumName>Joules</EnumName>
+        <EnumName>KilowattHours</EnumName>
+        <EnumName>Therms</EnumName>
+        <EnumName>InchesOfWaterPer100FT</EnumName>
+        <EnumName>PascalsPerMeter</EnumName>
+        <EnumName>Watts</EnumName>
+        <EnumName>Kilowatts</EnumName>
+        <EnumName>BritishThermalUnitsPerSecond</EnumName>
+        <EnumName>BritishThermalUnitsPerHour</EnumName>
+        <EnumName>CaloriesPerSecond</EnumName>
+        <EnumName>KilocaloriesPerSecond</EnumName>
+        <EnumName>WattsPerSquareFoot</EnumName>
+        <EnumName>WattsPerSquareMeter</EnumName>
+        <EnumName>InchesOfWater</EnumName>
+        <EnumName>Pascals</EnumName>
+        <EnumName>Kilopascals</EnumName>
+        <EnumName>MegaPascals</EnumName>
+        <EnumName>PoundsForcePerSquareInch</EnumName>
+        <EnumName>InchesOfMercury</EnumName>
+        <EnumName>MillimetersOfMercury</EnumName>
+        <EnumName>Atmosphere</EnumName>
+        <EnumName>Bars</EnumName>
+        <EnumName>Fahrenheit</EnumName>
+        <EnumName>Celsius</EnumName>
+        <EnumName>Kelvin</EnumName>
+        <EnumName>Rankine</EnumName>
+        <EnumName>FeetPerMinute</EnumName>
+        <EnumName>MetersPerSecond</EnumName>
+        <EnumName>CentimetersPerMinute</EnumName>
+        <EnumName>CubicFeetPerMinute</EnumName>
+        <EnumName>LitersPerSecond</EnumName>
+        <EnumName>CubicMetersPerSecond</EnumName>
+        <EnumName>CubicMetersPerHour</EnumName>
+        <EnumName>GallonsUSPerMinute</EnumName>
+        <EnumName>GallonsUSPerHour</EnumName>
+        <EnumName>Amperes</EnumName>
+        <EnumName>Kiloamperes</EnumName>
+        <EnumName>Milliamperes</EnumName>
+        <EnumName>Volts</EnumName>
+        <EnumName>Kilovolts</EnumName>
+        <EnumName>Millivolts</EnumName>
+        <EnumName>Herts</EnumName>
+        <EnumName>CyclesPerSecond</EnumName>
+        <EnumName>Lux</EnumName>
+        <EnumName>Footcandles</EnumName>
+        <EnumName>Footlamberts</EnumName>
+        <EnumName>CandelasPerSquareMeter</EnumName>
+        <EnumName>Candelas</EnumName>
+        <EnumName>Candlepower</EnumName>
+        <EnumName>Lumens</EnumName>
+        <EnumName>VoltAmperes</EnumName>
+        <EnumName>KilovoltAmperes</EnumName>
+        <EnumName>HorsePower</EnumName>
+        <EnumName>Newtons</EnumName>
+        <EnumName>Decanewtons</EnumName>
+        <EnumName>Kilonewtons</EnumName>
+        <EnumName>Meganewtons</EnumName>
+        <EnumName>Kips</EnumName>
+        <EnumName>KilogramsForce</EnumName>
+        <EnumName>TonnesForce</EnumName>
+        <EnumName>PoundsForce</EnumName>
+        <EnumName>NewtonsPerMeter</EnumName>
+        <EnumName>DecanewtonsPerMeter</EnumName>
+        <EnumName>KilonewtonsPerMeter</EnumName>
+        <EnumName>MeganewtonsPerMeter</EnumName>
+        <EnumName>KipsPerFoot</EnumName>
+        <EnumName>KilogramsForcePerMeter</EnumName>
+        <EnumName>TonnesForcePerMeter</EnumName>
+        <EnumName>PoundsForcePerFoot</EnumName>
+        <EnumName>NewtonsPerSquareMeter</EnumName>
+        <EnumName>DecanewtonsPerSquareMeter</EnumName>
+        <EnumName>KilonewtonsPerSquareMeter</EnumName>
+        <EnumName>MeganewtonsPerSquareMeter</EnumName>
+        <EnumName>KipsPerSquareFoot</EnumName>
+        <EnumName>KilogramsForcePerSquareMeter</EnumName>
+        <EnumName>TonnesForcePerSquareMeter</EnumName>
+        <EnumName>PoundsForcePerSquareFoot</EnumName>
+        <EnumName>NewtonMeters</EnumName>
+        <EnumName>DecanewtonMeters</EnumName>
+        <EnumName>KilonewtonMeters</EnumName>
+        <EnumName>MeganewtonMeters</EnumName>
+        <EnumName>KipFeet</EnumName>
+        <EnumName>KilogramForceMeters</EnumName>
+        <EnumName>TonneForceMeters</EnumName>
+        <EnumName>PoundForceFeet</EnumName>
+        <EnumName>MetersPerKilonewton</EnumName>
+        <EnumName>FeetPerKip</EnumName>
+        <EnumName>SquareMetersPerKilonewton</EnumName>
+        <EnumName>SquareFeetPerKip</EnumName>
+        <EnumName>CubicMetersPerKilonewton</EnumName>
+        <EnumName>CubicFeetPerKip</EnumName>
+        <EnumName>InvKilonewtons</EnumName>
+        <EnumName>InvKips</EnumName>
+        <EnumName>FeetOfWaterPer100FT</EnumName>
+        <EnumName>FeetOfWater</EnumName>
+        <EnumName>PascalSeconds</EnumName>
+        <EnumName>PoundsMassPerFootSecond</EnumName>
+        <EnumName>Centipoises</EnumName>
+        <EnumName>FeetPerSecond</EnumName>
+        <EnumName>KipsPerSquareInch</EnumName>
+        <EnumName>KilonewtonsPerCubicMeter</EnumName>
+        <EnumName>PoundsForcePerCubicFoot</EnumName>
+        <EnumName>KipsPerCubicInch</EnumName>
+        <EnumName>InvFahrenheit</EnumName>
+        <EnumName>InvCelsius</EnumName>
+        <EnumName>NewtonMetersPerMeter</EnumName>
+        <EnumName>DecanewtonMetersPerMeter</EnumName>
+        <EnumName>KilonewtonMetersPerMeter</EnumName>
+        <EnumName>MeganewtonMetersPerMeter</EnumName>
+        <EnumName>KipFeetPerFoot</EnumName>
+        <EnumName>KilogramForceMetersPerMeter</EnumName>
+        <EnumName>TonneForceMetersPerMeter</EnumName>
+        <EnumName>PoundForceFeetPerFoot</EnumName>
+        <EnumName>PoundsMassPerFootHour</EnumName>
+        <EnumName>Invalid</EnumName>
+      </Members>
+    </Enum>
+  </AddClass>
+  <DifferentMember>
+    <NameSpace Name="Autodesk.Revit">
+      <Enum Name="Autodesk.Revit.BuiltInCategory">
+        <Members>
+          <EnumName>OST_BendType</EnumName>
+        </Members>
+      </Enum>
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Geometry">
+      <Class Name="Autodesk.Revit.Geometry.Curve">
+        <Members>
+          <Properties>
+            <Property Name="StartPointReference">
+              <Declare>Autodesk.Revit.Geometry.Reference StartPointReference</Declare>
+            </Property>
+            <Property Name="StartPoint">
+              <Declare>Autodesk.Revit.Geometry.XYZ StartPoint</Declare>
+            </Property>
+          </Properties>
+          <Methods>
+            <Method Name="get_StartPoint">
+              <Declare>Autodesk.Revit.Geometry.XYZ get_StartPoint()</Declare>
+            </Method>
+            <Method Name="get_StartPointReference">
+              <Declare>Autodesk.Revit.Geometry.Reference get_StartPointReference()</Declare>
+            </Method>
+          </Methods>
+          <Events />
+        </Members>
+      </Class>
+      <Class Name="Autodesk.Revit.Geometry.Line">
+        <Members>
+          <Properties>
+            <Property Name="StartPointReference">
+              <Declare>Autodesk.Revit.Geometry.Reference StartPointReference</Declare>
+            </Property>
+            <Property Name="StartPoint">
+              <Declare>Autodesk.Revit.Geometry.XYZ StartPoint</Declare>
+            </Property>
+          </Properties>
+          <Methods>
+            <Method Name="SetBound">
+              <Declare>Void SetBound(Autodesk.Revit.Geometry.XYZ ByRef, Autodesk.Revit.Geometry.XYZ ByRef)</Declare>
+            </Method>
+            <Method Name="SetUnbound">
+              <Declare>Void SetUnbound(Autodesk.Revit.Geometry.XYZ ByRef, Autodesk.Revit.Geometry.XYZ ByRef)</Declare>
+            </Method>
+            <Method Name="get_StartPoint">
+              <Declare>Autodesk.Revit.Geometry.XYZ get_StartPoint()</Declare>
+            </Method>
+            <Method Name="get_StartPointReference">
+              <Declare>Autodesk.Revit.Geometry.Reference get_StartPointReference()</Declare>
+            </Method>
+          </Methods>
+          <Events />
+        </Members>
+      </Class>
+      <Class Name="Autodesk.Revit.Geometry.Arc">
+        <Members>
+          <Properties>
+            <Property Name="StartPointReference">
+              <Declare>Autodesk.Revit.Geometry.Reference StartPointReference</Declare>
+            </Property>
+            <Property Name="StartPoint">
+              <Declare>Autodesk.Revit.Geometry.XYZ StartPoint</Declare>
+            </Property>
+          </Properties>
+          <Methods>
+            <Method Name="get_StartPoint">
+              <Declare>Autodesk.Revit.Geometry.XYZ get_StartPoint()</Declare>
+            </Method>
+            <Method Name="get_StartPointReference">
+              <Declare>Autodesk.Revit.Geometry.Reference get_StartPointReference()</Declare>
+            </Method>
+          </Methods>
+          <Events />
+        </Members>
+      </Class>
+      <Class Name="Autodesk.Revit.Geometry.Edge">
+        <Members>
+          <Properties>
+            <Property Name="StartPointReference">
+              <Declare>Autodesk.Revit.Geometry.Reference StartPointReference</Declare>
+            </Property>
+          </Properties>
+          <Methods>
+            <Method Name="get_StartPointReference">
+              <Declare>Autodesk.Revit.Geometry.Reference get_StartPointReference()</Declare>
+            </Method>
+          </Methods>
+          <Events />
+        </Members>
+      </Class>
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Elements">
+      <Class Name="Autodesk.Revit.Elements.BoundaryConditions">
+        <Members>
+          <Properties>
+            <Property Name="AssociatedLoadId">
+              <Declare>Autodesk.Revit.ElementId AssociatedLoadId</Declare>
+            </Property>
+            <Property Name="HostElementId">
+              <Declare>Autodesk.Revit.ElementId HostElementId</Declare>
+            </Property>
+          </Properties>
+          <Methods>
+            <Method Name="get_HostElementId">
+              <Declare>Autodesk.Revit.ElementId get_HostElementId()</Declare>
+            </Method>
+            <Method Name="get_AssociatedLoadId">
+              <Declare>Autodesk.Revit.ElementId get_AssociatedLoadId()</Declare>
+            </Method>
+          </Methods>
+          <Events />
+        </Members>
+      </Class>
+      <Class Name="Autodesk.Revit.Elements.ReferencePlane">
+        <Members>
+          <Properties>
+            <Property Name="View">
+              <Declare>Autodesk.Revit.Elements.View View</Declare>
+            </Property>
+          </Properties>
+          <Methods>
+            <Method Name="get_View">
+              <Declare>Autodesk.Revit.Elements.View get_View()</Declare>
+            </Method>
+          </Methods>
+          <Events />
+        </Members>
+      </Class>
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Parameters">
+      <Enum Name="Autodesk.Revit.Parameters.BuiltInParameter">
+        <Members>
+          <EnumName>CONNECTOR_IS_EDGELOOP_CENTERED</EnumName>
+          <EnumName>ROOM_RETURN_EQUAL_SUPPLY_AIRFLOW_PARAM</EnumName>
+          <EnumName>ROOM_TEMPERATURE_PARAM</EnumName>
+          <EnumName>ROOM_LIGHTING_POWER_PER_AREA_PARAM</EnumName>
+          <EnumName>ROOM_EQUIPMENT_POWER_PER_AREA_PARAM</EnumName>
+          <EnumName>ROOM_USE_DATA_IN_ENERGY_ANALYSIS_PARAM</EnumName>
+          <EnumName>ROOM_BASE_SUPPLY_AIRFLOW_ON_PARAM</EnumName>
+          <EnumName>FLOOR_ATTR_WIDTH_PARAM</EnumName>
+          <EnumName>ROOF_ATTR_WIDTH_PARAM</EnumName>
+          <EnumName>STRUCTURAL_GEOMETRY_OFFSET_PARAM</EnumName>
+          <EnumName>STRUCTURAL_STICK_SYMBOL_ON_TOP</EnumName>
+        </Members>
+      </Enum>
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Enums" />
+    <NameSpace Name="Autodesk.Revit.Events">
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Collections">
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Options">
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Symbols">
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Structural">
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Site">
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Structural.Enums" />
+    <NameSpace Name="Autodesk.Revit.Creation">
+      <Class Name="Autodesk.Revit.Creation.Document">
+        <Members>
+          <Properties />
+          <Methods>
+            <Method Name="NewMaterialSet">
+              <Declare>Autodesk.Revit.MaterialSet NewMaterialSet()</Declare>
+            </Method>
+          </Methods>
+          <Events />
+        </Members>
+      </Class>
+    </NameSpace>
+    <NameSpace Name="Autodesk.Revit.Rooms">
+    </NameSpace>
+  </DifferentMember>
+</APIDifferent>

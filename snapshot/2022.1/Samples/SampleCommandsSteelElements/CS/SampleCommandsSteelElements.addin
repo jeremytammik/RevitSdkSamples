@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>D48CB6FC-E73D-4BD6-AF09-6135E6633A22</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.AddElementsToConnection.CS.Command</FullClassName>
+    <Text>Add elements to connection</Text>
+    <Description>Add elements to existing structural connection</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>121000FA-B6A3-4A96-BB08-477C8CEFC14C</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.AddElementsToCustomConnection.CS.Command</FullClassName>
+    <Text>Add elements to custom connection</Text>
+    <Description>Add elements to existing custom connection</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>A13B3804-8BE8-4F95-91DD-595D4F9EC85A</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.AddRangesToConnectionType.CS.Command</FullClassName>
+    <Text>Add ranges of applicability to a connection type</Text>
+    <Description>Add ranges of applicability to a connection type</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>4F3AF82D-D128-48F7-AEBE-9BFF75CEC61C</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreateAnchorPattern.CS.Command</FullClassName>
+    <Text>Create anchor pattern</Text>
+    <Description>Create anchor pattern</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>29A76DF5-EEF9-44C7-9792-59ED6F640DDB</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreateBoltPattern.CS.Command</FullClassName>
+    <Text>Create bolt pattern</Text>
+    <Description>Create bolt pattern</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>F22CA96D-C942-4DF7-B9DB-E499FCEAF104</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreateContourCut.CS.Command</FullClassName>
+    <Text>Create contour cut</Text>
+    <Description>Create contour cut</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>4E36041A-428D-4DB8-ACF5-6579E48F3252</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreateCopeSkewed.CS.Command</FullClassName>
+    <Text>Create cope skewed</Text>
+    <Description>Create cope skewed</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>C506A1A3-55AB-4A83-A7DE-6558EAF07DF8</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreateCornerCut.CS.Command</FullClassName>
+    <Text>Create corner cut</Text>
+    <Description>Create corner cut</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>97128B57-DFB8-4F78-93DD-B1107BCF3E1E</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreatePlate.CS.Command</FullClassName>
+    <Text>Create plate</Text>
+    <Description>Create plate</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>17346721-9E33-4BAC-9AFF-6C3E0F76FDC9</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreatePlateHole.CS.Command</FullClassName>
+    <Text>Create plate hole</Text>
+    <Description>Create plate hole</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>1E953BC8-C586-47E5-8F2E-1817227D4790</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreateShearStudPattern.CS.Command</FullClassName>
+    <Text>Create shear stud pattern</Text>
+    <Description>Create shear stud pattern</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>53C37040-6DC6-46DE-8B94-7D73C8518FFE</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreateShortening.CS.Command</FullClassName>
+    <Text>Create shortening</Text>
+    <Description>Create shortening</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>7D3894B0-770A-4553-AF72-AB32091F3BA2</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.CreateWeldPoint.CS.Command</FullClassName>
+    <Text>Create weld point</Text>
+    <Description>Create weld point</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>6F56CBDD-8ACC-4232-ACC7-FF8947623D8F</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.DeleteConnection.CS.Command</FullClassName>
+    <Text>Delete connection</Text>
+    <Description>Delete connection</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>368F13A1-419C-44D6-9220-5EE87DEB2DEB</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.RemoveElementsFromConnection.CS.Command</FullClassName>
+    <Text>Remove elements from structural connection</Text>
+    <Description>Remove elements from structural connection</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>52D7D8F7-2D1D-4F6B-A876-5DA2CBE2FB0F</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.RemoveSubelementsFromCustomConnection.CS.Command</FullClassName>
+    <Text>Remove subelements from custom connection</Text>
+    <Description>Remove subelements from custom connection</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>708B29F3-3D6C-4165-B656-257B4DB0414A</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.UpdateConnectionDetailedParameters.CS.Command</FullClassName>
+    <Text>Print connection detailed parameters</Text>
+    <Description>Print connection detailed parameters</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Assembly>SampleCommandsSteelElements.dll</Assembly>
+    <ClientId>AB463066-608E-488B-B1E6-03204D259D1D</ClientId>
+    <FullClassName>Revit.SDK.Samples.SampleCommandsSteelElements.BackgroundCalculation.CS.Command</FullClassName>
+    <Text>Fabrication transaction and background calculation</Text>
+    <Description>Shows how to handle "Background calculation in progress" exception when trying to start fabrication transaction</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>	
+  </AddIn>  
+</RevitAddIns>

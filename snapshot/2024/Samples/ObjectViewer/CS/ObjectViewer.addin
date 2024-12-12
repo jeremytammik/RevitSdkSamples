@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ObjectViewer.dll</Assembly>
+    <ClientId>d2b483cc-16de-4c6e-9457-8eacd59a8dd3</ClientId>
+    <FullClassName>Revit.SDK.Samples.ObjectViewer.CS.Command</FullClassName>
+    <Text>Object Viewer</Text>
+    <Description>Display the selected element in a preview window and generic properties in a grid.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AnalyticalSupportData_Info.dll</Assembly>
+    <ClientId>4367318e-3965-422c-887f-554694376067</ClientId>
+    <FullClassName>Revit.SDK.Samples.AnalyticalSupportData_Info.CS.Command</FullClassName>
+    <Text>Analytical SupportData Information</Text>
+    <Description>Displays the element's support information</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

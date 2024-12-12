@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteelConnectionsJointExample", "SampleJoint\SteelConnectionsJointExample.csproj", "{0D5537D0-19F6-40A0-B5C6-852210AE6983}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleDesign", "SampleDesign\SampleDesign.csproj", "{9CE75523-141E-4F65-8F96-71E2A9C826E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteelConnectionsDotNetJointExample", "SteelConnectionsNetJoints\SteelConnectionsDotNetJointExample.csproj", "{451F853E-613F-4C62-9B99-3A8BD58B8043}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleClipAngle", "SampleClipAngle\SampleClipAngle.csproj", "{8CFF2BFD-0E4D-4A20-95F4-C1FD4BDF0703}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleClipAngleNative", "SampleClipAngleNative\SampleClipAngleNative.vcxproj", "{42DEBBF6-6FA4-4FEC-97A4-C6A0C994A4FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleLapJoint", "SampleLapJoint\SampleLapJoint.csproj", "{C9172C84-3F14-4B43-8FD8-26BD93E27EFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D5537D0-19F6-40A0-B5C6-852210AE6983}.Debug|x64.ActiveCfg = Debug|x64
+		{0D5537D0-19F6-40A0-B5C6-852210AE6983}.Debug|x64.Build.0 = Debug|x64
+		{0D5537D0-19F6-40A0-B5C6-852210AE6983}.Release|x64.ActiveCfg = Release|x64
+		{0D5537D0-19F6-40A0-B5C6-852210AE6983}.Release|x64.Build.0 = Release|x64
+		{9CE75523-141E-4F65-8F96-71E2A9C826E2}.Debug|x64.ActiveCfg = Debug|x64
+		{9CE75523-141E-4F65-8F96-71E2A9C826E2}.Debug|x64.Build.0 = Debug|x64
+		{9CE75523-141E-4F65-8F96-71E2A9C826E2}.Release|x64.ActiveCfg = Release|x64
+		{9CE75523-141E-4F65-8F96-71E2A9C826E2}.Release|x64.Build.0 = Release|x64
+		{451F853E-613F-4C62-9B99-3A8BD58B8043}.Debug|x64.ActiveCfg = Debug|x64
+		{451F853E-613F-4C62-9B99-3A8BD58B8043}.Debug|x64.Build.0 = Debug|x64
+		{451F853E-613F-4C62-9B99-3A8BD58B8043}.Release|x64.ActiveCfg = Release|x64
+		{451F853E-613F-4C62-9B99-3A8BD58B8043}.Release|x64.Build.0 = Release|x64
+		{8CFF2BFD-0E4D-4A20-95F4-C1FD4BDF0703}.Debug|x64.ActiveCfg = Debug|x64
+		{8CFF2BFD-0E4D-4A20-95F4-C1FD4BDF0703}.Debug|x64.Build.0 = Debug|x64
+		{8CFF2BFD-0E4D-4A20-95F4-C1FD4BDF0703}.Release|x64.ActiveCfg = Release|x64
+		{8CFF2BFD-0E4D-4A20-95F4-C1FD4BDF0703}.Release|x64.Build.0 = Release|x64
+		{42DEBBF6-6FA4-4FEC-97A4-C6A0C994A4FC}.Debug|x64.ActiveCfg = Debug|x64
+		{42DEBBF6-6FA4-4FEC-97A4-C6A0C994A4FC}.Debug|x64.Build.0 = Debug|x64
+		{42DEBBF6-6FA4-4FEC-97A4-C6A0C994A4FC}.Release|x64.ActiveCfg = Release|x64
+		{42DEBBF6-6FA4-4FEC-97A4-C6A0C994A4FC}.Release|x64.Build.0 = Release|x64
+		{C9172C84-3F14-4B43-8FD8-26BD93E27EFC}.Debug|x64.ActiveCfg = Debug|x64
+		{C9172C84-3F14-4B43-8FD8-26BD93E27EFC}.Debug|x64.Build.0 = Debug|x64
+		{C9172C84-3F14-4B43-8FD8-26BD93E27EFC}.Release|x64.ActiveCfg = Release|x64
+		{C9172C84-3F14-4B43-8FD8-26BD93E27EFC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {726E4B0D-553A-449D-8A70-52CEBD052B3D}
+	EndGlobalSection
+EndGlobal

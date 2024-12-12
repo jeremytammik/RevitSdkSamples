@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+   <AddIn Type="Application">
+      <Assembly>DistanceToSurfaces.dll</Assembly>
+      <ClientId>D6FF1547-0B82-44ee-B2E9-7D51C9CA9B8E</ClientId>
+      <FullClassName>Revit.SDK.Samples.AnalysisVisualizationFramework.CS.DistanceToSurfaces</FullClassName>
+	  <Text>DistanceToSurfaces</Text>
+      <Name>Display distance between sphere and surfaces</Name>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+   </AddIn>
+</RevitAddIns>

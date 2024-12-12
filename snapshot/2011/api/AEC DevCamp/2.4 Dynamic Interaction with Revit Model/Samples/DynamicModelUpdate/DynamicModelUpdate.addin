@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+   <AddIn Type="Application">
+      <Assembly>d:\DevCamp_2010\Samples\DynamicModelUpdate\bin\Debug\AssociativeSectionUpdater.dll</Assembly>
+      <ClientId>FBF3F6B2-4C06-42d4-97C1-D1B4EB593EFF</ClientId>
+      <FullClassName>DynamicModelUpdate.AssociativeSectionUpdater</FullClassName>
+      <Name>Associative Section Updater</Name>
+   </AddIn>
+</RevitAddIns>

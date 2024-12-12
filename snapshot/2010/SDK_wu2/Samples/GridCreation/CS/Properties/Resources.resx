@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AjustValues" xml:space="preserve">
+    <value>Please adjust the values and try again!</value>
+  </data>
+  <data name="CoordinateCannotBeNull" xml:space="preserve">
+    <value>Coordinate can not be null!</value>
+  </data>
+  <data name="CoordinateFormatWrong" xml:space="preserve">
+    <value>Coordinate is not in a correct format!</value>
+  </data>
+  <data name="DegreeCannotBeNegative" xml:space="preserve">
+    <value>Degree can not be negative!</value>
+  </data>
+  <data name="DegreeCannotBeNull" xml:space="preserve">
+    <value>Degree can not be null!</value>
+  </data>
+  <data name="DegreeFormatWrong" xml:space="preserve">
+    <value>Degree is not in a correct format!</value>
+  </data>
+  <data name="DegreesAreTooClose" xml:space="preserve">
+    <value>Start degree and end degree can not be so close!</value>
+  </data>
+  <data name="DegreeWithin0To360" xml:space="preserve">
+    <value>Degree should be within the range of 0 - 360!</value>
+  </data>
+  <data name="DistanceCannotBeNegative" xml:space="preserve">
+    <value>Distance can not be negative!</value>
+  </data>
+  <data name="DistanceCannotBeNull" xml:space="preserve">
+    <value>Distance can not be null!</value>
+  </data>
+  <data name="DistanceFormatWrong" xml:space="preserve">
+    <value>Distance is not in a correct format!</value>
+  </data>
+  <data name="DUT_CENTIMETERS" xml:space="preserve">
+    <value>cm</value>
+  </data>
+  <data name="DUT_DECIMAL_FEET" xml:space="preserve">
+    <value>'</value>
+  </data>
+  <data name="DUT_DECIMAL_INCHES" xml:space="preserve">
+    <value>"</value>
+  </data>
+  <data name="DUT_FEET_FRACTIONAL_INCHES" xml:space="preserve">
+    <value>'</value>
+  </data>
+  <data name="DUT_FRACTIONAL_INCHES" xml:space="preserve">
+    <value>"</value>
+  </data>
+  <data name="DUT_METERS" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="DUT_METERS_CENTIMETERS" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="DUT_MILLIMETERS" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="EndPointsTooClose" xml:space="preserve">
+    <value>- Start point and end point of arc grids are too close</value>
+  </data>
+  <data name="FailedToCreateArcGrids" xml:space="preserve">
+    <value>Failed to create one or more arc grids.</value>
+  </data>
+  <data name="FailedToCreateGrids" xml:space="preserve">
+    <value>Failed to create one or more grids. </value>
+  </data>
+  <data name="FailedToCreateRadialGrids" xml:space="preserve">
+    <value>Failed to create one or more radial grids. </value>
+  </data>
+  <data name="FailedToDeletedLinesOrArcs" xml:space="preserve">
+    <value>Failed to delete some of the selected lines or arcs!</value>
+  </data>
+  <data name="FailedToSetLabel" xml:space="preserve">
+    <value>Failed to set label of grid to : </value>
+  </data>
+  <data name="FailureCaptionCreateGrids" xml:space="preserve">
+    <value>Failed to Create Grids</value>
+  </data>
+  <data name="FailureCaptionDeletedLinesOrArcs" xml:space="preserve">
+    <value>Failed to Delete Lines/Arcs</value>
+  </data>
+  <data name="FailureCaptionInvalidValue" xml:space="preserve">
+    <value>Invalid Value</value>
+  </data>
+  <data name="FailureCaptionSetLabel" xml:space="preserve">
+    <value>Failed to Set Label</value>
+  </data>
+  <data name="LabelCannotBeNull" xml:space="preserve">
+    <value>Label can not be null!</value>
+  </data>
+  <data name="LabelExisted" xml:space="preserve">
+    <value>A same label has already existed!</value>
+  </data>
+  <data name="LabelsCannotBeSame" xml:space="preserve">
+    <value>The two labels can't be same!</value>
+  </data>
+  <data name="NumberBetween0And200" xml:space="preserve">
+    <value>Number should be an integer between 0 and 200!</value>
+  </data>
+  <data name="NumberCannotBeNull" xml:space="preserve">
+    <value>Number can not be null!</value>
+  </data>
+  <data name="NumberFormatWrong" xml:space="preserve">
+    <value>Number is not in a correct format!</value>
+  </data>
+  <data name="NumbersCannotBeBothZero" xml:space="preserve">
+    <value>The two numbers can not be both zero!</value>
+  </data>
+  <data name="RadiusCannotBeNegativeOrZero" xml:space="preserve">
+    <value>Radius can not be negative or zero!</value>
+  </data>
+  <data name="RadiusCannotBeNull" xml:space="preserve">
+    <value>Radius can not be null!</value>
+  </data>
+  <data name="RadiusFormatWrong" xml:space="preserve">
+    <value>Radius is not in a correct format!</value>
+  </data>
+  <data name="Reasons" xml:space="preserve">
+    <value> That may be caused by one or more of following reasons:</value>
+  </data>
+  <data name="SpacingCannotBeNegativeOrZero" xml:space="preserve">
+    <value>Spacing can not be negative or zero!</value>
+  </data>
+  <data name="SpacingCannotBeNull" xml:space="preserve">
+    <value>Spacing can not be null!</value>
+  </data>
+  <data name="SpacingFormatWrong" xml:space="preserve">
+    <value>Spacing is not in a correct format!</value>
+  </data>
+  <data name="SpacingsTooSmall" xml:space="preserve">
+    <value>- Spacings between grids are too small</value>
+  </data>
+  <data name="StartDegreeShouldBeLessThanEndDegree" xml:space="preserve">
+    <value>Start degree should be less than end degree!</value>
+  </data>
+</root>

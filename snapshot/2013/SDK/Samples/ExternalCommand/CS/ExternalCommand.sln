@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitAddInUtilitySample", "RevitAddInUtilitySample\RevitAddInUtilitySample.csproj", "{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalCommandRegistration", "ExternalCommandRegistration\ExternalCommandRegistration.csproj", "{60316DFC-53FD-42B4-BBCE-25FD3D337815}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF1330C-F41E-4C18-9000-E78FB24F3AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60316DFC-53FD-42B4-BBCE-25FD3D337815}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

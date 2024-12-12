@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options product="REX" name="REX">
+	<option name="SDK" description="SDK" description_full="SDK" version="" domain="" date="">
+		<option name="PyramidGenerator" description="PyramidGenerator" description_full="PyramidGenerator" version="0.5" domain="" date="" type="">
+		  <data>
+			<data.run type="ASSEMBLY" path="PyramidGenerator" file="PyramidGenerator.dll" class="REX.PyramidGenerator.Application" direct_revit_class="REX.PyramidGenerator.DirectRevitAccess"/>
+		  </data>
+		</option>
+	</option>
+</options>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ExternalResourceUIServer</Name>
+    <Assembly>ExternalResourceUIServer.dll</Assembly>
+    <ClientId>82e5614c-237b-4599-a7eb-4adc4d682a3e</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExternalResourceUIServer.CS.UIServerApplication</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

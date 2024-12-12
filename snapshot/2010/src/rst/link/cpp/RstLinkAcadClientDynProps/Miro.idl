@@ -1,0 +1,105 @@
+// (C) Copyright 2002-2008 by Autodesk, Inc. 
+
+// Miro.idl : IDL source
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (AsdkMiro.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+//import "acadi.idl";
+
+	[
+		object,
+		uuid(A534D69F-802A-40cb-B62E-5DAE8C70FF76),
+		dual,
+		nonextensible,
+		helpstring("IRevitID Interface"),
+		pointer_default(unique)
+	]
+	interface IRevitID : IDispatch	{
+	};
+	[
+		object,
+		uuid(F648290E-EDB2-49aa-A437-69B1280D9A96),
+		dual,
+		nonextensible,
+		helpstring("IForce Interface"),
+		pointer_default(unique)
+	]
+	interface IForce : IDispatch	{
+	};
+	[
+		object,
+		uuid(185408D6-1454-422f-B65F-585EBE11D4C7),
+		dual,
+		nonextensible,
+		helpstring("ISection Interface"),
+		pointer_default(unique)
+	]
+	interface ISection : IDispatch	{
+	};
+	[
+		object,
+		uuid(184F914F-6836-4b23-8584-C8EF5797448D),
+		dual,
+		nonextensible,
+		helpstring("IUsage Interface"),
+		pointer_default(unique)
+	]
+	interface IUsage : IDispatch	{
+	};
+[
+	uuid(57BA066C-86BA-4e21-B09B-E6139B3662A6),
+	version(2.0),
+	helpstring("AsdkMiro 2.0 Type Library")
+]
+library AsdkMiroLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//----- If the following import fails then it means that the type library 
+	//----- is not on the system path you can fix the problem in two ways:
+	//----- 1. Add it to the system wide PATH environment variable
+	//----- 2. Add it to the executable file list in Developer Studio. You can do
+	//----- this in using the Tools/Option menu and then choosing the 'Directories'
+	//----- tab and finally typing the full path at the Executable files section.
+
+	//----- Importing english is ok here. Autodesk doesn't localize this idl/tlb.
+	//----- axdb16enu.tlb is guaranteed to be available in all locales.
+	//----- If you want to provide localized typelib then you must import
+	//----- localized tlb here.
+	importlib("axdb17enu.tlb");
+	[
+		uuid(B44BF477-78EF-4455-AB16-69FDD5668484),
+		helpstring("RevitID Class")
+	]
+	coclass RevitID
+	{
+		[default] interface IRevitID;
+	};
+	[
+		uuid(3E21B286-B799-4bce-B115-EB06287D1454),
+		helpstring("Force Class")
+	]
+	coclass Force
+	{
+		[default] interface IForce;
+	};
+	[
+		uuid(0F88B0AA-BAE6-47f2-B8D3-FB8B98A15747),
+		helpstring("Section Class")
+	]
+	coclass Section
+	{
+		[default] interface ISection;
+	};
+	[
+		uuid(61DF3C01-4BEB-48fe-A7DE-CC2F549202FE),
+		helpstring("Usage Class")
+	]
+	coclass Usage
+	{
+		[default] interface IUsage;
+	};
+};

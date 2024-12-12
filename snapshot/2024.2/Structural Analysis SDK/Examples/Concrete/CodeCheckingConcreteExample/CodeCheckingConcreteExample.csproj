@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE7A0A20-C19E-40F9-BEFE-8C30C1CF0D56}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeCheckingConcreteExample</RootNamespace>
+    <AssemblyName>CodeCheckingConcreteExample</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <NoWarn>1587 1570</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\CodeCheckingConcreteExample.XML</DocumentationFile>
+    <NoWarn>1587</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeChecking">
+      <HintPath>..\..\..\..\..\..\References\CodeChecking\Platform\CodeChecking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CodeChecking.Documentation">
+      <HintPath>..\..\..\..\..\..\References\CodeChecking\Platform\CodeChecking.Documentation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CodeChecking.Engineering">
+      <HintPath>..\..\..\..\..\..\References\CodeChecking\Engineering\CodeChecking.Engineering.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CodeChecking.Storage">
+      <HintPath>..\..\..\..\..\..\References\CodeChecking\Platform\CodeChecking.Storage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CodeChecking.UI">
+      <HintPath>..\..\..\..\..\..\References\CodeChecking\Platform\CodeChecking.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExtensibleStorageFramework">
+      <HintPath>..\..\..\..\..\..\References\ExtensibleStorageFramework\ExtensibleStorageFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExtensibleStorageFramework.Documentation">
+      <HintPath>..\..\..\..\..\..\References\ExtensibleStorageFramework\ExtensibleStorageFramework.Documentation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExtensibleStorageFramework.UI">
+      <HintPath>..\..\..\..\..\..\References\ExtensibleStorageFramework\ExtensibleStorageFramework.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExtensibleStorageFramework.UI.WPF">
+      <HintPath>..\..\..\..\..\..\References\ExtensibleStorageFramework\ExtensibleStorageFramework.UI.WPF.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="rcuapiNET">
+      <HintPath>..\..\..\..\..\..\References\CodeChecking\Engineering\rcuapiNET.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ResultsBuilder">
+      <HintPath>..\..\..\..\..\..\References\ResultsBuilder\ResultsBuilder.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\..\References\Revit\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\..\References\Revit\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Concrete\CalculationUtility.cs" />
+    <Compile Include="Concrete\ConcreteSectionDesign.cs" />
+    <Compile Include="Concrete\InternalForcesContainer.cs" />
+    <Compile Include="Concrete\InternalForcesBase.cs" />
+    <Compile Include="Concrete\InternalForcesLinear.cs" />
+    <Compile Include="Concrete\InternalForcesSurface.cs" />
+    <Compile Include="Concrete\RcTypes.cs" />
+    <Compile Include="Concrete\RcVerificationHelperUtility.cs" />
+    <Compile Include="Concrete\Reinforcement.cs" />
+    <Compile Include="Engine\CommonParametersBase.cs" />
+    <Compile Include="Engine\ElementDataBase.cs" />
+    <Compile Include="Engine\Engine.cs" />
+    <Compile Include="Engine\ICalculationObject.cs" />
+    <Compile Include="Engine\ICalculationScenario.cs" />
+    <Compile Include="Engine\IEngineData.cs" />
+    <Compile Include="Engine\ObjectDataBase.cs" />
+    <Compile Include="Engine\SectionDataBase.cs" />
+    <Compile Include="Main\CalculationParameter.cs" />
+    <Compile Include="Main\Calculation\BeamElement.cs" />
+    <Compile Include="Main\Calculation\BeamSection.cs" />
+    <Compile Include="Main\Calculation\ColumnElement.cs" />
+    <Compile Include="Main\Calculation\ColumnSection.cs" />
+    <Compile Include="Main\Calculation\CommonParameters.cs" />
+    <Compile Include="Main\Calculation\EngineData.cs" />
+    <Compile Include="Main\Calculation\CalculationObjects.cs" />
+    <Compile Include="Main\Calculation\CalculationScenario.cs" />
+    <Compile Include="Main\Calculation\FloorElement.cs" />
+    <Compile Include="Main\Calculation\FloorSection.cs" />
+    <Compile Include="Main\Calculation\LinearSection.cs" />
+    <Compile Include="Main\Calculation\SurfaceSection.cs" />
+    <Compile Include="Main\Calculation\WallElement.cs" />
+    <Compile Include="Main\Calculation\WallSection.cs" />
+    <Compile Include="Main\LabelBeam.cs" />
+    <Compile Include="Main\LabelColumn.cs" />
+    <Compile Include="Main\LabelFloor.cs" />
+    <Compile Include="Main\LabelWall.cs" />
+    <Compile Include="Main\ResultBeam.cs" />
+    <Compile Include="Main\ResultColumn.cs" />
+    <Compile Include="Main\ResultFloor.cs" />
+    <Compile Include="Main\ResultLinearElement.cs" />
+    <Compile Include="Main\ResultSurfaceElement.cs" />
+    <Compile Include="Main\ResultWall.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\RevitApplicationDB.cs" />
+    <Compile Include="Application\RevitApplicationUI.cs" />
+    <Compile Include="Server\Server.cs" />
+    <Compile Include="Server\ServerResultsLinear.cs" />
+    <Compile Include="Server\ServerResultsSurface.cs" />
+    <Compile Include="Server\ServerUI.cs" />
+    <Compile Include="Updater\Updater.cs" />
+    <Compile Include="UIComponents\CalculationPointsSelector\CalculationPointsSelectorAttribute.cs" />
+    <Compile Include="UIComponents\CalculationPointsSelector\CalculationPointsSelectorSchema.cs" />
+    <Compile Include="UIComponents\CalculationPointsSelector\CalculationPointsSelectorServerUI.cs" />
+    <Compile Include="UIComponents\RCSteelParameters\RCSteelParametersAttribute.cs" />
+    <Compile Include="UIComponents\RCSteelParameters\RCSteelParametersSchema.cs" />
+    <Compile Include="UIComponents\RCSteelParameters\RCSteelParametersServerUI.cs" />
+    <Compile Include="Utility\MapDataGenerator.cs" />
+    <Compile Include="Utility\ResultInPointLinear.cs" />
+    <Compile Include="Utility\ResultInPointSurface.cs" />
+    <Compile Include="Utility\UnitsConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Addin\CodeCheckingConcreteExampleDB.addin" />
+    <Content Include="Addin\CodeCheckingConcreteExampleUI.addin" />
+    <Content Include="UIComponents\Icons\BFX_64.png" />
+    <Content Include="UIComponents\Icons\BFY_64.png" />
+    <Content Include="UIComponents\Icons\BFZ_64.png" />
+    <Content Include="UIComponents\Icons\BMX_64.png" />
+    <Content Include="UIComponents\Icons\BMY_64.png" />
+    <Content Include="UIComponents\Icons\BMZ_64.png" />
+    <Content Include="UIComponents\Icons\CFX_64.png" />
+    <Content Include="UIComponents\Icons\CFY_64.png" />
+    <Content Include="UIComponents\Icons\CFZ_64.png" />
+    <Content Include="UIComponents\Icons\CMX_64.png" />
+    <Content Include="UIComponents\Icons\CMY_64.png" />
+    <Content Include="UIComponents\Icons\CMZ_64.png" />
+    <Resource Include="UIComponents\Icons\WFX_32.png" />
+    <Content Include="UIComponents\Icons\WFX_64.png" />
+    <Resource Include="UIComponents\Icons\WFY_32.png" />
+    <Content Include="UIComponents\Icons\WFY_64.png" />
+    <Resource Include="UIComponents\Icons\WMY_32.png" />
+    <Content Include="UIComponents\Icons\WMY_64.png" />
+    <Resource Include="UIComponents\Icons\FMY_32.png" />
+    <Content Include="UIComponents\Icons\FMY_64.png" />
+    <Content Include="UIComponents\Icons\FFX_64.png" />
+    <Resource Include="UIComponents\Icons\FFX_32.png" />
+    <Resource Include="UIComponents\Icons\buckling.png" />
+    <Resource Include="UIComponents\Icons\BFX_32.png" />
+    <Resource Include="UIComponents\Icons\BFY_32.png" />
+    <Resource Include="UIComponents\Icons\BFZ_32.png" />
+    <Resource Include="UIComponents\Icons\BMX_32.png" />
+    <Resource Include="UIComponents\Icons\BMY_32.png" />
+    <Resource Include="UIComponents\Icons\BMZ_32.png" />
+    <Resource Include="UIComponents\Icons\CFX_32.png" />
+    <Resource Include="UIComponents\Icons\CFY_32.png" />
+    <Resource Include="UIComponents\Icons\CFZ_32.png" />
+    <Resource Include="UIComponents\Icons\CMX_32.png" />
+    <Resource Include="UIComponents\Icons\CMY_32.png" />
+    <Resource Include="UIComponents\Icons\CMZ_32.png" />
+    <Resource Include="UIComponents\Icons\BWithSlabBeamInteraction.png" />
+    <Resource Include="UIComponents\Icons\BWithoutSlabBeamInteraction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if exist ..\..\..\..\..\..\..\..\Tools\BuildEvents\BuildEvents.exe (
+..\..\..\..\..\..\..\..\Tools\BuildEvents\BuildEvents.exe  prepare_example  $(ProjectDir) $(TargetPath) ..\..\..\..\..\..\Bin\SDK\CodeChecking\VisualStudio\Examples\Concrete\$(ProjectName)
+)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  		
+  </Target>
+  <Target Name="AfterBuild">
+  		
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1134 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" /><META NAME="save" CONTENT="history" /><title>Labs Namespace</title><link rel="stylesheet" type="text/css" href="../styles/presentation.css" /><link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" /><script type="text/javascript" src="../scripts/EventUtilities.js"> </script><script type="text/javascript" src="../scripts/SplitScreen.js"> </script><script type="text/javascript" src="../scripts/Dropdown.js"> </script><script type="text/javascript" src="../scripts/script_manifold.js"> </script><script type="text/javascript" src="../scripts/script_feedBack.js"> </script><script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script><script type="text/javascript" src="../scripts/CommonUtilities.js"> </script><meta name="container" content="Labs" /><meta name="file" content="715b3539-b2e6-3295-58e6-1481eea1cf44" /><meta name="guid" content="715b3539-b2e6-3295-58e6-1481eea1cf44" /><xml><MSHelp:Attr Name="AssetID" Value="N:Labs" /><MSHelp:TOCTitle Title="Labs Namespace" /><MSHelp:RLTitle Title="Labs Namespace ()" /><MSHelp:Keyword Index="A" Term="N:Labs" /><MSHelp:Keyword Index="A" Term="frlrfLabs" /><MSHelp:Keyword Index="K" Term="Labs namespace" /><MSHelp:Keyword Index="F" Term="Labs" /><MSHelp:Attr Name="HelpPriority" Value="1" /><MSHelp:Attr Name="DevLang" Value="CSharp" /><MSHelp:Attr Name="DevLang" Value="VB" /><MSHelp:Attr Name="DevLang" Value="C++" /><MSHelp:Attr Name="Locale" Value="en-us" /><MSHelp:Attr Name="TopicType" Value="kbSyntax" /><MSHelp:Attr Name="TopicType" Value="apiref" /><MSHelp:Attr Name="Abstract" Value="Revit API Introduction Labs." /></xml><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"></script></head><body><input type="hidden" id="userDataCache" class="userDataStyle" /><input type="hidden" id="hiddenScrollOffset" /><img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" title="Collapse image" /><img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" title="Expand Image" /><img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" /><img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" /><img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" /><img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" /><img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" title="Copy image" /><img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" title="CopyHover image" /><div id="header"><table id="topTable" cellspacing="0" cellpadding="0"><tr><td><span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0"><img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span><span>    </span><span id="devlangsDropdown" class="filter" tabindex="0"><img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label></span></td></tr></table><div id="devlangsMenu"><input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" /><label class="checkboxLabel" for="CSharpCheckbox">C#</label><br /><input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" /><label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label><br /><input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" /><label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label><br /></div><table id="bottomTable" cellpadding="0" cellspacing="0"><tr id="headerTableRow1"><td align="left"><span id="runningHeaderText">Revit API Introduction Labs</span></td></tr><tr id="headerTableRow2"><td align="left"><span id="nsrTitle">Labs Namespace</span></td></tr><tr id="headerTableRow3"><td align="left">
+  <span id="headfeedbackarea" class="feedbackhead">
+      <a href="javascript:SubmitFeedback('','Revit API Introduction Labs','','','','%0\dYour%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report,%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed,%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.%0\A%0\d','Customer%20Feedback');">
+        
+        Send Feedback
+      </a>
+	</span>
+</td></tr></table><table id="gradientTable"><tr><td class="nsrBottom" background="../icons/gradient.gif" /></tr></table></div><div id="mainSection"><div id="mainBody"><div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" /><span style="color: DarkGray"> </span><div class="summary">Revit API Introduction Labs.</div><h1 class="heading"><span onclick="ExpandCollapse(classToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(classToggle, event)" tabindex="0"><img id="classToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Classes</span></h1><div id="classSection" class="section" name="collapseableSection" style=""><table id="typeList" class="members" frame="lhs" cellpadding="2"><col width="10%" /><tr><th class="iconColumn">
+           
+       </th><th class="nameColumn">Class</th><th class="descriptionColumn">Description</th></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="df0b08b3-2bba-33f3-40ad-240cb817716f.htm">FormUtils</a></td><td><div class="summary">
+ This class is utility class for form creation.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="f6a79d4b-4fba-dc9f-3738-db593d87e702.htm">Lab1_1_HelloWorld</a></td><td><div class="summary">
+ Say hello.
+ <p>
+      Prerequisites for the Revit API Introduction labs are
+      the following installed components:
+    </p><ul><li>Revit</li><li>The Revit SDK</li><li>Visual Studio</li><li>Revit API Introduction Labs</li></ul><p>
+      The Revit API Introduction Labs are provided in two versions,
+      as exercises for completing by filling in the missing portions yourself
+      using the information from the SDK documentation and the lab instructions,
+      and a solved version which you can use to peek into if you run into any
+      difficulties.
+    </p><p>
+      In this lab, we explore the development environment, and how to
+      create a skeleton Revit add-in from scratch. We explore the transaction mode
+      and regeneration option attributes, and the add-in manifest information defining
+      the link between Revit and the external command. Also, how the external command
+      can be hooked up with a custom user interface by an external application.
+    </p><p>
+      Before working on this lab, ensure that you have located and had a first
+      look at the following important Revit SDK documentation, which contains all
+      the information required:
+    </p><ul><li>Getting Started with the Revit API.doc</li><li>Revit Platform API Changes and Additions.doc</li><li>Revit 2011 API Developer Guide.pdf</li><li>RevitAPI.chm</li></ul><p>
+      To complete this lab, look at the developer guide in the Revit SDK, in the file
+      Revit 2011 API Developer Guide.pdf, and work through the walkthroughs described in
+      Chapter 2, especially 2.2 Hello World and 2.3 Ribbon Panel.
+    </p><p>They show how to:</p><ul><li>Set up a new add-in project.</li><li>Add the Revit API references.</li><li>Edit the add-in source code.</li><li>Create an add-in manifest.</li><li>Load and debug the add-in.</li><li>Create a custom ribbon panel.</li></ul><p>
+      You can work through the walkthroughs from scatch as described
+      in the developer guisde, or complete the missing code in the skeleton
+      file provided by the Revit API introduction lab exercises.
+    </p><p>
+      The client id for the add-in manifest can be generated using the
+      Visual Studio GuidGen tool or the Guidizer provided by ADN.
+    </p><p>
+      This lab can also be used to explore the TaskDialog class provided
+      for Revit-style message boxes.
+      For further examples of using the Revit API TaskDialog features, please
+      also refer to the HelloRevit SDK sample.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="fb2c5a55-f61c-b83c-fae4-694c47f0c821.htm">Lab1_2_CommandArguments</a></td><td><div class="summary">
+ In this lab, we explore the contents and usage of the Execute
+ method's command data input argument and the meaning of the result
+ return code and the message and element set return arguments.
+ The details are discussed in the developer guide,
+ chapter 3.2, External Commands.
+ <p>
+      Implement a new external command implementation class named
+      Lab1_2_CommandArguments and its Execute method analogously to the
+      class you implemented in the previous lab.
+    </p><p>
+      The first argument to the Execute method is the command data
+      object which is used to access the application object, from it the
+      current view and document, and from it in turn all or the currently
+      selected elements.
+    </p><p>
+      Let's first report some data about the current application,
+      document and view. Add something like the following to the Execute
+      function body. We make use of the LabUtils InfoMsg method, which
+      is provided in the Revit API Introduction labs source code and
+      provides various wrappers for the Revit task dialogue that
+      we used in Lab 1-1:
+    </p><span id="cbc_1" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// </span>
+<span class="highlight-comment">// access application, document, and current view:</span>
+<span class="highlight-comment">// </span>
+UIApplication uiapp = commandData.Application;
+Application app = uiapp.Application;
+UIDocument uidoc = uiapp.ActiveUIDocument;
+Document doc = uidoc.Document;
+View view = commandData.View;
+LanguageType lt = app.Language;
+ProductType pt = app.Product;
+<span class="highlight-keyword">string</span> s = <span class="highlight-literal">"Application = "</span> + app.VersionName
+  + <span class="highlight-literal">"\r\nLanguage = "</span> + lt.ToString()
+  + <span class="highlight-literal">"\r\nProduct = "</span> + pt.ToString()
+  + <span class="highlight-literal">"\r\nVersion = "</span> + app.VersionNumber
+  + <span class="highlight-literal">"\r\nDocument path = "</span> + doc.PathName <span class="highlight-comment">// empty if not yet saved</span>
+  + <span class="highlight-literal">"\r\nDocument title = "</span> + doc.Title
+  + <span class="highlight-literal">"\r\nView name = "</span> + view.Name;
+LabUtils.InfoMsg( s );</pre></div></span><span id="cbc_2" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">'</span>
+<span class="highlight-comment">' access application, document, and current view:</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-keyword">Dim</span> uiapp <span class="highlight-keyword">As</span> UIApplication = commandData.Application
+<span class="highlight-keyword">Dim</span> app <span class="highlight-keyword">As</span> Application = uiapp.Application
+<span class="highlight-keyword">Dim</span> uidoc <span class="highlight-keyword">As</span> UIDocument = uiapp.ActiveUIDocument
+<span class="highlight-keyword">Dim</span> doc <span class="highlight-keyword">As</span> Document = uidoc.Document
+<span class="highlight-keyword">Dim</span> view <span class="highlight-keyword">As</span> View = commandData.View
+<span class="highlight-keyword">Dim</span> lt <span class="highlight-keyword">As</span> LanguageType = app.Language
+<span class="highlight-keyword">Dim</span> pt <span class="highlight-keyword">As</span> ProductType = app.Product
+<span class="highlight-keyword">Dim</span> s <span class="highlight-keyword">As</span> <span class="highlight-keyword">String</span> = <span class="highlight-literal">"Application = "</span> + app.VersionName _
+    + vbCrLf + <span class="highlight-literal">"Language = "</span> + lt.ToString() _
+    + vbCrLf + <span class="highlight-literal">"Product = "</span> + pt.ToString() _
+    + vbCrLf + <span class="highlight-literal">"Version = "</span> + app.VersionNumber _
+    + vbCrLf + <span class="highlight-literal">"Document path = "</span> + doc.PathName _
+    + vbCrLf + <span class="highlight-literal">"Document title = "</span> + doc.Title _
+    + vbCrLf + <span class="highlight-literal">"View name = "</span> + view.Name
+LabUtils.InfoMsg(s)</pre></div></span><p>
+      We can use the System.Windows.Forms MessageBox.Show() method
+      to display meassages to users, or the Revit task dialogue like in
+      Lab 1-1. Since it is cumbersome to add an additional argument for
+      the caption each time we call it, we implement some message box
+      helper methods in a separate class LabUtils and call thos instead.
+    </p><p>
+      To list all the currently selected elements, we can use the
+      Selection property on the UIDocument object. This property further
+      exposes an Elements property which returns an element set containing
+      the selected elements. This provided access to the predefined element
+      selection set. We use another LabUtils task dialogue wrapper which
+      populates the main instruction with a message and the contents with
+      a list of strings:
+    </p><span id="cbc_3" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// </span>
+<span class="highlight-comment">// list the current selection set:</span>
+<span class="highlight-comment">// </span>
+Selection sel = uidoc.Selection;
+List&lt;<span class="highlight-keyword">string</span>&gt; a = <span class="highlight-keyword">new</span> List&lt;<span class="highlight-keyword">string</span>&gt;();
+<span class="highlight-keyword">foreach</span>( Element e <span class="highlight-keyword">in</span> sel.Elements )
+{
+  <span class="highlight-keyword">string</span> name = ( <span class="highlight-keyword">null</span> == e.Category ) ? e.GetType().Name : e.Category.Name;
+  a.Add( name + <span class="highlight-literal">" Id="</span> + e.Id.IntegerValue.ToString() );
+}
+LabUtils.InfoMsg( <span class="highlight-literal">"There are {0} element{1} in the selection set{2}"</span>, a );</pre></div></span><span id="cbc_4" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">'</span>
+<span class="highlight-comment">' list the current selection set:</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-keyword">Dim</span> sel <span class="highlight-keyword">As</span> Selection = uidoc.Selection
+
+s = <span class="highlight-literal">"There are "</span> + sel.Elements.Size.ToString() + <span class="highlight-literal">" elements in the selection:"</span>
+
+<span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> elem <span class="highlight-keyword">As</span> Element <span class="highlight-keyword">In</span> sel.Elements
+    s += vbCrLf + <span class="highlight-literal">"  "</span> + elem.Category.Name
+    s += <span class="highlight-literal">" Id="</span> + elem.Id.IntegerValue.ToString()
+<span class="highlight-keyword">Next</span>
+
+LabUtils.InfoMsg(s)</pre></div></span><p>
+      The last two arguments to the Execute method are return arguments
+      and used only when returning a Cancelled or Failed status to Revit, so
+      that a meaningful message can be displayed in the standard user interface
+      dialogue box and the relevant elements can be highlighted on the graphics
+      screen. To simulate an error condition and display the result of populating
+      these, add the following code:
+    </p><span id="cbc_5" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// </span>
+<span class="highlight-comment">// we pretend that something is wrong with the first</span>
+<span class="highlight-comment">// element in the selection. pass a message back to</span>
+<span class="highlight-comment">// the user and indicate the error result:</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-keyword">if</span>( !sel.Elements.IsEmpty )
+{
+  ElementSetIterator iter = sel.Elements.ForwardIterator();
+  iter.MoveNext();
+  Element errElem = iter.Current <span class="highlight-keyword">as</span> Element;
+  elements.Clear();
+  elements.Insert( errElem );
+  message = <span class="highlight-literal">"We pretend something is wrong with this element and pass back this message to user"</span>;
+  <span class="highlight-keyword">return</span> Result.Failed;
+}
+<span class="highlight-keyword">else</span>
+{
+  <span class="highlight-comment">// </span>
+  <span class="highlight-comment">// we return failed here as well, actually.</span>
+  <span class="highlight-comment">// as long as the message string and element set are empty,</span>
+  <span class="highlight-comment">// it makes no difference to the user.</span>
+  <span class="highlight-comment">// it also aborts the automatic transaction, avoiding marking</span>
+  <span class="highlight-comment">// the database as dirty.</span>
+  <span class="highlight-comment">// </span>
+  <span class="highlight-keyword">return</span> Result.Failed;
+}</pre></div></span><span id="cbc_6" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">'</span>
+<span class="highlight-comment">' we pretend that something is wrong with the first element in the selection.</span>
+<span class="highlight-comment">' pass a message back to the Revit user and indicate the error result:</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-keyword">If</span> <span class="highlight-keyword">Not</span> sel.Elements.IsEmpty <span class="highlight-keyword">Then</span>
+    <span class="highlight-keyword">Dim</span> iter <span class="highlight-keyword">As</span> ElementSetIterator = sel.Elements.ForwardIterator
+    iter.MoveNext()
+    <span class="highlight-keyword">Dim</span> errElem <span class="highlight-keyword">As</span> Element = iter.Current
+    elements.Clear()
+    elements.Insert(errElem)
+    message = <span class="highlight-literal">"We pretend something is wrong with this"</span> _
+        + <span class="highlight-literal">" element and pass back this message to user"</span>
+    <span class="highlight-keyword">Return</span> Result.Failed
+<span class="highlight-keyword">Else</span>
+    <span class="highlight-comment">'</span>
+    <span class="highlight-comment">' we return failed here as well, actually.</span>
+    <span class="highlight-comment">' as long as the message string and element set are empty,</span>
+    <span class="highlight-comment">' it makes no difference to the user.</span>
+    <span class="highlight-comment">' it also aborts the automatic transaction, avoiding marking</span>
+    <span class="highlight-comment">' the database as dirty.</span>
+    <span class="highlight-comment">'</span>
+    <span class="highlight-keyword">Return</span> Result.Failed
+<span class="highlight-keyword">End</span> <span class="highlight-keyword">If</span></pre></div></span><p>
+      Build the project and adjust the add-in manifest file to include
+      the new command, e.g. by adding the following entries in addition to
+      the existing ones from the Hello World walkthrough:
+    </p><span><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>XML</div><div class="code"><pre><span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">AddIn</span> <span class="highlight-xml-attribute-name">Type</span><span class="highlight-xml-attribute-equal">=</span><span class="highlight-xml-attribute-value">"Command"</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Text</span><span class="highlight-xml-bracket">&gt;</span>Lab1_2_CommandArguments<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Text</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Description</span><span class="highlight-xml-bracket">&gt;</span>Demonstrate contents and usage of the Execute() method's command data input argument and the meaning of the result return code and the message and element set return arguments.<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Description</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">Assembly</span><span class="highlight-xml-bracket">&gt;</span>C:\a\j\adn\train\revit\2011\src\rac\labs\cs\bin\Debug\labs.dll<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">Assembly</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">FullClassName</span><span class="highlight-xml-bracket">&gt;</span>Labs.Lab1_2_CommandArguments<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">FullClassName</span><span class="highlight-xml-bracket">&gt;</span>
+  <span class="highlight-xml-bracket">&lt;</span><span class="highlight-xml-tag">ClientId</span><span class="highlight-xml-bracket">&gt;</span>e96140eb-43fe-4e69-9eba-9252ceb55624<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">ClientId</span><span class="highlight-xml-bracket">&gt;</span>
+<span class="highlight-xml-bracket">&lt;/</span><span class="highlight-xml-tag">AddIn</span><span class="highlight-xml-bracket">&gt;</span></pre></div></span><p>
+      Now start up Revit, pre-select some elements and run the
+      new Lab 1-2 command. It will display the app, doc and view data, then
+      the currently selected elements, and finally an error reported on the
+      first one of the elements in this set.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="77f0fd36-18f7-7311-4d04-c82c087a71c4.htm">Lab2_0_CreateLittleHouse</a></td><td><div class="summary">
+ Create a little house with some sample building elements.
+ We create a simple building consisting of four walls,
+ a door, two windows, a floor, a roof, a room and a room tag.
+ <p>
+      This lab's external command creates a simple building containing
+      four walls, two windows, a door, a floor, a roof and a room. Commands
+      defined in the following labs can run on this model. This lab needs to
+      make use of some features which will not be discussed fully until later on.
+    </p><p>
+      This lab makes use of the utility class LabUtils which is provided
+      in the exercise project and includes various reusable helper functions.
+      In the following labs, further utilities will be added to this class.
+      It also uses some constants defined by the LabConstants class:
+    </p><span id="cbc_8" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-keyword">public</span> <span class="highlight-keyword">const</span> <span class="highlight-keyword">double</span> MeterToFeet = <span class="highlight-number">3.2808399</span>;
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">const</span> <span class="highlight-keyword">double</span> DegreesToRadians = System.Math.PI / <span class="highlight-number">180</span>;</pre></div></span><span id="cbc_9" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-keyword">Public</span> <span class="highlight-keyword">Const</span> MeterToFeet <span class="highlight-keyword">As</span> <span class="highlight-keyword">Double</span> = <span class="highlight-number">3.2808399</span>
+<span class="highlight-keyword">Public</span> <span class="highlight-keyword">Const</span> DegreesToRadians <span class="highlight-keyword">As</span> <span class="highlight-keyword">Double</span> = System.Math.PI / <span class="highlight-number">180</span></pre></div></span></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="b44937f6-f251-20ca-1b9e-525459171c06.htm">Lab2_1_Elements</a></td><td><div class="summary">
+ List all document elements.
+ This is not recommended for normal use!
+ <p>
+      The main contents of a Revit project database is its elements collection.
+      This includes both building elements representing physical objects as well as
+      supporting elements such as various internal definitions, families and types,
+      which are not part of the visible building model.
+    </p><p>
+      In this lab, we explore the collection of all Revit document elements
+      and implement a second external command class Lab2_1_Elements derived
+      from IExternalCommand in the Labs2 module. Since we do nothing to modify
+      the database, we set this command's transaction mode to read-only.
+    </p><p>
+      Since the output will be much too large for a message box,
+      we will redirect it to a text file.
+    </p><p>
+      The exercise version of the Labs2 module already references the additional
+      required namespaces such as System.IO, and the class LabConstants defines string
+      constants for the output filename and directory:
+    </p><span id="cbc_10" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-keyword">private</span> <span class="highlight-keyword">const</span> <span class="highlight-keyword">string</span> _temp_dir = <span class="highlight-literal">"C:/tmp/"</span>;
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">const</span> <span class="highlight-keyword">string</span> FilePath = _temp_dir + <span class="highlight-literal">"RevitElements.txt"</span>;</pre></div></span><span id="cbc_11" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-keyword">Private</span> <span class="highlight-keyword">Const</span> _temp_dir <span class="highlight-keyword">As</span> <span class="highlight-keyword">String</span> = <span class="highlight-literal">"C:/tmp/"</span>
+<span class="highlight-keyword">Public</span> FilePath <span class="highlight-keyword">As</span> <span class="highlight-keyword">String</span> = _temp_dir + <span class="highlight-literal">"RevitElements.txt"</span></pre></div></span><p>
+      Returning to the Lab2_1_Elements command, start by accessing
+      the current Revit document to read elements from and opening the
+      output file to write to:
+    </p><span id="cbc_12" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>UIApplication app = commandData.Application;
+Document doc = app.ActiveUIDocument.Document;
+
+<span class="highlight-comment">// .NET exception handling should be done everywhere,</span>
+<span class="highlight-comment">// but will sometimes be omitted for clarity in the</span>
+<span class="highlight-comment">// following labs unless we expect exceptions:</span>
+
+StreamWriter sw;
+
+<span class="highlight-keyword">try</span>
+{
+  sw = <span class="highlight-keyword">new</span> StreamWriter( LabConstants.FilePath );
+}
+<span class="highlight-keyword">catch</span>( Exception e )
+{
+  LabUtils.ErrorMsg( <span class="highlight-keyword">string</span>.Format( <span class="highlight-literal">"Cannot open '{0}': {1}"</span>,
+    LabConstants.FilePath, e.Message ) );
+  <span class="highlight-keyword">return</span> Result.Failed;
+}</pre></div></span><span id="cbc_13" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-keyword">Dim</span> app <span class="highlight-keyword">As</span> UIApplication = commandData.Application
+<span class="highlight-keyword">Dim</span> doc <span class="highlight-keyword">As</span> Document = app.ActiveUIDocument.Document
+
+<span class="highlight-comment">' Typical .NET error checking (should be done everywhere,</span>
+<span class="highlight-comment">' but will be omitted for clarity in some of the following</span>
+<span class="highlight-comment">' labs unless we expect exceptions):</span>
+
+
+<span class="highlight-keyword">Dim</span> sw <span class="highlight-keyword">As</span> StreamWriter
+
+<span class="highlight-keyword">Try</span>
+    sw = <span class="highlight-keyword">New</span> StreamWriter(LabConstants.FilePath)
+<span class="highlight-keyword">Catch</span> e <span class="highlight-keyword">As</span> Exception
+    LabUtils.ErrorMsg(<span class="highlight-keyword">String</span>.Format(<span class="highlight-comment">"Cannot open '{0}': {1}"</span>, _
+                                    LabConstants.FilePath, e.Message))
+    <span class="highlight-keyword">Return</span> Result.Failed
+<span class="highlight-keyword">End</span> <span class="highlight-keyword">Try</span></pre></div></span><p>
+      In Revit 2011, we no longer have direct access to the entire unfiltered
+      Revit elements collection, because generally the Revit API does not expect
+      an application to ever need to iterate over all elements. To retrieve them
+      all anyway, we need to use a trick: ask for all elements fulfilling a specific
+      criterion and unite them with all elements NOT fulfilling the same
+      criterion:
+    </p><span id="cbc_14" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// the Revit API does not expect an application</span>
+<span class="highlight-comment">// ever to need to iterate over all elements.</span>
+<span class="highlight-comment">// To do so, we need to use a trick: ask for all</span>
+<span class="highlight-comment">// elements fulfilling a specific criteria and</span>
+<span class="highlight-comment">// unite them with all elements NOT fulfilling</span>
+<span class="highlight-comment">// the same criteria:</span>
+
+FilteredElementCollector collector
+  = <span class="highlight-keyword">new</span> FilteredElementCollector( doc )
+    .WhereElementIsElementType();
+
+FilteredElementCollector collector2
+  = <span class="highlight-keyword">new</span> FilteredElementCollector( doc )
+    .WhereElementIsNotElementType();
+
+collector.UnionWith( collector2 );</pre></div></span><span id="cbc_15" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">' the Revit API does not expect an application</span>
+<span class="highlight-comment">' to ever need to iterate over all elements.</span>
+<span class="highlight-comment">' To do so, we need to use a trick: ask for all</span>
+<span class="highlight-comment">' elements fulfilling a specific criteria and</span>
+<span class="highlight-comment">' unite them with all elements NOT fulfilling</span>
+<span class="highlight-comment">' the same criteria:</span>
+
+
+<span class="highlight-keyword">Dim</span> collector <span class="highlight-keyword">As</span> FilteredElementCollector _
+    = <span class="highlight-keyword">New</span> FilteredElementCollector(doc) _
+        .WhereElementIsElementType()
+
+<span class="highlight-keyword">Dim</span> collector2 <span class="highlight-keyword">As</span> FilteredElementCollector = _
+    <span class="highlight-keyword">New</span> FilteredElementCollector(doc) _
+        .WhereElementIsNotElementType()
+
+collector.UnionWith(collector2)</pre></div></span><p>
+      Loop over the returned elements, list some of the generic
+      identification properties to the output file, and close it when
+      done:
+    </p><span id="cbc_16" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-keyword">string</span> s, line;
+
+<span class="highlight-keyword">foreach</span>( Element e <span class="highlight-keyword">in</span> collector )
+{
+  line = <span class="highlight-literal">"Id="</span> + e.Id.IntegerValue.ToString(); <span class="highlight-comment">// element id</span>
+  line += <span class="highlight-literal">"; Class="</span> + e.GetType().Name; <span class="highlight-comment">// element class, i.e. System.Type</span>
+
+  <span class="highlight-comment">// The element category is not implemented for all classes,</span>
+  <span class="highlight-comment">// and may return null; for Family elements, one can sometimes</span>
+  <span class="highlight-comment">// use the FamilyCategory property instead.</span>
+
+  s = <span class="highlight-keyword">string</span>.Empty;
+
+  <span class="highlight-keyword">if</span>( <span class="highlight-keyword">null</span> != e.Category )
+  {
+    s = e.Category.Name;
+  }
+  <span class="highlight-keyword">if</span>( <span class="highlight-number">0</span> == s.Length &amp;&amp; e <span class="highlight-keyword">is</span> Family &amp;&amp; <span class="highlight-keyword">null</span> != ((Family) e).FamilyCategory )
+  {
+    s = ((Family) e).FamilyCategory.Name;
+  }
+  <span class="highlight-keyword">if</span>( <span class="highlight-number">0</span> == s.Length )
+  {
+    s = <span class="highlight-literal">"?"</span>;
+  }
+  line += <span class="highlight-literal">"; Category="</span> + s;
+
+  <span class="highlight-comment">// The element Name has a different meaning for different classes,</span>
+  <span class="highlight-comment">// but is mostly implemented "logically". More precise info on elements</span>
+  <span class="highlight-comment">// can be obtained in class-specific ways.</span>
+
+  line += <span class="highlight-literal">"; Name="</span> + e.Name;
+  line += <span class="highlight-literal">"; UniqueId="</span> + e.UniqueId;
+  <span class="highlight-comment">//line += "; Guid=" + GetGuid( e.UniqueId );</span>
+  sw.WriteLine( line );
+}
+sw.Close();
+
+LabUtils.InfoMsg( <span class="highlight-literal">"Element list has been written to "</span>
+  + LabConstants.FilePath + <span class="highlight-literal">"."</span> );</pre></div></span><span id="cbc_17" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-keyword">Dim</span> s <span class="highlight-keyword">As</span> <span class="highlight-keyword">String</span>, line <span class="highlight-keyword">As</span> <span class="highlight-keyword">String</span>
+
+<span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> e <span class="highlight-keyword">As</span> Element <span class="highlight-keyword">In</span> collector
+    line = <span class="highlight-literal">"Id="</span> + e.Id.IntegerValue.ToString()
+    <span class="highlight-comment">' element id</span>
+    line += <span class="highlight-literal">"; Class="</span> + e.[<span class="highlight-keyword">GetType</span>]().Name
+    <span class="highlight-comment">' element class, i.e. System.Type</span>
+    <span class="highlight-comment">' The element category is not implemented for all classes,</span>
+    <span class="highlight-comment">' and may return null; for Family elements, one can sometimes</span>
+    <span class="highlight-comment">' use the FamilyCategory property instead.</span>
+
+
+    s = <span class="highlight-keyword">String</span>.Empty
+
+    <span class="highlight-keyword">If</span> e.Category <span class="highlight-keyword">IsNot</span> <span class="highlight-keyword">Nothing</span> <span class="highlight-keyword">Then</span>
+        s = e.Category.Name
+    <span class="highlight-keyword">End</span> <span class="highlight-keyword">If</span>
+    <span class="highlight-keyword">If</span> <span class="highlight-number">0</span> = s.Length <span class="highlight-keyword">AndAlso</span> <span class="highlight-keyword">TypeOf</span> e <span class="highlight-keyword">Is</span> Family <span class="highlight-keyword">AndAlso</span> <span class="highlight-keyword">DirectCast</span>(e, Family).FamilyCategory <span class="highlight-keyword">IsNot</span> <span class="highlight-keyword">Nothing</span> <span class="highlight-keyword">Then</span>
+        s = <span class="highlight-keyword">DirectCast</span>(e, Family).FamilyCategory.Name
+    <span class="highlight-keyword">End</span> <span class="highlight-keyword">If</span>
+    <span class="highlight-keyword">If</span> <span class="highlight-number">0</span> = s.Length <span class="highlight-keyword">Then</span>
+        s = <span class="highlight-literal">"?"</span>
+    <span class="highlight-keyword">End</span> <span class="highlight-keyword">If</span>
+    line += <span class="highlight-literal">"; Category="</span> + s
+
+    <span class="highlight-comment">' The element Name has a different meaning for different classes,</span>
+    <span class="highlight-comment">' but is mostly implemented "logically". More precise info on elements</span>
+    <span class="highlight-comment">' can be obtained in class-specific ways.</span>
+
+
+    line += <span class="highlight-literal">"; Name="</span> + e.Name
+    line += <span class="highlight-literal">"; UniqueId="</span> + e.UniqueId
+    <span class="highlight-comment">'line += "; Guid=" + GetGuid( e.UniqueId );</span>
+    sw.WriteLine(line)
+<span class="highlight-keyword">Next</span>
+
+sw.Close()
+
+LabUtils.InfoMsg(<span class="highlight-literal">"Element list has been written to "</span> _
+                 + LabConstants.FilePath + <span class="highlight-literal">"."</span>)</pre></div></span><p>
+      The Execute method can safely return a Failed result code,
+      since the database has not been modified. This aboorts the automatic
+      transaction that was created by the Revit API due to the automatic
+      transaction mode attribute setting.
+    </p><p>
+      Compile and link the project and update the add-in manifest
+      file accordingly, as descibed for lab 1-2. Or load and run the
+      command with the help of the Add-in Manager, if you prefer.
+    </p><p>
+      Run the command and examine and discuss the contents of the
+      created output file with the course instructor and your peers.
+    </p><p>
+      Save the first output file under a different name, add a
+      couple of new elements to the Revit model, run the command again
+      to generate a new output file, and compare the two.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="5cc9fba4-96cc-8ac3-1f24-cd79267d2824.htm">Lab2_2_ModelElements</a></td><td><div class="summary">
+ List all model elements.
+ <p>
+      Model elements are generally part of the building and have geometry.
+      In this lab we will implement a filter to retrieve all model elements,
+      i.e. Revit element instances with a 3D geometrical representation.
+      There are several possible approaches to retrieving these elements.
+      Here, we will present a method that
+      uses a combination of different criteria to ensure that only valid
+      model elements are selected. The criteria applied to each element are:
+    </p><ul><li>It is not an ElementType object</li><li>It has a valid category</li><li>The category has material quantities</li></ul><p>To complete this lab, perform the following steps:</p><ol><li>Add a new read-only external command implementation named Lab2_2_ModelElements to the Labs2 module.</li><li>Implement code to access the Revit application and current document.</li><li>Instantiate a new FilteredElementCollector variable named collector.</li><li>Retrieve all elements that are not of type ElementType (hint: use WhereElementIsNotElementType).</li><li>Instantiate a variable named 'a' as a list of strings to collect the element information and later feed to the approriate LabUtils.InfoMsg overload.</li><li>Loop over the collected elements (hint: you can simply use foreach Element e in collector).</li><li>Ignore all elements with an invalid, i.e. null, category.</li><li>Ignore all elements whose category does not have material quantities, cf. the Category.HasMaterialQuantities property.</li><li>Populate 'a' with some element data such as category name, element name, and element id.</li><li>Display the contents of 'a' using the appropriate LabUtils.InfoMsg overload.</li><li>Return a Failed result code, since we did nothing to modify the database.</li></ol><p>Here is one possible implementation of these steps:</p><span id="cbc_18" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>UIApplication app = commandData.Application;
+Document doc = app.ActiveUIDocument.Document;
+
+FilteredElementCollector collector
+  = <span class="highlight-keyword">new</span> FilteredElementCollector( doc )
+    .WhereElementIsNotElementType();
+
+List&lt;<span class="highlight-keyword">string</span>&gt; a = <span class="highlight-keyword">new</span> List&lt;<span class="highlight-keyword">string</span>&gt;();
+
+<span class="highlight-comment">// we could use a LINQ query here instead:</span>
+
+<span class="highlight-keyword">foreach</span>( Element e <span class="highlight-keyword">in</span> collector )
+{
+  <span class="highlight-comment">//  &amp;&amp; null != e.Materials</span>
+  <span class="highlight-comment">//  &amp;&amp; 0 &lt; e.Materials.Size</span>
+
+  <span class="highlight-keyword">if</span>( <span class="highlight-keyword">null</span> != e.Category
+    &amp;&amp; e.Category.HasMaterialQuantities )
+  {
+    a.Add( <span class="highlight-keyword">string</span>.Format(
+      <span class="highlight-literal">"Category={0}; Name={1}; Id={2}"</span>,
+      e.Category.Name, e.Name, e.Id.IntegerValue ) );
+  }
+}
+
+LabUtils.InfoMsg( <span class="highlight-literal">"Project contains {0} model element{1}{2}"</span>, a );
+
+<span class="highlight-keyword">return</span> Result.Failed;</pre></div></span><span id="cbc_19" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-keyword">Dim</span> app <span class="highlight-keyword">As</span> UIApplication = commandData.Application
+<span class="highlight-keyword">Dim</span> doc <span class="highlight-keyword">As</span> Document = app.ActiveUIDocument.Document
+
+<span class="highlight-keyword">Dim</span> collector <span class="highlight-keyword">As</span> FilteredElementCollector _
+    = <span class="highlight-keyword">New</span> FilteredElementCollector(doc) _
+        .WhereElementIsNotElementType()
+
+<span class="highlight-keyword">Dim</span> a <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> List(<span class="highlight-keyword">Of</span> <span class="highlight-keyword">String</span>)()
+
+<span class="highlight-comment">' we could use a LINQ query here instead:</span>
+
+
+<span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> e <span class="highlight-keyword">As</span> Element <span class="highlight-keyword">In</span> collector
+    <span class="highlight-comment">' &amp;&amp; null != e.Materials</span>
+    <span class="highlight-comment">' &amp;&amp; 0 &lt; e.Materials.Size</span>
+
+
+    <span class="highlight-keyword">If</span> e.Category <span class="highlight-keyword">IsNot</span> <span class="highlight-keyword">Nothing</span> <span class="highlight-keyword">AndAlso</span> e.Category.HasMaterialQuantities <span class="highlight-keyword">Then</span>
+        a.Add(<span class="highlight-keyword">String</span>.Format(<span class="highlight-literal">"Category={0}; Name={1}; Id={2}"</span>, _
+                            e.Category.Name, e.Name, e.Id.IntegerValue))
+    <span class="highlight-keyword">End</span> <span class="highlight-keyword">If</span>
+<span class="highlight-keyword">Next</span>
+
+LabUtils.InfoMsg(<span class="highlight-literal">"Project contains {0} model element{1}{2}"</span>, a)
+
+<span class="highlight-keyword">Return</span> Result.Failed</pre></div></span><p>
+      Compile, link and load the project as usual.
+      Step through the code in the debugger and examine how many elements are
+      eliminated by the various filtering steps.
+    </p><p>
+      A useful additional functionality would be to differentiate
+      between visible and hidden elements.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="861f3553-e92a-04ba-4725-21cb0dbe5a31.htm">Lab2_3_ListWallsAndDoors</a></td><td><div class="summary">
+ Retrieving family instances: list all walls and doors.
+
+ These represent two different kinds of elements:
+ walls are represented by their own specialised
+ System.Type Wall, whereas doors are represented
+ by family instances and need to be identified by
+ additionally checking the category.
+ <p>
+      Revit uses categories to classify building elements and other groups
+      of objects. The known categories are listed by the built-in categories
+      enumeration. It includes values for walls, doors, windows and many other
+      groups of objects. This is one way of identifying objects in the Revit
+      database.
+    </p><p>
+      Another way of identifying an element is using its System.Type,
+      i.e. class. Walls are represented by their own specialised
+      System.Type Wall, whereas doors and windows are represented
+      by family instances, whose class is FamilyInstace. To tell them
+      apart, we need to aditionally checking their category.
+    </p><p>
+      Many classes of elements are grouped into types and families.
+      There are system families, which are built into Revit, and standard families,
+      which are defined in external files with an RFA filename extension.
+    </p><p>
+      The are many other element properties that also can be used to retrieve
+      specific element collections from the database.
+    </p><p>
+      Walls are defined using a system family, doors and windows by standard families.
+      To retrieve all walls, one can use an element filter checking for the wall category
+      and the dedicated Wall class. For doors or windows, one can use the door and window
+      categories and the FamilyInstance class.
+    </p><p>
+      In this lab, we implement the filtering inline.
+      Afterwards, we can use this code as a template for creating some
+      reusable generic LabUtils methods.
+    </p><p>
+      Implement a new read-only external command Lab2_3_ListWallsAndDoors
+      and add the code to implement the Execute method and access the application
+      app and current document doc.
+    </p><p>
+      Implement a filtered element collector to retrieve and list
+      all walls, for instance by the following steps:
+    </p><ol><li>Instantiate a new FilteredElementCollector variable named walls.</li><li>Retrieve all elements whose System.Type is Wall (hint: use OfClass).</li><li>Instantiate a variable named 'a' as a list of strings to collect the element information and later feed to the approriate LabUtils.InfoMsg overload.</li><li>Loop over the collected elements (hint: you can simply use foreach Wall wall in walls).</li><li>Populate 'a' with some element data such as element id, wall type and wall type kind.</li><li>Display the contents of 'a' using the appropriate LabUtils.InfoMsg overload.</li></ol><p>Here is a possible implementation:</p><span id="cbc_20" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// get all wall elements:</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// we could also call</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// FilteredElementCollector walls = LabUtils.GetElementsOfType(</span>
+<span class="highlight-comment">//   doc, typeof( Wall ), BuiltInCategory.OST_Walls );</span>
+
+FilteredElementCollector walls = <span class="highlight-keyword">new</span> FilteredElementCollector( doc );
+walls.OfClass( <span class="highlight-keyword">typeof</span>( Wall ) );
+
+List&lt;<span class="highlight-keyword">string</span>&gt; a = <span class="highlight-keyword">new</span> List&lt;<span class="highlight-keyword">string</span>&gt;();
+
+<span class="highlight-keyword">foreach</span>( Wall wall <span class="highlight-keyword">in</span> walls )
+{
+  a.Add( <span class="highlight-keyword">string</span>.Format( <span class="highlight-literal">"Id={0}; Kind={1}; Type={2}"</span>,
+    wall.Id.IntegerValue,
+    wall.WallType.Kind.ToString(),
+    wall.WallType.Name ) );
+}
+
+LabUtils.InfoMsg( <span class="highlight-literal">"{0} wall{1} in the model{2}"</span>, a );</pre></div></span><span id="cbc_21" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">' get all wall elements:</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' we could also call</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' Dim walls As FilteredElementCollector =</span>
+<span class="highlight-comment">' LabUtils.GetElementsOfType(doc, GetType(Wall), BuiltInCategory.OST_Walls)</span>
+
+
+<span class="highlight-keyword">Dim</span> walls <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> FilteredElementCollector(doc)
+walls.OfClass(<span class="highlight-keyword">GetType</span>(Wall))
+
+<span class="highlight-keyword">Dim</span> a <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> List(<span class="highlight-keyword">Of</span> <span class="highlight-keyword">String</span>)()
+
+<span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> wall <span class="highlight-keyword">As</span> Wall <span class="highlight-keyword">In</span> walls
+    a.Add(<span class="highlight-keyword">String</span>.Format(<span class="highlight-literal">"Id={0}; Kind={1}; Type={2}"</span>, _
+                        wall.Id.IntegerValue, _
+                        wall.WallType.Kind.ToString(), _
+                        wall.WallType.Name))
+<span class="highlight-keyword">Next</span>
+
+LabUtils.InfoMsg(<span class="highlight-literal">"{0} wall{1} in the model{2}"</span>, a)</pre></div></span><p>This shows how easy and succinct the Revit 2011 element filtering is.</p><p>
+      Implement a similar filter to retrieve and list all doors.
+      In this case, we can use the FamilyInstance System.Type and additionally check for
+      the door category using the OfCategory method and the appropriate built-in category
+      enumeration vlue.
+    </p><span id="cbc_22" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// get all door family instances:</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// we could also call</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// FilteredElementCollector doors = LabUtils.GetElementsOfType(</span>
+<span class="highlight-comment">//   doc, typeof( FamilyInstance ), BuiltInCategory.OST_Doors );</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// or</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// FilteredElementCollector doors = LabUtils.GetFamilyInstances(</span>
+<span class="highlight-comment">//   doc, BuiltInCategory.OST_Doors );</span>
+
+FilteredElementCollector doors = <span class="highlight-keyword">new</span> FilteredElementCollector( doc );
+doors.OfCategory( BuiltInCategory.OST_Doors );
+doors.OfClass( <span class="highlight-keyword">typeof</span>( FamilyInstance ) );
+
+<span class="highlight-keyword">foreach</span>( FamilyInstance door <span class="highlight-keyword">in</span> doors )
+{
+  <span class="highlight-comment">// For family instances, the element name property</span>
+  <span class="highlight-comment">// returns the type name:</span>
+
+  a.Add( <span class="highlight-keyword">string</span>.Format( <span class="highlight-literal">"Id={0}; Type={1}"</span>,
+    door.Id.IntegerValue, door.Name ) );
+}
+
+LabUtils.InfoMsg( <span class="highlight-literal">"{0} door family instance{1} in the model{2}"</span>, a );</pre></div></span><span id="cbc_23" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">' get all door family instances:</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' we could also call</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' Dim doors As FilteredElementCollector =</span>
+<span class="highlight-comment">'   LabUtils.GetElementsOfType(doc, GetType(FamilyInstance), BuiltInCategory.OST_Doors)</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' or</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' Dim doors As FilteredElementCollector =</span>
+<span class="highlight-comment">'   LabUtils.GetFamilyInstances(doc, BuiltInCategory.OST_Doors)</span>
+
+
+<span class="highlight-keyword">Dim</span> doors <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> FilteredElementCollector(doc)
+doors.OfCategory(BuiltInCategory.OST_Doors)
+doors.OfClass(<span class="highlight-keyword">GetType</span>(FamilyInstance))
+
+<span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> door <span class="highlight-keyword">As</span> FamilyInstance <span class="highlight-keyword">In</span> doors
+    <span class="highlight-comment">' For family instances, the element name property</span>
+    <span class="highlight-comment">' returns the type name:</span>
+
+
+    a.Add(<span class="highlight-keyword">String</span>.Format(<span class="highlight-literal">"Id={0}; Type={1}"</span>, _
+                        door.Id.IntegerValue, _
+                        door.Name))
+<span class="highlight-keyword">Next</span>
+
+LabUtils.InfoMsg(<span class="highlight-literal">"{0} door family instance{1} in the model{2}"</span>, a)</pre></div></span><p>
+      Since similar kinds of element retrieval will be needed in other places as well,
+      we can implement the following generic LabUtils methods for it:
+    </p><span id="cbc_24" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">/// &lt;summary&gt;</span>
+<span class="highlight-comment">/// Return all elements of the requested class,</span>
+<span class="highlight-comment">/// i.e. System.Type, matching the given built-in</span>
+<span class="highlight-comment">/// category in the given document.</span>
+<span class="highlight-comment">/// &lt;/summary&gt;</span>
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> FilteredElementCollector
+  GetElementsOfType(
+    Document doc,
+    Type type,
+    BuiltInCategory bic )
+{
+  FilteredElementCollector collector
+    = <span class="highlight-keyword">new</span> FilteredElementCollector( doc );
+
+  collector.OfCategory( bic );
+  collector.OfClass( type );
+
+  <span class="highlight-keyword">return</span> collector;
+}</pre></div></span><span id="cbc_25" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">''' &lt;summary&gt;</span>
+<span class="highlight-comment">''' Return all elements of the requested class in the active document</span>
+<span class="highlight-comment">''' matching the given built-in category.</span>
+<span class="highlight-comment">''' &lt;/summary&gt;</span>
+<span class="highlight-keyword">Public</span> <span class="highlight-keyword">Shared</span> <span class="highlight-keyword">Function</span> GetElementsOfType( _
+    <span class="highlight-keyword">ByVal</span> doc <span class="highlight-keyword">As</span> Document, _
+    <span class="highlight-keyword">ByVal</span> type <span class="highlight-keyword">As</span> Type, _
+    <span class="highlight-keyword">ByVal</span> bic <span class="highlight-keyword">As</span> BuiltInCategory) _
+    <span class="highlight-keyword">As</span> FilteredElementCollector
+
+    <span class="highlight-keyword">Dim</span> collector <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> FilteredElementCollector(doc)
+    collector.OfCategory(bic)
+    collector.OfClass(type)
+    <span class="highlight-keyword">Return</span> collector
+<span class="highlight-keyword">End</span> <span class="highlight-keyword">Function</span></pre></div></span><span id="cbc_26" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">/// &lt;summary&gt;</span>
+<span class="highlight-comment">/// Retrieve all standard family instances for a given category.</span>
+<span class="highlight-comment">/// Todo: Compare this with the FamilyInstanceFilter class.</span>
+<span class="highlight-comment">/// &lt;/summary&gt;</span>
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> FilteredElementCollector GetFamilyInstances(
+  Document doc,
+  BuiltInCategory bic )
+{
+  <span class="highlight-comment">/* 2009:
+  List&lt;Element&gt; elements = new List&lt;Element&gt;();
+  Filter filterType = app.Create.Filter.NewTypeFilter( typeof( FamilyInstance ) );
+  Filter filterCategory = app.Create.Filter.NewCategoryFilter( bic );
+  Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterType, filterCategory );
+  app.ActiveDocument.get_Elements( filterAnd, elements );
+  return elements;
+  */</span>
+
+  <span class="highlight-keyword">return</span> GetElementsOfType( doc, <span class="highlight-keyword">typeof</span>( FamilyInstance ), bic );
+}</pre></div></span><span id="cbc_27" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">''' &lt;summary&gt;</span>
+<span class="highlight-comment">''' Retrieve all standard family instances for a given category.</span>
+<span class="highlight-comment">''' &lt;/summary&gt;</span>
+<span class="highlight-keyword">Shared</span> <span class="highlight-keyword">Function</span> GetFamilyInstances( _
+    <span class="highlight-keyword">ByVal</span> doc <span class="highlight-keyword">As</span> Document, _
+    <span class="highlight-keyword">ByVal</span> bic <span class="highlight-keyword">As</span> BuiltInCategory) _
+<span class="highlight-keyword">As</span> FilteredElementCollector
+
+    <span class="highlight-comment">' For Revit 2009, this was</span>
+    <span class="highlight-comment">'Dim elements As New System.Collections.Generic.List(Of Element)</span>
+    <span class="highlight-comment">'Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(FamilyInstance))</span>
+    <span class="highlight-comment">'Dim filterCategory As Filter = app.Create.Filter.NewCategoryFilter(bic)</span>
+    <span class="highlight-comment">'Dim filterCombination As Filter = app.Create.Filter.NewLogicAndFilter(filterCategory, filterType)</span>
+    <span class="highlight-comment">'Dim nRetVal As Integer = app.ActiveDocument.Elements(filterCombination, elements)</span>
+    <span class="highlight-comment">'Return elements</span>
+
+
+    <span class="highlight-keyword">Return</span> GetElementsOfType(doc, <span class="highlight-keyword">GetType</span>(FamilyInstance), bic)
+<span class="highlight-keyword">End</span> <span class="highlight-keyword">Function</span></pre></div></span><p>Compile, link and load the project as usual.</p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="a7ba3ddd-b7d8-9bdf-4c88-563eacb77753.htm">Lab2_4_EditFamilyInstance</a></td><td><div class="summary">
+ Demonstrate access to family instance parameters
+ and modification of family instance location.
+
+ Edit all doors in the current project.
+ Move the doors up 0.2 feet via the Document.Move method
+ and widen them 1 foot by changing the WINDOW_WIDTH parameter value.
+
+ <p>
+      In this lab, we select all doors in current document,
+      move them up by 0.2 feet via the Document.Move method and widen
+      them by one foot by changing the WINDOW_WIDTH parameter value.
+    </p><p>
+      Add a new command named Lab2_4_EditFamilyInstance to the Labs2 module.
+      Retrieve all doors in the current document using a filtered collector like
+      in the previous lab, either explicitly instantiating it and asking for
+      the appropriate category and System.Type, or using one of the LabUtils
+      methods such as GetElementsOfType or (most efficiently) GetFamilyInstances.
+    </p><p>
+      Go through the returned elements and move each door up using
+      the Document.Move method. Increasing the door width can be achieved
+      by changing the value of the built-in parameter WINDOW_WIDTH. Note
+      that this parameter is on the door symbol, i.,e a type parameter.
+      What happens if there are many doors in the model?
+      In what way does this behaviour depend on the regeneration option?
+    </p><p>
+      Since this command modifies the database, we need to return a
+      Succeeded result code or the changes will be discarded.
+    </p><span id="cbc_28" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>FilteredElementCollector doors = LabUtils.GetFamilyInstances(
+  doc, BuiltInCategory.OST_Doors );
+
+<span class="highlight-comment">// move doors up 0.2 feet:</span>
+
+XYZ v = <span class="highlight-number">0.2</span> * XYZ.BasisZ;
+
+<span class="highlight-keyword">foreach</span>( FamilyInstance door <span class="highlight-keyword">in</span> doors )
+{
+  doc.Move( door, v );
+
+  <span class="highlight-comment">// widen doors by one foot by changing parameter value:</span>
+
+  Parameter p = door.Symbol.get_Parameter(
+    BuiltInParameter.WINDOW_WIDTH );
+
+  <span class="highlight-keyword">if</span>( <span class="highlight-keyword">null</span> != p )
+  {
+    <span class="highlight-keyword">double</span> width = p.AsDouble();
+    width += <span class="highlight-number">1.0</span>;
+    p.Set( width );
+  }
+}
+<span class="highlight-keyword">return</span> Result.Succeeded;</pre></div></span><span id="cbc_29" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-keyword">Dim</span> doors <span class="highlight-keyword">As</span> FilteredElementCollector _
+    = LabUtils.GetFamilyInstances(doc, BuiltInCategory.OST_Doors)
+
+<span class="highlight-comment">' move doors up 0.2 feet:</span>
+
+
+<span class="highlight-keyword">Dim</span> v <span class="highlight-keyword">As</span> XYZ = <span class="highlight-number">0.2</span> * XYZ.BasisZ
+
+<span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> door <span class="highlight-keyword">As</span> FamilyInstance <span class="highlight-keyword">In</span> doors
+    doc.Move(door, v)
+
+    <span class="highlight-comment">' widen doors by one foot by changing parameter value:</span>
+
+
+    <span class="highlight-keyword">Dim</span> p <span class="highlight-keyword">As</span> Parameter = door.Symbol.Parameter(BuiltInParameter.WINDOW_WIDTH)
+
+    <span class="highlight-keyword">If</span> p <span class="highlight-keyword">IsNot</span> <span class="highlight-keyword">Nothing</span> <span class="highlight-keyword">Then</span>
+        <span class="highlight-keyword">Dim</span> width <span class="highlight-keyword">As</span> <span class="highlight-keyword">Double</span> = p.AsDouble()
+        width += <span class="highlight-number">1</span>
+        p.<span class="highlight-keyword">Set</span>(width)
+    <span class="highlight-keyword">End</span> <span class="highlight-keyword">If</span>
+<span class="highlight-keyword">Next</span>
+
+<span class="highlight-keyword">Return</span> Result.Succeeded</pre></div></span><p>
+      Before running the command, please ensure that there is at least
+      one door in the model.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="0af058f5-790f-0273-12a8-7d0a815fc469.htm">Lab2_5_SelectAndMoveWallAndAddColumns</a></td><td><div class="summary">
+ Demonstrate creation of new family instance elements
+ by querying an existing wall for its location and parameters,
+ modifying it, and inserting column elements.
+ <p>This makes use of the following new functionality:</p><ol><li>Pre-selection and interactive prompted selection process.</li><li>Read access to wall parameters, and modification of wall location.</li><li>Making use of LINQ in a filtered element query.</li></ol><p>
+      To run this command, select a wall.
+      It must be constrained to a level at the top, e.g. using Element Properties...
+      &gt; Constraints &gt; Top Constraint, otherwise an error message is displayed.
+      Load the column family named "M_Wood Timber Column" and the type named
+      "191 x 292mm" prior to running the command, or else use the
+      error message displayed to explain about the missing family,
+      or modify the names to refer to some family
+      type that is loaded. The selected wall is used to define three columns
+      at its end and mid points, then the wall is moved out of the way to
+      clearly display the columns.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="4bf4960b-5cce-337e-8b89-705e0c1ffd61.htm">Lab3_1_StandardFamiliesAndTypes</a></td><td><div class="summary">
+ List all loaded standard families and types.
+ As a result of the issues explained below, we implemented
+ the LabUtils utility methods FamilyCategory and GetFamilies.
+ <p>
+      In this section, we list all loaded families and family instances in the current document.
+      Each family defines a set of types, also called symbols.
+      The Revit API uses the ElementType to represent these types in a project file.
+      Prior to the Revit 2011 API, the ElementType class was called Symbol.
+    </p><p>
+      To list them, we retrieve all the family instances in the document.
+      They represent the standard families loaded and available in the current model.
+      Let's first see how we can get the family objects and try to determine their category.
+      We have added a new module named Labs3 to the project and a standard command class
+      implementation Lab3_1_StandardFamiliesAndTypes to it in which we implement this functionalty.
+    </p><p>
+      Instantiate a filtered element collector for this document and retrieve all Family objects.
+      Iterate over the result and list their Name, Category and FamilyCategory properties:
+    </p><span id="cbc_30" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// </span>
+<span class="highlight-comment">// retrieve all family elements in current document:</span>
+<span class="highlight-comment">// </span>
+families = <span class="highlight-keyword">new</span> FilteredElementCollector( doc );
+
+families.OfClass( <span class="highlight-keyword">typeof</span>( Family ) );
+
+<span class="highlight-keyword">foreach</span>( Family f <span class="highlight-keyword">in</span> families )
+{
+  <span class="highlight-comment">// Get its category name; notice that the Category property is not</span>
+  <span class="highlight-comment">// implemented for the Family class; use FamilyCategory instead;</span>
+  <span class="highlight-comment">// notice that that is also not always implemented; in that case,</span>
+  <span class="highlight-comment">// use the workaround demonstrated below, looking at the contained</span>
+  <span class="highlight-comment">// family symbols' category:</span>
+
+  a.Add( <span class="highlight-keyword">string</span>.Format( <span class="highlight-literal">"Name={0}; Category={1}; FamilyCategory={2}"</span>,
+    f.Name,
+    ( ( <span class="highlight-keyword">null</span> == f.Category ) ? <span class="highlight-literal">"?"</span> : f.Category.Name ),
+    ( ( <span class="highlight-keyword">null</span> == f.FamilyCategory ) ? <span class="highlight-literal">"?"</span> : f.FamilyCategory.Name ) ) );
+}</pre></div></span><span id="cbc_31" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">'</span>
+<span class="highlight-comment">' get all family elements in current document:</span>
+<span class="highlight-comment">'</span>
+families = <span class="highlight-keyword">New</span> FilteredElementCollector(doc)
+
+families.OfClass(<span class="highlight-keyword">GetType</span>(Family))
+
+<span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> f <span class="highlight-keyword">As</span> Family <span class="highlight-keyword">In</span> families
+
+    <span class="highlight-comment">' Get its category name; notice that the Category property is not</span>
+    <span class="highlight-comment">' implemented for the Family class; use FamilyCategory instead;</span>
+    <span class="highlight-comment">' notice that that is also not always implemented; in that case,</span>
+    <span class="highlight-comment">' use the workaround demonstrated below, looking at the contained</span>
+    <span class="highlight-comment">' family symbols' category:</span>
+
+
+    a.Add(<span class="highlight-literal">"Name="</span> + f.Name _
+          + <span class="highlight-literal">"; Category="</span> + <span class="highlight-keyword">If</span>(f.Category <span class="highlight-keyword">Is</span> <span class="highlight-keyword">Nothing</span>, <span class="highlight-literal">"?"</span>, f.Category.Name) _
+          + <span class="highlight-literal">"; FamilyCategory="</span> + <span class="highlight-keyword">If</span>(f.FamilyCategory <span class="highlight-keyword">Is</span> <span class="highlight-keyword">Nothing</span>, <span class="highlight-literal">"?"</span>, f.FamilyCategory.Name))
+<span class="highlight-keyword">Next</span></pre></div></span><p>
+      Compile and run the command.
+      As we can see from the message box, all the categories are listed as "?",
+      showing that this property is not implemented for family class.
+    </p><p>
+      Because the Category property is not implemented for family
+      objects, and it is often useful to determine a family instance's category,
+      the Revit API has defined an additional property FamilyCategory
+      to query it. Unfortunately, the value of this property is defined in the
+      content, and some legacy content does not specify a value for it,
+      so even this property does not always reliably return the value you
+      might expect.
+    </p><p>
+      In order to reliably determine a family's category, we can retrieve the
+      contained symbols or types and determine their category.
+      The following code demonstrates this and also reports
+      all types available in each family, displaying one message box per family.
+    </p><span id="cbc_32" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>catName = s.Category.Name;</pre></div></span><span id="cbc_33" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre>catName = s.Category.Name</pre></div></span><p>
+      Now a valid category name is reported for all families.
+      The looping continues displaying all types contained in each family
+      in one message box each as long as you click 'OK'.
+      Click 'Cancel' to terminate.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="b70937d7-6630-21d9-cfd9-b8d34d0e3a3b.htm">Lab3_2_LoadStandardFamilies</a></td><td><div class="summary">
+ Load an entire family or a specific type from a family.
+ <p>
+      This lab shows how to load a new entire family or
+      a single family instance into the current document.
+      The document object provides straightforward methods to load either a whole RFA file
+      or just a specific symbol from it.
+      The file and symbol name to load are defined by the LabConstants class.
+      You may need to change the paths and family names to make sure the
+      RFA files and the corresponding TXT catalog files exist on your machine.
+    </p><p>Loading an entire family:</p><span id="cbc_34" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// Load a whole Family</span>
+<span class="highlight-comment">// </span>
+<span class="highlight-comment">// Example for a family WITH TXT file:</span>
+
+rc = doc.LoadFamily( LabConstants.WholeFamilyFileToLoad1 );</pre></div></span><span id="cbc_35" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">' Load a whole Family</span>
+<span class="highlight-comment">'</span>
+<span class="highlight-comment">' Example for a family WITH TXT file:</span>
+
+
+rc = doc.LoadFamily(LabConstants.WholeFamilyFileToLoad1)</pre></div></span><p>Loading an individual type:</p><span id="cbc_36" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-comment">// Load only a specific symbol (type):</span>
+
+rc = doc.LoadFamilySymbol( 
+  LabConstants.FamilyFileToLoadSingleSymbol,
+  LabConstants.SymbolName );</pre></div></span><span id="cbc_37" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-comment">' Load only a specific symbol (type):</span>
+
+
+rc = doc.LoadFamilySymbol( _
+    LabConstants.FamilyFileToLoadSingleSymbol, _
+    LabConstants.SymbolName)</pre></div></span></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="a2c78632-4d01-5013-a8c4-35b52035fc2c.htm">Lab3_3_DetermineInstanceTypeAndFamily</a></td><td><div class="summary">
+ For a selected family instance in the model, determine its type and family.
+ <p>
+      This lab shows how to determine the family and type of a family instance element.
+      We look at two simple scenarios.
+      In Lab 3-1, we listed all symbols by looping over the contents of the symbols
+      property for each family found in the model.
+      Here, we first list all loaded standard family symbols belonging to a category,
+      such as 'Windows'.
+      For this we can filter for all elements which match the 'Windows'
+      category AND the 'FamilySymbol' type. Once we have retrieved the loaded family symbols,
+      we can directly access their Family and Name properties to display them.
+    </p><span id="cbc_38" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>FamilySymbol fs = inst.Symbol;
+
+Family f = fs.Family;</pre></div></span><span id="cbc_39" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-keyword">Dim</span> fs <span class="highlight-keyword">As</span> FamilySymbol = inst.Symbol
+
+<span class="highlight-keyword">Dim</span> f <span class="highlight-keyword">As</span> Family = fs.Family</pre></div></span><p>
+      Build, load and run the command and examine the output
+      in a model with a few windows instances.
+      Notice the intriguing fact that some of the family symbols are
+      listed multiple times if used for any instances.
+    </p><p>Why do two different family symbols have the same name?</p><p>
+      In Revit, a symbol represents geometry, and we have the concept
+      of master and slave family symbols.
+    </p><p>
+      Consider two window instances of the same type, but inserted into walls of different types.
+      Now, these two window instances refer to the same family symbol and count as being of the
+      same type, but it is clear that they cannot possibly use the same symbol geometry,
+      since they have different thickness. Hence master and slave symbols are used.
+    </p><p>
+      For instance, if there is no door instance in project, there will be only
+      one master symbol for 36"x84" doors.
+      Now, if the user draws a wall and places a door into it, Revit will create a
+      slave symbol for 36"x84".
+      If she then draws a different type of wall and places a new door of the same
+      type in this new wall, Revit will create another slave symbol for 36"x84".
+      Then there will be one master symbol and two slave symbols in the project.
+    </p><p>There is currently no API to query the symbol whether it is master or slave.</p><p>
+      Both of the symbols have the same parent family class instance and either are
+      usable for editing existing or creating new instances,
+      so there is no issue with this.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="80fe5a7d-e1af-4cd4-4594-7a01deb9224f.htm">Lab3_4_ChangeSelectedInstanceType</a></td><td><div class="summary">
+ Form-based utility to change the type or symbol of a selected standard instance.
+ <p>
+      In this section, we change the type of a standard family instance element.
+      We make use of a windows form that displays all available families and types
+      for the category of the single selected instance. Since the lab involves some
+      user interface elements, it may take too long for a hands-on lab. If so,
+      compile and debug the solved lab and discuss the code and its comments
+      with the instructor and your peers. If you are confident with windows forms
+      development, you may try to design similar code in your own project as well.
+      The relevant code in the command does three things:
+    </p><ul><li>Ensure a single instance element is selected and determine its category.</li><li>Collect all types applicable to this category and sort them into a dictionary mapping the family name to a list of its types.</li><li>Display the form, allow the user to select a family and a type, and assign this type to the instance.</li></ul><p>
+      Before proceeding with the selected instance change, we need to ensure
+      that only a single element is selected. We also need to
+      ensure that the element is of FamilyInstance type.
+    </p><p>
+      To create the dictionary of relevant families with a list of all the
+      symbols of each, we can use the new filtering mechanism to create a type filter
+      (of Family type). With this set of family elements, we will match the category
+      of the family (or the symbol, as the case might be) with that of
+      the selected family instance element. It is a good practice to check for
+      category match against category id or built-in category instead of category name.
+    </p><p>Displaying the form and assigning the selected type is short and sweet.</p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="2cfc9b86-9337-86c2-7ffc-7f1491066b4e.htm">Lab3_4_Form</a></td><td /></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="164f8c81-891d-50fd-82d5-d0dbe375ee44.htm">Lab3_5_WallAndFloorTypes</a></td><td><div class="summary">
+ Access and modify system family type, similarly
+ to the standard families looked at above:
+
+ List all wall and floor types and
+ change the type of selected walls and floors.
+ <p>
+      In this section, we list system types and change the type of a system family instance element.
+      All the previous labs in this section dealt with the <em>standard</em> families and instances.
+      In this lab, we show more or less the same issues for <em>system</em> families, which are
+      often host objects, such as walls and floors. Wall is the most comprehensively exposed
+      host object so far in the Revit API. Specific and dedicated classes, methods and
+      properties are available which makes them somewhat simpler to use than standard
+      family instances.
+    </p><p>
+      Add a new command class to the Lab3 module, e.g. Lab3_5_WallAndFloorTypes.
+      First we will enumerate all available wall types.
+      This is simple thanks to the dedicated property on the document object.
+      We will also store the last one in order to change the
+      selected wall's type later without any complex user interface:
+    </p><p>
+      Implement the same functionality for floor types.
+      Since Revit 2008, the document class has a FloorTypes property
+      and we can use this to retrieve the collection of all the floor types.
+      However from 9.0 version, the "Foundation Slab" system family
+      from the "Structural Foundations" category also contain FloorType class instances.
+    </p><p>
+      In the C# sample, we loop through all the FloorTypes listed in the document and
+      then check if the category of the floor type is same as built-in category of Floor.
+      This is done by comparing the category id of the floor type element with that of
+      the built-in Floors category. Please note that from Revit 2009 onwards,
+      category ids need to be used to compare categories, instead of comparing categories
+      with each other directly.
+    </p><p>
+      In the VB.Net sample, the approach is more performance centric,
+      where we use a compound filter called NewLogicAndFilter
+      and use that to filter elements of FloorType AND
+      built-in category Floors to avoid structural foundation floor slabs.
+    </p><p>
+      Modifying the wall and floor type of an instance are simple nowaday,
+      since the WallType and FloorType properties are availablke, respectively.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="0173b2ab-e5d8-38d6-d626-8592de30fae5.htm">Lab3_6_DuplicateWallType</a></td><td><div class="summary">
+ Create a new family symbol or type by calling Duplicate()
+ on an existing one and then modifying its parameters.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="1d8c9fb5-2548-08e6-2ddb-5c413693c096.htm">Lab3_7_DeleteFamilyType</a></td><td><div class="summary">
+ Delete a specific individual type from a family.
+ Hard-coded to a column type named "475 x 610mm".
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="3a1b4c73-3646-0b2e-c8e7-66440d7b5dec.htm">Lab4_1_ElementParameters</a></td><td><div class="summary">
+ List all parameters for selected elements.
+ <p>This lab explores the parameters attached to every Revit element.</p><p>
+      Add a new module <span id="cbc_40" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>Labs4</pre></div></span> to the project and the first command class
+      <span id="cbc_41" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>Lab4_1_ParametersForSelectedObjects</pre></div></span> for this lab.
+      Since we will be exporting parameter values to Excel later on in this lab,
+      the C# code includes a statement to use that namespace as well.
+      For the moment we just loop through all elements in the current selection set,
+      iterate over their parameter collection, and display the names, types and values
+      of each paramter:
+    </p><p>
+      Compile, load and run the command.
+      Look at the elements and their properties in the debugger,
+      especially the <span id="cbc_42" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>Parameters</pre></div></span> property.
+    </p><p>
+      Add code within the loop to report all
+      UI-visible parameters for each element.
+    </p><span id="cbc_43" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre><span class="highlight-keyword">foreach</span>( Parameter p <span class="highlight-keyword">in</span> e2.Parameters )
+{
+  <span class="highlight-keyword">string</span> name = p.Definition.Name;
+  <span class="highlight-keyword">string</span> type = p.StorageType.ToString();
+  <span class="highlight-keyword">string</span> value = LabUtils.GetParameterValue2( p, uidoc.Document );
+  a.Add( <span class="highlight-keyword">string</span>.Format(
+    <span class="highlight-literal">"Name={0}; Type={1}; Value={2}; ValueString={3}"</span>,
+    name, type, value, p.AsValueString() ) );
+}</pre></div></span><span id="cbc_44" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre><span class="highlight-keyword">For</span> <span class="highlight-keyword">Each</span> p <span class="highlight-keyword">As</span> Parameter <span class="highlight-keyword">In</span> e2.Parameters
+    <span class="highlight-keyword">Dim</span> name <span class="highlight-keyword">As</span> <span class="highlight-keyword">String</span> = p.Definition.Name
+    <span class="highlight-keyword">Dim</span> type <span class="highlight-keyword">As</span> <span class="highlight-keyword">String</span> = p.StorageType.ToString()
+    <span class="highlight-keyword">Dim</span> value <span class="highlight-keyword">As</span> <span class="highlight-keyword">String</span> = LabUtils.GetParameterValue2(p, uidoc.Document)
+    a.Add(<span class="highlight-literal">"Name="</span> + name + <span class="highlight-literal">"; Type="</span> + type + <span class="highlight-literal">"; Value="</span> + value _
+          + <span class="highlight-literal">"; ValueString="</span> + p.AsValueString())
+<span class="highlight-keyword">Next</span></pre></div></span><p>
+      At this point you can compile and link the project again
+      and see the list of element properties reported for selected elements.
+    </p><p>
+      There are several different methods to access a <em>specific</em> parameter:
+      by localised name, by built-in parameter enum, by definition or by GUID.
+    </p><span id="cbc_45" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>Parameter p = e.get_Parameter(
+  BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM );</pre></div></span><span id="cbc_46" x-lang="VisualBasic" codeLanguage="VisualBasic"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>VB.NET</div><div class="code"><pre>parBuiltIn = e.Parameter(BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM)</pre></div></span><p>
+      Compile, load and launch the command, selecting various elements first.
+      Note that built-in parameters are available for some, but not all categories.
+      For instance, try Walls, Columns and Furniture.
+      The <span id="cbc_47" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM</pre></div></span> and 'Base Offset'
+      parameters used in the sample are available on column elements.
+    </p><p>
+      Note that more parameters may be available on any given element than those
+      reported by the element's <span id="cbc_48" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>Parameters</pre></div></span> property ... use the
+      <span id="cbc_49" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>BuiltInParamsChecker</pre></div></span> to discover these as well.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="faf47a29-3537-6b33-63fe-b3b9caca0dcb.htm">Lab4_2_ExportParametersToExcel</a></td><td><div class="summary">
+ Export all parameters for each model element to Excel, one sheet per category.
+ <p>
+      This lab shws how to export all parameters of all elements in the Revit model
+      to Excel, sorted by category into different sheets.
+      We create a separate sheet per each category.
+      The first row of the sheet is a header listing the parameter
+      names for the given category.
+      It is followed by a row of values for each element.
+      Note that we need to reference the Excel COM library.
+      There is no native .NET API available for the Microsoft Office products,
+      so we use COM via COM callable wrappers, also known as COM-Interop in .NET.
+    </p><p>
+      We implement a new command <span id="cbc_50" x-lang="CSharp" codeLanguage="CSharp"><div class="highlight-title"><span class="highlight-copycode" onkeypress="javascript:CopyColorizedCodeCheckKey(this.parentNode, event);" tabindex="0" onmouseover="CopyCodeChangeIcon(this)" onmouseout="CopyCodeChangeIcon(this)" onclick="javascript:CopyColorizedCode(this.parentNode);"><img src="../icons/CopyCode.gif" style="margin-right: 5px;" />Copy</span>C#</div><div class="code"><pre>Lab4_2_ExportParametersToExcel</pre></div></span>.
+      In a first step, we iterate over all elements and sort them into
+      separate element sets, one for each category.
+    </p><p>
+      At this point you can already compile and link the project,
+      load and debug the command
+      to analyse the categories and elements collected.
+    </p><p>
+      Launch Excel via COM interop and remove the automatically created worksheets,
+      as far as possible ... unfortunately, at least one remains, so we have to adjust
+      the code populating them to account for the one left.
+    </p><p>
+      Loop through the element sets for each category.
+      For each category determine all occurring parameters and use these to create the header.
+      Then loop through the elements and export their values one by one.
+    </p></div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="363e83c0-64f3-a0cb-b68d-cdff87bc1a09.htm">Lab4_3_1_CreateAndBindSharedParam</a></td><td><div class="summary">
+ Create and bind shared parameter.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="8b399f33-c3d6-55e6-1b84-4bc50af1cb5c.htm">Lab4_3_2_ExportSharedParamToExcel</a></td><td><div class="summary">
+ Export all target element ids and their FireRating param values to Excel.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="a2a497fe-a941-7ba9-bebd-d959df277aef.htm">Lab4_3_3_ImportSharedParamFromExcel</a></td><td><div class="summary">
+ Import updated FireRating param values from Excel.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="c32b25a9-03c5-fd99-272f-f831f1930012.htm">Lab4_4_1_CreatePerDocParameters</a></td><td><div class="summary">
+ Add and bind a visible and an invisible per-doc parameter.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="4f512456-3d17-54a2-c631-a3ee3d3fe6fe.htm">Lab4_4_2_IncrementPerDocParameters</a></td><td><div class="summary">
+ Increment the invisible per-doc param.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="5598709d-297d-b859-4a31-ac005c34d405.htm">Lab5_1_GroupsAndGroupTypes</a></td><td><div class="summary">
+ List all groups and group types in the model.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="a5b6a19b-8e69-4f21-a7d5-57b7175f9ac2.htm">Lab5_2_SwapGroupTypes</a></td><td><div class="summary">
+ Swap group types for selected groups.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="221b2020-3254-1225-95da-451821690643.htm">Lab5_3_Rooms</a></td><td><div class="summary">
+ List room boundaries.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="84e5399e-0bd7-1076-7389-9f64334cebf2.htm">Lab6_1_HelloWorldExternalApplication</a></td><td><div class="summary">
+ A minimal external application saying hello.
+ Explain the concept of an external application and its minimal interface.
+ Explore how to create a manifest file for an external application.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="43c8cb72-273d-e588-f181-0c23ce964920.htm">Lab6_2_Ribbon</a></td><td><div class="summary">
+ Add various controls to the Revit ribbon.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="c6b39e95-f30c-279a-7b39-ac8f877473b7.htm">Lab6_3_PreventSaveEvent</a></td><td><div class="summary">
+ This external application subscribes to, handles,
+ and unsubscribes from the document saving event.
+ Using the event mechnism pre-event features, some actions can be prevented.
+ This sample displays a message dialog to let the user decide whether to save changes to the document.
+ Note: The document must have been already saved to disk prior to running this application.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="565ff07a-ce8e-2977-c5a3-a5ac1467a0a2.htm">Lab6_4_DismissDialog</a></td><td><div class="summary">
+ This external application subscribes to, handles,
+ and unsubscribe from the dialog box showing event.
+ Its can dismiss the "Family already exists" dialog when
+ reloading an already loaded family, and overwrite the existing version.
+ It dismisses message box by simulating a click on the "Yes" button.
+ In addition, it can dismiss the property dialog.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="b8ceea39-4929-9c58-8627-e7b72bb5ccad.htm">Lab6_5_RibbonExplorer</a></td><td><div class="summary">
+ List the contents of the Revit ribbon in the Visual Studio debug output window.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="9fb34702-f0f7-7aca-60df-02c29c4c7678.htm">Lab7_1_CreateForm</a></td><td><div class="summary">
+ Create a loft form using reference points and curve by points.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="b6ca1435-05de-e72b-0321-4d40e0f16d2e.htm">Lab7_2_CreateDividedSurface</a></td><td><div class="summary">
+ Create a divided surface using reference of a face of the form.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="11d7d823-1d21-c9fd-c0bb-a07b30ec1828.htm">Lab7_3_ChangeTilePattern</a></td><td><div class="summary">
+ Change the tiling pattern of the divided surface using the built-in TilePattern enumeration.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="737e3e41-d09e-20d3-86d2-6278bd9a2094.htm">LabUtils</a></td><td><div class="summary">
+ A collection of utility methods reused in several labs.
+ </div></td></tr><tr data="class; public"><td><img src="../icons/pubclass.gif" title="Public class" /></td><td><a href="46f8749b-7f45-5b6e-7725-28ccb7b9986a.htm">LabUtils<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span></span>TypeSelectionFilter</a></td><td><div class="summary">
+ A selection filter for a specific System.Type.
+ </div></td></tr></table></div></div><div id="footer"><div class="footerLine"><img width="100%" height="3px" src="../icons/footer.gif" title="Footer image" /></div><A NAME="feedback"></A><span id="fb" class="feedbackcss"> </span>
+ <p /><a href="Copyright (C) 2010 Jeremy Tammik, Autodesk Inc." target="_blank">Copyright (C) 2010 Jeremy Tammik, Autodesk Inc.</a></div></div></body></html>

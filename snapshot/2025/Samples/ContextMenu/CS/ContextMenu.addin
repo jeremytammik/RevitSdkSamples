@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>ContextMenu.dll</Assembly>
+    <ClientId>5F37D1FF-51C8-401C-B975-BC31202AAC5E</ClientId>
+    <FullClassName>Revit.SDK.Samples.ContextMenu.CS.ContextMenuApplication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

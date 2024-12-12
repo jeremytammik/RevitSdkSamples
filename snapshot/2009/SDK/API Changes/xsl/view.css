@@ -1,0 +1,22 @@
+        table.content
+        {
+        border-collapse:separate;
+        border: 1px solid #444;
+        border-spacing: 15px;
+        width:100%;
+        }
+        img
+        {
+			/*background-color:#FF00FF*//*Magenta Fuchsia*/
+			/*filter: #FF00FF;*/
+			/*cursor:crosshair;*/
+			Filter:Chroma(color=#FF00FF)
+			/*filter: chroma(color=red)*/
+        }
+        table.tasks
+        {
+			border-collapse:separate;
+			border: 1px solid #444;
+			border-spacing: 15px;
+			width:100%;
+        }

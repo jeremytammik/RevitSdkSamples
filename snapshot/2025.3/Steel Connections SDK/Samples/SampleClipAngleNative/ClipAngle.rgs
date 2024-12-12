@@ -1,0 +1,23 @@
+HKCR
+{
+	SampleClipAngleNative.SampleClipAngle.1 = s 'SampleClipAngle Class'
+	{
+		CLSID = s '{FD62E6AB-0412-4F2B-9DB8-C5D5385F8042}'
+	}
+	SampleClipAngleNative.SampleClipAngle = s 'SampleClipAngle Class'
+	{
+		CLSID = s '{FD62E6AB-0412-4F2B-9DB8-C5D5385F8042}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {FD62E6AB-0412-4F2B-9DB8-C5D5385F8042} = s 'SampleClipAngle Class'
+		{
+			ProgID = s 'SampleClipAngleNative.SampleClipAngle.1'
+			VersionIndependentProgID = s 'SampleClipAngleNative.SampleClipAngle'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

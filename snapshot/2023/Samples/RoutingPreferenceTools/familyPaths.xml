@@ -1,0 +1,5 @@
+<xml>
+<!--- Extra optional paths where Revit should search for .rfa files -->
+<FamilyPath pathname="C:\family files\"></FamilyPath>
+<FamilyPath pathname="C:\family files2\"></FamilyPath>
+</xml>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateTruss.dll</Assembly>
+    <ClientId>25edaeaf-21d7-45a3-b16b-010d159f8fcf</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateTruss.CS.Command</FullClassName>
+    <Text>Create Truss</Text>
+    <Description>Create truss in truss family document.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

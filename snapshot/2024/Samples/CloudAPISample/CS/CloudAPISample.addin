@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   
+   <AddIn Type="Application">
+    <Name>CloudAPISample</Name>
+    <Assembly>CloudAPISample.dll</Assembly>
+    <ClientId>0d8d1633-bd9e-4e6e-9188-1b84a55b1f3a</ClientId>
+    <FullClassName>Revit.SDK.Samples.CloudAPISample.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

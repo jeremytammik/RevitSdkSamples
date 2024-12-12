@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MechanicalSystem>
+    <BasicInformation>
+        <Name>Mechanical Supply Air 1</Name>
+        <Id>382490</Id>
+        <UniqueId>23917bfa-2fdc-40f2-99d5-d76b395d58bc-0005d61a</UniqueId>
+        <SystemType>SupplyAir</SystemType>
+        <Category Id="-2008015" Name="Duct Systems" />
+        <IsWellConnected>true</IsWellConnected>
+        <IsDefaultSystem>false</IsDefaultSystem>
+        <HasBaseEquipment>true</HasBaseEquipment>
+        <TerminalElementsCount>2</TerminalElementsCount>
+        <Flow>16.666666666666668</Flow>
+    </BasicInformation>
+    <Path>
+        <MechanicalEquipment Name="Size 4 - 10 inch Inlet" Id="378728" Direction="Out" />
+        <MechanicalFitting Category="Duct Fittings" PartType="Transition" Name="Standard" Id="382496" Direction="In" />
+        <Duct Name="Radius Elbows / Tees" Id="382491" Direction="In" />
+        <MechanicalFitting Category="Duct Fittings" PartType="Elbow" Name="1.5 W" Id="382493" Direction="In" />
+        <Duct Name="Radius Elbows / Tees" Id="382492" Direction="In" />
+        <MechanicalFitting Category="Duct Fittings" PartType="Elbow" Name="1.5 W" Id="382507" Direction="In" />
+        <Duct Name="Radius Elbows / Tees" Id="382506" Direction="In" />
+        <MechanicalFitting Category="Duct Fittings" PartType="Elbow" Name="1.5 W" Id="382508" Direction="In" />
+        <Duct Name="Radius Elbows / Tees" Id="382500" Direction="In" />
+        <MechanicalFitting Category="Duct Fittings" PartType="Tee" Name="Standard" Id="382505" Direction="In" />
+        <Path>
+            <Duct Name="Radius Elbows / Tees" Id="382501" Direction="In" />
+            <MechanicalFitting Category="Duct Fittings" PartType="Elbow" Name="1.5 W" Id="382503" Direction="In" />
+            <Duct Name="Radius Elbows / Tees" Id="382498" Direction="In" />
+            <FamilyInstance Category="Air Terminals" Name="24 x 24 Face 12 x 12 Connection" Id="378707" Direction="In" />
+        </Path>
+        <Path>
+            <Duct Name="Radius Elbows / Tees" Id="382502" Direction="In" />
+            <MechanicalFitting Category="Duct Fittings" PartType="Elbow" Name="1.5 W" Id="382504" Direction="In" />
+            <Duct Name="Radius Elbows / Tees" Id="382499" Direction="In" />
+            <FamilyInstance Category="Air Terminals" Name="24 x 24 Face 12 x 12 Connection" Id="378716" Direction="In" />
+        </Path>
+    </Path>
+</MechanicalSystem>

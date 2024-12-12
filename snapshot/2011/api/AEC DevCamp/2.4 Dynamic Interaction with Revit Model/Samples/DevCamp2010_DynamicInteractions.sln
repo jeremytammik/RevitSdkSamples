@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionControl", "TransactionControl\TransactionControl.csproj", "{CABE1E71-BAD8-4B8F-9001-D9D2A484F146}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicModelUpdate", "DynamicModelUpdate\DynamicModelUpdate.csproj", "{7703880C-62D5-477E-BB6B-D8822E7F4249}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangesMonitor", "DocumentChanged\ChangesMonitor.csproj", "{1C6B9634-D463-43C1-A8C5-B94AE7615384}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CABE1E71-BAD8-4B8F-9001-D9D2A484F146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CABE1E71-BAD8-4B8F-9001-D9D2A484F146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CABE1E71-BAD8-4B8F-9001-D9D2A484F146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CABE1E71-BAD8-4B8F-9001-D9D2A484F146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7703880C-62D5-477E-BB6B-D8822E7F4249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7703880C-62D5-477E-BB6B-D8822E7F4249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7703880C-62D5-477E-BB6B-D8822E7F4249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7703880C-62D5-477E-BB6B-D8822E7F4249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C6B9634-D463-43C1-A8C5-B94AE7615384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C6B9634-D463-43C1-A8C5-B94AE7615384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C6B9634-D463-43C1-A8C5-B94AE7615384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C6B9634-D463-43C1-A8C5-B94AE7615384}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

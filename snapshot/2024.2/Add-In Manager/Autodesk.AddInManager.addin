@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+      <Assembly>Autodesk.AddInManager.Command.dll</Assembly>
+      <ClientId>8C0A9E25-B7C5-421c-A1AB-702F73FA551F</ClientId>
+      <FullClassName>AddInManager.CAddInManager</FullClassName>
+      <Text>Add-In Manager (Manual Mode)</Text>
+      <VisibilityMode>AlwaysVisible</VisibilityMode>
+      <LanguageType>Unknown</LanguageType>
+      <VendorId>ADSK</VendorId>
+      <VendorDescription><![CDATA[https://knowledge.autodesk.com/search?search=AddInManager&sort=score]]></VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+      <Assembly>Autodesk.AddInManager.Command.dll</Assembly>
+      <ClientId>6FDB8EC7-CCD3-4fc0-ADB7-B459D298FB93</ClientId>
+      <FullClassName>AddInManager.CAddInManagerFaceless</FullClassName>
+      <Text>Add-In Manager (Manual Mode, Faceless)</Text>
+      <VisibilityMode>AlwaysVisible</VisibilityMode>
+      <LanguageType>Unknown</LanguageType>
+      <VendorId>ADSK</VendorId>
+      <VendorDescription><![CDATA[https://knowledge.autodesk.com/search?search=AddInManager&sort=score]]></VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+      <Assembly>Autodesk.AddInManager.Command.dll</Assembly>
+      <ClientId>91A2419C-5FCA-491A-BAA3-29A497EC07C7</ClientId>
+      <FullClassName>AddInManager.CAddInManagerReadOnly</FullClassName>
+      <Text>Add-In Manager (ReadOnly Mode)</Text>
+      <VisibilityMode>AlwaysVisible</VisibilityMode>
+      <LanguageType>Unknown</LanguageType>
+      <VendorId>ADSK</VendorId>
+      <VendorDescription><![CDATA[https://knowledge.autodesk.com/search?search=AddInManager&sort=score]]></VendorDescription>
+  </AddIn>  
+</RevitAddIns>

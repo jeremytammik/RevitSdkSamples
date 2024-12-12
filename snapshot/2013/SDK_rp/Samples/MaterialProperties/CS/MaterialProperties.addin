@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>MaterialProperties.dll</Assembly>
+    <ClientId>69ddbdbf-769b-4b24-a6c2-f1747929f54c</ClientId>
+    <FullClassName>Revit.SDK.Samples.MaterialProperties.CS.MaterialProperties</FullClassName>
+    <Text>Material Properties (CS)</Text>
+    <Description>Get the material physical properties of the selected beam, column or brace.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

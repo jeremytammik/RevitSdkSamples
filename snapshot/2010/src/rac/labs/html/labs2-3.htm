@@ -1,0 +1,213 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Retrieving Family Instances</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs2-4.htm">next</a>
+<a class="j" href="labs2-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>Revit makes heavy use of families to define certain classes of elements.
+There are system families, which are built-in to Revit, and standard families,
+which are defined in external files with the filename extension *.rfa.
+Walls are defined using a system family, and windows by standard families.
+One way to get all walls or windows would be to use something like the <code>GetAllModelElements()</code>
+utility with an additional check on the category name. But we can achieve this task somewhat
+more elegantly and in a generic manner by coding the following two utilities within
+<code>LabUtils</code> class. The first one is specific for walls and uses a filter
+to obtain all walls in the document. It provides much better performance
+than the traditional iteration through the whole document elements collection.
+In addition, the code is easy to use and more succinct.</p>
+
+<pre title="CS LabUtils.GetAllWalls()" class="jtcollapse">
+    /// &lt;summary&gt;
+    /// Helper to get all walls using Revit 2009 filtering.
+    /// &lt;/summary&gt;
+    public static List&lt;Element&gt; GetAllWalls( Application app )
+    {
+      List&lt;Element&gt; elements = new List&lt;Element&gt;();
+      Filter filterType = app.Create.Filter.NewTypeFilter( typeof( Wall ) );
+      app.ActiveDocument.get_Elements( filterType, elements );
+      return elements;
+    }
+</pre>
+
+
+<pre title="VB LabUtils.GetAllWalls()" class="jtcollapse">
+    ''' &lt;summary&gt;
+    ''' Helper to get all walls using filter .
+    ''' &lt;/summary&gt;
+    Shared Function GetAllWalls(ByVal app As Revit.Application) As List(Of Element)
+        Dim elements As New List(Of Element)
+        Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(Wall))
+        Dim n As Integer = app.ActiveDocument.Elements(filterType, elements)
+        Return elements
+    End Function
+</pre>
+
+<p>The second utility function is generic and can be used for any category name
+for standard families, e.g. Windows, Furniture, etc.:</p>
+
+<pre title="C# LabUtils.GetAllStandardFamilyInstancesForACategory()" class="jtcollapse">
+    /// &lt;summary&gt;
+    /// Helper to get all standard family instances for a given category
+    /// using the filter features provided by the Revit 2009 API.
+    /// &lt;/summary&gt;
+    public static List&lt;Element&gt; GetAllStandardFamilyInstancesForACategory(
+      Application app,
+      BuiltInCategory bic )
+    {
+      List&lt;Element&gt; elements = new List&lt;Element&gt;();
+      Filter filterType = app.Create.Filter.NewTypeFilter( typeof( FamilyInstance ) );
+      Filter filterCategory = app.Create.Filter.NewCategoryFilter( bic );
+      Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterType, filterCategory );
+      app.ActiveDocument.get_Elements( filterAnd, elements );
+      return elements;
+    }
+</pre>
+
+<pre title="VB LabUtils.GetAllStandardFamilyInstancesForACategory()" class="jtcollapse">
+    ''' &lt;summary&gt;
+    ''' Helper to get all standard family instances for a given category
+    ''' using the filter features provided by the Revit 2009 API.
+    ''' &lt;/summary&gt;
+    Shared Function GetAllStandardFamilyInstancesForACategory( _
+        ByVal app As Revit.Application, _
+        ByVal bic As BuiltInCategory) _
+    As List(Of Revit.Element)
+
+        Dim elements As New System.Collections.Generic.List(Of Revit.Element)
+        Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(FamilyInstance))
+        Dim filterCategory As Filter = app.Create.Filter.NewCategoryFilter(bic)
+        Dim filterCombination As Filter = app.Create.Filter.NewLogicAndFilter(filterCategory, filterType)
+        Dim nRetVal As Integer = app.ActiveDocument.Elements(filterCombination, elements)
+        Return elements
+
+    End Function
+</pre>
+
+<p>Add a new command Lab2_3_AllWallsAndFamilyInstances to the Labs2 module to test these utilities:</p>
+
+<pre title="C# Lab2_3_AllWallsAndFamilyInstances command" class="jtcollapse">
+#region Lab2_3_AllWallsAndFamilyInstances
+  /// &lt;summary&gt;
+  /// List all walls and family instances.
+  /// &lt;/summary&gt;
+  public class Lab2_3_AllWallsAndFamilyInstances : IExternalCommand
+  {
+    public CmdResult Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+
+      // get all walls:
+      List&lt;Element&gt; walls = LabUtils.GetAllWalls( app );
+      string s = "All walls in the model:";
+      foreach ( Wall wall in walls )
+      {
+        s += "\r\n  Id=" + wall.Id.Value.ToString()
+          + "; Kind=" + wall.WallType.Kind.ToString()
+          + "; Type=" + wall.WallType.Name;
+      }
+      LabUtils.InfoMsg( s );
+
+      // get all doors (you can change it to eg Furniture or Windows...)
+      // NOTE: Before 9.0, one had to hard-code the name which wouldn't work in other locales!
+      // Dim catName As String = "Doors"
+      // Since 9.0, there is enumeration which works with ALL locales
+      BuiltInCategory bic = BuiltInCategory.OST_Doors;
+      string catName = app.ActiveDocument.Settings.Categories.get_Item( bic ).Name;
+      List&lt;Element&gt; familyInstances = LabUtils.GetAllStandardFamilyInstancesForACategory( app, bic );
+      s = "All " + catName + " instances in the model:";
+      foreach( FamilyInstance inst in familyInstances )
+      {
+        // For FamilyInstances, the element name property returns the type name:
+        s += "\r\n  Id=" + inst.Id.Value.ToString() + "; Type=" + inst.Name;
+      }
+      LabUtils.InfoMsg( s );
+      return CmdResult.Succeeded;
+    }
+  }
+  #endregion // Lab2_3_AllWallsAndFamilyInstances
+</pre>
+
+<pre title="VB Lab2_3_AllWallsAndFamilyInstances command" class="jtcollapse">
+#Region "Lab2_2_ModelElements"
+    ''' &lt;summary&gt;
+    ''' List all model elements.
+    ''' &lt;/summary&gt;
+    Public Class Lab2_2_ModelElements
+        Implements IExternalCommand
+
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+
+            ' Call the utility
+            Dim modelElems As ElementSet = LabUtils.GetAllModelElements(commandData.Application)
+
+            ' List all elems
+            Dim sMsg As String = "There are " & modelElems.Size & " model elements:"
+            Dim elem As Revit.Element
+            For Each elem In modelElems
+                sMsg += vbCrLf & "  Category=" & elem.Category.Name & "; Id=" & elem.Id.Value.ToString
+            Next
+            MsgBox(sMsg)
+
+            Return IExternalCommand.Result.Succeeded
+
+        End Function
+    End Class
+
+#End Region
+</pre>
+
+<p>Compile and link the project and update the Revit.ini file accordingly. Or load
+    the command with the help of Add-in Manager.</p>
+
+<p>Run the command and examine and discuss the information displayed
+with the course instructor and your peers.</p>
+
+<a class="j" href="labs2-4.htm">next</a>
+<a class="j" href="labs2-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

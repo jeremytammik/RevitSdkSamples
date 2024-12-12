@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ModelessForm_IdlingEvent.dll</Assembly>
+    <ClientId>41d34ec8-525a-4147-bde0-076f05a1b93f</ClientId>
+    <FullClassName>Revit.SDK.Samples.ModelessForm_IdlingEvent.CS.Command</FullClassName>
+    <Text>Show Modeless Form (Idling Event)</Text>
+    <Description>An applicaiton with a modeless dialog using the Idling event to comunicate with Revit API</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>ModelessForm_IdlingEvent</Name>
+    <Assembly>ModelessForm_IdlingEvent.dll</Assembly>
+    <ClientId>cc275222-8afa-4192-bbdf-28cb712a086b</ClientId>
+    <FullClassName>Revit.SDK.Samples.ModelessForm_IdlingEvent.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

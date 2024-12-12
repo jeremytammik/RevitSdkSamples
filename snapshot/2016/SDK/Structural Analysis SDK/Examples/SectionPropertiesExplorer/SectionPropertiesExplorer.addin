@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AssemblyPath</Assembly>
+    <AddInId>FB51A45D-3EC4-41F8-ADB0-9188FD1CCAB5</AddInId>
+    <FullClassName>SectionPropertiesExplorer.Command</FullClassName>
+    <Text>Section Properties Explorer</Text>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <LanguageType>Unknown</LanguageType>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk,www.Autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

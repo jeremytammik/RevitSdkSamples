@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>EXtensionRevitLauncher</Name>
+    <Assembly>P:\ExtensionRevitLauncher\ExtensionRevitLauncher\bin\Release\ExtensionRevitLauncher.dll</Assembly>
+    <AddInId>1cd57a34-33d5-4d8f-bef4-3abff1e7f063</AddInId>
+    <FullClassName>ExtensionRevitLauncher.ExtensionApp</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

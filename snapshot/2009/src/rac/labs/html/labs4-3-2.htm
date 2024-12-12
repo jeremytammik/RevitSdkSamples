@@ -1,0 +1,280 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Export Element ID's and Parameter Values </div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs4-3-3.htm">next</a>
+<a class="j" href="labs4-3-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we export the door element ids and FireRating parameter
+values to Excel.</p>
+
+<p>Before adding the command, we implement another reusable utility to get the
+gloally unique identifier or GUID for a given shared parameter group and name.
+We will need this later for the GUID argument of the
+<code>Revit.Element.Parameter()</code> method.
+Add the following method to <code>LabUtils</code>:</p>
+
+<pre title="C# Get GUID for a given shared param name" class="jtcollapse">
+    /// &lt;summary&gt;
+    /// Get GUID for a given shared param name.
+    /// &lt;/summary&gt;
+    /// &lt;param name="app"&gt;Revit application&lt;/param&gt;
+    /// &lt;param name="defGroup"&gt;Definition group name&lt;/param&gt;
+    /// &lt;param name="defName"&gt;Definition name&lt;/param&gt;
+    /// &lt;returns&gt;GUID&lt;/returns&gt;
+    public static Guid SharedParamGUID( Application app, string defGroup, string defName )
+    {
+      Guid guid = Guid.Empty;
+      try
+      {
+        Autodesk.Revit.Parameters.DefinitionFile file = app.OpenSharedParameterFile();
+        Autodesk.Revit.Parameters.DefinitionGroup group = file.Groups.get_Item( defGroup );
+        Autodesk.Revit.Parameters.Definition definition = group.Definitions.get_Item( defName );
+        Autodesk.Revit.Parameters.ExternalDefinition externalDefinition = definition as ExternalDefinition;
+        guid = externalDefinition.GUID;
+      }
+      catch( Exception )
+      {
+      }
+      return guid;
+    }
+    #endregion // Helpers for shared parameters
+
+</pre>
+
+<pre title="VB Get GUID for a given shared param name" class="jtcollapse">
+    ''' &lt;summary&gt;
+    ''' Get GUID for a given shared param name.
+    ''' &lt;/summary&gt;
+        Shared Function SharedParamGUID(ByVal app As Revit.Application, _
+                                        ByVal defGroup As String, _
+                                        ByVal defName As String) As Guid
+
+        Dim guid As Guid = guid.Empty
+
+        Try
+            Dim file As Autodesk.Revit.Parameters.DefinitionFile = app.OpenSharedParameterFile
+            Dim group As Autodesk.Revit.Parameters.DefinitionGroup = file.Groups.Item(defGroup)
+            Dim definition As Autodesk.Revit.Parameters.Definition = group.Definitions.Item(defName)
+            Dim externalDefinition As Autodesk.Revit.Parameters.ExternalDefinition = definition
+            guid = externalDefinition.GUID
+        Catch
+        End Try
+
+        Return guid
+
+    End Function
+</pre>
+
+<p>Add the following full command class to <code>Labs4</code>.
+We first launch or get Excel and then loop and export all doors row by row.
+Note how we use the GUID to get the parameter and that we also export the
+doors' standard tag (mark) and level parameters.</p>
+
+<pre title="C# Export all door ids and FireRating param values" class="jtcollapse">
+  #region Lab4_3_2_ExportSharedParamToExcel
+  /// &lt;summary&gt;
+  /// 4.3.2 Export all door ids and FireRating param values to Excel.
+  /// &lt;/summary&gt;
+  public class Lab4_3_2_ExportSharedParamToExcel : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      Category cat = doc.Settings.Categories.get_Item( Lab4_3_1_CreateAndBindSharedParam.Bic );
+      // Launch Excel (same as in Lab 4_2, so we really should have better created some utils...)
+      X.Application excel = new X.ApplicationClass();
+      if( null == excel )
+      {
+        LabUtils.ErrorMsg( "Failed to get or start Excel." );
+        return IExternalCommand.Result.Failed;
+      }
+      excel.Visible = true;
+      X.Workbook workbook = excel.Workbooks.Add( Missing.Value );
+      X.Worksheet worksheet;
+      //while( 1 &lt; workbook.Sheets.Count )
+      //{
+      //  worksheet = workbook.Sheets.get_Item( 0 ) as X.Worksheet;
+      //  worksheet.Delete();
+      //}
+      worksheet = excel.ActiveSheet as X.Worksheet;
+      worksheet.Name = "Revit " + cat.Name;
+      worksheet.Cells[1, 1] = "ID";
+      worksheet.Cells[1, 2] = "Level";
+      worksheet.Cells[1, 3] = "Tag";
+      worksheet.Cells[1, 4] = LabConstants.gsSharedParamsDefFireRating;
+      worksheet.get_Range( "A1", "Z1" ).Font.Bold = true;
+
+      // since walls are not standard system families, implement and use
+      // GetAllModelInstancesForACategory() instead to support both doors
+      // and walls:
+
+      //ElementSet doors = LabUtils.GetAllStandardFamilyInstancesForACategory( app, cat.Name );
+      List&lt;Element&gt; elems = LabUtils.GetAllModelInstancesForACategory(
+        app, Lab4_3_1_CreateAndBindSharedParam.Bic );
+      // Get Shared param Guid
+      Guid paramGuid = LabUtils.SharedParamGUID(
+        app, LabConstants.gsSharedParamsGroupAPI, LabConstants.gsSharedParamsDefFireRating );
+      if( paramGuid.Equals( Guid.Empty ) )
+      {
+        LabUtils.ErrorMsg( "No Shared param found in the file - aborting..." );
+        return IExternalCommand.Result.Failed;
+      }
+      // Loop all elements and export each to an Excel row
+      int row = 2;
+      foreach( Element elem in elems ) {
+        worksheet.Cells[row, 1] = elem.Id.Value; // ID
+        worksheet.Cells[row, 2] = elem.Level.Name; // Level
+        // Tag:
+        Autodesk.Revit.Parameter tagParameter = elem.get_Parameter( BuiltInParameter.ALL_MODEL_MARK );
+        if( null != tagParameter )
+        {
+          worksheet.Cells[row, 3] = tagParameter.AsString();
+        }
+        // FireRating:
+        Parameter parameter = elem.get_Parameter( paramGuid );
+        if( null != parameter )
+        {
+          worksheet.Cells[row, 4] = parameter.AsDouble();
+        }
+        ++row;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion // Lab4_3_2_ExportSharedParamToExcel
+</pre>
+
+<pre title="VB Export all door ids and FireRating param values" class="jtcollapse">
+#Region "Lab4_3_2_ExportSharedParamToExcel"
+''' &lt;summary&gt;
+''' 4.3.2 Export all door ids and FireRating param values to Excel.
+''' &lt;/summary&gt;
+Public Class Lab4_3_2_ExportSharedParamToExcel
+    Implements IExternalCommand
+    Public Function Execute( _
+        ByVal commandData As ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As ElementSet) _
+    As IExternalCommand.Result Implements IExternalCommand.Execute
+        Dim app As Revit.Application = commandData.Application
+
+        ' Launch Excel (same as in Lab 4_2, so we really should have better created some utils...)
+        Dim excel As MsExcel.Application = New MsExcel.ApplicationClass()
+        If (excel Is Nothing) Then
+            MsgBox("Failed to get or start Excel!?")
+            Return IExternalCommand.Result.Failed
+        End If
+        excel.Visible = True
+        Dim workbook As MsExcel.Workbook = excel.Workbooks.Add()
+        Dim worksheet As MsExcel.Worksheet
+        Do While workbook.Sheets.Count &gt; 1
+            worksheet = workbook.Sheets.Item(1)
+            worksheet.Delete()
+        Loop
+        worksheet = excel.ActiveSheet
+        worksheet.Name = "Revit Doors"
+        ' Write the header row
+        worksheet.Cells(1, 1).Value = "ID"
+        worksheet.Cells(1, 2).Value = "Level"
+        worksheet.Cells(1, 3).Value = "Tag"
+        worksheet.Cells(1, 4).Value = gsSharedParamsDefFireRating
+        excel.Rows("1").Font.Bold = True
+
+            ' Use our utility from LabUtils to get all Doors
+            Dim doors As List(Of Revit.Element)
+            doors = LabUtils.GetAllModelInstancesForACategory(app, Lab4_3_1_CreateAndBindSharedParam.Bic)
+
+        ' Get Shared param Guid
+        Dim paramGuid As Guid = LabUtils.SharedParamGUID( _
+          app, gsSharedParamsGroupAPI, gsSharedParamsDefFireRating)
+        If paramGuid.Equals(Guid.Empty) Then
+            MsgBox("No Shared param found in the file !? - aborting...")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' Loop all doors and export each to an Excel row
+        Dim door As Revit.Element
+        Dim row As Integer = 2
+        For Each door In doors
+
+            'ID
+            worksheet.Cells(row, 1).Value = door.Id.Value
+
+            'Level
+            worksheet.Cells(row, 2).Value = door.Level.Name
+
+            'Tag
+            Dim tagParameter As Autodesk.Revit.Parameter = _
+             door.Parameter(Autodesk.Revit.Parameters.BuiltInParameter.ALL_MODEL_MARK)
+            If Not (tagParameter Is Nothing) Then
+                worksheet.Cells(row, 3).Value = tagParameter.AsString
+            End If
+
+            '*FireRating*
+            Dim parameter As Autodesk.Revit.Parameter = door.Parameter(paramGuid)
+            If Not (parameter Is Nothing) Then
+                worksheet.Cells(row, 4).Value = parameter.AsDouble
+            End If
+
+            row = row + 1
+
+        Next
+
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+
+#End Region
+</pre>
+
+<p>Compile the code and update Revit.ini.
+Before running this command, add some doors to the model and set their FireRating parameters.
+You may also save the file for use in the next command.</p>
+
+
+<a class="j" href="labs4-3-3.htm">next</a>
+<a class="j" href="labs4-3-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j">copyright &copy; 2007-2008 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

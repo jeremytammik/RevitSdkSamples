@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="booleanAreaLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="booleanAreaLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 16</value>
+  </data>
+  <data name="booleanAreaLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>530, 13</value>
+  </data>
+  <data name="booleanAreaLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="booleanAreaLabel.Text" xml:space="preserve">
+    <value>You can form a Boolean expression in this area, add filters from the Filter List above, click the Boolean operator.</value>
+  </data>
+  <data name="&gt;&gt;booleanAreaLabel.Name" xml:space="preserve">
+    <value>booleanAreaLabel</value>
+  </data>
+  <data name="&gt;&gt;booleanAreaLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;booleanAreaLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;booleanAreaLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="notButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 128</value>
+  </data>
+  <data name="notButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="notButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="notButton.Text" xml:space="preserve">
+    <value>&amp;NOT</value>
+  </data>
+  <data name="&gt;&gt;notButton.Name" xml:space="preserve">
+    <value>notButton</value>
+  </data>
+  <data name="&gt;&gt;notButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;notButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;notButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="orButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 99</value>
+  </data>
+  <data name="orButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="orButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="orButton.Text" xml:space="preserve">
+    <value>&amp;OR</value>
+  </data>
+  <data name="&gt;&gt;orButton.Name" xml:space="preserve">
+    <value>orButton</value>
+  </data>
+  <data name="&gt;&gt;orButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;orButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;orButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="andButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 70</value>
+  </data>
+  <data name="andButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="andButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="andButton.Text" xml:space="preserve">
+    <value>&amp;AND</value>
+  </data>
+  <data name="&gt;&gt;andButton.Name" xml:space="preserve">
+    <value>andButton</value>
+  </data>
+  <data name="&gt;&gt;andButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;andButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;andButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="addExecutingFilterButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 41</value>
+  </data>
+  <data name="addExecutingFilterButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="addExecutingFilterButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="addExecutingFilterButton.Text" xml:space="preserve">
+    <value>&amp;Add a filter</value>
+  </data>
+  <data name="&gt;&gt;addExecutingFilterButton.Name" xml:space="preserve">
+    <value>addExecutingFilterButton</value>
+  </data>
+  <data name="&gt;&gt;addExecutingFilterButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addExecutingFilterButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;addExecutingFilterButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="reSetButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 128</value>
+  </data>
+  <data name="reSetButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="reSetButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="reSetButton.Text" xml:space="preserve">
+    <value>&amp;Reset</value>
+  </data>
+  <data name="&gt;&gt;reSetButton.Name" xml:space="preserve">
+    <value>reSetButton</value>
+  </data>
+  <data name="&gt;&gt;reSetButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reSetButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;reSetButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="booleanExpressionTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 41</value>
+  </data>
+  <data name="booleanExpressionTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="booleanExpressionTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="booleanExpressionTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>588, 81</value>
+  </data>
+  <data name="booleanExpressionTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="booleanExpressionTextBox.Text" xml:space="preserve">
+    <value>Boolean Expression</value>
+  </data>
+  <data name="&gt;&gt;booleanExpressionTextBox.Name" xml:space="preserve">
+    <value>booleanExpressionTextBox</value>
+  </data>
+  <data name="&gt;&gt;booleanExpressionTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;booleanExpressionTextBox.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;booleanExpressionTextBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="applyFilterButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 128</value>
+  </data>
+  <data name="applyFilterButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="applyFilterButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="applyFilterButton.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="&gt;&gt;applyFilterButton.Name" xml:space="preserve">
+    <value>applyFilterButton</value>
+  </data>
+  <data name="&gt;&gt;applyFilterButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;applyFilterButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;applyFilterButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 254</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>684, 158</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Edit and run a filter logic expression</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="m_categoryListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>133, 6</value>
+  </data>
+  <data name="m_categoryListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 147</value>
+  </data>
+  <data name="m_categoryListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;m_categoryListBox.Name" xml:space="preserve">
+    <value>m_categoryListBox</value>
+  </data>
+  <data name="&gt;&gt;m_categoryListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_categoryListBox.Parent" xml:space="preserve">
+    <value>categoryFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;m_categoryListBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_ModeComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="m_ModeComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="m_ModeComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;m_ModeComboBox.Name" xml:space="preserve">
+    <value>m_ModeComboBox</value>
+  </data>
+  <data name="&gt;&gt;m_ModeComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_ModeComboBox.Parent" xml:space="preserve">
+    <value>categoryFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;m_ModeComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="categoryFilterTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="categoryFilterTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="categoryFilterTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 158</value>
+  </data>
+  <data name="categoryFilterTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="categoryFilterTabPage.Text" xml:space="preserve">
+    <value>Category Filter</value>
+  </data>
+  <data name="&gt;&gt;categoryFilterTabPage.Name" xml:space="preserve">
+    <value>categoryFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;categoryFilterTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;categoryFilterTabPage.Parent" xml:space="preserve">
+    <value>m_filtersTabControl</value>
+  </data>
+  <data name="&gt;&gt;categoryFilterTabPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="familyNameListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 9</value>
+  </data>
+  <data name="familyNameListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 147</value>
+  </data>
+  <data name="familyNameListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;familyNameListBox.Name" xml:space="preserve">
+    <value>familyNameListBox</value>
+  </data>
+  <data name="&gt;&gt;familyNameListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;familyNameListBox.Parent" xml:space="preserve">
+    <value>familyFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;familyNameListBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="familyFilterTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="familyFilterTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="familyFilterTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 158</value>
+  </data>
+  <data name="familyFilterTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="familyFilterTabPage.Text" xml:space="preserve">
+    <value>Family Filter</value>
+  </data>
+  <data name="&gt;&gt;familyFilterTabPage.Name" xml:space="preserve">
+    <value>familyFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;familyFilterTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;familyFilterTabPage.Parent" xml:space="preserve">
+    <value>m_filtersTabControl</value>
+  </data>
+  <data name="&gt;&gt;familyFilterTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="symbolListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 9</value>
+  </data>
+  <data name="symbolListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 147</value>
+  </data>
+  <data name="symbolListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;symbolListBox.Name" xml:space="preserve">
+    <value>symbolListBox</value>
+  </data>
+  <data name="&gt;&gt;symbolListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;symbolListBox.Parent" xml:space="preserve">
+    <value>symbolFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;symbolListBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="symbolFilterTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="symbolFilterTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="symbolFilterTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 158</value>
+  </data>
+  <data name="symbolFilterTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="symbolFilterTabPage.Text" xml:space="preserve">
+    <value>Symbol Filter</value>
+  </data>
+  <data name="&gt;&gt;symbolFilterTabPage.Name" xml:space="preserve">
+    <value>symbolFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;symbolFilterTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;symbolFilterTabPage.Parent" xml:space="preserve">
+    <value>m_filtersTabControl</value>
+  </data>
+  <data name="&gt;&gt;symbolFilterTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="valueTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 33</value>
+  </data>
+  <data name="valueTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="valueTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;valueTextBox.Name" xml:space="preserve">
+    <value>valueTextBox</value>
+  </data>
+  <data name="&gt;&gt;valueTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;valueTextBox.Parent" xml:space="preserve">
+    <value>parameterFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;valueTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="valueTypeComboBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="valueTypeComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 72</value>
+  </data>
+  <data name="valueTypeComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="valueTypeComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;valueTypeComboBox.Name" xml:space="preserve">
+    <value>valueTypeComboBox</value>
+  </data>
+  <data name="&gt;&gt;valueTypeComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;valueTypeComboBox.Parent" xml:space="preserve">
+    <value>parameterFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;valueTypeComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="criteriaListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 33</value>
+  </data>
+  <data name="criteriaListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 121</value>
+  </data>
+  <data name="criteriaListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;criteriaListBox.Name" xml:space="preserve">
+    <value>criteriaListBox</value>
+  </data>
+  <data name="&gt;&gt;criteriaListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;criteriaListBox.Parent" xml:space="preserve">
+    <value>parameterFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;criteriaListBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>381, 12</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>parameterFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>381, 56</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Value Type:</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>parameterFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>252, 12</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Criterias:</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>parameterFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Built-In Parameters:</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>parameterFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="builtInParasListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 33</value>
+  </data>
+  <data name="builtInParasListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 121</value>
+  </data>
+  <data name="builtInParasListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;builtInParasListBox.Name" xml:space="preserve">
+    <value>builtInParasListBox</value>
+  </data>
+  <data name="&gt;&gt;builtInParasListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;builtInParasListBox.Parent" xml:space="preserve">
+    <value>parameterFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;builtInParasListBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="parameterFilterTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="parameterFilterTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="parameterFilterTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 158</value>
+  </data>
+  <data name="parameterFilterTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="parameterFilterTabPage.Text" xml:space="preserve">
+    <value>Parameter Filter</value>
+  </data>
+  <data name="&gt;&gt;parameterFilterTabPage.Name" xml:space="preserve">
+    <value>parameterFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;parameterFilterTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;parameterFilterTabPage.Parent" xml:space="preserve">
+    <value>m_filtersTabControl</value>
+  </data>
+  <data name="&gt;&gt;parameterFilterTabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="typeListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="typeListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>499, 147</value>
+  </data>
+  <data name="typeListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;typeListBox.Name" xml:space="preserve">
+    <value>typeListBox</value>
+  </data>
+  <data name="&gt;&gt;typeListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;typeListBox.Parent" xml:space="preserve">
+    <value>typeFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;typeListBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="typeFilterTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="typeFilterTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="typeFilterTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 158</value>
+  </data>
+  <data name="typeFilterTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="typeFilterTabPage.Text" xml:space="preserve">
+    <value>Type Filter</value>
+  </data>
+  <data name="&gt;&gt;typeFilterTabPage.Name" xml:space="preserve">
+    <value>typeFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;typeFilterTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;typeFilterTabPage.Parent" xml:space="preserve">
+    <value>m_filtersTabControl</value>
+  </data>
+  <data name="&gt;&gt;typeFilterTabPage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="structureEnumListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>133, 6</value>
+  </data>
+  <data name="structureEnumListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 147</value>
+  </data>
+  <data name="structureEnumListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;structureEnumListBox.Name" xml:space="preserve">
+    <value>structureEnumListBox</value>
+  </data>
+  <data name="&gt;&gt;structureEnumListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;structureEnumListBox.Parent" xml:space="preserve">
+    <value>structureFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;structureEnumListBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="classificationComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="classificationComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="classificationComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;classificationComboBox.Name" xml:space="preserve">
+    <value>classificationComboBox</value>
+  </data>
+  <data name="&gt;&gt;classificationComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;classificationComboBox.Parent" xml:space="preserve">
+    <value>structureFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;classificationComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="structureFilterTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="structureFilterTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="structureFilterTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 158</value>
+  </data>
+  <data name="structureFilterTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="structureFilterTabPage.Text" xml:space="preserve">
+    <value>Structure Filter</value>
+  </data>
+  <data name="&gt;&gt;structureFilterTabPage.Name" xml:space="preserve">
+    <value>structureFilterTabPage</value>
+  </data>
+  <data name="&gt;&gt;structureFilterTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;structureFilterTabPage.Parent" xml:space="preserve">
+    <value>m_filtersTabControl</value>
+  </data>
+  <data name="&gt;&gt;structureFilterTabPage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="m_filtersTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 12</value>
+  </data>
+  <data name="m_filtersTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>519, 184</value>
+  </data>
+  <data name="m_filtersTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;m_filtersTabControl.Name" xml:space="preserve">
+    <value>m_filtersTabControl</value>
+  </data>
+  <data name="&gt;&gt;m_filtersTabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_filtersTabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_filtersTabControl.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="newFilterButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 225</value>
+  </data>
+  <data name="newFilterButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="newFilterButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="newFilterButton.Text" xml:space="preserve">
+    <value>&amp;New</value>
+  </data>
+  <data name="&gt;&gt;newFilterButton.Name" xml:space="preserve">
+    <value>newFilterButton</value>
+  </data>
+  <data name="&gt;&gt;newFilterButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newFilterButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;newFilterButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="deleteFilterButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 225</value>
+  </data>
+  <data name="deleteFilterButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="deleteFilterButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="deleteFilterButton.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="&gt;&gt;deleteFilterButton.Name" xml:space="preserve">
+    <value>deleteFilterButton</value>
+  </data>
+  <data name="&gt;&gt;deleteFilterButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteFilterButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deleteFilterButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>567, 42</value>
+  </data>
+  <data name="textBox4.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 152</value>
+  </data>
+  <data name="textBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textBox4.Name" xml:space="preserve">
+    <value>textBox4</value>
+  </data>
+  <data name="&gt;&gt;textBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>567, 6</value>
+  </data>
+  <data name="textBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="textBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textBox5.Name" xml:space="preserve">
+    <value>textBox5</value>
+  </data>
+  <data name="&gt;&gt;textBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>465, 42</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Filter description:</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>465, 9</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Filter name:</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listView3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="listView3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 188</value>
+  </data>
+  <data name="listView3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;listView3.Name" xml:space="preserve">
+    <value>listView3</value>
+  </data>
+  <data name="&gt;&gt;listView3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="filtersListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 75</value>
+  </data>
+  <data name="filtersListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 121</value>
+  </data>
+  <data name="filtersListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;filtersListBox.Name" xml:space="preserve">
+    <value>filtersListBox</value>
+  </data>
+  <data name="&gt;&gt;filtersListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filtersListBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;filtersListBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="filterNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 28</value>
+  </data>
+  <data name="filterNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 20</value>
+  </data>
+  <data name="filterNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="filterNameTextBox.Text" xml:space="preserve">
+    <value>filter - 1</value>
+  </data>
+  <data name="&gt;&gt;filterNameTextBox.Name" xml:space="preserve">
+    <value>filterNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;filterNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filterNameTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;filterNameTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 12</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Filter Name:</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="tipMessageToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 56</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Filter List:</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="filterButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="filterButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 225</value>
+  </data>
+  <data name="filterButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="filterButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="filterButton.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="&gt;&gt;filterButton.Name" xml:space="preserve">
+    <value>filterButton</value>
+  </data>
+  <data name="&gt;&gt;filterButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filterButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;filterButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>621, 418</value>
+  </data>
+  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="filterInfoLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="filterInfoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 205</value>
+  </data>
+  <data name="filterInfoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="filterInfoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="filterInfoLabel.Text" xml:space="preserve">
+    <value>Filter information</value>
+  </data>
+  <data name="&gt;&gt;filterInfoLabel.Name" xml:space="preserve">
+    <value>filterInfoLabel</value>
+  </data>
+  <data name="&gt;&gt;filterInfoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filterInfoLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;filterInfoLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>705, 453</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Elements Filter</value>
+  </data>
+  <data name="&gt;&gt;tipMessageToolTip.Name" xml:space="preserve">
+    <value>tipMessageToolTip</value>
+  </data>
+  <data name="&gt;&gt;tipMessageToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ElementsFilterForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

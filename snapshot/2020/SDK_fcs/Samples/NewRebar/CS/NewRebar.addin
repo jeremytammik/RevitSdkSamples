@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>NewRebar.dll</Assembly>
+    <ClientId>2d5baccb-f93e-4cf1-8068-f66de309f3b3</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewRebar.CS.Command</FullClassName>
+    <Text>NewRebar</Text>
+    <Description>Create a rebar on the selected concrete rectangular column or beam.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>adsk</VendorId>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

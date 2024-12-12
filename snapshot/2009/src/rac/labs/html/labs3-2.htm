@@ -1,0 +1,180 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Loading a Family and a Family Type</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs3-3.htm">next</a>
+<a class="j" href="labs3-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we load a new entire family or
+a single family instance into the current document.
+The document object provides straightforward methods to load either a whole RFA file
+or just a specific symbol from the corresponding TXT catalog file.
+Before implementing a new command, we add some new constants to
+<code>LabConstants</code> module to define which family and symbol to load. This ensures that all the hard-coded
+    constant values have a single repository for easy access in case we need to alter
+    them at a later date:
+</p>
+
+<pre title="C# Family and symbol name string constants" class="jtcollapse">  // Lab 3_3
+  public const string gsLibPath = @"C:\Documents and Settings\All Users\Application Data\Autodesk\RST 2009\Metric Library\";
+
+  public const string gsWholeFamilyFileToLoad1 = gsLibPath + @"Structural\Framing\Steel\M_C-Channel.rfa"; // has TXT catalog file
+  public const string gsWholeFamilyFileToLoad2 = gsLibPath + @"Structural\Framing\Steel\M_Plate.rfa"; // no TXT catalog file
+
+  public const string gsFamilyFileToLoadSingleSymbol = gsLibPath + @"Structural\Framing\Steel\M_L-Angle.rfa";
+  public const string gsSymbolName = "L152x102x12.7";
+</pre>
+
+<pre title="VB Family and symbol name string constants" class="jtcollapse">  ' Lab 3_3
+  Public Const gsLibPath As String = "C:\Documents and Settings\All Users\Application Data\Autodesk\RST 2009\Metric Library\"
+
+  Public Const gsWholeFamilyFileToLoad1 As String = gsLibPath + "Structural\Framing\Steel\M_C-Channel.rfa" ' has TXT catalog file
+  Public Const gsWholeFamilyFileToLoad2 As String = gsLibPath + "Structural\Framing\Steel\M_Plate.rfa" ' no TXT catalog file
+
+  Public Const gsFamilyFileToLoadSingleSymbol As String = gsLibPath + "Structural\Framing\Steel\M_L-Angle.rfa"
+  Public Const gsSymbolName As String = "L152x102x12.7"
+</pre>
+
+<p>You may need to change the paths and family names to make sure the
+RFA files and the corresponding TXT catalog files exist on your machine.</p>
+
+<p>Now we can add a new command to Labs3 calling the document method to load an entire family using the <code>LoadFamily</code> method:</p>
+
+<pre title="C# Load an entire family" class="jtcollapse">  /// &lt;summary&gt;
+  /// Load an entire family or a specific type from a family.
+  /// &lt;/summary&gt;
+  public class Lab3_2_LoadStandardFamilies : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Document doc = commandData.Application.ActiveDocument;
+      //
+      // Load a whole Family
+      //
+      // example for a family WITH TXT file
+      if( doc.LoadFamily( LabConstants.gsWholeFamilyFileToLoad1 ) )
+      {
+        LabUtils.InfoMsg( "Successfully loaded family " + LabConstants.gsWholeFamilyFileToLoad1 + "." );
+      }
+      else
+      {
+        LabUtils.ErrorMsg( "ERROR loading family " + LabConstants.gsWholeFamilyFileToLoad1 + "." );
+      }
+      // example for a family WITHOUT TXT file
+      if( doc.LoadFamily( LabConstants.gsWholeFamilyFileToLoad2 ) )
+      {
+        LabUtils.InfoMsg( "Successfully loaded family " + LabConstants.gsWholeFamilyFileToLoad2 + "." );
+      }
+      else
+      {
+        LabUtils.ErrorMsg( "ERROR loading family " + LabConstants.gsWholeFamilyFileToLoad2 + "." );
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre title="VB Load an entire family" class="jtcollapse">Public Class Lab3_2_LoadStandardFamilies
+    Implements IExternalCommand
+
+    Public Function Execute(
+        ByVal commandData As Autodesk.Revit.ExternalCommandData,
+        ByRef message As String,
+        ByVal elements As Autodesk.Revit.ElementSet)
+        As Autodesk.Revit.IExternalCommand.Result Implements Autodesk.Revit.IExternalCommand.Execute
+
+        Dim doc As Revit.Document = commandData.Application.ActiveDocument
+
+        'Load a whole Family
+
+	    ' example for a family WITH TXT file
+        If Not CType(doc.LoadFamily(gsWholeFamilyFileToLoad1), Boolean) Then
+            MsgBox("ERROR in loading Family " & gsWholeFamilyFileToLoad1 & "?")
+        Else
+            MsgBox("Successfully loaded Family " & gsWholeFamilyFileToLoad1 & "!")
+        End If
+
+        ' example for a family WITHOUT TXT file
+        If Not CType(doc.LoadFamily(gsWholeFamilyFileToLoad2), Boolean) Then
+            MsgBox("ERROR in loading Family " & gsWholeFamilyFileToLoad2 & "?")
+        Else
+            MsgBox("Successfully loaded Family " & gsWholeFamilyFileToLoad2 & "!")
+        End If
+
+        Return Revit.IExternalCommand.Result.Succeeded
+    End Function
+End Class
+</pre>
+
+<p>Build the project, adjust the ini file and test loading the whole family.
+In order to load a single symbol, you can add the following piece of code
+before return statement:</p>
+
+<pre title="C# Load an individual family symbol" class="jtcollapse">  //
+  // Load only a specific Symbol (Type)
+  // The symbol MUST exist in the corresponding catalog (TXT) file - same as in the UI
+  if( doc.LoadFamilySymbol( LabConstants.gsFamilyFileToLoadSingleSymbol, LabConstants.gsSymbolName ) )
+  {
+    LabUtils.InfoMsg( "Successfully loaded family symbol " + LabConstants.gsFamilyFileToLoadSingleSymbol + " : " + LabConstants.gsSymbolName + "." );
+  }
+  else
+  {
+    LabUtils.ErrorMsg( "ERROR loading family symbol " + LabConstants.gsFamilyFileToLoadSingleSymbol + " : " + LabConstants.gsSymbolName + "." );
+  }
+</pre>
+
+<pre title="VB Load an individual family symbol" class="jtcollapse">  'Load only a specific Symbol (Type)
+  ' The symbol MUST exist in the corresponding catalog (TXT) file - same as in the UI
+  If Not CType(doc.LoadFamilySymbol(gsFamilyFileToLoadSingleSymbol, gsSymbolName), Boolean) Then
+      MsgBox("ERROR in loading FamilySymbol " & gsFamilyFileToLoadSingleSymbol & " : " & gsSymbolName & "?")
+  Else
+      MsgBox("Successfully loaded FamilySymbol " & gsFamilyFileToLoadSingleSymbol & " : " & gsSymbolName & "!")
+  End If
+</pre>
+
+<p>Compile and test again, and discuss with the course instructor and your peers.</p>
+
+<a class="j" href="labs3-3.htm">next</a>
+<a class="j" href="labs3-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j">copyright &copy; 2007-2008 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

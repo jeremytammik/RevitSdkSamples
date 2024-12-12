@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<options name="REX" product="REX" version="1.0">
+  <option description="Tools" name="rev.6">
+    <option date="2007-05-10" description="Freeze Drawings" description_full="Separates a drawing / view from an object model to ensure that this drawing / view is left unchanged." domain="" id="" name="DRevitFreezeDrawing" version="1.6">
+      <data>
+        <data.run class="REX.DRevitFreezeDrawing.Application" direct_revit_class="REX.DRevitFreezeDrawing.DirectRevitAccess" file="DRevitFreezeDrawing.dll" path="DRevitFreezeDrawing" type="ASSEMBLY"/>
+      </data>
+    </option>
+  </option>
+</options>

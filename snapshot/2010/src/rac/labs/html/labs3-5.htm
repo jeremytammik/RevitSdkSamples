@@ -1,0 +1,256 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+List wall and floor types and change the type of system instances</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs4-1.htm">next</a>
+<a class="j" href="labs3-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we list system types and change the type of a system family instance element.
+All the previous labs in this section dealt with the <em>standard</em> families and instances.
+In this lab, we show more or less the same issues for <em>system</em> families, which are
+often host objects, such as walls and floors. Wall is the most comprehensively exposed
+host object so far in the Revit API. Specific and dedicated classes, methods and
+properties are available which makes them somewhat simpler to use than standard
+family instances.</p>
+
+<p>Add a new command class to the Lab3 module, e.g. <code>Lab3_5_WallAndFloorTypes</code>.
+First we will enumerate all available wall types.
+This is simple thanks to the dedicated property on the document object.
+We will also store the last one in order to change the
+selected wall's type later without any complex user interface:</p>
+
+<pre title="C# List all wall types" class="jtcollapse">
+  Application app = commandData.Application;
+  Document doc = app.ActiveDocument;
+  
+  //
+  // Find all wall types and their system families (or kinds)
+  //
+  WallType newWallType = null;
+  string sMsg = "ALL Wall Types/Families in the model:";
+  foreach( WallType wt in doc.WallTypes )
+  {
+    sMsg += "\r\n  Type=" + wt.Name + " Family(or Kind)=" + wt.Kind.ToString();
+    newWallType = wt;
+  }
+  LabUtils.InfoMsg( sMsg );
+  LabUtils.InfoMsg( "Stored WallType " + newWallType.Name + " (Id=" + newWallType.Id.Value.ToString() + ") for later use" );
+</pre>
+
+<pre title="VB List all wall types" class="jtcollapse">
+  Dim app As Autodesk.Revit.Application = commandData.Application
+
+  ' Find ALL Wall Types and their System Families (or Kinds)
+  '--------------------
+  Dim newWallType As WallType = Nothing 'at the same time store the last one to use to change the wall type later
+  Dim sMsg As String = "ALL Wall Types/Families in the model:"
+
+  ' We could again iterete all elements and check for WallType class, but it's simpler directly from the doc:
+  Dim doc As Revit.Document = commandData.Application.ActiveDocument
+  For Each wt As WallType In doc.WallTypes
+  	sMsg += vbCrLf & "  Type=" & wt.Name & " Family(or Kind)=" & wt.Kind.ToString
+      newWallType = wt
+  Next
+  MsgBox(sMsg)
+  MsgBox("Stored WallType " & newWallType.Name & " (Id=" & newWallType.Id.Value.ToString & ") for later use")
+</pre>
+
+<p>Implement the same functionality for floor types.
+Since Revit 2008, the document class has a FloorTypes property
+and we can use this to retrieve the collection of all the floor types.
+However from 9.0 version, the "Foundation Slab" system family
+from the "Structural Foundations" category also contain FloorType class instances.</p>
+
+<p>In the C# sample, we loop through all the FloorTypes listed in the document and
+then check if the category of the floor type is same as built-in category of Floor.
+This is done by comparing the category id of the floor type element with that of
+the built-in Floors category. Please note that from Revit 2009 onwards,
+category ids need to be used to compare categories, instead of comparing categories
+with each other directly.</p>
+
+<p>In the VB.Net sample, the approach is more performance centric,
+where we use a compound filter called <code>NewLogicAndFilter</code>
+and use that to filter elements of FloorType AND
+built-in category Floors to avoid structural foundation floor slabs.</p>
+
+<pre title="C# List all floor types" class="jtcollapse">
+  //
+  // Find all floor types:
+  //
+  FloorType newFloorType = null;
+  Category floorCat = doc.Settings.Categories.get_Item( BuiltInCategory.OST_Floors );
+  sMsg = "All floor types in the model:";
+  foreach( FloorType ft in doc.FloorTypes )
+  {
+    sMsg += "\r\n  Type=" + ft.Name + ", Id=" + ft.Id.Value.ToString();
+    // In 9.0, the "Foundation Slab" system family from "Structural
+    // Foundations" category ALSO contains FloorType class instances.
+    // Be careful to exclude those as choices for standard floor types.
+    Parameter p = ft.get_Parameter( BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM );
+    string famName = null == p ? "?" : p.AsString();
+    Category cat = ft.Category;
+    sMsg += ", Family=" + famName + ", Category=" + cat.Name;
+    if( floorCat.Id.Equals( cat.Id ) ) // store only if proper Floors category
+    {
+      newFloorType = ft;
+    }
+  }
+  LabUtils.InfoMsg( sMsg );
+  LabUtils.InfoMsg( "Stored FloorType " + newFloorType.Name + " (Id=" + newFloorType.Id.Value.ToString() + ") for later use" );
+</pre>
+
+<pre title="VB List all floor types" class="jtcollapse">
+  Dim newFloorType As FloorType = Nothing ' store the last one to use to change the floor type later
+  sMsg = "ALL FLOOR Types in the model:"
+
+  ' define a filter to get the family
+  Dim filterFloorType As Filter = app.Create.Filter.NewTypeFilter(GetType(FloorType))
+  Dim filterFloorCategory As Filter = app.Create.Filter.NewCategoryFilter(BuiltInCategory.OST_Floors)
+
+  ' make a compund filter using logical or/and
+  Dim filterFloorTypeFloorCategory As Filter = app.Create.Filter.NewLogicAndFilter(filterFloorType, filterFloorCategory)
+
+  ' get a list using the filter
+  Dim elementList As New List(Of Revit.Element)
+  Dim num As Integer = doc.Elements(filterFloorTypeFloorCategory, elementList)
+
+  ' go over the list
+  Dim elem As Revit.Element
+  For Each elem In elementList
+
+      Dim ft As Symbols.FloorType = elem
+      sMsg += vbCrLf & "  Type=" & ft.Name & ", Id=" & ft.Id.Value.ToString
+      Dim p As Parameter = ft.Parameter(Parameters.BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM)
+      Dim famName As String = "?"
+      If Not p Is Nothing Then
+          famName = p.AsString
+      End If
+      Dim cat As Category = ft.Category
+      sMsg += ", Family=" & famName & ", Category=" & cat.Name
+      ' all elements have proper Floors category
+      newFloorType = ft
+
+  Next
+
+  MsgBox(sMsg)
+  MsgBox("Stored FloorType " & newFloorType.Name & " (Id=" & newFloorType.Id.Value.ToString & ") for later use")</pre>
+
+<p>Build the application, add the command to the Revit.ini file and check the result in the debugger and in Revit.</p>
+
+<p>Modifying the wall and floor type of an instance are both simple operations in Revit 2009,
+since they each expose a WallType and FloorType property, respectively:</p>
+
+<pre title="C# Change type of wall and floor" class="jtcollapse">
+  //
+  // Change the type for selected walls and floors
+  //
+  ElementSet sel = doc.Selection.Elements;
+  int iWall = 0;
+  int iFloor = 0;
+  // Loop all selection elements
+  foreach( Element el in sel )
+  {
+    if( el is Wall ) // Check for walls
+    {
+      ++iWall;
+      Wall wall = el as Wall;
+      WallType oldWallType = wall.WallType;
+      // change wall type and report the old/new values
+      wall.WallType = newWallType;
+      LabUtils.InfoMsg( "Wall " + iWall.ToString() + ": Id=" + wall.Id.Value.ToString()
+        + "\r\n  changed from OldType=" + oldWallType.Name + "; Id=" + oldWallType.Id.Value.ToString()
+        + "  to NewType=" + wall.WallType.Name + "; Id=" + wall.WallType.Id.Value.ToString() );
+    }
+    else if( el is Floor )
+    {
+      ++iFloor;
+      Floor f = el as Floor;
+      FloorType oldFloorType = f.FloorType;
+      f.FloorType = newFloorType;
+      LabUtils.InfoMsg( "Floor " + iFloor.ToString() + ": Id=" + f.Id.Value.ToString()
+        + "\r\n  changed from OldType=" + oldFloorType.Name + "; Id=" + oldFloorType.Id.Value.ToString()
+        + "  to NewType=" + f.FloorType.Name + "; Id=" + f.FloorType.Id.Value.ToString() );
+    }
+  }
+</pre>
+
+<pre title="VB Change type of wall and floor" class="jtcollapse">
+  ' Change the Type for selected Walls and Floors
+  Dim sel As ElementSet = doc.Selection.Elements
+  Dim iWall As Integer
+  Dim iFloor As Integer
+  Dim el As Revit.Element
+
+  'Loop through all selection elements
+  If sel.Size > 0 Then
+      For Each el In sel
+          If TypeOf el Is Wall Then 'Check for walls
+              Dim wall As Wall = el
+              iWall += 1
+              Dim oldWallType As WallType = wall.WallType
+              'change wall type and report the old/new values
+              wall.WallType = newWallType
+              MsgBox("Wall " & iWall.ToString & ": Id=" & wall.Id.Value.ToString & vbCrLf & _
+               "  changed from OldType=" & oldWallType.Name & "; Id=" & oldWallType.Id.Value.ToString & _
+               "  to NewType=" & wall.WallType.Name & "; Id=" & wall.WallType.Id.Value.ToString)
+
+          ElseIf TypeOf el Is Floor Then
+              iFloor += 1
+              Dim f As Floor = el
+
+              ' simple code for 2008 onwards:
+              Dim oldFloorType As FloorType = f.FloorType
+              f.FloorType = newFloorType
+              MsgBox("Floor " & iFloor.ToString & ": Id=" & f.Id.Value.ToString & vbCrLf & _
+               "  changed from OldType=" & oldFloorType.Name & "; Id=" & oldFloorType.Id.Value.ToString & _
+               "  to NewType=" & f.FloorType.Name & "; Id=" & f.FloorType.Id.Value.ToString)
+          End If
+      Next
+  Else
+      MsgBox("There are no elements in selection set!")
+  End If
+</pre>
+
+<p>Run, analyse and discuss the code with the course instructor and your peers.</p>
+
+<a class="j" href="labs4-1.htm">next</a>
+<a class="j" href="labs3-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

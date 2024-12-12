@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>TransactionControl.dll</Assembly>
+    <ClientId>10b2e247-76d9-42a3-acd5-0b5a5fcc4964</ClientId>
+    <FullClassName>Revit.SDK.Samples.TransactionControl.CS.Command</FullClassName>
+    <Text>TransactionControl</Text>
+    <Description>Demonstrate how to use transaction control.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

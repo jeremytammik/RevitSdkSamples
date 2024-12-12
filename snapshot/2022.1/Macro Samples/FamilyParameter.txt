@@ -1,0 +1,8 @@
+# This is a Revit family parameter file.
+# allows to edit manually.
+# make sure the "ParamGroup" and "ParamType" values are correct.
+
+       
+*ParamName	ParamGroup	ParamType	IsInstance
+FamilyParam1	autodesk.revit.group:text-1.0.0		autodesk.spec:spec.string-1.0.0	false
+FamilyParam2	autodesk.revit.group:text-1.0.0		autodesk.spec:spec.string-1.0.0	true

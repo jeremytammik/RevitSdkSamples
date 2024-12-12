@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>SpanDirection.dll</Assembly>
+    <ClientId>5a424dc6-7c31-4c1f-bcdd-e042c4cb006b</ClientId>
+    <FullClassName>Revit.SDK.Samples.SpanDirection.CS.Command</FullClassName>
+    <Text>Span Direction</Text>
+    <Description>Display slab properties (span direction and span direction symbols).</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

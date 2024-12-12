@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>VisibilityControl.dll</Assembly>
+    <ClientId>0cf4340c-e0d4-4e23-805b-12446414fa0d</ClientId>
+    <FullClassName>Revit.SDK.Samples.VisibilityControl.CS.Command</FullClassName>
+    <Text>Visibility Controller</Text>
+    <Description>Control element visibility by category.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

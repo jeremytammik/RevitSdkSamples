@@ -1,0 +1,44 @@
+
+[ExternalCommands]
+ECCount = 8
+
+ECName1        = RstLink - Export 
+ECClassName1   = RstLinkRevitClient.RSLinkExport
+ECAssembly1    = C:\DevDay2009\RSTLink\bin\RstLinkRevitClient.dll
+ECDescription1 = RstLink - Export from Revit 
+
+ECName2        = RstLink - Import 
+ECClassName2   = RstLinkRevitClient.RSLinkImport
+ECAssembly2    = C:\DevDay2009\RSTLink\bin\RstLinkRevitClient.dll
+ECDescription2 = RstLink - Import to Revit 
+
+
+ECName3        = Rebar - Segment  
+ECClassName3   = RevitCommands.RvtCmd_CreateNewRebarShape_SegmentSample
+ECAssembly3    = C:\DevDay2009\Rebar\RevitCommands.dll
+ECDescription3 = Rebar - Segment
+
+ECName4        = Rebar - Circle  
+ECClassName4   = RevitCommands.RvtCmd_CreateNewRebarShape_CircleSample
+ECAssembly4    = C:\DevDay2009\Rebar\RevitCommands.dll
+ECDescription4 = Rebar - Circle
+
+ECName5        = Rebar - Arc1  
+ECClassName5   = RevitCommands.RvtCmd_CreateNewRebarShape_ArcSample1
+ECAssembly5    = C:\DevDay2009\Rebar\RevitCommands.dll
+ECDescription5 = Rebar - Arc1
+
+ECName6        = Rebar - Arc2 
+ECClassName6   = RevitCommands.RvtCmd_CreateNewRebarShape_ArcSample2
+ECAssembly6    = C:\DevDay2009\Rebar\RevitCommands.dll
+ECDescription6 = Rebar - Arc2
+
+ECName7        = Rebar - L-Shape  
+ECClassName7   = RevitCommands.RvtCmd_CreateNewRebarShape_LShape
+ECAssembly7    = C:\DevDay2009\Rebar\RevitCommands.dll
+ECDescription7 = Rebar - L-Shape
+
+ECName8        = Rebar - Angled L   
+ECClassName8   = RevitCommands.RvtCmd_CreateNewRebarShape_AngledL
+ECAssembly8    = C:\DevDay2009\Rebar\RevitCommands.dll
+ECDescription8 = Rebar - Angled L 

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AreaReinCurve.dll</Assembly>
+    <ClientId>39f3f2fe-ce81-4e76-9c3e-ec84532eda25</ClientId>
+    <FullClassName>Revit.SDK.Samples.AreaReinCurve.CS.Command</FullClassName>
+    <Text>AreaReinCurve</Text>
+    <Description>Turn off all layers but one. You get some parallel bars. Remove the hooks from one boundary curve so that the bars have hooks only at the other end.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

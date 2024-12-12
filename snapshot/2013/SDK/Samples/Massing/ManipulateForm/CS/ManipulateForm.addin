@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ManipulateForm.dll</Assembly>
+    <ClientId>5d777624-3cf8-4791-aaba-5f323427cf8c</ClientId>
+    <FullClassName>Revit.SDK.Samples.ManipulateForm.CS.Command</FullClassName>
+    <Text>Manipulate form</Text>
+    <Description>Show how to manipulate edges and profiles of form</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

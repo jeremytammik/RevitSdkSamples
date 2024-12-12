@@ -1,0 +1,4 @@
+this is used to create DocsCs and DocsVB. 
+
+Master copy has both C# and VB.NET version of code. 
+Use macro to delete either C# or VB.NET code to reduce the length of each doc. 

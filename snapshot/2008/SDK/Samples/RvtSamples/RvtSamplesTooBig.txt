@@ -1,0 +1,2351 @@
+# 100 lines, 94 external commands defined.
+
+/RvtSamples/By Flavour/All/About Revit
+Show the Revit product name, version and build number
+C:/a/lib/revit/2008/SDK/Samples/VersionChecking/CS/bin/Debug/VersionChecking.dll
+Revit.SDK.Samples.VersionChecking.CS.Command
+
+/RvtSamples/By Flavour/All/All Views
+Generate a new sheet for user selected views
+C:/a/lib/revit/2008/SDK/Samples/AllViews/CS/bin/Debug/AllViews.dll
+Revit.SDK.Samples.AllViews.CS.Command
+
+/RvtSamples/By Flavour/All/Arch Sample
+Export data to Excel, sorted by categories
+C:/a/lib/revit/2008/SDK/Samples/ArchSample/VB.NET/bin/ArchSample.dll
+Revit.SDK.Samples.ArchSample.VB.NET.Command
+
+/RvtSamples/By Flavour/All/Beam and slab parameter
+Add a new GUID parameter to beam and slab, and use the GUID value to find the right element.
+C:/a/lib/revit/2008/SDK/Samples/BeamAndSlabNewParameter/CS/bin/Debug/BeamAndSlabNewParameter.dll
+Revit.SDK.Samples.BeamAndSlabNewParameter.CS.Command
+
+/RvtSamples/By Flavour/All/Blend Vertices and Vertex Connection Table
+Get blend vertices and vertex connection table
+C:/a/lib/revit/2008/SDK/Samples/BlendVertexConnectTable/bin/Debug/BlendVertexConnectTable.dll
+Revit.SDK.Samples.BlendVertexConnectTable.CS.Command
+
+/RvtSamples/By Flavour/All/Browse Parameter Bindings
+Browse all the shared parameters bindings used in this project
+C:/a/lib/revit/2008/SDK/Samples/BrowseBindings/VB.NET/bin/BrowseBindings.dll
+Revit.SDK.Samples.BrowseBindings.VB.NET.Command
+
+/RvtSamples/By Flavour/All/Create Curved Beam
+Create Curved Beam
+C:/a/lib/revit/2008/SDK/Samples/CurvedBeam/CS/bin/Debug/CurvedBeam.dll
+Revit.SDK.Samples.CurvedBeam.CS.Command
+
+/RvtSamples/By Flavour/All/Create Dimensions
+Add a dimension to a selected structural wall from its start to its end. Name the dimensions 'Dimension N' where N is an increasing number for each dimension.
+C:/a/lib/revit/2008/SDK/Samples/CreateDimensions/CS/bin/Debug/CreateDimensions.dll
+Revit.SDK.Samples.CreateDimensions.CS.Command
+
+/RvtSamples/By Flavour/All/Create Parameters
+Create a visible and an invisible parameter
+C:/a/lib/revit/2008/SDK/Samples/InvisibleParam/CS/bin/Debug/InvisibleParam.dll
+Revit.SDK.Samples.InvisibleParam.CS.Command
+
+/RvtSamples/By Flavour/All/Create Shared Parameter
+Create a new shared parameter and assign it to wall categories
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command1
+
+/RvtSamples/By Flavour/All/Create view section
+Create a section view across the mid point of the selected wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/CreateViewSection/CS/bin/Debug/CreateViewSection.dll
+Revit.SDK.Samples.CreateViewSection.CS.Command
+
+/RvtSamples/By Flavour/All/Delete Dimensions
+Delete all unpinned dimensions found in current selection
+C:/a/lib/revit/2008/SDK/Samples/DeleteDimensions/CS/bin/Debug/DeleteDimensions.dll
+Revit.SDK.Samples.DeleteDimensions.CS.Command
+
+/RvtSamples/By Flavour/All/Delete Objects CS
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/CS/bin/Debug/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.CS.Command
+
+/RvtSamples/By Flavour/All/Delete Objects VB
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/VB.NET/bin/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.VB.NET.Command
+
+/RvtSamples/By Flavour/All/Display Options
+Display Options
+C:/a/lib/revit/2008/SDK/Samples/DesignOptionReader/VB.NET/bin/DesignOptionReader.dll
+Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
+
+/RvtSamples/By Flavour/All/Element Parameters
+Show the property information of selected element
+C:/a/lib/revit/2008/SDK/Samples/ParameterUtils/CS/bin/Debug/ParameterUtils.dll
+Revit.SDK.Samples.ParameterUtils.CS.Command
+
+/RvtSamples/By Flavour/All/Element Viewer
+Display wireframe model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/ElementViewer/VB.NET/bin/debug/ElementViewer.dll
+Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+
+/RvtSamples/By Flavour/All/Family Explorer
+Explore all families in current project and display their profiles
+C:/a/lib/revit/2008/SDK/Samples/FamilyExplorer/bin/Debug/FamilyExplorer.dll
+Revit.SDK.Samples.FamilyExplorer.CS.Command
+
+/RvtSamples/By Flavour/All/FireRating: Apply Parameter
+Add a new shared parameter to Revit and apply it to all doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ApplyParameter
+
+/RvtSamples/By Flavour/All/FireRating: Export to Excel
+Export fire rating values to an Excel file
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ExportFireRating
+
+/RvtSamples/By Flavour/All/FireRating: Import from Excel
+Import fire rating values from the Excel file and apply them to doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ImportFireRating
+
+/RvtSamples/By Flavour/All/Foundation Slab
+Convert regular floors at the base of the building to octagonal slabs
+C:/a/lib/revit/2008/SDK/Samples/FoundationSlab/CS/bin/Debug/FoundationSlab.dll
+Revit.SDK.Samples.FoundationSlab.CS.Command
+
+/RvtSamples/By Flavour/All/Frame Builder
+Add a new concrete column and beam size
+C:/a/lib/revit/2008/SDK/Samples/FrameBuilder/CS/bin/Debug/FrameBuilder.dll
+Revit.SDK.Samples.FrameBuilder.CS.Command
+
+/RvtSamples/By Flavour/All/Generate Floor
+Generate a floor using a selection of walls that make a closed outline
+C:/a/lib/revit/2008/SDK/Samples/GenerateFloor/CS/bin/Debug/GenerateFloor.dll
+Revit.SDK.Samples.GenerateFloor.CS.Command
+
+/RvtSamples/By Flavour/All/Get Deck Properties
+Get deck layer properties
+C:/a/lib/revit/2008/SDK/Samples/DeckProperties/CS/bin/Debug/DeckProperties.dll
+Revit.SDK.Samples.DeckProperties.CS.Command
+
+/RvtSamples/By Flavour/All/Hello Revit - Form
+Show a form-based dialogue with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.CommandForm
+
+/RvtSamples/By Flavour/All/Hello Revit - MsgBox 
+Show a message box with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.Command
+
+/RvtSamples/By Flavour/All/Hello World CS
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/CS/bin/Debug/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.CS.Command
+
+/RvtSamples/By Flavour/All/Hello World VB
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/VB.NET/bin/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.VB.Net.Command
+
+/RvtSamples/By Flavour/All/Highlight by Phase
+Highlight by Phase
+C:/a/lib/revit/2008/SDK/Samples/PhaseSample/VB.NET/bin/PhaseSample.dll
+Revit.SDK.Samples.PhaseSample.VB.NET.Command
+
+/RvtSamples/By Flavour/All/Import Export DWG
+Export current project to dwg files and import a dwg file into Revit
+C:/a/lib/revit/2008/SDK/Samples/ImportExportDWG/CS/bin/Debug/ImportAndExportForDWG.dll
+Revit.SDK.Samples.ImportAndExportForDWG.CS.Command
+
+/RvtSamples/By Flavour/All/In-Place Members
+Display In-Place Member's Properties and AnalyticalModel
+C:/a/lib/revit/2008/SDK/Samples/InPlaceMembers/CS/bin/Debug/InPlaceMembers.dll
+Revit.SDK.Samples.InPlaceMembers.CS.Command
+
+/RvtSamples/By Flavour/All/Journaling
+Show how an external application can participate in the journaling mechanism
+C:/a/lib/revit/2008/SDK/Samples/Journaling/CS/bin/Debug/Journaling.dll
+Revit.SDK.Samples.Journaling.CS.Command
+
+/RvtSamples/By Flavour/All/LevelsProperty
+Show how to get all the levels in a document and how to create and delete a level and set its properties
+C:/a/lib/revit/2008/SDK/Samples/LevelsProperty/CS/bin/Debug/LevelsProperty.dll
+Revit.SDK.Samples.LevelsProperty.CS.Command
+
+/RvtSamples/By Flavour/All/Material Properties CS
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/CS/bin/Debug/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.CS.MaterialProperties
+
+/RvtSamples/By Flavour/All/Material Properties VB
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/VB.NET/bin/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.VB.NET.MaterialProperties
+
+/RvtSamples/By Flavour/All/Model Lines
+Report the number of each model line type and allow the user to specify the shape and sketch plane to create some new model lines
+C:/a/lib/revit/2008/SDK/Samples/ModelLines/CS/bin/Debug/ModelLines.dll
+Revit.SDK.Samples.ModelLines.CS.Command
+
+/RvtSamples/By Flavour/All/Move Linear
+Move a linear element, such as a structural beam
+C:/a/lib/revit/2008/SDK/Samples/MoveLinear/CS/bin/Debug/MoveLinear.dll
+Revit.SDK.Samples.MoveLinear.CS.Command
+
+/RvtSamples/By Flavour/All/New Openings
+Create openings on the selected floor or wall
+C:/a/lib/revit/2008/SDK/Samples/NewOpenings/CS/bin/Debug/NewOpenings.dll
+Revit.SDK.Samples.NewOpenings.CS.Command
+
+/RvtSamples/By Flavour/All/Object Viewer
+Display the selected element in a preview window and generic properties in a grid
+C:/a/lib/revit/2008/SDK/Samples/ObjectViewer/CS/bin/Debug/ObjectViewer.dll
+Revit.SDK.Samples.ObjectViewer.CS.Command
+
+/RvtSamples/By Flavour/All/Openings
+Display openings in project, and create model lines along its edges
+C:/a/lib/revit/2008/SDK/Samples/Openings/CS/bin/Debug/Opening.dll
+Revit.SDK.Samples.Openings.CS.Command
+
+/RvtSamples/By Flavour/All/PathReinforcement
+Display path reinforcement properties
+C:/a/lib/revit/2008/SDK/Samples/PathReinforcement/CS/bin/Debug/PathReinforcement.dll
+Revit.SDK.Samples.PathReinforcement.CS.Command
+
+/RvtSamples/By Flavour/All/Physical Properties
+Dump Material Physical Parameters
+C:/a/lib/revit/2008/SDK/Samples/PhysicalProp/CS/bin/Debug/PhysicalProp.dll
+Revit.SDK.Samples.PhysicalProp.CS.DumpMaterialPhysicalParameters
+
+/RvtSamples/By Flavour/All/Project Information
+Project Information
+C:/a/lib/revit/2008/SDK/Samples/ProjectInfo/CS/bin/Debug/ProjectInfo.dll
+Revit.SDK.Samples.ProjectInfo.CS.Command
+
+/RvtSamples/By Flavour/All/Project Unit
+List all the units in current project and display format information for each
+C:/a/lib/revit/2008/SDK/Samples/ProjectUnit/CS/bin/Debug/ProjectUnit.dll
+Revit.SDK.Samples.ProjectUnit.CS.Command
+
+/RvtSamples/By Flavour/All/RDB Link
+Export/Import Revit data to/from database
+C:/a/lib/revit/2008/SDK/Samples/RDBLink/CS/bin/Debug/RDBLink.dll
+Revit.SDK.Samples.RDBLink.CS.Command
+
+/RvtSamples/By Flavour/All/Reference Plane
+Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first
+C:/a/lib/revit/2008/SDK/Samples/ReferencePlane/CS/bin/debug/ReferencePlane.dll
+Revit.SDK.Samples.ReferencePlane.CS.Command
+
+/RvtSamples/By Flavour/All/RevitCommands - LibraryPaths
+List the Revit library paths
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths
+
+/RvtSamples/By Flavour/All/RevitCommands - LoadFamily
+Load a family
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily
+
+/RvtSamples/By Flavour/All/RevitCommands - LoadFamilySymbol
+Load a family symbol/type
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol
+
+/RvtSamples/By Flavour/All/RevitCommands - Selection
+Show how to use selection set
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection
+
+/RvtSamples/By Flavour/All/RevitCommands - Show Element Data
+Show parameters of selected entities
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
+
+/RvtSamples/By Flavour/All/Rotate Framing Objects CS
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/CS/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.CS.RotateFramingObjects
+
+/RvtSamples/By Flavour/All/Rotate Framing Objects VB
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/VB.NET/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.VB.NET.RotateFramingObjects
+
+/RvtSamples/By Flavour/All/Set Shared Parameter
+Set the shared parameter
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command2
+
+/RvtSamples/By Flavour/All/Shaft Hole Puncher
+Create shaft opening or create opening on wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/ShaftHolePuncher/bin/Debug/ShaftHolePuncher.dll
+Revit.SDK.Samples.ShaftHolePuncher.CS.Command
+
+/RvtSamples/By Flavour/All/Shared Coordinate System
+Display the locations and site information of the project
+C:/a/lib/revit/2008/SDK/Samples/SharedCoordinateSystem/CS/bin/Debug/SharedCoordinateSystem.dll
+Revit.SDK.Samples.SharedCoordinateSystem.CS.Command
+
+/RvtSamples/By Flavour/All/Span Direction
+Display slab properties (span direction and span direction symbols)
+C:/a/lib/revit/2008/SDK/Samples/SpanDirection/CS/bin/Debug/SpanDirection.dll
+Revit.SDK.Samples.SpanDirection.CS.Command
+
+/RvtSamples/By Flavour/All/Spot Dimension
+Get all spot dimensions in all views and show their properties
+C:/a/lib/revit/2008/SDK/Samples/SpotDimension/CS/bin/Debug/SpotDimension.dll
+Revit.SDK.Samples.SpotDimension.CS.Command
+
+/RvtSamples/By Flavour/All/StructSample - Frame Wall
+Add columns to the selected walls
+C:/a/lib/revit/2008/SDK/Samples/StructSample/CS/bin/Debug/StructSample.dll
+Revit.SDK.Samples.StructSample.CS.Command
+
+/RvtSamples/By Flavour/All/Structural Layer Function CS
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/CS/bin/Debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.CS.Command
+
+/RvtSamples/By Flavour/All/Structural Layer Function VB
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/VB.NET/bin/debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.VB.NET.Command
+
+/RvtSamples/By Flavour/All/Tag Beam
+Tag beam's start and end
+C:/a/lib/revit/2008/SDK/Samples/TagBeam/bin/Debug/TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.Command
+
+/RvtSamples/By Flavour/All/Test Floor Thickness
+Show how to retrieve and modify floor thickness
+C:/a/lib/revit/2008/SDK/Samples/TestFloorThickness/VB.NET/bin/Debug/TestFloorThickness.dll
+Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
+
+/RvtSamples/By Flavour/All/Test Wall Thickness
+Show how to retrieve and modify wall thickness
+C:/a/lib/revit/2008/SDK/Samples/TestWallThickness/VB.NET/bin/Debug/TestWallThickness.dll
+Revit.SDK.Samples.TestWallThickness.VB.NET.Command
+
+/RvtSamples/By Flavour/All/Transaction
+Demonstrate how to use transaction control
+C:/a/lib/revit/2008/SDK/Samples/TransactionControl/bin/Debug/Transaction.dll
+Revit.SDK.Samples.Transaction.CS.Command
+
+/RvtSamples/By Flavour/All/Type Selector
+Retrieve all the types of the selected element, such as a wall and allow the selected element's type to be changed
+C:/a/lib/revit/2008/SDK/Samples/TypeSelector/VB.NET/bin/TypeSelector.dll
+Revit.SDK.Samples.TypeSelector.VB.NET.Command
+
+/RvtSamples/By Flavour/All/View Printer
+Print user selected printable views
+C:/a/lib/revit/2008/SDK/Samples/ViewPrinter/CS/bin/Debug/ViewPrinter.dll
+Revit.SDK.Samples.ViewPrinter.CS.Command
+
+/RvtSamples/By Flavour/All/Visibility Controller
+Control element visibility by category
+C:/a/lib/revit/2008/SDK/Samples/VisibilityControl/bin/Debug/VisibilityController.dll
+Revit.SDK.Samples.VisibilityController.CS.Command
+
+/RvtSamples/By Flavour/Rac/Room Schedule
+Room Schedule
+C:/a/lib/revit/2008/SDK/Samples/RoomSchedule/CS/bin/Debug/RoomSchedule.dll
+Revit.SDK.Samples.RoomSchedule.Command
+
+/RvtSamples/By Flavour/Rac/Room Viewer
+Wireframe viewer for the selected room
+C:/a/lib/revit/2008/SDK/Samples/Viewers/RoomViewer/VB.NET/bin/RoomViewer.dll
+Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+
+/RvtSamples/By Flavour/Rac/Rooms
+Get and set room information (Number, Tag, Area)
+C:/a/lib/revit/2008/SDK/Samples/Rooms/CS/bin/Debug/Rooms.dll
+Revit.SDK.Samples.Rooms.CS.Command
+
+/RvtSamples/By Flavour/Rac/Tag Rooms
+Auto tag all rooms in a specified level
+C:/a/lib/revit/2008/SDK/Samples/AutoTagRooms/bin/Debug/RoomsTag.dll
+Revit.SDK.Samples.RoomsTag.CS.Command
+
+/RvtSamples/By Flavour/Rst/Analytical SupportData Information
+Displays the element's support information
+C:/a/lib/revit/2008/SDK/Samples/AnalyticalSupportData_Info/CS/bin/Debug/AnalyticalSupportData_Info.dll
+Revit.SDK.Samples.AnalyticalSupportData_Info.CS.Command
+
+/RvtSamples/By Flavour/Rst/Analytical Viewer
+Display analytical model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/AnalyticalViewer/VB.NET/bin/AnalyticalViewer.dll
+Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+
+/RvtSamples/By Flavour/Rst/AreaReinCurve
+Turn off all layers but one. You get some parallel bars. Remove the hooks from one boundary curve so that the bars have hooks only at the other end.
+C:/a/lib/revit/2008/SDK/Samples/AreaReinCurve/CS/bin/Debug/AreaReinCurve.dll
+Revit.SDK.Samples.AreaReinCurve.CS.Command
+
+/RvtSamples/By Flavour/Rst/AreaReinParameters
+Show parameters of selected AreaReinforcement and allow user to modify
+C:/a/lib/revit/2008/SDK/Samples/AreaReinParameters/CS/bin/Debug/AreaReinParameters.dll
+Revit.SDK.Samples.AreaReinParameters.CS.Command
+
+/RvtSamples/By Flavour/Rst/Bar Descriptions
+Iterate through the BarDescriptions in the project and display the properties in a table. Allow the table to be saved to a CSV file.
+C:/a/lib/revit/2008/SDK/Samples/BarDescriptions/CS/bin/Debug/BarDescriptions.dll
+Revit.SDK.Samples.BarDescriptions.CS.Command
+
+/RvtSamples/By Flavour/Rst/Boundary Conditions
+Display the BoundaryConditions' parameters or create a new BoundaryConditions instance
+C:/a/lib/revit/2008/SDK/Samples/BoundaryConditions/CS/bin/Debug/BoundaryConditions.dll
+Revit.SDK.Samples.BoundaryConditions.CS.Command
+
+/RvtSamples/By Flavour/Rst/Create Beam System
+Create beam system according to the profile made of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamSystem/CS/bin/Debug/CreateBeamSystem.dll
+Revit.SDK.Samples.CreateBeamSystem.CS.Command
+
+/RvtSamples/By Flavour/Rst/Create Complex Area Reinforcement
+Create complex AreaReinforcement on selected slab
+C:/a/lib/revit/2008/SDK/Samples/CreateComplexAreaRein/CS/bin/Debug/CreateComplexAreaRein.dll
+Revit.SDK.Samples.CreateComplexAreaRein.CS.Command
+
+/RvtSamples/By Flavour/Rst/Create beams, columns and braces CS
+Create beams, columns and braces CS
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/CS/bin/Debug/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.Command
+
+/RvtSamples/By Flavour/Rst/Create beams, columns and braces VB
+Create beams, columns and braces VB
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/VB.NET/bin/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.VB.NET.Command
+
+/RvtSamples/By Flavour/Rst/Create simple area reinforcement
+Create simple AreaReinforcement on selected wall or floor
+C:/a/lib/revit/2008/SDK/Samples/CreateSimpleAreaRein/CS/bin/Debug/CreateSimpleAreaRein.dll
+Revit.SDK.Samples.CreateSimpleAreaRein.CS.Command
+
+/RvtSamples/By Flavour/Rst/Create wall in beam profile
+Create a profiled wall using the outline generated by a selection of beams defining a vertical profile
+C:/a/lib/revit/2008/SDK/Samples/CreateWallinBeamProfile/CS/bin/Debug/CreateWallinBeamProfile.dll
+Revit.SDK.Samples.CreateWallinBeamProfile.CS.CreateWallinBeamProfile
+
+/RvtSamples/By Flavour/Rst/Create walls under beams
+Create simple rectangular walls along and under the path of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateWallsUnderBeams/CS/bin/Debug/CreateWallsUnderBeams.dll
+Revit.SDK.Samples.CreateWallsUnderBeams.CS.CreateWallsUnderBeams
+
+/RvtSamples/By Flavour/Rst/In-Place Family with 3D Analytical Model CS
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/CS/bin/Debug/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.CS.Command
+
+/RvtSamples/By Flavour/Rst/In-Place Family with 3D Analytical Model VB
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/VB.NET/bin/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.VB.NET.Command
+
+/RvtSamples/By Flavour/Rst/Loads
+Show how to use load case, nature, usage and combination
+C:/a/lib/revit/2008/SDK/Samples/Loads/CS/bin/Debug/Loads.dll
+Revit.SDK.Samples.Loads.CS.Loads
+
+/RvtSamples/By Flavour/Rst/Materials
+Present all available materials in the current project, and allow changing the material of the selected structural element
+C:/a/lib/revit/2008/SDK/Samples/Materials/CS/bin/Debug/Materials.dll
+Revit.SDK.Samples.Materials.CS.Command
+
+/RvtSamples/By Flavour/Rst/New PathReinforcement
+Create PathReinforcement on wall or slab
+C:/a/lib/revit/2008/SDK/Samples/NewPathReinforcement/CS/bin/Debug/NewPathReinforcement.dll
+Revit.SDK.Samples.NewPathReinforcement.CS.Command
+
+/RvtSamples/By Flavour/Rst/Reinforcement
+Create bar set in a selected concrete element (beam or column) that does not have any reinforcement
+C:/a/lib/revit/2008/SDK/Samples/Reinforcement/CS/bin/Debug/Reinforcement.dll
+Revit.SDK.Samples.Reinforcement.CS.Command
+
+/RvtSamples/By Flavour/Rst/Slab Properties CS
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/CS/bin/Debug/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.CS.Command
+
+/RvtSamples/By Flavour/Rst/Slab Properties VB
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/VB.NET/bin/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.VB.NET.Command
+
+/RvtSamples/By Level/Advanced/Analytical Viewer
+Display analytical model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/AnalyticalViewer/VB.NET/bin/AnalyticalViewer.dll
+Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+
+/RvtSamples/By Level/Advanced/Foundation Slab
+Convert regular floors at the base of the building to octagonal slabs
+C:/a/lib/revit/2008/SDK/Samples/FoundationSlab/CS/bin/Debug/FoundationSlab.dll
+Revit.SDK.Samples.FoundationSlab.CS.Command
+
+/RvtSamples/By Level/Advanced/Journaling
+Show how an external application can participate in the journaling mechanism
+C:/a/lib/revit/2008/SDK/Samples/Journaling/CS/bin/Debug/Journaling.dll
+Revit.SDK.Samples.Journaling.CS.Command
+
+/RvtSamples/By Level/Advanced/RDB Link
+Export/Import Revit data to/from database
+C:/a/lib/revit/2008/SDK/Samples/RDBLink/CS/bin/Debug/RDBLink.dll
+Revit.SDK.Samples.RDBLink.CS.Command
+
+/RvtSamples/By Level/Advanced/Reinforcement
+Create bar set in a selected concrete element (beam or column) that does not have any reinforcement
+C:/a/lib/revit/2008/SDK/Samples/Reinforcement/CS/bin/Debug/Reinforcement.dll
+Revit.SDK.Samples.Reinforcement.CS.Command
+
+/RvtSamples/By Level/Advanced/View Printer
+Print user selected printable views
+C:/a/lib/revit/2008/SDK/Samples/ViewPrinter/CS/bin/Debug/ViewPrinter.dll
+Revit.SDK.Samples.ViewPrinter.CS.Command
+
+/RvtSamples/By Level/Basic/About Revit
+Show the Revit product name, version and build number
+C:/a/lib/revit/2008/SDK/Samples/VersionChecking/CS/bin/Debug/VersionChecking.dll
+Revit.SDK.Samples.VersionChecking.CS.Command
+
+/RvtSamples/By Level/Basic/All Views
+Generate a new sheet for user selected views
+C:/a/lib/revit/2008/SDK/Samples/AllViews/CS/bin/Debug/AllViews.dll
+Revit.SDK.Samples.AllViews.CS.Command
+
+/RvtSamples/By Level/Basic/Analytical SupportData Information
+Displays the element's support information
+C:/a/lib/revit/2008/SDK/Samples/AnalyticalSupportData_Info/CS/bin/Debug/AnalyticalSupportData_Info.dll
+Revit.SDK.Samples.AnalyticalSupportData_Info.CS.Command
+
+/RvtSamples/By Level/Basic/Arch Sample
+Export data to Excel, sorted by categories
+C:/a/lib/revit/2008/SDK/Samples/ArchSample/VB.NET/bin/ArchSample.dll
+Revit.SDK.Samples.ArchSample.VB.NET.Command
+
+/RvtSamples/By Level/Basic/AreaReinCurve
+Turn off all layers but one. You get some parallel bars. Remove the hooks from one boundary curve so that the bars have hooks only at the other end.
+C:/a/lib/revit/2008/SDK/Samples/AreaReinCurve/CS/bin/Debug/AreaReinCurve.dll
+Revit.SDK.Samples.AreaReinCurve.CS.Command
+
+/RvtSamples/By Level/Basic/AreaReinParameters
+Show parameters of selected AreaReinforcement and allow user to modify
+C:/a/lib/revit/2008/SDK/Samples/AreaReinParameters/CS/bin/Debug/AreaReinParameters.dll
+Revit.SDK.Samples.AreaReinParameters.CS.Command
+
+/RvtSamples/By Level/Basic/Bar Descriptions
+Iterate through the BarDescriptions in the project and display the properties in a table. Allow the table to be saved to a CSV file.
+C:/a/lib/revit/2008/SDK/Samples/BarDescriptions/CS/bin/Debug/BarDescriptions.dll
+Revit.SDK.Samples.BarDescriptions.CS.Command
+
+/RvtSamples/By Level/Basic/Beam and slab parameter
+Add a new GUID parameter to beam and slab, and use the GUID value to find the right element.
+C:/a/lib/revit/2008/SDK/Samples/BeamAndSlabNewParameter/CS/bin/Debug/BeamAndSlabNewParameter.dll
+Revit.SDK.Samples.BeamAndSlabNewParameter.CS.Command
+
+/RvtSamples/By Level/Basic/Blend Vertices and Vertex Connection Table
+Get blend vertices and vertex connection table
+C:/a/lib/revit/2008/SDK/Samples/BlendVertexConnectTable/bin/Debug/BlendVertexConnectTable.dll
+Revit.SDK.Samples.BlendVertexConnectTable.CS.Command
+
+/RvtSamples/By Level/Basic/Boundary Conditions
+Display the BoundaryConditions' parameters or create a new BoundaryConditions instance
+C:/a/lib/revit/2008/SDK/Samples/BoundaryConditions/CS/bin/Debug/BoundaryConditions.dll
+Revit.SDK.Samples.BoundaryConditions.CS.Command
+
+/RvtSamples/By Level/Basic/Browse Parameter Bindings
+Browse all the shared parameters bindings used in this project
+C:/a/lib/revit/2008/SDK/Samples/BrowseBindings/VB.NET/bin/BrowseBindings.dll
+Revit.SDK.Samples.BrowseBindings.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Create Beam System
+Create beam system according to the profile made of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamSystem/CS/bin/Debug/CreateBeamSystem.dll
+Revit.SDK.Samples.CreateBeamSystem.CS.Command
+
+/RvtSamples/By Level/Basic/Create Complex Area Reinforcement
+Create complex AreaReinforcement on selected slab
+C:/a/lib/revit/2008/SDK/Samples/CreateComplexAreaRein/CS/bin/Debug/CreateComplexAreaRein.dll
+Revit.SDK.Samples.CreateComplexAreaRein.CS.Command
+
+/RvtSamples/By Level/Basic/Create Curved Beam
+Create Curved Beam
+C:/a/lib/revit/2008/SDK/Samples/CurvedBeam/CS/bin/Debug/CurvedBeam.dll
+Revit.SDK.Samples.CurvedBeam.CS.Command
+
+/RvtSamples/By Level/Basic/Create Dimensions
+Add a dimension to a selected structural wall from its start to its end. Name the dimensions 'Dimension N' where N is an increasing number for each dimension.
+C:/a/lib/revit/2008/SDK/Samples/CreateDimensions/CS/bin/Debug/CreateDimensions.dll
+Revit.SDK.Samples.CreateDimensions.CS.Command
+
+/RvtSamples/By Level/Basic/Create Parameters
+Create a visible and an invisible parameter
+C:/a/lib/revit/2008/SDK/Samples/InvisibleParam/CS/bin/Debug/InvisibleParam.dll
+Revit.SDK.Samples.InvisibleParam.CS.Command
+
+/RvtSamples/By Level/Basic/Create Shared Parameter
+Create a new shared parameter and assign it to wall categories
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command1
+
+/RvtSamples/By Level/Basic/Create beams, columns and braces CS
+Create beams, columns and braces CS
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/CS/bin/Debug/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.Command
+
+/RvtSamples/By Level/Basic/Create beams, columns and braces VB
+Create beams, columns and braces VB
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/VB.NET/bin/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Create simple area reinforcement
+Create simple AreaReinforcement on selected wall or floor
+C:/a/lib/revit/2008/SDK/Samples/CreateSimpleAreaRein/CS/bin/Debug/CreateSimpleAreaRein.dll
+Revit.SDK.Samples.CreateSimpleAreaRein.CS.Command
+
+/RvtSamples/By Level/Basic/Create view section
+Create a section view across the mid point of the selected wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/CreateViewSection/CS/bin/Debug/CreateViewSection.dll
+Revit.SDK.Samples.CreateViewSection.CS.Command
+
+/RvtSamples/By Level/Basic/Create wall in beam profile
+Create a profiled wall using the outline generated by a selection of beams defining a vertical profile
+C:/a/lib/revit/2008/SDK/Samples/CreateWallinBeamProfile/CS/bin/Debug/CreateWallinBeamProfile.dll
+Revit.SDK.Samples.CreateWallinBeamProfile.CS.CreateWallinBeamProfile
+
+/RvtSamples/By Level/Basic/Create walls under beams
+Create simple rectangular walls along and under the path of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateWallsUnderBeams/CS/bin/Debug/CreateWallsUnderBeams.dll
+Revit.SDK.Samples.CreateWallsUnderBeams.CS.CreateWallsUnderBeams
+
+/RvtSamples/By Level/Basic/Delete Dimensions
+Delete all unpinned dimensions found in current selection
+C:/a/lib/revit/2008/SDK/Samples/DeleteDimensions/CS/bin/Debug/DeleteDimensions.dll
+Revit.SDK.Samples.DeleteDimensions.CS.Command
+
+/RvtSamples/By Level/Basic/Delete Objects CS
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/CS/bin/Debug/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.CS.Command
+
+/RvtSamples/By Level/Basic/Delete Objects VB
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/VB.NET/bin/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Display Options
+Display Options
+C:/a/lib/revit/2008/SDK/Samples/DesignOptionReader/VB.NET/bin/DesignOptionReader.dll
+Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Element Parameters
+Show the property information of selected element
+C:/a/lib/revit/2008/SDK/Samples/ParameterUtils/CS/bin/Debug/ParameterUtils.dll
+Revit.SDK.Samples.ParameterUtils.CS.Command
+
+/RvtSamples/By Level/Basic/Element Viewer
+Display wireframe model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/ElementViewer/VB.NET/bin/debug/ElementViewer.dll
+Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+
+/RvtSamples/By Level/Basic/Family Explorer
+Explore all families in current project and display their profiles
+C:/a/lib/revit/2008/SDK/Samples/FamilyExplorer/bin/Debug/FamilyExplorer.dll
+Revit.SDK.Samples.FamilyExplorer.CS.Command
+
+/RvtSamples/By Level/Basic/Frame Builder
+Add a new concrete column and beam size
+C:/a/lib/revit/2008/SDK/Samples/FrameBuilder/CS/bin/Debug/FrameBuilder.dll
+Revit.SDK.Samples.FrameBuilder.CS.Command
+
+/RvtSamples/By Level/Basic/Generate Floor
+Generate a floor using a selection of walls that make a closed outline
+C:/a/lib/revit/2008/SDK/Samples/GenerateFloor/CS/bin/Debug/GenerateFloor.dll
+Revit.SDK.Samples.GenerateFloor.CS.Command
+
+/RvtSamples/By Level/Basic/Get Deck Properties
+Get deck layer properties
+C:/a/lib/revit/2008/SDK/Samples/DeckProperties/CS/bin/Debug/DeckProperties.dll
+Revit.SDK.Samples.DeckProperties.CS.Command
+
+/RvtSamples/By Level/Basic/Hello Revit - Form
+Show a form-based dialogue with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.CommandForm
+
+/RvtSamples/By Level/Basic/Hello Revit - MsgBox 
+Show a message box with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Hello World CS
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/CS/bin/Debug/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.CS.Command
+
+/RvtSamples/By Level/Basic/Hello World VB
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/VB.NET/bin/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.VB.Net.Command
+
+/RvtSamples/By Level/Basic/Highlight by Phase
+Highlight by Phase
+C:/a/lib/revit/2008/SDK/Samples/PhaseSample/VB.NET/bin/PhaseSample.dll
+Revit.SDK.Samples.PhaseSample.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Import Export DWG
+Export current project to dwg files and import a dwg file into Revit
+C:/a/lib/revit/2008/SDK/Samples/ImportExportDWG/CS/bin/Debug/ImportAndExportForDWG.dll
+Revit.SDK.Samples.ImportAndExportForDWG.CS.Command
+
+/RvtSamples/By Level/Basic/In-Place Family with 3D Analytical Model CS
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/CS/bin/Debug/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.CS.Command
+
+/RvtSamples/By Level/Basic/In-Place Family with 3D Analytical Model VB
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/VB.NET/bin/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.VB.NET.Command
+
+/RvtSamples/By Level/Basic/In-Place Members
+Display In-Place Member's Properties and AnalyticalModel
+C:/a/lib/revit/2008/SDK/Samples/InPlaceMembers/CS/bin/Debug/InPlaceMembers.dll
+Revit.SDK.Samples.InPlaceMembers.CS.Command
+
+/RvtSamples/By Level/Basic/LevelsProperty
+Show how to get all the levels in a document and how to create and delete a level and set its properties
+C:/a/lib/revit/2008/SDK/Samples/LevelsProperty/CS/bin/Debug/LevelsProperty.dll
+Revit.SDK.Samples.LevelsProperty.CS.Command
+
+/RvtSamples/By Level/Basic/Loads
+Show how to use load case, nature, usage and combination
+C:/a/lib/revit/2008/SDK/Samples/Loads/CS/bin/Debug/Loads.dll
+Revit.SDK.Samples.Loads.CS.Loads
+
+/RvtSamples/By Level/Basic/Material Properties CS
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/CS/bin/Debug/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.CS.MaterialProperties
+
+/RvtSamples/By Level/Basic/Material Properties VB
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/VB.NET/bin/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.VB.NET.MaterialProperties
+
+/RvtSamples/By Level/Basic/Materials
+Present all available materials in the current project, and allow changing the material of the selected structural element
+C:/a/lib/revit/2008/SDK/Samples/Materials/CS/bin/Debug/Materials.dll
+Revit.SDK.Samples.Materials.CS.Command
+
+/RvtSamples/By Level/Basic/Model Lines
+Report the number of each model line type and allow the user to specify the shape and sketch plane to create some new model lines
+C:/a/lib/revit/2008/SDK/Samples/ModelLines/CS/bin/Debug/ModelLines.dll
+Revit.SDK.Samples.ModelLines.CS.Command
+
+/RvtSamples/By Level/Basic/Move Linear
+Move a linear element, such as a structural beam
+C:/a/lib/revit/2008/SDK/Samples/MoveLinear/CS/bin/Debug/MoveLinear.dll
+Revit.SDK.Samples.MoveLinear.CS.Command
+
+/RvtSamples/By Level/Basic/New Openings
+Create openings on the selected floor or wall
+C:/a/lib/revit/2008/SDK/Samples/NewOpenings/CS/bin/Debug/NewOpenings.dll
+Revit.SDK.Samples.NewOpenings.CS.Command
+
+/RvtSamples/By Level/Basic/New PathReinforcement
+Create PathReinforcement on wall or slab
+C:/a/lib/revit/2008/SDK/Samples/NewPathReinforcement/CS/bin/Debug/NewPathReinforcement.dll
+Revit.SDK.Samples.NewPathReinforcement.CS.Command
+
+/RvtSamples/By Level/Basic/Object Viewer
+Display the selected element in a preview window and generic properties in a grid
+C:/a/lib/revit/2008/SDK/Samples/ObjectViewer/CS/bin/Debug/ObjectViewer.dll
+Revit.SDK.Samples.ObjectViewer.CS.Command
+
+/RvtSamples/By Level/Basic/Openings
+Display openings in project, and create model lines along its edges
+C:/a/lib/revit/2008/SDK/Samples/Openings/CS/bin/Debug/Opening.dll
+Revit.SDK.Samples.Openings.CS.Command
+
+/RvtSamples/By Level/Basic/PathReinforcement
+Display path reinforcement properties
+C:/a/lib/revit/2008/SDK/Samples/PathReinforcement/CS/bin/Debug/PathReinforcement.dll
+Revit.SDK.Samples.PathReinforcement.CS.Command
+
+/RvtSamples/By Level/Basic/Physical Properties
+Dump Material Physical Parameters
+C:/a/lib/revit/2008/SDK/Samples/PhysicalProp/CS/bin/Debug/PhysicalProp.dll
+Revit.SDK.Samples.PhysicalProp.CS.DumpMaterialPhysicalParameters
+
+/RvtSamples/By Level/Basic/Project Information
+Project Information
+C:/a/lib/revit/2008/SDK/Samples/ProjectInfo/CS/bin/Debug/ProjectInfo.dll
+Revit.SDK.Samples.ProjectInfo.CS.Command
+
+/RvtSamples/By Level/Basic/Project Unit
+List all the units in current project and display format information for each
+C:/a/lib/revit/2008/SDK/Samples/ProjectUnit/CS/bin/Debug/ProjectUnit.dll
+Revit.SDK.Samples.ProjectUnit.CS.Command
+
+/RvtSamples/By Level/Basic/Reference Plane
+Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first
+C:/a/lib/revit/2008/SDK/Samples/ReferencePlane/CS/bin/debug/ReferencePlane.dll
+Revit.SDK.Samples.ReferencePlane.CS.Command
+
+/RvtSamples/By Level/Basic/RevitCommands - LibraryPaths
+List the Revit library paths
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths
+
+/RvtSamples/By Level/Basic/RevitCommands - LoadFamily
+Load a family
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily
+
+/RvtSamples/By Level/Basic/RevitCommands - LoadFamilySymbol
+Load a family symbol/type
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol
+
+/RvtSamples/By Level/Basic/RevitCommands - Selection
+Show how to use selection set
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection
+
+/RvtSamples/By Level/Basic/RevitCommands - Show Element Data
+Show parameters of selected entities
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
+
+/RvtSamples/By Level/Basic/Room Schedule
+Room Schedule
+C:/a/lib/revit/2008/SDK/Samples/RoomSchedule/CS/bin/Debug/RoomSchedule.dll
+Revit.SDK.Samples.RoomSchedule.Command
+
+/RvtSamples/By Level/Basic/Room Viewer
+Wireframe viewer for the selected room
+C:/a/lib/revit/2008/SDK/Samples/Viewers/RoomViewer/VB.NET/bin/RoomViewer.dll
+Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+
+/RvtSamples/By Level/Basic/Rooms
+Get and set room information (Number, Tag, Area)
+C:/a/lib/revit/2008/SDK/Samples/Rooms/CS/bin/Debug/Rooms.dll
+Revit.SDK.Samples.Rooms.CS.Command
+
+/RvtSamples/By Level/Basic/Rotate Framing Objects CS
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/CS/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.CS.RotateFramingObjects
+
+/RvtSamples/By Level/Basic/Rotate Framing Objects VB
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/VB.NET/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.VB.NET.RotateFramingObjects
+
+/RvtSamples/By Level/Basic/Set Shared Parameter
+Set the shared parameter
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command2
+
+/RvtSamples/By Level/Basic/Shaft Hole Puncher
+Create shaft opening or create opening on wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/ShaftHolePuncher/bin/Debug/ShaftHolePuncher.dll
+Revit.SDK.Samples.ShaftHolePuncher.CS.Command
+
+/RvtSamples/By Level/Basic/Shared Coordinate System
+Display the locations and site information of the project
+C:/a/lib/revit/2008/SDK/Samples/SharedCoordinateSystem/CS/bin/Debug/SharedCoordinateSystem.dll
+Revit.SDK.Samples.SharedCoordinateSystem.CS.Command
+
+/RvtSamples/By Level/Basic/Slab Properties CS
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/CS/bin/Debug/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.CS.Command
+
+/RvtSamples/By Level/Basic/Slab Properties VB
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/VB.NET/bin/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Span Direction
+Display slab properties (span direction and span direction symbols)
+C:/a/lib/revit/2008/SDK/Samples/SpanDirection/CS/bin/Debug/SpanDirection.dll
+Revit.SDK.Samples.SpanDirection.CS.Command
+
+/RvtSamples/By Level/Basic/Spot Dimension
+Get all spot dimensions in all views and show their properties
+C:/a/lib/revit/2008/SDK/Samples/SpotDimension/CS/bin/Debug/SpotDimension.dll
+Revit.SDK.Samples.SpotDimension.CS.Command
+
+/RvtSamples/By Level/Basic/StructSample - Frame Wall
+Add columns to the selected walls
+C:/a/lib/revit/2008/SDK/Samples/StructSample/CS/bin/Debug/StructSample.dll
+Revit.SDK.Samples.StructSample.CS.Command
+
+/RvtSamples/By Level/Basic/Structural Layer Function CS
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/CS/bin/Debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.CS.Command
+
+/RvtSamples/By Level/Basic/Structural Layer Function VB
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/VB.NET/bin/debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Tag Beam
+Tag beam's start and end
+C:/a/lib/revit/2008/SDK/Samples/TagBeam/bin/Debug/TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.Command
+
+/RvtSamples/By Level/Basic/Tag Rooms
+Auto tag all rooms in a specified level
+C:/a/lib/revit/2008/SDK/Samples/AutoTagRooms/bin/Debug/RoomsTag.dll
+Revit.SDK.Samples.RoomsTag.CS.Command
+
+/RvtSamples/By Level/Basic/Test Floor Thickness
+Show how to retrieve and modify floor thickness
+C:/a/lib/revit/2008/SDK/Samples/TestFloorThickness/VB.NET/bin/Debug/TestFloorThickness.dll
+Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Test Wall Thickness
+Show how to retrieve and modify wall thickness
+C:/a/lib/revit/2008/SDK/Samples/TestWallThickness/VB.NET/bin/Debug/TestWallThickness.dll
+Revit.SDK.Samples.TestWallThickness.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Transaction
+Demonstrate how to use transaction control
+C:/a/lib/revit/2008/SDK/Samples/TransactionControl/bin/Debug/Transaction.dll
+Revit.SDK.Samples.Transaction.CS.Command
+
+/RvtSamples/By Level/Basic/Type Selector
+Retrieve all the types of the selected element, such as a wall and allow the selected element's type to be changed
+C:/a/lib/revit/2008/SDK/Samples/TypeSelector/VB.NET/bin/TypeSelector.dll
+Revit.SDK.Samples.TypeSelector.VB.NET.Command
+
+/RvtSamples/By Level/Basic/Visibility Controller
+Control element visibility by category
+C:/a/lib/revit/2008/SDK/Samples/VisibilityControl/bin/Debug/VisibilityController.dll
+Revit.SDK.Samples.VisibilityController.CS.Command
+
+/RvtSamples/By Level/Intermediate/FireRating: Apply Parameter
+Add a new shared parameter to Revit and apply it to all doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ApplyParameter
+
+/RvtSamples/By Level/Intermediate/FireRating: Export to Excel
+Export fire rating values to an Excel file
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ExportFireRating
+
+/RvtSamples/By Level/Intermediate/FireRating: Import from Excel
+Import fire rating values from the Excel file and apply them to doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ImportFireRating
+
+/RvtSamples/By Language/Cs/About Revit
+Show the Revit product name, version and build number
+C:/a/lib/revit/2008/SDK/Samples/VersionChecking/CS/bin/Debug/VersionChecking.dll
+Revit.SDK.Samples.VersionChecking.CS.Command
+
+/RvtSamples/By Language/Cs/All Views
+Generate a new sheet for user selected views
+C:/a/lib/revit/2008/SDK/Samples/AllViews/CS/bin/Debug/AllViews.dll
+Revit.SDK.Samples.AllViews.CS.Command
+
+/RvtSamples/By Language/Cs/Analytical SupportData Information
+Displays the element's support information
+C:/a/lib/revit/2008/SDK/Samples/AnalyticalSupportData_Info/CS/bin/Debug/AnalyticalSupportData_Info.dll
+Revit.SDK.Samples.AnalyticalSupportData_Info.CS.Command
+
+/RvtSamples/By Language/Cs/AreaReinCurve
+Turn off all layers but one. You get some parallel bars. Remove the hooks from one boundary curve so that the bars have hooks only at the other end.
+C:/a/lib/revit/2008/SDK/Samples/AreaReinCurve/CS/bin/Debug/AreaReinCurve.dll
+Revit.SDK.Samples.AreaReinCurve.CS.Command
+
+/RvtSamples/By Language/Cs/AreaReinParameters
+Show parameters of selected AreaReinforcement and allow user to modify
+C:/a/lib/revit/2008/SDK/Samples/AreaReinParameters/CS/bin/Debug/AreaReinParameters.dll
+Revit.SDK.Samples.AreaReinParameters.CS.Command
+
+/RvtSamples/By Language/Cs/Bar Descriptions
+Iterate through the BarDescriptions in the project and display the properties in a table. Allow the table to be saved to a CSV file.
+C:/a/lib/revit/2008/SDK/Samples/BarDescriptions/CS/bin/Debug/BarDescriptions.dll
+Revit.SDK.Samples.BarDescriptions.CS.Command
+
+/RvtSamples/By Language/Cs/Beam and slab parameter
+Add a new GUID parameter to beam and slab, and use the GUID value to find the right element.
+C:/a/lib/revit/2008/SDK/Samples/BeamAndSlabNewParameter/CS/bin/Debug/BeamAndSlabNewParameter.dll
+Revit.SDK.Samples.BeamAndSlabNewParameter.CS.Command
+
+/RvtSamples/By Language/Cs/Blend Vertices and Vertex Connection Table
+Get blend vertices and vertex connection table
+C:/a/lib/revit/2008/SDK/Samples/BlendVertexConnectTable/bin/Debug/BlendVertexConnectTable.dll
+Revit.SDK.Samples.BlendVertexConnectTable.CS.Command
+
+/RvtSamples/By Language/Cs/Boundary Conditions
+Display the BoundaryConditions' parameters or create a new BoundaryConditions instance
+C:/a/lib/revit/2008/SDK/Samples/BoundaryConditions/CS/bin/Debug/BoundaryConditions.dll
+Revit.SDK.Samples.BoundaryConditions.CS.Command
+
+/RvtSamples/By Language/Cs/Create Beam System
+Create beam system according to the profile made of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamSystem/CS/bin/Debug/CreateBeamSystem.dll
+Revit.SDK.Samples.CreateBeamSystem.CS.Command
+
+/RvtSamples/By Language/Cs/Create Complex Area Reinforcement
+Create complex AreaReinforcement on selected slab
+C:/a/lib/revit/2008/SDK/Samples/CreateComplexAreaRein/CS/bin/Debug/CreateComplexAreaRein.dll
+Revit.SDK.Samples.CreateComplexAreaRein.CS.Command
+
+/RvtSamples/By Language/Cs/Create Curved Beam
+Create Curved Beam
+C:/a/lib/revit/2008/SDK/Samples/CurvedBeam/CS/bin/Debug/CurvedBeam.dll
+Revit.SDK.Samples.CurvedBeam.CS.Command
+
+/RvtSamples/By Language/Cs/Create Dimensions
+Add a dimension to a selected structural wall from its start to its end. Name the dimensions 'Dimension N' where N is an increasing number for each dimension.
+C:/a/lib/revit/2008/SDK/Samples/CreateDimensions/CS/bin/Debug/CreateDimensions.dll
+Revit.SDK.Samples.CreateDimensions.CS.Command
+
+/RvtSamples/By Language/Cs/Create Parameters
+Create a visible and an invisible parameter
+C:/a/lib/revit/2008/SDK/Samples/InvisibleParam/CS/bin/Debug/InvisibleParam.dll
+Revit.SDK.Samples.InvisibleParam.CS.Command
+
+/RvtSamples/By Language/Cs/Create beams, columns and braces CS
+Create beams, columns and braces CS
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/CS/bin/Debug/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.Command
+
+/RvtSamples/By Language/Cs/Create simple area reinforcement
+Create simple AreaReinforcement on selected wall or floor
+C:/a/lib/revit/2008/SDK/Samples/CreateSimpleAreaRein/CS/bin/Debug/CreateSimpleAreaRein.dll
+Revit.SDK.Samples.CreateSimpleAreaRein.CS.Command
+
+/RvtSamples/By Language/Cs/Create view section
+Create a section view across the mid point of the selected wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/CreateViewSection/CS/bin/Debug/CreateViewSection.dll
+Revit.SDK.Samples.CreateViewSection.CS.Command
+
+/RvtSamples/By Language/Cs/Create wall in beam profile
+Create a profiled wall using the outline generated by a selection of beams defining a vertical profile
+C:/a/lib/revit/2008/SDK/Samples/CreateWallinBeamProfile/CS/bin/Debug/CreateWallinBeamProfile.dll
+Revit.SDK.Samples.CreateWallinBeamProfile.CS.CreateWallinBeamProfile
+
+/RvtSamples/By Language/Cs/Create walls under beams
+Create simple rectangular walls along and under the path of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateWallsUnderBeams/CS/bin/Debug/CreateWallsUnderBeams.dll
+Revit.SDK.Samples.CreateWallsUnderBeams.CS.CreateWallsUnderBeams
+
+/RvtSamples/By Language/Cs/Delete Dimensions
+Delete all unpinned dimensions found in current selection
+C:/a/lib/revit/2008/SDK/Samples/DeleteDimensions/CS/bin/Debug/DeleteDimensions.dll
+Revit.SDK.Samples.DeleteDimensions.CS.Command
+
+/RvtSamples/By Language/Cs/Delete Objects CS
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/CS/bin/Debug/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.CS.Command
+
+/RvtSamples/By Language/Cs/Element Parameters
+Show the property information of selected element
+C:/a/lib/revit/2008/SDK/Samples/ParameterUtils/CS/bin/Debug/ParameterUtils.dll
+Revit.SDK.Samples.ParameterUtils.CS.Command
+
+/RvtSamples/By Language/Cs/Family Explorer
+Explore all families in current project and display their profiles
+C:/a/lib/revit/2008/SDK/Samples/FamilyExplorer/bin/Debug/FamilyExplorer.dll
+Revit.SDK.Samples.FamilyExplorer.CS.Command
+
+/RvtSamples/By Language/Cs/Foundation Slab
+Convert regular floors at the base of the building to octagonal slabs
+C:/a/lib/revit/2008/SDK/Samples/FoundationSlab/CS/bin/Debug/FoundationSlab.dll
+Revit.SDK.Samples.FoundationSlab.CS.Command
+
+/RvtSamples/By Language/Cs/Frame Builder
+Add a new concrete column and beam size
+C:/a/lib/revit/2008/SDK/Samples/FrameBuilder/CS/bin/Debug/FrameBuilder.dll
+Revit.SDK.Samples.FrameBuilder.CS.Command
+
+/RvtSamples/By Language/Cs/Generate Floor
+Generate a floor using a selection of walls that make a closed outline
+C:/a/lib/revit/2008/SDK/Samples/GenerateFloor/CS/bin/Debug/GenerateFloor.dll
+Revit.SDK.Samples.GenerateFloor.CS.Command
+
+/RvtSamples/By Language/Cs/Get Deck Properties
+Get deck layer properties
+C:/a/lib/revit/2008/SDK/Samples/DeckProperties/CS/bin/Debug/DeckProperties.dll
+Revit.SDK.Samples.DeckProperties.CS.Command
+
+/RvtSamples/By Language/Cs/Hello World CS
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/CS/bin/Debug/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.CS.Command
+
+/RvtSamples/By Language/Cs/Import Export DWG
+Export current project to dwg files and import a dwg file into Revit
+C:/a/lib/revit/2008/SDK/Samples/ImportExportDWG/CS/bin/Debug/ImportAndExportForDWG.dll
+Revit.SDK.Samples.ImportAndExportForDWG.CS.Command
+
+/RvtSamples/By Language/Cs/In-Place Family with 3D Analytical Model CS
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/CS/bin/Debug/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.CS.Command
+
+/RvtSamples/By Language/Cs/In-Place Members
+Display In-Place Member's Properties and AnalyticalModel
+C:/a/lib/revit/2008/SDK/Samples/InPlaceMembers/CS/bin/Debug/InPlaceMembers.dll
+Revit.SDK.Samples.InPlaceMembers.CS.Command
+
+/RvtSamples/By Language/Cs/Journaling
+Show how an external application can participate in the journaling mechanism
+C:/a/lib/revit/2008/SDK/Samples/Journaling/CS/bin/Debug/Journaling.dll
+Revit.SDK.Samples.Journaling.CS.Command
+
+/RvtSamples/By Language/Cs/LevelsProperty
+Show how to get all the levels in a document and how to create and delete a level and set its properties
+C:/a/lib/revit/2008/SDK/Samples/LevelsProperty/CS/bin/Debug/LevelsProperty.dll
+Revit.SDK.Samples.LevelsProperty.CS.Command
+
+/RvtSamples/By Language/Cs/Loads
+Show how to use load case, nature, usage and combination
+C:/a/lib/revit/2008/SDK/Samples/Loads/CS/bin/Debug/Loads.dll
+Revit.SDK.Samples.Loads.CS.Loads
+
+/RvtSamples/By Language/Cs/Material Properties CS
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/CS/bin/Debug/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.CS.MaterialProperties
+
+/RvtSamples/By Language/Cs/Materials
+Present all available materials in the current project, and allow changing the material of the selected structural element
+C:/a/lib/revit/2008/SDK/Samples/Materials/CS/bin/Debug/Materials.dll
+Revit.SDK.Samples.Materials.CS.Command
+
+/RvtSamples/By Language/Cs/Model Lines
+Report the number of each model line type and allow the user to specify the shape and sketch plane to create some new model lines
+C:/a/lib/revit/2008/SDK/Samples/ModelLines/CS/bin/Debug/ModelLines.dll
+Revit.SDK.Samples.ModelLines.CS.Command
+
+/RvtSamples/By Language/Cs/Move Linear
+Move a linear element, such as a structural beam
+C:/a/lib/revit/2008/SDK/Samples/MoveLinear/CS/bin/Debug/MoveLinear.dll
+Revit.SDK.Samples.MoveLinear.CS.Command
+
+/RvtSamples/By Language/Cs/New Openings
+Create openings on the selected floor or wall
+C:/a/lib/revit/2008/SDK/Samples/NewOpenings/CS/bin/Debug/NewOpenings.dll
+Revit.SDK.Samples.NewOpenings.CS.Command
+
+/RvtSamples/By Language/Cs/New PathReinforcement
+Create PathReinforcement on wall or slab
+C:/a/lib/revit/2008/SDK/Samples/NewPathReinforcement/CS/bin/Debug/NewPathReinforcement.dll
+Revit.SDK.Samples.NewPathReinforcement.CS.Command
+
+/RvtSamples/By Language/Cs/Object Viewer
+Display the selected element in a preview window and generic properties in a grid
+C:/a/lib/revit/2008/SDK/Samples/ObjectViewer/CS/bin/Debug/ObjectViewer.dll
+Revit.SDK.Samples.ObjectViewer.CS.Command
+
+/RvtSamples/By Language/Cs/Openings
+Display openings in project, and create model lines along its edges
+C:/a/lib/revit/2008/SDK/Samples/Openings/CS/bin/Debug/Opening.dll
+Revit.SDK.Samples.Openings.CS.Command
+
+/RvtSamples/By Language/Cs/PathReinforcement
+Display path reinforcement properties
+C:/a/lib/revit/2008/SDK/Samples/PathReinforcement/CS/bin/Debug/PathReinforcement.dll
+Revit.SDK.Samples.PathReinforcement.CS.Command
+
+/RvtSamples/By Language/Cs/Physical Properties
+Dump Material Physical Parameters
+C:/a/lib/revit/2008/SDK/Samples/PhysicalProp/CS/bin/Debug/PhysicalProp.dll
+Revit.SDK.Samples.PhysicalProp.CS.DumpMaterialPhysicalParameters
+
+/RvtSamples/By Language/Cs/Project Information
+Project Information
+C:/a/lib/revit/2008/SDK/Samples/ProjectInfo/CS/bin/Debug/ProjectInfo.dll
+Revit.SDK.Samples.ProjectInfo.CS.Command
+
+/RvtSamples/By Language/Cs/Project Unit
+List all the units in current project and display format information for each
+C:/a/lib/revit/2008/SDK/Samples/ProjectUnit/CS/bin/Debug/ProjectUnit.dll
+Revit.SDK.Samples.ProjectUnit.CS.Command
+
+/RvtSamples/By Language/Cs/RDB Link
+Export/Import Revit data to/from database
+C:/a/lib/revit/2008/SDK/Samples/RDBLink/CS/bin/Debug/RDBLink.dll
+Revit.SDK.Samples.RDBLink.CS.Command
+
+/RvtSamples/By Language/Cs/Reference Plane
+Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first
+C:/a/lib/revit/2008/SDK/Samples/ReferencePlane/CS/bin/debug/ReferencePlane.dll
+Revit.SDK.Samples.ReferencePlane.CS.Command
+
+/RvtSamples/By Language/Cs/Reinforcement
+Create bar set in a selected concrete element (beam or column) that does not have any reinforcement
+C:/a/lib/revit/2008/SDK/Samples/Reinforcement/CS/bin/Debug/Reinforcement.dll
+Revit.SDK.Samples.Reinforcement.CS.Command
+
+/RvtSamples/By Language/Cs/Room Schedule
+Room Schedule
+C:/a/lib/revit/2008/SDK/Samples/RoomSchedule/CS/bin/Debug/RoomSchedule.dll
+Revit.SDK.Samples.RoomSchedule.Command
+
+/RvtSamples/By Language/Cs/Rooms
+Get and set room information (Number, Tag, Area)
+C:/a/lib/revit/2008/SDK/Samples/Rooms/CS/bin/Debug/Rooms.dll
+Revit.SDK.Samples.Rooms.CS.Command
+
+/RvtSamples/By Language/Cs/Rotate Framing Objects CS
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/CS/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.CS.RotateFramingObjects
+
+/RvtSamples/By Language/Cs/Shaft Hole Puncher
+Create shaft opening or create opening on wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/ShaftHolePuncher/bin/Debug/ShaftHolePuncher.dll
+Revit.SDK.Samples.ShaftHolePuncher.CS.Command
+
+/RvtSamples/By Language/Cs/Shared Coordinate System
+Display the locations and site information of the project
+C:/a/lib/revit/2008/SDK/Samples/SharedCoordinateSystem/CS/bin/Debug/SharedCoordinateSystem.dll
+Revit.SDK.Samples.SharedCoordinateSystem.CS.Command
+
+/RvtSamples/By Language/Cs/Slab Properties CS
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/CS/bin/Debug/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.CS.Command
+
+/RvtSamples/By Language/Cs/Span Direction
+Display slab properties (span direction and span direction symbols)
+C:/a/lib/revit/2008/SDK/Samples/SpanDirection/CS/bin/Debug/SpanDirection.dll
+Revit.SDK.Samples.SpanDirection.CS.Command
+
+/RvtSamples/By Language/Cs/Spot Dimension
+Get all spot dimensions in all views and show their properties
+C:/a/lib/revit/2008/SDK/Samples/SpotDimension/CS/bin/Debug/SpotDimension.dll
+Revit.SDK.Samples.SpotDimension.CS.Command
+
+/RvtSamples/By Language/Cs/StructSample - Frame Wall
+Add columns to the selected walls
+C:/a/lib/revit/2008/SDK/Samples/StructSample/CS/bin/Debug/StructSample.dll
+Revit.SDK.Samples.StructSample.CS.Command
+
+/RvtSamples/By Language/Cs/Structural Layer Function CS
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/CS/bin/Debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.CS.Command
+
+/RvtSamples/By Language/Cs/Tag Beam
+Tag beam's start and end
+C:/a/lib/revit/2008/SDK/Samples/TagBeam/bin/Debug/TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.Command
+
+/RvtSamples/By Language/Cs/Tag Rooms
+Auto tag all rooms in a specified level
+C:/a/lib/revit/2008/SDK/Samples/AutoTagRooms/bin/Debug/RoomsTag.dll
+Revit.SDK.Samples.RoomsTag.CS.Command
+
+/RvtSamples/By Language/Cs/Transaction
+Demonstrate how to use transaction control
+C:/a/lib/revit/2008/SDK/Samples/TransactionControl/bin/Debug/Transaction.dll
+Revit.SDK.Samples.Transaction.CS.Command
+
+/RvtSamples/By Language/Cs/View Printer
+Print user selected printable views
+C:/a/lib/revit/2008/SDK/Samples/ViewPrinter/CS/bin/Debug/ViewPrinter.dll
+Revit.SDK.Samples.ViewPrinter.CS.Command
+
+/RvtSamples/By Language/Cs/Visibility Controller
+Control element visibility by category
+C:/a/lib/revit/2008/SDK/Samples/VisibilityControl/bin/Debug/VisibilityController.dll
+Revit.SDK.Samples.VisibilityController.CS.Command
+
+/RvtSamples/By Language/Vb/Analytical Viewer
+Display analytical model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/AnalyticalViewer/VB.NET/bin/AnalyticalViewer.dll
+Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+
+/RvtSamples/By Language/Vb/Arch Sample
+Export data to Excel, sorted by categories
+C:/a/lib/revit/2008/SDK/Samples/ArchSample/VB.NET/bin/ArchSample.dll
+Revit.SDK.Samples.ArchSample.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Browse Parameter Bindings
+Browse all the shared parameters bindings used in this project
+C:/a/lib/revit/2008/SDK/Samples/BrowseBindings/VB.NET/bin/BrowseBindings.dll
+Revit.SDK.Samples.BrowseBindings.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Create Shared Parameter
+Create a new shared parameter and assign it to wall categories
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command1
+
+/RvtSamples/By Language/Vb/Create beams, columns and braces VB
+Create beams, columns and braces VB
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/VB.NET/bin/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Delete Objects VB
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/VB.NET/bin/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Display Options
+Display Options
+C:/a/lib/revit/2008/SDK/Samples/DesignOptionReader/VB.NET/bin/DesignOptionReader.dll
+Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Element Viewer
+Display wireframe model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/ElementViewer/VB.NET/bin/debug/ElementViewer.dll
+Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+
+/RvtSamples/By Language/Vb/FireRating: Apply Parameter
+Add a new shared parameter to Revit and apply it to all doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ApplyParameter
+
+/RvtSamples/By Language/Vb/FireRating: Export to Excel
+Export fire rating values to an Excel file
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ExportFireRating
+
+/RvtSamples/By Language/Vb/FireRating: Import from Excel
+Import fire rating values from the Excel file and apply them to doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ImportFireRating
+
+/RvtSamples/By Language/Vb/Hello Revit - Form
+Show a form-based dialogue with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.CommandForm
+
+/RvtSamples/By Language/Vb/Hello Revit - MsgBox 
+Show a message box with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Hello World VB
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/VB.NET/bin/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.VB.Net.Command
+
+/RvtSamples/By Language/Vb/Highlight by Phase
+Highlight by Phase
+C:/a/lib/revit/2008/SDK/Samples/PhaseSample/VB.NET/bin/PhaseSample.dll
+Revit.SDK.Samples.PhaseSample.VB.NET.Command
+
+/RvtSamples/By Language/Vb/In-Place Family with 3D Analytical Model VB
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/VB.NET/bin/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Material Properties VB
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/VB.NET/bin/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.VB.NET.MaterialProperties
+
+/RvtSamples/By Language/Vb/RevitCommands - LibraryPaths
+List the Revit library paths
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths
+
+/RvtSamples/By Language/Vb/RevitCommands - LoadFamily
+Load a family
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily
+
+/RvtSamples/By Language/Vb/RevitCommands - LoadFamilySymbol
+Load a family symbol/type
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol
+
+/RvtSamples/By Language/Vb/RevitCommands - Selection
+Show how to use selection set
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection
+
+/RvtSamples/By Language/Vb/RevitCommands - Show Element Data
+Show parameters of selected entities
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
+
+/RvtSamples/By Language/Vb/Room Viewer
+Wireframe viewer for the selected room
+C:/a/lib/revit/2008/SDK/Samples/Viewers/RoomViewer/VB.NET/bin/RoomViewer.dll
+Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+
+/RvtSamples/By Language/Vb/Rotate Framing Objects VB
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/VB.NET/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.VB.NET.RotateFramingObjects
+
+/RvtSamples/By Language/Vb/Set Shared Parameter
+Set the shared parameter
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command2
+
+/RvtSamples/By Language/Vb/Slab Properties VB
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/VB.NET/bin/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Structural Layer Function VB
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/VB.NET/bin/debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Test Floor Thickness
+Show how to retrieve and modify floor thickness
+C:/a/lib/revit/2008/SDK/Samples/TestFloorThickness/VB.NET/bin/Debug/TestFloorThickness.dll
+Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Test Wall Thickness
+Show how to retrieve and modify wall thickness
+C:/a/lib/revit/2008/SDK/Samples/TestWallThickness/VB.NET/bin/Debug/TestWallThickness.dll
+Revit.SDK.Samples.TestWallThickness.VB.NET.Command
+
+/RvtSamples/By Language/Vb/Type Selector
+Retrieve all the types of the selected element, such as a wall and allow the selected element's type to be changed
+C:/a/lib/revit/2008/SDK/Samples/TypeSelector/VB.NET/bin/TypeSelector.dll
+Revit.SDK.Samples.TypeSelector.VB.NET.Command
+
+/RvtSamples/By Topic/Create/Create Beam System
+Create beam system according to the profile made of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamSystem/CS/bin/Debug/CreateBeamSystem.dll
+Revit.SDK.Samples.CreateBeamSystem.CS.Command
+
+/RvtSamples/By Topic/Create/Create Complex Area Reinforcement
+Create complex AreaReinforcement on selected slab
+C:/a/lib/revit/2008/SDK/Samples/CreateComplexAreaRein/CS/bin/Debug/CreateComplexAreaRein.dll
+Revit.SDK.Samples.CreateComplexAreaRein.CS.Command
+
+/RvtSamples/By Topic/Create/Create Curved Beam
+Create Curved Beam
+C:/a/lib/revit/2008/SDK/Samples/CurvedBeam/CS/bin/Debug/CurvedBeam.dll
+Revit.SDK.Samples.CurvedBeam.CS.Command
+
+/RvtSamples/By Topic/Create/Create Dimensions
+Add a dimension to a selected structural wall from its start to its end. Name the dimensions 'Dimension N' where N is an increasing number for each dimension.
+C:/a/lib/revit/2008/SDK/Samples/CreateDimensions/CS/bin/Debug/CreateDimensions.dll
+Revit.SDK.Samples.CreateDimensions.CS.Command
+
+/RvtSamples/By Topic/Create/Create beams, columns and braces CS
+Create beams, columns and braces CS
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/CS/bin/Debug/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.Command
+
+/RvtSamples/By Topic/Create/Create beams, columns and braces VB
+Create beams, columns and braces VB
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/VB.NET/bin/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.VB.NET.Command
+
+/RvtSamples/By Topic/Create/Create simple area reinforcement
+Create simple AreaReinforcement on selected wall or floor
+C:/a/lib/revit/2008/SDK/Samples/CreateSimpleAreaRein/CS/bin/Debug/CreateSimpleAreaRein.dll
+Revit.SDK.Samples.CreateSimpleAreaRein.CS.Command
+
+/RvtSamples/By Topic/Create/Create view section
+Create a section view across the mid point of the selected wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/CreateViewSection/CS/bin/Debug/CreateViewSection.dll
+Revit.SDK.Samples.CreateViewSection.CS.Command
+
+/RvtSamples/By Topic/Create/Create wall in beam profile
+Create a profiled wall using the outline generated by a selection of beams defining a vertical profile
+C:/a/lib/revit/2008/SDK/Samples/CreateWallinBeamProfile/CS/bin/Debug/CreateWallinBeamProfile.dll
+Revit.SDK.Samples.CreateWallinBeamProfile.CS.CreateWallinBeamProfile
+
+/RvtSamples/By Topic/Create/Create walls under beams
+Create simple rectangular walls along and under the path of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateWallsUnderBeams/CS/bin/Debug/CreateWallsUnderBeams.dll
+Revit.SDK.Samples.CreateWallsUnderBeams.CS.CreateWallsUnderBeams
+
+/RvtSamples/By Topic/Create/Foundation Slab
+Convert regular floors at the base of the building to octagonal slabs
+C:/a/lib/revit/2008/SDK/Samples/FoundationSlab/CS/bin/Debug/FoundationSlab.dll
+Revit.SDK.Samples.FoundationSlab.CS.Command
+
+/RvtSamples/By Topic/Create/Frame Builder
+Add a new concrete column and beam size
+C:/a/lib/revit/2008/SDK/Samples/FrameBuilder/CS/bin/Debug/FrameBuilder.dll
+Revit.SDK.Samples.FrameBuilder.CS.Command
+
+/RvtSamples/By Topic/Create/Generate Floor
+Generate a floor using a selection of walls that make a closed outline
+C:/a/lib/revit/2008/SDK/Samples/GenerateFloor/CS/bin/Debug/GenerateFloor.dll
+Revit.SDK.Samples.GenerateFloor.CS.Command
+
+/RvtSamples/By Topic/Create/LevelsProperty
+Show how to get all the levels in a document and how to create and delete a level and set its properties
+C:/a/lib/revit/2008/SDK/Samples/LevelsProperty/CS/bin/Debug/LevelsProperty.dll
+Revit.SDK.Samples.LevelsProperty.CS.Command
+
+/RvtSamples/By Topic/Create/New Openings
+Create openings on the selected floor or wall
+C:/a/lib/revit/2008/SDK/Samples/NewOpenings/CS/bin/Debug/NewOpenings.dll
+Revit.SDK.Samples.NewOpenings.CS.Command
+
+/RvtSamples/By Topic/Create/New PathReinforcement
+Create PathReinforcement on wall or slab
+C:/a/lib/revit/2008/SDK/Samples/NewPathReinforcement/CS/bin/Debug/NewPathReinforcement.dll
+Revit.SDK.Samples.NewPathReinforcement.CS.Command
+
+/RvtSamples/By Topic/Create/Reference Plane
+Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first
+C:/a/lib/revit/2008/SDK/Samples/ReferencePlane/CS/bin/debug/ReferencePlane.dll
+Revit.SDK.Samples.ReferencePlane.CS.Command
+
+/RvtSamples/By Topic/Create/Reinforcement
+Create bar set in a selected concrete element (beam or column) that does not have any reinforcement
+C:/a/lib/revit/2008/SDK/Samples/Reinforcement/CS/bin/Debug/Reinforcement.dll
+Revit.SDK.Samples.Reinforcement.CS.Command
+
+/RvtSamples/By Topic/Create/Shaft Hole Puncher
+Create shaft opening or create opening on wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/ShaftHolePuncher/bin/Debug/ShaftHolePuncher.dll
+Revit.SDK.Samples.ShaftHolePuncher.CS.Command
+
+/RvtSamples/By Topic/Create/StructSample - Frame Wall
+Add columns to the selected walls
+C:/a/lib/revit/2008/SDK/Samples/StructSample/CS/bin/Debug/StructSample.dll
+Revit.SDK.Samples.StructSample.CS.Command
+
+/RvtSamples/By Topic/Create/Tag Beam
+Tag beam's start and end
+C:/a/lib/revit/2008/SDK/Samples/TagBeam/bin/Debug/TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.Command
+
+/RvtSamples/By Topic/Create/Tag Rooms
+Auto tag all rooms in a specified level
+C:/a/lib/revit/2008/SDK/Samples/AutoTagRooms/bin/Debug/RoomsTag.dll
+Revit.SDK.Samples.RoomsTag.CS.Command
+
+/RvtSamples/By Topic/Delete/Delete Dimensions
+Delete all unpinned dimensions found in current selection
+C:/a/lib/revit/2008/SDK/Samples/DeleteDimensions/CS/bin/Debug/DeleteDimensions.dll
+Revit.SDK.Samples.DeleteDimensions.CS.Command
+
+/RvtSamples/By Topic/Delete/Delete Objects CS
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/CS/bin/Debug/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.CS.Command
+
+/RvtSamples/By Topic/Delete/Delete Objects VB
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/VB.NET/bin/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.VB.NET.Command
+
+/RvtSamples/By Topic/Dwg/Import Export DWG
+Export current project to dwg files and import a dwg file into Revit
+C:/a/lib/revit/2008/SDK/Samples/ImportExportDWG/CS/bin/Debug/ImportAndExportForDWG.dll
+Revit.SDK.Samples.ImportAndExportForDWG.CS.Command
+
+/RvtSamples/By Topic/Element/Materials
+Present all available materials in the current project, and allow changing the material of the selected structural element
+C:/a/lib/revit/2008/SDK/Samples/Materials/CS/bin/Debug/Materials.dll
+Revit.SDK.Samples.Materials.CS.Command
+
+/RvtSamples/By Topic/Element/Model Lines
+Report the number of each model line type and allow the user to specify the shape and sketch plane to create some new model lines
+C:/a/lib/revit/2008/SDK/Samples/ModelLines/CS/bin/Debug/ModelLines.dll
+Revit.SDK.Samples.ModelLines.CS.Command
+
+/RvtSamples/By Topic/Element/Move Linear
+Move a linear element, such as a structural beam
+C:/a/lib/revit/2008/SDK/Samples/MoveLinear/CS/bin/Debug/MoveLinear.dll
+Revit.SDK.Samples.MoveLinear.CS.Command
+
+/RvtSamples/By Topic/Element/RDB Link
+Export/Import Revit data to/from database
+C:/a/lib/revit/2008/SDK/Samples/RDBLink/CS/bin/Debug/RDBLink.dll
+Revit.SDK.Samples.RDBLink.CS.Command
+
+/RvtSamples/By Topic/Element/Rotate Framing Objects CS
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/CS/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.CS.RotateFramingObjects
+
+/RvtSamples/By Topic/Element/Rotate Framing Objects VB
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/VB.NET/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.VB.NET.RotateFramingObjects
+
+/RvtSamples/By Topic/Family/RevitCommands - LoadFamily
+Load a family
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily
+
+/RvtSamples/By Topic/Family/RevitCommands - LoadFamilySymbol
+Load a family symbol/type
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol
+
+/RvtSamples/By Topic/Geometry/Analytical Viewer
+Display analytical model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/AnalyticalViewer/VB.NET/bin/AnalyticalViewer.dll
+Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+
+/RvtSamples/By Topic/Geometry/Blend Vertices and Vertex Connection Table
+Get blend vertices and vertex connection table
+C:/a/lib/revit/2008/SDK/Samples/BlendVertexConnectTable/bin/Debug/BlendVertexConnectTable.dll
+Revit.SDK.Samples.BlendVertexConnectTable.CS.Command
+
+/RvtSamples/By Topic/Geometry/Element Viewer
+Display wireframe model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/ElementViewer/VB.NET/bin/debug/ElementViewer.dll
+Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+
+/RvtSamples/By Topic/Geometry/Family Explorer
+Explore all families in current project and display their profiles
+C:/a/lib/revit/2008/SDK/Samples/FamilyExplorer/bin/Debug/FamilyExplorer.dll
+Revit.SDK.Samples.FamilyExplorer.CS.Command
+
+/RvtSamples/By Topic/Geometry/In-Place Family with 3D Analytical Model CS
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/CS/bin/Debug/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.CS.Command
+
+/RvtSamples/By Topic/Geometry/In-Place Family with 3D Analytical Model VB
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/VB.NET/bin/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.VB.NET.Command
+
+/RvtSamples/By Topic/Geometry/In-Place Members
+Display In-Place Member's Properties and AnalyticalModel
+C:/a/lib/revit/2008/SDK/Samples/InPlaceMembers/CS/bin/Debug/InPlaceMembers.dll
+Revit.SDK.Samples.InPlaceMembers.CS.Command
+
+/RvtSamples/By Topic/Geometry/Object Viewer
+Display the selected element in a preview window and generic properties in a grid
+C:/a/lib/revit/2008/SDK/Samples/ObjectViewer/CS/bin/Debug/ObjectViewer.dll
+Revit.SDK.Samples.ObjectViewer.CS.Command
+
+/RvtSamples/By Topic/Geometry/Openings
+Display openings in project, and create model lines along its edges
+C:/a/lib/revit/2008/SDK/Samples/Openings/CS/bin/Debug/Opening.dll
+Revit.SDK.Samples.Openings.CS.Command
+
+/RvtSamples/By Topic/Geometry/Room Viewer
+Wireframe viewer for the selected room
+C:/a/lib/revit/2008/SDK/Samples/Viewers/RoomViewer/VB.NET/bin/RoomViewer.dll
+Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+
+/RvtSamples/By Topic/Hello/Hello Revit - Form
+Show a form-based dialogue with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.CommandForm
+
+/RvtSamples/By Topic/Hello/Hello Revit - MsgBox 
+Show a message box with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.Command
+
+/RvtSamples/By Topic/Hello/Hello World CS
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/CS/bin/Debug/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.CS.Command
+
+/RvtSamples/By Topic/Hello/Hello World VB
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/VB.NET/bin/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.VB.Net.Command
+
+/RvtSamples/By Topic/Info/About Revit
+Show the Revit product name, version and build number
+C:/a/lib/revit/2008/SDK/Samples/VersionChecking/CS/bin/Debug/VersionChecking.dll
+Revit.SDK.Samples.VersionChecking.CS.Command
+
+/RvtSamples/By Topic/Info/Display Options
+Display Options
+C:/a/lib/revit/2008/SDK/Samples/DesignOptionReader/VB.NET/bin/DesignOptionReader.dll
+Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
+
+/RvtSamples/By Topic/Info/Project Information
+Project Information
+C:/a/lib/revit/2008/SDK/Samples/ProjectInfo/CS/bin/Debug/ProjectInfo.dll
+Revit.SDK.Samples.ProjectInfo.CS.Command
+
+/RvtSamples/By Topic/Info/RevitCommands - LibraryPaths
+List the Revit library paths
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths
+
+/RvtSamples/By Topic/Info/Shared Coordinate System
+Display the locations and site information of the project
+C:/a/lib/revit/2008/SDK/Samples/SharedCoordinateSystem/CS/bin/Debug/SharedCoordinateSystem.dll
+Revit.SDK.Samples.SharedCoordinateSystem.CS.Command
+
+/RvtSamples/By Topic/Journal/Journaling
+Show how an external application can participate in the journaling mechanism
+C:/a/lib/revit/2008/SDK/Samples/Journaling/CS/bin/Debug/Journaling.dll
+Revit.SDK.Samples.Journaling.CS.Command
+
+/RvtSamples/By Topic/Parameter/Arch Sample
+Export data to Excel, sorted by categories
+C:/a/lib/revit/2008/SDK/Samples/ArchSample/VB.NET/bin/ArchSample.dll
+Revit.SDK.Samples.ArchSample.VB.NET.Command
+
+/RvtSamples/By Topic/Parameter/AreaReinCurve
+Turn off all layers but one. You get some parallel bars. Remove the hooks from one boundary curve so that the bars have hooks only at the other end.
+C:/a/lib/revit/2008/SDK/Samples/AreaReinCurve/CS/bin/Debug/AreaReinCurve.dll
+Revit.SDK.Samples.AreaReinCurve.CS.Command
+
+/RvtSamples/By Topic/Parameter/AreaReinParameters
+Show parameters of selected AreaReinforcement and allow user to modify
+C:/a/lib/revit/2008/SDK/Samples/AreaReinParameters/CS/bin/Debug/AreaReinParameters.dll
+Revit.SDK.Samples.AreaReinParameters.CS.Command
+
+/RvtSamples/By Topic/Parameter/Bar Descriptions
+Iterate through the BarDescriptions in the project and display the properties in a table. Allow the table to be saved to a CSV file.
+C:/a/lib/revit/2008/SDK/Samples/BarDescriptions/CS/bin/Debug/BarDescriptions.dll
+Revit.SDK.Samples.BarDescriptions.CS.Command
+
+/RvtSamples/By Topic/Parameter/Beam and slab parameter
+Add a new GUID parameter to beam and slab, and use the GUID value to find the right element.
+C:/a/lib/revit/2008/SDK/Samples/BeamAndSlabNewParameter/CS/bin/Debug/BeamAndSlabNewParameter.dll
+Revit.SDK.Samples.BeamAndSlabNewParameter.CS.Command
+
+/RvtSamples/By Topic/Parameter/Browse Parameter Bindings
+Browse all the shared parameters bindings used in this project
+C:/a/lib/revit/2008/SDK/Samples/BrowseBindings/VB.NET/bin/BrowseBindings.dll
+Revit.SDK.Samples.BrowseBindings.VB.NET.Command
+
+/RvtSamples/By Topic/Parameter/Create Parameters
+Create a visible and an invisible parameter
+C:/a/lib/revit/2008/SDK/Samples/InvisibleParam/CS/bin/Debug/InvisibleParam.dll
+Revit.SDK.Samples.InvisibleParam.CS.Command
+
+/RvtSamples/By Topic/Parameter/Create Shared Parameter
+Create a new shared parameter and assign it to wall categories
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command1
+
+/RvtSamples/By Topic/Parameter/Element Parameters
+Show the property information of selected element
+C:/a/lib/revit/2008/SDK/Samples/ParameterUtils/CS/bin/Debug/ParameterUtils.dll
+Revit.SDK.Samples.ParameterUtils.CS.Command
+
+/RvtSamples/By Topic/Parameter/FireRating: Apply Parameter
+Add a new shared parameter to Revit and apply it to all doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ApplyParameter
+
+/RvtSamples/By Topic/Parameter/FireRating: Export to Excel
+Export fire rating values to an Excel file
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ExportFireRating
+
+/RvtSamples/By Topic/Parameter/FireRating: Import from Excel
+Import fire rating values from the Excel file and apply them to doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ImportFireRating
+
+/RvtSamples/By Topic/Parameter/Get Deck Properties
+Get deck layer properties
+C:/a/lib/revit/2008/SDK/Samples/DeckProperties/CS/bin/Debug/DeckProperties.dll
+Revit.SDK.Samples.DeckProperties.CS.Command
+
+/RvtSamples/By Topic/Parameter/Material Properties CS
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/CS/bin/Debug/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.CS.MaterialProperties
+
+/RvtSamples/By Topic/Parameter/Material Properties VB
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/VB.NET/bin/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.VB.NET.MaterialProperties
+
+/RvtSamples/By Topic/Parameter/PathReinforcement
+Display path reinforcement properties
+C:/a/lib/revit/2008/SDK/Samples/PathReinforcement/CS/bin/Debug/PathReinforcement.dll
+Revit.SDK.Samples.PathReinforcement.CS.Command
+
+/RvtSamples/By Topic/Parameter/Physical Properties
+Dump Material Physical Parameters
+C:/a/lib/revit/2008/SDK/Samples/PhysicalProp/CS/bin/Debug/PhysicalProp.dll
+Revit.SDK.Samples.PhysicalProp.CS.DumpMaterialPhysicalParameters
+
+/RvtSamples/By Topic/Parameter/RevitCommands - Show Element Data
+Show parameters of selected entities
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
+
+/RvtSamples/By Topic/Parameter/Rooms
+Get and set room information (Number, Tag, Area)
+C:/a/lib/revit/2008/SDK/Samples/Rooms/CS/bin/Debug/Rooms.dll
+Revit.SDK.Samples.Rooms.CS.Command
+
+/RvtSamples/By Topic/Parameter/Set Shared Parameter
+Set the shared parameter
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command2
+
+/RvtSamples/By Topic/Parameter/Slab Properties CS
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/CS/bin/Debug/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.CS.Command
+
+/RvtSamples/By Topic/Parameter/Slab Properties VB
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/VB.NET/bin/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.VB.NET.Command
+
+/RvtSamples/By Topic/Parameter/Span Direction
+Display slab properties (span direction and span direction symbols)
+C:/a/lib/revit/2008/SDK/Samples/SpanDirection/CS/bin/Debug/SpanDirection.dll
+Revit.SDK.Samples.SpanDirection.CS.Command
+
+/RvtSamples/By Topic/Parameter/Spot Dimension
+Get all spot dimensions in all views and show their properties
+C:/a/lib/revit/2008/SDK/Samples/SpotDimension/CS/bin/Debug/SpotDimension.dll
+Revit.SDK.Samples.SpotDimension.CS.Command
+
+/RvtSamples/By Topic/Parameter/Test Floor Thickness
+Show how to retrieve and modify floor thickness
+C:/a/lib/revit/2008/SDK/Samples/TestFloorThickness/VB.NET/bin/Debug/TestFloorThickness.dll
+Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
+
+/RvtSamples/By Topic/Parameter/Test Wall Thickness
+Show how to retrieve and modify wall thickness
+C:/a/lib/revit/2008/SDK/Samples/TestWallThickness/VB.NET/bin/Debug/TestWallThickness.dll
+Revit.SDK.Samples.TestWallThickness.VB.NET.Command
+
+/RvtSamples/By Topic/Phase/Highlight by Phase
+Highlight by Phase
+C:/a/lib/revit/2008/SDK/Samples/PhaseSample/VB.NET/bin/PhaseSample.dll
+Revit.SDK.Samples.PhaseSample.VB.NET.Command
+
+/RvtSamples/By Topic/Schedule/Room Schedule
+Room Schedule
+C:/a/lib/revit/2008/SDK/Samples/RoomSchedule/CS/bin/Debug/RoomSchedule.dll
+Revit.SDK.Samples.RoomSchedule.Command
+
+/RvtSamples/By Topic/Structure/Analytical SupportData Information
+Displays the element's support information
+C:/a/lib/revit/2008/SDK/Samples/AnalyticalSupportData_Info/CS/bin/Debug/AnalyticalSupportData_Info.dll
+Revit.SDK.Samples.AnalyticalSupportData_Info.CS.Command
+
+/RvtSamples/By Topic/Structure/Boundary Conditions
+Display the BoundaryConditions' parameters or create a new BoundaryConditions instance
+C:/a/lib/revit/2008/SDK/Samples/BoundaryConditions/CS/bin/Debug/BoundaryConditions.dll
+Revit.SDK.Samples.BoundaryConditions.CS.Command
+
+/RvtSamples/By Topic/Structure/Loads
+Show how to use load case, nature, usage and combination
+C:/a/lib/revit/2008/SDK/Samples/Loads/CS/bin/Debug/Loads.dll
+Revit.SDK.Samples.Loads.CS.Loads
+
+/RvtSamples/By Topic/Structure/Structural Layer Function CS
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/CS/bin/Debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.CS.Command
+
+/RvtSamples/By Topic/Structure/Structural Layer Function VB
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/VB.NET/bin/debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.VB.NET.Command
+
+/RvtSamples/By Topic/Transaction/Transaction
+Demonstrate how to use transaction control
+C:/a/lib/revit/2008/SDK/Samples/TransactionControl/bin/Debug/Transaction.dll
+Revit.SDK.Samples.Transaction.CS.Command
+
+/RvtSamples/By Topic/Type/Type Selector
+Retrieve all the types of the selected element, such as a wall and allow the selected element's type to be changed
+C:/a/lib/revit/2008/SDK/Samples/TypeSelector/VB.NET/bin/TypeSelector.dll
+Revit.SDK.Samples.TypeSelector.VB.NET.Command
+
+/RvtSamples/By Topic/Ui/RevitCommands - Selection
+Show how to use selection set
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection
+
+/RvtSamples/By Topic/Unit/Project Unit
+List all the units in current project and display format information for each
+C:/a/lib/revit/2008/SDK/Samples/ProjectUnit/CS/bin/Debug/ProjectUnit.dll
+Revit.SDK.Samples.ProjectUnit.CS.Command
+
+/RvtSamples/By Topic/View/All Views
+Generate a new sheet for user selected views
+C:/a/lib/revit/2008/SDK/Samples/AllViews/CS/bin/Debug/AllViews.dll
+Revit.SDK.Samples.AllViews.CS.Command
+
+/RvtSamples/By Topic/View/View Printer
+Print user selected printable views
+C:/a/lib/revit/2008/SDK/Samples/ViewPrinter/CS/bin/Debug/ViewPrinter.dll
+Revit.SDK.Samples.ViewPrinter.CS.Command
+
+/RvtSamples/By Topic/View/Visibility Controller
+Control element visibility by category
+C:/a/lib/revit/2008/SDK/Samples/VisibilityControl/bin/Debug/VisibilityController.dll
+Revit.SDK.Samples.VisibilityController.CS.Command
+
+/RvtSamples/By Version/8.0/Analytical Viewer
+Display analytical model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/AnalyticalViewer/VB.NET/bin/AnalyticalViewer.dll
+Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+
+/RvtSamples/By Version/8.0/Arch Sample
+Export data to Excel, sorted by categories
+C:/a/lib/revit/2008/SDK/Samples/ArchSample/VB.NET/bin/ArchSample.dll
+Revit.SDK.Samples.ArchSample.VB.NET.Command
+
+/RvtSamples/By Version/8.0/Create Shared Parameter
+Create a new shared parameter and assign it to wall categories
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command1
+
+/RvtSamples/By Version/8.0/Element Viewer
+Display wireframe model of one or more selected elements
+C:/a/lib/revit/2008/SDK/Samples/Viewers/ElementViewer/VB.NET/bin/debug/ElementViewer.dll
+Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+
+/RvtSamples/By Version/8.0/FireRating: Apply Parameter
+Add a new shared parameter to Revit and apply it to all doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ApplyParameter
+
+/RvtSamples/By Version/8.0/FireRating: Export to Excel
+Export fire rating values to an Excel file
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ExportFireRating
+
+/RvtSamples/By Version/8.0/FireRating: Import from Excel
+Import fire rating values from the Excel file and apply them to doors
+C:/a/lib/revit/2008/SDK/Samples/FireRating/VB.NET/bin/FireRating.dll
+Revit.SDK.Samples.FireRating.VB.NET.ImportFireRating
+
+/RvtSamples/By Version/8.0/Move Linear
+Move a linear element, such as a structural beam
+C:/a/lib/revit/2008/SDK/Samples/MoveLinear/CS/bin/Debug/MoveLinear.dll
+Revit.SDK.Samples.MoveLinear.CS.Command
+
+/RvtSamples/By Version/8.0/Physical Properties
+Dump Material Physical Parameters
+C:/a/lib/revit/2008/SDK/Samples/PhysicalProp/CS/bin/Debug/PhysicalProp.dll
+Revit.SDK.Samples.PhysicalProp.CS.DumpMaterialPhysicalParameters
+
+/RvtSamples/By Version/8.0/RevitCommands - LibraryPaths
+List the Revit library paths
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths
+
+/RvtSamples/By Version/8.0/RevitCommands - LoadFamily
+Load a family
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily
+
+/RvtSamples/By Version/8.0/RevitCommands - LoadFamilySymbol
+Load a family symbol/type
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol
+
+/RvtSamples/By Version/8.0/RevitCommands - Selection
+Show how to use selection set
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection
+
+/RvtSamples/By Version/8.0/RevitCommands - Show Element Data
+Show parameters of selected entities
+C:/a/lib/revit/2008/SDK/Samples/RevitCommands/VB.NET/bin/RevitCommands.dll
+Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
+
+/RvtSamples/By Version/8.0/Room Viewer
+Wireframe viewer for the selected room
+C:/a/lib/revit/2008/SDK/Samples/Viewers/RoomViewer/VB.NET/bin/RoomViewer.dll
+Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+
+/RvtSamples/By Version/8.0/Set Shared Parameter
+Set the shared parameter
+C:/a/lib/revit/2008/SDK/Samples/CreateShared/VB.NET/bin/CreateShared.dll
+Revit.SDK.Samples.CreateShared.VB.NET.Command2
+
+/RvtSamples/By Version/8.0/StructSample - Frame Wall
+Add columns to the selected walls
+C:/a/lib/revit/2008/SDK/Samples/StructSample/CS/bin/Debug/StructSample.dll
+Revit.SDK.Samples.StructSample.CS.Command
+
+/RvtSamples/By Version/8.0/Type Selector
+Retrieve all the types of the selected element, such as a wall and allow the selected element's type to be changed
+C:/a/lib/revit/2008/SDK/Samples/TypeSelector/VB.NET/bin/TypeSelector.dll
+Revit.SDK.Samples.TypeSelector.VB.NET.Command
+
+/RvtSamples/By Version/8.1/Browse Parameter Bindings
+Browse all the shared parameters bindings used in this project
+C:/a/lib/revit/2008/SDK/Samples/BrowseBindings/VB.NET/bin/BrowseBindings.dll
+Revit.SDK.Samples.BrowseBindings.VB.NET.Command
+
+/RvtSamples/By Version/8.1/Create Parameters
+Create a visible and an invisible parameter
+C:/a/lib/revit/2008/SDK/Samples/InvisibleParam/CS/bin/Debug/InvisibleParam.dll
+Revit.SDK.Samples.InvisibleParam.CS.Command
+
+/RvtSamples/By Version/8.1/Element Parameters
+Show the property information of selected element
+C:/a/lib/revit/2008/SDK/Samples/ParameterUtils/CS/bin/Debug/ParameterUtils.dll
+Revit.SDK.Samples.ParameterUtils.CS.Command
+
+/RvtSamples/By Version/8.1/Get Deck Properties
+Get deck layer properties
+C:/a/lib/revit/2008/SDK/Samples/DeckProperties/CS/bin/Debug/DeckProperties.dll
+Revit.SDK.Samples.DeckProperties.CS.Command
+
+/RvtSamples/By Version/8.1/Hello Revit - Form
+Show a form-based dialogue with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.CommandForm
+
+/RvtSamples/By Version/8.1/Hello Revit - MsgBox 
+Show a message box with Hello Revit!
+C:/a/lib/revit/2008/SDK/Samples/HelloRevit/VB.NET/bin/HelloRevit.dll
+Revit.SDK.Samples.HelloRevit.VB.NET.Command
+
+/RvtSamples/By Version/8.1/Hello World CS
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/CS/bin/Debug/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.CS.Command
+
+/RvtSamples/By Version/8.1/Hello World VB
+Display Hello World
+C:/a/lib/revit/2008/SDK/Samples/HelloWorld/VB.NET/bin/HelloWorld.dll
+Revit.SDK.Samples.HelloWorld.VB.Net.Command
+
+/RvtSamples/By Version/8.1/Span Direction
+Display slab properties (span direction and span direction symbols)
+C:/a/lib/revit/2008/SDK/Samples/SpanDirection/CS/bin/Debug/SpanDirection.dll
+Revit.SDK.Samples.SpanDirection.CS.Command
+
+/RvtSamples/By Version/9.0/About Revit
+Show the Revit product name, version and build number
+C:/a/lib/revit/2008/SDK/Samples/VersionChecking/CS/bin/Debug/VersionChecking.dll
+Revit.SDK.Samples.VersionChecking.CS.Command
+
+/RvtSamples/By Version/9.0/All Views
+Generate a new sheet for user selected views
+C:/a/lib/revit/2008/SDK/Samples/AllViews/CS/bin/Debug/AllViews.dll
+Revit.SDK.Samples.AllViews.CS.Command
+
+/RvtSamples/By Version/9.0/Analytical SupportData Information
+Displays the element's support information
+C:/a/lib/revit/2008/SDK/Samples/AnalyticalSupportData_Info/CS/bin/Debug/AnalyticalSupportData_Info.dll
+Revit.SDK.Samples.AnalyticalSupportData_Info.CS.Command
+
+/RvtSamples/By Version/9.0/AreaReinCurve
+Turn off all layers but one. You get some parallel bars. Remove the hooks from one boundary curve so that the bars have hooks only at the other end.
+C:/a/lib/revit/2008/SDK/Samples/AreaReinCurve/CS/bin/Debug/AreaReinCurve.dll
+Revit.SDK.Samples.AreaReinCurve.CS.Command
+
+/RvtSamples/By Version/9.0/AreaReinParameters
+Show parameters of selected AreaReinforcement and allow user to modify
+C:/a/lib/revit/2008/SDK/Samples/AreaReinParameters/CS/bin/Debug/AreaReinParameters.dll
+Revit.SDK.Samples.AreaReinParameters.CS.Command
+
+/RvtSamples/By Version/9.0/Bar Descriptions
+Iterate through the BarDescriptions in the project and display the properties in a table. Allow the table to be saved to a CSV file.
+C:/a/lib/revit/2008/SDK/Samples/BarDescriptions/CS/bin/Debug/BarDescriptions.dll
+Revit.SDK.Samples.BarDescriptions.CS.Command
+
+/RvtSamples/By Version/9.0/Beam and slab parameter
+Add a new GUID parameter to beam and slab, and use the GUID value to find the right element.
+C:/a/lib/revit/2008/SDK/Samples/BeamAndSlabNewParameter/CS/bin/Debug/BeamAndSlabNewParameter.dll
+Revit.SDK.Samples.BeamAndSlabNewParameter.CS.Command
+
+/RvtSamples/By Version/9.0/Create Complex Area Reinforcement
+Create complex AreaReinforcement on selected slab
+C:/a/lib/revit/2008/SDK/Samples/CreateComplexAreaRein/CS/bin/Debug/CreateComplexAreaRein.dll
+Revit.SDK.Samples.CreateComplexAreaRein.CS.Command
+
+/RvtSamples/By Version/9.0/Create Dimensions
+Add a dimension to a selected structural wall from its start to its end. Name the dimensions 'Dimension N' where N is an increasing number for each dimension.
+C:/a/lib/revit/2008/SDK/Samples/CreateDimensions/CS/bin/Debug/CreateDimensions.dll
+Revit.SDK.Samples.CreateDimensions.CS.Command
+
+/RvtSamples/By Version/9.0/Create beams, columns and braces CS
+Create beams, columns and braces CS
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/CS/bin/Debug/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.Command
+
+/RvtSamples/By Version/9.0/Create beams, columns and braces VB
+Create beams, columns and braces VB
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamsColumnsBraces/VB.NET/bin/CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.VB.NET.Command
+
+/RvtSamples/By Version/9.0/Create simple area reinforcement
+Create simple AreaReinforcement on selected wall or floor
+C:/a/lib/revit/2008/SDK/Samples/CreateSimpleAreaRein/CS/bin/Debug/CreateSimpleAreaRein.dll
+Revit.SDK.Samples.CreateSimpleAreaRein.CS.Command
+
+/RvtSamples/By Version/9.0/Create view section
+Create a section view across the mid point of the selected wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/CreateViewSection/CS/bin/Debug/CreateViewSection.dll
+Revit.SDK.Samples.CreateViewSection.CS.Command
+
+/RvtSamples/By Version/9.0/Create wall in beam profile
+Create a profiled wall using the outline generated by a selection of beams defining a vertical profile
+C:/a/lib/revit/2008/SDK/Samples/CreateWallinBeamProfile/CS/bin/Debug/CreateWallinBeamProfile.dll
+Revit.SDK.Samples.CreateWallinBeamProfile.CS.CreateWallinBeamProfile
+
+/RvtSamples/By Version/9.0/Create walls under beams
+Create simple rectangular walls along and under the path of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateWallsUnderBeams/CS/bin/Debug/CreateWallsUnderBeams.dll
+Revit.SDK.Samples.CreateWallsUnderBeams.CS.CreateWallsUnderBeams
+
+/RvtSamples/By Version/9.0/Delete Dimensions
+Delete all unpinned dimensions found in current selection
+C:/a/lib/revit/2008/SDK/Samples/DeleteDimensions/CS/bin/Debug/DeleteDimensions.dll
+Revit.SDK.Samples.DeleteDimensions.CS.Command
+
+/RvtSamples/By Version/9.0/Delete Objects CS
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/CS/bin/Debug/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.CS.Command
+
+/RvtSamples/By Version/9.0/Delete Objects VB
+Delete selected elements
+C:/a/lib/revit/2008/SDK/Samples/DeleteObject/VB.NET/bin/DeleteObject.dll
+Revit.SDK.Samples.DeleteObject.VB.NET.Command
+
+/RvtSamples/By Version/9.0/Display Options
+Display Options
+C:/a/lib/revit/2008/SDK/Samples/DesignOptionReader/VB.NET/bin/DesignOptionReader.dll
+Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
+
+/RvtSamples/By Version/9.0/Generate Floor
+Generate a floor using a selection of walls that make a closed outline
+C:/a/lib/revit/2008/SDK/Samples/GenerateFloor/CS/bin/Debug/GenerateFloor.dll
+Revit.SDK.Samples.GenerateFloor.CS.Command
+
+/RvtSamples/By Version/9.0/Highlight by Phase
+Highlight by Phase
+C:/a/lib/revit/2008/SDK/Samples/PhaseSample/VB.NET/bin/PhaseSample.dll
+Revit.SDK.Samples.PhaseSample.VB.NET.Command
+
+/RvtSamples/By Version/9.0/In-Place Members
+Display In-Place Member's Properties and AnalyticalModel
+C:/a/lib/revit/2008/SDK/Samples/InPlaceMembers/CS/bin/Debug/InPlaceMembers.dll
+Revit.SDK.Samples.InPlaceMembers.CS.Command
+
+/RvtSamples/By Version/9.0/LevelsProperty
+Show how to get all the levels in a document and how to create and delete a level and set its properties
+C:/a/lib/revit/2008/SDK/Samples/LevelsProperty/CS/bin/Debug/LevelsProperty.dll
+Revit.SDK.Samples.LevelsProperty.CS.Command
+
+/RvtSamples/By Version/9.0/Loads
+Show how to use load case, nature, usage and combination
+C:/a/lib/revit/2008/SDK/Samples/Loads/CS/bin/Debug/Loads.dll
+Revit.SDK.Samples.Loads.CS.Loads
+
+/RvtSamples/By Version/9.0/Material Properties CS
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/CS/bin/Debug/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.CS.MaterialProperties
+
+/RvtSamples/By Version/9.0/Material Properties VB
+Get the material physical properties of the selected beam, column or brace
+C:/a/lib/revit/2008/SDK/Samples/MaterialProperties/VB.NET/bin/MaterialProperties.dll
+Revit.SDK.Samples.MaterialProperties.VB.NET.MaterialProperties
+
+/RvtSamples/By Version/9.0/Object Viewer
+Display the selected element in a preview window and generic properties in a grid
+C:/a/lib/revit/2008/SDK/Samples/ObjectViewer/CS/bin/Debug/ObjectViewer.dll
+Revit.SDK.Samples.ObjectViewer.CS.Command
+
+/RvtSamples/By Version/9.0/Rotate Framing Objects CS
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/CS/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.CS.RotateFramingObjects
+
+/RvtSamples/By Version/9.0/Rotate Framing Objects VB
+Rotate selected objects, such as beams, braces and columns
+C:/a/lib/revit/2008/SDK/Samples/RotateFramingObjects/VB.NET/bin/Debug/RotateFramingObjects.dll
+Revit.SDK.Samples.RotateFramingObjects.VB.NET.RotateFramingObjects
+
+/RvtSamples/By Version/9.0/Slab Properties CS
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/CS/bin/Debug/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.CS.Command
+
+/RvtSamples/By Version/9.0/Slab Properties VB
+Display slab properties
+C:/a/lib/revit/2008/SDK/Samples/SlabProperties/VB.NET/bin/SlabProperties.dll
+Revit.SDK.Samples.SlabProperties.VB.NET.Command
+
+/RvtSamples/By Version/9.0/Structural Layer Function CS
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/CS/bin/Debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.CS.Command
+
+/RvtSamples/By Version/9.0/Structural Layer Function VB
+For the selected floor, display the function of each structural layer from outside to inside in a dialog box
+C:/a/lib/revit/2008/SDK/Samples/StructuralLayerFunction/VB.NET/bin/debug/StructuralLayerFunction.dll
+Revit.SDK.Samples.StructuralLayerFunction.VB.NET.Command
+
+/RvtSamples/By Version/9.1/Boundary Conditions
+Display the BoundaryConditions' parameters or create a new BoundaryConditions instance
+C:/a/lib/revit/2008/SDK/Samples/BoundaryConditions/CS/bin/Debug/BoundaryConditions.dll
+Revit.SDK.Samples.BoundaryConditions.CS.Command
+
+/RvtSamples/By Version/9.1/Create Beam System
+Create beam system according to the profile made of selected beams
+C:/a/lib/revit/2008/SDK/Samples/CreateBeamSystem/CS/bin/Debug/CreateBeamSystem.dll
+Revit.SDK.Samples.CreateBeamSystem.CS.Command
+
+/RvtSamples/By Version/9.1/Foundation Slab
+Convert regular floors at the base of the building to octagonal slabs
+C:/a/lib/revit/2008/SDK/Samples/FoundationSlab/CS/bin/Debug/FoundationSlab.dll
+Revit.SDK.Samples.FoundationSlab.CS.Command
+
+/RvtSamples/By Version/9.1/Frame Builder
+Add a new concrete column and beam size
+C:/a/lib/revit/2008/SDK/Samples/FrameBuilder/CS/bin/Debug/FrameBuilder.dll
+Revit.SDK.Samples.FrameBuilder.CS.Command
+
+/RvtSamples/By Version/9.1/Journaling
+Show how an external application can participate in the journaling mechanism
+C:/a/lib/revit/2008/SDK/Samples/Journaling/CS/bin/Debug/Journaling.dll
+Revit.SDK.Samples.Journaling.CS.Command
+
+/RvtSamples/By Version/9.1/Openings
+Display openings in project, and create model lines along its edges
+C:/a/lib/revit/2008/SDK/Samples/Openings/CS/bin/Debug/Opening.dll
+Revit.SDK.Samples.Openings.CS.Command
+
+/RvtSamples/By Version/9.1/Reference Plane
+Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first
+C:/a/lib/revit/2008/SDK/Samples/ReferencePlane/CS/bin/debug/ReferencePlane.dll
+Revit.SDK.Samples.ReferencePlane.CS.Command
+
+/RvtSamples/By Version/9.1/Reinforcement
+Create bar set in a selected concrete element (beam or column) that does not have any reinforcement
+C:/a/lib/revit/2008/SDK/Samples/Reinforcement/CS/bin/Debug/Reinforcement.dll
+Revit.SDK.Samples.Reinforcement.CS.Command
+
+/RvtSamples/By Version/9.1/Rooms
+Get and set room information (Number, Tag, Area)
+C:/a/lib/revit/2008/SDK/Samples/Rooms/CS/bin/Debug/Rooms.dll
+Revit.SDK.Samples.Rooms.CS.Command
+
+/RvtSamples/By Version/9.1/Shared Coordinate System
+Display the locations and site information of the project
+C:/a/lib/revit/2008/SDK/Samples/SharedCoordinateSystem/CS/bin/Debug/SharedCoordinateSystem.dll
+Revit.SDK.Samples.SharedCoordinateSystem.CS.Command
+
+/RvtSamples/By Version/2008.0/Blend Vertices and Vertex Connection Table
+Get blend vertices and vertex connection table
+C:/a/lib/revit/2008/SDK/Samples/BlendVertexConnectTable/bin/Debug/BlendVertexConnectTable.dll
+Revit.SDK.Samples.BlendVertexConnectTable.CS.Command
+
+/RvtSamples/By Version/2008.0/Create Curved Beam
+Create Curved Beam
+C:/a/lib/revit/2008/SDK/Samples/CurvedBeam/CS/bin/Debug/CurvedBeam.dll
+Revit.SDK.Samples.CurvedBeam.CS.Command
+
+/RvtSamples/By Version/2008.0/Family Explorer
+Explore all families in current project and display their profiles
+C:/a/lib/revit/2008/SDK/Samples/FamilyExplorer/bin/Debug/FamilyExplorer.dll
+Revit.SDK.Samples.FamilyExplorer.CS.Command
+
+/RvtSamples/By Version/2008.0/Import Export DWG
+Export current project to dwg files and import a dwg file into Revit
+C:/a/lib/revit/2008/SDK/Samples/ImportExportDWG/CS/bin/Debug/ImportAndExportForDWG.dll
+Revit.SDK.Samples.ImportAndExportForDWG.CS.Command
+
+/RvtSamples/By Version/2008.0/In-Place Family with 3D Analytical Model CS
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/CS/bin/Debug/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.CS.Command
+
+/RvtSamples/By Version/2008.0/In-Place Family with 3D Analytical Model VB
+Read an analytical model 3D object from an in-place family
+C:/a/lib/revit/2008/SDK/Samples/InplaceFamilyAnalyticalModel3D/VB.NET/bin/InplaceFamilyAnalyticalModel3D.dll
+Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.VB.NET.Command
+
+/RvtSamples/By Version/2008.0/New Openings
+Create openings on the selected floor or wall
+C:/a/lib/revit/2008/SDK/Samples/NewOpenings/CS/bin/Debug/NewOpenings.dll
+Revit.SDK.Samples.NewOpenings.CS.Command
+
+/RvtSamples/By Version/2008.0/New PathReinforcement
+Create PathReinforcement on wall or slab
+C:/a/lib/revit/2008/SDK/Samples/NewPathReinforcement/CS/bin/Debug/NewPathReinforcement.dll
+Revit.SDK.Samples.NewPathReinforcement.CS.Command
+
+/RvtSamples/By Version/2008.0/PathReinforcement
+Display path reinforcement properties
+C:/a/lib/revit/2008/SDK/Samples/PathReinforcement/CS/bin/Debug/PathReinforcement.dll
+Revit.SDK.Samples.PathReinforcement.CS.Command
+
+/RvtSamples/By Version/2008.0/Project Information
+Project Information
+C:/a/lib/revit/2008/SDK/Samples/ProjectInfo/CS/bin/Debug/ProjectInfo.dll
+Revit.SDK.Samples.ProjectInfo.CS.Command
+
+/RvtSamples/By Version/2008.0/Project Unit
+List all the units in current project and display format information for each
+C:/a/lib/revit/2008/SDK/Samples/ProjectUnit/CS/bin/Debug/ProjectUnit.dll
+Revit.SDK.Samples.ProjectUnit.CS.Command
+
+/RvtSamples/By Version/2008.0/Shaft Hole Puncher
+Create shaft opening or create opening on wall, floor or beam
+C:/a/lib/revit/2008/SDK/Samples/ShaftHolePuncher/bin/Debug/ShaftHolePuncher.dll
+Revit.SDK.Samples.ShaftHolePuncher.CS.Command
+
+/RvtSamples/By Version/2008.0/Spot Dimension
+Get all spot dimensions in all views and show their properties
+C:/a/lib/revit/2008/SDK/Samples/SpotDimension/CS/bin/Debug/SpotDimension.dll
+Revit.SDK.Samples.SpotDimension.CS.Command
+
+/RvtSamples/By Version/2008.0/Tag Beam
+Tag beam's start and end
+C:/a/lib/revit/2008/SDK/Samples/TagBeam/bin/Debug/TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.Command
+
+/RvtSamples/By Version/2008.0/Tag Rooms
+Auto tag all rooms in a specified level
+C:/a/lib/revit/2008/SDK/Samples/AutoTagRooms/bin/Debug/RoomsTag.dll
+Revit.SDK.Samples.RoomsTag.CS.Command
+
+/RvtSamples/By Version/2008.0/Test Floor Thickness
+Show how to retrieve and modify floor thickness
+C:/a/lib/revit/2008/SDK/Samples/TestFloorThickness/VB.NET/bin/Debug/TestFloorThickness.dll
+Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
+
+/RvtSamples/By Version/2008.0/Test Wall Thickness
+Show how to retrieve and modify wall thickness
+C:/a/lib/revit/2008/SDK/Samples/TestWallThickness/VB.NET/bin/Debug/TestWallThickness.dll
+Revit.SDK.Samples.TestWallThickness.VB.NET.Command
+
+/RvtSamples/By Version/2008.0/Transaction
+Demonstrate how to use transaction control
+C:/a/lib/revit/2008/SDK/Samples/TransactionControl/bin/Debug/Transaction.dll
+Revit.SDK.Samples.Transaction.CS.Command
+
+/RvtSamples/By Version/2008.0/View Printer
+Print user selected printable views
+C:/a/lib/revit/2008/SDK/Samples/ViewPrinter/CS/bin/Debug/ViewPrinter.dll
+Revit.SDK.Samples.ViewPrinter.CS.Command
+
+/RvtSamples/By Version/2008.0/Visibility Controller
+Control element visibility by category
+C:/a/lib/revit/2008/SDK/Samples/VisibilityControl/bin/Debug/VisibilityController.dll
+Revit.SDK.Samples.VisibilityController.CS.Command
+
+/RvtSamples/By Version/2008.2/Materials
+Present all available materials in the current project, and allow changing the material of the selected structural element
+C:/a/lib/revit/2008/SDK/Samples/Materials/CS/bin/Debug/Materials.dll
+Revit.SDK.Samples.Materials.CS.Command
+
+/RvtSamples/By Version/2008.2/Model Lines
+Report the number of each model line type and allow the user to specify the shape and sketch plane to create some new model lines
+C:/a/lib/revit/2008/SDK/Samples/ModelLines/CS/bin/Debug/ModelLines.dll
+Revit.SDK.Samples.ModelLines.CS.Command
+
+/RvtSamples/By Version/2008.2/RDB Link
+Export/Import Revit data to/from database
+C:/a/lib/revit/2008/SDK/Samples/RDBLink/CS/bin/Debug/RDBLink.dll
+Revit.SDK.Samples.RDBLink.CS.Command
+
+/RvtSamples/By Version/2008.2/Room Schedule
+Room Schedule
+C:/a/lib/revit/2008/SDK/Samples/RoomSchedule/CS/bin/Debug/RoomSchedule.dll
+Revit.SDK.Samples.RoomSchedule.Command

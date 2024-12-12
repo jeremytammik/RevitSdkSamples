@@ -1,0 +1,36 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+  </PropertyGroup>
+  <Import Project="..\StructuralConnectionsSDKSamples.Common.props" />
+  <PropertyGroup>
+    <ImportWindowsDesktopTargets>false</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ASCADLinkMgd">
+      <HintPath>$(ASInstallDir)\ASCADLinkMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASGeometryMgd">
+      <HintPath>$(ASInstallDir)\ASGeometryMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASModelerMgd">
+      <HintPath>$(ASInstallDir)\ASModelerMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASObjectsMgd">
+      <HintPath>$(ASInstallDir)\ASObjectsMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASProfilesMgd">
+      <HintPath>$(ASInstallDir)\ASProfilesMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetRoots">
+      <HintPath>$(ASInstallDir)\DotNetRoots.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk"/>
+</Project>

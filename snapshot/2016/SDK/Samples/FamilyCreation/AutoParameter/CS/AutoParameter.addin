@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AutoParameter.dll</Assembly>
+    <ClientId>74c58f2c-0b37-42e1-a1db-abec149c71fc</ClientId>
+    <FullClassName>Revit.SDK.Samples.AutoParameter.CS.AddParameterToFamily</FullClassName>
+    <Text>AddParameterToFamily</Text>
+    <Description>Sample to show how to automatically add a large set of parameters to a family.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>AutoParameter.dll</Assembly>
+    <ClientId>892df373-8008-400b-96ea-855cd4220b41</ClientId>
+    <FullClassName>Revit.SDK.Samples.AutoParameter.CS.AddParameterToFamilies</FullClassName>
+    <Text>AddParameterToFamilies</Text>
+    <Description>Sample to show how to automatically add a large set of parameters to multiple family files.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

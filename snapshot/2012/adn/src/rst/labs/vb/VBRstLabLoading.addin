@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>47557A15-CE05-4a30-89D2-531666D28976</ClientId>
+    <FullClassName>RstLabs.Lab1_1_LoadGrouping</FullClassName>
+    <Text>Lab1_1_LoadGrouping</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>304569CB-0886-4c26-BEEA-FA11E105D711</ClientId>
+    <FullClassName>RstLabs.Lab1_2_Loads</FullClassName>
+    <Text>Lab1_2_Loads</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>A9D86EF5-F854-42f6-8603-2970DCBAF536</ClientId>
+    <FullClassName>RstLabs.Lab1_3_ModifyLoads</FullClassName>
+    <Text>Lab1_3_ModifySelectedLoads</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>A2E28CEA-ABA7-4d4b-B7D6-5D6AF3EB46EF</ClientId>
+    <FullClassName>RstLabs.Lab1_4_LoadTypes</FullClassName>
+    <Text>Lab1_4_LoadTypes</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>1BA69749-BA7A-4e21-9054-3E9B78701613</ClientId>
+    <FullClassName>RstLabs.Lab1_5_CreateNewPointLoads</FullClassName>
+    <Text>Lab1_5_CreateNewPointLoads</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>24D03A57-F71B-4e9e-94EA-90A0CA6CE20A</ClientId>
+    <FullClassName>RstLabs.Lab2_1_ListStructuralColumns</FullClassName>
+    <Text>Lab2_1_ListStructuralColumns</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>312E06F3-E46C-4583-9DDF-E76E2FF02AA4</ClientId>
+    <FullClassName>RstLabs.Lab2_2_ListStructuralFraming</FullClassName>
+    <Text>Lab2_2_ListStructuralFraming</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>6765ECB1-1795-4eb0-A8F7-BA2FC7E38BE6</ClientId>
+    <FullClassName>RstLabs.Lab2_3_Foundations</FullClassName>
+    <Text>Lab2_3_Foundations</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>581CACB3-6E58-463d-926D-CE0EA92CE0FF</ClientId>
+    <FullClassName>RstLabs.Lab2_4_StandardFamilyInstances</FullClassName>
+    <Text>Lab2_4_StandardFamilyInstances</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>AD5333DD-71AE-497c-8AC5-901F2DAE09BD</ClientId>
+    <FullClassName>RstLabs.Lab2_5_StructuralSystemFamilyInstances</FullClassName>
+    <Text>Lab2_5_StructuralSystemFamilyInstances</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>C:\yejo\Revit Training 2012\src\rst\labs\vb\bin\RstLabsVb.dll</Assembly>
+    <ClientId>5F23973E-70D1-4816-88B1-C5AE5D4BBB03</ClientId>
+    <FullClassName>RstLabs.Lab3_ListSelectedAnalyticalModels</FullClassName>
+    <Text>Lab3_ListSelectedAnalyticalModels</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DistanceToPanels.dll</Assembly>
+    <ClientId>0698c929-7f8a-4ae1-8eff-3480e99c2c97</ClientId>
+    <FullClassName>Revit.SDK.Samples.DistanceToPanels.CS.SetDistanceParam</FullClassName>
+    <Text>Compute distance to panels</Text>
+    <Description>Compute the distance from a selected object to all panels and store in a panel instance parameter</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

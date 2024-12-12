@@ -1,0 +1,46 @@
+<rexf:REXExtensionControl x:Class="REX.ContentGeneratorWPF.Resources.ContentGeneratorReadControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:rexf="clr-namespace:REX.Common;assembly=REX.Foundation.WPF"
+    xmlns:rexc="clr-namespace:REX.Controls.WPF;assembly=REX.Controls.WPF"   
+    xmlns:local="clr-namespace:REX.ContentGeneratorWPF.Resources.Dialogs"
+    Height="414" Width="638">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Parametric" Margin="2"  Name="paramGroupBox1" Grid.Column="0" Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <local:PolygonViewer x:Name="viewer" Grid.Column="0" Grid.Row="0"></local:PolygonViewer>
+                <local:PropertiesControl x:Name="parametricProperties" Grid.Column="0" Grid.Row="1"></local:PropertiesControl>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Database" Margin="2"  Name="dbGroupBox1" Grid.Column="1" Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>              
+                <local:PropertiesControl x:Name="databasesProperties" Grid.Column="0" Grid.Row="0"></local:PropertiesControl>
+                <TextBlock Grid.Column="0" Grid.Row="1" >List of Databases:</TextBlock>
+                <ListBox x:Name="dabasesListBox" Margin="2" Grid.Column="0" Grid.Row="2">                   
+                </ListBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</rexf:REXExtensionControl>

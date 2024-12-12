@@ -1,0 +1,144 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Increment Parameter Value
+</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+
+<a class="j" href="labs5-1.htm">next</a>
+<a class="j" href="labs4-4-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this lab, we will increment the invisible parameter value by the following steps</p>
+
+<ul>
+<li>Use the GetProjectInformationElement() utility to get the element.</li>
+<li>Display the current shared parameter value.</li>
+<li>Increment the value by 1.</li>
+<li>Display the new shared parameter value.</li>
+</ul>
+<pre title="C# increment hidden shared parameter value" class="jtcollapse">#region Lab4_4_2_IncrementPerDocParameters
+  /// &lt;summary&gt;
+  /// Command to increment the invisible per-doc param
+  /// &lt;/summary&gt;
+  public class Lab4_4_2_PerDocParams : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      // Get the singleton Project Info Element
+      Element projInfoElem = LabUtils.GetProjectInfoElem( app );
+      if( null == projInfoElem )
+      {
+        LabUtils.ErrorMsg( "No project info elem found. Aborting command..." );
+        return IExternalCommand.Result.Failed;
+      }
+      // For simplicity, access invisible param by name rather than by GUID:
+      try
+      {
+        Parameter param = projInfoElem.get_Parameter( LabConstants.sParamNameInvisible );
+        // report OLD value
+        int iOldValue = param.AsInteger();
+        LabUtils.ErrorMsg( "OLD value = " + iOldValue.ToString() );
+        // set and report NEW value
+        param.Set( iOldValue + 1 );
+        LabUtils.ErrorMsg( "NEW value = " + param.AsInteger().ToString() );
+      }
+      catch( System.Exception e )
+      {
+        LabUtils.ErrorMsg( "Failed: " + e.Message );
+        return IExternalCommand.Result.Failed;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion // Lab4_4_2_IncrementPerDocParameters
+</pre>
+<pre title="VB increment hidden shared parameter value" class="jtcollapse">#Region "Lab4_4_2_IncrementPerDocParameters"
+''' &lt;summary&gt;
+''' Command to increment the invisible per-doc param
+''' &lt;/summary&gt;
+''' &lt;remarks&gt;&lt;/remarks&gt;
+Public Class Lab4_4_2_PerDocParams
+    Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+
+        Dim app As Revit.Application = commandData.Application
+        Dim doc As Revit.Document = app.ActiveDocument
+
+        ' Get the singleton Project Info Element
+        Dim projInfoElem As Revit.Element = LabUtils.GetProjectInfoElem(doc, app)
+        If projInfoElem Is Nothing Then
+            MsgBox("NO project Info Elem found !? Aborting command...")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' For simplicity, access invisible param by name rather than by GUID:
+        Try
+            Dim param As Parameter = projInfoElem.Parameter(LabConstants.sParamNameInvisible)
+            ' report OLD value
+            Dim iOldValue As Integer = param.AsInteger
+            MsgBox("OLD value = " & iOldValue)
+            ' set and report NEW value
+            param.Set(iOldValue + 1)
+            MsgBox("NEW value = " & param.AsInteger)
+
+        Catch e As Exception
+            MsgBox("Failed!? : " & e.Message)
+            Return IExternalCommand.Result.Failed
+        End Try
+
+        Return IExternalCommand.Result.Succeeded
+    End Function
+End Class
+#End Region
+
+</pre>
+
+<a class="j" href="labs5-1.htm">next</a>
+<a class="j" href="labs4-4-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

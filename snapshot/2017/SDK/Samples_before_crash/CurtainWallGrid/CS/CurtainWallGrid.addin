@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CurtainWallGrid.dll</Assembly>
+    <ClientId>8948a640-b0fe-4fa0-ad40-2581376bd519</ClientId>
+    <FullClassName>Revit.SDK.Samples.CurtainWallGrid.CS.Command</FullClassName>
+    <Text>Curtain Wall and Grid</Text>
+    <Description>Create a curtain wall and edit its grid</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

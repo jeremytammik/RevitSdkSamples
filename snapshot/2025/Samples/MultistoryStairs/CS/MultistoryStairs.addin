@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>MultistoryStairs</Name>
+    <Assembly>MultistoryStairs.dll</Assembly>
+    <ClientId>{E2AE7E5B-C7A0-4FD9-9D04-F21D43C46447}</ClientId>
+    <FullClassName>Revit.SDK.Samples.MSOperation.CS.Application</FullClassName>
+    <Text>MultistoryStairs Application</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

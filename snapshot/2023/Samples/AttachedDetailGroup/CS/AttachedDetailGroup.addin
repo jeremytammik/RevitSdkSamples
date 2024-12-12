@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>AttachedDetailGroup</Name>
+    <Assembly>AttachedDetailGroup.dll</Assembly>
+    <ClientId>91ef7f06-53b0-488c-a5bb-e005abfb542e</ClientId>
+    <FullClassName>Revit.SDK.Samples.AttachedDetailGroup.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

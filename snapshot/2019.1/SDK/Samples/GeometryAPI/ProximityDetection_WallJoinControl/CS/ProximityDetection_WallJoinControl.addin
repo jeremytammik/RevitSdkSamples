@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ProximityDetection_WallJoinControl.dll</Assembly>
+    <ClientId>aade10aa-c009-4665-8f65-d2837b444a2e</ClientId>
+    <FullClassName>Revit.SDK.Samples.ProximityDetection_WallJoinControl.CS.Command</FullClassName>
+    <Text>Proximity Detection and Wall Join Control</Text>
+    <Description>The usage of  ElementIntersectsSolidFilter,ElementIntersectsElementFilter and WallUtils</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>adsk</VendorId>
+  </AddIn>
+</RevitAddIns>

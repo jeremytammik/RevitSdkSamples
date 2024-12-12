@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="REX.ContentGeneratorWPF.Resources.Dialogs.PolygonViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <Grid>
+        <Border BorderThickness="1" BorderBrush="Gray" Background="White">
+        <Path Stroke="Black" StrokeThickness="1">
+                <Path.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="Gray" Offset="1"/>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                    <Path.Data>
+                <PathGeometry x:Name="pathGeometry" FillRule="Nonzero">
+                    
+                </PathGeometry>               
+            </Path.Data>
+        </Path>
+            </Border>
+    </Grid>
+</UserControl>

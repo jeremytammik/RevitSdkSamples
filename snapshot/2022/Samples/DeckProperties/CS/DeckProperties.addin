@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DeckProperties.dll</Assembly>
+    <ClientId>400ac48f-9bbf-4e94-8f3a-f17dd06c3b66</ClientId>
+    <FullClassName>Revit.SDK.Samples.DeckProperties.CS.Command</FullClassName>
+    <Text>Get Deck Properties</Text>
+    <Description>Get deck layer properties.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>PhaseSample.dll</Assembly>
+    <ClientId>e283566e-2ecb-4441-9a9d-6aa9276d4164</ClientId>
+    <FullClassName>Revit.SDK.Samples.PhaseSample.VB.NET.Command</FullClassName>
+    <Text>Highlight by Phase</Text>
+    <Description>Highlight by Phase.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

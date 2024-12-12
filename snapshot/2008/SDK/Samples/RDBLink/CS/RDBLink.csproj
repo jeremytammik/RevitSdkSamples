@@ -1,0 +1,95 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD70EA0B-E5C2-4D8F-A3C2-1089BF37E546}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Revit.SDK.Samples.RDBLink.CS</RootNamespace>
+    <AssemblyName>RDBLink</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=10.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Revit Architecture 2008\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIObjectList.cs" />
+    <Compile Include="AreaLoadOnSlabList.cs" />
+    <Compile Include="CategoryList.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="NonCreatableElementList.cs" />
+    <Compile Include="DoorWallList.cs" />
+    <Compile Include="ElementLevelList.cs" />
+    <Compile Include="ElementList.cs" />
+    <Compile Include="ElementPhaseList.cs" />
+    <Compile Include="InstanceList.cs" />
+    <Compile Include="LineLoadOnBeamList.cs" />
+    <Compile Include="OpeningList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RDBLink.cs" />
+    <Compile Include="RDBLinkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDBLinkForm.designer.cs">
+      <DependentUpon>RDBLinkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomAssociationList.cs" />
+    <Compile Include="RoomFromToAssociationList.cs" />
+    <Compile Include="RoomTagList.cs" />
+    <Compile Include="SQLDriver.cs" />
+    <Compile Include="SymbolList.cs" />
+    <Compile Include="TableManager.cs" />
+    <Compile Include="TCBMap.cs" />
+    <Compile Include="TCBMapInitialization.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="WindowWallList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RDBLinkForm.resx">
+      <DependentUpon>RDBLinkForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

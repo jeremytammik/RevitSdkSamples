@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>NewPathReinforcement.dll</Assembly>
+    <ClientId>17cac1c5-88be-40d8-ab03-a2b574e53cde</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewPathReinforcement.CS.Command</FullClassName>
+    <Text>NewPathReinforcement</Text>
+    <Description>Create PathReinforcement on wall or slab.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

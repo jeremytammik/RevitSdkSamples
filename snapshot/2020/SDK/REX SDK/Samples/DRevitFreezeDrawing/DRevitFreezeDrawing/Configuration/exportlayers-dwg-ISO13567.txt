@@ -1,0 +1,212 @@
+# Revit Export Layers
+# Maps Categories and Subcategories to layer names and color numbers
+# Category <tab> Subcategory <tab> Layer name <tab> Color number <tab>
+# Cut layer name <tab> Cut color number
+# Do not remove the colon (:) after certain category names.
+# -----------------------------------------------------
+Area Polylines		A-AREABDR	1	A-AREABDR	1
+Area Tags		A-AREAIDM	2	A-AREAIDM	2
+Callouts		A-----SYP	6	A-----SYP	6
+Casework		A-FLORCAM	3	A-FLORCAM	3
+Casework Tags		I-ELEVIDM	5	I-ELEVIDM	5
+Ceiling Tags		A-CLNGIDM	6	A-CLNGIDM	6
+Ceilings		A-CLNGSUM	5	A-CLNGSUM	5
+Ceilings	Cut Pattern	A-CLNGPAM	1	A-CLNGPAM	1
+Ceilings	Surface Pattern	A-CLNGGRM	1	A-CLNGGRM	1
+Color Fill		A-AREAIDM	2	A-AREAIDM	2
+Color Fill Legends		G-----NPP	5	G-----NPP	5
+Columns		A-COLSENM	4	A-COLSENM	4
+Constraints		A-----NOP	2	A-----NOP	2
+Contour Labels		V-TOPOMAM	2	V-TOPOMAM	2
+Curtain Panel Tags		A-WALLIDM	6	A-WALLIDM	6
+Curtain Panels		A-WALLCWM	6	A-WALLCWM	6
+Curtain Wall Mullions		A-WALLCWM	3	A-WALLCWM	3
+Demolished		-_----DEMO	3	-_----DEMO	3
+Detail Item Tags		A-DETLIDM	3	A-DETLIDM	3
+Detail Items		A-DETLGEM	3	A-DETLGEM	3
+Dimensions		A-----DIP	1	A-----DIP	1
+Dimensions	Automatic Sketch Dimensions	A-----DIP	1	A-----DIP	1
+Door Tags		A-DOORIDM	6	A-DOORIDM	6
+Doors		A-DOORSYM	1	A-DOORSYM	1
+Doors	Frame/Mullion	A-DOORSYM	1	A-DOORSYM	1
+Doors	Glass	A-ELEVOTM	1	A-ELEVOTM	1
+Doors	Opening	A-DOORSYM	6	A-DOORSYM	6
+Doors	Panel	A-DOORSYM	1	A-DOORSYM	1
+Electrical Equipment		E-AUXLEQM	4	E-AUXLEQM	4
+Electrical Equipment Tags		E-----TEP	2	E-----TEP	2
+Electrical Fixture Tags		E-----TEP	2	E-----TEP	2
+Electrical Fixtures		E-DETLLTM	2	E-DETLLTM	2
+Elevations		A-----SYP	6	A-----SYP	6
+Entourage		A-DETLGEM	3	A-DETLGEM	3
+Existing		-_----EXST	3	-_----EXST	3
+Floors		A-FLOROTM	6	A-FLOROTM	6
+Floors	Cut Pattern	A-FLORPAM	8	A-FLORPAM	8
+Floors	Hidden Lines	A-FLORHDN	5	A-FLORHDN	5
+Floors	Slab Edges	A-FLOROTM	6	A-FLOROTM	6
+Floors	Surface Pattern	A-FLORPAM	8	A-FLORPAM	8
+Furniture		I-DETLFUM	2	I-DETLFUM	2
+Furniture System Tags		I-SYSTIDM	3	I-SYSTIDM	3
+Furniture Systems		I-SYSTFUM	2	I-SYSTFUM	2
+Furniture Tags		I-FURNIDM	3	I-FURNIDM	3
+Generic Annotations		A-----NOP	2	A-----NOP	2
+Generic Model Tags		G-PLANOTM	2	G-PLANOTM	2
+Generic Models		G-PLANOTM	6	G-PLANOTM	6
+Grid Heads		S-GRIDIDM	1	S-GRIDIDM	1
+Grids		S-GRIDIDM	1	S-GRIDIDM	1
+Imports in Families		A-----NPP	1	A-----NPP	1
+Keynote Tags		A-----NOP	2	A-----NOP	2
+Level Heads		A-FLORLEM	6	A-FLORLEM	6
+Levels		A-FLORLEM	6	A-FLORLEM	6
+Lighting Fixture Tags		E-LITEIDM	1	E-LITEIDM	1
+Lighting Fixtures		E-LITEEQM	4	E-LITEEQM	4
+Lines		A-----NPP	5	A-----NPP	5
+Lines	<Area Boundary>	A-AREALIM	4	A-AREALIM	4
+Lines	<Beyond>	A-----NPP	5	A-----NPP	5
+Lines	<Centerline>	A-----NPP	5	A-----NPP	5
+Lines	<Demolished>	A-------M	6	A-------M	6
+Lines	<Hidden>	A-----NPP	5	A-----NPP	5
+Lines	<Overhead>	A-FLOROVM	8	A-FLOROVM	8
+Lines	<Revision Cloud>	A-----NPP	5	A-----NPP	5
+Lines	<Room Separation>	A-AREALIM	4	A-AREALIM	4
+Lines	<Sketch>	A-----NPP	5	A-----NPP	5
+Lines	Axis of Rotation	A-----NPP	5	A-----NPP	5
+Lines	Insulation Batting Lines	A-DETLINM	8	A-DETLINM	8
+Lines	Lines	A-----NPP	5	A-----NPP	5
+Lines	Medium Lines	A-----NPP	3	A-----NPP	3
+Lines	Thin Lines	A-----NPP	3	A-----NPP	3
+Lines	Wide Lines	A-----NPP	3	A-----NPP	3
+Mass		G-----NPP	5	G-----NPP	5
+Mass Tags		G-----NPP	5	G-----NPP	5
+Massing		G-----NPP	5	G-----NPP	5
+Matchline		A-----SYP	6	A-----SYP	6
+Material Tags		A-----NOP	2	A-----NOP	2
+Mechanical Equipment		M-DETLEQM	2	M-DETLEQM	2
+Mechanical Equipment Tags		M-ELEVIDM	2	M-ELEVIDM	2
+Multi-Category Tags		A-----NOP	2	A-----NOP	2
+New		-_----NEW	2	-_----NEW	2
+Parking		C-PKNGCTM	1	C-PKNGCTM	1
+Parking Tags		C-PKNGCTM	1	C-PKNGCTM	1
+Plan Region		G-----NPP	5	G-----NPP	5
+Planting		L-PLNTBEM	3	L-PLNTBEM	3
+Planting Tags		L-PLNTBEM	3	L-PLNTBEM	3
+Plumbing Fixture Tags		P-----TEP	2	P-----TEP	2
+Plumbing Fixtures		P-SANRFIM	6	P-SANRFIM	6
+Property Line Segment Tags		P-SANRFIM	6	P-SANRFIM	6
+Property Tags		P-SANRFIM	0	P-SANRFIM	0
+Railings		A-FLORHRM	1	A-FLORHRM	1
+Railings	Balusters	A-FLORHRM	1	A-FLORHRM	1
+Railings	Railings Beyond Cut Line	A-FLORHRM	5	A-FLORHRM	5
+Railings	Rails	A-FLORHRM	1	A-FLORHRM	1
+Ramps		A-FLORSTM	2	A-FLORSTM	2
+Ramps	Down Arrow	A-FLORSTM	2	A-FLORSTM	2
+Ramps	DOWN text	A-FLORSTM	2	A-FLORSTM	2
+Ramps	Incomplete ramps	A-FLORSTM	2	A-FLORSTM	2
+Ramps	Ramps Beyond Cut Line	A-FLORSTM	5	A-FLORSTM	5
+Ramps	Stringers	A-FLORSTM	2	A-FLORSTM	2
+Ramps	Stringers Beyond Cut Line	A-FLORSTM	5	A-FLORSTM	5
+Ramps	Up Arrow	A-FLORSTM	2	A-FLORSTM	2
+Ramps	UP text	A-FLORSTM	2	A-FLORSTM	2
+Raster Images		G-----PAP	8	G-----PAP	8
+Reference Planes		G-----NPP	5	G-----NPP	5
+Revision Cloud Tags		G-----REV	5	G-----REV	5
+Revision Clouds		G-----REV	5	G-----REV	5
+Roads		C-ROADOTM	4	C-ROADOTM	4
+Roof Tags		A-ROOFIDM	6	A-ROOFIDM	6
+Roofs		A-ROOFOTM	4	A-ROOFOTM	4
+Roofs	Curtain Roof Grids	A-ROOFOTM	4	A-ROOFOTM	4
+Roofs	Cut Pattern	A-ROOFPAM	8	A-ROOFPAM	8
+Roofs	Fascias	A-ROOFOTM	4	A-ROOFOTM	4
+Roofs	Gutters	A-ROOFPAM	4	A-ROOFPAM	4
+Roofs	Roof Soffits	A-ROOFPAM	4	A-ROOFPAM	4
+Roofs	Surface Pattern	A-ROOFPAM	8	A-ROOFPAM	8
+Room Polylines		A-AREABDR	1	A-AREABDR	1
+Room Tags		A-AREAIDM	2	A-AREAIDM	2
+Rooms		A-AREAIDM	2	A-AREAIDM	2
+Schedule Graphics		A-----NPP	5	A-----NPP	5
+Scope Boxes		G-----NPP	5	G-----NPP	5
+Sections		A-----SYP	6	A-----SYP	6
+Site		L-DETLGEM	6	L-DETLGEM	6
+Site	Pads	L-DETLGEM	6	L-DETLGEM	6
+Site	Property	L-DETLGEM	6	L-DETLGEM	6
+Site Tags		L-DETLIDM	6	L-DETLIDM	6
+Span Direction Symbol		S-FLORSYMB	2	S-FLORSYMB	2
+Specialty Equipment		F-AFFFEQM	6	F-AFFFEQM	6
+Specialty Equipment Tags		F-----TEP	2	F-----TEP	2
+Spot Elevations		A-----DIP	1	A-----DIP	1
+Stair Tags		A-FLORIDM	2	A-FLORIDM	2
+Stairs		A-FLORSTM	2	A-FLORSTM	2
+Stairs	Down Arrow	A-FLORSTM	2	A-FLORSTM	2
+Stairs	DOWN Text	A-FLORSTM	2	A-FLORSTM	2
+Stairs	Incomplete Stairs	A-FLORSTM	2	A-FLORSTM	2
+Stairs	Stairs Beyond Cut Line	A-SECTMBM	5	A-SECTMBM	5
+Stairs	Stringers	A-FLORSTM	2	A-FLORSTM	2
+Stairs	Stringers Beyond Cut Line	A-SECTMBM	5	A-SECTMBM	5
+Stairs	Up Arrow	A-FLORSTM	2	A-FLORSTM	2
+Stairs	UP Text	A-FLORSTM	2	A-FLORSTM	2
+Structural Annotations		S-IDEN	2	S-IDEN	2
+Structural Area Reinforcement		S-RBARBDRY	2	S-RBARBDRY	2
+Structural Area Reinforcement Symbols		S-RBARSYM	2	S-RBARSYM	2
+Structural Area Reinforcement Tags		S-RBARIDEN	2	S-RBARIDEN	2
+Structural Beam System Tags		S-----TEP	2	S-----TEP	2
+Structural Beam Systems		S-ANNOSYM	2	S-ANNOSYM	2
+Structural Column Tags		S-COLSIDM	2	S-COLSIDM	2
+Structural Columns		S-COLSPRM	6	S-COLSPRM	6
+Structural Columns	Hidden Lines	S-COLSHDN	5	S-COLSHDN	5
+Structural Connection Tags		S-COLSANLY	2	S-COLSANLY	2
+Structural Connections		S-COLSANLY	2	S-COLSANLY	2
+Structural Foundation Tags		S-BEAMPRM	2	S-BEAMPRM	2
+Structural Foundations		S-----TEP	4	S-----TEP	4
+Structural Foundations	Hidden Lines	S-FNDNHDN	4	S-FNDNHDN	4
+Structural Framing		S-----TEP	4	S-----TEP	4
+Structural Framing	Hidden Lines	S-BEAMHDN	4	S-BEAMHDN	4
+Structural Framing Tags		S-----TEP	2	S-----TEP	2
+Structural Load Cases		S-LOADCASE	2	S-LOADCASE	2
+Structural Load Cases	Accidental Loads	S-LOADACCI	2	S-LOADACCI	2
+Structural Load Cases	Dead Loads	S-LOADDEAD	2	S-LOAD-DEAD	2
+Structural Load Cases	Live Loads	S-LOADLIVE	2	S-LOADLIVE	2
+Structural Load Cases	Roof Live Loads	S-LOADROOF	2	S-LOADROOF	2
+Structural Load Cases	Seismic Loads	S-LOADSEIS	2	S-LOADSEIS	2
+Structural Load Cases	Snow Loads	S-LOADSNOW	2	S-LOADSNOW	2
+Structural Load Cases	Temperature Loads	S-LOADTEMP	2	S-LOADTEMP	2
+Structural Load Cases	Wind Loads	S-LOADWIND	2	S-LOADWIND	2
+Structural Loads		S-LOAD	2	S-LOAD	2
+Structural Loads	Area Loads	S-LOADAREA	2	S-LOADAREA	2
+Structural Loads	Line Loads	S-LOADLINE	2	S-LOADLINE	2
+Structural Loads	Point Loads	S-LOADPOIN	2	S-LOADPOIN	2
+Structural Path Reinforcement		S-RBARBDRY	2	S-RBARBDRY	2
+Structural Path Reinforcement Symbols		S-RBARSYM	2	S-RBAR-SYM	2
+Structural Path Reinforcement Tags		S-RBARIDEN	2	S-RBARIDEN	2
+Structural Rebar		S-RBAR	2	S-RBAR	2
+Structural Rebar Tags		S-RBARIDEN	2	S-RBARIDEN	2
+Structural Truss Tags		S-----TEP	2	S-----TEP	2
+Temporary		-_----TEMP	2	-_----TEMP	2
+Text Notes		A-----TEP	2	A-----TEP	2
+Title Blocks		G-----TTP	6	G-----TTP	6
+Title Blocks	Medium Lines	G-----TTP	4	G-----TTP	4
+Title Blocks	Thin Lines	G-----TTP	2	G-----TTP	2
+Title Blocks	Wide Lines	G-----TTP	6	G-----TTP	6
+Topography		C-TOPO	2	C-TOPO	2
+Topography	Boundary Point	C-TOPOBKM	3	C-TOPOBKM	3
+Topography	Interior Point	C-TOPOBOM	2	C-TOPOBOM	2
+Topography	Primary Contours	C-TOPOMJM	2	C-TOPOMJM	2
+Topography	Secondary Contours	C-TOPOMNM	3	C-TOPOMNM	3
+Topography	Triangulation Edges	C-TOPO	3	C-TOPO	3
+View Reference		A-----SYP	6	A-----SYP	6
+View Titles		G-----NPP	6	G-----NPP	6
+Viewports		A-----NPP	5	A-----NPP	5
+Wall Tags		A-WALLIDM	4	A-WALLIDM	4
+Walls		A-WALLMBM	2	A-WALL	2
+Walls	Curtain Wall Grids	A-WALL	2	A-WALL	2
+Walls	Cut Pattern	A-WALLMBM	2	A-WALL	2
+Walls	Hidden Lines	A-WALLHDN	2	A-WALLHDN	2
+Walls	Surface Pattern	A-WALL	2	A-WALL	2
+Walls/Interior:1		A-WALL	2	A-WALL	2
+Walls/Exterior:2		A-WALL	2	A-WALL	2
+Walls/Foundation:3		S-WALLLOM	2	S-WALLLOM	2
+Walls/Retaining:4		C-TOPORTM	2	C-TOPORTM	2
+Window Tags		A-GLAZIDM	6	A-GLAZIDM	6
+Windows		A-GLAZIDM	6	A-GLAZIDM	6
+Windows	Frame/Mullion	A-GLAZIDM	6	A-GLAZIDM	6
+Windows	Glass	A-GLAZIDM	6	A-GLAZIDM	6
+Windows	Opening	A-GLAZSIM	6	A-GLAZSIM	6
+Windows	Sill/Head	A-GLAZSIM	1	A-GLAZSIM	1

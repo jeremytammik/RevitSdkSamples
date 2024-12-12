@@ -1,0 +1,31 @@
+import "oaidl.idl";
+import "ocidl.idl";
+[
+	object,
+	uuid(4F30D30D-2821-4933-AFC3-64AB5CCA2AE2),
+	dual,
+	helpstring("ISampleClipAngle Interface"),
+	pointer_default(unique)
+]
+interface ISampleClipAngle : IDispatch
+{
+};
+
+[
+	uuid(10B7FC2F-C086-4F40-8ECA-5109479299A0),
+	version(1.0),
+	helpstring("SampleClipAngle 1.0 Type Library")
+]
+library SampleClipJointLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	[
+		uuid(FD62E6AB-0412-4F2B-9DB8-C5D5385F8042),
+		helpstring("USClipAngle Class")
+	]
+	coclass SampleClipAngle
+	{
+		[default] interface ISampleClipAngle;
+	};
+};

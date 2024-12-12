@@ -1,0 +1,63 @@
+worked on sortable binding list for built-in params checker:
+
+http://www.devnewsgroups.net/group/microsoft.public.dotnet.framework.windowsforms/topic46433.aspx
+
+If I understand correctly you created the binding source using the data 
+source wizard "object" option, and you're now binding to a collection of 
+these objects. If you want sorting to work, it appears that one way is to 
+write your own custom collection deriving from BindingList<T> (where T is 
+the type of your object) and override the SupportsSearchingCore, 
+IsSortedCore, SortDirectionCore, SortPropertyCore properties and the 
+ApplySortCore and RemoveSortCore methods (plus various other methods if you 
+want to handle adding/removing items to the collection while it's sorted). 
+This is all described in detail in chapter 9 of "Data Binding with Windows 
+Forms 2.0" by Brian Noyes (publisher Addison Wesley), which I am currently 
+reading and highly recommend.
+
+A slightly different approach is described in 
+
+http://www.msdn.net/msdnmag/issues/05/08/CollectionsandDataBinding/default.aspx.
+
+DataGridView BindingList sort column
+
+http://www.personalmicrocosms.com/pages/dotnettips.aspx?c=28&t=47
+
+.NET 2.0: How to sort DataGridView columns without implementing IBindingList  
+
+If a DataGridView control is bound to data in a container that doesn't implement IBindingList, column sorting won't work. For example, I bound data in an ArrayList to a DataGridView and couldn't get sorting to work. 
+
+If you have access to the container's source code, you could implement IBindingList, but there's a much easier solution to this problem - create a DataTable (which does implement IBindingList), load the data table with the data, and bind the DataTable to the DataGridView. For example, here's some code from my Lexical Attraction game that uses this technique. The code instantiates a DataTable, and adds columns with the correct names and types. Then the DataTable is populated from the ArrayList. Finally the DataTable is bound to the DataGridView and the DataGridView sorts the data on the second column: 
+
+public HighScoresForm()
+{
+    InitializeComponent();
+
+    // Put the words data in a DataTable so that column sorting works.
+    DataTable dataTable = new DataTable();
+
+    dataTable.Columns.Add("Date", typeof(DateTime));
+    dataTable.Columns.Add("Score", typeof(int));
+
+    foreach (GameScore gameScore in Properties.Settings.Default.HighScores)
+    {
+        dataTable.Rows.Add(new object[] { gameScore.Date, gameScore.Score });
+    }
+
+    ScoresGridView.DataSource = dataTable;
+
+    ScoresGridView.Sort(ScoresGridView.Columns[1], ListSortDirection.Descending);
+}
+
+http://blogs.msdn.com/dchandnani/archive/2005/03/12/394438.aspx
+
+Say you want to bind the DataGridView to a list of Customers. Customer is a class you have created and has properties like ID, Name, etc. To do this you can simple do:
+
+            DataGridView dgv = new DataGridView();
+            BindingSource bs = new BindingSource();
+            BindingList<Customer> bList = new BindingList<Customer>();
+           
+            // Fill bList with Customers
+ 
+            bs.DataSource = bList;
+            dgv.DataSource = bs;
+

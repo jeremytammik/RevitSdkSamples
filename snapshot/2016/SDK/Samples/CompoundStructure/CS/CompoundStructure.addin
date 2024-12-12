@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CompoundStructure.dll</Assembly>
+    <ClientId>45A6AE41-480D-4ca0-8079-F8B7E3334394</ClientId>
+    <FullClassName>Revit.SDK.Samples.CompoundStructureCreation.CS.WallCompoundStructure</FullClassName>
+    <Text>Create CompoundStructure for wall</Text>
+    <Description>This command is to create CompoundStructure for wall.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

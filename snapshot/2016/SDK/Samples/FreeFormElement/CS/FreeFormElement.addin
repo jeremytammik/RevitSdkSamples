@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>FreeFormElement</Name>
+    <Assembly>FreeFormElement.dll</Assembly>
+    <ClientId>bd16f85d-baa4-4b02-84d6-87ecd6361d5f</ClientId>
+    <FullClassName>Revit.SDK.Samples.FreeFormElement.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'Miro'
+		'AsdkMiro.arx'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

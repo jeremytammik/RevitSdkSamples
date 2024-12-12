@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>Ribbon.dll</Assembly>
+    <ClientId>cb5c768a-dc2f-4289-a803-58ee5afc5708</ClientId>
+    <FullClassName>Revit.SDK.Samples.Ribbon.CS.Ribbon</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

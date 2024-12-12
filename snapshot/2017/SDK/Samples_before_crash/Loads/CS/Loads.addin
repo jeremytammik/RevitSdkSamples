@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Loads.dll</Assembly>
+    <ClientId>1f98ed8c-f1f6-4b06-8fc6-149667f9e529</ClientId>
+    <FullClassName>Revit.SDK.Samples.Loads.CS.Loads</FullClassName>
+    <Text>Loads</Text>
+    <Description>Show how to use load case, nature, usage and combination.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{c5f74062-80f3-4682-83d5-cf38c3b8ac2b}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FsTest</RootNamespace>
+    <AssemblyName>FsTest</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Name>FsTest</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\Revit Architecture 2009\Program\Revit.exe</StartProgram>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=2009.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <Name>RevitAPI</Name>
+      <AssemblyName>RevitAPI.dll</AssemblyName>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Program Files\Revit Architecture 2009\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <Name>System.Windows.Forms</Name>
+      <AssemblyName>System.Windows.Forms.dll</AssemblyName>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildingCoder.fs" />
+    <None Include="Script.fsx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\FSharp\1.0\Microsoft.FSharp.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

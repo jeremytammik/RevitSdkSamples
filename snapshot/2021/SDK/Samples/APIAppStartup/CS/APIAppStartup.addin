@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>APIAppStartup.dll</Assembly>
+    <ClientId>e0a2d7a5-030b-4d4e-8689-8406903ea241</ClientId>
+    <FullClassName>APIAppStartup.AppSample</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

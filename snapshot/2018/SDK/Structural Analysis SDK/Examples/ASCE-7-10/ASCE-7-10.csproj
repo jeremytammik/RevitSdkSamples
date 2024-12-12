@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F554DDCD-744E-4192-9448-0447A06E8AA9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASCE_7_10</RootNamespace>
+    <AssemblyName>ASCE-7-10</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeChecking">
+      <HintPath>..\..\..\..\..\References\CodeChecking\Platform\CodeChecking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CodeChecking.Storage">
+      <HintPath>..\..\..\..\..\References\CodeChecking\Platform\CodeChecking.Storage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CodeChecking.UI">
+      <HintPath>..\..\..\..\..\References\CodeChecking\Platform\CodeChecking.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExtensibleStorageFramework">
+      <HintPath>..\..\..\..\..\References\ExtensibleStorageFramework\ExtensibleStorageFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExtensibleStorageFramework.UI">
+      <HintPath>..\..\..\..\..\References\ExtensibleStorageFramework\ExtensibleStorageFramework.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\References\Revit\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\References\Revit\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main\LoadCombination.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\RevitApplicationDB.cs" />
+    <Compile Include="Main\RevitApplicationUI.cs" />
+    <Compile Include="Server\Server.cs" />
+    <Compile Include="Server\ServerUI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Addin\ASCE_7_10DB.addin" />
+    <Content Include="Addin\ASCE_7_10UI.addin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if exist ..\..\..\..\..\..\..\Tools\BuildEvents\BuildEvents.exe (
+..\..\..\..\..\..\..\Tools\BuildEvents\BuildEvents.exe  prepare_example  $(ProjectDir) $(TargetPath) ..\..\..\..\..\Bin\SDK\CodeChecking\VisualStudio\Examples\$(ProjectName)
+)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  		
+  </Target>
+  <Target Name="AfterBuild">
+  		
+  </Target>
+  -->
+</Project>

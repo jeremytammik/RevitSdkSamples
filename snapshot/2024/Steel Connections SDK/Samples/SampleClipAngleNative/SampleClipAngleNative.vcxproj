@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\StructuralConnectionsSDKSamples.Common.props" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{42debbf6-6fa4-4fec-97a4-c6a0c994a4fc}</ProjectGuid>
+    <RootNamespace>SampleClipAngleC</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SampleClipAngleNative</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\Binaries\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Binaries\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\Binaries\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Binaries\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;SAMPLECLIPANGLEC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ASInstallDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>SampleClipAngle.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <HeaderFileName>$(ProjectName)_h.h</HeaderFileName>
+      <InterfaceIdentifierFileName>$(ProjectName)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>$(ProjectName)_p.c</ProxyFileName>
+      <TypeLibraryName>$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;SAMPLECLIPANGLEC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ASInstallDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>SampleClipAngle.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <HeaderFileName>$(ProjectName)_h.h</HeaderFileName>
+      <InterfaceIdentifierFileName>$(ProjectName)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>$(ProjectName)_p.c</ProxyFileName>
+      <TypeLibraryName>$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;SAMPLECLIPANGLEC_EXPORTS;_WINDOWS;_USRDLL;_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ASInstallDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>SampleClipAngle.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <OutputDirectory>
+      </OutputDirectory>
+    </Midl>
+    <Midl>
+      <HeaderFileName>$(ProjectName)_h.h</HeaderFileName>
+    </Midl>
+    <Midl>
+      <InterfaceIdentifierFileName>$(ProjectName)_i.c</InterfaceIdentifierFileName>
+    </Midl>
+    <Midl>
+      <ProxyFileName>$(ProjectName)_p.c</ProxyFileName>
+      <TypeLibraryName>$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;SAMPLECLIPANGLEC_EXPORTS;_WINDOWS;_USRDLL;_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ASInstallDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>SampleClipAngle.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <HeaderFileName>$(ProjectName)_h.h</HeaderFileName>
+      <InterfaceIdentifierFileName>$(ProjectName)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>$(ProjectName)_p.c</ProxyFileName>
+      <TypeLibraryName>$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="astbitmapcontrol.h" />
+    <ClInclude Include="astcheckboxcontrol.h" />
+    <ClInclude Include="astcombotablecontrol.h" />
+    <ClInclude Include="astgratingcontrol.h" />
+    <ClInclude Include="astmodelrolecontrol.h" />
+    <ClInclude Include="astocxgrid.h" />
+    <ClInclude Include="astprofilecontrol.h" />
+    <ClInclude Include="aststaticprompt.h" />
+    <ClInclude Include="aststatictextcontrol.h" />
+    <ClInclude Include="astunitcontrol.h" />
+    <ClInclude Include="astweldcontrol.h" />
+    <ClInclude Include="boltstandards.h" />
+    <ClInclude Include="ClipAngle.h" />
+    <ClInclude Include="font.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="NativeClipAnglePage.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="unitsmanager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="astbitmapcontrol.cpp" />
+    <ClCompile Include="astcheckboxcontrol.cpp" />
+    <ClCompile Include="astcombotablecontrol.cpp" />
+    <ClCompile Include="astgratingcontrol.cpp" />
+    <ClCompile Include="astmodelrolecontrol.cpp" />
+    <ClCompile Include="astocxgrid.cpp" />
+    <ClCompile Include="astprofilecontrol.cpp" />
+    <ClCompile Include="aststaticprompt.cpp" />
+    <ClCompile Include="aststatictextcontrol.cpp" />
+    <ClCompile Include="astunitcontrol.cpp" />
+    <ClCompile Include="astweldcontrol.cpp" />
+    <ClCompile Include="boltstandards.cpp" />
+    <ClCompile Include="ClipAngle.cpp" />
+    <ClCompile Include="ClipAngleApp.cpp" />
+    <ClCompile Include="font.cpp" />
+    <ClCompile Include="NativeClipAnglePage.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="unitsmanager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="SampleClipAngleNative.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClipAngle.rgs" />
+    <None Include="SampleClipAngle.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SampleClipAngle.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

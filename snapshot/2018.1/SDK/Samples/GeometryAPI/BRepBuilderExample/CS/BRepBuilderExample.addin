@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>BRepBuilderExample</Name>
+    <Assembly>BRepBuilderExample.dll</Assembly>
+    <ClientId>2a66f35e-e1ce-469d-9f92-c33ac995f29d</ClientId>
+    <FullClassName>Revit.SDK.Samples.BRepBuilderExample.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

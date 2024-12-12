@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<RevitAddIns>  
+  <AddIn Type="Command">
+    <Assembly>PanelSchedule.dll</Assembly>
+    <ClientId>D8B90E03-C357-47a0-9F03-A9560DAE57BA</ClientId>
+    <FullClassName>Revit.SDK.Samples.PanelSchedule.CS.PanelScheduleExport</FullClassName>
+    <Text>Panel Schedule Sample - Export Data</Text>
+    <Description>Exoport Revit Panle Schedule(s) to CSV file(s) or HTML page(s).</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>PanelSchedule.dll</Assembly>
+    <ClientId>B19F4B29-BA8E-408b-AD2B-9C6269DBE2DB</ClientId>
+    <FullClassName>Revit.SDK.Samples.PanelSchedule.CS.InstanceViewCreation</FullClassName>
+    <Text>Panel Schedule Sample - View Instance Creation</Text>
+    <Description>Create Panel Schedule View instance for a panel.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>PanelSchedule.dll</Assembly>
+    <ClientId>19E4C839-3DB2-4baa-BF0F-66A912B329D7</ClientId>
+    <FullClassName>Revit.SDK.Samples.PanelSchedule.CS.SheetImport</FullClassName>
+    <Text>Panel Schedule Sample - Sheet Instance Creation</Text>
+    <Description>Place Panel Schedule View instance on a sheet view.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

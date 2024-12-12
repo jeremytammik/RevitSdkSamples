@@ -1,0 +1,349 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057\deflangfe2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.14393}{\*\mmathPr\mnaryLim0\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\nowidctlpar\b\f0\fs20 Application:\b0  FabricationPartLayout\line\b Revit Platform:\b0  MEP\line\b Revit Version:\b0  2017.0\line\b First Released For:\b0  2016.0\line\b Programming Language:\b0  C#\line\b Skill Level:\b0  Medium\line\b Category:\b0  MEP\line\b Type:\b0  ExternalCommand\line\line\b Subject:\b0  Fabrication Part\line\b Summary:\b0  \line\kerning2 This sample shows how to use the Fabrication Part API to create a sample layout and make modifications to fabrication data in the model. This includes:\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720 rectangular and round ductwork\par
+{\pntext\f2\'B7\tab}tap placement\par
+{\pntext\f2\'B7\tab}rotations\par
+{\pntext\f2\'B7\tab}straight optimizations\par
+{\pntext\f2\'B7\tab}connections to a generic Revit family instance\par
+{\pntext\f2\'B7\tab}stretch fabrication part fitting to a target element\par
+{\pntext\f2\'B7\tab}converting design elements into fabrication parts\par
+{\pntext\f2\'B7\tab}renumbering the straight/coupling fabrication parts\par
+{\pntext\f2\'B7\tab}loading and unloading of item files\par
+{\pntext\f2\'B7\tab}exporting fabrication parts to PCF and MAJ\par
+{\pntext\f2\'B7\tab}accessing fabrication part mesh geometry.\par
+{\pntext\f2\'B7\tab}flip a fabrication part\par
+
+\pard\nowidctlpar\kerning0\f1\par
+\b\f0 Classes:\b0  \par
+
+\pard\nowidctlpar\fi180\li180 Autodesk.Revit.DB.Connector\par
+Autodesk.Revit.DB.ConnectorSet\par
+Autodesk.Revit.DB.Document\par
+Autodesk.Revit.DB.ElementId\par
+Autodesk.Revit.DB.FabricationAncillaryUsage\par
+Autodesk.Revit.DB.FabricationConfiguration\par
+Autodesk.Revit.DB.FabricationDimensionDefinition\par
+Autodesk.Revit.DB.FabricationItemFile\par
+Autodesk.Revit.DB.FabricationItemFolder\par
+Autodesk.Revit.DB.FabricationRodInfo\par
+Autodesk.Revit.DB.FabricationPart\par
+Autodesk.Revit.DB.FabricationService\par
+Autodesk.Revit.DB.FabricationServiceButton\par
+Autodesk.Revit.DB.FamilyInstance\par
+Autodesk.Revit.DB.Level\par
+Autodesk.Revit.DB.MEPConnectorInfo\par
+Autodesk.Revit.DB.Parameter\par
+Autodesk.Revit.DB.Fabrication.CustomDataType\par
+Autodesk.Revit.DB.Fabrication.DesignToFabricationConverter\par
+Autodesk.Revit.DB.Fabrication.DesignToFabricationConverterResult\par
+Autodesk.Revit.DB.Fabrication.FabricationAncillaryType\par
+Autodesk.Revit.DB.Fabrication.FabricationAncillaryUsageType\par
+Autodesk.Revit.DB.Fabrication.FabricationPartCompareType\par
+Autodesk.Revit.DB.Fabrication.FabricationPartFitResult\par
+Autodesk.Revit.DB.Fabrication.FabricationPartRouteEnd\par
+Autodesk.Revit.DB.Fabrication.FabricationUtils\par
+Autodesk.Revit.UI.IExternalCommand\line\par
+\par
+\cf1\par
+\cf0\f1\lang1036\par
+
+\pard\nowidctlpar\b\f0\lang1033 Project Files:\b0  \i\par
+\i0 FabricationPartLayout.cs\par
+
+\pard\nowidctlpar\li360 It contains the class FabricationPartLayout which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to create a sample layout containing fabrication parts.\par
+
+\pard\nowidctlpar\par
+OptimizeStraights.cs\par
+
+\pard\nowidctlpar\li360 It contains the class OptimizeStraights which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to use the Optimize Lengths method based on a user selection.\par
+
+\pard\nowidctlpar\par
+StretchAndFit.cs\par
+
+\pard\nowidctlpar\li360 It contains the class StretchAndFit which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to use the StretchAndFit method based on a user selection.\par
+\par
+
+\pard\nowidctlpar ConvertToFabrication.cs\par
+
+\pard\nowidctlpar\li360 It contains the class ConvertToFabrication which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to use the DesignToFabrication method based on a user selection.\par
+\par
+
+\pard\nowidctlpar PartRenumber.cs\par
+
+\pard\nowidctlpar\li360 It contains the class PartRenumber which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to use the FabricationPart.ItemNumber and renumber a selection of parts, and using the Fabrication.IsSameAs method.\par
+\par
+
+\pard\nowidctlpar ButtonPaletteExclusions.cs\par
+
+\pard\nowidctlpar\li360 It contains the class ButtonPaletteExclusions which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to override the default fabrication service palette and button exclusions for routing operations.\par
+\par
+
+\pard\nowidctlpar Ancillaries.cs\par
+
+\pard\nowidctlpar\li360 It contains the class Ancillaries which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to obtain the ancillary information for a selected fabrication part.\par
+\par
+
+\pard\nowidctlpar CustomData.cs\par
+
+\pard\nowidctlpar\li360 It contains the classes GetCustomData and SetCustomData which inherit from the interface IExternalCommand and implements the Execute method. This class shows the user how to obtain the ancillary information for a selected fabrication part. The GetCustomData class shows a user how to obtain fabrication custom data on a fabrication part, whilst the SetCustomData class shows a user how to set fabrication custom data.\par
+\par
+
+\pard\nowidctlpar ExportToPCF.cs\par
+
+\pard\nowidctlpar\li360 It contains the class ExportToPCF which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to export a selection of fabrication parts to a PCF file.\par
+\par
+
+\pard\nowidctlpar FabPartGeometry.cs\par
+
+\pard\nowidctlpar\li360 It contains the class FabPartGeometry which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to access fabrication part mesh geometry.\par
+\par
+
+\pard\nowidctlpar PartInfo.cs\par
+
+\pard\nowidctlpar\li360 It contains the class PartInfo which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to get a variety of fabrication part properties.\par
+\par
+
+\pard\nowidctlpar HangerRods.cs\par
+
+\pard\nowidctlpar\li360 It contains the classes DetachRods, DoubleRodLength, HalveRodLength, IncreaseRodStructureExtension and DecreaseRodStructureExtension which inherit from the interface IExternalCommand and implements the Execute method. These classes show a user how to detach hanger rods from their hosted structure, how to change the size of the rod lengths and also the size of the rod structure extensions.\par
+\par
+
+\pard\nowidctlpar SplitStraight.cs\par
+
+\pard\nowidctlpar\li360 It contains the class SplitStraight which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to split a straight into two segments.\par
+\par
+
+\pard\nowidctlpar ItemFile.cs\par
+    It contains the classes LoadAndPlaceNextItemFile and UnloadUnusedItemFiles which inherit from the interface IExternalCommand and implements the Execute command. These classes show a user how to load and unload fabrication item files from within the configuration\rquote s item folders structure.\par
+\par
+SaveAsFabricationJob.cs\par
+    It contains the class ExportToMAJ which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to export a selection of fabrication parts to a MAJ file.\par
+\par
+
+\pard\nowidctlpar FlipPart.cs\par
+
+\pard\nowidctlpar\li360 It contains the class FlipPart which inherits from interface IExternalCommand and implements the Execute method. This class shows the user how to flip a fabrication part to the opposite direction.\par
+\par
+
+\pard\nowidctlpar\li360\par
+
+\pard\nowidctlpar\b Description:\b0  \par
+This sample provides the following functionalities.\par
+
+\pard\nowidctlpar\fi-360\li360\tx360 -\tab Creates a sample layout from fabrication parts\par
+-\tab Access fabrication configuration information\par
+-\tab Connects fabrication taps to fabrication straight parts\par
+-\tab Rotates fabrication parts about its connected end\par
+-\tab Modify specification\par
+-\tab Modify insulation specification\par
+- \tab Modify fabrication material\par
+-\tab Modify fabrication connector\par
+-\tab Place fabrication taps on fabrication straight parts\par
+-   \tab Place fabrication hangers on fabrication straight parts\par
+-\tab Optimize the lengths of fabrication straight parts based on user selection\par
+-\tab Stretch and fit a fabrication part to a target connector.\par
+-\tab Convert design elements into fabrication parts\par
+-\tab Renumber a selection of fabrication parts\par
+-\tab View ancillary data\par
+-\tab Set service palette and button exclusions\par
+-\tab View and set part custom data\par
+-\tab Export a selection of fabrication parts to a PCF file\par
+-\tab View fabrication part data\par
+-\tab Adjust hanger rod lengths, structural extensions and detach from their structural hosts\par
+-\tab Split straights into two equal segments\par
+-\tab Load and place additional parts\par
+-\tab Unload unused additional parts\par
+-\tab Export a selection of fabrication parts to a MAJ file\par
+-\tab Access fabrication part mesh geometry.\par
+-\tab Flip a fabrication part to the opposite direction.\line\par
+
+\pard\nowidctlpar\b Instructions:\cf1\b0  \f1\par
+\cf0\f0 Open Revit application.\par
+
+\pard\nowidctlpar\fi-360\li360\tx360 1.\tab Fabrication Part Layout\par
+
+\pard\nowidctlpar\li765 a.   Load FabricationPartLayout.rvt\par
+b.   Execute the command.\par
+Expected result: Draws a sample layout containing fabrication parts connected to the existing Revit AHU instance.\par
+\par
+
+\pard\nowidctlpar\fi-360\li360\tx360 2.\tab Optimize Straights\par
+
+\pard\nowidctlpar\fi-360\li1080\tx1080 a.\tab Load FabricationPartLayout.rvt or add some fabrication part straights.\par
+
+\pard\nowidctlpar\fi-360\li1080 b.\tab Make a selection of the fabrication parts, making sure to select some of the longer fabrication part straights.\par
+c.\tab Execute the command\par
+\par
+
+\pard\nowidctlpar\li720 Expected result: Fabrication part lengths longer than the standard length will be optimized into smaller straight parts.\par
+
+\pard\nowidctlpar\li765\par
+\par
+
+\pard\nowidctlpar\fi-360\li360\tx360 3.\tab Stretch and Fit\par
+
+\pard\nowidctlpar\fi-360\li1080\tx1080 a.\tab Load StretchAndFit.rvt.\par
+
+\pard\nowidctlpar\fi-360\li1080 b.\tab Select the two radius bends in the model.\par
+c.\tab Execute the command\par
+\par
+
+\pard\nowidctlpar\li720 Expected result: The radius bend should stretch and fit and connect to the selected straight.\par
+
+\pard\nowidctlpar\par
+
+\pard\nowidctlpar\fi-360\li360\tx360 4. \tab Convert To Fabrication\par
+
+\pard\nowidctlpar\fi-360\li1080\tx1080 a.\tab ConvertToFabrication.rvt.\par
+
+\pard\nowidctlpar\fi-360\li1080 b.\tab Select the duct layout\par
+c.\tab Execute the command\par
+\par
+
+\pard\nowidctlpar\li720 Expected result: The duct layout should convert to fabrication parts.\par
+
+\pard\nowidctlpar\par
+\par
+5. Part Renumber\par
+\tab a. Make a selection of fabrication parts\par
+\tab b. Execute the command\par
+\tab\par
+
+\pard\nowidctlpar\li720 Expected result: The fabrication parts Item Number property should be filled in and all parts that are the same have the same number. The fields ignored are based on ignoring the part\rquote s notes, order number and service.\par
+
+\pard\nowidctlpar\par
+6. Button and Palette Exclusions\par
+\tab a. Load ButtonPaletteExclusions.rvt\par
+\tab b. Execute the command\par
+\par
+
+\pard\nowidctlpar\li720 Expected result: The Square Bend button is excluded and the Round Bought Out service palette is excluded.\par
+
+\pard\nowidctlpar\par
+7. Ancillaries\par
+\tab a. Execute the command\par
+\tab b. Select a fabrication part\par
+\par
+
+\pard\nowidctlpar\li720 Expected result: A dialog should be presented with the ancillary information for the selected fabrication part.\par
+
+\pard\nowidctlpar\par
+8. Get Custom Data\par
+\tab a. Load CustomData.rvt\par
+\tab b. Execute the command\par
+\tab c. Select a fabrication part\par
+\par
+
+\pard\nowidctlpar\li720 Expected result: A dialog should be presented with the custom data information for the selected fabrication part.\par
+
+\pard\nowidctlpar\par
+9. Set Custom Data\par
+\tab a. Load CustomData.rvt\par
+\tab b. Execute the command\par
+\tab c. Select a fabrication part\par
+\par
+
+\pard\nowidctlpar\li720 Expected result: A dialog should be presented with the custom data information for the selected fabrication part, detailing the before and after values.\par
+
+\pard\nowidctlpar\par
+\par
+10. Export to PCF\par
+\tab a. Select some fabrication parts\par
+\tab b. Execute the command\par
+\par
+\tab Expected result: A PCF file will be created at the specified location.\par
+\par
+11. Display Part Info\par
+\tab a. Execute the command\par
+\tab b. Select a fabrication part\par
+\par
+\tab Expected result: A dialog should be presented with fabrication part information.\par
+\par
+12. Detach Hanger Rods\par
+\tab a. Load HangerRods.rvt\par
+\tab b. Execute the command\par
+\tab c. Select a fabrication part hanger\par
+\par
+\tab Expected result: The hanger rods should no longer be hosted by their structural host.\par
+\par
+13. Double Rod Lengths\par
+\tab a. Load HangerRods.rvt\par
+\tab b. Execute the command\par
+
+\pard\nowidctlpar\li720 c. Select a fabrication part hanger that is not attached to structure. Use the Detach Hanger Rods command first, if necessary\par
+
+\pard\nowidctlpar\par
+\tab Expected result: The hanger rod lengths should double in size.\par
+\par
+14. Halve Rod Lengths\par
+\tab a. Load HangerRods.rvt\par
+
+\pard\nowidctlpar\fi720 b. Execute the command\par
+
+\pard\nowidctlpar\li720 c. Select a fabrication part hanger that is not attached to structure. Use the Detach Hanger Rods command first, if necessary\par
+\par
+Expected result: The hanger rod lengths should halve in size.\par
+
+\pard\nowidctlpar\par
+15. Increase Rod Structure Extension\par
+\tab a. Load HangerRods.rvt\par
+\tab b. Execute the command\par
+\tab c. Select a fabrication part hanger that is attached to structure. \par
+\par
+
+\pard\nowidctlpar\li720 Expected result: The hanger rod lengths will increase by 1 foot in length and are still attached to structure.\par
+
+\pard\nowidctlpar\par
+16. Decrease Rod Structure Extension\par
+\tab a. Load HangerRods.rvt\par
+\tab b. Execute the command\par
+\tab c. Select a fabrication part hanger that is attached to structure. \par
+\par
+
+\pard\nowidctlpar\li720 Expected result: The hanger rod lengths will decrease by 1 foot in length and are still attached to structure.\par
+
+\pard\nowidctlpar\par
+17. Split Straight\par
+\tab a. Execute the command\par
+\tab b. Select a fabrication part straight segment\par
+\par
+\tab Expected result: The straight will split into two equal segments. \par
+18. Load and Place Next Item File\par
+\tab a. Load a project with a valid fabrication configuration that you have access to the source.\par
+\tab b. Execute the command.\par
+\par
+
+\pard\nowidctlpar\li720 Expected result: The first item file that has not been previously loaded will be loaded into the configuration. A new fabrication part will be created from the loaded item file, placed and selected into the model.\par
+
+\pard\nowidctlpar\par
+19. Unload Unused Item Files\par
+
+\pard\nowidctlpar\li720 a. Load a project that has item files that have been loaded into the configuration but have not been used.\par
+b. Execute the command.\par
+\par
+Expected result: The unused loaded item files will be unloaded from the configuration.\par
+
+\pard\nowidctlpar\par
+20. Export to MAJ\par
+\tab a. Make a selection of fabrication parts.\par
+\tab b. Execute the command\par
+\par
+\tab Expected result: A MAJ file will be created at the specified location. \par
+\par
+21. Access Fabrication Part Geometry\par
+\tab a. Select some fabrication parts\par
+\tab b. Execute the command\par
+\par
+\tab Expected result: Mesh triangle face geometry will be exported to CSV files.\par
+\par
+22. Flip Fabrication Part\par
+\tab a. Select a fabrication part\par
+\tab b. Execute the command\par
+\par
+\tab Expected result: The fabrication part will to the opposite direction.\par
+\par
+}
+ 

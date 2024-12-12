@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>AutoUpdate.dll</Assembly>
+    <ClientId>cba75037-f457-419f-b182-b24c15ff772a</ClientId>
+    <FullClassName>Revit.SDK.Samples.AutoUpdate.CS.ExternalApplication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

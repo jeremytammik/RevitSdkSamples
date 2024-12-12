@@ -1,0 +1,53 @@
+<rexf:REXExtensionControl x:Class="REX.ContentGeneratorWPF.Resources.Dialogs.UserControlView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:rexf="clr-namespace:REX.Common;assembly=REX.Foundation.WPF"
+    xmlns:rexc="clr-namespace:REX.Controls.WPF;assembly=REX.Controls.WPF">
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="UserControl.Loaded" >
+            <BeginStoryboard>
+                <Storyboard Name="storyBoardZ">
+                    <DoubleAnimation
+            Storyboard.TargetName="rotationZ" 
+            Storyboard.TargetProperty="Angle" 
+            From="0" To="360" Duration="0:0:15" RepeatBehavior="Forever"/>
+                </Storyboard>
+            </BeginStoryboard>           
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Grid Background="White">
+        <Border BorderThickness="1" BorderBrush="Gray">
+            <Viewport3D x:Name="viewport">
+                <ModelVisual3D x:Name="model">
+                    <ModelVisual3D.Content>
+                        <Model3DGroup x:Name="group">
+                            <GeometryModel3D>
+                                <GeometryModel3D.Transform>
+                                    <RotateTransform3D>
+                                        <RotateTransform3D.Rotation>
+                                            <AxisAngleRotation3D  x:Name="rotationZ" 
+                                                          Angle="0" Axis="0,0,1"/>
+                                        </RotateTransform3D.Rotation>
+                                    </RotateTransform3D>
+                                </GeometryModel3D.Transform>
+                                <GeometryModel3D.Geometry>
+                                    <MeshGeometry3D x:Name="geometry"/>
+                                </GeometryModel3D.Geometry>
+                                <GeometryModel3D.Material>
+                                    <DiffuseMaterial Brush="Gray" />
+                                </GeometryModel3D.Material>
+                            </GeometryModel3D>
+                            <Model3DGroup>
+                                <DirectionalLight x:Name="directionLight" Color="White" Direction="2,0,0" />
+                                <DirectionalLight x:Name="directionLight2" Color="White" Direction="2,0,0" />
+                            </Model3DGroup>
+                        </Model3DGroup>
+                    </ModelVisual3D.Content>
+                </ModelVisual3D>
+                <Viewport3D.Camera>
+                    <OrthographicCamera x:Name="camera" Position="50,50,-100" UpDirection="1,1,0" LookDirection="-0,-0,1" />
+                </Viewport3D.Camera>
+            </Viewport3D>
+        </Border>
+    </Grid>
+</rexf:REXExtensionControl>

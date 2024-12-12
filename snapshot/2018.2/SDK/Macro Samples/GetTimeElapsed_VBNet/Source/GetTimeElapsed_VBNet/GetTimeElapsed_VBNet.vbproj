@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+       
+       Project Type Guids - Must include {A860303F-1F3F-4691-B57E-529FC101A107};{F184B08F-C81C-45F6-A57F-5ABD9991F28F} for a VB.NET VSTA project.
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       ProductVersion - The version of Visual Studio.
+       SchemaVersion - The project file schema version.
+       OutputType - Must be "Library" for VSTA.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+       TargetFrameworkVersion - The version of the .NET Framework this project targets.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{A860303F-1F3F-4691-B57E-529FC101A107};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">RevitVSTA</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GetTimeElapsed_VBNet</RootNamespace>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{C1499A1C-B9A0-4C5F-AC2E-E6F7C0B787D9}</ProjectGuid>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "RevitVSTA" configuration is
+       selected.
+
+       DebugType - If full enables a debugger to be attached to a running program.
+                   If pdbonly allows source code debugging when the program is started in the debugger but will only 
+                   display assembler when the running program is attached to the debugger.
+                   If none debugging is disabled.
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       DefineDebug - If true, defines the DEBUG. If false, DEBUG is not defined.
+       DefineTrace - If true, defines the TRACE. If false, TRACE is not defined.
+       NoWarn - Listed warning numbers will be ignored.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'RevitVSTA|AnyCPU' ">
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <Optimize>True</Optimize>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <DefineConstants>TRACE=1</DefineConstants>
+    <OutputPath>..\..\Addin\</OutputPath>
+    <AssemblyName>GetTimeElapsed_VBNet</AssemblyName>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="RevitAPIUI, Version=2011.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AddIn">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+  -->
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ThisApplication.designer.vb">
+      <DependentUpon>ThisApplication.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ThisApplication.vb">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A860303F-1F3F-4691-B57E-529FC101A107}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{C1B21C64-9E6F-4923-A89D-9F958503C1CE}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="Architecture2011">
+          <HostItem Name="ThisApplication" Code="ThisApplication.vb" CanonicalName="ThisApplication" DisplayName="ThisApplication" Blueprint="ThisApplication.Designer.xml" GeneratedCode="ThisApplication.designer.vb" />
+        </Host>
+        <ProjectClient>
+          <HostIdentifier>MEP2011</HostIdentifier>
+          <InProcHost>{f2d1070d-feff-4610-9403-9476ff28253d}</InProcHost>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

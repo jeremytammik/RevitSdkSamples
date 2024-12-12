@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>PathReinforcement.dll</Assembly>
+    <ClientId>38342e07-5a8f-4198-bcaf-2dda43b8ad0a</ClientId>
+    <FullClassName>Revit.SDK.Samples.PathReinforcement.CS.Command</FullClassName>
+    <Text>PathReinforcement</Text>
+    <Description>Display path reinforcement properties.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

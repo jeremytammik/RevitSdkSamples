@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+      <Text>Material Quantities</Text>
+      <Assembly>MaterialQuantities.dll</Assembly>
+      <ClientId>7E5CAC0D-F3D8-4040-89D6-0828D681561B</ClientId>
+      <FullClassName>Revit.Samples.MaterialQuantities.Command</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+   </AddIn>
+</RevitAddIns>

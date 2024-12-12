@@ -1,0 +1,169 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Editing Family Instances</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs2-5.htm">next</a>
+<a class="j" href="labs2-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we explore how to modify an existing family instance.
+We select all doors in current document, move them up by 0.2 feet and widen them.</p>
+
+<p>To begin with, we add a new command to the Labs2 module.
+Retrieve all doors in the current document using filters.
+Go through the returned ElementSet and move doors up using the
+<code>Document.Move()</code> method. Increasing the door width
+can be achieved by changing the corresponding parameter value.
+Before running the command, please ensure that there is at least
+one door in the model. The model created in Lab2-0 is an optional
+document to work on.</p>
+
+<pre title="C# Lab2_4_EditFamilyInstance command" class="jtcollapse">
+  /// &lt;summary&gt;
+  /// Edit all doors in the current project.
+  /// Move the doors up 0.2 feet via Document.Move() method.
+  /// and widen the door 1 foot by changing the Parameter value.
+  /// &lt;/summary&gt;
+  public class Lab2_4_EditFamilyInstance : IExternalCommand
+  {
+    public CmdResult Execute(
+      ExternalCommandData commandData,
+      ref string msg, ElementSet els )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      try
+      {
+        // find doors in the model by filter:
+        Filter filterDoor = app.Create.Filter.NewCategoryFilter( BuiltInCategory.OST_Doors );
+        Filter filterFamilyInstance = app.Create.Filter.NewTypeFilter(typeof(FamilyInstance));
+        Filter filterAnd = app.Create.Filter.NewLogicAndFilter(filterDoor, filterFamilyInstance);
+        List&lt;Element&gt; doors = new List&lt;Element&gt;();
+        doc.get_Elements( filterAnd, doors );
+        foreach( FamilyInstance door in doors )
+        {
+          // move door up 0.2 feet:
+          XYZ xyzVector = new XYZ( 0, 0, 0.2 );
+          doc.Move( door, xyzVector );
+          // widen the door by changing parameter value:
+          Parameter par = door.Symbol.get_Parameter( BuiltInParameter.WINDOW_WIDTH );
+          if( null != par )
+          {
+            double width = par.AsDouble();
+            width += 1.0;
+            par.Set(width);
+          }
+        }
+      }
+      catch( Exception ex )
+      {
+        LabUtils.InfoMsg( ex.Message );
+      }
+      return CmdResult.Succeeded;
+    }
+  }
+  #endregion // Lab2_4_EditFamilyInstance
+</pre>
+
+<pre title="VB Lab2_4_EditFamilyInstance command" class="jtcollapse">
+#Region "Lab2_4_EditFamilyInstance"
+    ''' &lt;summary&gt;
+    ''' Edit all doors in the current project.
+    ''' Move the doors up 0.2 feet via Document.Move() method.
+    ''' Widen the door 1 foot by changing the Parameter value.
+    ''' &lt;/summary&gt;
+    Public Class Lab2_4_EditFamilyInstance
+        Implements IExternalCommand
+
+        Public Function Execute( _
+                ByVal commandData As ExternalCommandData, _
+                ByRef msg As String, _
+                ByVal els As ElementSet) _
+                As IExternalCommand.Result _
+                Implements IExternalCommand.Execute
+
+            Dim app As Application = commandData.Application
+            Dim doc As Document = app.ActiveDocument
+            Dim ss As ElementSet = doc.Selection.Elements
+
+            'Find the destination door in the model by Filter
+            Try
+                Dim filterDoor As Filter = app.Create.Filter.NewCategoryFilter(BuiltInCategory.OST_Doors)
+                Dim filterFamilyInstance As Filter = app.Create.Filter.NewTypeFilter(GetType(FamilyInstance))
+                Dim filterAnd As Filter = app.Create.Filter.NewLogicAndFilter(filterDoor, filterFamilyInstance)
+                Dim listDoors As List(Of Element) = New List(Of Element)()
+                Dim bRet As Boolean = doc.Elements(filterAnd, listDoors)
+                'Edit all doors in current document.
+                Dim door As FamilyInstance = Nothing
+                For Each elem As Element In listDoors
+                    door = TryCast(elem, FamilyInstance)
+                    If door IsNot Nothing Then
+                        'Move up the door 0.2 feet.
+                        Dim xyzVector As Autodesk.Revit.Geometry.XYZ
+                        xyzVector = New Autodesk.Revit.Geometry.XYZ(0, 0, 0.2)
+                        doc.Move(door, xyzVector)
+                        'Widen the door by changing Parameter value.
+                        Dim par As Parameter = door.Symbol.Parameter(BuiltInParameter.WINDOW_WIDTH)
+                        If par IsNot Nothing Then
+                            Dim width As Double = par.AsDouble()
+                            width += 1.0
+                            par.Set(width)
+                        End If
+                    End If
+                Next elem
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+            Return IExternalCommand.Result.Succeeded
+
+        End Function
+    End Class
+
+#End Region
+</pre>
+
+<p>Compile and link the project and update the Revit.ini file accordingly.</p>
+
+<p>Run and debug the command and discuss the code with the course instructor and your peers.</p>
+
+<a class="j" href="labs2-5.htm">next</a>
+<a class="j" href="labs2-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j">copyright &copy; 2007-2008 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

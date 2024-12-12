@@ -1,0 +1,212 @@
+# Revit Export Layers
+# Maps Categories and Subcategories to layer names and color numbers
+# Category <tab> Subcategory <tab> Layer name <tab> Color number <tab>
+# Cut layer name <tab> Cut color number
+# Do not remove the colon (:) after certain category names.
+# -----------------------------------------------------
+Area Polylines		A-_AREA---_A	2	A-_AREA---_A	2
+Area Tags		A-_ROOMNAME_A	2	A-_ROOMNAME_A	2
+Callouts		A-_ANOTSYBL_E	6	A-_ANOTSYBL_E	6
+Casework		A-_FLORCASE_E	3	A-_FLORCASE_E	3
+Casework Tags		A-_FLORCASE_T	5	A-_FLORCASE_T	5
+Ceiling Tags		A-_CEIL----_A	6	A-_CEIL----_A	6
+Ceilings		A-_CEIL----_E	5	A-_CEIL----_E	5
+Ceilings	Cut Pattern	A-CEILPATT_E	1	A-CEILPATT_E	1
+Ceilings	Surface Pattern	A-CEIL----_E	1	A-CEIL----_E	1
+Color Fill		A-_ROOMNAME_A	2	A-_ROOMNAME_A	2
+Color Fill Legends		A-_AREACALC_L-	5	A-_AREACALC_L-	5
+Columns		A-_COLN----_E	4	A-_COLN----_E	4
+Constraints		A-_--------_A	2	A-_--------_A	2
+Contour Labels		0	2	0	2
+Curtain Panel Tags		A-_CLAD----_AD	6	A-_CLAD----_AD	6
+Curtain Panels		A-_CLAD----_E	6	A-_CLAD----_E	6
+Curtain Wall Mullions		A-_CLAD----_E1	3	A-_CLAD----_E1	3
+Demolished		--_--------_R	3	--_--------_R	3
+Detail Item Tags		A-_--------__A	3	A-_--------__A	3
+Detail Items		A-_--------_-D0	3	A-_--------_-D0	3
+Dimensions		A-ANOT----_D	1	A-ANOT----_D	1
+Dimensions	Automatic Sketch Dimensions	A-ANOT----_D	1	A-ANOT----_D	1
+Door Tags		A-_DOOR----_A	6	A-_DOOR----_A	6
+Doors		A-_DOOR----_E	1	A-_DOOR----_E	1
+Doors	Frame/Mullion	A-_DOOR----_E	1	A-_DOOR----_E	1
+Doors	Glass	A-_DOOROPEN_E	1	A-_DOOROPEN_E	1
+Doors	Opening	A-_DOOR----_E	6	A-_DOOR----_E	6
+Doors	Panel	A-_DOOR----_E	1	A-_DOOR----_E	1
+Electrical Equipment		E-_ELECEQPT_E	4	E-_ELECEQPT_E	4
+Electrical Equipment Tags		E-_ELECEQPT_A	2	E-_ELECEQPT_A	2
+Electrical Fixture Tags		E-_ELECFIXT_A	2	E-_ELECFIXT_A	2
+Electrical Fixtures		E-_ELECFIXT_E	2	E-_ELECFIXT_E	2
+Elevations		A-_--------_-1	6	A-_--------_-1	6
+Entourage		A-_--------_E	3	A-_--------_E	3
+Existing		--_--------_E	3	--_--------_E	3
+Floors		A-_FLOR----_E	6	A-_FLOR----_E	6
+Floors	Cut Pattern	A-_FLORPATT_E	8	A-_FLORPATT_E	8
+Floors	Hidden Lines	A-_FLOR----_H	5	A-_FLOR----_H	5
+Floors	Slab Edges	A-_FLOR----_E	6	A-_FLOR----_E	6
+Floors	Surface Pattern	A-_FLORPATT_E	8	A-_FLORPATT_E	8
+Furniture		A-_FURT----_E	2	A-_FURT----_E	2
+Furniture System Tags		A-_FURTSYST_A	3	A-_FURTSYST_A	3
+Furniture Systems		A-_FURTSYST_E	2	A-_FURTSYST_E	2
+Furniture Tags		A-_FURT----_E	3	A-_FURT----_E	3
+Generic Annotations		A-_--------_A	2	A-_--------_A	2
+Generic Model Tags		A-_--------_A	2	A-_--------_A	2
+Generic Models		A-_--------_-3	6	A-_--------_-3	6
+Grid Heads		A-_ANOTGRID_E	1	A-_ANOTGRID_E	1
+Grids		A-_ANOTGRID_E	1	A-_ANOTGRID_E	1
+Imports in Families		A-_--------_E-	1	A-_--------_E-	1
+Keynote Tags		A-_--------_A	2	A-_--------_A	2
+Level Heads		A-_FLORLEVL_E	6	A-_FLORLEVL_E	6
+Levels		A-_FLORLEVL_E	6	A-_FLORLEVL_E	6
+Lighting Fixture Tags		E-_LIGTSWIT_A	1	E-_LIGTSWIT_A	1
+Lighting Fixtures		E-_LIGT----_E	4	E-_LIGT----_E	4
+Lines		A-_--------_E-	5	A-_--------_E-	5
+Lines	<Area Boundary>	A-_--------_E-	4	A-_--------_E-	4
+Lines	<Beyond>	A-_--------_E3	5	A-_--------_E3	5
+Lines	<Centerline>	A-_--------_ER	5	A-_--------_ER	5
+Lines	<Demolished>	A-_--------_E3	6	A-_--------_E3	6
+Lines	<Hidden>	A-_--------_E3	5	A-_--------_E3	5
+Lines	<Overhead>	A-_--------_E3	8	A-_--------_E3	8
+Lines	<Revision Cloud>	A-_--------_A-	5	A-_--------_A-	5
+Lines	<Room Separation>	A-_--------_E-	4	A-_--------_E-	4
+Lines	<Sketch>	A-_--------_E-	5	A-_--------_E-	5
+Lines	Axis of Rotation	A-_--------_E-	5	A-_--------_E-	5
+Lines	Insulation Batting Lines	A-_--------_E-	8	A-_--------_E-	8
+Lines	Lines	A-_--------_E-	5	A-_--------_E-	5
+Lines	Medium Lines	A-_--------_E-	3	A-_--------_E-	3
+Lines	Thin Lines	A-_--------_E-	3	A-_--------_E-	3
+Lines	Wide Lines	A-_--------_E-	3	A-_--------_E-	3
+Mass		A-_--------_-3	5	A-_--------_-3	5
+Mass Tags		A-_--------_-3	5	A-_--------_-3	5
+Massing		A-_--------_-3	5	A-_--------_-3	5
+Matchline		A-_ANOTSYBL_E	6	A-_ANOTSYBL_E	6
+Material Tags		A-_--------_A	2	A-_--------_A	2
+Mechanical Equipment		M-_EQPT----_E	2	M-_EQPT----_E	2
+Mechanical Equipment Tags		M-_EQPT----_A	2	M-_EQPT----_A	2
+Multi-Category Tags		A-_--------_A	2	A-_--------_A	2
+New		--_--------_N	2	--_--------_N	2
+Parking		A-_CPRK----_E	1	A-_CPRK----_E	1
+Parking Tags		A-_CPRK----_A	1	A-_CPRK----_A	1
+Plan Region		A-_--------_E-	5	A-_--------_E-	5
+Planting		A-_LNSP----_E	3	A-_LNSP----_E	3
+Planting Tags		A-_LNSP----_A	3	A-_LNSP----_A	3
+Plumbing Fixture Tags		A-_SANIFIXR_A	2	A-_SANIFIXR_A	2
+Plumbing Fixtures		A-_SANIFIXR_E	6	A-_SANIFIXR_E	6
+Property Line Segment Tags		A-_SANIFIXR_E	6	A-_SANIFIXR_E	6
+Property Tags		A-_SANIFIXR_E	0	A-_SANIFIXR_E	0
+Railings		A-_HANR----_E1	1	A-_HANR----_E1	1
+Railings	Balusters	A-_HANR----_E	1	A-_HANR----_E	1
+Railings	Railings Beyond Cut Line	A-_HANR----_E	5	A-_HANR----_E	5
+Railings	Rails	A-_HANR----_E3	1	A-_HANR----_E3	1
+Ramps		A-_RAMP----_E	2	A-_RAMP----_E	2
+Ramps	Down Arrow	A-_RAMP----_E	2	A-_RAMP----_E	2
+Ramps	DOWN text	A-_RAMP----_E	2	A-_RAMP----_E	2
+Ramps	Incomplete ramps	A-_RAMP----_E	2	A-_RAMP----_E	2
+Ramps	Ramps Beyond Cut Line	A-_RAMP----_E	5	A-_RAMP----_E	5
+Ramps	Stringers	A-_RAMP----_E	2	A-_RAMP----_E	2
+Ramps	Stringers Beyond Cut Line	A-_RAMP----_E	5	A-_RAMP----_E	5
+Ramps	Up Arrow	A-_RAMP----_E	2	A-_RAMP----_E	2
+Ramps	UP text	A-_RAMP----_E	2	A-_RAMP----_E	2
+Raster Images		A-_--------_E-	8	A-_--------_E-	8
+Reference Planes		A-_--------_E-	5	A-_--------_E-	5
+Revision Cloud Tags		A-_--------_R-	5	A-_--------_R-	5
+Revision Clouds		A-_--------_R-	5	A-_--------_R-	5
+Roads		A-_ROAD----_E	4	A-_ROAD----_E	4
+Roof Tags		A-_ROOF----_A	6	A-_ROOF----_A	6
+Roofs		A-_ROOF----_E	4	A-_ROOF----_E	4
+Roofs	Curtain Roof Grids	A-_ROOF----_E	4	A-_ROOF----_E	4
+Roofs	Cut Pattern	A-_ROOFPATT_E	8	A-_ROOFPATT_E	8
+Roofs	Fascias	A-_ROOF----_E	4	A-_ROOF----_E	4
+Roofs	Gutters	A-_ROOFPATT_E	4	A-_ROOFPATT_E	4
+Roofs	Roof Soffits	A-_ROOFPATT_E	4	A-_ROOFPATT_E	4
+Roofs	Surface Pattern	A-_ROOFPATT_E	8	A-_ROOFPATT_E	8
+Room Polylines		A-_ROOM----_A	2	A-_ROOM----_A	2
+Room Tags		A-_ROOMNAME_A	2	A-_ROOMNAME_A	2
+Rooms		A-_ROOMNAME_A	2	A-_ROOMNAME_A	2
+Schedule Graphics		A-_ANOT----_A	5	A-_ANOT----_A	5
+Scope Boxes		A-_ANOTSYBL_E	5	A-_ANOTSYBL_E	5
+Sections		A-_ANOTSYBL_E	6	A-_ANOTSYBL_E	6
+Site		A-_SITE----_E	6	A-_SITE----_E	6
+Site	Pads	L-_SITEBNRY_E	6	L-_SITEBNRY_E	6
+Site	Property	L-_SITEBNRY_E	6	L-_SITEBNRY_E	6
+Site Tags		A-_SITE----_E	6	A-_SITE----_E	6
+Span Direction Symbol		S-_DECK---_A	2	S-_DECK---_A	2
+Specialty Equipment		M-_FIREEQPM_E	6	M-_FIREEQPM_E	6
+Specialty Equipment Tags		M-_FIREEQPM_A	2	M-_FIREEQPM_A	2
+Spot Elevations		A-ANOT----_D	1	A-ANOT----_D	1
+Stair Tags		A-_STRC----_A	2	A-_STRC----_A	2
+Stairs		A-_STRC----_E	2	A-_STRC----_E	2
+Stairs	Down Arrow	A-_STRC----_E	2	A-_STRC----_E	2
+Stairs	DOWN Text	A-_STRC----_A	2	A-_STRC----_A	2
+Stairs	Incomplete Stairs	A-_STRC----_E	2	A-_STRC----_E	2
+Stairs	Stairs Beyond Cut Line	A-_STRC----_E	5	A-_STRC----_E	5
+Stairs	Stringers	A-_STRC----_E	2	A-_STRC----_E	2
+Stairs	Stringers Beyond Cut Line	A-_STRC----_E	5	A-_STRC----_E	5
+Stairs	Up Arrow	A-_STRC----_E	2	A-_STRC----_E	2
+Stairs	UP Text	A-_STRC----_A	2	A-_STRC----_A	2
+Structural Annotations		S-IDEN----_A	2	S-IDEN----_A	2
+Structural Area Reinforcement		S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Area Reinforcement Symbols		S-_SYMB----_A	2	S-_SYMB----_A	2
+Structural Area Reinforcement Tags		S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Beam System Tags		S-_BEAM----_A	2	S-_BEAM----_A	2
+Structural Beam Systems		S-_SYMB----_A	2	S-_SYMB----_A	2
+Structural Column Tags		S-_COLN----_A	2	S-_COLN----_A	2
+Structural Columns		S-_COLN----_E	6	S-_COLN----_E	6
+Structural Columns	Hidden Lines	S-_COLS---_H	5	S-_COLS---_H	5
+Structural Connection Tags		S-_COLN----_A	2	S-_COLN----_A	2
+Structural Connections		S-_COLN----_A	2	S-_COLN----_A	2
+Structural Foundation Tags		S-_BEAM----_E	2	S-_BEAM----_E	2
+Structural Foundations		S-_BEAM----_A	4	S-_BEAM----_A	4
+Structural Foundations	Hidden Lines	S-_FNDN----_H	4	S-_FNDN----_H	4
+Structural Framing		S-_BEAM----_A	4	S-_BEAM----_A	4
+Structural Framing	Hidden Lines	S-_BEAM----_H	4	S-_BEAM----_H	4
+Structural Framing Tags		S-_BEAM----_A	2	S-_BEAM----_A	2
+Structural Load Cases		S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Load Cases	Accidental Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Load Cases	Dead Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Load Cases	Live Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Load Cases	Roof Live Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Load Cases	Seismic Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Load Cases	Snow Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Load Cases	Temperature Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Load Cases	Wind Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Loads		S-_LOAD----_A	2	S-LOAD	2
+Structural Loads	Area Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Loads	Line Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Loads	Point Loads	S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Path Reinforcement		S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Path Reinforcement Symbols		S-_SYMB----_A	2	S-_SYMB----_A	2
+Structural Path Reinforcement Tags		S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Rebar		S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Rebar Tags		S-_LOAD----_A	2	S-_LOAD----_A	2
+Structural Truss Tags		S-_BEAM----_A	2	S-_BEAM----_A	2
+Temporary		--_--------_T	2	--_--------_T	2
+Text Notes		A-_ANOTTEXT_A	2	A-_ANOTTEXT_A	2
+Title Blocks		A-ANOTTBLK_E	6	A-ANOTTBLK_E	6
+Title Blocks	Medium Lines	A-ANOTTBLK_E	4	A-ANOTTBLK_E	4
+Title Blocks	Thin Lines	A-ANOTTBLK_E	2	A-ANOTTBLK_E	2
+Title Blocks	Wide Lines	A-ANOTTBLK_E	6	A-ANOTTBLK_E	6
+Topography		S-_TOPO----_E	2	S-_TOPO----_E	2
+Topography	Boundary Point	S-_TOPOCONT_E	3	S-_TOPOCONT_E	3
+Topography	Interior Point	S-_TOPOCONT_E	2	S-_TOPOCONT_E	2
+Topography	Primary Contours	S-_TOPOCONT_E	2	S-_TOPOCONT_E	2
+Topography	Secondary Contours	S-_TOPOCONT_E	3	S-_TOPOCONT_E	3
+Topography	Triangulation Edges	S-_TOPO----_E	3	S-_TOPO----_E	3
+View Reference		A-_ANOTVPRT_T	6	A-_ANOTVPRT_T	6
+View Titles		A-_ANOTVPRT_T	6	A-_ANOTVPRT_T	6
+Viewports		A-_------_ER	5	A-_------_ER	5
+Wall Tags		A-_WALL----_A	4	A-_WALL----_A	4
+Walls		A-_WALL----_E	2	A-_WALL----_E	2
+Walls	Curtain Wall Grids	A-_WALL----_E	2	A-_WALL----_E	2
+Walls	Cut Pattern	A-_WALL----_E	2	A-_WALL----_E	2
+Walls	Hidden Lines	A-_WALL----_H	2	A-_WALL----_H	2
+Walls	Surface Pattern	A-_WALL----_E	2	A-_WALL----_E	2
+Walls/Interior:1		A-_WALL----_E	2	A-_WALL----_E	2
+Walls/Exterior:2		A-_WALL----_E	2	A-_WALL----_E	2
+Walls/Foundation:3		A-_WALLSTRU_E	2	A-_WALLSTRU_E	2
+Walls/Retaining:4		A-_WALL----_E	2	A-_WALL----_E	2
+Window Tags		A-_WIND----_A	6	A-_WIND----_A	6
+Windows		A-_WIND----_E	6	A-_WIND----_E	6
+Windows	Frame/Mullion	A-_WIND----_E	6	A-_WIND----_E	6
+Windows	Glass	A-_WIND----_E	6	A-_WIND----_E	6
+Windows	Opening	A-_WIND----_E	6	A-_WIND----_E	6
+Windows	Sill/Head	A-_WIND----_E	1	A-_WIND----_E	1

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PaletteData Version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ResourceDll>SteelConnectionsDotNetJointExample.dll</ResourceDll>
+  <PreviewResourceDll>SteelConnectionsDotNetJointExample.dll</PreviewResourceDll>
+  <Categories>
+    <PaletteCategory>
+      <Name>Plates at beam</Name>
+      <Image>ResDummy.png</Image>
+      <Items>
+        <PaletteItem>
+          <Description>Steel Connections Sample Joint</Description>
+          <Command>SteelConnectionsJointExample</Command>
+          <PreviewText>This is my test joint</PreviewText>
+          <Images>
+            <string>Dummy.png</string>
+          </Images>
+          <PreviewImages>
+            <string>ResDummy.png</string>
+          </PreviewImages>
+          <TypeId>E8BB9834-E1A2-4644-9C59-1C9812C04E8E</TypeId>
+        </PaletteItem>
+      </Items>
+    </PaletteCategory>
+	 <PaletteCategory>
+      <Name>Net joint</Name>
+      <Image>ResDummy.png</Image>
+      <Items>
+        <PaletteItem>
+          <Description>Bridge Girder DotNet Example</Description>
+          <Command>BridgeGirderSample</Command>
+          <PreviewText>This is my test joint 2</PreviewText>
+          <Images>
+            <string>Dummy.png</string>
+          </Images>
+          <PreviewImages>
+            <string>ResDummy.png</string>
+          </PreviewImages>
+          <TypeId>36c78249-132f-4037-9822-3802a5cf9345</TypeId>
+        </PaletteItem>
+      </Items>
+    </PaletteCategory>
+<PaletteCategory>
+      <Name>Net joint</Name>
+      <Image>ResDummy.png</Image>
+      <Items>
+        <PaletteItem>
+          <Description>Lap Joint Example</Description>
+          <Command>LapJoint</Command>
+          <PreviewText>This is my Lap joint</PreviewText>
+          <Images>
+            <string>Dummy.png</string>
+          </Images>
+          <PreviewImages>
+            <string>ResDummy.png</string>
+          </PreviewImages>
+          <TypeId>B2E820AB-A8BD-4998-878C-1BE4364B1BD9</TypeId>
+        </PaletteItem>
+      </Items>
+    </PaletteCategory>
+	 <PaletteCategory>
+      <Name>Net joint clip angle</Name>
+      <Image>ResDummy.png</Image>
+      <Items>
+        <PaletteItem>
+          <Description>Steel Connections Clip Angle Example</Description>
+          <Command>SampleClipAngle</Command>
+          <PreviewText>This is my test joint 3</PreviewText>
+          <Images>
+            <string>Dummy.png</string>
+          </Images>
+          <PreviewImages>
+            <string>ResDummy.png</string>
+          </PreviewImages>
+          <TypeId>8B4FDDC8-946A-49B4-AF65-AC54C5615AB1</TypeId>
+        </PaletteItem>
+      </Items>
+    </PaletteCategory>
+	<PaletteCategory>
+      <Name>Native Sample Clip Angle</Name>
+      <Image>ResDummy.png</Image>
+      <Items>
+        <PaletteItem>
+          <Description>Steel Connections Native Clip Angle</Description>
+          <Command>SampleClipAngleNative</Command>
+          <PreviewText>C++ Native Clip Angle Example</PreviewText>
+          <Images>
+            <string>Dummy.png</string>
+          </Images>
+          <PreviewImages>
+            <string>ResDummy.png</string>
+          </PreviewImages>
+          <TypeId>FD62E6AB-0412-4F2B-9DB8-C5D5385F8042</TypeId>
+        </PaletteItem>
+      </Items>
+    </PaletteCategory>
+  </Categories>
+</PaletteData>

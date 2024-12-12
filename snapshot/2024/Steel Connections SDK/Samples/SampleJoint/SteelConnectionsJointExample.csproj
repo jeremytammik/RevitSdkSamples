@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\StructuralConnectionsSDKSamples.Common.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{0D5537D0-19F6-40A0-B5C6-852210AE6983}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SteelConnectionsJointExample</RootNamespace>
+    <AssemblyName>SteelConnectionsJointExample</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Binaries\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Binaries\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetRoots">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\DotNetRoots.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.ASTCONTROLSLib">
+      <HintPath>$(ASInstallDir)\AxInterop.ASTCONTROLSLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.AstSTEELAUTOMATIONLib5">
+      <HintPath>$(ASInstallDir)\Interop.AstSTEELAUTOMATIONLib5.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.DSCGEOMCOMLib">
+      <HintPath>$(ASInstallDir)\Interop.DSCGEOMCOMLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.DSCODBCCOMLib">
+      <HintPath>$(ASInstallDir)\Interop.DSCODBCCOMLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreatePlate.cs" />
+    <Compile Include="Page1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page1.Designer.cs">
+      <DependentUpon>Page1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Page1.resx">
+      <DependentUpon>Page1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

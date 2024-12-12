@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   
+  <AddIn Type="Application">
+    <Name>ExportPDFSettingsSample</Name>
+    <Assembly>ExportPDFSettingsSample.dll</Assembly>
+    <ClientId>4e823ca0-fd4d-4266-a744-4b68bab91a55</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExportPDFSettingsSample.CS.ExportPDFSettingsSampleApplication</FullClassName>
+	  <VendorId>ADSK</VendorId>
+	  <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Assembly>ExportPDFSettingsSample.dll</Assembly>
+    <ClientId>029A6F10-1BD9-42F6-80F7-D18512399F99</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExportPDFSettingsSample.CS.CreateExportPDFSettingsCommand</FullClassName>
+    <Text>Create ExportPDFSettings Instance</Text>
+    <Description>Create ExportPDFSettings Instance</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Assembly>ExportPDFSettingsSample.dll</Assembly>
+    <ClientId>6A823255-D9E7-4583-9A58-910FC77D5B44</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExportPDFSettingsSample.CS.ModifyExportPDFSettingsCommand</FullClassName>
+    <Text>Modify ExportPDFSettings Instance</Text>
+    <Description>Modify ExportPDFSettings Instance</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Assembly>ExportPDFSettingsSample.dll</Assembly>
+    <ClientId>076599A2-0535-4F07-83F7-BD7F35D8BCFE</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExportPDFSettingsSample.CS.AddNamingRuleCommand</FullClassName>
+    <Text>Add Naming Rule</Text>
+    <Description>Add Naming Rule for ExportPDFSettings</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Assembly>ExportPDFSettingsSample.dll</Assembly>
+    <ClientId>66E62476-5DA9-4DCC-B77C-E6F4176FCA94</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExportPDFSettingsSample.CS.MofidyNamingRuleCommand</FullClassName>
+    <Text>Modify Naming Rule</Text>
+    <Description>Modify Naming Rule for ExportPDFSettings</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Assembly>ExportPDFSettingsSample.dll</Assembly>
+    <ClientId>D6083018-8DE3-4025-A914-E7B813D6632F</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExportPDFSettingsSample.CS.DeleteNamingRuleCommand</FullClassName>
+    <Text>Delete Naming Rule</Text>
+    <Description>Delete Naming Rule for ExportPDFSettings</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

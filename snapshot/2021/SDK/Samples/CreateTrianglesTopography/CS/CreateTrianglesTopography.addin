@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateTrianglesTopography.dll</Assembly>
+    <ClientId>2eec221e-98c0-4724-b027-aa85b13c401e</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateTrianglesTopography.CS.Command</FullClassName>
+    <Text>Create Triangles Topography</Text>
+    <Description>Creates a new topography surface element from facets</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

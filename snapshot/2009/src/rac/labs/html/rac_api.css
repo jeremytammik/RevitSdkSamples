@@ -1,0 +1,56 @@
+body {
+  margin: 0cm 1cm 1cm 1cm;
+  font-family: verdana, arial, sans-serif;
+  /* font-size: 20pt; */
+  /* color: darkgray; */
+}
+
+h1 { text-align: center }
+h2 { text-align: center }
+img { margin-left: 1cm }
+em { font-weight: bold }
+
+pre
+{
+  font-size: 100%;
+  border: 1px solid black;
+  background: #eee;
+}
+
+code
+{
+  font-size: 100%;
+  font-weight: 600;
+  background-color: #eee;
+}
+
+.j {
+  font-size: 80%;
+  color: lightgray;
+}
+
+.j2 {
+  font-size: 60%;
+  color: lightgray;
+}
+
+ul.c { list-style-type : circle }
+ul.q { list-style-type : square }
+ol.r { list-style-type : lower-roman }
+ol.a { list-style-type : lower-alpha }
+
+
+a.index {
+  text-decoration: none;
+  color: black;
+}
+
+/*
+a:link { color: lightgray; }
+a:active { color: lightgray; }
+a:visited { color: lightgray; }
+*/
+
+.foot { color: lightgray; font-size: 80%; }
+
+.code { font-family: courier }

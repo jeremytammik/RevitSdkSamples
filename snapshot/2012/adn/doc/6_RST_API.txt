@@ -1,0 +1,866 @@
+
+RST API: Analytical Models and Rebars 
+From API Basics to Link Application
+Saikat Bhattacharya
+Developer Consultant
+
+About the Presenter
+Saikat is a member of the AEC workgroup within the Developer Technical Services (DevTech) team in Autodesk. He has been associated with Autodesk for 6 years now and was working with Autodesk Consulting before joining DevTech. Prior to joining Autodesk, Saikat worked as GIS software developer in Philadelphia and as a project architect in the construction industry in New Delhi.
+Saikat holds a Bachelors degree in Architecture (India) and a Masters of Science degree in Informatics and Architecture from RPI.
+Saikat Bhattacharya
+Developer Technical Services
+Autodesk India
+Revit Programming Introduction
+
+Prerequisite
+Knowledge of Revit API basics
+Basic Revit API recordings are available
+DevCamp 2010: Introduction to Revit API (Part 1 and 2)
+Revit API 2011 Introduction webcast (May 20,2010)
+ADN web site > Revit product > Knowledgebase > Whitepapers and Training Videos
+http://adn.autodesk.com/adn/servlet/item?siteID=4814862&id=15228661&linkID=4901650
+Revit API - what's new in 2011 webcast
+ADN web site > Revit product > Knowledgebase > Whitepapers and Training Videos
+http://adn.autodesk.com/adn/servlet/item/user?siteID=4814862&id=15051692&linkID=4901650
+DevTV Introduction to Revit 2010 Programming
+http://usa.autodesk.com/adsk/servlet/index?id=2484975&siteID=123112
+
+Agenda
+Revit Structure (RST) 2011 API News
+Structural BIM workflow
+Basics
+Loads and Load Cases
+Structural Components
+Analytical Models (with RST Link Application Demo)
+Rebars
+Revit 2011 platform API usages in Revit Structure
+Analysis Visualization Framework
+Dynamic Model Update
+Idling Event
+
+Revit Structure 2011 API News
+
+Revit Structure 2011 API News
+Change of Namespaces
+Old namespace
+Autodesk.Revit.Elements
+New namespace
+Autodesk.Revit.DB.Structure
+Changes in Analytical model classes
+Creation of new Rebar types and other enhancements
+New Filters to retrieve RST specific elements
+FamilyStructuralMaterialTypeFilter
+StructuralInstanceUsageFilter
+StructuralWallUsageFilter
+StructuralMaterialTypeFilter
+New organization of namespaces to make it more organized across various verticals and to make the relationship between classes and namespaces more clearer.
+
+Structural BIM Workflow
+
+Structural Market Definition
+Designer
+Structural
+Analysis
+Construction
+Documentation
+Engineer
+Drafter
+Contractor
+Steel Detailer
+Fabrication and
+Shop Drawings
+Building information modeling (BIM) is the creation and use of coordinated, consistent, computable information about a building project in design that yields reliable digital representations of the building - representations used for design decision-making, production of high-quality construction documents, performance predictions, cost-estimating and construction planning, and, eventually, for managing and operating the facility. The focus of this presentation is on the structural part of it with Revit Structure.
+Even if structural engineers can design any type of structures including bridges, tunnels, plants etc., RST focuses on building design. It does not mean that a user cannot design other type of structures, but the marketing that we do, the training and documentation materials that we provide are positioning RST on building design.
+The structural industry is extremely fragmented. We segment is into 2 parts: design and fabrication.
+The design is composed of 2 tasks (analysis and construction drawings) done by 3 actors and the fabrication focuses on shop drawings.
+Within the design steps we have different collaborators who need to share the data. It is mostly the designer and engineer who would work with RST and once the design has been fixed, it would be passed on to the Drafter to create construction documentation and from there, it continues to detailers and contractors for fabrication and shop drawings.
+
+Tasks and User Focus
+Designer
+Engineer
+Drafter
+Revit Structure Focus
+Construction
+Documentation
+Contractor
+Steel Detailer
+Fabrication and
+Shop Drawings
+Fabrication
+Structural
+Analysis
+Modeling
+The focus that we have for RST is on the design part only where we do modelling for drawings and analysis. We do not do analysis.
+
+Workflow
+Revit Structure is used by a structural engineer to manage and combine data from several different sources:
+Architectural data, the building design, which can come from Revit Architecture, but also from other Autodesk or non-Autodesk products.
+Analysis data for stress analysis in external packages.
+Details which are designed based on the analysis results.
+
+Loads and Load Cases
+
+Load Grouping Objects
+Overview
+Load Cases
+Load Natures
+Load Combinations
+Load Usages
+Load Nature: Refers to Dead, Live, Snow, Roof, Accidental, Temperature etc
+Load Cases: refers to forces caused by different nature and category (for example load caused by wind : nature is wind and category is wind loads). A load case is a set of loads that make up a specific set of loading such as Self Weight (Dead Load).
+Load Combination : refers to combining several different load cases, all of which work together on a building. For example: during earthquake, typical load combination would include self gravity + dead load + seismic load + live load.
+The load combination usage parameter is user defined (either gravity, lateral or combined).
+Gravity Load Combinations include the vertical loads, both permanent or dead (self weight of the structure - floor, beams, columns etc.) and live loads based on occupancy (people on an office floor, boxes in a storage room, snow on a roof, etc.).
+Lateral Load Combinations include the horizontal loads, both permanent or dead (soil resting up against a foundation wall) and live loads (wind against the face of a structure or the shaking of a structure from an earthquake).
+Combined Load Combinations include varying degrees of both gravity and lateral loads in order to account for cases when structures are both occupied and experiencing wind or earthquake loads.
+All the functionality in the Settings dialog box of Load cases and Load Combinations tabs can be accessed using the API.
+
+Lab - Load Case
+Access LoadCase objects
+Transaction trans = new Transaction( doc, "Lab1_1" );
+trans.Start();
+//List LoadCase in current model
+IList<Element> lists = RstUtils.GetElementOfClass(doc, typeof( LoadCase ) );
+string sMsg = null;
+sMsg = string.Format( "There are {0} LoadCase objects in this model.\n They are :\n",
+lists.Count );
+foreach( Element elem in lists )
+{
+LoadCase ln = elem as LoadCase;
+sMsg += ln.Name + "\n";
+}
+RstUtils.InfoMsg( sMsg );
+
+Lab - Load Usage
+Create LoadUsage object
+string sName = "MainTainLoad";
+Boolean bExist = false;
+IList<Element> listLU = RstUtils.GetElementOfClass(
+doc, typeof( LoadUsage ) );
+foreach( Element elem in listLU )
+{
+if( elem.Name.Equals( sName ) )
+{
+bExist = true;
+break;
+}
+}
+if( !bExist ) { LoadUsage lu = doc.Create.NewLoadUsage( "MaintainLoad" ); }
+else
+{
+sMsg = "LoadUsage MainTainLoad existed. ";
+}
+RstUtils.InfoMsg( sMsg );
+
+Lab - Load Combination
+foreach( LoadCombination comb in listLC )
+{
+lc1 = comb;
+// combinaton properties
+string usageNames = ( 0 == comb.NumberOfUsages ) ? "[NONE]" : comb.get_UsageName( 0 );
+for( int i = 1; i < comb.NumberOfUsages; ++i )
+{
+usageNames += comb.get_UsageName( i );
+}
+sMsg += "\r\n\r\n  " + comb.Name + ", Id=" + comb.Id.IntegerValue.ToString() + ", Type=" + comb.CombinationType + ", TypeIndex=" + comb.CombinationTypeIndex + ", State=" + comb.CombinationState + ", StateIndex=" + comb.CombinationStateIndex + ", Usages=" + usageNames;
+sMsg += "\r\n    Number of components = " + comb.NumberOfComponents + ":";
+// loop all component properties
+for( int i = 0; i < comb.NumberOfComponents; ++i )
+{
+sMsg += "\r\n    Comp.name=" + comb.get_CombinationCaseName( i ) + "  Comp.nature=" +     comb.get_CombinationNatureName( i ) + "  Factor=" + comb.get_Factor( i );
+}
+}
+
+Point Load Properties
+LoadBase
+HostElement
+LoadCaseName
+LoadCategoryName
+LoadNatureName
+AreaLoad
+LineLoad
+PointLoad
+Force
+Moment
+Point
+Explore
+Help file
+Debugger
+RvtMgdDbg
+Reflection
+Some of the values accessible through parameters are also exposed directly as properties on the object class.
+Whenever you are looking for a specific property, you will need to explore the Revit API and one or more suitable sample models to determine what exactly you are looking for and how to access it.
+
+Lab - Create, Access and Modify Point Loads
+Create Point loads with force and moment values
+//List Point load types, get the first load type for later usage.
+FilteredElementCollector collector = new FilteredElementCollector( doc );
+collector.OfClass( typeof( PointLoadType ) );
+PointLoadType loadType = collector.FirstElement() as PointLoadType;
+//create a point load using the PointLoadType obtained previously
+XYZ xyzPt = uiApp.ActiveUIDocument.Selection.PickPoint("Please pick a point to create a point load" );
+XYZ xyzForce = new XYZ( 0, 0, dKip );
+XYZ xyzMoment = new XYZ( dKip, 0, 0 );
+PointLoad plNew = doc.Create.NewPointLoad(xyzPt, xyzForce, xyzMoment, true, loadType, null );
+doc.Regenerate();
+
+Lab - Create, Access and Modify Point Loads
+List all Point loads
+IList<Element> listLoads = RstUtils.GetElementOfClass(doc, typeof(PointLoad));
+PointLoad ptLoad1 = null;
+foreach( PointLoad ptLd in listLoads )
+{
+// The following are all specific READ-ONLY properties:
+XYZ F = ptLd.Force;
+XYZ M = ptLd.Moment;
+XYZ p = ptLd.Point;
+string nameLoadCase = ptLd.LoadCaseName;
+string nameLoadCategory = ptLd.LoadCategoryName;
+string nameLoadNature = ptLd.LoadNatureName;
+sMsg += "\r\n  Id=" + ptLd.Id.IntegerValue.ToString()
++ ": F=" + RstUtils.PointString( F )
++ ", M=" + RstUtils.PointString( M )
++ ", Pt=" + RstUtils.PointString( p )
++ ", LoadCase=" + nameLoadCase
++ ", LoadCat=" + nameLoadCategory
++ ", LoadNature=" + nameLoadNature;
+}
+
+Lab - Create, Access and Modify Point Loads
+Modify force of an existing Point Load
+Parameter paramFx = ptLoad1.get_Parameter( BuiltInParameter.LOAD_FORCE_FX );
+Parameter paramFy = ptLoad1.get_Parameter( BuiltInParameter.LOAD_FORCE_FY );
+Parameter paramFz = ptLoad1.get_Parameter( BuiltInParameter.LOAD_FORCE_FZ );
+double dFx = paramFx.AsDouble();
+double dFy = paramFy.AsDouble();
+double dfz = paramFz.AsDouble();
+paramFx.Set( dKip );
+paramFy.Set( 2 * dKip );
+paramFz.Set( 3 * dKip );
+doc.Regenerate();
+
+Structural Components
+
+Access Structural Elements
+
+Access Structural Elements
+Structural beams, columns and braces do not have specific class but in FamilyInstance class form
+Can be distinguished using the Familyinstance.StructuralType property
+Beam / Brace / Column / Footing
+Can use categories to filter out structural columns, beams and braces
+
+Lab - List Structural Columns
+Select all standard family instances for category OST_StructuralColumns
+// Get all Structural COLUMNS - we can use a generic utility.
+BuiltInCategory bicSc = BuiltInCategory.OST_StructuralColumns;
+FilteredElementCollector collector = new FilteredElementCollector(doc);
+IList<Element> columns = collector.OfCategory(bicSc).OfClass(typeof(FamilyInstance)).ToElements();
+
+Lab - List Structural Walls
+Check for StructuralUsage to be StructuralWallUsage.NonBearing
+IList<Element> listWalls = RstUtils.GetElementOfClass( doc, typeof( Wall ) );
+//Above listWalls includes structural wall and architecture wall.
+//Filter out architecture wall by Wall.StructuralUsage property.
+List<Wall> walls = new List<Wall>();
+foreach( Wall wall in listWalls )
+{
+//
+// StructuralUsage has better performance than GetAnalyticalModel method.
+if( StructuralWallUsage.NonBearing != wall.StructuralUsage )
+{
+walls.Add( wall );
+}
+}
+
+Lab - List Boundary Conditions
+listBCs = RstUtils.GetElementOfClass(doc, typeof(BoundaryConditions));
+string sMsg = null;
+foreach( BoundaryConditions bc in listBCs )
+{
+sMsg += "\nBoundary condition Id = " + bc.Id.IntegerValue.ToString();
+sMsg += string.Format( "\nThe host element:{0}, id = {1}",
+bc.HostElement.Name, bc.HostElement.Id.IntegerValue.ToString() );
+Parameter param = bc.get_Parameter(BuiltInParameter.BOUNDARY_CONDITIONS_TYPE);
+switch( param.AsInteger() )
+{
+case 0:
+XYZ point = bc.Point;
+...
+break;
+case 1:
+sMsg += "\nThis bc is a Line Boundary Conditions.";
+...
+break;
+case 2:
+sMsg += "\nThis bc is an Area Boundary Conditions.";
+...
+break;
+default:
+break;
+}
+Boundary conditions are analytical model elements that define the support conditions of a structural element by its surrounding environment. For example, the earth supports the foundation of a structure. These elements are used to communicate engineering assumptions about support conditions to analysis software packages. Boundary conditions are also known as supports or restraints in some analysis software packages.
+There are three types of boundary conditions -
+Point
+Curve
+Area
+
+Analytical Model
+
+Analytical Model
+Can be defined as the engineering description of a structural physical model
+Physical model is used for drawings, coordination and construction
+Analytical model is the simplified model used for analysis
+The most important problem of the structural industry is the fact that the information used for structural analysis is physically different than the one used for drawings. Revit Structure solves this problem. The physical model is the model that we use for drawings, coordination and construction, and the analytical model is the simplified model used for analysis.
+Some examples show the discrepancies between the analytical and physical models.
+For example, consider a plan view where the walls need to be aligned for the analysis and the beams need to join the centre of columns to end of walls.
+Another example is an elevation where the analytical model is horizontally projected even if the physical model of the beam has a slope.
+Finally, consider a situation where the physical model of the beam is curved and the analytical model is segmented.
+Revit Structure maintains the coordination between the 2 models and will keep the analytical model of each element connected.
+As a third party analysis developer, you just need to work with the analytical model.
+
+What is in the analytical model
+Members that need to participate in the analysis
+Geometry (location)
+Sections
+Materials
+Release conditions
+Reference to level (optional)
+Loads
+Load cases
+Load combinations
+Point, line, area loads
+Boundary conditions
+Support data
+Within the analytical model, we maintain information about all of the building members that need to be part of analysis like that of beam, columns, load bearing shear walls, foundations, etc
+We also keep a track of the geometrical information like location of various elements, sections, release conditions, references levels,
+We definitely need to work with loads to be able to simulate the stress on a structure, loads - point line and area
+Grouping objects like combinations
+Load cases etc
+We also have boundary conditions and provide support information.
+
+Analytical vs Physical Model
+Revit Structure combines the physical model which drives the modeling and documentation process with the analytical model which drives the analysis process and export to third party analysis software.
+The Revit Structure analytical model can be adjusted for analysis purposes while the physical model stays accurate for documentation.
+
+Analytical vs Physical Model
+Here are examples of different cases highlighting the difference between the physical and the analytical models and the need for flexibility in linking the two:
+The end points of two beams may are not at the same location. We want to the end points of their analytical models to be located at the same point. An engineer decides to move the end of one beam.
+Remodelling an old historic building, walls may not be straight. An engineer decides to approximate them by planes for analysis.
+Two walls with different thicknesses but aligned analytical planes.
+A wall with a parapet that does not need to be included in the analysis.
+Adjusting the location of analytical columns horizontally.
+
+Data Exchange Workflow
+Geometry
+Physical
+Analytical
+Loads
+Connectivity
+Material
+Project parameters
+In general, we start off with a physical model. This can be used to automatically generate the analytical one. The analytical model is exported to an external analysis package, which adds its own data. As a result of the analysis, the analytical model may be modified, resulting in changes in the physical model as well. New changes may be added in the physical model as well. All of these processes may continue over many iterations.
+The example presented displays the following steps:
+RST defines the physical model, analytical model composed of geometry, loads, connectivity (release and boundary conditions), material properties, project parameters. This is information is accessible via the API
+In the analysis software we get the analytical model
+Analytical model initializes specific properties not present in RST (here they are symbolized with X and Y) and the user can change them. We can do an analysis, delete specific members, change sections and then the analysis software updates the RST model
+Changes can be add, delete, create, and move members and also add new properties to RST members
+If we select a column and duplicate it, it will have the Y parameter that was defined in 3)
+So the next time we round trip the data to the 3rd party, we retrieve the Y parameter.
+
+Analytical Model Enhancements in 2011
+Concrete Joins
+Improved Analytical Model
+
+Analytical Model Enhancements in 2011
+Reduce small noise in analytical model
+Four of many ways to describe the same physical model
+The last two use the new rigid links
+
+Analytical Model API Enhancements in 2011
+Subclasses consolidated into single AnalyticalModel class
+AnalyticalModel3D
+AnalyticalModelFloor
+AnalyticalModelFrame
+AnalyticalModelLocation
+AnalyticalModelWall
+Some new APIs and classes to provide more functionality:
+AnalyticalConsistencyChecking - consistency checkers
+AnalyticalSupportChecking - support checker
+StructuralSettings - 29 methods to read/write all structural settings displayed in the structural settings dialog.
+
+Analytical Model API Enhancements in 2011
+AnalyticalModel offers:
+Manual and automatic adjustments
+Projection, hard points, approximation, and rigid links
+Analytical offset
+AnalyticalModelProfile has been replaced by AnalyticalModelSweptProfile
+AnalyticalSupportData and AnalyticalSupportInfo are now collections of AnalyticalModelSupport objects.
+Support priority
+Curve, point, and face providing support
+GetAnalyticalModel() on Element.
+
+Lab - Access Analytical Model
+GetAnalyticalModel method used to access Analytical model
+Comprises of
+Location, Parameter information (projection, hard points, approximation, rigid links), support information and adjustment information (manual and automatic)
+//Get the analytical model of the beam.
+AnalyticalModel model = beam.GetAnalyticalModel();
+//Get the analytical curve for column.
+if( model.IsSingleCurve() )
+{
+Curve colCurve = model.GetCurve();
+sMsg += "\n The structural beam's analytical model curve "
++ RstUtils.ListCurve( ref colCurve );
+}
+//get the approximated property
+if( model.IsApproximated() )
+{ sMsg += "\n The analytical model of this beam is approximated"; }
+else { sMsg += "\n The analytical model of this beam is non-approximated"; }
+Location: Depending on the type of element, the location of the element with respect to analysis can be obtained by GetPoint() or GetCurve() or GetCurves().
+
+Lab - Access Support information
+Access Support information from analytical model (line)
+IList<AnalyticalModelSupport> supports = model.GetAnalyticalModelSupports();
+sMsg = string.Format( "\nThe beam has {0} support(s)", supports.Count );
+foreach( AnalyticalModelSupport support in supports )
+{
+XYZ supportPt = support.GetPoint();
+sMsg += string.Format( "\n  support#{0}  point:{1}; support type: {2}",
+nCounter, RstUtils.PointString( supportPt ),     support.GetSupportType().ToString() );
+ElementId idSupporter = support.GetSupportingElement();
+Element elemSupporter = doc.get_Element( idSupporter );
+sMsg += string.Format( "\n  support#{0} is provided by a(n) {1}",
+nCounter, elemSupporter.Category.Name.ToString() );
+sMsg += string.Format( "\n  support#{0}'s support priority is ",
+nCounter, support.GetPriority().ToString() );
+}
+
+Lab - Display the rigid link curve
+Display the rigid link curve of a selected beam
+AnalyticalModel model = beam.GetAnalyticalModel();
+if( model.CanHaveRigidLinks() )
+{
+sMsg += "\r\nRigid Link START = ";
+AnalyticalModelSelector selector = new AnalyticalModelSelector( AnalyticalCurveSelector.StartPoint );
+Curve rigidLinkStart = model.GetRigidLink( selector );
+if( null == rigidLinkStart )
+{ sMsg += "None\r\n"; }
+else
+{  sMsg += RstUtils.ListCurve( ref rigidLinkStart );  }
+sMsg += "\r\nRigid Link END   = ";
+selector = new AnalyticalModelSelector( AnalyticalCurveSelector.EndPoint );
+Curve rigidLinkEnd = model.GetRigidLink( selector );
+if( null == rigidLinkEnd )
+{ sMsg += "None\r\n"; }
+else
+{ sMsg += RstUtils.ListCurve( ref rigidLinkEnd );  }
+RstUtils.InfoMsg( sMsg );
+}
+The curves do not have any reference properties set and so we have to use AnalyticalModelSelector object containing the necessary information like references to curves and their end points.
+A Rigid link connects the analytical model of a beam to that of a column. Use of CanHaveRigidLinks can be used to determine whether rigid links are applicable to analytical model.
+
+Lab - Edit Analytical Model
+Change projection and offset column's analytical model
+model = column.GetAnalyticalModel();
+//Some structural component's analytical model can be offset, for instance,
+// column but some cannot for example, beam.
+if( model.CanSetAnalyticalOffset() )
+{
+//move the analytical model 3 feet along with X axis.
+model.SetAnalyticalOffset( new XYZ( 3, 0, 0 ) );
+}
+doc.Regenerate();
+//Change the projection type
+model.SetAnalyticalProjectionType( AnalyticalDirection.VerticalTop, AnalyticalProjectionType.Top );
+doc.Regenerate();
+
+Structural Analysis Link
+
+Structural Analysis Link
+Introduction
+Export and import
+Practical examples
+Sample application
+We shall discuss
+the aim of this link
+how to export and import data
+Look at practical examples both commercial and non-commercial
+
+Analysis Link 
+Introduction
+There are MANY ways in which the link can be designed
+There are MANY implementation scenarios concerning
+Which structural elements are passed between the applications
+Which kind of model changes are automatically supported in either of them
+It is up to the particular 3rd party package and its implementer to design, code and document the link
+Revit Structure API provides the tools to do this
+RST does not pre-determine the design of the link application
+In RST, analytical model is updated automatically as one creates or generates the physical model. The analytical model is linked to the structural analysis applications and the physical model is automatically updated from the results through the RST API.
+There are many different implementation scenarios in which it might be useful to link a Revit building model with some external data, both RST-specific for analysis as we are discussing here, and also generic for other situations. Obviously, there are also many ways in which such a link can be designed.
+For the RST analysis link, we need to decide which structural elements are passed between the applications and what kind of model changes are automatically supported in either of them.
+It is obviously up to the individual third party package and its implementer to design, code and document the link. The Revit Structure API provides the required tools to do this, and does not pre-determine the design of the link application in any way.
+They key to linking RST with other analysis applications is to set up the mapping relationship between the objects in different object models. That means the difficulty and level of integration depends on the similarity between the two object models.
+
+Analysis Link 
+Export
+Data export from Revit to 3rd party A&D application
+Use a custom Revit external command to export relevant data
+App's native file/DB format — typically proprietary
+App's neutral file/DB format — typically public
+Public neutral file/DB format supported by the app
+Intermediate file/DB format purpose-designed for the link
+...
+The choice depends on the combination of technical, functional, commercial and political requirements...
+For data export from Revit to a third party A&D application, one will generally use a custom Revit external command to export relevant data. The format used for this communication is once again completely up to the implementer, and could be any one of the following.
+
+Analysis Link 
+Import
+Define another custom Revit external command
+The choice of options and reasoning is basically the same as for the export
+The chosen file format need not be the same as for the export, though typically it would be
+For importing the updated and modified data from the external application back into Revit, one would generally define another custom Revit external command. The choice of options and reasoning is basically the same as for the export. The chosen file format does not need to be the same as for the export, though typically it would be.
+For importing the updated and modified data from the external application back into Revit, one would generally define another custom Revit external command. The choice of options and reasoning is basically the same as for the export. The chosen file format does not need to be the same as for the export, though typically it would be.
+
+Analysis Link
+Practical Examples
+RstLink
+Simple demonstration application
+MidasLink
+Simple but real
+FireRating
+Minimal generic Revit
+RDBLink
+Generic Revit BIM, not RST specific
+Commercial Software
+MidasLink application is available in source code for download from the ADN extranet for Revit 2009
+FireRating shows how to add additional information can be added to Revit model and linking with external packages and two way communication.
+RDBLink is a sample that provides how to connect to external Access or other MDB databases and perform similar data roundtrips.
+
+Analysis Link
+Practical Example
+AutoCAD simulates A&D 3rd party app
+AutoCAD.NET API utilities used on the 'other' side
+Xdata used to store Revit Structure specific info on standard AutoCAD entities
+AutoCAD Dynamic Properties COM API used for the link-specific UI within AutoCAD
+Intermediate, purpose designed XML
+Used in both directions
+For simplicity, based on .NET SOAP serialization
+Custom .NET neutral classes utilized by both sides' export/import commands
+We have implemented a custom designed practical example of a Revit Structure analysis link application called RstLink to accompany this presentation. We use AutoCAD 2011 with an AutoCAD.NET plug-in to simulate the external third party analysis and design application and extended entity data, also known as xdata, to store Revit Structure specific information on standard AutoCAD entities. We use the AutoCAD Dynamic Properties COM API and the Object Property Manager OPM for the link-specific user interface within AutoCAD.
+AutoCAD.NET API utilities used on the 'other' side
+Xdata used to store Revit Structure specific info on standard AutoCAD entities
+AutoCAD Dynamic Properties COM API used for the link-specific UI within AutoCAD
+The data exchange in both directions between the Revit model and the A&D simulation in AutoCAD is implemented using an intermediate, custom designed XML format. For simplicity, the XML format is based on .NET SOAP serialization. Some neutral custom .NET classes are utilised by both sides' export and import commands.
+Used in both directions
+For simplicity, based on .NET SOAP serialization
+Custom .NET neutral classes utilized by both sides' export/import commands
+Before running the demo, the following applications need to be present:
+RstLink - helper dll shared by both acad and revit client
+RSLinkRevitClient - command implementations
+RSLinkRevitApp - external application
+RSLinkAcadClient - AutoCAD client
+RSLinkAcadClientDynProps - dynamic Revit properties for AutoCAD objects
+Here are possible steps to run the demo:
+Set up Revit.ini to load either the client or the external application or both.
+Open or create a sample model in Revit Structure.
+Run the export command. You are prompted for a file location. A dialogue box pops up, reporting the number of exported elements.
+Start up AutoCAD and load the client and the dynamic property application.
+This can be achieved automatically by setting up AutoCAD to start in the RVT sample directory and placing an acad.lsp file there containing:
+(defun s::startup()
+(command "_netload" "RSLinkAcadClient.dll")
+(princ "\nAutoCAD RSLink client loaded.")
+(arxload "RSLinkAcadClientDynProps.arx")
+(princ "\nAutoCAD RSLink dynamic properties loaded.")
+(princ)
+)
+If it does not load automatically, you can load it manually by calling
+(load "C:/a/j/adn/revit/rst_api/RVT/acad.lsp")
+with the appropriate full path, and then call
+(s::startup).
+The commands defined by the AutoCAD client are RSImport, RSExport and RSMakeMember.
+Use RSImport to load the xml file just exported from Revit.
+Modify some cross sections in the model using the OPM, simulating modifications made by the A&D application, and optionally RSMakeMember to add some new elements.
+Use RSExport to write the model back out again.
+Back in Revit, use the import command to read the modifications and update the Revit model accordingly. Dialogue boxes are displayed to report the number of elements imported and modified. Note that the column types were swapped. Currently, the new elements defined by RsMakeMember are ignored.
+
+Analysis Link
+RstLink modules
+RstLink
+Helper dll shared by both acad and revit client
+RSLinkRevitClient
+Revit command implementations
+RSLinkImport, RSLinkExport, RsLinkLiveLink
+RSLinkAcadClient
+AutoCAD client
+RSImport, RSExport, RSMakeMember
+RSLinkAcadClientDynProps
+Dynamic Revit properties for AutoCAD objects
+RSTLink is the helper or shared module that is shared between both ACAD and Revit.
+RSLinkRevitClient implements external commands for use inside of Revit
+AutoCAD client handles Xdata and
+ACAD client dynamic properties module to handle dynamic properties.
+
+Analysis Link
+RstLink Revit Export
+
+Analysis Link 
+RstLink AutoCAD Import
+Invoke RSImport command
+
+Analysis Link
+Modify Cross Section
+Edit dynamic properties
+Change cross section
+
+Analysis Link
+Import Modified Data Into RST
+RSExport from AutoCAD
+Import into Revit
+Column type was swapped
+New elements are ignored
+
+Analysis Link
+Analysis Software
+ADAPT
+www.adaptsoft.com/revitstructure
+RISA
+www.risatech.com/partner/revit_structure.asp
+RAM
+www.bentley.com/structural
+CSC
+MIDAS - MidasLink subscription module
+ROBOBAT - recently acquired by Autodesk
+http://www.extensions4revit.com/n/e4r
+Analysis Partners site:
+http://usa.autodesk.com/adsk/servlet/index?siteID=123112&id=9727285#content2
+Some third party software developers already provide bi-directional links to their structural analysis applications. The list is included in this slide.
+Source code for Midas Link 2009 can be obtained from ADN extranet.
+
+Rebar
+
+RST Rebar 
+Workflow
+Revit Structure 3D
+Object Model
+Physical Model
+Analytical Model
+3D Rebar Model
+User
+Input
+3rd Party
+Analysis
+Design
+Concrete Drawings
+Specific Rebar Details
+Specific Rebar Details
+Shop
+Drawing
+Typical Rebar Details
+3D Design
+QTO
+User
+Input
+User
+Input
+Manual
+Automated
+Working with reinforcements in Revit Structure involves two phases. The initial phase is the building analysis, which may result in design changes. In the second phase, reinforcements are added, analysed, and detailed. Both phases may include multiple iterations. Many of the tasks required can be automated. This is where our applications can save a lot of time, effort, and eliminate sources for errors.
+The central hub is the Revit Structure three-dimensional object model which integrates the physical and analytical models used respectively for the building design and analysis. The 3D rebar model is integrated in this database. The physical model is used to generate concrete drawings including rebar specific details. The rebar model can be used to generate rebar specific details and quantity takeoffs. The analytical model is used to connect to third party analysis and design packages, which in turn can help define the rebar model.
+The typical workflow in RST with rebar design starts with user inputs, which creates a physical model, which is automatically synchronized with that of the analytical model. At this stage, we can use 3rd party analysis design applications to design and the results of these analysis design can be fed back to the model. Once the physical model has been updated, we can generate updated concrete drawings. At this stage, we can get additional user inputs to design the rebar details. This will result in generating a 3D rebar model and this information can extract the specific rebar details, QTO and finally create shop drawings.
+
+The 3D Rebar Model
+Revit Structure has a 3D rebar model composed of
+Single bars
+Sets (array of bars with rules)
+Area reinforcement for slabs and walls
+Path reinforcement for slabs
+3D rebar model can be generated
+Manually by user
+Loaded from a group that defines a cage
+Generated with the API from analysis and design software or from macros
+Advantages of 3D rebar model
+Quantities
+Complex layout
+Automatic reinforcement drawings
+Basic scheduling
+Scheduling is specific to each country
+Opportunity for third party developers to use the 3D rebar model to generate DWG schedules and import them back as a drafting view in Revit Structure
+RST defines 3D rebar model. Composed of Single bars, Sets which are arrays of bars with set of rules, area reinforcement bars and path reinforcement for slabs.
+
+Generate Beam or Column Rebar
+Class
+Autodesk.Revit.Elements.Rebar
+Represents rebar used to reinforce suitable elements like concrete beams, columns, slabs or foundations
+Setting specific Layout for rebar
+0 - None; 1 - Fixed Number; 2 - Maximum Spacing;
+3 - Number with Spacing; 4 - Minimum Clear Spacing;
+Rebar r = doc.Create.NewRebar( rebarStyle, rebarType, startHook, endHook, hostObject, normal, curves, startRebarHookOrientation, endRebarHookOrientation, booleanUseExistingShapeIfPossible, boolCreateNewShape );
+Rebar r = doc.Create.NewRebar(RebarShape, RebarBarType, host, origin, xVec, yVec);
+Parameter paramLayout = rebar.get_Parameter(BuiltInParameter.REBAR_ELEM_LAYOUT_RULE);
+paramLayout.Set(1);
+Three kinds of beam rebar are created: top, bottom and transverse rebar. Two kinds of column rebar are created: transverse and vertical. Autodesk.Revit.Creation.Document.NewRebar() method can be used to  create rebar for the selected host. There are two overloads of the NewRebar() method both of which is listed in the slide.
+The first version creates a rebar from an array of curves describing the rebar. The second version created rebar object based on a rebar shape and position.
+
+Rebar API Enhancements in 2011
+New Rebar methods to create new types
+Added
+NewRebarBarType
+NewRebarHookType
+NewRebarCoverType
+RebarType class exposes new interface (formerly available properties through parameters only)
+BarDiameter
+StandardBendDiameter
+...
+New methods to set the visibility of Rebars
+New Rebar properties to work with spiral rebar
+SetLayoutRuleWithoutExaminingHost() replaced by setLayoutRuleAs...() methods
+
+Generate Floor or Wall Rebar
+Class
+Autodesk.Revit.Elements.Rebar
+XYZ p1, p2; Line curve;
+CurveArray curves = m_appCreator.NewCurveArray();
+for( int i = 0; i < points.Count - 1; ++i )
+{
+p1 = new XYZ( points[i].X, points[i].Y, points[i].Z );
+p2 = new XYZ( points[i + 1].X, points[i + 1].Y, points[i + 1].Z );
+curve = rvtDoc.CreateNewLine( ref p1, ref p2, true );
+curves.Append( curve );
+}
+return rvtDoc.Create.NewPathReinforcement( m_host, curves, boolFlip );
+The PathReinforcement host is a floor or a wall. The method used is
+NewPathReinforcement(Element, CurveArray, bool );
+We can use Document.Create.NewPathReinforcementType() method to create a  PathReinforcementType if there is none in current document. The Element argument is the host of the PathReinforcement. The CurveArray stores its path. The Boolean value indicates which side of the path the PathReinforcement is located on.
+
+Lab - Create Rebar Shape
+RebarShapeDefinitionBySegments
+Create a RebarShape
+RebarShape myShape = rvtDoc.Create.NewRebarShape()
+Create a RebarShapeDef
+RebarShapeDefinitionBySegment myDef 
+  = myShape.NewDefinitionBySegments(segmentCount)
+Add shared parameters by external def
+myDef.AddParamater( externalDef, value )
+Add constraints to shape definition
+myDef.AddConstraintToSegment
+myDef.AddConstraintParallelToSegment
+myDef.AddBendDefaultRadius
+myDef.SetSegmentFixedDirection
+myDef.AddListingDimentionBendToBend
+Set Hook to RebarShape 
+myShape.set_HookAngle
+myShape.set_HookOrientation
+
+Lab - Create Rebar
+Create rebar for a selected column using the rebar shape created in the previous lab
+RstUtils.GetRebarShape(RstUtils.msRebarShapeName, "10M", out barShape, out     barType, doc);
+//create rebar for column
+//Get the rebar's origin and two direction vecter.
+GeometrySupport geometryData = new GeometrySupport(column);
+List<Autodesk.Revit.DB.XYZ> profilePoints = geometryData.ProfilePoints;
+Autodesk.Revit.DB.XYZ origin = profilePoints[0];
+Autodesk.Revit.DB.XYZ yVec = profilePoints[1] - origin;
+Autodesk.Revit.DB.XYZ xVec = profilePoints[3] - origin;
+Rebar createdRebar = doc.Create.NewRebar(
+barShape, barType, column, origin, xVec, yVec);
+doc.Regenerate();
+//layout the rebar to fit the column's section.
+createdRebar.ScaleToBox(origin, xVec, yVec);
+double barSpacing = 0.1;
+int barNum = (int)(geometryData.DrivingLength / barSpacing);
+createdRebar.SetLayoutAsNumberWithSpacing(barNum, barSpacing, true, true, true);
+
+Revit 2011 platform API usages in RST
+Dynamic Model Update, Analysis Visualization Framework, Idling Event
+
+Dynamic Model Update
+"Ability for a Revit API application to modify the Revit model as a reaction to changes happening in the model".
+Helps track element addition, modification and deletion
+Updaters: Ability to implement a method that is informed of the scope of changes
+Register the Updater
+OnStartUp for application level scope
+ExternalCommand for command level scope
+Add Trigger
+Change of Scope - list of ElementIds or list of elements via ElementFilter.
+Change of Type - addition, deletion and modification
+Dynamic model update offers the ability for a Revit API application to modify the Revit model as a reaction to changes happening in the model. Application.DocumentChanged event is read-only event and thus it does not support modification to Revit database. For that, we can use the DMU mechanism.
+With this mechanism, Revit will now let you know when elements are added, modified or deleted.
+The ability to track and modify the model as a reaction to changes in the model, is offered through implementation of updaters. The updater interface offers the ability to implement a method that is informed of the scope of changes that triggered the changes.
+Updaters are classes which implement IUpdater interface. So as our next step, we shall create  Updater class and implement the IUpdater interace in it. This interface implementation includes some methods like -
+GetUpdaterId - This method returns the unique id of the updater which includes the application Id and a GUID for this updater. This is used when Revit remembers the details about the updater which drives a set of elements in the document and is called once during the registration of the Updater.
+GetUpdaterName - This method returns the name by which the updater can be identified by the user, in case there is any problem with the Updater at runtime.
+GetAdditionalInformation - This method returns the auxiliary strings which are displayed in situations when the updater (that was used to drive the document) is not present or not loaded.
+GetChangePriority - This method identifies the nature of the changes the Updater will be performing. It is used to identify the order of execution of updaters and called once during the registration of the Updater.
+And Execute - this method is updated of the scope of the changes that triggered the update and allows API users to make changes of its own to the elements in the document.
+The next step is to register the Updater class in the onStartUp method of the external application. We create a new instance of the Updater class. Using the application level singleton UpdaterRegistry class which stores all the registered Updaters, we can use its RegistryUpdater() method to register the Updater object.
+The process of subscribing an Updater is done using update triggers. Update triggers are combination of "Change Scope" and "Change Type". Change Scope may either be an explicit list of element Ids or an implicit list of elements communicated via the ElementFilter. Change Type represents one of possible changes including element addition, deletion and modification of geometry, parameters or any property of the element.
+
+Lab - Dynamic Model Update in RST
+
+Analysis Visualization Framework
+New mechanism to display analysis results in model
+Provides control over display style, legends
+Transient nature of results
+Primary APIs
+SpatialFieldManager class
+FieldDomainPoints class
+FieldValues class
+AddSpatialFieldPrimitive method
+UpdateSpatialFieldPrimitive method
+AnalysisDisplayStyle class
+This new functionality creates a mechanism for external analysis applications to easily display the results of their computation as 3D data in the Revit model. Note that the results data is transient; it is stored only in the model for the duration of the current Revit session. This feature is designed to allow third party applications to deeply integrate into Revit, do the calculations in their own third party applications, and then create this framework for displaying the results of the computations inside the Revit model. The analysis colors are based on certain values applied based on U and V points on the surface. And a new analysis display style will be used to decide on the display colors, marker types, legend style, text on surface, etc.
+The SpatialFieldManager class is used to create, delete, and modify the "containers" in which the analysis results are stored.
+The FieldDomainPoints sub-classes indicate the points where analysis results are computed.
+The FieldValues class contains the values for each domain point. Each domain point can have multiple values, each for a separate "measurement" at this point. For example, if a solar calculation is being done for every day of the year, each point would have 365 corresponding values
+
+Lab - Analysis Visualization Framework in RST
+
+Idling Event
+Application.Idling
+Raised when the API application can safely access the active document between user interactions.
+Allows changes to the document if a new transaction is opened.
+If the handler requires intensive computation, the user perception of Revit slow down in responsiveness will be improved by splitting tasks across multiple event calls.
+The new event UIApplication.Idling  is raised when it is safe for the API application to access the active document between user interactions. This event is raised only when the Revit UI is in a state where the user could successfully click on an API command button.
+Handlers of this event are permitted to make modifications to any document (including the active document), except for documents that are currently in read-only mode.
+In order to change a document, users must begin a new transaction for that document. This transaction will appear in the Revit undo stack and may be undone by the Revit user.
+Because this event is invoked between user actions in the Revit UI, if the handler for this event requires a significant amount of processing time, users will perceive a slowdown in the responsiveness of Revit. If the execution for updates can be safely split across multiple calls to this event, the user perception of Revit responsiveness will be improved.
+
+Demo - Idling Event
+
+Conclusion
+Where do we go next ...
+
+We have covered...
+Revit Structure (RST) 2011 API News
+Structural BIM workflow
+Basics
+Loads and Load Cases
+Structural Components
+Analytical Models (with RST Link Application Demo)
+Rebars
+Revit 2011 platform API usages in Revit Structure
+Analysis Visualization Framework
+Dynamic Model Update
+Idling Event
+
+Learning More
+Online Help, Developer's Guide and SDK Samples
+Recording of Revit API Webcast
+http://www.adskconsulting.com/adn/cs/api_course_sched.php
+What's new in 2011, Family API, MEP, etc.
+Discussion Groups
+http://discussion.autodesk.com > Revit API
+API Training Classes
+http://www.autodesk.com/apitraining
+The Building Coder, Jeremy Tammik's Revit API Blog
+http://thebuildingcoder.typepad.com
+Autodesk Developer Network
+http://www.autodesk.com/joinadn
+DevHelp Online for ADN members
+http://adn.autodesk.com
+
+Thank you!
+Thank you very much for your interest and attention!
+Much success with the Revit API and your application development!
+
+End of Presentation

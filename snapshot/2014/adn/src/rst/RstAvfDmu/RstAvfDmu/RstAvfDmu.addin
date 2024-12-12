@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>RstDmu</Name>
+    <FullClassName>RstAvfDmu.AlignRebar</FullClassName>
+    <Assembly>RstAvfDmu.dll</Assembly>
+    <ClientId>ad55703e-9979-4714-b519-70e199fa869e</ClientId>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>RST AVF With Point Load</Text>
+    <FullClassName>RstAvfDmu.AVFWithPointLoads</FullClassName>
+    <Assembly>RstAvfDmu.dll</Assembly>
+    <ClientId>ad7c98d9-57a4-47ca-8eaa-91f3d1ae7c9a</ClientId>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

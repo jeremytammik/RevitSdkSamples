@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>GridCreation.dll</Assembly>
+    <ClientId>910cd1fa-2c3d-4eaf-9784-3286a625d924</ClientId>
+    <FullClassName>Revit.SDK.Samples.GridCreation.CS.Command</FullClassName>
+    <Text>Grid Creation</Text>
+    <Description>Show how to create grids.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

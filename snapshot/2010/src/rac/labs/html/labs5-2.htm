@@ -1,0 +1,188 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Swapping Group Types for Selected Groups</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs5-3.htm">next</a>
+<a class="j" href="labs5-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+
+<p>In this lab, we shall write code to swap group types for selected
+groups with other existing model group types in the Revit model.
+This can be done by assigning the GroupType property of the group element
+to some other model group type extracted using filters in Revit.</p>
+
+<p>The first step would be to create a list of all the existing
+model group types in the Revit model. We can again use
+the new filtering mechanism here to create a <code>NewLogicAndFilter</code>
+type filter and set the filter based on 'GroupType' type AND
+family symbol name equals "Model Group".</p>
+
+<pre class="jtcollapse" title="C# List all model group types">    List&lt;Element&gt; elements = new List&lt;Element&gt;();
+    Filter filterType = app.Create.Filter.NewTypeFilter( typeof( GroupType ) );
+    Filter filterParam = app.Create.Filter.NewParameterFilter(
+    BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM, CriteriaFilterType.Equal,
+    LabConstants.gsGroupTypeModel );
+    Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterType, filterParam );
+    app.ActiveDocument.get_Elements( filterAnd, elements );
+</pre>
+
+<pre class="jtcollapse" title="VB List all model group types">    Dim elements As New List(Of Element)
+    Dim filterType As Filter = app.Create.Filter.NewTypeFilter(GetType(GroupType))
+    Dim filterParam = app.Create.Filter.NewParameterFilter(
+    BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM, CriteriaFilterType.Equal, LabConstants.gsGroupTypeModel)
+    Dim filter As Filter = app.Create.Filter.NewLogicAndFilter(filterType, filterParam)
+    Dim n As Integer = app.ActiveDocument.Elements(filter, elements)
+</pre>
+
+<p>Next, with each selected group, we will swap the group type with other
+model group types which we extracted using element filters in the step above.
+This swapping can be achieved simply by using the <code>GroupType</code>
+property of each selected group.
+Each group type swapping is done after confirmation from the user.</p>
+
+<pre class="jtcollapse" title="C# Swap group types">    public class Lab5_2_SwapGroupTypes : IExternalCommand
+    {
+      public IExternalCommand.Result Execute(
+        ExternalCommandData commandData,
+        ref string message,
+        ElementSet elements )
+        {
+          Application app = commandData.Application;
+          // Get all Group Types using the previous code snippet in this lab
+          List&lt;RvtElement&gt; gts = LabUtils.GetAllModelGroupTypes( app );
+          if( 0 == gts.Count )
+          {
+            LabUtils.ErrorMsg( "No Model Group Types in this model." );
+            return IExternalCommand.Result.Cancelled;
+          }
+          string sMsg;
+          foreach( RvtElement elem in app.ActiveDocument.Selection.Elements )
+          {
+            // Check for Group instance
+            if( elem is Group )
+            {
+              Group gp = elem as Group;
+
+              // Offer simple message box to swap the type
+              // (one-by-one, stop if user confirms the change)
+              foreach( GroupType gt in gts )
+              {
+                sMsg = "Swap OLD Type=" + gp.GroupType.Name
+                  + " with NEW Type=" + gt.Name
+                  + " for Group Id=" + gp.Id.Value.ToString() + "?";
+                switch( LabUtils.QuestionCancelMsg( sMsg ) )
+                {
+                  case WinForms.DialogResult.Yes:
+                    gp.GroupType = gt;
+                    LabUtils.InfoMsg( "Group type successfully swapped." );
+                    return IExternalCommand.Result.Succeeded;
+                  case WinForms.DialogResult.Cancel:
+                    LabUtils.InfoMsg( "Command cancelled!" );
+                    return IExternalCommand.Result.Cancelled;
+                   // just continue with the For Loop
+                }
+              }
+            }
+          }
+          return IExternalCommand.Result.Succeeded;
+        }
+    }
+</pre>
+
+<pre class="jtcollapse" title="VB Swap group types">    Public Class Lab5_2_SwapGroupTypes
+        Implements IExternalCommand
+        Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, ByRef message As String, ByVal elements As Autodesk.Revit.ElementSet) As Autodesk.Revit.IExternalCommand.Result Implements Autodesk.Revit.IExternalCommand.Execute
+
+            Dim app As Revit.Application = commandData.Application
+
+            ' First get all Group Types of Model Family
+            'Get all Group Types using the previous code snippet in this lab
+            Dim gts As List(Of Element) = LabUtils.GetAllModelGroupTypes(app)
+            'Dim gts As ElementSet = LabUtils.GetAllGroupTypes(app)
+
+            If gts.Count = 0 Then
+                MsgBox("No Model Group Types in this model!")
+                Return IExternalCommand.Result.Cancelled
+            End If
+
+            ' Loop through selection
+            Dim elem As Revit.Element
+            If (app.ActiveDocument.Selection.Elements.Size = 0) Then
+                MsgBox("No Group has been selected!")
+            Else
+                For Each elem In app.ActiveDocument.Selection.Elements
+
+                    ' Check for Group instance
+                    If TypeOf elem Is Group Then
+                        Dim gp As Group = elem
+
+                        ' Offer simple message box to swap the type
+                        ' (one-by-one, stop if user confirms the change)
+                        Dim gt As GroupType
+                        For Each gt In gts
+                            Select Case (MsgBox("Swap OLD Type=" & gp.GroupType.Name & " with NEW Type=" & gt.Name & " for Group Id=" & gp.Id.Value.ToString & "?", MsgBoxStyle.YesNoCancel))
+                                Case MsgBoxResult.Yes
+                                    gp.GroupType = gt
+                                    MsgBox("Group type successfully swapped!")
+                                    Exit For
+                                Case MsgBoxResult.Cancel
+                                    MsgBox("Command cancelled!")
+                                    Return IExternalCommand.Result.Cancelled
+                                Case MsgBoxResult.No
+                                    ' just continue with the For Loop
+                            End Select
+                        Next
+                    End If
+
+                Next
+            End If
+
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+</pre>
+
+<p>Build the project, adjust the ini file and examine the output
+in a model with various pre-existing model group types.</p>
+
+<a class="j" href="labs5-3.htm">next</a>
+<a class="j" href="labs5-1.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

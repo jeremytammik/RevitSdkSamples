@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AddSpaceAndZone.dll</Assembly>
+    <ClientId>2012a65d-63d0-4e5c-8054-c81de267501d</ClientId>
+    <FullClassName>Revit.SDK.Samples.AddSpaceAndZone.CS.Command</FullClassName>
+    <Text>Create zone and space</Text>
+    <Description>Create space/zone elements and edit zone in Revit MEP.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

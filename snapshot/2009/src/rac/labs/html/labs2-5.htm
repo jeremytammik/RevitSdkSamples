@@ -1,0 +1,328 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Examining Categories (Optional)</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs3-1.htm">next</a>
+<a class="j" href="labs2-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>This chapter is optional and can be skipped.
+The code provided has mainly beed used for exploring and comparing
+the built-in versus document categories in some detail.
+In a normal training session, you can simply look at the
+provided code and run it as is.</p>
+
+<p>Category is an important concept in the Revit API.
+It can be used to identify Elements.
+There are built-in categories that don't have a corresponding document category.
+There are also document categories that don't have corresponding built-in Category.
+In this Lab, we will list all built-in categories and the entire document category
+tree. Create a new class Lab2_5_Categories in file Lab2.</p>
+
+<p>Create three helper functions to the class.
+The first helper is to check whether the given category is built-in.
+If we can retrieve a valid category object through a given built-in
+category member, then this built-in category member maps a valid
+document category.</p>
+
+<pre title="C# Lab2_5_Categories.IsBuiltInCategory1" class="jtcollapse">
+  #region Lab2_5_Categories
+  /// &lt;summary&gt;
+  /// List all built-in categories and the entire category tree.
+  /// Some of the results:
+  /// - not all built-in categories have a corresponding document category.
+  /// - not all document categories have a corresponding built-in category.
+  /// There are 645 built-in categories.
+  /// 419 of them have associated document categories.
+  /// 199 of these are top level parents.
+  /// These lead to 444 top-level and children categories.
+  /// &lt;/summary&gt;
+  public class Lab2_5_Categories : IExternalCommand
+  {
+    Document _doc;
+    const int _indentDepth = 2;
+    Hashtable _bicForCategory;
+    //Hashtable _categoryForBic;
+
+
+  #endregion // Lab2_5_Categories
+</pre>
+
+<pre title="VB Lab2_5_Categories command.IsBuiltInCategory1" class="jtcollapse">
+  #Region "Lab2_5_Categories"
+    ''' &lt;summary&gt;
+    ''' List all built-in categories and the entire category tree.
+    ''' Some of the results:
+    ''' - not all built-in categories have a corresponding document category.
+    ''' - not all document categories have a corresponding built-in category.
+    ''' There are 645 built-in categories.
+    ''' 419 of them have associated document categories.
+    ''' 199 of these are top level parents.
+    ''' These lead to 444 top-level and children categories.
+    ''' &lt;/summary&gt;
+    Public Class Lab2_5_Categories
+        Implements IExternalCommand
+
+        Dim _doc As Document
+        Const _indentDepth As Integer = 2
+        Dim _bicForCategory As Hashtable
+
+        ''' &lt;summary&gt;
+        ''' Check whether the given category is one of the built-in ones.
+        ''' This implementation is slow in 2008, and very very very slow in 2009,
+        ''' so it has been replaced by the _bicForCategory hash table solution below.
+        ''' &lt;/summary&gt;
+        ''' &lt;param name="c"&gt;&lt;/param&gt;
+        ''' &lt;returns&gt;True if the given category is one of the built-in ones.&lt;/returns&gt;
+        Private Function IsBuiltInCategory1(ByVal c As Category) As Boolean
+
+            Dim rc As Boolean = False
+            Dim a As BuiltInCategory
+            For Each a In System.Enum.GetValues(GetType(BuiltInCategory))
+                Dim c2 As Category = _doc.Settings.Categories.Item(a)
+                If c.Equals(c2) = True Then
+                    rc = True
+                    Exit For
+                End If
+            Next
+            Return rc
+        End Function
+    End Class
+  #End Region
+</pre>
+
+<p>The helper function <code>IsBuiltInCategory</code> determines whether the
+given category is one of the built-in ones, making use of a
+dictionary including all document categories and its ContainsKey() method.</p>
+
+<pre title="C# Lab2_5_Categories command.IsBuiltInCategory" class="jtcollapse">
+    /// &lt;summary&gt;
+    /// Check whether the given category is one of the built-in ones.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;True if the given category is one of the built-in ones.&lt;/returns&gt;
+    bool IsBuiltInCategory( Category c )
+    {
+      return _bicForCategory.ContainsKey( c );
+    }
+</pre>
+
+<pre title="VB Lab2_5_Categories command.IsBuiltInCategory" class="jtcollapse">
+    ''' &lt;summary&gt;
+    ''' Check whether the given category is one of the built-in ones.
+    ''' &lt;/summary&gt;
+    ''' &lt;param name="c"&gt;&lt;/param&gt;
+    ''' &lt;returns&gt;True if the given category is one of the built-in ones.&lt;/returns&gt;
+    Private Function IsBuiltInCategory(ByVal c As Category) As Boolean
+        Return _bicForCategory.ContainsKey(c)
+    End Function
+</pre>
+
+<p>The next helper function is <code>ListCategoryAndSubCategories</code>.
+It is used to print all sub categories of a given top level category.
+This is a recursive function.</p>
+
+<pre title="C# Lab2_5_Categories.ListCategoryAndSubCategories" class="jtcollapse">
+    int ListCategoryAndSubCategories( Category c, int level )
+    {
+      int n = 1;
+      string indent = new string( ' ', level * _indentDepth );
+      Debug.WriteLine( indent + c.Name + ( IsBuiltInCategory( c ) ? "" : " - not built in" ) );
+      foreach( Category sub in c.SubCategories )
+      {
+        n += ListCategoryAndSubCategories( sub, level + 1 );
+      }
+      return n;
+    }
+</pre>
+
+<pre title="VB Lab2_5_Categories.ListCategoryAndSubCategories" class="jtcollapse">
+    Private Function ListCategoryAndSubCategories(ByVal c As Category, ByVal level As Integer) As Integer
+
+        Dim n As Integer = 1
+        Dim indent As String = New String(" ", level * _indentDepth)
+        Dim subCat As Category
+        For Each subCat In c.SubCategories
+            n += ListCategoryAndSubCategories(subCat, level + 1)
+        Next
+        Return n
+
+    End Function
+</pre>
+
+<p>In the command <code>Execute</code> function, check each
+built-in category to determine whther it has a corresponding document category.
+If not, print its information the the Visual Studio debug output window.
+For other categories, we print the category tree.
+In addition, the total number of built-in, document, and top level categories
+are calculated and displayed.</p>
+
+<pre title="C# Lab2_5_Categories.Execute" class="jtcollapse">
+    public CmdResult Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      WaitCursor waitCursor = new WaitCursor();
+      Application app = commandData.Application;
+      _doc = app.ActiveDocument;
+      Categories categories = _doc.Settings.Categories;
+      Array bics = Enum.GetValues( typeof( BuiltInCategory ) );
+      _bicForCategory = new Hashtable( bics.GetLength( 0 ) );
+      //_categoryForBic = new Hashtable( bics.GetLength( 0 ) );
+      int nNullCategoriesForBic = 0;
+      foreach( BuiltInCategory bic in bics )
+      {
+        Category c = categories.get_Item( bic );
+        if( null == c )
+        {
+          ++nNullCategoriesForBic;
+          Debug.WriteLine( string.Format( "Built-in category '{0}' has a null category.", bic.ToString() ) );
+        }
+        else
+        {
+          //_categoryForBic.Add( bic, c );
+          _bicForCategory.Add( c, bic );
+        }
+      }
+      //
+      // list and count all the built-in categoreies:
+      //
+      int nBuiltInCategories = 0;
+      int nDocumentCategories = 0;
+      string indent = new string( ' ', _indentDepth );
+      CategorySet topLevelCategories = app.Create.NewCategorySet();
+      Debug.WriteLine( "\nBuilt-in categories:" );
+      foreach( BuiltInCategory a in Enum.GetValues( typeof( BuiltInCategory ) ) )
+      {
+        Category c = categories.get_Item( a );
+        if( null != c )
+        {
+          ++nDocumentCategories;
+          if( null == c.Parent )
+          {
+            topLevelCategories.Insert( c );
+          }
+        }
+        Debug.WriteLine( indent + a.ToString() + ( ( null == c ) ? "" : ( ": " + c.Name ) ) );
+        ++nBuiltInCategories;
+      }
+      Debug.WriteLine( string.Format( "There are {0} built-in categories. {1} of these have a null category in document. {2} of them have associated document categories. {3} are top level parents.", nBuiltInCategories, nNullCategoriesForBic, nDocumentCategories, topLevelCategories.Size ) );
+      //
+      // list the entire category hierarchy:
+      //
+      int nPrinted = 0;
+      Debug.WriteLine( "\nDocument categories:" );
+      foreach( Category c in topLevelCategories )
+      {
+        nPrinted += ListCategoryAndSubCategories( c, 1 );
+      }
+      Debug.WriteLine( string.Format( "{0} top-level and children categories printed.", nPrinted ) );
+      return CmdResult.Succeeded;
+    }
+
+</pre>
+
+<pre title="VB Lab2_5_Categories.Execute" class="jtcollapse">
+    Public Function Execute( _
+        ByVal commandData As ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As ElementSet) _
+        As IExternalCommand.Result Implements IExternalCommand.Execute
+
+        Dim waitCursor As New Labs.WaitCursor
+        Dim app As Application = commandData.Application
+        _doc = app.ActiveDocument
+        Dim categories As Categories = _doc.Settings.Categories
+        Dim bics As Array = System.Enum.GetValues(GetType(BuiltInCategory))
+        _bicForCategory = New Hashtable(bics.GetLength(0))
+        '_categoryForBic = new Hashtable( bics.GetLength( 0 ) );
+        Dim bic As BuiltInCategory
+        Dim c As Category
+        For Each bic In bics
+            c = categories.Item(bic)
+            If c Is Nothing Then
+                Debug.WriteLine(String.Format("Built-in category '{0}' has a null category.", bic.ToString()))
+            Else
+                '_categoryForBic.Add( bic, c );
+                _bicForCategory.Add(c, bic)
+            End If
+        Next
+        '
+        ' list and count all the built-in categoreies:
+        '
+        Dim nBuiltInCategories As Integer = 0
+        Dim nDocumentCategories As Integer = 0
+        Dim indent As String = New String(" "c, _indentDepth)
+        Dim topLevelCategories As CategorySet = app.Create.NewCategorySet()
+        Debug.WriteLine("\nBuilt-in categories:")
+        Dim a As BuiltInCategory
+        For Each a In System.Enum.GetValues(GetType(BuiltInCategory))
+            c = categories.Item(a)
+            If Not (c Is Nothing) Then
+                nDocumentCategories = nDocumentCategories + 1
+                If c.Parent Is Nothing Then
+                    topLevelCategories.Insert(c)
+                End If
+            End If
+
+            Dim tempStr As String = ""
+            If Not c Is Nothing Then
+                tempStr = ": " + c.Name
+            End If
+            Debug.WriteLine(indent + a.ToString() + tempStr)
+            nBuiltInCategories = nBuiltInCategories + 1
+        Next
+        Debug.WriteLine(String.Format("There are {0} built-in categories. {1} of them have associated document categories. {2} are top level parents.", nBuiltInCategories, nDocumentCategories, topLevelCategories.Size))
+        '
+        ' list the entire category hierarchy:
+        '
+        Dim nPrinted As Integer = 0
+        Debug.WriteLine("\nDocument categories:")
+        For Each c In topLevelCategories
+            nPrinted += ListCategoryAndSubCategories(c, 1)
+        Next
+        Debug.WriteLine(String.Format("{0} top-level and children categories printed.", nPrinted))
+        Return IExternalCommand.Result.Succeeded
+
+    End Function
+</pre>
+<a class="j" href="labs3-1.htm">next</a>
+<a class="j" href="labs2-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j">copyright &copy; 2007-2008 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

@@ -1,0 +1,537 @@
+#
+# BcSamples.txt - The Building Coder blog sample applications
+#                 include file for RvtSamples Revit menu generator
+#
+# Copyright (C) 2008-2009 by Jeremy Tammik, Autodesk Inc. All Rights Reserved.
+#
+# History:
+#
+# 2008-10-05 initial version
+# 2009-05-20 ported to Revit 2010
+#
+# This file is read by the Revit external application RvtSamples, which is
+# discussed in the class on the Revit SDK samples. From Revit 2009 onwards,
+# the RvtSamples source code is included in the standard Revit SDK.
+#
+# To achieve this, add the followng line to the end of the file
+# RvtSamples.txt included in the RvtSamples SDK sample, starting
+# with one leading hash character:
+#
+# #include C:/a/j/adn/train/revit/2010/src/bc/BcSamples.txt
+#
+# The entries for the standard Revit SDK samples are defined
+# separately in RvtSamples.txt.
+#
+# This file defines additional entries for the sample applications
+# discussed in The Building Coder blog.
+#
+# In the Revit 2009 menu system, the top level menu title was "ADN",
+# and the samples were added to the submenu
+#
+# ADN
+#   Bc
+#
+# In Revit 2010, this menu hierarchy is translated into pull down
+# buttons in the RvtSamples panel generated in the ribbon Add-Ins tab.
+#
+
+#
+#
+# /ADN/Bc/
+#
+ADN Bc
+List Walls
+List wall lengths and areas
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdListWalls
+
+ADN Bc
+Wall Dimensions
+Extract wall solid and list all its dimensions
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallDimensions
+
+ADN Bc
+Relationship Inverter
+Determine opening > wall host relationships and invert them to wall > opening
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdRelationshipInverter
+
+ADN Bc
+Filter Performance
+Compare Type Filter versus using an anonymous method to filter elements
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdFilterPerformance
+
+ADN Bc
+Element Materials
+Retrieve building element materials
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdGetMaterials
+
+ADN Bc
+Azimuth
+Calculate azimuth
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdAzimuth
+
+ADN Bc
+Bounding Box
+Retrieve Element Bounding Box
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdBoundingBox
+
+ADN Bc
+Slab Boundaries
+Determine polygonal floor slab boundary loops
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSlabBoundary
+
+ADN Bc
+Slab Sides
+Determine floor slab side faces
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSlabSides
+
+ADN Bc
+Edit Floor
+Generate a new floor element from the curve array of an existing one
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdEditFloor
+
+ADN Bc
+Wall Layers
+List and determine position of all wall compound layers
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallLayers
+
+ADN Bc
+Wall Profile
+Determine wall elevation profile boundary loop polygons
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallProfile
+
+ADN Bc
+Wall Neighbours
+Determine wall neighbours, i.e. wall joined at end points
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallNeighbours
+
+ADN Bc
+Floor Boundary Polygon Areas
+Determine floor slab boundary loop polygon areas
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSlabBoundaryArea
+
+ADN Bc
+Wall Profile Polygon Areas
+Determine wall elevation profile boundary loop polygon areas
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallProfileArea
+
+ADN Bc
+Linked Files
+Determine linked files and their full path
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdLinkedFiles
+
+ADN Bc
+List Views
+Determine all all the view ports of a drawing sheet and vice versa
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdListViews
+
+ADN Bc
+Plan Topology
+List plan topology and its rooms and circuits with no rooms
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdPlanTopology
+
+
+ADN Bc
+Room Wall Adjacency
+Determine part of wall face area that bounds a room
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdRoomWallAdjacency
+
+ADN Bc
+Wall Layer Volumes
+Calculate compound wall layer volumes
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallLayerVolumes
+
+ADN Bc
+Window Handle
+Determine Revit window handle and display a modeless form
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWindowHandle
+
+ADN Bc
+Sloped Wall
+Create a sloped wall
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSlopedWall
+
+ADN Bc
+Create Column Type and Instance
+Create a new column type and insert an instance of it
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewColumnTypeInstance
+
+ADN Bc
+Create Beam Type and Instance
+Create a new beam type and insert an instance of it
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewBeamTypeInstance
+
+ADN Bc
+List Railing Types
+List all railing and stair types
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdListRailingTypes
+
+ADN Bc
+Cannot Create Railing Instance
+Cannot create a new railing instance
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewRailing
+
+ADN Bc
+Linked File Elements
+List elements in linked files
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdLinkedFileElements
+
+ADN Bc
+Get Transformed Coordinates
+Determine transformed vertex coordinates for family instance symbol geometry
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdTransformedCoords
+
+ADN Bc
+Cylindrical Column
+Determine whether column is round
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdColumnRound
+
+ADN Bc
+Create Area
+Create a new area element
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewArea
+
+ADN Bc
+Nested Instance Geometry
+Determine nested instance geometry and structure
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNestedInstanceGeo
+
+ADN Bc
+Imports in Families
+List all imported symbols in all families in project
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdImportsInFamilies
+
+ADN Bc
+Wall Footing
+Determine wall footing from selected wall
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallFooting
+
+ADN Bc
+New Wall Layer
+Create a new wall type with a new compound structure layer
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewWallLayer
+
+ADN Bc
+Shared Parameters
+Create shared parameters for Doors, Walls, inserted DWG, Model Groups and Model Lines
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdCreateSharedParams
+
+ADN Bc
+Space Adjacency
+Analyse and report space adjacencies
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSpaceAdjacency
+
+ADN Bc
+Mirror Elements
+Mirror selected elements
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdMirror # version 1.0.1.39
+
+ADN Bc
+Mirror List Added
+Mirror selected elements and list the resulting new elements added to the database
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdMirrorListAdded # version 1.0.1.40
+
+ADN Bc
+New Line Loads
+Create a new structural line load elements
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewLineLoad # version 1.0.1.41
+
+ADN Bc
+Rotated Beam Location
+Determine rotated beam location
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdRotatedBeamLocation # version 1.0.1.42
+
+ADN Bc
+New Lighting Fixture
+Insert a new lighting fixture family instance
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewLightingFixture # version 1.0.1.43
+
+ADN Bc
+Wall Bottom Face
+Determine the bottom face of a wall
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallBottomFace # version 1.0.1.44
+
+ADN Bc
+Library Paths
+List existing and update application options library paths
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdLibraryPaths # version 1.0.1.45
+
+ADN Bc
+Detail Curves
+Create detail curves, an arc and a line
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdDetailCurves # version 1.0.1.46
+
+ADN Bc
+List Marks
+List all door marks
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdListMarks # version 1.0.1.47
+
+ADN Bc
+Install Location
+Determine Revit product install location
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdInstallLocation # version 1.0.1.48
+
+ADN Bc
+Disallow Join
+Allow or disallow join at wall ends
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdDisallowJoin # version 1.0.1.49
+
+ADN Bc
+Unrotate North
+Transform element location back to original coordinates to cancel effect of rotating project north
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdUnrotateNorth # version 1.0.1.50
+
+ADN Bc
+Coords Of View On Sheet
+Retrieve coordinatess of view on sheet
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdCoordsOfViewOnSheet # version 1.0.1.51
+
+ADN Bc
+List Shared Parameters
+List all shared parameters defined in document and saved on wall instances
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdListSharedParams # version 1.0.1.52
+
+ADN Bc
+Family Parameter Values
+List family parameter values defined on the types in a family document
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdFamilyParamValue # version 1.0.1.53
+
+ADN Bc
+Set Room Occupancy
+Set room occupancy via built-in parameter ROOM_OCCUPANCY
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSetRoomOccupancy # version 1.0.1.54
+
+ADN Bc
+New Project Document
+Create a new project document
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewProjectDoc # version 1.0.1.55
+
+ADN Bc
+Crop 3D View to Room
+Set 3D view crop box to room extents
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdCropToRoom # version 1.0.1.56
+
+ADN Bc
+LandXML Import
+Import LandXML data and create TopographySurface
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdLandXml # version 1.0.1.57
+
+ADN Bc
+Rectangular Duct Corners
+Determine the corners of a rectangular duct 
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdRectDuctCorners # version 1.0.1.58
+
+ADN Bc
+New Sprinkler
+Insert a new sprinkler family instance
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewSprinkler # version 1.0.1.59
+
+ADN Bc
+New Spot Elevation on Beam
+Insert a new spot elevation on top surface of beam
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewSpotElevation # version 1.0.1.60
+
+ADN Bc
+New Dimension Label
+Create a new dimension label in a family document
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewDimensionLabel # version 1.0.1.61
+
+ADN Bc
+Elliptical Arc
+Create a new elliptical arc geometry object with a given start and end angle
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdEllipticalArc # version 1.0.1.62
+
+ADN Bc
+Nested Families
+List nested family files and instances in a family document
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNestedFamilies # version 1.0.1.63
+
+ADN Bc
+New Swept Blend
+Create a new swept blend element
+LargeImage:
+Image:
+C:\a\j\adn\train\revit\2010\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewSweptBlend # version 1.0.1.64

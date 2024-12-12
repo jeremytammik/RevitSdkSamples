@@ -1,0 +1,249 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Listing All Loaded Families and Types</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs3-2.htm">next</a>
+<a class="j" href="labs2-5.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we list all loaded families and family instances in the current document.
+Each family defines a set of types, also called symbols.
+To list them, we retrieve all the objects wrapping standard families and types loaded and available in the current model.
+Let's first see how we can get all family objects and try to determine their category.
+Add a new module named <code>Labs3</code> to the project and a standard command class
+implementation <code>Lab3_1_StandardFamiliesAndTypes</code> to it:</p>
+
+<pre title="C# Lab3_1_StandardFamiliesAndTypes skeleton" class="jtcollapse">using System;
+using System.Collections;
+using System.Collections.Generic;
+using WinForms = System.Windows.Forms;
+using Autodesk.Revit;
+using Autodesk.Revit.Elements;
+using Autodesk.Revit.Parameters;
+using Autodesk.Revit.Symbols;
+using RvtElement = Autodesk.Revit.Element;
+
+namespace Labs
+{
+  public class Lab3_1_StandardFamiliesAndTypes : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+}
+</pre>
+
+<pre title="VB Lab3_1_StandardFamiliesAndTypes skeleton" class="jtcollapse">Public Class Lab3_1_StandardFamiliesAndTypes
+    Implements IExternalCommand
+
+    Public Function Execute( _
+        ByVal commandData As ExternalCommandData, _
+        ByRef message As String, _
+        ByVal elements As ElementSet) _
+    As IExternalCommand.Result _
+    Implements Autodesk.Revit.IExternalCommand.Execute
+
+        Return IExternalCommand.Result.Succeeded
+
+    End Function
+End Class
+</pre>
+
+<p>Unlike previous versions of Revit where we had to iterate through all the
+elements in Revit and create a list of family elements, from Revit 2009 onwards,
+we can use the element filtering mechanism to filter out all the family elements.
+This not only reduces the number of lines of code required to achieve the same
+result, but also has tremendous performance advantage as compared to previous releases.
+Insert the following lines of code to the class implementation to create a list
+of family elements using the filtering mechanism.</p>
+
+<pre title="C# List standard families" class="jtcollapse">
+    Application app = commandData.Application;
+    Document doc = app.ActiveDocument;
+    //
+    // get all family elements in current document:
+    //
+    List&lt;RvtElement&gt; families = new List&lt;RvtElement&gt;();
+    Filter filterFamily = app.Create.Filter.NewTypeFilter( typeof( Family ) );
+    doc.get_Elements( filterFamily, families );
+    string sMsg = "Standard families already loaded in this model:";
+    foreach( Family f in families )
+    {
+      // Get its category name; notice that the Category property is not
+      // implemented for the Family class; use FamilyCategory instead;
+      // notice that that is also not always implemented; in that case,
+      // use the workaround demonstrated below, looking at the contained
+      // family symbols' category:
+      sMsg += "\r\n  Name=" + f.Name
+        + "; Category=" + ( ( null == f.Category ) ? "?" : f.Category.Name )
+        + "; FamilyCategory=" + ( ( null == f.FamilyCategory ) ? "?" : f.FamilyCategory.Name );
+    }
+    LabUtils.InfoMsg( sMsg );
+</pre>
+
+<pre title="VB List standard families" class="jtcollapse">
+    ' Element iteration done with element filtering functionality in Revit 2009
+    Dim doc As Revit.Document = commandData.Application.ActiveDocument
+    Dim elementList As New List(Of Revit.Element)
+    Dim filterType As Filter = commandData.Application.Create.Filter.NewTypeFilter(GetType(Family))
+    Dim nRetVal As Integer = doc.Elements(filterType, elementList)
+    Dim sMsg As String = "Standard Families already loaded in this model are:"
+    Dim f As Family
+    For Each f In elementList
+        ' get its category name; notice that the category property is
+        ' not implemented for the Family class. use FamilyCategory
+        ' instead, which is also not always implemented:
+
+        Dim catName As String
+        If f.Category Is Nothing Then
+            catName = "?"
+        Else
+            catName = f.Category.Name
+        End If
+
+        Dim famCatName As String
+        If f.FamilyCategory Is Nothing Then
+            famCatName = "?"
+        Else
+            famCatName = f.FamilyCategory.Name
+        End If
+
+        sMsg += vbCrLf & "  Name=" & f.Name _
+            & "; Category=" & catName _
+            & "; FamilyCategory=" & famCatName
+    Next
+    MsgBox(sMsg)
+</pre>
+
+<p>Compile the project, adjust the ini file and run the command.
+As we can see from the message box, all the categories are listed as "?",
+showing that this property is not implemented for family class.</p>
+
+<p>Because the <code>Category</code> property is not implemented for family
+objects, and it is often useful to determine a family instance's category,
+the Revit API has defined an additional property <code>FamilyCategory</code>
+to query it. Unfortunately, the value of this property is defined in the
+content, and some legacy content does not specify a value for it,
+so even this property does not always reliably return the value you
+might expect.</p>
+
+<p>In order to reliably determine a family's category, we can retrieve the
+contained symbols or types and determine <em>their</em> category.
+The following code demonstrates this and also reports
+all types available in each family, displaying one message box per family.
+Add the following between the previous loop and the return statement:</p>
+
+<pre title="C# List standard families and types" class="jtcollapse">
+    // Loop through the collection of families, and now look at
+    // the child symbols (types) as well. These symbols can be
+    // used to determine the family category.
+    foreach( Family f in families )
+    {
+      string catName;
+      bool first = true;
+      // Loop all contained symbols (types)
+      foreach( FamilySymbol symb in f.Symbols )
+      {
+        // you can determine the family category from its first symbol.
+        if( first )
+        {
+          first = false;
+          catName = symb.Category.Name;
+          sMsg = "Family: Name=" + f.Name
+            + "; Id=" + f.Id.Value.ToString()
+            + "; Category=" + catName
+            + "\r\nContains Types:";
+        }
+        sMsg += "\r\n    " + symb.Name + "; Id=" + symb.Id.Value.ToString();
+      }
+      // Show the symbols for this family and allow user to proceed
+      // to the next family (OK) or cancel (Cancel)
+      sMsg += "\r\nContinue?";
+      if( !LabUtils.QuestionMsg( sMsg ) )
+      {
+        break;
+      }
+    }
+</pre>
+
+<pre title="VB List standard families and types" class="jtcollapse">
+    ' Let's do a similar loop, but now get all the child symbols (types) as well.
+    ' These symbols can also be used to determine the category:
+
+    For Each f In elementList
+        Dim catName As String
+        Dim first As Boolean = True
+        Dim symb As FamilySymbol
+        'Loop all contained symbols (types)
+        For Each symb In f.Symbols
+            ' Determine the category via first symbol
+            If first Then
+                first = False
+                If (symb.Category Is Nothing) Then
+                    catName = "?"  ' Still happens for *some* Symbols (Profiles?)
+                Else
+                    catName = symb.Category.Name
+                End If
+
+                sMsg = "Family: Name=" & f.Name & "; Id=" & f.Id.Value.ToString & "; Category=" & catName & vbCrLf & "Contains Types:"
+            End If
+                sMsg += vbCrLf & "    " & symb.Name & "; Id=" & symb.Id.Value.ToString
+        Next
+
+        ' Show the symbols for this family and allow user to procede to the next family (OK) or cancel (Cancel)
+        If MsgBox(sMsg, MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then
+            Exit For
+        End If
+    Next
+</pre>
+
+<p>Now a valid category name is reported for all families.
+The looping continues displaying all types contained in each family
+in one message box each as long as you click 'OK'.
+Click 'Cancel' to terminate.</p>
+
+<a class="j" href="labs3-2.htm">next</a>
+<a class="j" href="labs2-5.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Materials.dll</Assembly>
+    <ClientId>70ee8959-de2e-4f52-947a-eea1fc084639</ClientId>
+    <FullClassName>Revit.SDK.Samples.Materials.CS.Command</FullClassName>
+    <Text>Materials</Text>
+    <Description>Present all available materials in the current project, and allow changing the material of the selected structural element.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AvoidObstruction.dll</Assembly>
+    <ClientId>e2d9f6bb-12cd-49fd-a9de-883f86c785d8</ClientId>
+    <FullClassName>Revit.SDK.Samples.AvoidObstruction.CS.Command</FullClassName>
+    <Text>AvoidObstruction</Text>
+    <Description>Resolve the obstructions of pipe with pipe, pipe with beam and pipe with duct.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

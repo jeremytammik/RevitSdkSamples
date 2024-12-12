@@ -1,0 +1,341 @@
+obtain and analyze the contents of a project's detailed energy analysis model, 
+as seen in the Export to gbXML and the Heating and Cooling Loads features
+
+produces an analytical thermal model from the physical model of a building
+analytical thermal model is composed of spaces, zones and planar surfaces that represent the actual volumetric elements of the building.
+EnergyAnalysisDetailModel.Create() 
+Methods GetAnalyticalSpaces, GetAnalyticalSurfaces, GetAnalyticalOpenings, GetAnalyticalShadingSurfaces
+
+Exercises HostObjAttributes class GetCompoundStructure and SetCompoundStructure methods
+CompoundStructure class SetLayers, SetNumberOfShellLayers, SetParticipatesInWrapping, GetSegmentIds, GetAdjacentRegions, GetSegmentEndPoints, SplitRegion, FindEnclosingRegionAndSegments, AddWallSweep 
+
+SPR #206270 [Errors in SDK sample CompoundStructure docs and execution]
+
+Extensible Storage
+
+The Revit API now allows you to create your own class-like Schema data structures and attach instances of them to any Element in a Revit model. This functionality can be used to replace the technique of storing data in hidden shared parameters. Schema-based data is saved with the Revit model and allows for higher-level, metadata-enhanced, object-oriented data structures. Schema data can be configured to be readable and/or writable to all users, just a specific application vendor, or just a specific application from a vendor.
+
+The extensible storage classes are all found in Autodesk.Revit.DB.ExtensibleStorage
+
+Autodesk.Revit.DB.ExtensibleStorage.SchemaBuilder -- Used to create Schemas definitions 
+Autodesk.Revit.DB.ExtensibleStorage.Schema --Contains a unique schema identifier, read/write permissions, and a collection of data Field objects. 
+Autodesk.Revit.DB.ExtensibleStorage.Field  -- Contains data name, type, and unit information and is used as the key to access corresponding data in an Element 
+Autodesk.Revit.DB.ExtensibleStorage.FieldBuilder -- A helper class used with SchemaBuilder used when creating a new field. 
+Autodesk.Revit.DB.ExtensibleStorage.Entity -- An object containing data corresponding to a Schema that can then be inserted into an Element. 
+The following data types are currently supported:
+
+int 
+short 
+double 
+float 
+bool 
+string 
+Guid 
+ElementId 
+Autodesk.Revit.DB.XYZ 
+Autodesk.Revit.DB.UV 
+Autodesk.Revit.DB.ExtensibleStorage.Entity (An instance of another Schema, also known as a SubSchema) 
+Array (as a System.Collections.Generic.IList<T>) 
+Map (as a System.Collections.Generic.IDictionary<TKey, TValue>) 
+·         All types supported for simple types, including Entity, are supported for the <TValue> parameter. 
+
+·         All types supported for simple types *except* double, float, XYZ, UV, and Entity are supported for the <TKey> parameter.
+
+Compound Structure and Wall Sweeps
+
+Construction modeling API
+
+elements to be divided into sub-parts, collected into assemblies
+See this in conjunction with construction modelling API which elements to be divided into sub-parts and collected into assemblies, and the new access to split face data.
+
+new CompoundStructure class supports read and modification of all of the structure information include vertical regions, sweeps and reveals.
+
+CompoundStructure Layers property replaced by GetLayers and SetLayers methods
+
+CompoundStructureLayer properties modified
+
+New WallSweep class represents a wall sweep or reveal
+Either standalone or added by the compound structure settings 
+Static method Create creates new standalone wall sweep or reveal
+
+s may be constructed using the .
+
+New WallSweep class represents either a standalone wall sweep/reveal, or one added by the settings in a given wall's compound structure. Standalone wall sweeps and reveals may be constructed using the static method Create().
+
+ExtensibleStorageManager SDK sample demo
+
+CompoundStructure SDK sample
+
+EnergyAnalysisModel SDK sample
+
+in the notes on slide 14, you say "INI file has been deprecated" ... actually, not just deprecated, but it can no longer be used to load an add-in. i corrected that statement.
+
+To find the recording of the new features of the Revit 2012 API, created by my colleague Saikat Bhattacharya, please filter for 'Developer Days Online: Revit' and 'English' and select the download link to obtain the archive file 'DevDays Online - Revit 2012 What's New.zip'
+
+DevDays Online Revit 2012 API recording available from the Autodesk Developer Network (ADN) DevTech API Training & Consulting page:
+
+http://autodesk.com/apitraining
+http://www.adskconsulting.com/adn/cs/api_course_webcast_archive.php
+
+Show ExtensibleStorageDemo DevDays sample
+Show MepPlaceholder Devdays sample
+show custom panel tab
+
+copy "Revit 2012 API Updates_May17.pptx" "\\brigand\transfer\AEC\Revit 2012 API webcast - May 2011"
+
+Create and name a new schema
+Set the read/write access for the schema
+Define one or more fields of data for the schema
+Create an entity based on the schema
+Assign values to the fields for the entity
+Associate the entity with a Revit element
+
+Schema class represents a schema
+Created by schemaSchemaBuilder class
+Fields created by FieldBuilder class
+Entity class holds data for a Schema instance 
+Entity is attached to an arbitrary Revit Element
+
+22.5 Extensible Storage
+
+xcopy C:\a\lib\revit\2012\adn\doc\webcast\src\ExtensibleStorage\* "\\brigand\transfer\AEC\Revit 2012 API webcast - May 2011\Demo Projects\ExtensibleStorage" /s
+
+copy "\\brigand\transfer\AEC\Revit 2012 API webcast - May 2011\Revit 2012 API Updates_May17_SB.pptx"
+
+copy "Revit 2012 API Updates_May17.pptx" "\\brigand\transfer\AEC\Revit 2012 API webcast - May 2011"
+
+new classes provide read and write access to the MEP pipe settings.
+
+New utility methods MechanicalUtils.ConvertDuctPlaceholders and PlumbingUtils.ConvertPipePlaceholdersMechanicalUtils convert a set of placeholder ducts and pipes to real 3D entities.
+
+The new classes DuctInsulation, PipeInsulation, DuctLining and related types support read/write and create access to duct & pipe insulation and lining. In Revit 2012, these objects are now accessible as standalone elements related to their parent duct, pipe, or fitting.
+
+CreatePlaceholders
+ConvertPlaceholders
+
+Product:  Autodesk Revit MEP 2012 
+Serial Number:  400-98732605
+Product Key:  589D1 
+Request code:  KTLJ S2ND N94F JPZR V3XN JWL5 HV7W N3XZ
+
+257D1
+
+This new API provides access to the contents of a project's detailed energy analysis model, as seen in the Export to gbXML and the Heating and Cooling Loads features.
+
+This analysis produces an analytical thermal model from the physical model of a building. The analytical thermal model is composed of spaces, zones and planar surfaces that represent the actual volumetric elements of the building.
+
+New classes in Autodesk.Revit.DB.Analysis namespace for the energy analysis detail model, options, openings, spaces, surfaces and loops can be used to generate and analyze the contents of the detailed energy analysis model. 
+
+Use the EnergyAnalysisDetailModel Create method to create and populate the model with appropriate options selected.
+
+The EnergyAnalysisDetailModel methods GetAnalyticalSpace, GetAnalyticalSurfaces, GetAnalyticalOpenings and GetAnalyticalShadingSurfaces extract the entities from the analysis.
+
+The EnergyAnalysisDetailModel method Destroy clean up the Revit database after finishing with the analysis results.
+
+New classes in the Autodesk.Revit.DB.Analysis namespace provide access to the elements and objects created by Revit to perform energy analysis on conceptual design models.
+
+The method Document Export method overload taking a MassGBXMLExportOptions argument exports a gbXML file containing conceptual energy analysis elements (mass elements) only.
+
+CreateFillPattern 
+CompoundStructure
+EnergyAnalysisModel
+ExtensibleStorageManager
+PerformanceAdviserControl
+PointCloudEngine
+MultiplanarRebar
+MultithreadedCalculation
+SlaveSymbolGeometry
+GeometryCreation_BooleanOperation
+ProximityDetection_WallJoinControl
+
+saikat: demo sdk 3 samples: 2 geometry + constrction modelling
+
+copy "Revit 2012 API Updates_May17.pptx" "\\brigand\transfer\AEC\Revit 2012 API webcast - May 2011"
+
+Parts and assemblies allow us to split and group elements
+What about the internal layer structure of walls, floors, etc.?
+Limited access in Revit 2011, no write or creation access at all
+Read, write and creation of all of compound structure layer info
+Includes vertical regions, sweeps and reveals
+New CompoundStructure class
+Layers property replaced by GetLayers and SetLayers methods
+CompoundStructureLayer properties modified
+New WallSweep class represents a wall sweep or reveal
+Either standalone or added by the compound structure settings 
+Static method Create creates new standalone sweep or reveal
+Demo: CompoundStructure SDK sample
+Split face data is also accessible in the Revit 2012 API
+
+copy "\\brigand\transfer\AEC\Revit 2012 API webcast - May 2011\Revit 2012 API Updates_May18_SB.pptx" 
+
+reduce resolution
+
+1024 x 768
+1280 x 1024
+
+*6 to mute yourself
+*7-1 toggles between audience mute and talk mode
+
+copy "Revit 2012 API Updates_May18.pptx" "\\brigand\transfer\AEC\Revit 2012 API webcast - May 2011"
+
+FaceSplitter class provides access to elements produced by a Split Face operation
+
+Allow user to select certain performance and criteria tests to be run on the elements of the active document.  It also demonstrates how to create custom API-based rules and register them with PerformanceAdviser.
+
+http://thebuildingcoder.typepad.com/blog/2011/05/api-wishlist-survey.html
+
+copy "Revit 2012 API Updates_May19.pptx" "\\brigand\transfer\AEC\Revit 2012 API webcast - May 2011"
+
+poll 1
+poll 2 9 14 9
+p 3: 0 13 15
+p 4: 17 15 0 0
+
+
+communicator conversation
+
+--------------------
+2011-05-19 saikat:
+--------------------
+
+19:05 Saikat Bhattacharya: i will disconnect now
+
+19:05 Jeremy Tammik: okay
+cheers
+
+19:08 Saikat Bhattacharya: oh i just closed the LM - is there a way to get the QA 
+
+19:08 Jeremy Tammik: i still have it open
+
+19:08 Saikat Bhattacharya: the ones that were typed it
+shd we ask Mikako if we shd note them down
+
+19:08 Jeremy Tammik: Question: Hi there,
+
+Private Answer: Hi
+
+Question: hi, my issue dissapeared as you answered... will retype... I am unable to view his powerpoint slides. poling slides work - error content failed to download due to a problem with the conference center configuration. contact your administrator. it says loading image when he switches slides but then goed back to the error. had this issue last week too with an inventor webcast with you guys. updated live meeting and repaired it on our end.
+
+Private Answer: humm.. you only see Q&A ?
+
+Question: yup, and my guess is I will be able to see his live demo, since that happened last time too. - I only saw the polling slides when he showed them
+
+Private Answer: maybe there is some connection with outlook ... I'm sorry I don't have suggestions right now. could you take a look ppt later? we'll be posting it.
+
+Question: Is a lot of the meeting going to be with the powerpoint or is there going to be hands on as well? all audio is going to be there too?
+
+Private Answer: we have demo later. audio will be in the recording too. (unless we don't have tech. prob.)
+
+Question: will the demo be recorded as well?
+
+Private Answer: yes.
+
+Question: K thanks. If you don't mind please make sure a link or the file get's sent my way. In the meantime could you please check into this issue on your end. One of the other people in the last webcast sent me a link to this issue but I think it had to do with some server stuff. Would be really nice to be able to attend these since I do them quite often. Just this one and the inventor - what's new one on the 11th of this month didn't work. - Will it also be posted on the adn site?
+
+Private Answer: Yes, I will let you know once we poste it. Did you leave your e-mail address when you register? I wonder what it causing the problem. I will ask around.
+
+Question: yes I did leave it. otherwise it's kmiller@coldspringgranite.com. And I can also see his screen demo too. Just like the last meeting. But kind of would like to get the whole experience at once since I am generally a note taker!! ) - Thanks and I look forward to watching it later.
+
+Private Answer: Hi Katie, this is Mikako. I will follow up after the webcast to see what we can do. It's a bit difficult to right now.
+
+Question: Your mike is not muted!!!
+
+Private Answer: Thank you. Jeremy now started.
+
+19:08 Saikat Bhattacharya: thanks -
+saveed it as text file now]
+
+19:09 Jeremy Tammik: unfrtunately i no longer see the question that we answered at the end
+also, wehn i click on QA log, nothing appears.
+
+19:09 Saikat Bhattacharya: hmm
+
+19:09 Jeremy Tammik: maybe somebody cleared the QA log?
+how sad
+
+19:09 Saikat Bhattacharya: i guess we have ti listen to your asnwers
+and then write them down
+
+19:10 Jeremy Tammik: i corrected a type in the ppt, slide 36
+also added a few more little thing in my slides
+shall i send you an updated version?
+
+19:11 Saikat Bhattacharya: ok - pl copy to brigand
+so that i can pick it from there tom morning
+
+19:11 Jeremy Tammik: ok, i've done that
+i will also copy my version of the recoding to brgend
+
+19:12 Saikat Bhattacharya: its almost 11pm here now and i still need to head back home
+
+19:12 Jeremy Tammik: okay, sure, wow!
+here are the first four poll results:
+
+poll 1
+poll 2 9 14 9
+p 3: 0 13 15
+p 4: 17 15 0 0
+did you make o note of the last ones?
+
+19:12 Saikat Bhattacharya: thaks that will help...i shall pick the recording and the ppt
+no i did not
+i will listen to ur audio and then wtrite them down
+
+19:13 Jeremy Tammik: ok, i started copying the recording just now
+
+19:13 Saikat Bhattacharya: great
+
+19:14 Jeremy Tammik: 2011-05-19  19:07        48,638,248 revit_2012_api_webcast_recording.zip
+
+19:14 Saikat Bhattacharya: i will pick it up tomorrow and process for posting after getting it checked by Mikako
+
+19:14 Jeremy Tammik: brilliant!
+thank you!
+you did a great job!
+i wish you a good night, have a good rest!
+
+19:15 Saikat Bhattacharya: i think you did very good
+very very good
+
+19:15 Jeremy Tammik: a shame about the music that went on there for a while
+
+19:15 Saikat Bhattacharya: i am feeling i could hve done better after listening to yours 
+
+19:15 Jeremy Tammik: very irritating
+
+19:15 Saikat Bhattacharya: actually i tired * 7 1 
+and it did not work
+dont know why
+
+19:16 Jeremy Tammik: oh dear
+
+19:16 Saikat Bhattacharya: teh i pinged mikako
+
+19:16 Jeremy Tammik: well it worked for me, but only after mikako prompted me to try
+
+19:16 Saikat Bhattacharya: and then when she asked you to do it, and it worked
+how strange
+
+19:16 Jeremy Tammik: yup
+murphy's law
+
+19:16 Saikat Bhattacharya: 
+
+19:16 Jeremy Tammik: good of you to ping her
+
+19:16 Saikat Bhattacharya: well i was feeling helpless
+and so tried
+
+19:17 Jeremy Tammik: well, again, a good night and deep rest to you!
+
+19:17 Saikat Bhattacharya: thanks
+will sing off now
+sign off now
+cheers
+
+19:17 Jeremy Tammik: 
+
+19:17 Saikat Bhattacharya: and have a good evening
+
+19:17 Jeremy Tammik: thanks!
+

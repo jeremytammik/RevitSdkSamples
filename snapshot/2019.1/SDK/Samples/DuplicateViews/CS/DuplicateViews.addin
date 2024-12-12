@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>DuplicateViews</Name>
+    <Assembly>DuplicateViews.dll</Assembly>
+    <ClientId>f1f83211-38fb-4832-a497-103624265922</ClientId>
+    <FullClassName>Revit.SDK.Samples.DuplicateViews.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

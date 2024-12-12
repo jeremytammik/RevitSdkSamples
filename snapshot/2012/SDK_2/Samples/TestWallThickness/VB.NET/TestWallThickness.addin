@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>TestWallThickness.dll</Assembly>
+    <ClientId>2c186505-7a06-4e56-927f-d68229defc2b</ClientId>
+    <FullClassName>Revit.SDK.Samples.TestWallThickness.VB.NET.Command</FullClassName>
+    <Text>Test Wall Thickness</Text>
+    <Description>Show how to retrieve and modify wall thickness.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

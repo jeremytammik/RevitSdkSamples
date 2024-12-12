@@ -1,0 +1,19 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(SolutionDir)..\..\VSProps\SDKSamples.targets" />
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ProjectDir)..\..\..\..\..\..\..\$(ConfigurationName)$(PlatformName)\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>$(ProjectDir)..\..\..\..\..\..\..\$(ConfigurationName)$(PlatformName)\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAddInUtility">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ProjectDir)..\..\..\..\..\..\..\$(ConfigurationName)$(PlatformName)\RevitAddInUtility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="Revit.SDK.Samples.NetworkPressureLossReport.NetworkDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Revit.SDK.Samples.NetworkPressureLossReport"
+             Title="Network Flow and Pressure Loss Report"
+             mc:Ignorable="d" 
+             Height="450" 
+             Width="600"
+             MinHeight="250"
+             MinWidth="400">
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto" />
+         <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="*" />
+         <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Label Grid.Column="0" Grid.Row="0" Content="Networks:" Margin="7,5"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+      <ListView Grid.Column="0" 
+               Grid.Row="1"                 
+               Margin="7,0,0,7" 
+               SelectionMode="Multiple"
+               x:Name="NetworkList" >
+         <ListView.View>
+            <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Network Information">
+               <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="300"/>
+               <GridViewColumn DisplayMemberBinding="{Binding Path=NumberOfSections}" Header="Sections" Width="60"/>
+               <GridViewColumn DisplayMemberBinding="{Binding Path=FlowDisplay}" Header="Flow" Width="Auto"/>
+            </GridView>
+         </ListView.View>
+      </ListView>
+         
+      <StackPanel Grid.Column="1" Grid.Row="1">
+         <CheckBox Content="Itemized" x:Name="ChxItemized"  HorizontalAlignment="Left" Margin='16,10, 14,20' VerticalAlignment="Top" Height="Auto" Width="110" />
+         <Button Content="Export..." HorizontalAlignment="Left" Margin='16,0, 14,10' VerticalAlignment="Top" Height="35" Width="110" IsDefault="True"  Click="Report_Click"/>
+         <Button Content="View" HorizontalAlignment="Left" Margin='16,12, 14,10' VerticalAlignment="Top" Height="35" Width="110" Click="View_Click"/>
+         <Button Content="Cancel" HorizontalAlignment="Left" Margin='16,12, 14,5' VerticalAlignment="Top" Height="35" Width="110" Click="Cancel_Click" IsCancel="True"/>   
+      </StackPanel>
+
+   </Grid>
+
+</Window>

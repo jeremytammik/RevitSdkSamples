@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DimensionLeaderEnd.dll</Assembly>
+    <ClientId>3ca8e928-4760-417f-9fad-bee2233d853d</ClientId>
+    <FullClassName>Revit.SDK.Samples.DimensionLeaderEnd.CS.MoveHorizontally</FullClassName>
+    <Text>LeaderLineAndDimensionLineSuperposition.</Text>
+    <Description>Using new dimension api to move leader end point. Make the dimension line and leader line to be superposition. </Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <LanguageType>Unknown</LanguageType>
+    <VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DimensionLeaderEnd.dll</Assembly>
+    <ClientId>FA9C5455-9857-4320-AF25-B57C1A5C78DA</ClientId>
+    <FullClassName>Revit.SDK.Samples.DimensionLeaderEnd.CS.MoveToPickedPoint</FullClassName>
+    <Text>MoveToPickedPoint.</Text>
+    <Description>Using new dimension api to move leader end point. Move to picked point. </Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <LanguageType>Unknown</LanguageType>
+    <VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

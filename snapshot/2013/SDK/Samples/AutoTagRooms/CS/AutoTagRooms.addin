@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AutoTagRooms.dll</Assembly>
+    <ClientId>c1e796af-745d-42f6-9ee7-b8f8aa9937d8</ClientId>
+    <FullClassName>Revit.SDK.Samples.AutoTagRooms.CS.Command</FullClassName>
+    <Text>Tag Rooms</Text>
+    <Description>Auto tag all rooms in a specified level.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

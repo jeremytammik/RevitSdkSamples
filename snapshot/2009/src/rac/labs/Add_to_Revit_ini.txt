@@ -1,0 +1,187 @@
+[ExternalCommands]
+ECCount=37
+
+ECName1=Lab 1-1 Hello World
+ECDescription1=Basic sample that displays a message box from Revit!
+ECClassName1=Labs.Lab1_1_HelloWorld
+ECAssembly1=Labs.dll
+
+ECName2=Lab 1-2 Command Arguments
+ECDescription2=Lists the app, doc and view data; then the current selection set and finally simulates an error condition on return
+ECClassName2=Labs.Lab1_2_CommandArguments
+ECAssembly2=Labs.dll
+
+ECName3=Lab 2-0 make a little house
+ECDescription3=Create a simple house,consisting of four walls, two windows and a door.
+ECClassName3=Labs.Lab2_0_CreateLittleHouse
+ECAssembly3=Labs.dll
+
+ECName3=Lab 2-1 List all Elements
+ECDescription3=Outputs info on each element to a text file line
+ECClassName3=Labs.Lab2_1_Elements
+ECAssembly3=Labs.dll
+
+ECName4=Lab 2-2 List all Model Elements
+ECDescription4=Outputs info on each model-element instance to a mesage box
+ECClassName4=Labs.Lab2_2_ModelElements
+ECAssembly4=Labs.dll
+
+ECName5=Lab 2-3 List all Walls and Doors
+ECDescription5=Outputs some info on each instance of walls and doors to a message box
+ECClassName5=Labs.Lab2_3_AllWallsAndFamilyInstances
+ECAssembly5=Labs.dll
+
+ECName6=Lab 2-4 Add Columns and Move Wall
+ECDescription6=Frames a wall with timber-columns and then moves the wall
+ECClassName6=Labs.Lab2_4_EditFamilyInstance
+ECAssembly6=Labs.dll
+
+ECName7=Lab 2-5 List Categories
+ECDescription7=Calculate all Built-In Category members and all Categories in Document.
+ECClassName7=Labs.Lab2_5_Categories
+ECAssembly7=Labs.dll
+
+ECName8=Lab 3-1 List all Standard Families and Types
+ECDescription8=First lists all Standard Family Names and (unsuccessfully) their Category. Then lists them one-by-one with all children Types
+ECClassName8=Labs.Lab3_1_StandardFamiliesAndTypes
+ECAssembly8=Labs.dll
+
+ECName10=Lab 3-2 Load whole Family and single Symbol
+ECDescription10=Loads a whole Family with corresponding catalog file and also a single specified Symbol (Type) from another family
+ECClassName10=Labs.Lab3_2_LoadStandardFamilies
+ECAssembly10=Labs.dll
+
+ECName11=Lab 3-3 Determining Type and Family for selected standard Instances
+ECDescription11=First list all Windows Family Types (Symbols), then Type and Family for any Windows in the selection set
+ECClassName11=Labs.Lab3_3_DetermineInstanceTypeAndFamily
+ECAssembly11=Labs.dll
+
+ECName12=Lab 3-4 Change Type for the selected standard Instance
+ECDescription12=Displays a form with all available Families and Types for the category of selected Instance
+ECClassName12=Labs.Lab3_4_ChangeSelectedInstanceType
+ECAssembly12=Labs.dll
+
+ECName13=Lab 3-5 Wall and Floor Types
+ECDescription13=List all Wall and Floor Types/Families and then change Type/Family for the selected Walls and Floors
+ECClassName13=Labs.Lab3_5_WallAndFloorTypes
+ECAssembly14=Labs.dll
+
+ECName14=Lab 4-1 Parameters for selected Elements
+ECDescription14=First list all parameters from the standard collection, then looks for a specific param via built-in params and the standard collection
+ECClassName14=Labs.Lab4_1_ParametersForSelectedObjects
+ECAssembly14=Labs.dll
+
+ECName15=Lab 4-2 Export Parameters to Excel
+ECDescription15=Exports all parameter values for each model element to Excel: one sheet per category, one row per element
+ECClassName15=Labs.Lab4_2_ExportParametersToExcel
+ECAssembly15=Labs.dll
+
+ECName16=Lab 4-3-1 FireRating: Create and Bind Shared Parameter
+ECDescription16=Get-or-create shared parameters group, create shared parm definition within and bind it to Doors
+ECClassName16=Labs.Lab4_3_1_CreateAndBindSharedParam
+ECAssembly16=Labs.dll
+
+ECName17=Lab 4-3-2 FireRating: Export to Excel
+ECDescription17=Exports one row per each door with its values (Id, Level, Tag and FireRating) to Excel
+ECClassName17=Labs.Lab4_3_2_ExportSharedParamToExcel
+ECAssembly17=Labs.dll
+
+ECName18=Lab 4-3-3 FireRating: Import from Excel
+ECDescription18=Imports updated FireRating values for each door from Excel
+ECClassName18=Labs.Lab4_3_3_ImportSharedParamFromExcel
+ECAssembly18=Labs.dll
+
+ECName19=Lab 4-4-1 Create and Bind per-Doc Params
+ECDescription19=Create and Bind two per-Doc Params, one visible one invisible
+ECClassName19=Labs.Lab4_4_1_PerDocParams
+ECAssembly19=Labs.dll
+
+ECName20=Lab 4-4-2 Increment Invisible per-Doc Param
+ECDescription20=Increment the invisible per-Doc Params and shows the values before and after the command
+ECClassName20=Labs.Lab4_4_2_PerDocParams
+ECAssembly20=Labs.dll
+
+ECName21=Built-In Parameters Checker
+ECDescription21=Uses reflection to check for all built-in params enumeration values on the selected element
+ECClassName21=Labs.BuiltInParamsChecker
+ECAssembly21=Labs.dll
+
+ECName22=Lab 5-1 Groups and Group Types
+ECDescription22=Lists: all Groups details, all Group Types details and all 'Model' Family Group Types
+ECClassName22=Labs.Lab5_1_GroupsAndGroupTypes
+ECAssembly22=Labs.dll
+
+ECName23=Lab 5-2 Change Group Type
+ECDescription23=Offers user to change Type for any Group in the selection to any other Model Group Type
+ECClassName23=Labs.Lab5_2_SwapGroupTypes
+ECAssembly23=Labs.dll
+
+ECName24=Lab 5-3 List Rooms
+ECDescription24=Lists all Rooms in the model, including the Boundary information
+ECClassName24=Labs.Lab5_3_Rooms
+ECAssembly24=Labs.dll
+
+ECName25=Material Category
+ECDescription25=Material Category
+ECAssembly25=MaterialCategory.dll
+ECClassName25=MaterialCategory.Command
+
+ECName26=Material Iterator
+ECDescription26=Material Iterator
+ECAssembly26=MaterialIter.dll
+ECClassName26=MaterialIter.Command
+
+ECName27=Parameter Insert
+ECDescription27=Parameter Insert
+ECAssembly27=ParamInsert.dll
+ECClassName27=ParamInsert.Command
+
+ECName28 = ApplyParameter
+ECClassName28 = Revit.SDK.Samples.FireRating.VB.NET.ApplyParameter
+ECAssembly28 = FireRating.dll
+ECDescription28 = add a new shared parameter to revit and apply it to all doors.
+
+ECName29 = ExportFireRating
+ECClassName29 = Revit.SDK.Samples.FireRating.VB.NET.ExportFireRating
+ECAssembly29 = FireRating.dll
+ECDescription29 = export fire rating values to an Excel file.
+
+ECName30 = ImportFireRating
+ECClassName30 = Revit.SDK.Samples.FireRating.VB.NET.ImportFireRating
+ECAssembly30 = FireRating.dll
+ECDescription30 = import fire rating values from the Excel file and apply them to doors.
+
+ECName31=Family Lister
+ECDescription31=List all system and other families
+ECAssembly31=FamilyLister.dll
+ECClassName31=FamilyLister.Command
+
+ECName32=Element Lister
+ECDescription32=List all elements
+ECAssembly32=ElementLister.dll
+ECClassName32=ElementLister.Command
+
+ECName33=Revit Reflector
+ECDescription33=Revit Reflector Debug Utility
+ECAssembly33=RevitReflector.dll
+ECClassName33=RevitReflector.Command
+
+ECName34=Analytical Viewer - VB.NET Version
+ECClassName34=Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+ECAssembly34=AnalyticalViewer.dll
+ECDescription34=Display analytical model of one or more selected elements
+
+ECName35=Element Viewer - VB.NET Version
+ECClassName35=Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+ECAssembly35=ElementViewer.dll
+ECDescription35=Display wireframe model of one or more selected elements
+
+ECName36=Room Viewer - VB.NET Version
+ECClassName36=Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+ECAssembly36=RoomViewer.dll
+ECDescription36=Wireframe viewer of the selected room
+
+ECName37=Lab 2-5 Categories
+ECDescription37=List categories
+ECClassName37=Labs.Lab2_5_Categories
+ECAssembly37=labs.dll

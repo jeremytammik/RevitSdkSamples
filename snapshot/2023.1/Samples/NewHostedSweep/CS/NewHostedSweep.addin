@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>NewHostedSweep.dll</Assembly>
+    <ClientId>06b26178-0b22-4256-b498-f4f17dccfca1</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewHostedSweep.CS.Command</FullClassName>
+    <Text>New hosted sweep</Text>
+    <Description>Create hosted sweep and modify created hosted sweep</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

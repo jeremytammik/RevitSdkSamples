@@ -1,0 +1,78 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\deflang1033\deflangfe2052\deftab420{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fmodern\fprq1\fcharset0 Courier New;}}
+{\colortbl ;\red0\green0\blue255;}
+{\info{\horzdoc}{\*\lchars (?[\'7b}{\*\fchars !),.:\'3b?D]\'7d}}
+\viewkind4\uc1\pard\ltrpar\nowidctlpar\b\f0\fs20 Application:\b0  NewRoof\line\b Revit Platform:\b0  All\line\b Revit Version:\b0  2011.0\line\b First Released For:\b0  2009.0\line\b Programming Language:\b0  C#\line\b Skill Level:\b0  High\line\b Category:\b0  Elements\line\b Type:\b0  ExternalCommand\line\line\b Subject:\b0  Create footprint and extrusion roof.\line\b Summary:\b0  \line This sample demonstrates four main features:\par
+\pard\ltrpar\nowidctlpar\fi-360\li1440\tx1440 1.\tab How to create a new footprint roof.\par
+\pard\ltrpar\nowidctlpar\fi-360\li1440 2.\tab How to create an extrusion roof.\par
+3.\tab How to edit an existed footprint roof.\par
+4.\tab How to edit an existed extrusion roof.\par
+\pard\ltrpar\nowidctlpar\par
+\b Classes:\b0  \par
+\pard\ltrpar\nowidctlpar\fi360 Autodesk.Revit.UI.IExternalCommand\f1\par
+\f0 Autodesk.Revit.DB.FootPrintRoof\par
+Autodesk.Revit.DB.ExtrusionRoof\par
+Autodesk.Revit.DB.Level\par
+Autodesk.Revit.DB.RoofType\par
+Autodesk.Revit.DB.Wall\par
+Autodesk.Revit.DB.Curve\par
+Autodesk.Revit.Creation.Document\par
+\f1\par
+\pard\ltrpar\nowidctlpar\f0\par
+\b Project Files:\b0  \par
+Command.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 This file contains the class \ldblquote Command\rdblquote  which inherits from \ldblquote IExternalCommand\rdblquote  interface and implements the \ldblquote Execute\rdblquote  method.\par
+\pard\ltrpar\nowidctlpar\fi240\par
+\pard\ltrpar\nowidctlpar RoofsManager.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\tx720\f0 It contains a class named \ldblquote RoofsManager\rdblquote  which is used to manage the operation between Revit and the Add-In UI. It have the functionalities to create footprint roof, create extrusion roof, select footprint to create footprint roof and select profile to create extrusion roof in Revit.\par
+\par
+\pard\ltrpar\nowidctlpar FootPrintRoofManager.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\tx720\f0 It contains a class named \ldblquote FootPrintRoofManager\rdblquote  which is used to manage the creation of footprint roof.\par
+\f1\par
+\pard\ltrpar\nowidctlpar\f0 ExtrusionRoofManager.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\tx720\f0 It contains a class named \ldblquote ExtrusionRoofManager\rdblquote  which is used to manage creation of extrusion roof.\par
+\par
+\pard\ltrpar\nowidctlpar RoofForm.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\tx720\f0 It contains a class named \ldblquote RoofForm\rdblquote  which is the main UI of the Add-In application. \par
+\f1\par
+\pard\ltrpar\nowidctlpar\f0 RoofEditorForm.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\tx720\f0 It contains a class named \ldblquote RoofEditorForm\rdblquote  which is the edit UI to edit a selected roof in the RoofForm. It contains a PropertyGrid to allow user modify the properties or parameters of the selected roof.\par
+\par
+\pard\ltrpar\nowidctlpar GraphicsControl.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\tx720\f0 It contains a class named \ldblquote GraphicsControl\rdblquote  which is used to display the footprint roof lines in a picture box control when the user is editing a footprint roof. The modifying footprint roof line will be highlighted in the control.\par
+\f1\par
+\pard\ltrpar\nowidctlpar\f0 CustomTypeConverter.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\tx720\f0 It contains a LevelConverter class and a FootPrintRoofLineConverter class. They are used to custom the display of the some properties in the PropertyGrid control.\par
+\par
+\pard\ltrpar\nowidctlpar FootPrintRoofWrapper.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\tx720\f0 It contains a FootPrintRoofWrapper class and a FootPrintRoofLine class. The FootPrintRoofWrapper class is used to wrapper a footprint roof to edit the roof in a PropertyGrid control. The FootPrintRoofLine is used to edit the footprint roof line in a PropertyGrid and the line can be drawn in GDI.\par
+\f1\par
+\pard\ltrpar\nowidctlpar\f0 ExtrusionRoofWrapper.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\tx720\f0 It contains a class named \ldblquote ExtrusionRoofWrapper\rdblquote  which is used to wrapper an extrusion roof to edit the roof in a PropertyGrid control.\f1\par
+\par
+\pard\ltrpar\nowidctlpar\b\f0 Description:\b0  \par
+Functionalities:\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360 -\tab Get all footprint roofs and extrusion roofs in active document and list them grouped by the creation way.\f1\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\f0 -\tab Create a footprint roof with default properties by specifying a curve loop, or a wall loop, or loops combination of walls and curves, a level and a roof type.\f1\par
+\f0 -\tab Create an extruded roof by providing a profile which is a series of connected lines or arcs, not closed in a loop, a roof type, a reference plane, an extrusion start value and an extrusion end value\f1 .\f0  Note that the reference plane should be a vertical plane.\par
+-\tab Select a footprint roof in the list, then user can define a footprint roof line is slope-defining and can change the slope angel of the selected roof, Also other properties of roof line can be changed respectively, such as overhang, offset from base, extend into wall. The roof\rquote s type can be changed just select a different type\f1 .\par
+\f0 -\tab Select an extrusion roof in the list, and then user can change the value of extrusion start, extrusion end, and the roof type and the reference level of the extrusion roof.\f1\par
+\pard\ltrpar\nowidctlpar\par
+\f0 Implementations:\f1\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360\f0 -\tab Using Element Filter to get all kinds roofs.\par
+\pard\ltrpar\nowidctlpar\fi-360\li360 -\tab Create footprint roof by the FootPrintRoof NewFootPrintRoof(CurveArray footPrint, Level level, RoofType roofType, ElementIdSet footPrintToModelCurvesMapping) method.\f2  \f0 The footprint can be specified by WindowsSelect() method of Selection class. The roof types can be obtained by the Autodesk.Revit.DB.Document.RoofTypes property.\f1\par
+\f0 -\tab Create extrusion roof by the ExtrusionRoof NewExtrusionRoof(CurveArray profile, ReferencePlane refPlane, Level level, RoofType roofType, double extrusionStart, double extrusionEnd) method\f1 .\f0  The profile can be specified by WindowsSelect method and the reference plane should be vertical and can be obtained by using Element filtering functionality\f1\par
+\f0 -\tab Edit the footprint roof or extrusion roof by accessing the properties or parameters of the selected roof\f1 .\par
+\pard\ltrpar\nowidctlpar\li360\f0\par
+\pard\ltrpar\nowidctlpar\b Instructions:\cf1\b0  \cf0\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360 1.\tab Open a Revit Architecture 2009 file. A sample project file NewRoof.rvt is available in the sample\rquote s folder.\par
+\pard\ltrpar\nowidctlpar\fi-360\li360 2.\tab Draw a curve loop or a wall loop or loops combination of walls and curves to create a footprint roof in Revit. \par
+3.\tab Run this command.\par
+4.\tab A dialog will be shown to display all the existed roofs. The footprint roofs will be listed in the footprint roof tab page and the extrusion roofs will be listed in the extrusion tab page.\par
+5.\tab In the footprint roof tab page, click \ldblquote Select footprint in Revit\rdblquote  button to select the footprint you just created. Select a base level and roof type then click the \ldblquote Create\rdblquote  button; a footprint roof will be created in Revit and will be listed in the footprint roof tab page. Click \ldblquote OK\rdblquote  button to accept the creation or click the \ldblquote Cancel\rdblquote  button to abort.\par
+6.\tab Draw a series of connected lines or arcs, not closed in a loop to create a profile in Revit. Draw a reference plane in Revit for extrude the profile to create an extrusion roof. Make sure the reference plan is vertical or the extrusion roof will be not creating successfully. If there are many reference planes in Revit, you\rquote d better create a good name for each plane to distinguish them.\par
+7.\tab In the extrusion roof tab page, click \ldblquote Select profile in Revit\rdblquote  button to select the profile you just created. Select a reference plane, reference level, roof type and specify the extrusion start and extrusion end value, and then click the \ldblquote Create\rdblquote  button; an extrusion roof will be created in Revit and will be listed in the extrusion roof tab page. For more information of extrusion start and extrusion end, you\rquote d better refer the extrusion roof part of the help document supplied by Revit. Click \ldblquote OK\rdblquote  button to accept the creation or click the \ldblquote Cancel\rdblquote  button to abort.\par
+8.\tab Edit a footprint roof. You can select a footprint roof and click the \ldblquote Edit\rdblquote  button or you just double click the roof in the in the footprint roof tab page; a roof editor form will be displayed. The properties of the roof you can edit in the PropertyGird. The footprint roof lines will be displayed also; the current selected roof line in PropertyGird will be highlighted in red color. You can modify the roof type in the roof type combo box. After the finish the modification you can click the \ldblquote OK\rdblquote  button to accept the change or click the \ldblquote Cancel\rdblquote  button to abort.\par
+9.\tab Edit an extrusion roof. You can select an extrusion roof and click the \ldblquote Edit\rdblquote  button or you just double click the roof in the in the extrusion roof tab page; a roof editor form will be displayed. You can edit the parameters of the extrusion roof in the PropertyGird. After the finish the modification you can click the \ldblquote OK\rdblquote  button to accept the change or click the \ldblquote Cancel\rdblquote  button to abort.\par
+\pard\ltrpar\nowidctlpar\f1\fs24\par
+}
+ 

@@ -1,0 +1,91 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E14896B-D571-4927-A55A-05DD26193312}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharedCoordinateSystem</RootNamespace>
+    <AssemblyName>SharedCoordinateSystem</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=10.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk Revit Architecture 2010\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="CoordinateSystemData.cs" />
+    <Compile Include="CoordinateSystemDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoordinateSystemDataForm.Designer.cs">
+      <DependentUpon>CoordinateSystemDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DuplicateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuplicateForm.Designer.cs">
+      <DependentUpon>DuplicateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitConversion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CoordinateSystemDataForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CoordinateSystemDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuplicateForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DuplicateForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

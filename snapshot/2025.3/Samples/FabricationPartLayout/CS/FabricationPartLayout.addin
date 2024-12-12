@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>399fe985-0175-42c0-98a2-ce1469d2a592</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.FabricationPartLayout</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Fabrication Part Layout</Text>
+    <Description>Fabrication Part Layout Sample</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>dece0d9a-51eb-48cd-b260-dd7e4373ffee</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.OptimizeStraights</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Optimize Straights</Text>
+    <Description>Optimize Straights</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>21ec0e70-7a8a-4852-853a-d1163f4fe256</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.StretchAndFit</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Stretch and Fit</Text>
+    <Description>Stretch and fit</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>78e2660c-497e-4b5b-9e69-e094f1620bc0</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.ConvertToFabrication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Convert To Fabrication</Text>
+    <Description>Convert Design Elements To Fabrication Parts</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>01710049-182d-442a-a5f3-6bc88142a69c</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.ButtonPaletteExclusions</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Buttons and Palette Exclusions</Text>
+    <Description>Exclude Fabrication Service Buttons and Palettes for Routing Operations</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>b083fe9b-dd69-43f9-b4ba-71d83e783825</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.Ancillaries</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Ancillaries</Text>
+    <Description>Discover the Ancillaries Associated with a Fabrication Part</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>c7ed9947-fd8a-4902-b4ab-70a8768f7994</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.GetCustomData</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Get Custom Data</Text>
+    <Description>Discover the Custom data Associated with a Fabrication Config and Part</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>fd062a9b-b1f6-4238-8099-072b75168565</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.SetCustomData</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Set Custom Data</Text>
+    <Description>Set Custom data Associated with a Fabrication Config to a Selected Part</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+ <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>4FED7AA3-1934-492F-B65C-F1E07D1717F0</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.ExportToPCF</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Export to PCF</Text>
+    <Description>Exports fabrication parts to a PCF file</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+ <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>B38DDFE1-4218-4B4B-9D88-FB89AE69B5AE</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.FabPartGeometry</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Export Part Geometry</Text>
+    <Description>Exports fabrication part geometry to a CSV file</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>D10B0B0E-5CB1-47A2-96C0-0007F4B8A610</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.PartInfo</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Display Part Info</Text>
+    <Description>Displays fabrication part information</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>857F26D5-AA39-4DC1-8ED7-35886D082DA9</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.DetachRods</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Detach Hanger Rods</Text>
+    <Description>Detaches hanger rods from their structural host</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>7478836E-55CD-4870-81EF-31A6BBA56B1C</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.DoubleRodLength</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Double Rod Lengths</Text>
+    <Description>Doubles the length of the picked hanger rods</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>19850600-D546-4B3B-90FF-7A8C8D263A7E</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.HalveRodLength</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Halve Rod Lengths</Text>
+    <Description>Halves the length of the picked hanger rods</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>C74A04FD-8767-4AA7-9176-52732134D5BB</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.IncreaseRodStructureExtension</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Increase Rod Structure Extension</Text>
+    <Description>Increase the length of the rod as an extension from its hosted structure (by 1ft)</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>7404BDC0-98AE-4E77-B85C-0EB3E4CE8E7B</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.DecreaseRodStructureExtension</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Decrease Rod Structure Extension</Text>
+    <Description>Decrease the length of the rod as an extension from its hosted structure (by 1ft)</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>44F05E94-6646-45C3-A855-26B0BB0A34D1</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.PartRenumber</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Part Renumber</Text>
+    <Description>Renumbers a selection of fabrication parts</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>5444859C-A7C2-45D1-A527-AFE269EB2275</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.SplitStraight</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Split Straight</Text>
+    <Description>Splits a fabrication part straight into two equal pieces</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>328E8863-D396-44F0-A429-3862D222C287</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.LoadAndPlaceNextItemFile</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Load and Place Next Item File</Text>
+    <Description>Reloads the fabrication configuration and then iterates the item folders and finds the next unloaded item file and lets a user place it in the model</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>6FC9FEB1-EA83-4C5B-B663-EDBCCC58D427</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.UnloadUnusedItemFiles</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Unload Unused Item Files</Text>
+    <Description>Unloads item files that are loaded but are not used in the model</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>970D8022-3085-4CC8-9C47-262C33652AB3</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.ExportToMAJ</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Export to MAJ</Text>
+    <Description>Export Fabrication Parts to a fabrication job (MAJ) file</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>6A812363-55D1-4E6E-9D92-31293032D0EA</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.ChangeService</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Change Service</Text>
+    <Description>Change the service of a selection of Fabrication Parts</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>103490FA-DE09-407D-90E6-255BF4C320B5</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.ChangeSize</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Change Size</Text>
+    <Description>Change the size of a selection of Fabrication Parts</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>9F159E47-EDD6-4727-B9EE-5992F05057CB</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.ApplyChange</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Apply Change</Text>
+    <Description>Apply change to the service and the size of a selection of Fabrication Parts</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <AddInId>0170D9E3-DFA3-4320-B53F-EC3A80DDE514</AddInId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.FlipPart</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Flip Part</Text>
+    <Description>Flips a Fabrication Part to the opposite direction</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+</RevitAddIns>

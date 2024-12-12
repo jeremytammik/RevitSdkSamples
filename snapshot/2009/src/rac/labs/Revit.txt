@@ -1,0 +1,136 @@
+[ExternalApplications]
+EACount=2
+
+ECClassName1=NewSamples2008.Application
+ECAssembly1=C:\a\lib\revit\2008\sdk\Samples\NewSamples2008\bin\Debug\NewSamples2008.dll
+
+ECClassName2=RvtMgdDbg.App
+ECAssembly2=C:\Program Files\Revit Architecture 2008\Program\RvtMgdDbg.dll
+
+[ExternalCommands]
+ECCount=25
+
+ECName1=Lab 1-1 Hello World
+ECDescription1=Basic sample that displays a message box from Revit!
+ECClassName1=Labs.Lab1_1_HelloWorld
+ECAssembly1=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName2=Lab 1-2 Command Arguments
+ECDescription2=Lists the app, doc and view data; then the current selection set and finally simulates an error condition on return
+ECClassName2=Labs.Lab1_2_CommandArguments
+ECAssembly2=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName3=Lab 2-1 List all Elements
+ECDescription3=Outputs info on each element to a text file line
+ECClassName3=Labs.Lab2_1_Elements
+ECAssembly3=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName4=Lab 2-2 List all Model Elements
+ECDescription4=Outputs info on each model-element instance to a mesage box
+ECClassName4=Labs.Lab2_2_ModelElements
+ECAssembly4=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName5=Lab 2-3 List all Walls and Doors
+ECDescription5=Outputs some info on each instance of walls and doors to a message box
+ECClassName5=Labs.Lab2_3_AllWallsAndFamilyInstances
+ECAssembly5=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName6=Lab 2-4 Add Columns and Move Wall
+ECDescription6=Frames a wall with timber-columns and then moves the wall
+ECClassName6=Labs.Lab2_4_AddColumnsAndMoveWall
+ECAssembly6=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName7=Lab 3-1 List all Standard Families and Types
+ECDescription7=First lists all Standard Family Names and (unsuccessfully) their Category. Then lists them one-by-one with all children Types
+ECClassName7=Labs.Lab3_1_StandardFamiliesAndTypes
+ECAssembly7=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName8=Lab 3-2 Load whole Family and single Symbol
+ECDescription8=Loads a whole Family with corresponding catalog file and also a single specified Symbol (Type) from another family
+ECClassName8=Labs.Lab3_2_LoadStandardFamilies
+ECAssembly8=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName9=Lab 3-3 Determining Type and Family for selected standard Instances
+ECDescription9=First list all Windows Family Types (Symbols), then Type and Family for any Windows in the selection set
+ECClassName9=Labs.Lab3_3_DetermineInstanceTypeAndFamily
+ECAssembly9=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName10=Lab 3-4 Change Type for the selected standard Instance
+ECDescription10=Displays a form with all available Families and Types for the category of selected Instance
+ECClassName10=Labs.Lab3_4_ChangeSelectedInstanceType
+ECAssembly10=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName11=Lab 3-5 Wall and Floor Types
+ECDescription11=List all Wall and Floor Types/Families and then change Type/Family for the selected Walls and Floors
+ECClassName11=Labs.Lab3_5_WallAndFloorTypes
+ECAssembly11=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName12=Lab 4-1 Parameters for selected Elements
+ECDescription12=First list all parameters from the standard collection, then looks for a specific param via built-in params and the standard collection
+ECClassName12=Labs.Lab4_1_ParametersForSelectedObjects
+ECAssembly12=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName13=Lab 4-2 Export Parameters to Excel
+ECDescription13=Exports all parameter values for each model element to Excel: one sheet per category, one row per element
+ECClassName13=Labs.Lab4_2_ExportParametersToExcel
+ECAssembly13=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName14=Lab 4-3-1 FireRating: Create and Bind Shared Parameter
+ECDescription14=Get-or-create shared parameters group, create shared parm definition within and bind it to Doors
+ECClassName14=Labs.Lab4_3_1_CreateAndBindSharedParam
+ECAssembly14=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName15=Lab 4-3-2 FireRating: Export to Excel
+ECDescription15=Exports one row per each door with its values (Id, Level, Tag and FireRating) to Excel
+ECClassName15=Labs.Lab4_3_2_ExportSharedParamToExcel
+ECAssembly15=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName16=Lab 4-3-3 FireRating: Import from Excel
+ECDescription16=Imports updated FireRating values for each door from Excel
+ECClassName16=Labs.Lab4_3_3_ImportSharedParamFromExcel
+ECAssembly16=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName17=Lab 4-4-1 Create and Bind per-Doc Params
+ECDescription17=Create and Bind two per-Doc Params, one visible one invisible
+ECClassName17=Labs.Lab4_4_1_PerDocParams
+ECAssembly17=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName18=Lab 4-4-2 Increment Invisible per-Doc Param
+ECDescription18=Increment the invisible per-Doc Params and shows the values before and after the command
+ECClassName18=Labs.Lab4_4_2_PerDocParams
+ECAssembly18=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName19=Built-In Parameters Checker
+ECDescription19=Uses reflection to check for all built-in params enumeration values on the selected element
+ECClassName19=Labs.BuiltInParamsChecker
+ECAssembly19=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName20=Lab 5-1 Groups and Group Types
+ECDescription20=Lists: all Groups details, all Group Types details and all 'Model' Family Group Types
+ECClassName20=Labs.Lab5_1_GroupsAndGroupTypes
+ECAssembly20=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName21=Lab 5-2 Change Group Type
+ECDescription21=Offers user to change Type for any Group in the selection to any other Model Group Type
+ECClassName21=Labs.Lab5_2_SwapGroupTypes
+ECAssembly21=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName22=Lab 5-3 List Rooms
+ECDescription22=Lists all Rooms in the model, including the Boundary information
+ECClassName22=Labs.Lab5_3_Rooms
+ECAssembly22=C:\a\j\adn\revit\rac_api\Labs\cs\bin\Debug\Labs.dll
+
+ECName23=Analytical Viewer - VB.NET Version
+ECClassName23=Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+ECAssembly23=C:\a\lib\revit\2008\sdk\Samples\Viewers\AnalyticalViewer\VB.NET\bin\AnalyticalViewer.dll
+ECDescription23=Display analytical model of one or more selected elements
+
+ECName24=Element Viewer - VB.NET Version
+ECClassName24=Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+ECAssembly24=C:\a\lib\revit\2008\sdk\Samples\Viewers\ElementViewer\VB.NET\bin\debug\ElementViewer.dll
+ECDescription24=Display wireframe model of one or more selected elements
+
+ECName25=Room Viewer - VB.NET Version
+ECClassName25=Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+ECAssembly25=C:\a\lib\revit\2008\sdk\Samples\Viewers\RoomViewer\VB.NET\bin\RoomViewer.dll
+ECDescription25=Wireframe viewer of the selected room

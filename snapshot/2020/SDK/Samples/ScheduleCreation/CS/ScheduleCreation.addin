@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ScheduleCreation.dll</Assembly>
+    <ClientId>0b86d045-64fb-4dd9-b339-dfeba1969962</ClientId>
+    <FullClassName>Revit.SDK.Samples.ScheduleCreation.CS.Command</FullClassName>
+    <Text>ScheduleAPI</Text>
+    <Description>This sample introduces how to create a view schedule and how to show its data on a sheet.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

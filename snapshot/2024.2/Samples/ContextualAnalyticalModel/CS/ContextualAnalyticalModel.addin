@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>531288f9-d2f4-4bf3-b8ef-37b9930b9451</ClientId>
+    <FullClassName>ContextualAnalyticalModel.CreateAnalyticalMember</FullClassName>
+    <Text>Create Analytical Member</Text>
+    <Description>Create Analytical Member</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>D420238C-220D-449B-858F-399E6CFCEEF4</ClientId>
+    <FullClassName>ContextualAnalyticalModel.CreateAnalyticalPanel</FullClassName>
+    <Text>Create Analytical Panel</Text>
+    <Description>Create Analytical Panel</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>AD26D09A-CD39-4CC2-B39A-8F5987B90E30</ClientId>
+    <FullClassName>ContextualAnalyticalModel.AddRelation</FullClassName>
+    <Text>Add relation</Text>
+    <Description>Add relation</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>6FE81B1D-4487-440D-8FD5-780ACF0C79EC</ClientId>
+    <FullClassName>ContextualAnalyticalModel.UpdateRelation</FullClassName>
+    <Text>Update relation</Text>
+    <Description>Update relation</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>F4C8C845-CF15-4778-AD8D-E1D6A5CDFACA</ClientId>
+    <FullClassName>ContextualAnalyticalModel.BreakRelation</FullClassName>
+    <Text>Break relation</Text>
+    <Description>Break relation</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>3CB69222-D61C-4F4E-B371-4077A19AC6C6</ClientId>
+    <FullClassName>ContextualAnalyticalModel.ModifyPanelContour</FullClassName>
+    <Text>Modify Panel Contour</Text>
+    <Description>Modify Panel Contour</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>7C11F75C-3DFD-419A-9354-C23DA1143E11</ClientId>
+    <FullClassName>ContextualAnalyticalModel.MoveAnalyticalPanelUsingElementTransformUtils</FullClassName>
+    <Text>Move an Analytical Panel using ElementTransformUtils</Text>
+    <Description>Move an Analytical Panel using ElementTransformUtils while keeping connectivity</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>  
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>427DF7AC-6070-42CA-9668-96CCA02EF390</ClientId>
+    <FullClassName>ContextualAnalyticalModel.MoveAnalyticalPanelUsingSketchEditScope</FullClassName>
+    <Text>Move an Analytical Panel using SketchEditScope</Text>
+    <Description>Move an Analytical Panel using SketchEditScope loosing connectivity</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn> 
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>348F60B5-4435-416C-AD9C-6CF645A84E10</ClientId>
+    <FullClassName>ContextualAnalyticalModel.MoveAnalyticalMemberUsingElementTransformUtils</FullClassName>
+    <Text>Move an Analytical Member using UsingElementTransformUtils</Text>
+    <Description>Move an Analytical Member using UsingElementTransformUtils keeping connectivity</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>A838E5C0-2784-4A1E-B13C-292A90487CB1</ClientId>
+    <FullClassName>ContextualAnalyticalModel.MoveAnalyticalMemberUsingSetCurve</FullClassName>
+    <Text>Move an Analytical Member using SketchEditScope</Text>
+    <Description>Move an Analytical Member using SetCurve loosing connectivity</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn> 
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>DD4A5DD5-0996-4AE3-BDEC-71BCD5C69D4B</ClientId>
+    <FullClassName>ContextualAnalyticalModel.MoveAnalyticalNodeUsingElementTransformUtils</FullClassName>
+    <Text>Move an Analytical Node using ElementTransformUtils</Text>
+    <Description>Move an Analytical Node using ElementTransformUtils keeping connectivity</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn> 
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>6D4B2523-8CF1-4CF3-B1FC-A4FE7CE2AD52</ClientId>
+    <FullClassName>ContextualAnalyticalModel.FlipAnalyticalMember</FullClassName>
+    <Text>Flip Analytical Member</Text>
+    <Description>Flips an Analytical Member</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>97BB81DB-68A9-49FD-9DEC-B520C04CD040</ClientId>
+    <FullClassName>ContextualAnalyticalModel.AnalyticalNodeConnStatus</FullClassName>
+    <Text>Check Connection Status</Text>
+    <Description>Check Connection Status</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>9C27E4FB-5E44-43C3-B328-64A0575DF39E</ClientId>
+    <FullClassName>ContextualAnalyticalModel.MemberForcesAnalyticalMember</FullClassName>
+    <Text>Member Forces Analytical Member</Text>
+    <Description>Member Forces Analytical Member</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>CDC11F78-7180-4CCD-9081-71326A2CB013</ClientId>
+    <FullClassName>ContextualAnalyticalModel.ReleaseConditionsAnalyticalMember</FullClassName>
+    <Text>Release Conditions Analytical Member</Text>
+    <Description>Release Conditions Analytical Member</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn> 
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>691A391D-493F-44C5-BC2E-C4ED52C11EC2</ClientId>
+    <FullClassName>ContextualAnalyticalModel.SetOuterContourForPanels</FullClassName>
+    <Text>Sets OuterContour for Analytical Panels</Text>
+    <Description>Sets OuterContour for Analytical Panels</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn> 
+  <AddIn Type="Command">
+    <Assembly>ContextualAnalyticalModel.dll</Assembly>
+    <ClientId>68B4E24B-DBFF-423B-B218-240A155142FD</ClientId>
+    <FullClassName>ContextualAnalyticalModel.CreateAnalyticalCurvedPanel</FullClassName>
+    <Text>Create Analytical Curved Panel</Text>
+    <Description>Create Analytical Curved Panel</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn> 
+</RevitAddIns>

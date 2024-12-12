@@ -1,0 +1,305 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Create and Bind Shared Parameters to "Project Information" </div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+
+<a class="j" href="labs4-4-2.htm">next</a>
+<a class="j" href="labs4-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p> Add three name string variables to LabConstants class for later use, including one group name and two shared Parameter names </p>
+<pre title="C# Create shared parameter group" class="jtcollapse">    // Lab 4_4
+    public const string sParamGroupName = "Per-doc Params";
+    public const string sParamNameVisible = "Visible per-doc Integer";
+    public const string sParamNameInvisible = "Invisible per-doc Integer";
+</pre>
+<pre title="VB Create shared parameter group" class="jtcollapse">    ' Lab 4_4
+    Public Const sParamGroupName As String = "Per-doc Params"
+    Public Const sParamNameVisible As String = "Visible per-doc Integer"
+    Public Const sParamNameInvisible As String = "Invisible per-doc Integer"
+</pre>
+<p>First create a shared parameter group and two definitions of type Integer.
+All you need are three existing utilities from LabUtils:</p>
+
+<ul>
+<li>GetSharedParamsFile()</li>
+<li>GetOrCreateSharedParamsGroup() and</li>
+<li>GetOrCreateSheredParamsDefinition()</li>
+</ul>
+<pre title="C# Create shared parameter group" class="jtcollapse">
+  #region Lab4_4_1_CreatePerDocParameters
+  /// &lt;summary&gt;
+  /// Command to add and bind a visible and an invisible per-doc parameter.
+  /// &lt;/summary&gt;
+  public class Lab4_4_1_PerDocParams : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+
+      // Get the current Shared Params Definition File
+      DefinitionFile sharedParamsFile = LabUtils.GetSharedParamsFile( app );
+      if( null == sharedParamsFile )
+      {
+        LabUtils.ErrorMsg( "Error getting the shared params file." );
+        return IExternalCommand.Result.Failed;
+      }
+      // Get or Create the Shared Params Group
+      DefinitionGroup sharedParamsGroup = LabUtils.GetOrCreateSharedParamsGroup(
+                               sharedParamsFile, LabConstants.sParamGroupName );
+      if( null == sharedParamsGroup )
+      {
+        LabUtils.ErrorMsg( "Error getting the shared params group." );
+        return IExternalCommand.Result.Failed;
+      }
+
+      //To do: Create the visible and invisible parameter definition
+
+      //To do: Bind the parameter defition to element
+
+      //to do: set value to per doc shared parameters
+
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion // Lab4_4_1_CreatePerDocParameters
+</pre>
+<pre title="VB Create shared parameter group" class="jtcollapse">
+#Region "Lab4_4_1_CreatePerDocParameters"
+''' &lt;summary&gt;
+''' Command to add and bind a visible and an invisible per-doc parameter.
+''' &lt;/summary&gt;
+''' &lt;remarks&gt;&lt;/remarks&gt;
+Public Class Lab4_4_1_PerDocParams
+    Implements IExternalCommand
+
+    Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+            As IExternalCommand.Result Implements IExternalCommand.Execute
+
+        Dim app As Revit.Application = commandData.Application
+        Dim doc As Revit.Document = app.ActiveDocument
+
+        ' Get or create relevant shared params stuff:
+        Dim sharedParamsFile As DefinitionFile = LabUtils.GetSharedParamsFile(app)
+        If (sharedParamsFile Is Nothing) Then
+            MsgBox("Error in getting the Shared Params File?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        Dim sharedParamsGroup As Parameters.DefinitionGroup
+        sharedParamsGroup = LabUtils.GetOrCreateSharedParamsGroup( _
+          sharedParamsFile, LabConstants.sParamGroupName)
+        If (sharedParamsGroup Is Nothing) Then
+            MsgBox("Error in getting the Shared Params Group?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        'To do: Create the visible and invisible parameter definition
+
+        'To do: Bind the parameter defition to element
+
+        'To do: set value to per doc shared parameters
+
+        Return IExternalCommand.Result.Succeeded
+
+    End Function
+
+End Class
+#End Region
+</pre>
+
+<p>When calling the last method, make one parameter visible and the other invisible.</p>
+<pre title="C# Create per doc shared parameter definition" class="jtcollapse">  //  Visible param
+  Definition docParamDefVisible = LabUtils.GetOrCreateSharedParamsDefinition(
+      sharedParamsGroup, ParameterType.Integer, LabConstants.sParamNameVisible, true );
+  if( null == docParamDefVisible )
+  {
+    LabUtils.ErrorMsg( "Error creating visible per-doc parameter." );
+    return IExternalCommand.Result.Failed;
+  }
+  // INVisible param
+  Definition docParamDefInvisible = LabUtils.GetOrCreateSharedParamsDefinition(
+       sharedParamsGroup, ParameterType.Integer, LabConstants.sParamNameInvisible, false );
+  if( null == docParamDefInvisible )
+  {
+    LabUtils.ErrorMsg( "Error creating invisible per-doc parameter." );
+    return IExternalCommand.Result.Failed;
+  }
+</pre>
+<pre class="jtcollapse" title="VB Create per doc shared parameter definition">    ' Visible param
+    Dim docParamDefVisible As Parameters.Definition = LabUtils.GetOrCreateSharedParamsDefinition( _
+    sharedParamsGroup, ParameterType.Integer, LabConstants.sParamNameVisible, True)
+    If (docParamDefVisible Is Nothing) Then
+        MsgBox("Error in creating visible per-doc parameter?")
+        Return IExternalCommand.Result.Failed
+    End If
+
+    'INVisible param
+    Dim docParamDefInvisible As Parameters.Definition = LabUtils.GetOrCreateSharedParamsDefinition( _
+    sharedParamsGroup, ParameterType.Integer, LabConstants.sParamNameInvisible, False)
+    If (docParamDefInvisible Is Nothing) Then
+        MsgBox("Error in creating invisible per-doc parameter?")
+        Return IExternalCommand.Result.Failed
+    End If
+</pre>
+
+<p>Bind these new parameters to the 'Project Information' category
+<code>BuiltInCategory.OST_ProjectInformation</code> in the current model
+(cf. similar code in Lab 4.3.1).</p>
+<pre title="C# bind shared parameter definition" class="jtcollapse">  // Bind the Param
+  try
+  {
+    Document doc = app.ActiveDocument;
+    CategorySet catSet = app.Create.NewCategorySet();
+    catSet.Insert( doc.Settings.Categories.get_Item( BuiltInCategory.OST_ProjectInformation ) );
+    Binding binding = app.Create.NewInstanceBinding( catSet );
+    doc.ParameterBindings.Insert( docParamDefVisible, binding );
+    doc.ParameterBindings.Insert( docParamDefInvisible, binding );
+  }
+  catch( System.Exception e )
+  {
+    LabUtils.ErrorMsg( "Error binding shared parameter: " + e.Message );
+    return IExternalCommand.Result.Failed;
+  }
+</pre>
+<pre title="VB bind shared parameter definition" class="jtcollapse">    ' Bind the params
+    Try
+        Dim catSet As CategorySet = app.Create.NewCategorySet()
+        catSet.Insert(app.ActiveDocument.Settings.Categories.Item( _
+                  BuiltInCategory.OST_ProjectInformation))
+        Dim binding As Parameters.Binding = app.Create.NewInstanceBinding(catSet)
+        app.ActiveDocument.ParameterBindings.Insert(docParamDefVisible, binding)
+        app.ActiveDocument.ParameterBindings.Insert(docParamDefInvisible, binding)
+    Catch e As Exception
+        MsgBox("Error in binding shared parameter: " & e.Message)
+        Return IExternalCommand.Result.Failed
+    End Try
+</pre>
+<p>Create a re-usable utility in LabUtils which will return the singleton
+element instance of 'Project Information' category.</p>
+
+<pre title="C# obtain the Project Information element" class="jtcollapse">    /// &lt;summary&gt;
+    /// Return the one and only project information element using Revit 2009 filtering
+    /// by searching for the "Project Information" category. Only one such element exists.
+    /// &lt;/summary&gt;
+    public static Element GetProjectInfoElem( Application app )
+    {
+      Dim filterCategory As Filter = app.Create.Filter.NewCategoryFilter( _
+          BuiltInCategory.OST_ProjectInformation)
+      ElementIterator i = app.ActiveDocument.get_Elements( filterCategory );
+      i.MoveNext();
+      Element e = i.Current as Element;
+      Debug.Assert( null != e, "expected valid project information element" );
+      Debug.Assert( !i.MoveNext(), "expected one single element to be returned" );
+      return e;
+    }
+</pre>
+<pre title="VB obtain the Project Information element" class="jtcollapse">    ''' &lt;summary&gt;
+    ''' Return the one and only project information element using Revit 2009 filtering
+    ''' by searching for the "Project Information" category. Only one such element exists.
+    ''' &lt;/summary&gt;
+    Public Shared Function GetProjectInfoElem( _
+        ByVal doc As Revit.Document, _
+        ByRef app As Revit.Application) As Revit.Element
+
+        Dim filterCategory As Filter = app.Create.Filter.NewCategoryFilter( _
+          BuiltInCategory.OST_ProjectInformation)
+        Dim elements As New List(Of Element)
+
+        'it should return only one element in the collection.
+        Dim nRetVal As Integer
+
+        nRetVal = doc.Elements(filterCategory, elements)
+
+        ' Loop all elements
+        Dim elem As Revit.Element
+
+        For Each elem In elements
+            ' Return the first match (it's a singleton!)
+            If (Not (elem Is Nothing)) Then
+                Return elem
+            End If
+        Next
+
+        Return Nothing
+
+    End Function
+</pre>
+<p>Use the above utility to retrieve the 'ProjectInfo' element,
+and set the value for the new shared parameter value.</p>
+<pre title="C# set shared parameter value" class="jtcollapse">  // Set the initial values
+  // Get the singleton Project Info Element
+  Element projInfoElem = LabUtils.GetProjectInfoElem( app );
+
+  if( null == projInfoElem )
+  {
+    LabUtils.ErrorMsg( "No project info elem found. Aborting command..." );
+    return IExternalCommand.Result.Failed;
+  }
+  //  For simplicity, access params by name rather than by GUID:
+  projInfoElem.get_Parameter( LabConstants.sParamNameVisible ).Set( 55 );
+  projInfoElem.get_Parameter( LabConstants.sParamNameInvisible ).Set( 0 );
+</pre>
+<pre title="VB set shared parameter value" class="jtcollapse">    ' Set the initial values
+    '-----------------------
+
+    ' Get the singleton Project Info Element
+
+    Dim projInfoElem As Revit.Element = LabUtils.GetProjectInfoElem(doc, app)
+    If projInfoElem Is Nothing Then
+        MsgBox("NO project Info Elem found !? Aborting command...")
+        Return IExternalCommand.Result.Failed
+    End If
+
+    ' For simplicity, access params by name rather than by GUID:
+    projInfoElem.Parameter(LabConstants.sParamNameVisible).Set(55)
+    projInfoElem.Parameter(LabConstants.sParamNameInvisible).Set(0)
+</pre>
+
+
+<a class="j" href="labs4-4-2.htm">next</a>
+<a class="j" href="labs4-4.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

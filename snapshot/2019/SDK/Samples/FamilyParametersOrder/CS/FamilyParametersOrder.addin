@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ExternalApplication</Name>
+    <Assembly>FamilyParametersOrder.dll</Assembly>
+    <ClientId>99c60bf5-4cba-4a58-a701-7efbe88ebeb6</ClientId>
+    <FullClassName>Revit.SDK.Samples.FamilyParametersOrder.CS.ExternalApplication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FamilyParametersOrder.dll</Assembly>
+    <ClientId>4c4723f8-bc05-4e94-acd5-4fa209806b94</ClientId>
+    <FullClassName>Revit.SDK.Samples.FamilyParametersOrder.CS.Command</FullClassName>
+    <Text>Command</Text>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

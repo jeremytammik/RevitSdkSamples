@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>LevelsProperty.dll</Assembly>
+    <ClientId>06f0a233-f472-4ca4-a271-d77b55fefe58</ClientId>
+    <FullClassName>Revit.SDK.Samples.LevelsProperty.CS.Command</FullClassName>
+    <Text>Create levels</Text>
+    <Description>Show how to get all the levels in a document and how to create and delete a level and set its properties.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

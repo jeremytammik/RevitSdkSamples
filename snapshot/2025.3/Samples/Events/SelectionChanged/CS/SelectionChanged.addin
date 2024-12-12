@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>SelectionChanged</Name>
+    <Assembly>SelectionChanged.dll</Assembly>
+    <ClientId>46821B9E-A0C2-4C31-AD4F-4E8E7F7C54E0</ClientId>
+    <FullClassName>Revit.SDK.Samples.SelectionChanged.CS.SelectionChanged</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

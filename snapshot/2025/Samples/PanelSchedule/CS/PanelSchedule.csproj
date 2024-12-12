@@ -1,0 +1,34 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <RootNamespace>Revit.SDK.Samples.PanelSchedule.CS</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.props" />
+  <PropertyGroup>
+    <UseWindowsForms>false</UseWindowsForms>
+    <ImportWindowsDesktopTargets>false</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DocumentationFile>bin\Debug\PanelSchedule.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DocumentationFile>bin\Release\PanelSchedule.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="template.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

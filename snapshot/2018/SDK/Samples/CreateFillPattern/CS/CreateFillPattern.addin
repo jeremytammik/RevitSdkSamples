@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateFillPattern.dll</Assembly>
+    <ClientId>4a10b417-9b23-4125-b704-d2caf5d54821</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateFillPattern.CS.Command</FullClassName>
+    <Text>Create and set FillPattern</Text>
+    <Description>Create and set FillPattern or LinePattern to face and grid</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

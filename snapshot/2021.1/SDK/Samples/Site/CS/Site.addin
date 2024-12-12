@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Site</Name>
+    <Assembly>Site.dll</Assembly>
+    <ClientId>cb9d1dc1-b9f8-47e4-8237-1eb0f41eeb59</ClientId>
+    <FullClassName>Revit.SDK.Samples.Site.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

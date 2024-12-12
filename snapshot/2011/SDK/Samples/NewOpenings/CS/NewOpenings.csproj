@@ -1,0 +1,89 @@
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{379E2FAA-67A6-4360-BEE6-37496B7BB89A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Revit.SDK.Samples.NewOpenings.CS</RootNamespace>
+    <AssemblyName>NewOpenings</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=2011.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit Architecture 2011\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI, Version=2011.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit Architecture 2011\Program\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArcTool.cs" />
+    <Compile Include="EmptyTool.cs" />
+    <Compile Include="NewOpeningsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewOpeningsForm.Designer.cs">
+      <DependentUpon>NewOpeningsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CircleTool.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="LineTool.cs" />
+    <Compile Include="MathTools.cs" />
+    <Compile Include="Profile.cs" />
+    <Compile Include="ProfileFloor.cs" />
+    <Compile Include="ProfileWall.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ITool.cs" />
+    <Compile Include="RectTool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NewOpeningsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewOpeningsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG=..\..\..\..\..\..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.pl
+if exist %FILEFORSAMPLEREG% perl %FILEFORSAMPLEREG% $(ProjectExt) "$(ProjectPath)" "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

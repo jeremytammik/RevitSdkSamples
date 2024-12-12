@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AllViews.dll</Assembly>
+    <ClientId>a3ede8e2-477f-4ea6-b0b5-3ffd41963c9b</ClientId>
+    <FullClassName>Revit.SDK.Samples.AllViews.CS.Command</FullClassName>
+    <Text>All Views</Text>
+    <Description>Generate a new sheet for user selected views</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

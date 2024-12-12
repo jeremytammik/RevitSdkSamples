@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ModelLines.dll</Assembly>
+    <ClientId>f79fd33a-0d84-48c8-bc0e-43df2c54ddd8</ClientId>
+    <FullClassName>Revit.SDK.Samples.ModelLines.CS.Command</FullClassName>
+    <Text>Model Lines</Text>
+    <Description>Report the number of each model line type and allow the user to specify the shape and sketch plane to create some new model lines.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button_Cancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="button_Cancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_Cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 266</value>
+  </data>
+  <data name="button_Cancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button_Cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="button_Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Name" xml:space="preserve">
+    <value>button_Cancel</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_OK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="button_OK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_OK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 266</value>
+  </data>
+  <data name="button_OK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button_OK.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="button_OK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;button_OK.Name" xml:space="preserve">
+    <value>button_OK</value>
+  </data>
+  <data name="&gt;&gt;button_OK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_OK.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_OK.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="combo_layMap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 72</value>
+  </data>
+  <data name="combo_layMap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 21</value>
+  </data>
+  <data name="combo_layMap.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;combo_layMap.Name" xml:space="preserve">
+    <value>combo_layMap</value>
+  </data>
+  <data name="&gt;&gt;combo_layMap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combo_layMap.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;combo_layMap.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_layMap.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_layMap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 56</value>
+  </data>
+  <data name="label_layMap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 13</value>
+  </data>
+  <data name="label_layMap.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="label_layMap.Text" xml:space="preserve">
+    <value>Layer export standard:</value>
+  </data>
+  <data name="&gt;&gt;label_layMap.Name" xml:space="preserve">
+    <value>label_layMap</value>
+  </data>
+  <data name="&gt;&gt;label_layMap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_layMap.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_layMap.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="check_exportRooms.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="check_exportRooms.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 219</value>
+  </data>
+  <data name="check_exportRooms.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 17</value>
+  </data>
+  <data name="check_exportRooms.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="check_exportRooms.Text" xml:space="preserve">
+    <value>Export rooms and areas as polylines</value>
+  </data>
+  <data name="&gt;&gt;check_exportRooms.Name" xml:space="preserve">
+    <value>check_exportRooms</value>
+  </data>
+  <data name="&gt;&gt;check_exportRooms.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;check_exportRooms.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;check_exportRooms.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="combo_units.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 192</value>
+  </data>
+  <data name="combo_units.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 21</value>
+  </data>
+  <data name="combo_units.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;combo_units.Name" xml:space="preserve">
+    <value>combo_units</value>
+  </data>
+  <data name="&gt;&gt;combo_units.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combo_units.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;combo_units.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_units.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_units.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 176</value>
+  </data>
+  <data name="label_units.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="label_units.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label_units.Text" xml:space="preserve">
+    <value>DWG file units:</value>
+  </data>
+  <data name="&gt;&gt;label_units.Name" xml:space="preserve">
+    <value>label_units</value>
+  </data>
+  <data name="&gt;&gt;label_units.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_units.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_units.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="combo_Coord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 152</value>
+  </data>
+  <data name="combo_Coord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 21</value>
+  </data>
+  <data name="combo_Coord.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;combo_Coord.Name" xml:space="preserve">
+    <value>combo_Coord</value>
+  </data>
+  <data name="&gt;&gt;combo_Coord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combo_Coord.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;combo_Coord.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_Coord.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_Coord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 136</value>
+  </data>
+  <data name="label_Coord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 13</value>
+  </data>
+  <data name="label_Coord.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label_Coord.Text" xml:space="preserve">
+    <value>Coordinate system:</value>
+  </data>
+  <data name="&gt;&gt;label_Coord.Name" xml:space="preserve">
+    <value>label_Coord</value>
+  </data>
+  <data name="&gt;&gt;label_Coord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Coord.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_Coord.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="combo_lineScale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 112</value>
+  </data>
+  <data name="combo_lineScale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 21</value>
+  </data>
+  <data name="combo_lineScale.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;combo_lineScale.Name" xml:space="preserve">
+    <value>combo_lineScale</value>
+  </data>
+  <data name="&gt;&gt;combo_lineScale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combo_lineScale.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;combo_lineScale.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label_lineScale.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_lineScale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 96</value>
+  </data>
+  <data name="label_lineScale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="label_lineScale.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label_lineScale.Text" xml:space="preserve">
+    <value>Line scaling:</value>
+  </data>
+  <data name="&gt;&gt;label_lineScale.Name" xml:space="preserve">
+    <value>label_lineScale</value>
+  </data>
+  <data name="&gt;&gt;label_lineScale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_lineScale.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_lineScale.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="combo_layAndProp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="combo_layAndProp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 21</value>
+  </data>
+  <data name="combo_layAndProp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;combo_layAndProp.Name" xml:space="preserve">
+    <value>combo_layAndProp</value>
+  </data>
+  <data name="&gt;&gt;combo_layAndProp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combo_layAndProp.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;combo_layAndProp.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label_layAndProp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_layAndProp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 16</value>
+  </data>
+  <data name="label_layAndProp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 13</value>
+  </data>
+  <data name="label_layAndProp.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_layAndProp.Text" xml:space="preserve">
+    <value>Layers and properties:</value>
+  </data>
+  <data name="&gt;&gt;label_layAndProp.Name" xml:space="preserve">
+    <value>label_layAndProp</value>
+  </data>
+  <data name="&gt;&gt;label_layAndProp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_layAndProp.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label_layAndProp.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 12</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 242</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Help.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Help.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Help.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Help.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 271</value>
+  </data>
+  <data name="Help.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="Help.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="Help.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="&gt;&gt;Help.Name" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="&gt;&gt;Help.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Help.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Help.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>318, 301</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Export Options</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DialogExportOptions</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>REX.Common.REXExtensionForm, DRevitFreezeDrawing, Version=1.0.0.182, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+</root>

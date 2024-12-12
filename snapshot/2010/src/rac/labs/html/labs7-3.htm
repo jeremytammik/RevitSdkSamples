@@ -1,0 +1,182 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="stylesheet" href="ac.acad_ak.css" type="text/css"/>
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Change Tile Pattern</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="index.htm">next</a>
+<a class="j" href="labs7-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this lab, we shall change the tiling pattern on the divided surface created using
+<code>Lab 7-2</code> using the built-in enumeration available with the API.
+The output should be similar to the
+image included below.</p>
+
+<img src="img/labs7-3-01.jpg" alt="Tile Pattern"/>
+
+<p>Similar to the previous lab, we shall create a new filter ? a type filter, to extract all the elements
+from the Revit model which are of Form type.
+This can be done using the <code>Filter.NewTypeFilter</code>.</p>
+
+<pre title="C# Type Filter for Form Type" class="jtcollapse">
+  # region Lab7_3_ChangeTilePattern
+  /// &lt;summary&gt;
+  /// Change the tiling pattern of the divided surface using the built-in TilePattern enumeration.
+  /// &lt;/summary&gt;
+  public class Lab7_3_ChangeTilePattern : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements)
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      try
+      {
+        // find forms in the model by filter:
+        Filter filterForm = app.Create.Filter.NewTypeFilter(typeof(Form));
+        List&lt;Autodesk.Revit.Element&gt; forms = new List&lt;Autodesk.Revit.Element&gt;();
+        doc.get_Elements(filterForm, forms);
+        foreach (Form form in forms)
+        {
+          . . .
+        }
+      }
+      catch
+      {
+        return IExternalCommand.Result.Failed;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+  #endregion
+</pre>
+
+<pre title="Type Filter for Form Type" class="jtcollapse">
+    #Region "Lab7_3_ChangeTilePattern"
+    Public Class Lab7_3_ChangeTilePattern
+        Implements IExternalCommand
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+        As IExternalCommand.Result _
+        Implements IExternalCommand.Execute
+            Dim app As Application = commandData.Application
+            Dim doc As Document = app.ActiveDocument
+            Try
+                ' find forms in the model by filter:
+                Dim filterForm As Filter = app.Create.Filter.NewTypeFilter(GetType(Form))
+                Dim forms As New List(Of Autodesk.Revit.Element)()
+                Dim iForms As Integer = doc.Elements(filterForm, forms)
+                For Each form As Form In forms
+                    . . .
+                Next
+            Catch
+                Return IExternalCommand.Result.Failed
+            End Try
+            Return IExternalCommand.Result.Succeeded
+        End Function
+    End Class
+    #End Region
+</pre>
+
+<p>Now with each form, we shall get access to the <code>DividedSurfaceData</code> using
+the <code>form.GetDividedSurfaceData</code> method. This divided surface data contains a
+list of references which can be extracted using the <code>GetReferencesWithDividedSurfaces()</code>
+method on the divided surface data. Using the built-in enumeration of tile patterns
+stored in <code>document.Settings</code>, we shall use the <code>ObjectType</code> property on the divided
+surface element to set it to one of the tile patterns available in the built-in
+enumeration. Say, we set the third pattern in the enumeration to the divided surface
+element.</p>
+
+<pre title="C# Divided Surface Creation" class="jtcollapse">
+  // Get access to the divided surface data from the form
+  DividedSurfaceData dsData = form.GetDividedSurfaceData();
+  if (null != dsData)
+  {
+    // get the references associated with the divided surfaces
+    foreach (Reference reference in dsData.GetReferencesWithDividedSurfaces())
+    {
+      DividedSurface divSurface = dsData.GetDividedSurfaceForReference(reference);
+
+      int count = 0;
+      TilePatterns tilepatterns = doc.Settings.TilePatterns;
+      foreach (TilePatternsBuiltIn TilePatternEnum in Enum.GetValues(typeof(TilePatternsBuiltIn)))
+      {
+        if (count.Equals(3))
+        {
+          divSurface.ObjectType = tilepatterns.GetTilePattern(TilePatternEnum);
+          break;
+        }
+        count = count + 1;
+      }
+    }
+  }
+</pre>
+
+<pre title="VB Divided Surface Creation" class="jtcollapse">
+    ' Get access to the divided surface data from the form
+    Dim dsData As DividedSurfaceData = form.GetDividedSurfaceData()
+    If dsData IsNot Nothing Then
+        ' get the references associated with the divided surfaces
+        For Each reference As Reference In dsData.GetReferencesWithDividedSurfaces()
+            Dim divSurface As DividedSurface = dsData.GetDividedSurfaceForReference(reference)
+
+            Dim count As Integer = 0
+            Dim tilepatterns As TilePatterns = doc.Settings.TilePatterns
+            For Each TilePatternEnum As TilePatternsBuiltIn In [Enum].GetValues(GetType(TilePatternsBuiltIn))
+                If count.Equals(3) Then
+                    divSurface.ObjectType = tilepatterns.GetTilePattern(TilePatternEnum)
+                    Exit For
+                End If
+                count = count + 1
+            Next
+        Next
+    End If
+</pre>
+
+<p>Compile the code, update Revit.ini and test the command. Examine the outcome.</p>
+
+<a class="j" href="index.htm">next</a>
+<a class="j" href="labs7-2.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+
+</body>
+</html>

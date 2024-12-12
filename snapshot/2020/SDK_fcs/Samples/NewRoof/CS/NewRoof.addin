@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>NewRoof.dll</Assembly>
+    <ClientId>f6c0eb19-34e0-4d0f-9e6f-fd57658924a9</ClientId>
+    <FullClassName>Revit.SDK.Samples.NewRoof.CS.Command</FullClassName>
+    <Text>NewRoof</Text>
+    <Description>Create or edit footprint roof and extrusion roof.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

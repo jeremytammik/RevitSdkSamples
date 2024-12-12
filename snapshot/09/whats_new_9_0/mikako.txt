@@ -1,0 +1,156 @@
+From: Mikako Harada
+Sent: Monday, October 09, 2006 16:30
+To: Jeremy Tammik
+Subject: RE: revit cases 1226639 & 1226429
+
+Attachments: Revit 9 API New Features.zip
+
+Hi Jeremy,
+
+I meant one we used at our webcast in May, i.e., ppt.  I'm attaching it here.
+
+This is also posted on the ADN site:
+http://adn.autodesk.com/adn/servlet/item?siteID=4814862&id=7344735&linkID=4901650
+
+We will used this as a base to start with and enhance it.  You will see the way is it presented is sample-based.  So what we will want to do is adding enhancement made in 9.1/SR4.
+
+Fenton made this. So at firsat, I thought it will be easiest to ask Fenton.  But Fenton is busy with ACAD side, and he will be also put upon many other things for APac tour.  So, we will need to prepare it.
+
+I'm asking Emile for the loadmaps and preview of Revit 10.  I've seem a presentation by Emile about future directions.  So I know he has something to share with.
+
+So to summarize, we will cover -
+
+Revit 9.0  <-- use one from webcast
+Revit 9.1  <-- we need to update (Bill & Jeremy)
+Revit 10  <--  Emiles and Giles
+
+Bill has give the webcast in Chinese.  So he is familar with the materials already.  So he should be able to take care of it.  So work w/ him.  We will discuss it tomorro.
+
+For ADT/ABS side, I've asked Kevin and Steve.  We have Space and Drawing Comapre already as a Module.  This will be included in Kiasma.  I will ask Gopi and Katsu takea look at this and make a some demo script.  Hopefully, we will learn quickly from it later.
+
+- Mikako
+
+
+--------------------------------------------------------------------------------
+From: Jeremy Tammik
+Sent: Monday, October 09, 2006 11:00 PM
+To: Mikako Harada
+Subject: RE: revit cases 1226639 & 1226429
+
+
+hi mikako,
+
+
+
+i am not sure what material exactly you mean below by “the materials we had for 9.0 webcast” ... i have looked through the “what’s new” material now, it is clear enough but i still lack the background knowledge to actually assess the individual significance of each enhancement.
+
+
+
+cheers
+
+
+
+jeremy
+
+
+
+
+--------------------------------------------------------------------------------
+
+From: Mikako Harada
+Sent: Monday, October 09, 2006 08:04
+To: Jeremy Tammik; Bill Zhang; Fenton Webb
+Subject: RE: revit cases 1226639 & 1226429
+
+
+
+Hi Jeremy,
+
+
+
+Welcome back!!  How was your vacation?  I hope you had a relaxing time.
+
+
+
+And all -
+
+
+
+This week and next week, we will need to focus on DevDay preps.  Kean wants to have it by 23rd to give some time to practice for Fenton/Jim.
+
+I know it's not much time.  I'm contacting engineering team, and also trying to understand who meeds to where, what.  I will send more detail tomorrow as whole BSD perspective, including ADT portion.
+
+
+
+One is for sure is that, our presentation will be Revit centric.  We will need to update materials based on webcast we used in May.  For this, I want Bill and Jeremy to work on it.
+
+Fenton is out of this task as he has to work on AutoCAD side.
+
+
+
+Bill - please lead this task, updaing the presentation materials to include 9.1 what's new.  And please work with Jeremy.
+
+Jeremy - please be familaize yourself with the materials we had for 9.0 webcast.  You will need to present it in EMEA later.
+
+
+
+More at tomorrow's meeting.
+
+
+
+Both Bill and I are on holiday today, but just wanted to drop off an message.
+
+
+
+- Mikako
+
+
+
+
+--------------------------------------------------------------------------------
+
+From: Jeremy Tammik
+Sent: Monday, October 09, 2006 2:36 PM
+To: Mikako Harada; Bill Zhang; Fenton Webb
+Subject: RE: revit cases 1226639 & 1226429
+
+hi mikako, bill and fenton,
+
+
+
+thank you for taking car of these, and sorry i did not move them to the proper place!
+
+
+
+anyway, i am back again, looking forward to our next undertakings together!
+
+
+
+cheers
+
+
+
+jeremy
+
+--------------------------------------------------------------------------------
+From: Mikako Harada
+Sent: Wednesday, October 04, 2006 18:42
+To: Bill Zhang; Fenton Webb
+Cc: AC DevTech BSD
+Subject: revit cases 1226639 & 1226429
+
+Hi Bill, Fenton,
+
+Could you take look at those?  There were in Jeremy's queue, but I just dispatched to API_AEC queue.  They are aready old.   ( Jeremy informed me that there are un answered cases and I told him to put back to the queues with comments.  But apparently, it was not clear to him.  I see he put the comments, and he wasn't aware that he had to dispatch to API_AEC queue, it seems. )
+
+Any way, here are two numbers -
+
+1226639 [How to get System Family name for a wall]
+
+1226429 [How can I make doors to open in 3D views?]  (escalating to eng. as well.)
+
+There are other cases in the queue, which obvisouly we need help from engineering team.   But for those, i just sent a reminder to Revit API.
+
+Thank you.
+
+- Mikako

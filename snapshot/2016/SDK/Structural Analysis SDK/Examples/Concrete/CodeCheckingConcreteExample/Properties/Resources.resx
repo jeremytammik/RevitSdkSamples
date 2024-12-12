@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CreepCoefficient" xml:space="preserve">
+    <value>Creep coefficient</value>
+  </data>
+  <data name="LongitudinalReinforcement" xml:space="preserve">
+    <value>Longitudinal reinforcement</value>
+  </data>
+  <data name="TransversalReinforcement" xml:space="preserve">
+    <value>Transverse reinforcement</value>
+  </data>
+  <data name="RebarBarType" xml:space="preserve">
+    <value>Rebar bar</value>
+  </data>
+  <data name="BarDiameter" xml:space="preserve">
+    <value>Bar diameter</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="MinimumYieldStress" xml:space="preserve">
+    <value>Minimum yield stress</value>
+  </data>
+  <data name="DeformationType" xml:space="preserve">
+    <value>Deformation</value>
+  </data>
+  <data name="SlabBeamInteraction" xml:space="preserve">
+    <value>Slab-beam interaction</value>
+  </data>
+  <data name="EnabledInternalForces" xml:space="preserve">
+    <value>Calculation for</value>
+  </data>
+  <data name="CalculationOptions" xml:space="preserve">
+    <value>Calculation parameters</value>
+  </data>
+  <data name="CalcPointSelector" xml:space="preserve">
+    <value>Calculation points for linear elements</value>
+  </data>
+  <data name="BeamFX" xml:space="preserve">
+    <value>Axial load</value>
+  </data>
+  <data name="BeamFY" xml:space="preserve">
+    <value>Lateral shear force</value>
+  </data>
+  <data name="BeamFZ" xml:space="preserve">
+    <value>Shear force</value>
+  </data>
+  <data name="IsPointsOfExtremeValues" xml:space="preserve">
+    <value>Add points at maximum calculated forces</value>
+  </data>
+  <data name="UserSegmentDivision" xml:space="preserve">
+    <value>Segment length</value>
+  </data>
+  <data name="BeamMX" xml:space="preserve">
+    <value>Torsional moment</value>
+  </data>
+  <data name="BeamMY" xml:space="preserve">
+    <value>Bending moment</value>
+  </data>
+  <data name="BeamMZ" xml:space="preserve">
+    <value>Lateral bending moment</value>
+  </data>
+  <data name="UniformDistribution" xml:space="preserve">
+    <value>Number of points</value>
+  </data>
+  <data name="Buckling" xml:space="preserve">
+    <value>Buckling</value>
+  </data>
+  <data name="BucklingDirectionY" xml:space="preserve">
+    <value>Buckling in Y direction</value>
+  </data>
+  <data name="BucklingDirectionZ" xml:space="preserve">
+    <value>Buckling in Z direction</value>
+  </data>
+  <data name="LengthCoefficientY" xml:space="preserve">
+    <value>Length coefficient Y</value>
+  </data>
+  <data name="LengthCoefficientZ" xml:space="preserve">
+    <value>Length coefficient Z</value>
+  </data>
+  <data name="ColumnStructureType" xml:space="preserve">
+    <value>Structure</value>
+  </data>
+  <data name="NonSway" xml:space="preserve">
+    <value>Non-sway</value>
+  </data>
+  <data name="Sway" xml:space="preserve">
+    <value>Sway</value>
+  </data>
+  <data name="ColumnFX" xml:space="preserve">
+    <value>Axial load</value>
+  </data>
+  <data name="ColumnFY" xml:space="preserve">
+    <value>Shear force</value>
+  </data>
+  <data name="ColumnFZ" xml:space="preserve">
+    <value>Shear force</value>
+  </data>
+  <data name="ColumnMX" xml:space="preserve">
+    <value>Torsional moment</value>
+  </data>
+  <data name="ColumnMY" xml:space="preserve">
+    <value>Bending moment</value>
+  </data>
+  <data name="ColumnMZ" xml:space="preserve">
+    <value>Bending moment</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Constant number of points</value>
+  </data>
+  <data name="Segments" xml:space="preserve">
+    <value>Constant segment length</value>
+  </data>
+  <data name="CurrentPackageName" xml:space="preserve">
+    <value>Result package</value>
+  </data>
+  <data name="Abottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="Aleft" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Aright" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="Atop" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="FxMax" xml:space="preserve">
+    <value>Fx envelope (Max)</value>
+  </data>
+  <data name="FxMin" xml:space="preserve">
+    <value>Fx envelope (Min)</value>
+  </data>
+  <data name="FyMax" xml:space="preserve">
+    <value>Fy envelope (Max)</value>
+  </data>
+  <data name="FyMin" xml:space="preserve">
+    <value>Fy envelope (Min)</value>
+  </data>
+  <data name="FzMax" xml:space="preserve">
+    <value>Fz envelope (Max)</value>
+  </data>
+  <data name="FzMin" xml:space="preserve">
+    <value>Fz envelope (Min)</value>
+  </data>
+  <data name="MxMax" xml:space="preserve">
+    <value>Mx envelope (Max)</value>
+  </data>
+  <data name="MxMin" xml:space="preserve">
+    <value>Mx envelope (Min)</value>
+  </data>
+  <data name="MyMax" xml:space="preserve">
+    <value>My envelope (Max)</value>
+  </data>
+  <data name="MyMin" xml:space="preserve">
+    <value>My envelope (Min)</value>
+  </data>
+  <data name="MzMax" xml:space="preserve">
+    <value>Mz envelope (Max)</value>
+  </data>
+  <data name="MzMin" xml:space="preserve">
+    <value>Mz envelope (Min)</value>
+  </data>
+  <data name="StirrupsSpacing" xml:space="preserve">
+    <value>Stirrups spacing</value>
+  </data>
+  <data name="TransversalReinforcemenDensity" xml:space="preserve">
+    <value>Transverse density</value>
+  </data>
+  <data name="UxMax" xml:space="preserve">
+    <value>Ux displacement envelope (Max)</value>
+  </data>
+  <data name="UxMin" xml:space="preserve">
+    <value>Ux displacement envelope (Min)</value>
+  </data>
+  <data name="UxRealMax" xml:space="preserve">
+    <value>fx deflection envelope (Max)</value>
+  </data>
+  <data name="UxRealMin" xml:space="preserve">
+    <value>fx deflection envelope (Min)</value>
+  </data>
+  <data name="UyMax" xml:space="preserve">
+    <value>Uy displacement envelope (Max)</value>
+  </data>
+  <data name="UyMin" xml:space="preserve">
+    <value>Uy displacement envelope (Min)</value>
+  </data>
+  <data name="UyRealMax" xml:space="preserve">
+    <value>fy deflection envelope (Max)</value>
+  </data>
+  <data name="UyRealMin" xml:space="preserve">
+    <value>fy deflection envelope (Min)</value>
+  </data>
+  <data name="UzMax" xml:space="preserve">
+    <value>Uz displacement envelope (Max)</value>
+  </data>
+  <data name="UzMin" xml:space="preserve">
+    <value>Uz displacement envelope (Min)</value>
+  </data>
+  <data name="UzRealMax" xml:space="preserve">
+    <value>fz deflection envelope (Max)</value>
+  </data>
+  <data name="UzRealMin" xml:space="preserve">
+    <value>fz deflection envelope (Min)</value>
+  </data>
+  <data name="X_" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="X_Rel" xml:space="preserve">
+    <value>Relative distance</value>
+  </data>
+  <data name="LoadCases" xml:space="preserve">
+    <value>Load cases</value>
+  </data>
+  <data name="LoadCombinations" xml:space="preserve">
+    <value>Load combinations</value>
+  </data>
+  <data name="LoadsAndCombinations" xml:space="preserve">
+    <value>Loads cases and combinations</value>
+  </data>
+  <data name="Internal_Moments" xml:space="preserve">
+    <value>Internal moment envelopes</value>
+  </data>
+  <data name="Long_Reinforcement" xml:space="preserve">
+    <value>Longitudinal reinforcement charts</value>
+  </data>
+  <data name="Real___Deflection" xml:space="preserve">
+    <value>RC deflection</value>
+  </data>
+  <data name="DeflectionEnvelope" xml:space="preserve">
+    <value>Deflection envelope</value>
+  </data>
+  <data name="Internal_Forces" xml:space="preserve">
+    <value>Internal force envelopes</value>
+  </data>
+  <data name="Trans_Reinforcement" xml:space="preserve">
+    <value>Transverse reinforcement</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="NoneSelected" xml:space="preserve">
+    <value>None selected</value>
+  </data>
+  <data name="NotTakenIntoConsideration" xml:space="preserve">
+    <value>Not taken into consideration</value>
+  </data>
+  <data name="DataPreparation" xml:space="preserve">
+    <value>Preparing data</value>
+  </data>
+  <data name="ReadingGeometry" xml:space="preserve">
+    <value>Reading geometry</value>
+  </data>
+  <data name="Deflection" xml:space="preserve">
+    <value>Deflection</value>
+  </data>
+  <data name="InternalForces" xml:space="preserve">
+    <value>Internal forces</value>
+  </data>
+  <data name="LongReinforcementBottom" xml:space="preserve">
+    <value>Bottom longitudinal reinforcement</value>
+  </data>
+  <data name="LongReinforcementLeft" xml:space="preserve">
+    <value>Left longitudinal reinforcement</value>
+  </data>
+  <data name="LongReinforcementRight" xml:space="preserve">
+    <value>Right longitudinal reinforcement</value>
+  </data>
+  <data name="LongReinforcementTop" xml:space="preserve">
+    <value>Top longitudinal reinforcement</value>
+  </data>
+  <data name="Reinforcement" xml:space="preserve">
+    <value>Reinforcement</value>
+  </data>
+  <data name="MaximumLongitudinalReinforcement" xml:space="preserve">
+    <value>Maximum longitudinal reinforcement</value>
+  </data>
+  <data name="MaximumStirrupsSpacing" xml:space="preserve">
+    <value>Maximum stirrups spacing</value>
+  </data>
+  <data name="MeanReinforcemenDensityLongitudinal" xml:space="preserve">
+    <value>Mean longitudinal reinforcement density</value>
+  </data>
+  <data name="MeanTransversalReinforcemenDensity" xml:space="preserve">
+    <value>Mean transverse reinforcement density</value>
+  </data>
+  <data name="MinimumLongitudinalReinforcement" xml:space="preserve">
+    <value>Minimum longitudinal reinforcement</value>
+  </data>
+  <data name="MinimumStirrupsSpacing" xml:space="preserve">
+    <value>Minimum stirrups spacing</value>
+  </data>
+  <data name="SectionAtDistance" xml:space="preserve">
+    <value>Section at distance</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="AppliesToSections" xml:space="preserve">
+    <value>Applies to the following sections: </value>
+  </data>
+  <data name="Calculation" xml:space="preserve">
+    <value>Calculating</value>
+  </data>
+  <data name="DataSaving" xml:space="preserve">
+    <value>Saving data</value>
+  </data>
+  <data name="BeamFX_Note" xml:space="preserve">
+    <value>Axial load (Fx)</value>
+  </data>
+  <data name="BeamFY_Note" xml:space="preserve">
+    <value>Lateral shear force (Fy)</value>
+  </data>
+  <data name="BeamFZ_Note" xml:space="preserve">
+    <value>Shear force (Fz)</value>
+  </data>
+  <data name="BeamMX_Note" xml:space="preserve">
+    <value>Torsional moment (Mx)</value>
+  </data>
+  <data name="BeamMY_Note" xml:space="preserve">
+    <value>Bending moment (My)</value>
+  </data>
+  <data name="BeamMZ_Note" xml:space="preserve">
+    <value>Lateral bending moment (Mz)</value>
+  </data>
+  <data name="ColumnFX_Note" xml:space="preserve">
+    <value>Axial load (Fx)</value>
+  </data>
+  <data name="ColumnFY_Note" xml:space="preserve">
+    <value>Shear force (Fy)</value>
+  </data>
+  <data name="ColumnFZ_Note" xml:space="preserve">
+    <value>Shear force (Fz)</value>
+  </data>
+  <data name="ColumnMX_Note" xml:space="preserve">
+    <value>Torsional moment (Mx)</value>
+  </data>
+  <data name="ColumnMY_Note" xml:space="preserve">
+    <value>Bending moment (My)</value>
+  </data>
+  <data name="ColumnMZ_Note" xml:space="preserve">
+    <value>Bending moment (Mz)</value>
+  </data>
+  <data name="ErrNoChosenInternalForces" xml:space="preserve">
+    <value>Element Settings: No internal forces are selected.</value>
+  </data>
+  <data name="ErrReinforcementMaterialL" xml:space="preserve">
+    <value>Element Settings: Incorrect material type is selected for longitudinal rebar.</value>
+  </data>
+  <data name="AxisArea" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="AxisDisplacmentDeflection" xml:space="preserve">
+    <value>Displacment/Deflection</value>
+  </data>
+  <data name="AxisForce" xml:space="preserve">
+    <value>Force</value>
+  </data>
+  <data name="AxisHeight" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="AxisLength" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="AxisMoment" xml:space="preserve">
+    <value>Moment</value>
+  </data>
+  <data name="AxisSpacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="AxisDencity" xml:space="preserve">
+    <value>Dencity</value>
+  </data>
+  <data name="ErrConcreteCompression" xml:space="preserve">
+    <value>Materials: Concrete compression is not properly defined.</value>
+  </data>
+  <data name="ErrCover" xml:space="preserve">
+    <value>Rebar Cover: Cover is not properly defined.</value>
+  </data>
+  <data name="ErrRebarL" xml:space="preserve">
+    <value>Element Settings: No bars are selected for longitudinal rebar.</value>
+  </data>
+  <data name="ErrReinforcementYieldStressL" xml:space="preserve">
+    <value>Element Settings: Minimum yield stress is not properly defined for longitudinal rebar.</value>
+  </data>
+  <data name="ErrSectionNotSupported" xml:space="preserve">
+    <value>Types: Element cross section is not supported by this code.</value>
+  </data>
+  <data name="ErrStaticResults" xml:space="preserve">
+    <value>Code Settings: Input package does not contain static results for the element.</value>
+  </data>
+  <data name="ErrYoungModulus" xml:space="preserve">
+    <value>Materials: Young’s Modulus is not properly defined.</value>
+  </data>
+  <data name="Displacement" xml:space="preserve">
+    <value>Displacement</value>
+  </data>
+  <data name="ErrRebarT" xml:space="preserve">
+    <value>Element Settings: No bars are selected for transverse rebar.</value>
+  </data>
+  <data name="ErrReinforcementMaterialT" xml:space="preserve">
+    <value>Element Settings: Incorrect material type is selected for transverse rebar.</value>
+  </data>
+  <data name="ErrReinforcementYieldStressT" xml:space="preserve">
+    <value>Element Settings: Minimum yield stress is not properly defined for transverse rebar.</value>
+  </data>
+  <data name="DisplacementEnvelope" xml:space="preserve">
+    <value>Displacement envelope</value>
+  </data>
+  <data name="ElementDivisionType" xml:space="preserve">
+    <value>Division type</value>
+  </data>
+  <data name="HorizontalRnfSteelParameters" xml:space="preserve">
+    <value>Horizontal reinforcement</value>
+  </data>
+  <data name="PrimaryRnfSteelParameters" xml:space="preserve">
+    <value>Primary reinforcement</value>
+  </data>
+  <data name="SecondaryRnfSteelParameters" xml:space="preserve">
+    <value>Secondary reinforcement</value>
+  </data>
+  <data name="UseForcesType" xml:space="preserve">
+    <value>Use the internal forces</value>
+  </data>
+  <data name="VerticalRnfSteelParameters" xml:space="preserve">
+    <value>Vertical reinforcement</value>
+  </data>
+  <data name="EnvelopeF" xml:space="preserve">
+    <value>Envelope of axial forces</value>
+  </data>
+  <data name="EnvelopeM" xml:space="preserve">
+    <value>Envelope of bending moments</value>
+  </data>
+  <data name="FxxMax" xml:space="preserve">
+    <value>Fxx (Max)</value>
+  </data>
+  <data name="FxxMin" xml:space="preserve">
+    <value>Fxx (Min)</value>
+  </data>
+  <data name="FyyMax" xml:space="preserve">
+    <value>Fyy (Max)</value>
+  </data>
+  <data name="FyyMin" xml:space="preserve">
+    <value>Fyy (Min)</value>
+  </data>
+  <data name="MeanPrimaryReinforcementDensity" xml:space="preserve">
+    <value>Mean primary reinforcement density</value>
+  </data>
+  <data name="MeanSecondaryReinforcementDensity" xml:space="preserve">
+    <value>Mean secondary reinforcement density</value>
+  </data>
+  <data name="MxxMax" xml:space="preserve">
+    <value>Mxx (Max)</value>
+  </data>
+  <data name="MxxMin" xml:space="preserve">
+    <value>Mxx (Min)</value>
+  </data>
+  <data name="MyyMax" xml:space="preserve">
+    <value>Myy (Max)</value>
+  </data>
+  <data name="MyyMin" xml:space="preserve">
+    <value>Myy (Min)</value>
+  </data>
+  <data name="AxxBottom" xml:space="preserve">
+    <value>Primary bottom</value>
+  </data>
+  <data name="AxxTop" xml:space="preserve">
+    <value>Primary top</value>
+  </data>
+  <data name="AyyBottom" xml:space="preserve">
+    <value>Secondary bottom</value>
+  </data>
+  <data name="AyyTop" xml:space="preserve">
+    <value>Secondary top</value>
+  </data>
+  <data name="X" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="Y" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="Z" xml:space="preserve">
+    <value>Z</value>
+  </data>
+  <data name="ExtremeValuesOfReinforcement" xml:space="preserve">
+    <value>Extreme values of reinforcement</value>
+  </data>
+  <data name="ExtremeAxialForces" xml:space="preserve">
+    <value>Extreme values of axial forces</value>
+  </data>
+  <data name="ExtremeBendingMoments" xml:space="preserve">
+    <value>Extreme values of bending moments</value>
+  </data>
+  <data name="ReinforcementMaps" xml:space="preserve">
+    <value>Reinforcement maps</value>
+  </data>
+  <data name="FloorF" xml:space="preserve">
+    <value>Axial load  (Fxx/Fyy)</value>
+  </data>
+  <data name="FloorF_Note" xml:space="preserve">
+    <value>Axial load (Fxx/Fyy)</value>
+  </data>
+  <data name="FloorM" xml:space="preserve">
+    <value>Bending moment (Mxx/Myy)</value>
+  </data>
+  <data name="FloorM_Note" xml:space="preserve">
+    <value>Bending moment (Mxx/Myy)</value>
+  </data>
+  <data name="FloorQ" xml:space="preserve">
+    <value>Shear force (Fzz)</value>
+  </data>
+  <data name="FloorQ_Note" xml:space="preserve">
+    <value>Shear force (Fzz)</value>
+  </data>
+  <data name="HorizontalReinforcement" xml:space="preserve">
+    <value>Horizontal reinforcement</value>
+  </data>
+  <data name="PrimaryReinforcement" xml:space="preserve">
+    <value>Primary reinforcement</value>
+  </data>
+  <data name="SecondaryReinforcement" xml:space="preserve">
+    <value>Secondary reinforcement</value>
+  </data>
+  <data name="VerticalReinforcement" xml:space="preserve">
+    <value>Vertical reinforcement</value>
+  </data>
+  <data name="WallF" xml:space="preserve">
+    <value>Axial load (Fxx/Fyy)</value>
+  </data>
+  <data name="WallF_Note" xml:space="preserve">
+    <value>Axial load (Fxx/Fyy)</value>
+  </data>
+  <data name="WallM" xml:space="preserve">
+    <value>Bending moment (Mxx/Myy)</value>
+  </data>
+  <data name="WallM_Note" xml:space="preserve">
+    <value>Bending moment (Mxx/Myy)</value>
+  </data>
+  <data name="WallQ" xml:space="preserve">
+    <value>Shear force (Fzz)</value>
+  </data>
+  <data name="WallQ_Note" xml:space="preserve">
+    <value>Shear force (Fzz)</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Layers</value>
+  </data>
+  <data name="LayerTakenIntoConsideration" xml:space="preserve">
+    <value>Element consist with more then one layer. The Layer taken into consideration in the calculation:</value>
+  </data>
+  <data name="ThicknessTakenIntoConsideration" xml:space="preserve">
+    <value>Thickness taken into consideration in the calculation</value>
+  </data>
+  <data name="AllSections" xml:space="preserve">
+    <value>all sections</value>
+  </data>
+  <data name="DimensioningDirectionXFloor" xml:space="preserve">
+    <value>Main direction</value>
+  </data>
+  <data name="DimensioningDirectionXWall" xml:space="preserve">
+    <value>Vertical direction</value>
+  </data>
+  <data name="DimensioningDirectionYFloor" xml:space="preserve">
+    <value>Secondary direction</value>
+  </data>
+  <data name="DimensioningDirectionYWall" xml:space="preserve">
+    <value>Horizontal direction</value>
+  </data>
+  <data name="FloorAxxBottom" xml:space="preserve">
+    <value>Primary bottom</value>
+  </data>
+  <data name="FloorAxxTop" xml:space="preserve">
+    <value>Primary top</value>
+  </data>
+  <data name="FloorAyyBottom" xml:space="preserve">
+    <value>Secondary bottom</value>
+  </data>
+  <data name="FloorAyyTop" xml:space="preserve">
+    <value>Secondary top</value>
+  </data>
+  <data name="WallAxxBottom" xml:space="preserve">
+    <value>Vertical internal</value>
+  </data>
+  <data name="WallAxxTop" xml:space="preserve">
+    <value>Vertical external</value>
+  </data>
+  <data name="WallAyyBottom" xml:space="preserve">
+    <value>Horizontal internal</value>
+  </data>
+  <data name="WallAyyTop" xml:space="preserve">
+    <value>Horizontal external</value>
+  </data>
+  <data name="MeanHorizontalReinforcementDensity" xml:space="preserve">
+    <value>Mean horizontal reinforcement density</value>
+  </data>
+  <data name="MeanVerticallReinforcementDensity" xml:space="preserve">
+    <value>Mean vertical reinforcement density</value>
+  </data>
+</root>

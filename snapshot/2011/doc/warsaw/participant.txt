@@ -1,0 +1,28 @@
+robert_handzel@aplikom.com.pl: Robert Handzel, APLIKOM Sp. z o.o. – 
+pawel_cieslik@cadexpert.com.pl: Pawel Cieslik, CADExpert Sp. z o.o.
+b.dziendziel@arcadis.pl: Barbara Dziendziel, ARCADIS Sp. z o.o.
+zuzanna@cadsoft.pl: Zuzanna Szczepanik, AE for Revit, Cadsoft, our IVAR
+dk@robobat.pl: Krzysztof Walek, Tomasz Lata, Robobat, our ADN Developer
+musialik@mat.net.pl: MAT: our IVAR from Cracow (they will invite client – Niras)   
+p.labuda@mat.net.pl: MAT: our IVAR from Cracow (they will invite client – Niras)   
+Janusz.szczesniak@procad.pl: Procad, The biggest ADSK partner in Poland, DVAR, AND (they will invite SANKOM) 
+Malgorzata.golatowska@thesarpro.pl: Malgorzata Goletowska, Thesar, our IVAR 
+kujawski@epstein.com.pl: Maciej Kujawski, Epstein, our Revit Client implementing full BIM solutions now in Poland and soon in Chicago 
+bogusz@epstein.com.pl: Grzegorz Bogusz, Epstein
+Wojciech.kozlowski@aecdesign.pl: Wojciech Kozlowski, AEC Design – Our IVAR 
+Katarzyna.szajrych@aecdesign.pl: katarzyna Szajrych, AEC Design – Our IVAR 
+ejgbulat@budmedia.pl: Grzegorz Bulat, EJG Bulat, our client for Revit Structure. They are also programming some add-on’s on our products (only for themselves not commercially) 
+Robert_handzel@aplikom.com.pl: Robert Handzel, Aplikom - our IVAR 
+Marek_majewski@aplikom.com.pl: Aplikom - our IVAR 
+Lukasz.Jonczyk@skanska.pl: Skanska – our Client implementing BIM and want to integrate Revit with different applications  
+Konrad.Krol@skanska.pl: Skanska – our Client implementing BIM and want to integrate Revit with different applications  
+aiotech@aiotech.pl: aiotech.pl – external company implementing BIM solutions. 
+s.moryc@datacomp.com.pl: DatSoft – the company who is owner of ZUZIA software. The most popular cost estimation software in Poland   
+l.tomczykiewicz@datacomp.com.pl: DatSoft – the company who is owner of ZUZIA software. The most popular cost estimation software in Poland   
+pl@lapa.at: Piotr Lapinski, Jacek Dobosz, LAPA Bauprojekt - Our Client in Austria for Revit Strucutre
+piotr@a8architektura.pl: Piotr Lewandowski, A1 Architektura – our Revit Architecture Client 
+francisco.rojas@dasoft.com.mx: DASoft – Mexico – ADN Mexico
+r.zieba@bis.krakow.pl: Robert Zieba, BIS – AE Revit he doen’t know ACAD only Revit. He was working for one of the biggest Design Studio in Poland. Was part of project team regarding Revit implementation 
+hermes.briseno@icacc.com.mx: ICA - Mexico – 1 osoba 
+Krzysztof.adach@techdata.pl: Krzysztof Adach, Tech Data Polska – our VAD, AE Revit Structure 
+Andrzej.samsonowicz@autodesk.com: Andrzej Samsonowicz, Autodesk, AE Revit 

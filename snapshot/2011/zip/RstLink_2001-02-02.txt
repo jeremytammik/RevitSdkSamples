@@ -1,0 +1,27 @@
+
+Hi Mikako,
+
+RST link was migrated to Revit 2011. In this version, there is almost no additional functionality.
+
+I slightly changed the implement code in these aspects.
+
+1.	Element Iteration. 
+2.	GetFamilySymbol() method
+
+There is no code change to other 5 projects that based on AutoCAD, except for referencing to the new reference in 2011.
+
+Miro,
+RstLinkAutoCADClientCs
+RstLinkAutoCADClientVb
+RstLinkCs
+RstLinkVb
+
+I tested both workflow, Revit->AutoCAD and AutoCAD->Revit.  
+
+In the next step, I plan to add functionality to add the code to create the new member created in AutoCAD when importing the model.
+
+Any suggestion is appreciated. 
+
+Thanks,
+
+Joe

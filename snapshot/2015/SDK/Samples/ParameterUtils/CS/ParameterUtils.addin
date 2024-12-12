@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ParameterUtils.dll</Assembly>
+    <ClientId>05335ee0-36a9-4f80-836f-612f89d48d5b</ClientId>
+    <FullClassName>Revit.SDK.Samples.ParameterUtils.CS.Command</FullClassName>
+    <Text>Element Parameters</Text>
+    <Description>Show the property information of selected element.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

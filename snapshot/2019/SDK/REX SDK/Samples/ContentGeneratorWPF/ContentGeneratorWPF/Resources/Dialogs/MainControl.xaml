@@ -1,0 +1,245 @@
+<rexf:REXExtensionMainControl x:Class="REX.ContentGeneratorWPF.Resources.Dialogs.MainControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:rexf="clr-namespace:REX.Common;assembly=REX.Foundation.WPF"
+    xmlns:rexc="clr-namespace:REX.Controls.WPF;assembly=REX.Controls.WPF"
+    Height="512" Width="720" SnapsToDevicePixels="True">
+
+    <rexf:REXExtensionMainControl.Resources>
+        <rexf:REXRoutedUICommand x:Key="CommandOpen" Name="Open"/>
+        <rexf:REXRoutedUICommand x:Key="CommandSave" Name="Save"/>
+        <rexf:REXRoutedUICommand x:Key="CommandSaveAs" Name="SaveAs"/>
+        <rexf:REXRoutedUICommand x:Key="CommandPreferences" Name="Preferences"/>
+        <rexf:REXRoutedUICommand x:Key="CommandPrint" Name="Print"/>
+        <rexf:REXRoutedUICommand x:Key="CommandClose" Name="Close"/>
+        <rexf:REXRoutedUICommand x:Key="CommandCalculate" Name="Calculate"/>
+        <rexf:REXRoutedUICommand x:Key="CommandHelp" Name="Help"/>
+        <rexf:REXRoutedUICommand x:Key="CommandAbout" Name="About"/>
+    </rexf:REXExtensionMainControl.Resources>
+
+    <rexf:REXExtensionMainControl.CommandBindings>
+        <CommandBinding Command="{StaticResource CommandOpen}" Executed="CommandBinding_Executed"  CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="{StaticResource CommandSave}" Executed="CommandBinding_Executed"  CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="{StaticResource CommandSaveAs}" Executed="CommandBinding_Executed"  CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="{StaticResource CommandPreferences}" Executed="CommandBinding_Executed"  CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="{StaticResource CommandPrint}" Executed="CommandBinding_Executed"  CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="{StaticResource CommandClose}" Executed="CommandBinding_Executed"  CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="{StaticResource CommandCalculate}" Executed="CommandBinding_Executed"  CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="{StaticResource CommandHelp}" Executed="CommandBinding_Executed"  CanExecute="CommandBinding_CanExecute"/>
+        <CommandBinding Command="{StaticResource CommandAbout}" Executed="CommandBinding_Executed"  CanExecute="CommandBinding_CanExecute"/>
+    </rexf:REXExtensionMainControl.CommandBindings>
+
+    <rexf:REXExtensionMainControl.InputBindings>
+        <KeyBinding Key="O" Modifiers="Control" Gesture="Ctrl+O" Command="{StaticResource CommandOpen}"/>
+        <KeyBinding Key="S" Modifiers="Control" Gesture="Ctrl+S" Command="{StaticResource CommandSave}"/>
+        <KeyBinding Key="P" Modifiers="Control" Gesture="Ctrl+P" Command="{StaticResource CommandPrint}"/>
+        <KeyBinding Key="F9" Modifiers="" Gesture="F9" Command="{StaticResource CommandCalculate}"/>
+        <KeyBinding Key="F1" Modifiers="" Gesture="F1" Command="{StaticResource CommandHelp}"/>
+    </rexf:REXExtensionMainControl.InputBindings>
+
+    <DockPanel LastChildFill="True">
+        <ToolBarPanel DockPanel.Dock="Top">
+            <StackPanel Orientation="Vertical">
+                <Menu Name="Menu" Style="{DynamicResource REXMenu}">
+                    <MenuItem Name="MenuItemFile" Header="_File" StaysOpenOnClick="True">
+                        <MenuItem Name="MenuItemOpen" Header="_Open ..." Command="{StaticResource CommandOpen}">
+                            <MenuItem.Icon>
+                                <Image Source="..\other\images\toolbar_open.png" Stretch="None"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Name="MenuItemSave" Header="_Save"  Command="{StaticResource CommandSave}">
+                            <MenuItem.Icon>
+                                <Image Source="..\other\images\toolbar_save.png" Stretch="None"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Name="MenuItemSaveAs" Header="Save _As ..."  Command="{StaticResource CommandSaveAs}">
+                            <MenuItem.Icon>
+                                <Image Source="..\other\images\toolbar_save_as.png" Stretch="None"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator Name="MenuSeparatorPreferencesTop"/>
+                        <MenuItem Name="MenuItemPreferences" Header="_Preferences ..."  Command="{StaticResource CommandPreferences}">
+                            <MenuItem.Icon>
+                                <Image Source="..\other\images\toolbar_save_as.png" Stretch="None"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator Name="MenuSeparatorPreferencesBottom"/>
+                        <MenuItem Name="MenuItemPrint" Header="Print ..." Command="{StaticResource CommandPrint}">
+                            <MenuItem.Icon>
+                                <Image Source="..\other\images\toolbar_print.png" Stretch="None"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator Name="MenuSeparatorCloseTop"/>
+                        <MenuItem Name="MenuItemClose" Header="Close" Command="{StaticResource CommandClose}">
+                            <MenuItem.Icon>
+                                <Image Source="..\other\images\toolbar_close.png" Stretch="None"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Name="MenuItemCalculations"  Header="_Calculations">
+                        <MenuItem Name="MenuItemCalc" Header="_Calculate" Command="{StaticResource CommandCalculate}">
+                            <MenuItem.Icon>
+                                <Image Source="..\other\images\toolbar_calculate.png" Stretch="None"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Name="MenuItemHelp"  Header="_Help">
+                        <MenuItem Name="MenuItemHelpIndex" Header="_Help ..."  Command="{StaticResource CommandHelp}">
+                            <MenuItem.Icon>
+                                <Image Source="..\other\images\toolbar_help.png" Stretch="None"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator Name="ToolStripSeparatorBeforeAbout"/>
+                        <MenuItem Name="MenuItemAbout" Header="_About ..." Command="{StaticResource CommandAbout}">
+                            <MenuItem.Icon>
+                                <Image Source="..\other\images\toolbar_info.png" Stretch="None"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+                <StackPanel Orientation="Horizontal">
+                    <ToolBar ToolBarTray.IsLocked="True" Name="ToolMenu">
+                        <Menu Style="{DynamicResource REXMenu}">
+                            <MenuItem Name="ToolStripMenuItemFile"  Header="_File" StaysOpenOnClick="True">
+                                <MenuItem Name="ToolStripMenuItemOpen" Header="_Open ..." Command="{StaticResource CommandOpen}">
+                                    <MenuItem.Icon>
+                                        <Image Source="..\other\images\toolbar_open.png" Stretch="None" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Name="ToolStripMenuItemSave" Header="_Save"  Command="{StaticResource CommandSave}">
+                                    <MenuItem.Icon>
+                                        <Image Source="..\other\images\toolbar_save.png" Stretch="None"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Name="ToolStripMenuItemSaveAs" Header="Save _As ..."  Command="{StaticResource CommandSaveAs}">
+                                    <MenuItem.Icon>
+                                        <Image Source="..\other\images\toolbar_save_as.png" Stretch="None"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator Name="ToolStripMenuSeparatorPreferencesTop"/>
+                                <MenuItem Name="ToolStripMenuItemPreferences" Header="_Preferences ..."  Command="{StaticResource CommandPreferences}">
+                                    <MenuItem.Icon>
+                                        <Image Source="..\other\images\toolbar_save_as.png" Stretch="None"  />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator Name="ToolStripMenuSeparatorPreferencesBottom"/>
+                                <MenuItem Name="ToolStripMenuItemPrint" Header="Print ..." Command="{StaticResource CommandPrint}">
+                                    <MenuItem.Icon>
+                                        <Image Source="..\other\images\toolbar_print.png" Stretch="None"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator Name="ToolStripMenuSeparatorCloseTop"/>
+                                <MenuItem Name="ToolStripMenuItemClose" Header="Close" Command="{StaticResource CommandClose}">
+                                    <MenuItem.Icon>
+                                        <Image Source="..\other\images\toolbar_close.png" Stretch="None"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </MenuItem>
+                            <MenuItem Name="ToolStripMenuItemCalculations" Header="_Calculations">
+                                <MenuItem Name="ToolStripMenuItemCalc" Header="_Calculate" Command="{StaticResource CommandCalculate}">
+                                    <MenuItem.Icon>
+                                        <Image Source="..\other\images\toolbar_calculate.png" Stretch="None"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </MenuItem>
+                            <MenuItem Name="ToolStripMenuItemHelp" Header="_Help">
+                                <MenuItem Name="ToolStripMenuItemHelpIndex" Header="_Help ..."  Command="{StaticResource CommandHelp}">
+                                    <MenuItem.Icon>
+                                        <Image Source="..\other\images\toolbar_help.png" Stretch="None"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator Name="ToolStripMenuSeparatorBeforeAbout"/>
+                                <MenuItem Name="ToolStripMenuItemAbout" Header="_About ..." Command="{StaticResource CommandAbout}">
+                                    <MenuItem.Icon>
+                                        <Image Source="..\other\images\toolbar_info.png" Stretch="None"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </MenuItem>
+                        </Menu>
+                    </ToolBar>
+
+                    <ToolBar ToolBarTray.IsLocked="True" Name="ToolBar">
+                        <Button Name="ToolStripButtonOpen" Command="{StaticResource CommandOpen}">
+                            <Image Source="..\other\images\toolbar_open.png" Stretch="None"/>
+                            <Button.ToolTip>
+                                <Label>Open</Label>
+                            </Button.ToolTip>
+                        </Button>
+                        <Button Name="ToolStripButtonSave" Command="{StaticResource CommandSave}">
+                            <Image Source="..\other\images\toolbar_save.png" Stretch="None"/>
+                            <Button.ToolTip>
+                                <Label>Save</Label>
+                            </Button.ToolTip>
+                        </Button>
+                        <Separator Name="ToolStripSeparatorPreferencesLeft"/>
+                        <Button Name="ToolStripPreferences" Command="{StaticResource CommandCalculate}">
+                            <Image Source="..\other\images\toolbar_rs.png" Stretch="None"/>
+                            <Button.ToolTip>
+                                <Label>Save As</Label>
+                            </Button.ToolTip>
+                        </Button>
+                        <Separator Name="ToolStripSeparatorPreferencesRight"/>
+                        <Button Name="ToolStripCalculate" Command="{StaticResource CommandCalculate}">
+                            <Image Source="..\other\images\toolbar_calculate.png" Stretch="None"/>
+                            <Button.ToolTip>
+                                <Label>Calculate</Label>
+                            </Button.ToolTip>
+                        </Button>
+                        <Separator Name="ToolStripSeparatorAC"/>
+                        <Button Name="ToolStripButtonHelp" Command="{StaticResource CommandHelp}">
+                            <Image Source="..\other\images\toolbar_help.png" Stretch="None"/>
+                            <Button.ToolTip>
+                                <Label>Help</Label>
+                            </Button.ToolTip>
+                        </Button>
+                   </ToolBar>
+                </StackPanel>
+            </StackPanel>
+        </ToolBarPanel>
+        <Grid Name="HSplitGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <GridSplitter Name="HSplit" Grid.Row="0" Height="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+            <Grid Name="HSplitGridTop" Grid.Row="0">
+                <DockPanel Name="VSplitGrid" LastChildFill="True" Grid.Row="0">                 
+                    <Grid Name="VSplitGridLeft">
+                        <rexc:REXToolbox Width="200" MinWidth="200" Name="Toolbox" BorderThickness="1" Background="{x:Static SystemColors.WindowBrush}"  SelectedItemChanged="Toolbox_SelectedItemChanged" BorderBrush="{x:Static SystemColors.ControlDarkBrush}" ItemBorderThickness="1" IsItemsHost="False">
+                         
+                        </rexc:REXToolbox>
+                    </Grid>
+                    <GridSplitter Name="VSplit"  Width="2" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+                    <Grid Name="VSplitGridRight">
+                        <Grid Name="DialogContainer" Visibility="Hidden">
+                        </Grid>
+                        <Grid Name="ViewContainer" Visibility="Hidden">
+                        </Grid>
+                        <Grid Name="NoteContainer" Visibility="Hidden">
+                        </Grid>
+                        <TabControl Name="TabControl" Visibility="Hidden" Background="Transparent">
+                            <TabItem Name="TabDialog" Header="Properties" Visibility="Hidden" ></TabItem>
+                            <TabItem Name="TabView" Header="View" Visibility="Hidden"></TabItem>
+                            <TabItem Name="TabNote" Header="Note" Visibility="Hidden"></TabItem>
+                        </TabControl>
+                    </Grid>
+                </DockPanel>
+            </Grid>
+            <Grid Name="HSplitGridBottom" Grid.Row="1">
+                
+            </Grid>
+            <StatusBar Name="Status" Grid.Row="2" Height="30">
+                <StatusBarItem HorizontalContentAlignment="Left">
+                    <Label Name="StatusHeaderLabel"></Label>
+                </StatusBarItem>
+                <StatusBarItem HorizontalContentAlignment="Left">
+                    <Label Name="StatusLabel"></Label>
+                </StatusBarItem>
+                <StatusBarItem HorizontalContentAlignment="Right">
+                    <ProgressBar Name="StatusProgress" Width="100" Height="16" Grid.Column="1"/>
+                </StatusBarItem>
+            </StatusBar>
+        </Grid>
+    </DockPanel>
+</rexf:REXExtensionMainControl>

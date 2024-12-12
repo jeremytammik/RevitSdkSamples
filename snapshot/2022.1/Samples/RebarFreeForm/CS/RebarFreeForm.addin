@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>RebarFreeForm.dll</Assembly>
+	<ClientId>CD45950E-C27F-4728-AF35-E19B64E65FBD</ClientId>
+    <FullClassName>Revit.SDK.Samples.RebarFreeForm.CS.AddSharedParams</FullClassName>
+    <Text>Add Parameters</Text>
+    <Description>External command to add shared parameters to Rebar</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>RebarFreeForm.dll</Assembly>
+    <ClientId>9d871749-6401-419f-ba8f-99a44c03adf5</ClientId>
+    <FullClassName>Revit.SDK.Samples.RebarFreeForm.CS.Command</FullClassName>
+    <Text>Create Rebar Free Form</Text>
+    <Description>External command to create a Rebar FreeForm element and external application to implement the custom server used to regenerate the rebar geometry based on constraints</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>RebarFreeForm</Name>
+    <Assembly>RebarFreeForm.dll</Assembly>
+    <ClientId>a6ea850e-a041-48bb-85f5-8ce21b2ba972</ClientId>
+    <FullClassName>Revit.SDK.Samples.RebarFreeForm.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

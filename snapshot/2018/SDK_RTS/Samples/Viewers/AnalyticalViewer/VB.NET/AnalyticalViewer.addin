@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AnalyticalViewer.dll</Assembly>
+    <ClientId>2bb42c44-3fa5-4d9c-89b6-f72510bae9f5</ClientId>
+    <FullClassName>Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer</FullClassName>
+    <Text>Analytical Viewer</Text>
+    <Description>Display analytical model of one or more selected elements.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,185 @@
+#
+# BcSamples.txt - The Building Coder blog sample applications
+#                 include file for RvtSamples Revit menu generator
+#
+# Copyright (C) 2008 by Jeremy Tammik, Autodesk Inc. All Rights Reserved.
+#
+# History:
+#
+# 2008-10-05 initial version
+#
+# This file is read by the Revit external application RvtSamples, which is
+# discussed in the class on the Revit SDK samples. From Revit 2009 onwards,
+# the RvtSamples source code is included in the standard Revit SDK.
+#
+# Defines menu entries for the sample applications discussed
+# in The Building Coder blog.
+#
+# Top level menu title is "ADN", and the samples are added to the submenu
+#
+# ADN
+#   Bc
+#
+# The menu entries for the standard Revit SDK samples are defined
+# separately in RvtSamples.txt.
+#
+
+#
+#
+# /ADN/Bc/
+#
+/&ADN/&Bc/List Walls
+List wall lengths and areas
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdListWalls
+
+/&ADN/&Bc/Wall Dimensions
+Extract wall solid and list all its dimensions
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallDimensions
+
+/&ADN/&Bc/Relationship Inverter
+Determine opening > wall host relationships and invert them to wall > opening
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdRelationshipInverter
+
+/&ADN/&Bc/Filter Performance
+Compare Type Filter versus using an anonymous method to filter elements
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdFilterPerformance
+
+/&ADN/&Bc/Element Materials
+Retrieve building element materials
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdGetMaterials
+
+/&ADN/&Bc/Azimuth
+Calculate azimuth
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdAzimuth
+
+/&ADN/&Bc/Bounding Box
+Retrieve Element Bounding Box
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdBoundingBox
+
+/&ADN/&Bc/Slab Boundaries
+Determine polygonal floor slab boundary loops
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSlabBoundary
+
+/&ADN/&Bc/Slab Sides
+Determine floor slab side faces
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSlabSides
+
+/&ADN/&Bc/Edit Floor
+Generate a new floor element from the curve array of an existing one
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdEditFloor
+
+/&ADN/&Bc/Wall Layers
+List and determine position of all wall compound layers
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallLayers
+
+/&ADN/&Bc/Wall Profile
+Determine wall elevation profile boundary loop polygons
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallProfile
+
+/&ADN/&Bc/Wall Neighbours
+Determine wall neighbours, i.e. wall joined at end points
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallNeighbours
+
+/&ADN/&Bc/Floor Boundary Polygon Areas
+Determine floor slab boundary loop polygon areas
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSlabBoundaryArea
+
+/&ADN/&Bc/Wall Profile Polygon Areas
+Determine wall elevation profile boundary loop polygon areas
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallProfileArea
+
+/&ADN/&Bc/Linked Files
+Determine linked files and their full path
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdLinkedFiles
+
+/&ADN/&Bc/List Views
+Determine all all the view ports of a drawing sheet and vice versa
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdListViews
+
+/&ADN/&Bc/Plan Topology
+List plan topology and its rooms and circuits with no rooms
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdPlanTopology
+
+
+/&ADN/&Bc/Room Wall Adjacency
+Determine part of wall face area that bounds a room
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdRoomWallAdjacency
+
+/&ADN/&Bc/Wall Layer Volumes
+Calculate compound wall layer volumes
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWallLayerVolumes
+
+/&ADN/&Bc/Window Handle
+Determine Revit window handle and display a modeless form
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdWindowHandle
+
+/&ADN/&Bc/Sloped Wall
+Create a sloped wall
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdSlopedWall
+
+/&ADN/&Bc/Create Column Type and Instance
+Create a new column type and insert an instance of it
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewColumnTypeInstance
+
+/&ADN/&Bc/Create Beam Type and Instance
+Create a new beam type and insert an instance of it
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewBeamTypeInstance
+
+/&ADN/&Bc/List Railing Types
+List all railing and stair types
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdListRailingTypes
+
+/&ADN/&Bc/Cannot Create Railing Instance
+Cannot create a new railing instance
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewRailing
+
+/&ADN/&Bc/Linked File Elements
+List elements in linked files
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdLinkedFileElements
+
+/&ADN/&Bc/Get Transformed Coordinates
+Determine transformed vertex coordinates for family instance symbol geometry
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdTransformedCoords
+
+/&ADN/&Bc/Cylindrical Column
+Determine whether column is round
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdColumnRound
+
+/&ADN/&Bc/Create Area
+Create a new area element
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNewArea
+
+/&ADN/&Bc/Nested Instance Geometry
+Determine nested instance geometry and structure
+C:\a\j\adn\train\revit\2009\src\bc\BuildingCoder\BuildingCoder\bin\Debug\BuildingCoder.dll
+BuildingCoder.CmdNestedInstanceGeo

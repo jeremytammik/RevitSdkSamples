@@ -1,0 +1,57 @@
+﻿<Window x:Class="Revit.SDK.Samples.DockableDialogs.CS.DockingSetupDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+         SizeToContent="WidthAndHeight"      
+        Title ="Dockable Dialog Setup">
+    <Grid>
+        <StackPanel>
+
+         <StackPanel Orientation="Horizontal">
+            <Label>New Guid</Label>
+            <TextBox Name="tb_newGuid"></TextBox>
+         </StackPanel>
+
+         <StackPanel Orientation="Horizontal">
+            <Label>Left</Label><TextBox Name="tb_left">10</TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+            <Label>Right</Label><TextBox Name="tb_right">710</TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+            <Label>Top</Label><TextBox Name="tb_top">10</TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+            <Label>Bottom</Label>
+            <TextBox  Name="tb_bottom">710</TextBox>
+            </StackPanel>
+         <StackPanel Orientation="Horizontal">
+            <Label>Target Guid</Label>
+            <TextBox  Name="tb_targetGuid"></TextBox>
+         </StackPanel>
+
+            <Label>Tab Target</Label>
+            <RadioButton Name="rb_ElementView" GroupName="TabTarget" IsChecked="false">Element View</RadioButton>
+            <RadioButton Name="rb_HostByLinkNavigator" GroupName="TabTarget" IsChecked="false">Host By Link Nav</RadioButton>
+            <RadioButton Name="rb_ProjectBrowser" GroupName="TabTarget" IsChecked="false">Project Browser</RadioButton>
+            <RadioButton Name="rb_PropertiesPalette" GroupName="TabTarget" IsChecked="true">Properties Palette</RadioButton>
+            <RadioButton Name="rb_RebarBrowser" GroupName="TabTarget" IsChecked="false">Rebar Browser</RadioButton>
+            <RadioButton Name="rb_SystemNav" GroupName="TabTarget" IsChecked="false">System Nav</RadioButton>
+            <RadioButton Name="rb_Null" GroupName="TabTarget" IsChecked="false">Null</RadioButton>
+
+         <Label>DockPosition</Label>
+                <RadioButton Name="rb_top"  GroupName="DockPosition" Checked="rb_top_Checked">Top</RadioButton>
+                <RadioButton Name="rb_left"   GroupName="DockPosition" Checked="rb_left_Checked">Left</RadioButton>
+                <RadioButton Name="rb_right"   GroupName="DockPosition" Checked="rb_right_Checked">Right</RadioButton>
+                <RadioButton Name="rb_bottom"   GroupName="DockPosition" IsChecked ="False" Checked="rb_bottom_Checked">Bottom</RadioButton>
+            
+               <RadioButton Name="rb_tabbed"   GroupName="DockPosition" IsChecked ="True" Checked="rb_tabbed_Checked">Tabbed</RadioButton>
+               <RadioButton Name="rb_floating"   GroupName="DockPosition" Checked="rb_floating_Checked">Floating</RadioButton>
+       
+            <Button Name="btn_ok" Click="btn_ok_Click">OK</Button>
+        </StackPanel>
+    </Grid>
+</Window>

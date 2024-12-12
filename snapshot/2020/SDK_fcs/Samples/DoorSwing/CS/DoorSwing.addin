@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>DoorSwing</Name>
+    <Assembly>DoorSwing.dll</Assembly>
+    <ClientId>090C61F3-4D37-4896-A3E6-AEFA9C67A895</ClientId>
+    <FullClassName>Revit.SDK.Samples.DoorSwing.CS.ExternalApplication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DoorSwing.dll</Assembly>
+    <ClientId>62b98036-f713-4e67-a18a-37e96fd025cd</ClientId>
+    <FullClassName>Revit.SDK.Samples.DoorSwing.CS.InitializeCommand</FullClassName>
+    <Text>Customize door opening expression</Text>
+    <Description>Customize door opening expression based on geometry and your country standard.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DoorSwing.dll</Assembly>
+    <ClientId>d0527082-51d2-4fc6-874e-4bcc623f49d6</ClientId>
+    <FullClassName>Revit.SDK.Samples.DoorSwing.CS.UpdateParamsCommand</FullClassName>
+    <Text>Update Door Properties</Text>
+    <Description>Update Door Properties according to geometries.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DoorSwing.dll</Assembly>
+    <ClientId>9b27bd73-78c2-46d7-978c-6d550cd2cf93</ClientId>
+    <FullClassName>Revit.SDK.Samples.DoorSwing.CS.UpdateGeometryCommand</FullClassName>
+    <Text>Update Door Geometries</Text>
+    <Description>Update door geometry according to From/To room property.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

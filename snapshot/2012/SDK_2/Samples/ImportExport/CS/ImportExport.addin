@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ImportExport.dll</Assembly>
+    <ClientId>92cc84cd-963f-4d33-8cdc-e01321c0b427</ClientId>
+    <FullClassName>Revit.SDK.Samples.ImportExport.CS.Command</FullClassName>
+    <Text>Import and Export</Text>
+    <Description>Export current project to dwg, dwf(x), gbxml or fbx files and import a dwg or image file into Revit.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

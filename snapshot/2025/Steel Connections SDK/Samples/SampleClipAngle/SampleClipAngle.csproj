@@ -1,0 +1,50 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <Import Project="..\StructuralConnectionsSDKSamples.Common.props" />
+  <ItemGroup>
+    <Reference Include="ASRepository">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\ASRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetRoots">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\DotNetRoots.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.SteelConnections.ASRvtModeler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\Autodesk.SteelConnections.ASRvtModeler.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.ASTCONTROLSLib">
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\AxInterop.ASTCONTROLSLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.AstSTEELAUTOMATIONLib5">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>$(ASInstallDir)\Interop.AstSTEELAUTOMATIONLib5.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DSCGEOMCOMLib">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>$(ASInstallDir)\Interop.DSCGEOMCOMLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DSCODBCCOMLib">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>$(ASInstallDir)\Interop.DSCODBCCOMLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DSCPROFILESACCESSCOMLib">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>$(ASInstallDir)\Interop.DSCPROFILESACCESSCOMLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DSCRootsCOMLib">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>$(ASInstallDir)\Interop.DSCRootsCOMLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk"/>
+</Project>

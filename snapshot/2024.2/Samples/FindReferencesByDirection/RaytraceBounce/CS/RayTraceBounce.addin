@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>RayTraceBounce.dll</Assembly>
+    <ClientId>64bb05f1-b4e8-495c-9d49-032bdbf6fd94</ClientId>
+    <FullClassName>Revit.SDK.Samples.RayTraceBounce.CS.Command</FullClassName>
+    <Text>RayTraceBounce</Text>
+    <Description>Find intersection between ray and face and create connecting lines.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

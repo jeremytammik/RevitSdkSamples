@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>P:\ElementReportHTML\ElementReportHTML\bin\Release\ElementReportHTML.dll</Assembly>
+    <ClientId>7f2e7b37-f1fb-45a6-be1c-be25d4f89ff5</ClientId>
+    <FullClassName>REX.ElementReportHTML.DirectRevitAccess</FullClassName>
+    <Text>ElementReportHTML</Text>
+    <Description>ElementReportHTML</Description>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

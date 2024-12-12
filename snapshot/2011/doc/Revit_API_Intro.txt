@@ -1,0 +1,1730 @@
+
+Revit Programming Introduction
+
+
+
+Jeremy Tammik
+
+AEC Workgroup
+DevTech Autodesk
+
+About the Presenter
+Jeremy is a member of the AEC workgroup of the Autodesk Developer Network ADN team, providing developer support, training, conference presentations, and blogging on the Revit API.
+He joined Autodesk in 1988 as the technology evangelist responsible for European developer support to lecture, consult, and support AutoCAD application developers in Europe, the U.S., Australia, and Africa. He was a co-founder of ADGE, the AutoCAD Developer Group Europe, and a prolific author on AutoCAD application development. He left Autodesk in 1994 to work as an HVAC application developer, and then rejoined the company in 2005.
+Jeremy graduated in mathematics and physics in Germany, worked as a teacher and translator, then as a C++ programmer on early GUI and multitasking projects. He is fluent in five European languages, vegetarian, has four kids, plays the flute, likes reading, travelling, theatre improvisation, and carpentry, loves mountains, oceans, sports, and especially climbing.
+Jeremy Tammik
+Developer Technical Services
+EMEA, Autodesk SARL
+Introduction
+It is my pleasure to work in the AEC workgroup of the DevTech team supporting the Autodesk Developer Network ADN.
+Revit Programming Introduction
+
+About You
+1. What category best describes your main professional activity?
+Architect, Engineer, Constructor, Programmer, Manager, Other
+2. How would you rate your level of experience with the Revit products?
+Very experienced, Quite experienced, Not experienced
+3. How would you rate your level of experience with the Revit API?
+Very experienced, Quite experienced, Not experienced
+4. Which statement best describes you?
+This topic directly affects my work today
+I expect this topic to be useful to me in the future
+I'm evaluating this technology
+None of the above
+Introduction
+
+Installation and Preparations
+Visual Studio 2008
+Express edition is available for free
+Revit 2011 RTM
+Architecture, MEP or Structure
+Revit SDK
+RevitSDK.exe
+C:\Autodesk\Autodesk_Revit_Architecture_2011_English_Win_32-64bit\support\SDK
+C:\Autodesk\Autodesk_Revit_MEP-B_2011_English_Win_32-64bit\support\SDK
+C:\Autodesk\Autodesk_Revit_Structure_2011_English_Win_32-64bit\support\SDK
+Memory stick contents
+Look at Revit 2011 API
+Start with readme.txt
+Rac folder includes generic platform info
+Introduction
+
+Ideas
+Map MEP elements to levels, first family instances, then pipes, invert relationship to map levels to lists of elements
+Introduction
+
+Workshop Agenda
+Wednesday April 7 - Getting Started
+9:00	Early Birds and Installation Support
+11:00	Introductions
+12:00	Revit API Overview and Sample Applications
+13:00	External Command and Hello World Hands-on
+14:00	Lunch
+15:00	External Application and Ribbon Hands-on
+16:00	SDK Tools Setup
+17:00	End
+Thursday April 8 - Basics and Advanced Topics
+9:00	User interaction
+10:30	Database and elements
+12:00		Parameters
+13:00		Geometry
+14:00		Lunch
+15:00		API news, new SDK samples, dynamic update, analysis visualization
+17:00		End
+Friday April 9 - Specialised APIs
+9:00	Family API and form creation
+10:30		Revit MEP
+12:00		Revit Structure
+14:00		Lunch
+15:00	Participant Wishes
+16:00	End
+Introduction
+
+Agenda
+Introduction
+Product, SDK, documentation and samples
+Getting Started and Hello World
+Development environment, external command and application interfaces, modifying Revit.ini, RvtSamples and RevitLookup (ex-RvtMgdDbg)
+Basics
+User interaction: selection, messages, error handling
+Database and elements: identifying, filtering, manipulation
+Families and types: standard versus system, loading, changing type
+Parameters: built-in versus shared, exchange with external applications
+Geometry
+Advanced Topics, New and Specialised APIs
+API news and new SDK samples
+Ribbon, transactions, events, selection, dynamic update, analysis visualization
+Family API and form creation
+Revit MEP and Structure
+Introduction
+What are the initial steps in creating a Revit application? The first thing is to understand is what material is provided by the SDK, the API architecture, and where to obtain more information. Then we explore how to set up the development environment and create a first "Hello world" type application. After that, we will look into the Revit database structure and its data and elements. The samples provide a valuable knowledgebase on how to solve Revit programming tasks. Then we go through the basics, which are unchanged from the previous release. After the break, we dive into the host of new topics.
+
+Acronyms
+ADN	Autodesk Developer Network
+AEC	Architecture, Engineering, Construction
+API	Application Programming Interface
+BIM	Building Information Model
+GUI	Graphical User Interface
+MEP	Mechanical, Electrical, Plumbing
+RAC	Revit Architecture
+RME	Revit MEP
+RST	Revit Structure
+SDK	Software Development Kit
+UI	User Interface
+Introduction
+
+Revit Products
+Three flavours of Revit product and API
+Revit Architecture
+Revit MEP: Mechanical, Electrical, Plumbing
+Revit Structure
+Product build and distribution
+DVD version posted to ADN member web site
+Software & Support > Revit > Downloads
+Posted once only
+Web version and Web Update version on Autodesk home page
+Products > Autodesk Revit Architecture, MEP, Structure > Product Download
+Latest download version from the public product site
+English version uses service pack technology since 2009 WU2, no more full install
+Localized versions are expected to follow in future
+Introduction
+
+Revit API and SDK
+The SDK is provided with the product
+From Installer under 'Install Tools and Utilities'
+Web and download version
+<extraction folder>\support\SDK\RevitSDK.exe
+SDK installer location in temporary setup files
+e.g. RevitSDK.exe in folder
+C:\Autodesk\Autodesk_Revit_Architecture_2011_English_Win_32-64bit\support\SDK
+Please download latest update from Developer Center
+http://www.autodesk.com/developer --> Revit
+Revit API assembly DLLs are present in every Revit installation
+C:\Program Files\Autodesk\Revit Architecture 2011\Program\RevitAPI.dll
+C:\Program Files\Autodesk\Revit Architecture 2011\Program\RevitAPIUI.dll
+Introduction
+The Revit SDK is basically purely for support and documentation purposes. All you actually need to develop a Revit add-in is the development environment and the Revit API assembly DLLs, nothing else. The SDK includes addinional information and tools.
+
+SDK Documentation
+Read once
+Read Me First.doc
+Getting Started with the Revit API.doc
+Revit Platform API Changes and Additions.doc
+Revit 2011 API Namespace Remapping.xlsx
+Keep at hand always
+Revit 2011 API Developer Guide.pdf
+RevitAPI.chm
+What's New section is similar to Changes and Additions doc
+Read if needed
+RevitAddInUtility.chm - installer
+Autodesk Icon Guidelines.pdf - user interface
+Revit Structure - section definitions and material properties
+Very important utilities
+Add-In Manager
+RevitLookup
+VSTA Samples
+Samples
+RevitAPIDllsPathUpdater.exe
+SamplesReadMe.htm
+SDKSamples2011.sln
+Introduction
+Here are the top level contents of the SDK. The Developer Guide is very comprehensive. The Revit SDK samples provide a huge knowledge base on how to address specific programming tasks using the Revit API. The API documentation in the help file lists all the classes and their methods and properties, and the developer guide and samples explain and demonstrate how they work together to solve specific tasks.
+
+SDK Samples
+Documentation
+SamplesReadMe.htm
+Revit 2011 New Samples.doc
+Utility
+RevitAPIDllsPathUpdater.exe
+Main samples solution
+SDKSamples2011.sln
+And the samples themselves!
+Introduction
+The Revit SDK samples provide a huge knowledge base on how to address specific programming tasks using the Revit API. The API documentation in the help file lists all the classes and their methods and properties, and the developer guide and samples explain and demonstrate how they work together to solve specific tasks.
+
+Revit API History
+5, 6, 7 had no API and no verticals
+8 first public API for Building and Structure
+9 many new objects and creation methods
+9.1 journal, units, new creation methods
+2008 strong consolidation and major new features
+2009 filtering facilities, data access, samples, VSTA
+2010 family API, form creation, ribbon, events, MEP
+2011
+RAC: improved form generation, flexible components
+RME: conduits, cable trays, panel schedules
+RST: concrete joins, improved analytical model
+Platform: user interface, performance, reporting parameters
+API: dynamic update, analysis visualization, transactions, iteration, selection
+API size doubled in every release
+Long term target is API and kernel-based application
+Still evolving fast ...
+Introduction
+A little bit on the history of the Revit API. The API has been and still is evolving very strongly, since Revit 8.0, and has reached a certain maturity now. We are in the long-term process of restructuring Revit to make it more API driven, i.e. create a kernel providing the API on top of which the various Revit flavours can be implemented, instead of implementing the API as the outermost layer on top of the completed product.
+
+Revit API Wishlist Survey Results
+Driving force for API development directions
+Better integration into Revit user interface (*)
+Interactive user selection of element ends, intersections and faces
+Ability to post and handle custom errors
+Access to the Revit project browser
+Creation of docked windows in the Revit user interface
+Open a Revit document in the user interface
+Access to views
+Encode more complex formulas into family parameters
+Change existing element behaviour, such as the join behaviour of a wall
+Event handlers for elements when added, deleted, changed, moved or selected
+(*) Not complete, but substantially improved and affected by many of the new features
+Introduction
+
+Getting Started
+First Steps up to Hello World
+That concludes the introduction. Now let us start looking at real development issues and take our first steps up to a simple "Hello World" example. The accompanying labs demonstrate the concepts discussed. They can also be used for self-learning, and as a reference to answer the most common Revit API beginner's questions.
+
+Getting Started
+Ways to extend Revit
+Development environment
+.NET class modules
+IExternalCommand and IExternalApplication interfaces
+Modifying Revit.ini file to add a command or application
+Loading an add-in using an addin manifest file
+External command Execute method input and output arguments
+Important additional tools
+RvtSamples to load and explore all samples with minimal Revit.ini impact
+RevitLookup to explore the Revit database and API possibilities
+Getting Started
+The recommended development environment is Microsoft Visual Studio 2008 (may also be Express) and C# or VB.NET. More detailed setup information is provided in the Getting Started document. Other languages can be used, of course, since the .NET framework is language independent. A Revit application consists of one or more .NET assemblies implementing a certain interface. To make it known to Revit, some information needs to be added to Revit.ini. In this section, we will look at the topics listed above in more detail. These commands defined by Lab 1 are simple 'hello world' style commands to ensure that the development environment and Revit.ini is correctly set up, and to examine the external command input and output.
+
+Extending Revit
+Ways to extend Revit
+1. External command
+Implement IExternalCommand
+Commands are added to the External Tools pulldown in the ribbon Add-Ins tab
+Tools > External Tools
+2. External application
+Implement IExternalApplication
+Applications can create new panels in the ribbon Add-Ins and Analysis tabs
+External applications make use of external commands, so 1. is a subset of 2.
+Both are loaded through add-in manifest files or listed in Revit.ini
+3. Visual Studio Tools for Application or VSTA macro
+Two types of macros: application and document level
+Almost identical syntax and functionality as external command with few exceptions
+Events are not supported
+Getting Started
+We have two flavours of Revit add-in, the external command and the external application. An external application can define a user interface by creating its own panel in the ribbon add-ins tab. Within the panel, widgets are defined which are hooked up with external commands implementing the application functionality. An external command without an external application defining a user interface for it is always added to the add-ins tab under the External Tools pulldown.
+
+Revit API DLL
+.NET API
+Microsoft Visual Studio 2008
+Microsoft .NET Framework 3.5
+Reference RevitAPI.dll and RevitAPIUI.dll from the Program subdirectory of the Revit installation folder for db + ui portions
+C:\Program Files\Autodesk\Revit Architecture 2011\Program\RevitAPI.dll
+C:\Program Files\Autodesk\Revit Architecture 2011\Program\RevitAPIUI.dll
+Remember to set 'Copy Local' to False
+C# or VB.NET, managed C++, any .NET compliant language
+Revit Architecture, Structure and MEP flavours
+Same API DLLs
+Certain functionality only in Architecture, MEP or Structure
+Getting Started
+The Autodesk Revit API requires the Microsoft .NET Framework v3.5. For examples of flavour specific API functionality, room-related functionality is available in RAC only, the analytical model only in RST, systems only in RME.
+
+C# or VB.NET
+C# and VB.NET are equivalent
+The intermediate language, IL code generated is identical
+Automatic translators are available
+Google for "c# vb.net translator"
+Reflector decompiles IL into C#, VB and also managed C++
+Many SDK samples are in C#
+Some SDK samples are in VB.NET
+Presentation labs are in both C# and VB.NET
+Obfuscation
+Getting Started
+
+External Command
+Implement Autodesk.Revit.UI.IExternalCommand interface
+Implement IExternalCommand.Execute method
+<Transaction(TransactionMode.Automatic)> _
+<Regeneration(RegenerationOption.Manual)> _
+Public Class ApplyParameter _
+Implements IExternalCommand
+Public Function Execute( _
+ByVal commandData As ExternalCommandData, _
+ByRef message As String, _
+ByVal elements As ElementSet) _
+As Result _
+Implements IExternalCommand.Execute
+'...
+Getting Started
+In VB.NET
+Each command is implemented in an own class. The class derives from IExternalCommand. It implements the method Execute(). This method is called when the command is invoked. It takes one input and two output parameters and returns a result signalling success, cancel or failure.
+The input argument is an ExternalCommandData instance, which gives the application access to the Revit application and documents and so on, as we will see further on.
+The two return arguments are only used in case the method returns a failure code, in which case the string message is displayed to the user in a standard Revit error message dialogue, and the ElementSet elements are highlighted, to enable the application to show the user which objects may be causing a problem.
+
+Command Return Values
+[Transaction( TransactionMode.Automatic )]
+[Regeneration( RegenerationOption.Manual )]
+public class Command : IExternalCommand
+{
+public IExternalCommand.Result Execute(
+ExternalCommandData commandData,
+ref string message,
+ElementSet elements )
+{
+try
+{
+// . . .
+}
+catch( Exception ex )
+{
+message = ex.ToString();
+return Result.Failed;
+}
+return Result.Succeeded;
+}
+}
+Getting Started
+In C#
+The second and third parameters to an external command are for passing back an error message and a set of elements to highlight to the user. They are only displayed in the Revit UI if the command returns 'Failed'.
+
+Transaction Mode
+External commands must explicitly set a transaction mode
+TransactionMode.Automatic
+The API creates a transaction on the active document before the external command is executed.
+It is committed or rolled back after the command is completed based upon the return value.
+The command must report its success or failure status via the Result return value.
+Command code cannot create and start its own Transactions.
+It can create SubTransactions as required.
+TransactionMode.Manual
+The API framework does not create a transaction.
+It does create an outer group to roll back changes if the external command returns a failure status.
+Instead, you may use combinations of Transactions, SubTransactions, and TransactionGroups as you please, following all applicable rules.
+Your transaction names will appear in the Undo menu.
+TransactionMode.ReadOnly
+No transaction or group will be created, and no transaction may be created for the lifetime of the command.
+The External command may use methods that only read from the model, but not methods that write to it.
+TransactionMode applies only to the active document.
+For other documents you have complete control over Transactions, SubTransactions, and TransactionGroups, even in ReadOnly mode.
+Getting Started
+This is non-optional and also has a lot of benefits. You may be aware of the SuspendUpdating feature which disables Revit from regenerating every time we initiate some action. That mode is still available in Revit 2011. There is also a new feature now which manually sets the regeneration option so that you can decide when you want Revit to regenerate. This is defined by an attribute of the new command registration mechanism. You can request Revit to regenerate every time on its own or you can manually regenerate when you think it is appropriate. Moving forward, SuspendUpdating will become obsolete with focus now shifting to RegenerationOption.
+
+Regeneration Option
+External commands and applications must explicitly set a regeneration option
+RegenerationOption.Automatic:
+The API framework will regenerate after every model level change (equivalent behavior with Revit 2010 and earlier)
+Similar to Revit 2010 and earlier; it is obsolete and will be removed in a future release.
+RegenerationOption.Manual:
+The API framework will not regenerate after every model level change. SuspendUpdating blocks are unnecessary and should not be used. Regeneration may be triggered by your application.
+Getting Started
+This is non-optional and also has a lot of benefits. You may be aware of the SuspendUpdating feature which disables Revit from regenerating every time we initiate some action. That mode is still available in Revit 2011. There is also a new feature now which manually sets the regeneration option so that you can decide when you want Revit to regenerate. This is defined by an attribute of the new command registration mechanism. You can request Revit to regenerate every time on its own or you can manually regenerate when you think it is appropriate. Moving forward, SuspendUpdating will become obsolete with focus now shifting to RegenerationOption.
+
+Loading a Revit Add-In
+Add-in manifest file
+Add-In Manager
+Edit Revit.ini
+RvtSamples
+Getting Started
+Once we have created the application and/or command assemblies, we need to make them known to Revit. This is achieved by adding some information to Revit.ini. An external command appears in the add-ins tab External Tools pulldown if listed. It can also be accessed through an external application, with no such entry, or both.
+
+Application Installation and Loading
+Add-in manifest
+Copy add-in to hard disk
+Place manifest file in appropriate application data location
+Update assembly path
+SDK includes add-in utility DLL
+Manipulate manifest files and query Revit product installation
+Revit.ini
+Installer had to modify Revit.ini
+MidasLink sample application includes setup source
+Add-In Manager
+One-off testing
+Supports reload and debugging
+Recommend placing application into Revit Program folder
+Due to .NET framework restrictions, Load() versus LoadFrom()
+Getting Started
+
+Add-In Manifest
+XML file located in specific location
+Applies to specific user or all
+Required tags are Assembly, FullClassName, ClientId
+External command also uses Text and Description tags
+More tags define tooltip, image, visibility, availability, localisation
+Use GuidGen or Guidizer to populate client id
+Revit.ini entries are still supported but will be removed
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIn>
+<AddIn Type="Command">
+<Text>Convert Pipes to Conduits</Text>
+<Description>Convert Pipes to Conduits</Description>
+<Assembly>C:\src\p2c\p2c\bin\Debug\p2c.dll</Assembly>
+<FullClassName>p2c.Command</FullClassName>
+<ClientId>835d6ad1-1a99-4039-95dc-e752ff635928</ClientId>
+</AddIn>
+</RevitAddIn>
+Getting Started
+Once we have created the application and/or command assemblies, we need to make them known to Revit. This is achieved by adding some information to Revit.ini. An external command appears in the add-ins tab External Tools pulldown if listed. It can also be accessed through an external application, with no such entry, or both.
+
+Add-In Manager
+Provided with the Revit SDK
+Look in the Add-In Manager subfolder
+Getting Started
+Once we have created the application and/or command assemblies, we need to make them known to Revit. This is achieved by adding some information to Revit.ini. An external command appears in the add-ins tab External Tools pulldown if listed. It can also be accessed through an external application, with no such entry, or both.
+
+Revit.ini for EC
+Deprecated, use add-in manifest instead
+[ExternalCommands]
+ECCount=1
+ECName1=Convert Pipes to Conduits
+ECDescription1=Convert Pipes to Conduits
+ECClassName1=p2c.Command
+ECAssembly1=C:\a\src\revit\pipe_to_conduit_converter\src\p2c\p2c\bin\Debug\p2c.dll
+Getting Started
+Once we have created the application and/or command assemblies, we need to make them known to Revit. This is achieved by adding some information to Revit.ini. An external command appears in the add-ins tab External Tools pulldown if listed. It can also be accessed through an external application, with no such entry, or both.
+
+External Application
+Implement Autodesk.Revit.UI.IExternalApplication interface
+Implement OnStartup() and OnShutdown() methods
+[Regeneration( RegenerationOption.Manual )]
+public class App : IExternalApplication
+{
+public Result OnStartup(
+UIControlledApplication a )
+{
+CreateRibbonSamplePanel( a );
+CreateRibbonInfosPanel( a );
+return Result.Succeeded;
+}
+public Result OnShutdown(
+UIControlledApplication a )
+{
+return Result.Succeeded;
+}
+}
+OnStartup() adds UI elements, hooks them up to external commands, event handlers
+Can add panels containing separators, push and pulldown buttons
+See Ribbon SDK sample
+Getting Started
+An external application also appear in the add-ins tab. It can create its own panels. The objects are hooked up with external command implementations which are invoked and receive the same input and output parameters as normal external commands added to the external tools pulldown.
+
+Loading an External Application
+Add-in manifest
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+<AddIn Type="Application">
+<Name>External Tool</Name>
+<Assembly>C:\SDK\RevitLookup\CS\bin\Debug\RevitLookup.dll</Assembly>
+<ClientId>9631d07b-ade1-4ea1-b566-049161afcc4c</ClientId>
+<FullClassName>RvtMgdDbg.App</FullClassName>
+</AddIn>
+</RevitAddIns>
+Deprecated: add EA entries to Revit.ini
+Input identical to the corresponding EC items
+Complete class name including namespace
+Full assembly path
+[ExternalApplications]
+EACount=2
+EAClassName1=RvtMgdDbg.App
+EAAssembly1=C:\a\lib\revit\2011\SDK\RevitLookup\CS\bin\Debug\RevitLookup.dll
+EAClassName2=RvtSamples.Application
+EAAssembly2=C:\a\lib\revit\2011\SDK\Samples\RvtSamples\CS\RvtSamples.dll
+Getting Started
+Once we have created the application, we need to make it known to Revit. This is achieved by adding some information to Revit.ini.
+
+Add-In Utility DLL
+New in 2011
+.NET utility assembly included in Revit SDK
+Provides a dedicated API
+Intended for use from product installers and scripts
+Capable of reading, writing and modifying add-in manifest
+Queries all installed Revit products
+Version, location, language, GUID
+Getting Started
+
+RvtSamples
+So every external command needs a manifest or Revit.ini entry?
+Not using the SDK sample application RvtSamples!
+Includes RvtSamples.txt listing all SDK samples
+Adds them all to an own menu entry
+Add two or four lines to Revit.ini and never touch it again
+You can add your own entries to RvtSamples.txt
+Also define own pulldown buttons for additional sections
+Example AdnSamples.txt
+Getting Started
+The RvtSamples application and RvtSamples.txt is included in the Revit SDK ... show contents on screen in explorer ... so, SDKSamples2010.sln provides accesss to search and debug all sample source code, and RvtSamples enables running every single sample
+Revit Programming Introduction
+
+RevitLookup
+Included in Revit SDK
+Interactively access and explore entire database structure
+Elements, parameters, relationships
+Comprehensive Revit API test
+Sample code and utility classes
+Scaffolding for quick tests
+Explore
+Application
+Document
+Current selection
+Reflection
+Events
+Tests
+Getting Started
+RevitLookup, formerly RvtMgdDbg, is a utility similar to the well-known ArxDbg and MgdDbg utilities provided for AutoCAD, written by the same author and his team. It is a Revit extension application which defines its own ribbon panel.
+
+Really Getting Started
+Follow the instructions in rac_labs.chm
+Work through developer guide walkthroughs
+Look at the HelloRevit, APIAppStartup and Ribbon SDK samples
+"Hello World" basic sample
+Lab 1-1
+What arguments are passed to the command?
+What can the command return?
+Lab 1-2
+Effective use of the debugger for a Revit add-in
+Edit and Continue is currently broken
+Getting Started
+Now we are ready for our "Hello World" exercise. Here are some SDK samples and labs for getting started. Lab 1-1 demonstrates a minimal "Hello World" command. Lab 1-2 explores the command argument issues.
+
+Hands On
+Install SDK
+Look at Revit API documentation
+Getting Started with the Revit API.doc
+Revit 2011 API Developer Guide.pdf
+Revit Platform API Changes and Additions.doc
+RevitAPI.chm
+Run through Hello World sample
+Walkthroughs in developer guide chapter 2
+Create the project, add references, edit the code, load and debug
+Compile and install SDK samples
+RevitLookup: compile and install add-in manfest
+Open and build all SDK samples using SDKSamples2011.sln solution
+Optionally update references with RevitAPIDllsPathUpdater.exe or jhint.exe
+RvtSamples: edit RvtSamples.txt, compile and install add-in manfest
+Getting Started
+
+Database and Elements
+Analyse the contents of the Revit database.
+Iterate and filter for specific elements.
+Make use of RvtMgdDbg.
+Now that we understand how to create the bare bones of our add-in and how it sets up its initial communication with the Revit application, let us explore and analyse the contents of the Revit database.
+
+Workshop Agenda
+Wednesday April 7 - Getting Started
+9:00	Early Birds and Installation Support
+11:00	Introductions
+12:00	Revit API Overview and Sample Applications
+13:00	External Command and Hello World Hands-on
+14:00	Lunch
+15:00	External Application and Ribbon Hands-on
+16:00	SDK Tools Setup
+17:00	End
+Thursday April 8 - Basics and Advanced Topics
+9:00	User interaction
+10:30	Database and elements
+12:00		Parameters
+13:00		Geometry
+14:00		Lunch
+15:00		API news, new SDK samples, dynamic update, analysis visualization
+17:00		End
+Friday April 9 - Specialised APIs
+9:00	Family API and form creation
+10:30		Revit MEP
+12:00		Revit Structure
+14:00		Lunch
+15:00	Participant Wishes
+16:00	End
+Introduction
+
+Rac Labs
+\Revit 2011 API\rac\rac_labs.zip
+Labs2.cs or Labs2.vb
+Lab2_1_Elements
+Introduction
+
+Category, Family, Type and Instance
+Elements Collection
+Revit Building Element
+Category
+Family: standard loadable, system, and in-place
+Type or Symbol
+Instance
+Element: When creating a project, you add Revit MEP parametric building elements to the design. Revit MEP classifies elements by categories, families, and types.
+Category: A category is a group of elements that you use to model or document a building design. For example, categories of model elements include mechanical equipment and air terminals. Categories of annotation elements include tags and symbols.
+Family: Families are classes of elements in a category. A family groups elements with a common set of parameters (properties), identical use, and similar graphical representation. Different elements in a family may have different values for some or all properties, but the set of properties—their names and meaning—is the same. For example, a lighting fixture could be considered one family, although the pendant lights that compose the family come in different sizes and materials.
+There are 3 kinds of families:
+Loadable families can be loaded into a project and created from family templates. You can determine the set of properties and the graphical representation of the family.
+System families include ducts, pipes, and wires. They are not available for loading or creating as separate files.
+Revit MEP predefines the set of properties and the graphical representation of system families.
+You can use the predefined types to generate new types that belong to this family within the project. For example, the behavior of a plumbing fitting is predefined in the system. However, you can create different types of fittings with different compositions.
+System families can be transferred between projects.
+In-place families are custom families that you create in the context of a project. Create an in-place family when your project needs unique geometry that you do not expect to reuse or geometry that must maintain one of more relationships to other project geometry.
+Because in-place families are intended for limited use in a project, each in-place family contains only a single type. You can create multiple in-place families in your projects, and you can place copies of the same in-place family element in your projects. Unlike system and standard component families, you cannot duplicate in-place family types to create multiple types.
+Type: Each family can have several types. A type can be a specific size of a family, such as a A0 title block. A type can also be a style, such as default aligned or default angular style for dimensions.
+Instance: Instances are the actual items (individual elements) that are placed in the project and have specific locations in the design (model instances) or on a drawing sheet (annotation instances).
+
+Elements Collection
+Object model
+Database structure
+Types of elements
+Accessing and identifying elements
+Filtering for types and categories
+Getting all model elements
+Model elements' manipulation
+Elements Collection
+We saw that the only input to the external command is the external command data argument. We will explore how to access the application, current document and their properties through this command data argument passed in to an external command. Then we will explore more detailed access to the Revit BIM and its data. The entire content of the Revit BIM is stored in a database and accessed through the Revit Document. Most of the objects are accessible through the document Elements collection property. Often, one is interested in elements of a particular type, so a common task is iterating over the elements collection and filtering for a specific type and/or property.
+
+Revit Object Model
+Elements Collection
+Revit API Class Diagram.png
+Here is an overview of the Revit classes provided by the API. The model is rather large and unreadable at this scale. Let us look at a subset of interesting classes and highlight some of them.
+
+Subset of Object Model
+APIObject
+Application
+Document
+ExternalCommandData
+ElementSet
+ParameterSet
+Parameter
+Element
+ElementType
+GeometryObject
+# RST:
+AnalyticalModel
+AnalyticalModelFloor
+AnalyticalModelWall
+Creation
+APIObject
+Application
+Document
+Elements Collection
+Element
+HostObject
+CeilingAndFloor
+ContFooting
+Floor
+Wall
+Instance
+Opening
+TextElement
+BeamSystem
+Dimension
+SpotDimension
+FamilyBase
+Family
+Level
+Phase
+ProjectInfo
+# RST:
+BoundaryConditions
+LoadCase, Combination, Nature, Usage
+AreaReinforcement
+AreaReinforcementCurve
+LoadBase
+AreaLoad
+LineLoad
+PointLoad
+PathReinforcement
+Rebar
+# end of RST
+ElementType
+ElementType
+AnnotationSymbolType
+BeamSystemType
+HostObjAttributes
+ContFootingType
+FloorType
+WallType
+InsertableObject
+FamilySymbol
+RoomTagType # RAC
+RebarTagType # RST
+GeometryObject
+Curve
+Arc
+Ellipse
+Line
+NurbSpline
+Edge
+Face
+ConicalFace
+CylindricalFace
+HermiteFace
+PlanarFace
+ResolvedFace
+RuledFace
+Instance
+Mesh
+Profile
+Solid
+Plane
+Reference
+Transform
+This is a subset selected from the Revit object model. Some of the interesting classes have been highlighted, and the list has been split into several sublists at crucial points. It shows that some objects are available only in the RAC or only in the RST environment, such as RoomTagType in RAC, RebarTagType, the analytical model and the loads and boundary conditions in RST. Everything is derived from APIObject. All physical BIM objects are derived from Element. A separate version of Application and Document is provided in the Creation namespace, for creating new elements.
+
+Important Parent Classes
+APIObject - root object
+Element - BIM elements
+ElementType - type definition
+GeometryObject - abstract geometry
+Revit API Class Diagram.png shows full class hierarchy
+Elements Collection
+Here are some of the important tree nodes and parent classes in the Revit object model. Some objects are available only in the RAC or only in the RST environments, such as RoomTagType in RAC, RebarTagType, the analytical model and the loads and boundary conditions in RST.
+Everything is derived from APIObject. All physical BIM objects are derived from Element. Geometry objects are in memory only, not stored in the database, created on the fly. A separate version of Application and Document is provided in the Creation namespace, for creating new elements.
+
+Subsubset of Object Model
+API Object
+Element
+HostObject
+HostObject Attributes
+Insertable Object
+Family Symbol
+Group Type
+Floor Type
+Cont. Footing Type
+Wall Type
+Wall
+Floor
+Clg. & Flr
+Cont. Footing
+RoofBase
+Family Base
+ElementType
+Family
+Instance
+Insertable Instance
+Family Instance
+Group
+Elements Collection
+Host and component objects, standard and system
+Family and ElementType classes, aka symbols
+Here is a smaller subset of the most important database classes, i.e. non-geometrical classes, that appear in a typical Revit model programming task. The red classes are the most commonly used. The RoofBase class and its derived types FootPrintRoof and ExtrusionRoof were added in Revit 2009. In the model, we see the host and component objects, such as windows and doors. These are actually instances of types. The family base and family are used to manage collections of related types. Symbol is a base class for all types, also known as symbols. Family symbol is the generic class for these, whereas wall and floor type are more specialised classes. Family instance represents an occurrence or usage instance of a generic family symbol, whereas wall and floor represent the same for a wall or floor type.
+
+Some Visible Elements
+Elements Collection
+Here is a classification of some of the typical visible elements in a model.
+In projects, Revit uses 3 types of elements:
+Model elements represent the actual 3D geometry of the building. They display in relevant views of the design. For example, sinks, boilers, ducts, sprinklers, and electrical panels.
+Datum elements help to define project context. For example, grids, levels, and reference planes are datum elements.
+View-specific elements display only in the views in which they are placed. They help to describe or document the design. For example, dimensions, tags, and 2D detail components are view-specific elements.
+There are 2 types of model elements:
+Hosts (or host elements) are generally built in place at the construction site. For example, walls and ceilings are hosts.
+Model components are all the other types of elements in the building model. For example, sinks, boilers, ducts, sprinklers, and electrical panels.
+There are 2 types of view-specific elements:
+Annotation elements are 2D components that document the model and maintain scale on paper. For example, dimensions, tags, and keynotes are annotation elements.
+Details are 2D items that provide details about the building model in a particular view. Examples include detail lines, filled regions, and 2D detail components.
+
+Accessing Current Revit Element Selection
+Accesssing Revit data and elements in external command: selected or all
+Use input argument ExternalCommandData
+Current selection is member of document class
+ExternalCommandData.Application.ActiveDocument.Selection.Elements
+Document.Selection.Elements returns ElementSet collection
+Use foreach, Size, Contains
+Selection sel = doc.Selection;
+string s = "There are " + sel.Elements.Size + " elements in the selection set:";
+foreach( Element e in sel.Elements )
+{
+string cat = (null == e.Category) ? e.GetType().Name : e.Category.Name;
+string desc = cat + " Id=" + e.Id.Value.ToString();
+}
+Elements Collection
+So, how do we access all these objects? We start off with the external command data argument passed in to the external command.
+
+Accessing Revit Database Elements
+Document provides access to selected, all, or filtered elements
+Three return argument types
+ElementIterator it: use iterator.MoveNext(), iterator.Current()
+ElementArray arr: use foreach, Size
+List<Element> list: use foreach, Count, Contains
+All
+it = doc.Elements
+Filtered
+it = doc.Elements(Filter)
+doc.Elements(Filter, arr)
+doc.Elements(Filter, list)
+Specified type
+it = doc.Elements(Type)
+doc.Elements(Type, arr)
+doc.Elements(Type, list)
+Elements Collection
+The Revit API makes use of generic collections and introduce optimised filtered element access in the 2009 version.
+
+Elements Collection
+In the Revit API, everything is an APIObject
+In the Revit BIM, everything is an Element
+All are bundled together in the Elements collection
+Search for ElementIterator and ElementFilterIterator in the SDK samples, and for get_Elements() in the labs
+Lab 2-1
+\Revit 2011 API\rac\rac_labs.zip
+Labs2.cs or Labs2.vb
+Lab2_1_Elements
+Developer Guide:
+2.5 Walkthrough: Retrieve Filtered Elements
+Elements Collection
+ElementIterator and ElementFilterIterator occur in many of the SDK samples. The command defined in Lab 2-1 iterates over commandData.Application.ActiveDocument.Elements and prints out a line for each element encountered to C:\tmp\RevitElements.txt.
+
+Identifying Revit Elements
+Revit elements can be identified in various ways
+An object can be identified by
+Category
+Object type or class, i.e. .NET System.Type
+Specific parameter values
+Many other criteria
+One often uses a combination of different criteria
+Sometimes additional checks are needed
+Many combinations can be encoded into the extremely efficient filtered collector mechanism
+LINQ queries can be integrated
+Language Integrated Query
+Elements Collection
+The identification of elements and determining what type they have, or iterating the entire building model and extracting the specific instances that we are interested in, depends on the objects type. In some cases, we use standard object oriented techniques, simply querying their type or class. In others, we use the object category, which is a Revit API element property. Sometimes, a combination of the two is used, or additional parameters are queried.
+More details on this are discussed in the separate presentation DE305-1 A Closer Look at the Database with the Revit API.
+
+3D or Model Elements
+Often one is interested in 3D elements only
+Predicates
+Not ElementType
+Valid category
+Category has material quantities
+Other criteria might work as well or better
+The criteria presented might not work in all cases, needs more extensive testing
+Lab 2-2
+Elements Collection
+Lab 2-2 demonstrates how to extract all elements with a 3D geometry, i.e. visible objects like walls, doors, windows, furniture, etc. This lab collets all non-ElementType elements and then applies additional checks. This is a common operation in Revit programming. The exact details of the selection criteria obviously depend on your specific needs.
+
+3D or Model Elements
+Elements Collection
+
+Element Filtering
+Elements Collection
+The Revit element filtering provides filtered access to elements. Several different types of filters are available. Filters can be atomic, based on category name, built-in category, family name, symbol name, type, structural classification, or parameter value. When searching for elements based on parameter value, the comparison criterion can be specified as equal, gt, ge, lt, le, ne, etc. The execution speed of the new element filtering is significantly higher than the element iteration in previous versions. All aspects of the functionality are demonstrated by the new SDK sample application ElementsFilter.
+
+C# Element Filtering Comparison
+Elements Collection
+Here is a very simple example of using the new filtering feature, selecting all walls from the Revit database. In 2008, one would have used a loop to pick out the walls from the collection of all document elements. In 2009, using filtering, this method is more concise, no loop is required, and only wall elements are returned.
+Revit Programming Introduction
+
+VB Element Filtering Comparison
+Elements Collection
+Here is the same example in VB syntax.
+Revit Programming Introduction
+
+Specific Element Classes
+How do we get e.g. all Doors or Walls?
+Wall is a separate class
+APIObject ← Element ← HostObject ← Wall
+(An in-place family wall  is a FamilyInstance)
+Filter for Wall System.Type
+Door can be identified by its category
+System.Type is a generic FamilyInstance
+Use BuiltInCategory enum for language independence
+Filter for FamilyInstance System.Type and door category
+Lab 2-3
+Elements Collection
+Lab 2-3 extracts walls by checking for each element for its class, and doors by checking its category. This is similar to Lab 2-2, but now we check for a an even more specific type or a built-in category.
+
+Get all Walls
+Elements Collection
+
+Get all Doors
+Elements Collection
+
+Rac Labs Exercises
+Labs
+\Revit 2011 API\rac\rac_labs.zip
+Labs2.cs or Labs2.vb
+Lab2_1_Elements
+Exercises
+Unpack the exercises
+\Revit 2011 API\rac_labs_exercise.zip
+Start the exercise solution:
+exercise\labs.sln
+Read the instructions:
+exercise\vb\Help\Index.html
+Peek at the solution:
+\Revit 2011 API\rac_labs_solution.zip
+Introduction
+
+Adding Elements
+Adding
+Over 120 methods defined by Autodesk.Revit.Creation.Document
+Over 40 object types supported
+e.g. Walls, Floors
+NewWall( CurveArray profile, bool structural ); // + 4 overloads
+NewSlab( CurveArray profile, Level, Line slopedArrow, 
+double angle, bool isImperial, bool isStructural );
+Revit 2011 API introduces static class member creation methods
+e.g. Conduit
+Conduit conduit = Conduit.Create( doc, idConduitType,
+startPoint, endPoint, idLevel );
+Still some objects missing ...
+Lab 2-0
+Deleting
+Revit SDK Samples DeleteDimensions, DeleteObject
+Elements Collection
+
+Element manipulation
+Select a wall
+Extract wall from current selection
+Obtain wall top and bottom level constraints
+Calculate geometry from levels and wall curve
+Obtain family symbol for column type
+Insert columns at start, mid and end
+Move wall away from the columns
+Lab 2-5
+Prerequisites
+Wall constrained at top
+"M_Wood Timber Column" type loaded
+Elements Collection
+To run Lab 2-5, select a wall. It must be constrained to a level at the top: Element Properties... > Constraints > Top Constraint, otherwise an error message is displayed. Load the column family named "M_Wood Timber Column" and the type named "191 x 292mm" prior to running the command, or else highlight the error message displayed, or modify the names to refer to some family type that is loaded. The selected wall is used to define three columns at its end and mid points, then the wall is moved out of the way to clearly display the columns.
+
+Families and Types
+As we saw above, many visible objects in the Revit BIM are instances of symbols or types. These types are grouped into families. Each family defines a number of symbols or types. When an element is inserted into the model, the user specifies which family it belongs to, and which specific type it has, so the inserted object is an instance of this family and type. If it is a component family, its class is FamilyInstance. In this section, we discuss the management of families and types.
+
+Families and Types
+Also know as symbols
+Standard versus system families
+Using loaded families and symbols
+Loading new families and symbols
+Determining and changing element's type
+Standard and system families
+Families and Types
+In order to insert the column in the last example, we already had the need to determine a suitable family type for it. If the family or that specific type was not available, we had to prompt the user to load it manually. This procedure can be automated. In this section, we explore the handling of families and types in more detail. There are two types of families: standard ones, which are stored in external Revit family files with the extension *.rfa, and built-in system families.
+
+Listing Families and Types
+One will frequently need to determine
+Which standard families and symbols are loaded in a model
+Which category do they belong to
+Lab 3-1
+Families and Types
+
+Family Iteration
+The Category property is always unimplemented
+The FamilyCategory is sometimes unimplemented
+Families and Types
+We iterate over the document elements in two loops. In the first, we simple determine all the families. The Category property is NOT implemented for the Family class. Therefore, in the second loop, we retrieve and list all the symbols of each family, and retrieve the family category from the first of its symbols.
+
+Family Symbol Iteration
+// Loop through the collection of families, and now look at
+// the child symbols (types) as well. These symbols can be
+// used to determine the family category.
+foreach( Family f in families )
+{
+string catName;
+bool first = true;
+// Loop all contained symbols (types)
+foreach( FamilySymbol symb in f.Symbols )
+{
+// you can determine the family category
+// from its first symbol.
+if( first )
+{
+first = false;
+catName = symb.Category.Name;
+sMsg = "Family: Name=" + f.Name
++ "; Id=" + f.Id.Value.ToString()
++ "; Category=" + catName
++ "\r\nContains Types:";
+}
+sMsg += "\r\n    " + symb.Name + "; Id=" + symb.Id.Value.ToString();
+}
+// Show the symbols for this family and allow user to proceed
+// to the next family (OK) or cancel (Cancel)
+sMsg += "\r\nContinue?";
+if( !LabUtils.QuestionMsg( sMsg ) )
+{
+break;
+}
+}
+Families and Types
+Here, in the second loop, we retrieve and list all the symbols of each family, and retrieve the family category from the first of its symbols. We can cancel out of this loop once we have seen enough.
+
+Loading Families and Types
+Load additional standard families and symbols from RFA files
+doc.LoadFamily()
+doc.LoadFamilySymbol()
+Dim doc As Revit.Document = commandData.Application.ActiveDocument
+'Load a whole Family
+If Not CType(doc.LoadFamily(familyFilename), Boolean) Then
+MsgBox( "ERROR in loading Family " & familyFilename & "?" )
+Else
+MsgBox( "Successfully loaded Family " & familyFilename & "!" )
+End If
+'Load only a specific Symbol (Type)
+' The symbol MUST exist in the corresponding catalog (TXT) file - same as in the UI
+If Not CType(doc.LoadFamilySymbol(familyFilename, symbolName), Boolean) Then
+MsgBox( "ERROR in loading FamilySymbol " & familyFilename & " : " & symbolName & "?" )
+Else
+MsgBox( "Successfully loaded FamilySymbol " & familyFilename & " : " & symbolName & "!" )
+End If
+Families and Types
+Lab 3-2
+This is demonstrated in Lab 3-2. This lab loads an entire family and a single symbol from another family, determined by the global variables gsWholeFamilyFileToLoad1, gsWholeFamilyFileToLoad2, gsFamilyFileToLoadSingleSymbol, gsSymbolName.
+
+Determining Standard Family and Type
+Determine the standard family and type of an element
+Select a window
+List all windows symbols
+List the selected window's family symbol and family
+Lab 3-3
+Families and Types
+Lab 3-3 shows how to determine the Family and Type of an element, and how to list all the symbols applicable to a specific category, such as Windows.
+Before running this command, create a wall with a window in it and select the window. First of all, all the loaded window types are determined, i.e. all the symbols defined by the window family. This is done by iterating over all elements and determining all FamilySymbol instances whose category equals the windows one. Secondly, the selected window's family symbol and from that the family itself is queried and displayed.
+
+List Window Symbols
+BuiltInCategory bic = BuiltInCategory.OST_Windows;
+Filter filterCategory = app.Create.Filter.NewCategoryFilter( bic );
+Filter filterType = app.Create.Filter.NewTypeFilter( typeof( FamilySymbol ) );
+Filter filterAnd = app.Create.Filter.NewLogicAndFilter( filterCategory, filterType );
+List<Element> familySymbols = new List<Element>();
+app.ActiveDocument.get_Elements( filterAnd, familySymbols );
+string sMsg = "The loaded windows family symbols in the model are:";
+foreach( Element e in familySymbols )
+{
+FamilySymbol symb = e as FamilySymbol;
+sMsg += "\r\n    " + symb.Name + ", Id=" + symb.Id.Value.ToString();
+Family fam = symb.Family;
+sMsg += "; Family name=" + fam.Name + ", Family Id=" + fam.Id.Value.ToString();
+}
+Families and Types
+Here is an example of determining all the loaded window types, i.e. all the symbols defined by the window family. This is done by iterating over all elements and determining all FamilySymbol instances whose category equals the windows one.
+Note that the category can be checked and compared in several different ways. In general, the best way is to make use of the language independent BuiltInCategory enumeration and avoid using the language dependent Name property for comparison, since the category objects themselves can be compared directly.
+
+Get Family and Symbol
+' Now loop the selection set and check for standard
+' Family Instances of "Windows" category
+For Each elem In doc.Selection.Elements
+If TypeOf elem Is FamilyInstance Then
+Dim inst As FamilyInstance = elem
+Dim catInst As Category = Nothing
+Try             ' just in case
+catInst = inst.Category
+Catch
+End Try
+If (Not catInst Is Nothing) AndAlso catInst.Equals(catWindows) Then
+sMsg = "Selected Window Id=" & elem.Id.Value.ToString & vbCrLf
+Dim fs1 As FamilySymbol = inst.Symbol
+sMsg += "  FamilySymbol = " & fs1.Name & "; Id=" _
+& fs1.Id.Value.ToString & vbCrLf
+Dim f1 As Family = fs1.Family
+sMsg += "  Family = " & f1.Name & "; Id=" & f1.Id.Value.ToString
+End If
+End If
+' Report each Window data
+MsgBox(sMsg)
+Next
+Families and Types
+We can query and display the selected window's family symbol and from that the family itself. The family and symbol assigned to a specific family instance are available as properties on the given element and its symbol. For instance, to determine a selected window's family and type, we read the Symbol property of the given element and its symbol's Family property.
+
+Change Family Instance Type
+A simple dialog to change the type of a family instance
+Determine family instance category, e.g. Windows
+Assemble a list of all applicable symbols
+Iterate over all elements, check each family category
+If it matches, include all its symbols
+Display dialogue with list box
+Assign selected symbol
+Lab 3-4
+Families and Types
+The family type of a family instance can also be changed by modifying its Symbol property. Before running this command, create a wall with a window in it, load some additional window families so there is some material to play with, and select the window. Any other symbol instance can also be selected. First the selected symbol instance category is determined. From that, a list of all other applicable types is determined by iterating over all elements and assembling a dictionary of them. This is a two-step process, identifying the matching families first, and then for each matching family adding all its symbols. With this information in place, a dialogue is displayed allowing the user to select any one of the applicable symbols. If one is selected, it is applied to the selected instance, changing its symbol.
+
+Determine Selected Instance Category
+Dim inst As FamilyInstance
+Dim instCat As Category
+Dim ss As ElementSet = doc.Selection.Elements
+' Make sure we have a single FamilyInstance selected
+If Not ss.Size = 1 Then
+MsgBox("You must pre-select a single element!")
+Return IExternalCommand.Result.Cancelled
+Else
+Dim itTmp As ElementSetIterator = ss.ForwardIterator
+itTmp.MoveNext()
+Dim elTmp As Revit.Element = itTmp.Current
+If Not TypeOf elTmp Is FamilyInstance Then
+MsgBox("Selected element is NOT a standard family instance!")
+Return IExternalCommand.Result.Cancelled
+Else
+inst = elTmp
+instCat = inst.Category
+End If
+End If
+Families and Types
+We ensure a single element is selected, that it is a family instance, and determine its category.
+
+List all Symbols for Category
+Dim dictFamilyToSymbols As New Dictionary(Of String, ArrayList)
+' using element filtering
+Dim families As List(Of Revit.Element) = New List(Of Revit.Element)
+Dim filter As Revit.Filter = app.Create.Filter.NewTypeFilter(GetType(Family))
+Dim nRetVal = doc.Elements(filter, families)
+Dim f As Family
+Dim categoryMatches = False
+For Each f In families
+categoryMatches = False
+If (f.FamilyCategory Is Nothing) Then ' not always implemented
+For Each sym As FamilySymbol In f.Symbols _
+categoryMatches = sym.Category.Id.Equals(instCat.Id)
+Exit For
+Next
+Else
+categoryMatches = f.FamilyCategory.Id.Equals(instCat.Id)
+End If
+If (categoryMatches) Then
+Dim familySymbols As New ArrayList
+For Each sym As FamilySymbol In f.Symbols
+familySymbols.Add(sym)
+Next
+dictFamilyToSymbols.Add(f.Name, familySymbols)
+End If
+Next
+Families and Types
+For the selected symbol instance category, a list of all applicable types is determined by iterating over all elements and assembling a dictionary of them. There are many ways how to store the matching objects, but we choose whatever is most suitable for the relevant UI: We could use Revit's generic Map class, but it is probably more efficient to use the .NET strongly-typed Dictionary with KEY = Family name (String) and VALUE = ArrayList (implements iList so we can elegantly bind it to combobox) of corresponding FamilySymbol obects. This is a two-step process, identifying the matching families first, and then for each matching family adding all its symbols. With this information in place, a dialogue is displayed allowing the user to select any one of the applicable symbols. If one is selected, it is applied to the selected instance, changing its symbol.
+
+Assign new Type
+' Display the form and change the type
+Dim frm As New Lab3_4_Form(dictFamilyToSymbols)
+If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+Try
+inst.Symbol = frm.cmbType.SelectedItem
+MsgBox("Successfully changed Family:Type to " _
+& frm.cmbFamily.Text & " : " & frm.cmbType.Text)
+Catch
+End Try
+End If
+Families and Types
+With this information in place, a dialogue is displayed allowing the user to select any one of the applicable symbols.
+If one is selected, it is applied to the selected instance, changing its symbol.
+
+System Families and Types
+Dedicated classes rather than generic standard ones
+Typically derived from HostObject
+Wall, Floor, RoofBase, FootPrintRoof and ExtrusionRoof
+Corresponding types are derived from HostObjAttributes
+Accessible from Document class
+Wall - WallTypes
+Floor - FloorTypes
+Roof - RoofTypes
+Lab 3-5
+List all Wall types, save last one, use Document property WallTypes
+List all Floor types, save last one, use Document.FloorTypes
+Change all selected walls' and floors' type
+Families and Types
+Above, we discussed listing and manipulating standard families and types and family instances. Similar principles apply when working with system families.
+Before running this command, draw four walls and a floor and select them all. First, all wall types defined in the current document are listed and the last one is stored for later use. Then all floor types including foundations (slab) defined in the current document are listed and the last one is stored for later use. Finally, all the selected wall and floor types are changed to the stored ones.
+
+List all Wall Types
+' Find ALL Wall Types and their System Families (or Kinds)
+Dim newWallType As WallType = Nothing ' store the last one
+Dim sMsg As String = "ALL Wall Types/Families in the model:"
+' We could again iterete all elements and check for WallType class,
+' but it's simpler directly from the doc:
+Dim doc As Revit.Document = commandData.Application.ActiveDocument
+For Each wt As WallType In doc.WallTypes
+sMsg += vbCrLf & "  Type=" & wt.Name & " Family(or Kind)=" & wt.Kind.ToString
+newWallType = wt
+Next
+MsgBox(sMsg)
+MsgBox( "Stored WallType " & newWallType.Name _
+& " (Id=" & newWallType.Id.Value.ToString & ") for later use" )
+Families and Types
+All wall types defined in the current document are listed and the last one is stored for later use.
+
+List all Floor Types
+' Find ALL Floor Types ... see updated code and more comments in Labs code
+Dim newFloorType As FloorType = Nothing ' at the same time store the last one to use to change the floor type later
+sMsg = "ALL FLOOR Types in the model:"
+' There is no dedicated property to get floor types, so need to iterate all elements again
+Dim iter As ElementIterator = doc.Elements
+Do While (iter.MoveNext())
+Dim elem As Revit.Element = iter.Current
+If TypeOf elem Is Symbols.FloorType Then
+Dim ft As Symbols.FloorType = elem
+sMsg += vbCrLf & "  Type=" & ft.Name & ", Id=" & ft.Id.Value.ToString
+' In 9.0, it looks like "Foundation Slab" system family from "Structural Foundations" category
+' ALSO contains FloorType class instances. Exclude those as choices for standard floor types
+Dim famName As String
+Try
+famName = ft.Parameter(Parameters.BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM).AsString
+Catch
+famName = "?"
+End Try
+Dim cat As Category = ft.Category
+sMsg += ", Family=" & famName & ", Category=" & cat.Name
+' store only if proper Floors category
+If doc.Settings.Categories.Item(BuiltInCategory.OST_Floors).Equals(cat) Then
+newFloorType = ft
+End If
+End If
+Loop
+MsgBox(sMsg)
+MsgBox( "Stored FloorType " & newFloorType.Name & " (Id=" & newFloorType.Id.Value.ToString & ") for later use")
+Families and Types
+All floor types including foundations (slab) defined in the current document are listed and the last one is stored for later use.
+
+Change Wall and Floor Type
+' Change the Type for selected Walls and Floors
+Dim sel As ElementSet = doc.Selection.Elements
+Dim iWall As Integer
+Dim el As Revit.Element
+For Each el In sel
+If TypeOf el Is Wall Then ' Check for walls
+Dim wall As Wall = el
+iWall += 1
+Dim oldWallType As WallType = wall.WallType
+wall.WallType = newWallType
+MsgBox("Wall " & iWall.ToString & ": Id=" & wall.Id.Value.ToString & vbCrLf & _
+"  changed from OldType=" & oldWallType.Name & "; Id=" & oldWallType.Id.Value.ToString & _
+"  to NewType=" & wall.WallType.Name & "; Id=" & wall.WallType.Id.Value.ToString)
+ElseIf TypeOf el Is Floor Then
+Dim f As Floor = el
+iFloor += 1
+Dim oldFloorType As FloorType = f.FloorType
+f.FloorType = newFloorType
+MsgBox("Floor " & iFloor.ToString & ": Id=" & f.Id.Value.ToString & vbCrLf & _
+"  changed from OldType=" & oldFloorType.Name & "; Id=" & oldFloorType.Id.Value.ToString & _
+"  to NewType=" & f.FloorType.Name & "; Id=" & f.FloorType.Id.Value.ToString)
+End If
+Next
+Families and Types
+Finally, all the selected wall and floor types are changed to the stored ones.
+
+Duplicate a Symbol
+How to create a new family type?
+Duplicate an existing one
+Symbol.Duplicate
+Lab 3-6
+Families and Types
+A quick answer to a very frequently asked question.
+
+Parameters
+The main data container on every Revit building element is its collection of parameters. This section explores the Revit database parameters and how they are associated with Revit database elements.
+
+Parameters
+Accessing element parameters
+Built-in versus shared parameters
+Exchanging data with external applications
+Strategy for storing custom per-element data
+Manipulating shared parameters' file and groups
+Hidden parameters
+Strategy for storing per-document (per-model) data
+SDK sample FireRating
+Parameters
+We explore different methods of accessing and modifying parameters, exporting them to external applications, importing modified data back in again, and handling shared, hidden, and per-document parameters. The SDK sample FireRating demonstrates a full parameter manipulion use case by implementing a suite of three commands for adding a new shared 'fire rating' parameter to all door objects in the Revit model, exporting the current door fire ratings to an external application, and importing the externally modified values back into the Revit model.
+
+Accessing Parameters
+How do we access element parameters?
+Loop through Element.Parameters
+If name, built-in parameter enum, definition or GUID is known, get it directly
+Parameter(Guid) - Retrieve parameter given a shared parameter GUID
+Parameter(String) - Retrieve parameter from parameter name
+Parameter(Definition) - Retrieve parameter based on its definition
+Parameter(BuiltInParameter) - Retrieve parameter given a parameter id
+Lab 4-1
+Parameters
+Individual parameters can be accessed in different ways: by localised name, by built-in parameter id, by definition or by GUID. You can also loop over the entire element Parameters collection. Lab 4-1 lists all selected elements' parameters. In addition, it demonstrates retrieving a built-in parameter as well as a parameter by localised name, BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM and "Base Offset" respectively. Select a column to display both of these.
+
+Loop all Element Parameters
+' List all UI-visible Params
+Dim sMsg As String = "Parameters for the selected " & elem.Category.Name & " (" & elem.Id.Value.ToString & ") are:" & vbCrLf
+Dim param As Parameter
+For Each param In elem.Parameters
+Dim paramName As String = param.Definition.Name
+Dim paramType As String = param.StorageType.ToString
+Dim paramValue As String = LabUtils.GetParamAsString(param)
+sMsg += "  Name=" & paramName & "; Type=" & paramType & "; Value=" & paramValue
+Next
+MsgBox(sMsg)
+Public Shared Function GetParamAsString(ByVal param As Parameter) As String
+Dim str As String
+Select Case param.StorageType
+Case StorageType.Double
+str = param.AsDouble.ToString
+Case StorageType.Integer
+str = param.AsInteger.ToString
+Case StorageType.String
+str = param.AsString
+Case StorageType.ElementId
+str = param.AsElementId.Value.ToString
+End Select
+Return str
+End Function
+Parameters
+Loop over the entire Parameters collection of an element.
+
+Access Built-in Parameter
+' If we know WHICH param we are looking for, then:
+' A) a standard parameter, can be got via BuiltInParam signature of Parameter method:
+Dim parInBuilt As Parameter
+Try
+parInBuilt = elem.Parameter(BuiltInParameter.FAMILY_BASE_LEVEL_OFFSET_PARAM)
+If Not parInBuilt Is Nothing Then
+Dim parInBuiltName As String = parInBuilt.Definition.Name
+Dim parInBuiltType As String = LabUtils.GetParamStorageType(parInBuilt).ToString
+Dim parInBuiltValue As String = LabUtils.GetParamAsString(parInBuilt)
+MsgBox("FAMILY_BASE_LEVEL_OFFSET_PARAM: Name=" & parInBuiltName _
+& "; Type=" & parInBuiltType & "; Value=" & parInBuiltValue)
+Else
+MsgBox("FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element")
+End If
+Catch
+MsgBox("FAMILY_BASE_LEVEL_OFFSET_PARAM is NOT available for this element")
+End Try
+Parameters
+Access a specific built-in element parameter.
+
+Access Named Parameter
+'Helper to get *specific* parameter by name
+Shared Function GetElemParam(ByVal elem As Revit.Element, ByVal name As String) As Parameter
+Dim parameters As Autodesk.Revit.ParameterSet = elem.Parameters
+Dim parameter As Autodesk.Revit.Parameter
+For Each parameter In parameters
+If (parameter.Definition.Name = name) Then
+Return parameter
+End If
+Next
+Return Nothing
+End Function
+' C) use GetElemParam utilty to get it by hard coded-name
+' (this works for either standard or shared!):
+Const csParamToFind As String = "Base Offset"
+Dim parByName As Parameter = LabUtils.GetElemParam(elem, csParamToFind)
+If parByName Is Nothing Then
+MsgBox(csParamToFind & " is NOT available for this element")
+Else
+Dim parByNameName As String = parByName.Definition.Name
+Dim parByNameType As String = LabUtils.GetParamStorageType(parByName).ToString
+Dim parByNameValue As String = LabUtils.GetParamAsString(parByName)
+MsgBox(csParamToFind & ": Name=" & parByNameName & "; Type=" & parByNameType & "; Value=" & parByNameValue)
+End If
+Parameters
+Access a specific named element parameter. This kind of access is language dependent!
+
+Element Parameters Collection is Incomplete
+Most elements have more parameters than those listed in the Parameters collection
+One way to find more is to attempt to retrieve a parameter for each one of the over 2000 built-in parameters enum values
+This is implemented by the BuiltInParamsChecker and also by RvtMgdDbg 'Built-in Enums Snoop...'
+For instance, every family instance has a Room property represented by the ELEM_ROOM_ID built-in parameter, which is not listed in the Parameters collection on a door element
+Parameters
+
+BuiltInParamsChecker
+Determine all valid built-in parameters for a selected element
+Loop through all built-in parameter enums
+Try to obtain a valid parameter for each
+Sortable results using DataGridView
+Parameters
+The parameters returned in an element's Parameters collection sometimes differs from the list of parameters that can be queried individually from the element by using the individual built-in parameter access. Therefore, it is useful to be able to determine all valid built-in parameters for a selected element. This is implemented by the BuiltInParamsChecker utility included in the labs, also described in a devnote or technical solution TS87913 on the ADN site. For a selected element, it loops through all the built-in parameter enums and tries to obtain a valid parameter for each, printing out the list of valid results. Currently, the built-in parameters and their meanings are not documented, so you have to find them out by trial and error.
+
+Exporting Parameters
+Exporting Revit BIM data to an external application
+How do we use COM Interop in .NET to access e.g. MS Excel from Revit?
+Lab 4-2
+Out-of-process client
+Create a map containing all non-symbol elements which have a valid category
+Sort all elements into separate sets for each category
+Start up Excel and create a new workbook
+For each category, add a worksheet
+Iterate over all elements in the set for that category
+Determine all parameter names used for one category
+Add a title row listing the parameter names
+Add one row for each element listing all its parameters
+Parameters
+Iterate over all document elements and sort them into separate collections for each category. At the end, we will have separate collections for doors, walls, windows, etc. Launch Excel through .NET COM interop, add a new workbook, and add a new sheet for each of the categories we found. For each category, i.e. worksheet, use the Revit parameter definition names to create the worksheet headers. Loop through all the elements in the current category and determine all parameters for each. 'For each parameter in Parameters' is one way to iterate, the ParameterSetIterator is another. Create the table headers in the current sheet. Iterate over all the elements in the current category. For each element, iterate over all the parameters we have determined for this category, get their values from the Revit element and write them to the worksheet cells.
+
+Shared Parameters
+Use shared parameters to add per-element data to Revit elements
+Export and import these parameters to and from third party applications
+Lab 4-3 (3 commands)
+Similar to the SDK Sample FireRating
+Create shared parameter for all doors
+Export shared parameter data to Excel
+Import shared parameter data from Excel
+Parameters
+Create a wall with a door in it, at least, before running this command. Also, you may need to set the full path defned in GetSharedParamsFile(). It is currently "C:\tmp\Labs-4-3-1.txt". After running the second command, show the excel spreadsheet, update the value of "API FireRating", and save the file, noting its name and location. In the third step, reopen the recently saved file. Note that the parameter of the door is updated from the Excel file.
+
+Create Shared Parameter
+Get shared parameters definition file
+Class Parameters.DefinitionFile
+Application.Options.SharedParametersFilename
+Application.OpenSharedParameterFile
+Get shared parameters group
+Class Autodesk.Revit.Parameters.DefinitionGroup
+DefinitionFile.Groups
+DefinitionFile.Groups.Create
+Get shared parameters definition
+Class Parameters.Definition
+DefinitionGroup.Definitions
+DefinitionGroup.Definitions.Create
+Create category set for binding to 'Doors'
+CategorySet = revitApp.Create.NewCategorySet()
+catSet.Insert( doc.Settings.Categories.Item( BuiltInCategory.OST_Doors ) )
+Bind the parameter
+Dim binding As Parameters.Binding = revitApp.Create.NewInstanceBinding( catSet )
+doc.ParameterBindings.Insert( fireRatingParamDef, binding )
+Parameters
+
+Export Shared Parameter
+Start up Excel
+Get all standard family instances for the given category 'Doors'
+Determine the shared parameter GUID for accessing values
+Dim guid As Guid = guid.Empty
+Dim file As Parameters.DefinitionFile = revitApp.OpenSharedParameterFile
+Dim group As Parameters.DefinitionGroup = file.Groups.Item(defGroup)
+Dim definition As Parameters.Definition = group.Definitions.Item(defName)
+Dim externalDefinition As Parameters.ExternalDefinition = definition
+guid = externalDefinition.GUID
+Loop all doors and export each to an Excel row
+id, level, tag, fire rating
+worksheet.Cells(row, 1).Value = door.Id.Value
+worksheet.Cells(row, 2).Value = door.Level.Name
+Dim tagParameter As Parameter = door.Parameter( BuiltInParameter.ALL_MODEL_MARK )
+worksheet.Cells(row, 3).Value = tagParameter.AsString
+Dim parameter As Parameter = door.Parameter( paramGuid )
+worksheet.Cells(row, 4).Value = parameter.AsDouble
+row = row + 1
+Parameters
+
+Import Shared Parameter
+Select file, start up Excel, open file
+Import data
+Dim id As Integer
+Dim fireRatingValue As Double
+Dim row As Integer = 2
+Do
+' Extract relevant XLS values
+id = worksheet.Cells(row, 1).Value
+If id <= 0 Then Exit Do
+fireRatingValue = worksheet.Cells(row, 4).Value
+' Get document's door element via Id
+Dim elementId As Autodesk.Revit.ElementId
+elementId.Value = id
+Dim door As Autodesk.Revit.Element = revitApp.ActiveDocument.Element( elementId )
+' Set the param
+If Not (door Is Nothing) Then
+Dim parameter As Parameter = LabUtils.GetElemParam( door, sharedParamName )
+parameter.Set( fireRatingValue )
+End If
+row = row + 1
+Loop
+Parameters
+We retrieve the door id and the updated fire rating value from the Excel file, get the door element from Revit, get its shared parameter and update its value.
+
+Shared Parameter for Entire Model
+How do we store per-document (per-model) data using shared parameters?
+Bind hidden shared parameters to the singleton element of 'Project Information' category
+The shared parameter definition uses ExternalDefinition, which has an attribute 'Visible'
+Parameters
+
+Geometry
+Revit provides full access to the element geometry. The geometrical objects used are transient. They are generated on the fly by the API or an application and used to query or define element properties. They live in a separate namespace Autodesk.Revit.Geometry.
+
+Access 3D Geometry
+Revit SDK sample viewers
+RevitViewer
+A simple geometry viewer helper class
+Used by the other viewer samples
+ElementViewer
+Display wireframe model of one or more selected elements
+RoomViewer
+Wireframe viewer of the selected room
+AnalyticalViewer
+Display analytical model of one or more selected elements
+ObjectViewer
+Display analytical or physical model and set parameter of selected elements
+FamilyExplorer
+Profiles
+Geometry
+
+Obtain 3D Element Geometry
+Private mOptions As Autodesk.Revit.Geometry.Options
+mOptions = app.Create.NewGeometryOptions
+mOptions.DetailLevel = Geometry.Options.DetailLevels.Fine
+For Each elem In selSet
+Dim geom As Autodesk.Revit.Geometry.Element = elem.Geometry(mOptions)
+DrawElement(geom)
+Next
+If selSet.Size > 0 Then
+mViewer.ShowModal()
+End If
+Specify level of detail of element geometry
+Coarse, Medium, or Fine
+All that remains is to display the geometry
+Geometry
+Each element may have geometery associated with it. The element geometry is returned by its Geometry method, which takes an argument specifying the required detail level: Coarse, Medium, or Fine. Here is code from the ElementViewer sample queriying each element in the selection set for its geometry and passing it into a drawing routine.
+
+Display Element Geometry
+Private Sub DrawElement(ByVal elementGeom As Geometry.Element)
+Dim geomObject As Autodesk.Revit.Geometry.GeometryObject
+For Each geomObject In elementGeom.Objects
+If (TypeOf geomObject Is Autodesk.Revit.Geometry.Curve) Then
+DrawCurve(geomObject)
+ElseIf (TypeOf geomObject Is Autodesk.Revit.Geometry.Instance) Then
+DrawInstance(geomObject)
+ElseIf (TypeOf geomObject Is Autodesk.Revit.Geometry.Mesh) Then
+DrawMesh(geomObject)
+ElseIf (TypeOf geomObject Is Autodesk.Revit.Geometry.Solid) Then
+DrawSolid(geomObject)
+End If
+Next
+End Sub
+Private Sub DrawCurve(ByVal geomCurve As Geometry.Curve)
+DrawPoints(geomCurve.Tessellate)
+End Sub
+Geometry
+Iterate over the element geometry, which in turn is a Geometry.Element instance containing curve, instance, mesh and solid objects which in turn are broken down into line segments for the viewer. For more details, please refer to the SDK sample source code.
+
+Access to 2D Geometry
+Display room id, name and number
+Iterate over room boundary lines
+See also SDK sample RoomViewer
+Lab 5-3
+Geometry
+Rooms also have geometry associated with them. In this case, the geometry is the 2D room boundary lines. This is demonstrated by Lab 5-3. In order to explore lab 5-3, create four walls and a room. The room id, name and number as well as the geometrical coordinates of its boundary lines are displayed. RoomViewer displays the room boundary graphically in its own embedded viewer.
+
+Iterate Room Boundary
+Dim boundaries As BoundarySegmentArrayArray = room.Boundary
+Dim boundary As BoundarySegmentArray
+Dim iB As Integer = 0
+For Each boundary In boundaries
+iB += 1
+sMsg += vbCrLf & "  Boundary " & iB & ":"
+Dim iSeg As Integer = 0
+Dim segment As BoundarySegment
+For Each segment In boundary
+iSeg += 1
+Dim crv As Geometry.Curve = segment.Curve
+If TypeOf crv Is Geometry.Line Then           ' LINE
+Dim line As Line = crv
+Dim ptS As XYZ = line.EndPoint(0)
+Dim ptE As XYZ = line.EndPoint(1)
+sMsg += vbCrLf & "    Segment " & iSeg & " is a LINE:" & _
+ptS.X & ", " & ptS.Y & ", " & ptS.Z & " ; " & _
+ptE.X & ", " & ptE.Y & ", " & ptE.Z
+ElseIf TypeOf crv Is Geometry.Arc Then        ' ARC
+Dim arc As Arc = crv
+Dim ptS As XYZ = arc.EndPoint(0)
+Dim ptE As XYZ = arc.EndPoint(1)
+Dim r As Double = arc.Radius
+sMsg += vbCrLf & "    Segment " & iSeg & " is an ARC:" & _
+ptS.X & ", " & ptS.Y & ", " & ptS.Z & " ; " & _
+ptE.X & ", " & ptE.Y & ", " & ptE.Z & " ; R=" & r
+End If
+Next
+Next
+Geometry
+The room boundary is accessible through the property Boundary, which returns a BoundarySegmentArrayArray, i.e. a collection of arrays of boundary segments. Each array of boundary segments is one boundary, and each boundary segment has a curve, which can be a line or an arc, for instance.
+
+Advanced Topics and News
+New Revit 2011 API Samples and Features
+
+Revit API Topics
+Platform Basics
+Filtering
+Selection
+Parameters
+Geometry
+Revit 2011 News
+Family API
+Flavour specific
+Architecture
+MEP
+Structure
+Advanced Topics
+Transactions
+Events
+Dynamic Model Update
+Failure Posting and Handling
+Analysis Visualization
+News
+
+Revit 2011 API News
+RAC
+Improved form generation
+Flexible components
+RME
+Conduits and cable trays
+Panel schedules
+RST
+Concrete joins
+Improved analytical model
+News
+Platform
+User interface
+Performance
+Reporting parameters
+API
+Dynamic update
+Analysis visualization
+Transactions
+Iteration
+Selection
+We have a huge amount of new material to cover in the API update, and will not be able to cover everything completely in this initial introduction. We are looking forward to presenting more detailed and in depth webcasts on selected topics in coming months and would very much appreciate your feedback on topics to cover.
+
+New Revit 2010 SDK Samples
+Generic
+RaytraceBounce
+Ribbon
+Revit MEP
+AutoRoute
+AvoidObstruction
+TraverseSystem
+Events
+AutoStamp
+AutoUpdate
+CancelSave
+EventsMonitor
+PrintLog
+FamilyCreation
+AutoJoin
+AutoParameter
+CreateAirHandler (rme)
+CreateTruss (rst)
+DWGFamilyCreation
+GenericModelCreation
+TypeRegeneration
+ValidateParameters
+WindowWizard
+Massing
+DistanceToPanels
+MeasurePanelArea
+NewForm (5 commands)
+PanelEdgeLengthAngle
+New Samples
+The 23 new samples reflect the main focus of the API development for this release: family API and conceptual design, ribbon, events, MEP. Events, FamilyCreation and Massing are separate subdirectories, the other samples are located in the main SDK Samples folder. To compile them all, you can use the main solution file. To load them into Revit, you can use the RvtSamples external application. We already discussed the ribbon and events samples. We will look at the family, form creation, and MEP ones in the later sections of the presentation. One sample that does not fall into any of these categories is RaytraceBounce, which demonstrates a new general-purpose model inspection method.
+Revit Programming Introduction
+
+New Revit 2011 SDK Samples
+New
+AnalysisVisualizationFramework
+DistanceToSurfaces
+SpatialFieldGradient
+ConceptualDesign (* typo)
+DividedSurfaceByIntersects
+ElementFilter
+ViewFilters
+FindReferencesByDirection
+FindColumns
+MeasureHeight
+Massing
+ParameterValuesFromImage
+PointCurveCreation
+DirectionCalculation
+DocumentChanged (ChangesMonitor)
+DynamicModelUpdate
+ErrorHandling
+ExternalCommand2011
+MaterialQuantities
+PanelSchedule
+Selections
+SolidSolidCut
+Modified
+•	HelloRevit
+•	ImportExport
+•	TransactionControl
+New Samples
+Revit Programming Introduction
+
+Learning More
+Online Help, Developer's Guide and SDK Samples
+Developer Center
+http://usa.autodesk.com/adsk/servlet/index?siteID=123112&id=2484975
+DevTV Introduction to Revit Programming
+Revit 2011 Programming News Webcast
+http://www.adskconsulting.com/adn/cs/api_course_sched.php
+Discussion Group
+http://discussion.autodesk.com > Revit Architecture > Revit API
+API Training Classes
+http://www.autodesk.com/apitraining
+The Building Coder, Jeremy Tammik's Revit API Blog
+http://thebuildingcoder.typepad.com
+Autodesk Developer Network
+http://www.autodesk.com/joinadn
+DevHelp Online for ADN members
+http://adn.autodesk.com
+Point out that the webcast is *this* webcast. The bottom two items are for members only, the top ones are all publicly available.
+
+Polls About the Presentation
+5. How was the audio quality of the presentation?
+Good, Acceptable, Poor
+6. How was the visual quality of the presentation?
+Good, Acceptable, Poor
+7. How do you rate the presentation material?
+Excellent, Good, Okay, Poor
+8. How do you rate the presentation delivery?
+Excellent, Good, Okay, Poor
+9. Would you recommend this webcast to a friend or colleague?
+Yes, No
+10. What topics would you be interested in for future webcasts?
+Family API, Family UI, Form creation API, VSTA, MEP API, Geometry
+Others: please use Q&A to submit suggestions
+Submit multiple choices through Q&A as well
+
+Thank you!
+Thank you very much for your interest and attention!
+Much success with the Revit API and your application development!
+
+Workshop Agenda
+Wednesday April 7 - Getting Started
+9:00	Early Birds and Installation Support
+11:00	Introductions
+12:00	Revit API Overview and Sample Applications
+13:00	External Command and Hello World Hands-on
+14:00	Lunch
+15:00	External Application and Ribbon Hands-on
+16:00	SDK Tools Setup
+17:00	End
+Thursday April 8 - Basics and Advanced Topics
+9:00	User interaction
+10:30	Database and elements
+12:00		Parameters
+13:00		Geometry
+14:00		Lunch
+15:00		API news, new SDK samples, dynamic update, analysis visualization
+17:00		End
+Friday April 9 - Specialised APIs
+9:00	New SDK samples, dynamic update, analysis visualization (skip RFA)
+10:00		Revit MEP
+11:00		Revit Structure
+13:00		Lunch
+15:00	Participant Wishes
+16:00	End
+Introduction
+
+End of Presentation

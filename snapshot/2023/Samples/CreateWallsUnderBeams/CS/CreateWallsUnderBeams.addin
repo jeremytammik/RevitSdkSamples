@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateWallsUnderBeams.dll</Assembly>
+    <ClientId>b27e1dc8-62d4-49c7-b792-37a766cfcfb2</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateWallsUnderBeams.CS.CreateWallsUnderBeams</FullClassName>
+    <Text>Create walls under beams</Text>
+    <Description>Create simple rectangular walls along and under the path of selected beams.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

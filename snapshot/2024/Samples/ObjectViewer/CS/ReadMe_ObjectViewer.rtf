@@ -1,0 +1,92 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\deflang1033\deflangfe2052{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset0 Times New Roman;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\ltrpar\nowidctlpar\b\f0\fs20 Application:\b0  ObjectViewer\line\b Revit Platform:\b0  All\line\b Revit Version:\b0  2011.0\line\b First Released For:\b0  9.0\line\b Programming Language:\b0  C#\line\b Skill Level:\b0  Advanced\line\b Category:\b0  Views\line\b Type:\b0  ExternalCommand\line\line\b Subject:\b0  Show element's geometry,get and set its parameter value.\line\b Summary:\b0  \line This sample demonstrates two main features:\par
+\pard\ltrpar\nowidctlpar\fi-360\li360 1.\tab How to get physical or analytical model of selected element\f1 .\par
+\f0 2.\tab How to get and set parameter\rquote s value of selected element\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+\b Classes:\b0  \par
+\pard\ltrpar\nowidctlpar\fi360 Autodesk.Revit.UI.IExternalCommand\f1\par
+\f0 Autodesk.Revit.DB.Element\f1\par
+\f0 Autodesk.Revit.DB.GeometryElement\f1\par
+\f0 Autodesk.Revit.DB.Parameter\par
+Autodesk.Revit.DB.GeometryObject\par
+Autodesk.Revit.DB.Transform\par
+Autodesk.Revit.DB.Structure.AnalyticalModel\par
+\pard\ltrpar\nowidctlpar\par
+\b Project Files:\b0  \par
+Command.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 This file contains the class \ldblquote Command\rdblquote  which inherits from \ldblquote IExternalCommand\rdblquote  interface and implements the \ldblquote Execute\rdblquote  method\f1 .\par
+\pard\ltrpar\nowidctlpar\fi240\f0\par
+\pard\ltrpar\nowidctlpar ErrorMessageException.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote ErrorMessageException\rdblquote  which is used to pass error message to UI or back to internal error message box by Execute method in IExternalCommand\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+GeometryData.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote GeometryData\rdblquote  which is used to get Revit geometry data and transform the data to appropriate format for GDI.\par
+\pard\ltrpar\nowidctlpar\par
+Graphics2DData.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains: \f1\par
+\f0 A class \ldblquote Graphics2DData\rdblquote  which is a data class for graphics 2D\f1\par
+\f0 A class \ldblquote EmptyGraphics2DData\rdblquote  which derives from \ldblquote Graphics2DData\rdblquote  could represents a PointF class with uninitialized member data\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+Graphics3DData.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote Graphics3DData\rdblquote  which is a data class for graphics 3D\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+MathUtil.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote MathUtil\rdblquote  which provides matrix algorithm\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+ModelData.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote ModelData\rdblquote  which is used to generate GraphicsData from element\rquote s analytical model\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+ObjectViewer.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains the class \ldblquote ObjectViewer\rdblquote  which is main command class of the ObjectViewer application\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+ObjectViewerForm.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote ObjectViewerForm\rdblquote  which is used to display selected element in a PictureBox and its parameters in a DataGridView; it also allows showing element in different conditions via RadioButtons, ComboBox and so on\f1 .\f0\par
+\pard\ltrpar\nowidctlpar\par
+Para.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote Para\rdblquote  which is used to define a parameter of Element\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+ParasFactory.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote ParasFactory\rdblquote  which is used to create a SortableBindingList<Para> collection\f1 .\f0  The SortableBindingList could store information about parameters according to an Element\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+Sketch.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote Sketch3D\rdblquote  which provides methods to draw objects in PictureBox and deals with operations \ldblquote Move\rdblquote  \ldblquote Zoom\rdblquote  \ldblquote Rotate\rdblquote .\f1\par
+\pard\ltrpar\nowidctlpar\f0\par
+UCS.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote UCS\rdblquote  which stands for user coordinate system\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+Vector.cs\par
+\pard\ltrpar\nowidctlpar\li360\tx720 It contains a class \ldblquote Vector\rdblquote  which is Point class used to store point coordinate value\f1 .\par
+\pard\ltrpar\nowidctlpar\f0\par
+\b Description:\b0  \par
+This sample demonstrates the following functionalities:\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360 -\tab The command only works with one selected element\f1 .\par
+\f0 -\tab In a Dialog, displays selected element in a preview window on the left and generic properties grid on the right.\par
+-\tab The dialog contains radio buttons for switching between physical and analytical model. If the element does not have a physical or analytical model, option should be disabled and preview window should be grayed\f1 .\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\f0 -\tab The dialog contains lists for selecting the following opinions:\par
+\pard\ltrpar\nowidctlpar\fi-360\li720\tx720 -\tab Detail Level for physical model\f1 .\par
+\pard\ltrpar\nowidctlpar\fi-360\li720\f0 -\tab Views for physical model\f1 .\par
+\f0 -\tab View direction for both models (physical and analytical model)\f1 .\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360\f0 -\tab The selected element has its geometry, physical or analytical displayed in the preview pane. The elements generic properties should be displayed in the grid.\par
+\pard\ltrpar\nowidctlpar\fi-360\li360 -\tab The preview panel default to a view direction of -1,-1,-1 i.e. looking down at an angle to the object\par
+-\tab When mouse is inside the region of preview window, user zoom, rotate and move model:\par
+\pard\ltrpar\nowidctlpar\fi-360\li720\tx720 -\tab Click \lquote A\rquote , \lquote S\rquote , \lquote D\rquote , \lquote W\rquote  keys to move model to left, down, right and up\f1 .\par
+\pard\ltrpar\nowidctlpar\fi-360\li720\f0 -\tab Click \lquote up arrow\rquote , \lquote down arrow\rquote , \lquote left arrow\rquote , \lquote right arrow\rquote , \lquote Pg Up\rquote , \lquote Pg Down\rquote  to rotate model around center.\par
+-\tab Click \lquote Home\rquote  and \lquote End\rquote  keys to zoom in and out model.\par
+\pard\ltrpar\nowidctlpar\fi-360\li360 -\tab All parameters displayed in the grid with their name, value, unit name\f1 .\f0  Parameter\rquote s value can be changed successfully if the input value is acceptable and this parameter is not read only. \f1\par
+\pard\ltrpar\nowidctlpar\par
+\f0 Implementations:\f1\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360\f0 -\tab The physical model is available via the Geometry property of the Element. \par
+\pard\ltrpar\nowidctlpar\fi-360\li360 -\tab The analytical model could be found by the AnalyticalModel property available on specific elements. There are several forms of analytical model and all should be displayed by this sample. \par
+-\tab Special attention should be paid to Inplace Family Instances to ensure that they display correctly.\par
+\pard\ltrpar\nowidctlpar\li360\par
+\pard\ltrpar\nowidctlpar\b Instructions:\cf1\b0  \cf0\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360 1.\tab Draw a line, wall, beam or desk and so on.\par
+\pard\ltrpar\nowidctlpar\fi-360\li360 2.\tab Select one, and run this command.\par
+3.\tab A dialog will be shown to display selected element in a PictureBox and its parameters in a DataGridView, it is allowed to change parameter\rquote s value via changing value in DataGridView.\par
+4.\tab Select radio buttons \ldblquote Physical Model\rdblquote  or \ldblquote Analytical Model\rdblquote  to switching between physical and analytical model of selected element.\par
+\pard\ltrpar\nowidctlpar\fi360 Note: If this element doesn\rquote t have some model, the PictureBox should become gray.\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360 5.\tab As description above, click some keys to move rotate or zoom model, the model can be seen from different angles.\par
+\pard\ltrpar\nowidctlpar\fi-360\li360 6.\tab Changing selection of ComboBox \ldblquote Detail level\rdblquote , \ldblquote View direction\rdblquote  and ListBox \ldblquote Displayed view\rdblquote  will lead to transformation in PictureBox. It is similar to operations in Revit.\par
+}
+ 

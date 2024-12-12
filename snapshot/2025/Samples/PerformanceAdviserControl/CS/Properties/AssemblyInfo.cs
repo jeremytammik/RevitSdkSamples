@@ -1,0 +1,1 @@
+﻿[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("windows7.0")]

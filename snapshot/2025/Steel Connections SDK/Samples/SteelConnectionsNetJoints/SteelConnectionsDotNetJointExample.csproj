@@ -1,0 +1,39 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <Import Project="..\StructuralConnectionsSDKSamples.Common.props" />
+  <ItemGroup>
+    <Reference Include="ASObjectsMgd">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\ASObjectsMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASGeometryMgd">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\ASGeometryMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASCADLinkMgd">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ASInstallDir)\ASCADLinkMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetRoots">
+      <HintPath>$(ASInstallDir)\DotNetRoots.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetRootsMgd">
+      <HintPath>$(ASInstallDir)\DotNetRootsMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dummy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ResDummy.png" />
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk"/>
+</Project>

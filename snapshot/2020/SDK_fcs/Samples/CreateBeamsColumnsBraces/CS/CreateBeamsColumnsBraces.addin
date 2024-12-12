@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateBeamsColumnsBraces.dll</Assembly>
+    <ClientId>74e3d44b-5ad6-4c58-a3f1-3107c4108fc4</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.Command</FullClassName>
+    <Text>Create beams, columns and braces (CS)</Text>
+    <Description>Create beams, columns and braces.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

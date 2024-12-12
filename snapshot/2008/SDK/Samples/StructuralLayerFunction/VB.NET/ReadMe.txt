@@ -1,0 +1,1 @@
+This sample uses Visual Basic.NET to display a dialog that show the function of each of the selected floor's structural layers in order from outside to inside.If the selected element is not a floor, or is more than one element then report the failure using the mechanism provided for external commands.

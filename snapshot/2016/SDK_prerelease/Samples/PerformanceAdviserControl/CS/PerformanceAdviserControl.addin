@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>PerformanceAdviserControl</Name>
+    <Assembly>PerformanceAdviserControl.dll</Assembly>
+    <AddInId>abdf8d4c-df96-4ca1-a360-36bc09773e99</AddInId>
+    <FullClassName>Revit.SDK.Samples.PerformanceAdviserControl.CS.Application</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>PerformanceAdviserControl.dll</Assembly>
+    <ClientId>AFD0104D-9372-4052-96CE-2CEF2A8BEFB2</ClientId>
+    <FullClassName>Revit.SDK.Samples.PerformanceAdviserControl.CS.UICommand</FullClassName>
+    <Text>PerformanceAdviserControl</Text>
+    <Description>PerformanceAdviserControl</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

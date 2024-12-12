@@ -1,0 +1,32 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <RootNamespace>Revit.SDK.Samples.ScheduleToHTML.CS</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DocumentationFile>bin\Debug\ScheduleToHTML.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.targets" />
+  <ItemGroup>
+    <PackageReference Include="HtmlTextWriter" Version="2.1.1" GeneratePathProperty="true"/>
+    <PackageReference Include="System.Net.Http" Version="4.3.4"/>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+       set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+       if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"
+       echo d | xcopy /f /y "$(Pkghtmltextwriter)\lib\netstandard2.0\*.*" "$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\ScheduleToHTML\CS"
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+</Project> 

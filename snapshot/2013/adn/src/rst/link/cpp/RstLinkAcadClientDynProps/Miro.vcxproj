@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{200061B2-AF4F-4B82-82BB-C3E08A790FEB}</ProjectGuid>
+    <RootNamespace>Miro</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Dynamic</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Dynamic</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Dynamic</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Dynamic</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;C:\a\lib\arx\2012\inc;C:\a\lib\arx\2012\inc-win32</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;C:\a\lib\arx\2012\lib-win32;</LibraryPath>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RstLinkAcadClientDynProps</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.arx</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <GenerateTypeLibrary>true</GenerateTypeLibrary>
+      <TypeLibraryName>$(IntDir)AsdkMiro.tlb</TypeLibraryName>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>Miro_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>Miro_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;MIRO_MODULE;_AFXEXT;_ACRXAPP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>rxapi.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <GenerateTypeLibrary>true</GenerateTypeLibrary>
+      <TypeLibraryName>$(IntDir)AsdkMiro.tlb</TypeLibraryName>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>Miro_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>Miro_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ARXSDKDIR)\inc-x64;$(ARXSDKDIR)\inc</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>C:\Program Files\Autodesk\AutoCAD MEP 2012;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <PreprocessorDefinitions>_WIN32_WINNT=0x0501;WIN32;_WINDOWS;MIRO_MODULE;_AFXEXT;_ACRXAPP;DBX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)RstLinkAcadClientDynProps.arx</OutputFile>
+      <AdditionalLibraryDirectories>$(ARXSDKDIR)\lib-x64</AdditionalLibraryDirectories>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Miro.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)Miro.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <GenerateTypeLibrary>true</GenerateTypeLibrary>
+      <TypeLibraryName>$(IntDir)AsdkMiro.tlb</TypeLibraryName>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>Miro_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>Miro_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalUsingDirectories>C:\Program Files\Autodesk Architectural Desktop 2007;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MIRO_MODULE;_AFXEXT;_ACRXAPP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)RstLinkAcadClientDynProps.arx</OutputFile>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)Miro.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>rxapi.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <GenerateTypeLibrary>true</GenerateTypeLibrary>
+      <TypeLibraryName>$(IntDir)AsdkMiro.tlb</TypeLibraryName>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>Miro_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>Miro_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalUsingDirectories>C:\Program Files\Autodesk Architectural Desktop 2007;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MIRO_MODULE;_AFXEXT;_ACRXAPP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)RstLinkAcadClientDynProps.arx</OutputFile>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)Miro.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="acrxEntryPoint.cpp" />
+    <ClCompile Include="DocData.cpp" />
+    <ClCompile Include="Force.cpp" />
+    <ClCompile Include="Miro.cpp" />
+    <ClCompile Include="RevitID.cpp" />
+    <ClCompile Include="Section.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Usage.cpp" />
+    <ClCompile Include="Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Miro.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DocData.h" />
+    <ClInclude Include="Force.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RevitID.h" />
+    <ClInclude Include="Section.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Usage.h" />
+    <ClInclude Include="Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Miro.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Force.rgs" />
+    <None Include="Miro.def" />
+    <None Include="Miro.rgs" />
+    <None Include="RevitID.rgs" />
+    <None Include="Section.rgs" />
+    <None Include="Usage.rgs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

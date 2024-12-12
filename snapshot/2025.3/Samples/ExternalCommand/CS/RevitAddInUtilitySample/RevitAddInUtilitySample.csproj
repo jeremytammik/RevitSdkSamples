@@ -1,0 +1,34 @@
+﻿<Project Sdk="">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExternalCommandRegistration\ExternalCommandRegistration.csproj">
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="RevitAddInUtility">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

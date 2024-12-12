@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>StructuralLayerFunction.dll</Assembly>
+    <ClientId>2c6d7e52-bb26-4a03-b6a9-102703188754</ClientId>
+    <FullClassName>Revit.SDK.Samples.StructuralLayerFunction.CS.Command</FullClassName>
+    <Text>Structural Layer Function (CS)</Text>
+    <Description>For the selected floor, display the function of each structural layer from outside to inside in a dialog box.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

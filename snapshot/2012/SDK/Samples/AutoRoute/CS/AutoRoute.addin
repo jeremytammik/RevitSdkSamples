@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>AutoRoute.dll</Assembly>
+    <ClientId>301f89e5-a159-47f1-94f3-48b6c6b21405</ClientId>
+    <FullClassName>Revit.SDK.Samples.AutoRoute.CS.Command</FullClassName>
+    <Text>AutoRoute</Text>
+    <Description>Route ducts and fittings.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

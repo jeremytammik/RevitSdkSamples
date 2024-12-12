@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <ClientId>399fe985-0175-42c0-98a2-ce1469d2a592</ClientId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.FabricationPartLayout</FullClassName>
+    <Text>Fabrication Part Layout</Text>
+    <Description>Fabrication Part Layout Sample</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <ClientId>DECE0D9A-51EB-48CD-B260-DD7E4373FFEE</ClientId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.OptimizeStraights</FullClassName>
+    <Text>Optimize Straights</Text>
+    <Description>Optimize Straights</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <ClientId>21EC0E70-7A8A-4852-853A-D1163F4FE256</ClientId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.StretchAndFit</FullClassName>
+    <Text>Stretch and Fit</Text>
+    <Description>Stretch and fit</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>FabricationPartLayout.dll</Assembly>
+    <ClientId>78E2660C-497E-4B5B-9E69-E094F1620BC0</ClientId>
+    <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.ConvertToFabrication</FullClassName>
+    <Text>Convert To Fabrication</Text>
+    <Description>Convert Design Elements To Fabrication Parts</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+   <LanguageType>Unknown</LanguageType>
+   <VendorId>ADSK</VendorId>
+  </AddIn>
+   <AddIn Type="Command">
+      <Assembly>FabricationPartLayout.dll</Assembly>
+      <ClientId>F833EBAA-CED6-4E0C-87C0-10AAC88896AC</ClientId>
+      <FullClassName>Revit.SDK.Samples.FabricationPartLayout.CS.RenumberingPart</FullClassName>
+      <Text>Renumbering Parts</Text>
+      <Description>Renumbering the Fabrication Parts</Description>
+      <VisibilityMode>AlwaysVisible</VisibilityMode>
+      <LanguageType>Unknown</LanguageType>
+      <VendorId>ADSK</VendorId>
+   </AddIn>
+</RevitAddIns>

@@ -1,0 +1,20 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSLangTargets>$(MSBuildToolsPath)\Microsoft.VisualBasic.targets</MSLangTargets>
+  </PropertyGroup>
+  <Import Project="$(MSLangTargets)" />
+  <!-- Make sure the projects using this targets file rebuild if this file changes 
+       This must come after the import of the common targets -->
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2024\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2024\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

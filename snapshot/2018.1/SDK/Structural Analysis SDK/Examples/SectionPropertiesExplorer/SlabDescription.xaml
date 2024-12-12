@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="SectionPropertiesExplorer.SlabDescriptionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="690">
+    <DockPanel LastChildFill="True">
+        <DockPanel Name="leftPanel" MinHeight="380" MinWidth="230" Margin="0 10 0 10">
+            <Canvas Name="tSectionViewer" MinHeight="220" MinWidth="250" Margin="0 0 0 5" DockPanel.Dock="Top"></Canvas>
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Top"  Margin="0 0 0 0">
+                <StackPanel Orientation="Horizontal">
+                    <Label Name="familyNameLabel" Content="Family name:" Height="26" Width="80"/>
+                    <Label Name="familyName" Content="Unknown" Height="26" Width="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Name="typeNameLabel" Content="Type name:" Height="26" Width="80"/>
+                    <Label Name="typeName" Content="Unknown" Height="26" Width="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Name="levelNameLabel" Content="Level name:" Height="26" Width="80"/>
+                    <Label Name="levelName" Content="Unknown" Height="26" Width="150"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical"   DockPanel.Dock="Bottom" >
+                <StackPanel Orientation="Horizontal">
+                    <Canvas Name="pLineSupportSymbolViewer" Height="26" Width="78"></Canvas>
+                    <Label Name="pLineSupportSymbolLabel" Content="beam support" Height="26" Width="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Canvas Name="pointUpperSupportSymbolViewer" Height="26" Width="26"></Canvas>
+                    <Canvas Name="pointSupportSymbolViewer" Height="26" Width="26"></Canvas>
+                    <Canvas Name="pointLowerSupportSymbolViewer" Height="26" Width="26"></Canvas>
+                    <Label Name="pointSupportSymbolLabel" Content="upper, cross or lower column" Height="26" Width="172"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Canvas Name="wallUpperSupportSymbolViewer" Height="26" Width="26"></Canvas>
+                    <Canvas Name="wallSupportSymbolViewer" Height="26" Width="26"></Canvas>
+                    <Canvas Name="wallLowerSupportSymbolViewer" Height="26" Width="26"></Canvas>
+                    <Label Name="wallSupportSymbolLabel" Content="upper, cross or lower wall" Height="26" Width="150"/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+        <Canvas Name="slabsViewer" Height="auto" MinHeight="380" MinWidth="435" Margin="10 10 10 10" 
+                MouseLeftButtonDown="slabsViewer_MouseLeftButtonDown" 
+                MouseLeftButtonUp="slabsViewer_MouseLeftButtonUp" 
+                MouseMove="slabsViewer_MouseMove">
+        </Canvas>
+    </DockPanel>
+</UserControl>

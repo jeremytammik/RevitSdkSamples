@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>ChangesMonitor.dll</Assembly>
+    <ClientId>ebae9def-6cd3-456f-98a4-cfe06c362af5</ClientId>
+    <FullClassName>Revit.SDK.Samples.ChangesMonitor.CS.ExternalApplication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ChangesMonitor.dll</Assembly>
+    <ClientId>152051df-aa75-463f-a722-b8b1bca5d88c</ClientId>
+    <FullClassName>Revit.SDK.Samples.ChangesMonitor.CS.Command</FullClassName>
+    <Text>ShowChangesInfoForm</Text>
+    <Description>""</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

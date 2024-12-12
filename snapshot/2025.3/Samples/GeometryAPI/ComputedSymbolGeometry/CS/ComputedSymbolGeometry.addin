@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ComputedSymbolGeometry.dll</Assembly>
+    <ClientId>ff559488-4285-40b7-bfca-043bb69ea0a7</ClientId>
+    <FullClassName>Revit.SDK.Samples.ComputedSymbolGeometry.CS.Command</FullClassName>
+    <Text>ComputedSymbolGeometry</Text>
+    <Description>Demonstrates how to get the computed symbol geometry.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

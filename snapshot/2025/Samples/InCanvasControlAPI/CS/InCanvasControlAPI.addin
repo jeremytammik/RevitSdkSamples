@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+    <Assembly>InCanvasControlAPI.dll</Assembly>
+    <ClientId>09102c26-2bed-42ae-b43c-8b43054941e8</ClientId>
+    <FullClassName>Revit.SDK.Samples.InCanvasControlAPI.CS.Command</FullClassName>
+    <Text>In-Canvas controls</Text>
+    <Description>This sample will demonstrate how to create, keep track of and handle clicks on In-Canvas controls.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+   <AddIn Type="Application">
+    <Name>InCanvasControlAPI</Name>
+    <Assembly>InCanvasControlAPI.dll</Assembly>
+    <ClientId>4be11e1a-44eb-444e-b186-2fc4472a211a</ClientId>
+    <FullClassName>Revit.SDK.Samples.InCanvasControlAPI.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

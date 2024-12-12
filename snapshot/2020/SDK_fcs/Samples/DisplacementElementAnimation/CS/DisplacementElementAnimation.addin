@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>DisplacementElementAnimation</Name>
+    <Assembly>DisplacementElementAnimation.dll</Assembly>
+    <ClientId>d9bd576c-2880-4f6b-b83c-df6d57170211</ClientId>
+    <FullClassName>Revit.SDK.Samples.DisplacementElementAnimation.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

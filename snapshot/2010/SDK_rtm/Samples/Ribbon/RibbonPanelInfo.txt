@@ -1,0 +1,2488 @@
+--------------------------RibbonPanel------------------------------------------------
+Panel.Enabled = True
+Panel.IsReadOnly = False
+Panel.Name = RvtMgdDbg
+Panel.Title = RvtMgdDbg
+Panel.Visible = True
+
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Managed Dbg
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+pulldownButton.Image = null
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Options
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = 
+
+
+----------------------PushButton-----------------------
+PushButton.Name = Snoop Db..
+PushButton.AssemblyName = RvtMgdDbg.dll
+PushButton.ClassName = RvtMgdDbg.CmdSnoopDb
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Snoop Db..
+PushButton.ItemType = PushButton
+PushButton.ToolTip = 
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Snoop Current Selection...
+PushButton.AssemblyName = RvtMgdDbg.dll
+PushButton.ClassName = RvtMgdDbg.CmdSnoopModScope
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Snoop Current Selection...
+PushButton.ItemType = PushButton
+PushButton.ToolTip = 
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Snoop Application...
+PushButton.AssemblyName = RvtMgdDbg.dll
+PushButton.ClassName = RvtMgdDbg.CmdSnoopApp
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Snoop Application...
+PushButton.ItemType = PushButton
+PushButton.ToolTip = 
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Test Framework...
+PushButton.AssemblyName = RvtMgdDbg.dll
+PushButton.ClassName = RvtMgdDbg.CmdTestShell
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Test Framework...
+PushButton.ItemType = PushButton
+PushButton.ToolTip = 
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Events...
+PushButton.AssemblyName = RvtMgdDbg.dll
+PushButton.ClassName = RvtMgdDbg.CmdEvents
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Events...
+PushButton.ItemType = PushButton
+PushButton.ToolTip = 
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+------------------------------RibbonPanel End----------------------------------------
+
+
+--------------------------RibbonPanel------------------------------------------------
+Panel.Enabled = True
+Panel.IsReadOnly = False
+Panel.Name = RvtSamples
+Panel.Title = RvtSamples
+Panel.Visible = True
+
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Basics
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = Basics.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Basics
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to the ExternalCommand framework, transactions, and event registration.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = About Revit
+PushButton.AssemblyName = VersionChecking.dll
+PushButton.ClassName = Revit.SDK.Samples.VersionChecking.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = About Revit
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show the Revit product name, version and build number.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Delete Dimensions
+PushButton.AssemblyName = DeleteDimensions.dll
+PushButton.ClassName = Revit.SDK.Samples.DeleteDimensions.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Delete Dimensions
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Delete all unpinned dimensions found in current selection.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Delete Objects (CS)
+PushButton.AssemblyName = DeleteObject.dll
+PushButton.ClassName = Revit.SDK.Samples.DeleteObject.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Delete Objects (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Delete selected elements.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Delete Objects (VB)
+PushButton.AssemblyName = DeleteObject.dll
+PushButton.ClassName = Revit.SDK.Samples.DeleteObject.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Delete Objects (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Delete selected elements.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Display Options
+PushButton.AssemblyName = DesignOptionReader.dll
+PushButton.ClassName = Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Display Options
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display Options.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Elements Filter
+PushButton.AssemblyName = ElementsFilter.dll
+PushButton.ClassName = Revit.SDK.Samples.ElementsFilter.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Elements Filter
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Retrieves elements filtered by specific criteria and Boolean operations of them.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Hello Revit - Form
+PushButton.AssemblyName = HelloRevit.dll
+PushButton.ClassName = Revit.SDK.Samples.HelloRevit.VB.NET.CommandForm
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Hello Revit - Form
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show a form-based dialogue with Hello Revit!
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Hello Revit - MsgBox
+PushButton.AssemblyName = HelloRevit.dll
+PushButton.ClassName = Revit.SDK.Samples.HelloRevit.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Hello Revit - MsgBox
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Shows a message box with Hello Revit!
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Hello World (CS)
+PushButton.AssemblyName = HelloWorld.dll
+PushButton.ClassName = Revit.SDK.Samples.HelloWorld.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Hello World (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display Hello World.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Hello World (VB)
+PushButton.AssemblyName = HelloWorld.dll
+PushButton.ClassName = Revit.SDK.Samples.HelloWorld.VB.Net.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Hello World (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display Hello World.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Highlight by Phase
+PushButton.AssemblyName = PhaseSample.dll
+PushButton.ClassName = Revit.SDK.Samples.PhaseSample.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Highlight by Phase
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Highlight by Phase.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Journaling
+PushButton.AssemblyName = Journaling.dll
+PushButton.ClassName = Revit.SDK.Samples.Journaling.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Journaling
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show how an external application can participate in the journaling mechanism.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Project Information
+PushButton.AssemblyName = ProjectInfo.dll
+PushButton.ClassName = Revit.SDK.Samples.ProjectInfo.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Project Information
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Project Information.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Project Unit
+PushButton.AssemblyName = ProjectUnit.dll
+PushButton.ClassName = Revit.SDK.Samples.ProjectUnit.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Project Unit
+PushButton.ItemType = PushButton
+PushButton.ToolTip = List all the units in current project and display format information for each.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Reference Plane
+PushButton.AssemblyName = ReferencePlane.dll
+PushButton.ClassName = Revit.SDK.Samples.ReferencePlane.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Reference Plane
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Library Paths
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Library Paths
+PushButton.ItemType = PushButton
+PushButton.ToolTip = List the Revit library paths.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Load Family
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Load Family
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Load a family.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Load Family Symbol
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Load Family Symbol
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Load a family symbol/type.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Selection
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Selection
+PushButton.ItemType = PushButton
+PushButton.ToolTip = show how to use selection set.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Show Element Data
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Show Element Data
+PushButton.ItemType = PushButton
+PushButton.ToolTip = show parameters in selected entities.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Rotate Framing Objects (CS)
+PushButton.AssemblyName = RotateFramingObjects.dll
+PushButton.ClassName = Revit.SDK.Samples.RotateFramingObjects.CS.RotateFramingObjects
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Rotate Framing Objects (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Rotate selected objects, such as beams, braces and columns.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Rotate Framing Objects (VB)
+PushButton.AssemblyName = RotateFramingObjects.dll
+PushButton.ClassName = Revit.SDK.Samples.RotateFramingObjects.VB.NET.RotateFramingObjects
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Rotate Framing Objects (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Rotate selected objects, such as beams, braces and columns.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Transaction
+PushButton.AssemblyName = TransactionControl.dll
+PushButton.ClassName = Revit.SDK.Samples.TransactionControl.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Transaction
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Demonstrate how to use transaction control.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Geometry
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = Geometry.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Geometry
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to read and analysis of element geometry including curves and reference planes.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = Analytical Viewer
+PushButton.AssemblyName = AnalyticalViewer.dll
+PushButton.ClassName = Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Analytical Viewer
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display analytical model of one or more selected elements.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Auto Join
+PushButton.AssemblyName = AutoJoin.dll
+PushButton.ClassName = Revit.SDK.Samples.AutoJoin.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Auto Join
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Automatically join geometry of combinable elements.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Compute the length and angle of edges
+PushButton.AssemblyName = PanelEdgeLengthAngle.dll
+PushButton.ClassName = Revit.SDK.Samples.PanelEdgeLengthAngle.CS.SetLengthAngleParams
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Compute the length and angle of edges
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Measure curtain panels on divided surfaces, store the length and angle data to parameters
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Element Viewer
+PushButton.AssemblyName = ElementViewer.dll
+PushButton.ClassName = Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Element Viewer
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display wireframe model of one or more selected elements.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Measure Panel Area
+PushButton.AssemblyName = MeasurePanelArea.dll
+PushButton.ClassName = Revit.SDK.Samples.MeasurePanelArea.CS.MeasurePanelArea
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Measure Panel Area
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Measure curtain panels on divided surfaces and identify panels beyond a user-specified range
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = New PathReinforcement
+PushButton.AssemblyName = NewPathReinforcement.dll
+PushButton.ClassName = Revit.SDK.Samples.NewPathReinforcement.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = New PathReinforcement
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create PathReinforcement on wall or slab.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RayTraceBounce
+PushButton.AssemblyName = RayTraceBounce.dll
+PushButton.ClassName = Revit.SDK.Samples.RayTraceBounce.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RayTraceBounce
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Find intersection between ray and face and create connecting lines.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Reference Plane
+PushButton.AssemblyName = ReferencePlane.dll
+PushButton.ClassName = Revit.SDK.Samples.ReferencePlane.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Reference Plane
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Allow user to create a reference plane at the left face of the wall or at the bottom of slab which is selected first.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Room Viewer
+PushButton.AssemblyName = RoomViewer.dll
+PushButton.ClassName = Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Room Viewer
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Wireframe viewer for the selected room.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Shaft Hole Puncher
+PushButton.AssemblyName = ShaftHolePuncher.dll
+PushButton.ClassName = Revit.SDK.Samples.ShaftHolePuncher.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Shaft Hole Puncher
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create shaft opening or create opening on wall, floor or beam.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = SlabShapeEditing
+PushButton.AssemblyName = SlabShapeEditing.dll
+PushButton.ClassName = Revit.SDK.Samples.SlabShapeEditing.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = SlabShapeEditing
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create vertex and crease on slab to edit it's shape.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Truss
+PushButton.AssemblyName = Truss.dll
+PushButton.ClassName = Revit.SDK.Samples.Truss.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Truss
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create truss, edit profile and truss member of new created truss.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Parameters
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = Parameters.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Parameters
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to creation, modification and read of element and shared parameters.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = About Revit
+PushButton.AssemblyName = VersionChecking.dll
+PushButton.ClassName = Revit.SDK.Samples.VersionChecking.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = About Revit
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show the Revit product name, version and build number.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = AddParameterToFamilies
+PushButton.AssemblyName = AutoParameter.dll
+PushButton.ClassName = Revit.SDK.Samples.AutoParameter.CS.AddParameterToFamilies
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = AddParameterToFamilies
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Sample to show how to automatically add a large set of parameters to multiple family files.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = AddParameterToFamily
+PushButton.AssemblyName = AutoParameter.dll
+PushButton.ClassName = Revit.SDK.Samples.AutoParameter.CS.AddParameterToFamily
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = AddParameterToFamily
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Sample to show how to automatically add a large set of parameters to a family.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Beam and slab parameter
+PushButton.AssemblyName = BeamAndSlabNewParameter.dll
+PushButton.ClassName = Revit.SDK.Samples.BeamAndSlabNewParameter.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Beam and slab parameter
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Add a new GUID parameter to beam and slab, and use the GUID value to find the right element.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Browse Parameter Bindings
+PushButton.AssemblyName = BrowseBindings.dll
+PushButton.ClassName = Revit.SDK.Samples.BrowseBindings.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Browse Parameter Bindings
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Browse all the shared parameters bindings used in this project.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create beams, columns and braces (CS)
+PushButton.AssemblyName = CreateBeamsColumnsBraces.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create beams, columns and braces (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create beams, columns and braces.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create beams, columns and braces (VB)
+PushButton.AssemblyName = CreateBeamsColumnsBraces.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateBeamsColumnsBraces.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create beams, columns and braces (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create beams, columns and braces.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create shared parameters
+PushButton.AssemblyName = InvisibleParam.dll
+PushButton.ClassName = Revit.SDK.Samples.InvisibleParam.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create shared parameters
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create a visible and an invisible parameter.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = CreateShared - Create Shared Parameter
+PushButton.AssemblyName = CreateShared.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateShared.VB.NET.Command1
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = CreateShared - Create Shared Parameter
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create a new shared parameter and assign it to wall categories.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = CreateShared - Set Shared Parameter
+PushButton.AssemblyName = CreateShared.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateShared.VB.NET.Command2
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = CreateShared - Set Shared Parameter
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Set the shared parameter.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Element Parameters
+PushButton.AssemblyName = ParameterUtils.dll
+PushButton.ClassName = Revit.SDK.Samples.ParameterUtils.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Element Parameters
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show the property information of selected element.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = FireRating - Apply Parameter
+PushButton.AssemblyName = FireRating.dll
+PushButton.ClassName = Revit.SDK.Samples.FireRating.VB.NET.ApplyParameter
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = FireRating - Apply Parameter
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Add a new shared parameter to Revit and apply it to all doors.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = FireRating - Export to Excel
+PushButton.AssemblyName = FireRating.dll
+PushButton.ClassName = Revit.SDK.Samples.FireRating.VB.NET.ExportFireRating
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = FireRating - Export to Excel
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Export fire rating values to an Excel file.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = FireRating - Import from Excel
+PushButton.AssemblyName = FireRating.dll
+PushButton.ClassName = Revit.SDK.Samples.FireRating.VB.NET.ImportFireRating
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = FireRating - Import from Excel
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Import fire rating values from the Excel file and apply them to doors.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Get Deck Properties
+PushButton.AssemblyName = DeckProperties.dll
+PushButton.ClassName = Revit.SDK.Samples.DeckProperties.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Get Deck Properties
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Get deck layer properties.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Move Linear
+PushButton.AssemblyName = MoveLinear.dll
+PushButton.ClassName = Revit.SDK.Samples.MoveLinear.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Move Linear
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Move a linear element, such as a structural beam.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Physical Properties
+PushButton.AssemblyName = PhysicalProp.dll
+PushButton.ClassName = Revit.SDK.Samples.PhysicalProp.CS.DumpMaterialPhysicalParameters
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Physical Properties
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Dump Material Physical Parameters.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RDB Link
+PushButton.AssemblyName = RDBLink.dll
+PushButton.ClassName = Revit.SDK.Samples.RDBLink.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RDB Link
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Export/Import Revit data to/from database.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Slab Properties (CS)
+PushButton.AssemblyName = SlabProperties.dll
+PushButton.ClassName = Revit.SDK.Samples.SlabProperties.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Slab Properties (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display slab properties.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Slab Properties (VB)
+PushButton.AssemblyName = SlabProperties.dll
+PushButton.ClassName = Revit.SDK.Samples.SlabProperties.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Slab Properties (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display slab properties.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Span Direction
+PushButton.AssemblyName = SpanDirection.dll
+PushButton.ClassName = Revit.SDK.Samples.SpanDirection.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Span Direction
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display slab properties (span direction and span direction symbols).
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Test Floor Thickness
+PushButton.AssemblyName = TestFloorThickness.dll
+PushButton.ClassName = Revit.SDK.Samples.TestFloorThickness.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Test Floor Thickness
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show how to retrieve and modify floor thickness.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Test Wall Thickness
+PushButton.AssemblyName = TestWallThickness.dll
+PushButton.ClassName = Revit.SDK.Samples.TestWallThickness.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Test Wall Thickness
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show how to retrieve and modify wall thickness.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Elements
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = Elements.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Elements
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to Revit basic elements such as walls, roofs, floors, levels, grids.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = Create levels
+PushButton.AssemblyName = LevelsProperty.dll
+PushButton.ClassName = Revit.SDK.Samples.LevelsProperty.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create levels
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show how to get all the levels in a document and how to create and delete a level and set its properties.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Curtain System
+PushButton.AssemblyName = CurtainSystem.dll
+PushButton.ClassName = Revit.SDK.Samples.CurtainSystem.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Curtain System
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create curtain systems and edit their curtain grids
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Curtain Wall and Grid
+PushButton.AssemblyName = CurtainWallGrid.dll
+PushButton.ClassName = Revit.SDK.Samples.CurtainWallGrid.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Curtain Wall and Grid
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create a curtain wall and edit its grid
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Display Options
+PushButton.AssemblyName = DesignOptionReader.dll
+PushButton.ClassName = Revit.SDK.Samples.DesignOptionReader.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Display Options
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display Options.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = ElementsBatchCreation
+PushButton.AssemblyName = ElementsBatchCreation.dll
+PushButton.ClassName = Revit.SDK.Samples.ElementsBatchCreation.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = ElementsBatchCreation
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create elements using batch creation methods.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Foundation Slab
+PushButton.AssemblyName = FoundationSlab.dll
+PushButton.ClassName = Revit.SDK.Samples.FoundationSlab.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Foundation Slab
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Convert regular floors at the base of the building to octagonal slabs.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Generate Floor
+PushButton.AssemblyName = GenerateFloor.dll
+PushButton.ClassName = Revit.SDK.Samples.GenerateFloor.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Generate Floor
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Generate a floor using a selection of walls that make a closed outline.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Grid Creation
+PushButton.AssemblyName = GridCreation.dll
+PushButton.ClassName = Revit.SDK.Samples.GridCreation.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Grid Creation
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show how to create grids.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Model Lines
+PushButton.AssemblyName = ModelLines.dll
+PushButton.ClassName = Revit.SDK.Samples.ModelLines.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Model Lines
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Report the number of each model line type and allow the user to specify the shape and sketch plane to create some new model lines.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Move Linear
+PushButton.AssemblyName = MoveLinear.dll
+PushButton.ClassName = Revit.SDK.Samples.MoveLinear.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Move Linear
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Move a linear element, such as a structural beam.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = New hosted sweep
+PushButton.AssemblyName = NewHostedSweep.dll
+PushButton.ClassName = Revit.SDK.Samples.NewHostedSweep.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = New hosted sweep
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create hosted sweep and modify created hosted sweep
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = New Openings
+PushButton.AssemblyName = NewOpenings.dll
+PushButton.ClassName = Revit.SDK.Samples.NewOpenings.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = New Openings
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create openings on the selected floor or wall.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = NewRoof
+PushButton.AssemblyName = NewRoof.dll
+PushButton.ClassName = Revit.SDK.Samples.NewRoof.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = NewRoof
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create or edit footprint roof and extrusion roof.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Openings
+PushButton.AssemblyName = Openings.dll
+PushButton.ClassName = Revit.SDK.Samples.Openings.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Openings
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display openings in project, and create model lines along its edges.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Shaft Hole Puncher
+PushButton.AssemblyName = ShaftHolePuncher.dll
+PushButton.ClassName = Revit.SDK.Samples.ShaftHolePuncher.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Shaft Hole Puncher
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create shaft opening or create opening on wall, floor or beam.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Shared Coordinate System
+PushButton.AssemblyName = SharedCoordinateSystem.dll
+PushButton.ClassName = Revit.SDK.Samples.SharedCoordinateSystem.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Shared Coordinate System
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display the locations and site information of the project.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Slab Properties (CS)
+PushButton.AssemblyName = SlabProperties.dll
+PushButton.ClassName = Revit.SDK.Samples.SlabProperties.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Slab Properties (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display slab properties.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Slab Properties (VB)
+PushButton.AssemblyName = SlabProperties.dll
+PushButton.ClassName = Revit.SDK.Samples.SlabProperties.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Slab Properties (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display slab properties.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = SlabShapeEditing
+PushButton.AssemblyName = SlabShapeEditing.dll
+PushButton.ClassName = Revit.SDK.Samples.SlabShapeEditing.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = SlabShapeEditing
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create vertex and crease on slab to edit it's shape.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Span Direction
+PushButton.AssemblyName = SpanDirection.dll
+PushButton.ClassName = Revit.SDK.Samples.SpanDirection.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Span Direction
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display slab properties (span direction and span direction symbols).
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Families
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = Families.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Families
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to family creation and family instances.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = AddParameterToFamilies
+PushButton.AssemblyName = AutoParameter.dll
+PushButton.ClassName = Revit.SDK.Samples.AutoParameter.CS.AddParameterToFamilies
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = AddParameterToFamilies
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Sample to show how to automatically add a large set of parameters to multiple family files.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = AddParameterToFamily
+PushButton.AssemblyName = AutoParameter.dll
+PushButton.ClassName = Revit.SDK.Samples.AutoParameter.CS.AddParameterToFamily
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = AddParameterToFamily
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Sample to show how to automatically add a large set of parameters to a family.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create Air Handler
+PushButton.AssemblyName = CreateAirHandler.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateAirHandler.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create Air Handler
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create one air handler and add connectors.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create Truss
+PushButton.AssemblyName = CreateTruss.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateTruss.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create Truss
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create truss in truss family document.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = DWGFamilyCreation
+PushButton.AssemblyName = DWGFamilyCreation.dll
+PushButton.ClassName = Revit.SDK.Samples.DWGFamilyCreation.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = DWGFamilyCreation
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Import dwg file into family document.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = GenericModelCreation
+PushButton.AssemblyName = GenericModelCreation.dll
+PushButton.ClassName = Revit.SDK.Samples.GenericModelCreation.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = GenericModelCreation
+PushButton.ItemType = PushButton
+PushButton.ToolTip = The sample show how to create Generic Model family at family document.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = In-Place Members
+PushButton.AssemblyName = InPlaceMembers.dll
+PushButton.ClassName = Revit.SDK.Samples.InPlaceMembers.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = In-Place Members
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display In-Place Member's Properties and AnalyticalModel.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Place FamilyInstance by face
+PushButton.AssemblyName = PlaceFamilyInstanceByFace.dll
+PushButton.ClassName = Revit.SDK.Samples.PlaceFamilyInstanceByFace.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Place FamilyInstance by face
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create family instance on face.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Library Paths
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Library Paths
+PushButton.ItemType = PushButton
+PushButton.ToolTip = List the Revit library paths.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Load Family
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Load Family
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Load a family.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Load Family Symbol
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Load Family Symbol
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Load a family symbol/type.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Selection
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Selection
+PushButton.ItemType = PushButton
+PushButton.ToolTip = show how to use selection set.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RevitCommands - Show Element Data
+PushButton.AssemblyName = RevitCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RevitCommands - Show Element Data
+PushButton.ItemType = PushButton
+PushButton.ToolTip = show parameters in selected entities.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Type Selector
+PushButton.AssemblyName = TypeSelector.dll
+PushButton.ClassName = Revit.SDK.Samples.TypeSelector.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Type Selector
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Retrieve all the types of the selected element, such as a wall and allow the selected element's type to be changed.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = TypeRegeneration
+PushButton.AssemblyName = TypeRegeneration.dll
+PushButton.ClassName = Revit.SDK.Samples.TypeRegeneration.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = TypeRegeneration
+PushButton.ItemType = PushButton
+PushButton.ToolTip = The command check every type regeneration without any error
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = ValidateParameters
+PushButton.AssemblyName = ValidateParameters.dll
+PushButton.ClassName = Revit.SDK.Samples.ValidateParameters.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = ValidateParameters
+PushButton.ItemType = PushButton
+PushButton.ToolTip = This command will validate if every type has valid values for certain parameter
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = WindowWizard
+PushButton.AssemblyName = WindowWizard.dll
+PushButton.ClassName = Revit.SDK.Samples.WindowWizard.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = WindowWizard
+PushButton.ItemType = PushButton
+PushButton.ToolTip = This command is to create window family via wizard
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Materials
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = Materials.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Materials
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to materials and units.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = Material Properties (CS)
+PushButton.AssemblyName = MaterialProperties.dll
+PushButton.ClassName = Revit.SDK.Samples.MaterialProperties.CS.MaterialProperties
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Material Properties (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Get the material physical properties of the selected beam, column or brace.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Material Properties (VB)
+PushButton.AssemblyName = MaterialProperties.dll
+PushButton.ClassName = Revit.SDK.Samples.MaterialProperties.VB.NET.MaterialProperties
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Material Properties (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Get the material physical properties of the selected beam, column or brace.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Materials
+PushButton.AssemblyName = Materials.dll
+PushButton.ClassName = Revit.SDK.Samples.Materials.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Materials
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Present all available materials in the current project, and allow changing the material of the selected structural element.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Physical Properties
+PushButton.AssemblyName = PhysicalProp.dll
+PushButton.ClassName = Revit.SDK.Samples.PhysicalProp.CS.DumpMaterialPhysicalParameters
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Physical Properties
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Dump Material Physical Parameters.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Annotation
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = Annotation.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Annotation
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to annotations such as notes, detail curves, dimensions and tags.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = Create Dimensions
+PushButton.AssemblyName = CreateDimensions.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateDimensions.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create Dimensions
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Add a dimension to a selected structural wall from its start to its end. Name the dimensions 'Dimension N' where N is an increasing number for each dimension.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Delete Dimensions
+PushButton.AssemblyName = DeleteDimensions.dll
+PushButton.ClassName = Revit.SDK.Samples.DeleteDimensions.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Delete Dimensions
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Delete all unpinned dimensions found in current selection.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Spot Dimension
+PushButton.AssemblyName = SpotDimension.dll
+PushButton.ClassName = Revit.SDK.Samples.SpotDimension.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Spot Dimension
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Get all spot dimensions in all views and show their properties.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Tag Rooms
+PushButton.AssemblyName = AutoTagRooms.dll
+PushButton.ClassName = Revit.SDK.Samples.AutoTagRooms.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Tag Rooms
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Auto tag all rooms in a specified level.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = TagBeam - Create Text
+PushButton.AssemblyName = TagBeam.dll
+PushButton.ClassName = Revit.SDK.Samples.TagBeam.CS.CreateText
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = TagBeam - Create Text
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create a new TextNote instance for selected Rebar.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = TagBeam - Tag Beam
+PushButton.AssemblyName = TagBeam.dll
+PushButton.ClassName = Revit.SDK.Samples.TagBeam.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = TagBeam - Tag Beam
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Tag beam's start and end.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = TagBeam - Tag Rebar
+PushButton.AssemblyName = TagBeam.dll
+PushButton.ClassName = Revit.SDK.Samples.TagBeam.CS.TagRebar
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = TagBeam - Tag Rebar
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Tag selected Rebar.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Views
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = Views.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Views
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to view creation and view properties.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = All Views
+PushButton.AssemblyName = AllViews.dll
+PushButton.ClassName = Revit.SDK.Samples.AllViews.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = All Views
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Generate a new sheet for user selected views
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create drafting view
+PushButton.AssemblyName = CreateViewSection.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateViewSection.CS.CreateDraftingView
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create drafting view
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create a new empty drafting view
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create view section
+PushButton.AssemblyName = CreateViewSection.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateViewSection.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create view section
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create a section view across the mid point of the selected wall, floor or beam
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Object Viewer
+PushButton.AssemblyName = ObjectViewer.dll
+PushButton.ClassName = Revit.SDK.Samples.ObjectViewer.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Object Viewer
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display the selected element in a preview window and generic properties in a grid.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Visibility Controller
+PushButton.AssemblyName = VisibilityControl.dll
+PushButton.ClassName = Revit.SDK.Samples.VisibilityControl.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Visibility Controller
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Control element visibility by category.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Rooms/Spaces
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = RoomsAndSpaces.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Rooms/Spaces
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to rooms, spaces and areas.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = Create zone and space
+PushButton.AssemblyName = AddSpaceAndZone.dll
+PushButton.ClassName = Revit.SDK.Samples.AddSpaceAndZone.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create zone and space
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create space/zone elements and edit zone in Revit MEP.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Customize door opening expression
+PushButton.AssemblyName = DoorSwing.dll
+PushButton.ClassName = Revit.SDK.Samples.DoorSwing.CS.InitializeCommand
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Customize door opening expression
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Customize door opening expression based on geometry and your country standard.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Roofs Rooms (CS)
+PushButton.AssemblyName = RoofsRooms.dll
+PushButton.ClassName = Revit.SDK.Samples.RoofsRooms.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Roofs Rooms (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Demonstrates how to check whether Room(Space) has bounding Roof.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Room Schedule
+PushButton.AssemblyName = RoomSchedule.dll
+PushButton.ClassName = Revit.SDK.Samples.RoomSchedule.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Room Schedule
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Room Schedule.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Rooms
+PushButton.AssemblyName = Rooms.dll
+PushButton.ClassName = Revit.SDK.Samples.Rooms.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Rooms
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Get and set room information (Number, Tag, Area).
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Update Door Geometries
+PushButton.AssemblyName = DoorSwing.dll
+PushButton.ClassName = Revit.SDK.Samples.DoorSwing.CS.UpdateGeometryCommand
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Update Door Geometries
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Update door geometry according to From/To room property.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Update Door Properties
+PushButton.AssemblyName = DoorSwing.dll
+PushButton.ClassName = Revit.SDK.Samples.DoorSwing.CS.UpdateParamsCommand
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Update Door Properties
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Update Door Properties according to geometries.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Data Exchange
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = DataExchange.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Data Exchange
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains samples related to import, export, or print of Revit documents.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = Arch Sample - Export to Excel
+PushButton.AssemblyName = ArchSample.dll
+PushButton.ClassName = Revit.SDK.Samples.ArchSample.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Arch Sample - Export to Excel
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Export data to Excel, sorted by categories
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = DWGFamilyCreation
+PushButton.AssemblyName = DWGFamilyCreation.dll
+PushButton.ClassName = Revit.SDK.Samples.DWGFamilyCreation.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = DWGFamilyCreation
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Import dwg file into family document.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Import and Export
+PushButton.AssemblyName = ImportExport.dll
+PushButton.ClassName = Revit.SDK.Samples.ImportExport.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Import and Export
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Export current project to dwg, dwf(x), gbxml or fbx files and import a dwg or image file into Revit.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Project Unit
+PushButton.AssemblyName = ProjectUnit.dll
+PushButton.ClassName = Revit.SDK.Samples.ProjectUnit.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Project Unit
+PushButton.ItemType = PushButton
+PushButton.ToolTip = List all the units in current project and display format information for each.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RDB Link
+PushButton.AssemblyName = RDBLink.dll
+PushButton.ClassName = Revit.SDK.Samples.RDBLink.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RDB Link
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Export/Import Revit data to/from database.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = View Printer
+PushButton.AssemblyName = ViewPrinter.dll
+PushButton.ClassName = Revit.SDK.Samples.ViewPrinter.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = View Printer
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Print user selected printable views.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = MEP
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = MEP.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = MEP
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains MEP-specific samples.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = AutoRoute
+PushButton.AssemblyName = AutoRoute.dll
+PushButton.ClassName = Revit.SDK.Samples.AutoRoute.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = AutoRoute
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Route ducts and fittings.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = AvoidObstruction
+PushButton.AssemblyName = AvoidObstruction.dll
+PushButton.ClassName = Revit.SDK.Samples.AvoidObstruction.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = AvoidObstruction
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Resolve the obstructions of pipe with pipe, pipe with beam and pipe with duct.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Power Circuit
+PushButton.AssemblyName = PowerCircuit.dll
+PushButton.ClassName = Revit.SDK.Samples.PowerCircuit.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Power Circuit
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Operate power circuits.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = TraverseSystem
+PushButton.AssemblyName = TraverseSystem.dll
+PushButton.ClassName = Revit.SDK.Samples.TraverseSystem.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = TraverseSystem
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Traverse a mechanical or piping system in the direction of flow
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Structure
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = Structure.ico
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Structure
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Contains structure-specific samples.
+
+
+----------------------PushButton-----------------------
+PushButton.Name = Analytical SupportData Information
+PushButton.AssemblyName = AnalyticalSupportData_Info.dll
+PushButton.ClassName = Revit.SDK.Samples.AnalyticalSupportData_Info.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Analytical SupportData Information
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Displays the element's support information
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = AreaReinCurve
+PushButton.AssemblyName = AreaReinCurve.dll
+PushButton.ClassName = Revit.SDK.Samples.AreaReinCurve.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = AreaReinCurve
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Turn off all layers but one. You get some parallel bars. Remove the hooks from one boundary curve so that the bars have hooks only at the other end.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = AreaReinParameters
+PushButton.AssemblyName = AreaReinParameters.dll
+PushButton.ClassName = Revit.SDK.Samples.AreaReinParameters.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = AreaReinParameters
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show parameters of selected AreaReinforcement and allow user to modify
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Bar Descriptions
+PushButton.AssemblyName = BarDescriptions.dll
+PushButton.ClassName = Revit.SDK.Samples.BarDescriptions.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Bar Descriptions
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Iterate through the BarDescriptions in the project and display the properties in a table. Allow the table to be saved to a CSV file.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Boundary Conditions
+PushButton.AssemblyName = BoundaryConditions.dll
+PushButton.ClassName = Revit.SDK.Samples.BoundaryConditions.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Boundary Conditions
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display the BoundaryConditions' parameters or create a new BoundaryConditions instance.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create Beam System
+PushButton.AssemblyName = CreateBeamSystem.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateBeamSystem.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create Beam System
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create beam system according to the profile made of selected beams.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create beams, columns and braces (CS)
+PushButton.AssemblyName = CreateBeamsColumnsBraces.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create beams, columns and braces (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create beams, columns and braces.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create beams, columns and braces (VB)
+PushButton.AssemblyName = CreateBeamsColumnsBraces.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateBeamsColumnsBraces.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create beams, columns and braces (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create beams, columns and braces.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create Complex Area Reinforcement
+PushButton.AssemblyName = CreateComplexAreaRein.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateComplexAreaRein.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create Complex Area Reinforcement
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create complex AreaReinforcement on selected slab.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create Curved Beam
+PushButton.AssemblyName = CurvedBeam.dll
+PushButton.ClassName = Revit.SDK.Samples.CurvedBeam.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create Curved Beam
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create Curved Beam.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create simple area reinforcement
+PushButton.AssemblyName = CreateSimpleAreaRein.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateSimpleAreaRein.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create simple area reinforcement
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create simple AreaReinforcement on selected wall or floor.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create wall in beam profile
+PushButton.AssemblyName = CreateWallinBeamProfile.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateWallinBeamProfile.CS.CreateWallinBeamProfile
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create wall in beam profile
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create a profiled wall using the outline generated by a selection of beams defining a vertical profile.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Create walls under beams
+PushButton.AssemblyName = CreateWallsUnderBeams.dll
+PushButton.ClassName = Revit.SDK.Samples.CreateWallsUnderBeams.CS.CreateWallsUnderBeams
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create walls under beams
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create simple rectangular walls along and under the path of selected beams.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Frame Builder
+PushButton.AssemblyName = FrameBuilder.dll
+PushButton.ClassName = Revit.SDK.Samples.FrameBuilder.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Frame Builder
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Add a new concrete column and beam size.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = In-Place Family with 3D Analytical Model (CS)
+PushButton.AssemblyName = InplaceFamilyAnalyticalModel3D.dll
+PushButton.ClassName = Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = In-Place Family with 3D Analytical Model (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Read an analytical model 3D object from an in-place family.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = In-Place Family with 3D Analytical Model (VB)
+PushButton.AssemblyName = InplaceFamilyAnalyticalModel3D.dll
+PushButton.ClassName = Revit.SDK.Samples.InplaceFamilyAnalyticalModel3D.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = In-Place Family with 3D Analytical Model (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Read an analytical model 3D object from an in-place family.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Loads
+PushButton.AssemblyName = Loads.dll
+PushButton.ClassName = Revit.SDK.Samples.Loads.CS.Loads
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Loads
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show how to use load case, nature, usage and combination.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = New PathReinforcement
+PushButton.AssemblyName = NewPathReinforcement.dll
+PushButton.ClassName = Revit.SDK.Samples.NewPathReinforcement.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = New PathReinforcement
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create PathReinforcement on wall or slab.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = NewRebar
+PushButton.AssemblyName = NewRebar.dll
+PushButton.ClassName = Revit.SDK.Samples.NewRebar.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = NewRebar
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create a rebar on the selected concrete rectangular column or beam.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = PathReinforcement
+PushButton.AssemblyName = PathReinforcement.dll
+PushButton.ClassName = Revit.SDK.Samples.PathReinforcement.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = PathReinforcement
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Display path reinforcement properties.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = RebarParameters
+PushButton.AssemblyName = AreaReinParameters.dll
+PushButton.ClassName = Revit.SDK.Samples.AreaReinParameters.CS.RebarParas
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = RebarParameters
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Show all parameters of selected Rebar
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Reinforcement
+PushButton.AssemblyName = Reinforcement.dll
+PushButton.ClassName = Revit.SDK.Samples.Reinforcement.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Reinforcement
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create bar set in a selected concrete element (beam or column) that does not have any reinforcement.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Rotate Framing Objects (CS)
+PushButton.AssemblyName = RotateFramingObjects.dll
+PushButton.ClassName = Revit.SDK.Samples.RotateFramingObjects.CS.RotateFramingObjects
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Rotate Framing Objects (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Rotate selected objects, such as beams, braces and columns.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Rotate Framing Objects (VB)
+PushButton.AssemblyName = RotateFramingObjects.dll
+PushButton.ClassName = Revit.SDK.Samples.RotateFramingObjects.VB.NET.RotateFramingObjects
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Rotate Framing Objects (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Rotate selected objects, such as beams, braces and columns.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = StructSample - Frame Wall
+PushButton.AssemblyName = StructSample.dll
+PushButton.ClassName = Revit.SDK.Samples.StructSample.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = StructSample - Frame Wall
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Add columns to the selected walls.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Structural Layer Function (CS)
+PushButton.AssemblyName = StructuralLayerFunction.dll
+PushButton.ClassName = Revit.SDK.Samples.StructuralLayerFunction.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Structural Layer Function (CS)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = For the selected floor, display the function of each structural layer from outside to inside in a dialog box.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Structural Layer Function (VB)
+PushButton.AssemblyName = StructuralLayerFunction.dll
+PushButton.ClassName = Revit.SDK.Samples.StructuralLayerFunction.VB.NET.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Structural Layer Function (VB)
+PushButton.ItemType = PushButton
+PushButton.ToolTip = For the selected floor, display the function of each structural layer from outside to inside in a dialog box.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Truss
+PushButton.AssemblyName = Truss.dll
+PushButton.ClassName = Revit.SDK.Samples.Truss.CS.Command
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Truss
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create truss, edit profile and truss member of new created truss.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = Create
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+pulldownButton.Image = null
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Create
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = 
+
+
+----------------------PushButton-----------------------
+PushButton.Name = New Cap Form
+PushButton.AssemblyName = NewForm.dll
+PushButton.ClassName = NewForm.MakeCapForm
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = New Cap Form
+PushButton.ItemType = PushButton
+PushButton.ToolTip = The sample show how to create cap form at family document.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = New Extrusion Form
+PushButton.AssemblyName = NewForm.dll
+PushButton.ClassName = NewForm.MakeExtrusionForm
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = New Extrusion Form
+PushButton.ItemType = PushButton
+PushButton.ToolTip = The sample show how to create extrusion form at family document.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = New Loft Form
+PushButton.AssemblyName = NewForm.dll
+PushButton.ClassName = NewForm.MakeLoftForm
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = New Loft Form
+PushButton.ItemType = PushButton
+PushButton.ToolTip = The sample show how to create loft form at family document.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = New Revolve Form
+PushButton.AssemblyName = NewForm.dll
+PushButton.ClassName = NewForm.MakeRevolveForm
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = New Revolve Form
+PushButton.ItemType = PushButton
+PushButton.ToolTip = The sample show how to create revolve form at family document.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = New Swept Blend Form
+PushButton.AssemblyName = NewForm.dll
+PushButton.ClassName = NewForm.MakeSweptBlendForm
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = New Swept Blend Form
+PushButton.ItemType = PushButton
+PushButton.ToolTip = The sample show how to create swept blend form at family document.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+------------------------------RibbonPanel End----------------------------------------
+
+
+--------------------------RibbonPanel------------------------------------------------
+Panel.Enabled = True
+Panel.IsReadOnly = False
+Panel.Name = Ribbon Sample
+Panel.Title = Ribbon Sample
+Panel.Visible = True
+
+
+----------------------PushButton-----------------------
+PushButton.Name = createWall
+PushButton.AssemblyName = AddInCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.Ribbon.CS.CreateWall
+PushButton.Enabled = True
+PushButton.LargeImage = CreateWallLarge.png
+PushButton.Image = CreateWall.png
+PushButton.IsReadOnly = False
+PushButton.ItemText = Create Wall
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Create a wall on level 1.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = deleteLastWall
+PushButton.AssemblyName = AddInCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.Ribbon.CS.DeleteLastWall
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = DeleteWall.png
+PushButton.IsReadOnly = False
+PushButton.ItemText = Delete Last Wall
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Delete the last wall created by the Create Wall tool.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = deleteWalls
+PushButton.AssemblyName = AddInCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.Ribbon.CS.DeleteWalls
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = DeleteWalls.png
+PushButton.IsReadOnly = False
+PushButton.ItemText = Delete Walls
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Delete all the walls created by the Create Wall tool.
+--------------------PushButton End----------------------
+
+--------------------PulldownButton----------------------
+PulldownButton.Name = moveWalls
+PulldownButton.Enabled = True
+PulldownButton.LargeImage = null
+PulldownButton.Image = MoveWalls.png
+PulldownButton.IsReadOnly = False
+PulldownButton.ItemText = Move Walls
+PulldownButton.ItemType = PulldownButton
+PulldownButton.ToolTip = Move all the walls in X or Y direction
+
+
+----------------------PushButton-----------------------
+PushButton.Name = X Direction
+PushButton.AssemblyName = AddInCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.Ribbon.CS.XMoveWalls
+PushButton.Enabled = True
+PushButton.LargeImage = MoveWallsXLarge.png
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = X Direction
+PushButton.ItemType = PushButton
+PushButton.ToolTip = move all walls 10 feet in X direction.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = Y Direction
+PushButton.AssemblyName = AddInCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.Ribbon.CS.YMoveWalls
+PushButton.Enabled = True
+PushButton.LargeImage = MoveWallsYLarge.png
+PushButton.Image = null
+PushButton.IsReadOnly = False
+PushButton.ItemText = Y Direction
+PushButton.ItemType = PushButton
+PushButton.ToolTip = move all walls 10 feet in Y direction.
+--------------------PushButton End----------------------
+
+--------------PulldownButton End---------------------------
+
+------------------------------RibbonPanel End----------------------------------------
+
+
+--------------------------RibbonPanel------------------------------------------------
+Panel.Enabled = True
+Panel.IsReadOnly = False
+Panel.Name = Add-in Panel Info
+Panel.Title = Add-in Panel Info
+Panel.Visible = True
+
+
+----------------------PushButton-----------------------
+PushButton.Name = outputlInfo
+PushButton.AssemblyName = AddInCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.Ribbon.CS.OutputPanelInfo
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = OutputAddInPanelInfo.png
+PushButton.IsReadOnly = False
+PushButton.ItemText = Ribbon Panel Info
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Output info of all the Add-In RibbonPanels.
+--------------------PushButton End----------------------
+
+----------------------PushButton-----------------------
+PushButton.Name = designGuidLines
+PushButton.AssemblyName = AddInCommands.dll
+PushButton.ClassName = Revit.SDK.Samples.Ribbon.CS.DesignGuidelines
+PushButton.Enabled = True
+PushButton.LargeImage = null
+PushButton.Image = DesignGuidelines.png
+PushButton.IsReadOnly = False
+PushButton.ItemText = Design Guidelines
+PushButton.ItemType = PushButton
+PushButton.ToolTip = Open the Ribbon design guidelines document.
+--------------------PushButton End----------------------
+
+------------------------------RibbonPanel End----------------------------------------
+
+

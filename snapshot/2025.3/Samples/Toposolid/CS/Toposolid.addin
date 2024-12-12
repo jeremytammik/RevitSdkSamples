@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+    <Assembly>Toposolid.dll</Assembly>
+    <ClientId>a3d1de80-caef-4ea2-b4e2-2266882661c5</ClientId>
+    <FullClassName>Revit.SDK.Samples.Toposolid.CS.ToposolidCreation</FullClassName>
+    <Text>Toposolid API Samples</Text>
+    <Description>API samples for toposolid related features.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+   
+</RevitAddIns>

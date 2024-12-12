@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>mep</name>
+    </assembly>
+    <members>
+        <member name="T:mep.CmdInspectElectricalForm2">
+            <summary>
+            Form displaying electrical system elements in a tree view
+            according to their connection hierarchy, and a list view
+            of electrical equipment providing immediate access to jump 
+            directly into the appropriate location in the tree view.
+            </summary>
+        </member>
+        <member name="M:mep.CmdInspectElectricalForm2.#ctor(mep.MapParentToChildren,Autodesk.Revit.ElementId,System.Collections.Generic.List{Autodesk.Revit.Element})">
+            <summary>
+            Constructor used to populate from a dictionary mapping element ids 
+            to a list of child elements.
+            </summary>
+        </member>
+        <member name="F:mep.CmdInspectElectricalForm2.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:mep.CmdInspectElectricalForm2.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:mep.CmdInspectElectricalForm2.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:mep.CmdAssignFlowToTerminals.NumericalComparer">
+            <summary>
+            Helper class for sorting the spaces by space number before listing them
+            </summary>
+        </member>
+        <member name="T:mep.CmdAbout">
+            <summary>
+            Command to display "About..." box.
+            </summary>
+        </member>
+        <member name="M:mep.CmdAbout.Execute(Autodesk.Revit.ExternalCommandData,System.String@,Autodesk.Revit.ElementSet)">
+            <summary>
+            Execute the command to display "About..." box.
+            </summary>
+        </member>
+        <member name="F:mep.AboutBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:mep.AboutBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:mep.AboutBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:mep.AboutBox.ExecutingAssembly">
+            <summary>
+            Short cut to get executing assembly
+            </summary>
+        </member>
+        <member name="M:mep.Util.RealString(System.Double)">
+            <summary>
+            Format a real number and return its string representation.
+            </summary>
+        </member>
+        <member name="M:mep.Util.ElementDescription(Autodesk.Revit.Element)">
+            <summary>
+            Return a description string for a given element.
+            </summary>
+        </member>
+        <member name="M:mep.Util.ElementDescriptionAndId(Autodesk.Revit.Element)">
+            <summary>
+            Return a description string including element id for a given element.
+            </summary>
+        </member>
+        <member name="M:mep.Util.BrowserDescription(Autodesk.Revit.Element)">
+            <summary>
+            Return an element description string for an electrical system browser leaf node.
+            </summary>
+        </member>
+        <member name="M:mep.Util.InfoMsg(System.String)">
+            <summary>
+            MessageBox wrapper for informational message.
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:mep.Util.ErrorMsg(System.String)">
+            <summary>
+            MessageBox wrapper for error message.
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:mep.Util.QuestionMsg(System.String)">
+            <summary>
+            MessageBox wrapper for question message.
+            </summary>
+        </member>
+        <member name="M:mep.Util.GetParameterFromName(Autodesk.Revit.Element,System.String)">
+            <summary>
+            Helper to get a specific parameter by name.
+            </summary>
+        </member>
+        <member name="M:mep.Util.TryMoveNext(Autodesk.Revit.ElementIterator@)">
+            <summary>
+            Call the ElementIterator MoveNext() method.
+            This is wrapped in a try/catch clause, because in Revit 2009 beta 1 and 3,
+            MoveNext() can throw an exception if run on an RME model inside RAC.
+            If this exception is caught, we abort the iteration ... we don't really 
+            have any other choice at the moment ... cf. 
+            SPR #147425 [ElementIterator returns null element, MoveNext() crashes].
+            </summary>
+            <param name="it">Iterator to move to next item</param>
+            <returns>The same as MoveNext(), or false if a NullReferenceException exception is thrown</returns>
+        </member>
+        <member name="M:mep.Util.GetTypeAndCategory(System.Collections.Generic.List{Autodesk.Revit.Element},System.Type,Autodesk.Revit.BuiltInCategory,Autodesk.Revit.Application)">
+            <summary>
+            Retrieve all elements of specified type and category from current document.
+            </summary>
+            <param name="a">Return list of elements matching selection filter criteria</param>
+            <param name="t">Type of elements to select</param>
+            <param name="bic">Built-in category of elements to select</param>
+            <param name="app">Revit application</param>
+        </member>
+        <member name="M:mep.Util.GetElectricalEquipment(System.Collections.Generic.List{Autodesk.Revit.Element},Autodesk.Revit.Application)">
+            <summary>
+            Retrieve all electrical equipment elements in the current active document,
+            identified by the built-in category OST_ElectricalEquipment.
+            </summary>
+        </member>
+        <member name="M:mep.Util.GetElectricalSystems(System.Collections.Generic.List{Autodesk.Revit.Element},Autodesk.Revit.Application)">
+            <summary>
+            Retrieve all electrical system elements in the current active document.
+            </summary>
+        </member>
+        <member name="M:mep.Util.GetElementsWithParameter(System.Collections.Generic.List{Autodesk.Revit.Element},Autodesk.Revit.Parameters.BuiltInParameter,Autodesk.Revit.Application)">
+            <summary>
+            Retrieve all elements in current active document having
+            a non-empty value for the given parameter.
+            </summary>
+        </member>
+        <member name="M:mep.Util.GetCircuitElements(System.Collections.Generic.List{Autodesk.Revit.Element},Autodesk.Revit.Application)">
+            <summary>
+            Retrieve all circuit elements in current active document, which we identify as all
+            elements having a non-empty RBS_ELEC_CIRCUIT_NUMBER or "Circuit Number" parameter.
+            </summary>
+        </member>
+        <member name="M:mep.Util.GetProjectInfoElem(Autodesk.Revit.Application)">
+            <summary>
+            Return the one and only project information element using Revit 2009 filtering
+            by searching for the "Project Information" category. Only one such element exists.
+            </summary>
+        </member>
+        <member name="M:mep.ProgressForm.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Set up progress bar form and immediately display it modelessly.
+            </summary>
+            <param name="caption">Form caption</param>
+            <param name="format">Progress message string</param>
+            <param name="max">Number of elements to process</param>
+        </member>
+        <member name="F:mep.ProgressForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:mep.ProgressForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:mep.ProgressForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:mep.Bip">
+            <summary>
+            Provide abbreviated access to the required BuiltInParameter enumeration values.
+            </summary>
+        </member>
+        <member name="F:mep.FamilySelector.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:mep.FamilySelector.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:mep.FamilySelector.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:mep.CmdPopulateCfmPerSf.SetCfmPerSf(Autodesk.Revit.Elements.Space)">
+            <summary>
+            Populate the value of the 'CFM per SF' variable on the given space.
+            Throws an exception if something goes wrong.
+            </summary>
+            <param name="space">Given space element</param>
+        </member>
+        <member name="M:mep.CmdUnhostedElements.DetermineUnhostedElements2008(Autodesk.Revit.Application)">
+            <summary>
+            Determine unhosted elements using 2008-style iteration.
+            </summary>
+        </member>
+        <member name="M:mep.CmdUnhostedElements.DetermineUnhostedElements2009(Autodesk.Revit.Application)">
+            <summary>
+            Determine unhosted elements using 2009-style filters.
+            </summary>
+        </member>
+        <member name="M:mep.CmdResetDemo.Execute(Autodesk.Revit.ExternalCommandData,System.String@,Autodesk.Revit.ElementSet)">
+            <summary>
+            Reset the Revit model to pre-demo conditions.
+            </summary>
+        </member>
+        <member name="M:mep.CmdInspectElectricalForm.#ctor(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.List{Autodesk.Revit.Element}},Autodesk.Revit.ElementId,System.Boolean)">
+            <summary>
+            Constructor used to populate from dictionary mapping key in the form
+            "panel name : circuit number" to a list of child elements.
+            </summary>
+        </member>
+        <member name="F:mep.CmdInspectElectricalForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:mep.CmdInspectElectricalForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:mep.CmdInspectElectricalForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:mep.CmdInspectElectricalForm.Loads">
+            <summary>
+            Store the loads associated with a panel or circuit:
+            
+            Provide at the circuit and panel level the total connected load by load type… 
+            RME provides four load types: HVAC, lighting, receptacle, and other.
+            The project browser only shows a total. If we could subdivide that 
+            information based on the category, that would be interesting.
+            
+            RBS_ELEC_PANEL_TOTALLOAD_HVAC_PARAM	HVAC Total Connected
+            RBS_ELEC_PANEL_TOTALLOAD_LIGHT_PARAM	Lighting Total Connected
+            RBS_ELEC_PANEL_TOTALLOAD_POWER_PARAM	Power Total Connected
+            RBS_ELEC_PANEL_TOTALLOAD_OTHER_PARAM	Other Total Connected
+            RBS_ELEC_PANEL_TOTALLOAD_PARAM	Total Connected
+            </summary>
+        </member>
+        <member name="T:mep.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:mep.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:mep.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="F:mep.Const.UseRevitApiFilters">
+            <summary>
+            Switch between Revit 2009 API using filters or old 2008-style element iteration.
+            </summary>
+        </member>
+        <member name="F:mep.Const.SecondsPerMinute">
+            <summary>
+            Unit conversion factor for calculating CFM/SF from CFS internal units
+            </summary>
+        </member>
+        <member name="F:mep.Const.RoundTerminalFlowTo">
+            <summary>
+            Round-up factor factor for rounding up terminal flow
+            </summary>
+        </member>
+        <member name="T:mep.App">
+            <summary>
+            External application demonstrating use of the generic Revit API for tasks in Revit MEP.
+            The following tasks are adressed:
+            - determine air terminals for each space.
+            - assign flow to the air terminals depending on the space's calculated supply air flow.
+            - change size of diffuser, i.e. type, based on flow.
+            - populate the value of the 'CFM per SF' variable on all spaces.
+            - enter two element id's and create a 3D sectioned box view of their extents.
+            - determine unhosted elements (cf. SPR 134098).
+            - reset demo to original state.
+            CFM = cubic feet per second, SF = square feet.
+            Revit internal units are feet and seconds, so we need to multiply by 60 to get CFM.).
+            </summary>
+        </member>
+        <member name="M:mep.App.AddMenu(Autodesk.Revit.ControlledApplication)">
+            <summary>
+            Add this external application's menu to the Revit menu.
+            </summary>
+        </member>
+        <member name="T:mep.CmdChangeSize">
+            <summary>
+            Command to change the size of diffusers based on their flow.
+            </summary>
+        </member>
+        <member name="M:mep.CmdChangeSize.Execute(Autodesk.Revit.ExternalCommandData,System.String@,Autodesk.Revit.ElementSet)">
+            <summary>
+            Execute the command to change the size of diffusers based on their flow.
+            </summary>
+        </member>
+        <member name="T:mep.CmdElectricalSystemBrowser">
+            <summary>
+            Inspect the electrical system.
+            
+            We reproduce the information provided in the Power section of the 
+            Revit MEP mechanical system browser and display it in a modeless
+            dialogue, i.e. it remains visible after the command has completed.
+            
+            The challenge here is to reproduce all the nodes, and the sorting order.
+            
+            The system browser has three levels of nodes, panel > system > element,
+            as well as one 'Unassigned' top level node, where 'Unassigned' replaces
+            the panel. System may also be circuit number.
+            
+            In this implementation, the nodes come from two sources:
+            
+            - electrical equipment, which always has a system name and is 
+              either unassigned or has a panel name
+            - circuit elements, which have a non-empty circuit number 
+              parameter value.
+            
+            The electrical equipment can be selected by filtering for its type, 
+            ElectricalEquipment, the circuit elements by filtering for 
+            BuiltInParameter.RBS_ELEC_CIRCUIT_NUMBER.
+            
+            Each of these two sets can be sorted into dictionaries using the keys
+            
+              panel:circuit number or 
+              panel:system name or 
+              Unassigned:system name
+            
+            and mapping these to the connected elements.
+            
+            These two dictionaries, merged together and appropriately sorted, 
+            represent the same information as the system browser.
+            
+            Important note: this whole sample was implemented while exploring 
+            how the systm is actually hooked up. Once that is fully understood,
+            a much more straightforward and efficient algorithm for traversing
+            and displaying it can be implemented. So please don't simply reuse 
+            this code, understand it first and then rewrite it.
+            
+            C:\Program Files\Revit Architecture 2009\Program\Revit.exe
+            C:\Program Files\Revit MEP 2009\Program\Revit.exe
+            C:\a\j\adn\train\revit\2009\src\rme\test\API_Sample_Dataset.rvt
+            C:\a\j\adn\train\revit\2009\src\rme\test\m_Defining_Circuit_Loads_Jeremy.rvt
+            C:\a\lib\revit\2009\SDK\Samples\PowerCircuit\PowerCircuit.rvt
+            </summary>
+        </member>
+        <member name="M:mep.CmdElectricalSystemBrowser.ListEquipment(Autodesk.Revit.Elements.FamilyInstance,System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.List{Autodesk.Revit.Element}})">
+            <summary>
+            List an electrical equipment instance and insert its data into 
+            the dictionary mapping panel + system name to equipment instances.
+            </summary>
+        </member>
+        <member name="T:mep.CmdElectricalSystemBrowser.NumericalComparer">
+            <summary>
+            Helper class for sorting strings numerically by number.
+            </summary>
+        </member>
+        <member name="T:mep.CmdElectricalSystemBrowser.PanelCircuitComparer">
+            <summary>
+            Helper class for sorting panel:circuit key strings 
+            alphabetically by panel name and numerically by circuit number.
+            </summary>
+        </member>
+        <member name="T:mep.CmdElectricalSystemBrowser.PanelSystemComparer">
+            <summary>
+            Helper class for sorting panel:system key strings, 
+            first alphabetically by panel name, second either
+            alphabetically by system name or numerically by 
+            circuit number.
+            </summary>
+        </member>
+        <member name="M:mep.CmdElectricalSystemBrowser.PanelSystemComparer.JtIsDigit(System.String)">
+            <summary>
+            Test whether all characters in given string are decimal digits.
+            </summary>
+        </member>
+        <member name="T:mep.MapParentToChildren">
+            <summary>
+            Map tree node parents to their children.
+            
+            The various possible combinations of parent and child 
+            element types include:
+            
+              null --> root panels
+              panel --> systems
+              system --> circuit elements, further panels, ...
+            
+            This map is populated as follows: as we iterate over all the relevant
+            electrical equipment, systems, and circuit objects. Each object
+            attempts to identify its parent, i.e. its destination parent node
+            in the tree and registers itself in the parent's list of elements.
+            We attempted to use the parent element itself as a key, but that 
+            does not work, so we reverted to using the parent element id as 
+            a key instead.
+            </summary>
+        </member>
+        <member name="M:mep.MapParentToChildren.Add(Autodesk.Revit.ElementId,Autodesk.Revit.Element)">
+            <summary>
+            Add a new parent, or a new child to a parent, ensuring that a new container 
+            list is created if this parent has not yet been registered.
+            </summary>
+            <param name="parentId">Parent element id</param>
+            <param name="child">New child element</param>
+        </member>
+        <member name="T:mep.MapParentToChildren2">
+            <summary>
+            I tried to use the Element instance itself as a key into this map,
+            but apparently the comparison does not always work correctly, so I 
+            had to revert to using the element id instead.
+            </summary>
+        </member>
+        <member name="T:mep.CmdElectricalHierarchy2">
+            <summary>
+            Inspect the electrical system.
+            
+            Analyse the electrical system connection graph and display it in 
+            tree view in a a modeless dialogue, i.e. it remains visible after 
+            the command has completed.
+            
+            More direct approach than the first implementation in CmdElectricalSystemBrowser.
+            In this implementation, we directly build the tree hierarchy in a 
+            MapParentToChildren dictionary from the element relationships.
+            Also, we use element ids wherever possible, instead of key 
+            strings of the form "panel name : circuit or system name".
+            </summary>
+        </member>
+    </members>
+</doc>

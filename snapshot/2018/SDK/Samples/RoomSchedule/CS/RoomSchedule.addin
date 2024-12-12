@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>RoomSchedule.dll</Assembly>
+    <ClientId>77f598f4-21b9-4308-986e-ac8cf992deff</ClientId>
+    <FullClassName>Revit.SDK.Samples.RoomSchedule.CrtlApplication</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>RoomSchedule.dll</Assembly>
+    <ClientId>f3a72c3f-8119-4658-a11b-1dd45569093c</ClientId>
+    <FullClassName>Revit.SDK.Samples.RoomSchedule.Command</FullClassName>
+    <Text>Room Schedule</Text>
+    <Description>Room Schedule.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

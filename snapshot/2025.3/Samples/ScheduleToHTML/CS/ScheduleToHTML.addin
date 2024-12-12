@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ScheduleToHTML</Name>
+    <Assembly>ScheduleToHTML.dll</Assembly>
+    <ClientId>e7ab024c-7447-47e4-b056-8afd9636e674</ClientId>
+    <FullClassName>Revit.SDK.Samples.ScheduleToHTML.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>WindowWizard.dll</Assembly>
+    <ClientId>c903482e-5d62-4323-8908-f6acfc66c767</ClientId>
+    <FullClassName>Revit.SDK.Samples.WindowWizard.CS.Command</FullClassName>
+    <Text>WindowWizard</Text>
+    <Description>This command is to create window family via wizard</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

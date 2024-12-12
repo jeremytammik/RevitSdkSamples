@@ -1,0 +1,126 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\deflang1033\deflangfe2052{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fswiss\fprq2\fcharset0 Verdana;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\ltrpar\nowidctlpar\b\f0\fs20 Application:\b0  ImportExport\line\b Revit Platform:\b0  All\line\b Revit Version:\b0  2010.0\line\b First Released For:\b0  2008.0\line\b Last Modified:\b0  11/24/2008\line\b Modified By:\b0  LL Autodesk\line\b Programming Language:\b0  C#\line\b Skill Level:\b0  High\line\b Category:\b0  Data Exchange\line\b Type:\b0  ExternalCommand\line\line\b Subject:\b0  Import and Export data.\line\b Summary:\b0  \line This sample shows how to export current project to dwg, dwf(x), gbxml, fbx, dgn or Civil3D files and how to import a dwg, image, GBXML or \lang1036 Inventor \lang1033 file into Revit.\i\f1\par
+\i0\par
+\b\f0 Classes:\b0  \par
+\pard\ltrpar\nowidctlpar\fi180\li180\lang1036 Autodesk.Revit.IExternalCommand\par
+Autodesk.Revit.Document\par
+Autodesk.Revit.Elements\par
+Autodesk.Revit.Enums\par
+Autodesk.Revit.GBXMLExportOptions\par
+Autodesk.Revit.DWF2DExportOptions\par
+Autodesk.Revit.DWF3DExportOptions\par
+Autodesk.Revit.DWFX2DExportOptions\par
+Autodesk.Revit.DWFX3DExportOptions\par
+Autodesk.Revit.DWGExportOptions\par
+Autodesk.Revit.FBXExportOptions\par
+Autodesk.Revit.BuildingSiteExportOptions\par
+Autodesk.Revit.DGNExportOptions\par
+Autodesk.Revit.DWGImportOptions\par
+Autodesk.Revit.ImageImportOptions\par
+Autodesk.Revit.GBXMLImportOptions\par
+Autodesk.Revit.InventorImportOptions\par
+\f1\par
+\pard\ltrpar\nowidctlpar\lang1033\b\f0 Project Files:\b0  \i\par
+\i0 Command.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 It contains the class Command which implements interface IExternalCommand\f1 .\par
+\pard\ltrpar\nowidctlpar\lang1033\par
+\f0 MainData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data\lang1033  class contains the external command data\f1 .\par
+\pard\ltrpar\nowidctlpar\par
+\f0 MainForm.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 It contains a dialog which lets user choose the operation and the format\f1 .\lang1033\par
+\pard\ltrpar\nowidctlpar\par
+\f0 ExportData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Base data class which stores the basic information for export\f1 .\par
+\pard\ltrpar\nowidctlpar\lang1033\par
+\f0 ExportDataWithViews.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Base data class which stores the basic information for exporting view related formats\f1 .\par
+\pard\ltrpar\nowidctlpar\lang1033\par
+\f0 ExportWithViewsForm.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 It contains a dialog which provides the options of common information for exporting view related formats\f1 .\par
+\pard\ltrpar\nowidctlpar\lang1033\par
+\f0 ExportDWGData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data\lang1033  class \lang1036 which stores the main information for exporting dwg format\f1 .\par
+\pard\ltrpar\nowidctlpar\lang1033\par
+\f0 ExportDWGOptionsData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data\lang1033  class \lang1036 which stores information of lower priority for exporting dwg format\f1 .\lang1033\par
+\pard\ltrpar\nowidctlpar\par
+\f0 ExportDWGOptionsForm.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 It contains a dialog which provides the options of lower priority information for exporting dwg format\f1 .\lang1033\par
+\pard\ltrpar\nowidctlpar\par
+\f0 Export2DDWFData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data class which stores the information for exporting 2D DWF(x) format\f1 .\par
+\pard\ltrpar\nowidctlpar\lang1033\par
+\f0 Export2DDWFOptionForm.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 It contains a dialog which provides the options of lower priority information for exporting 2D DWF(x) format\lang1033\f1\par
+\pard\ltrpar\nowidctlpar\par
+\f0 Export3DDWFData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data class which stores the information for exporting 3D DWF(x) format\f1 .\par
+\pard\ltrpar\nowidctlpar\par
+\lang1033\f0 ExportFBXData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data class which stores the information for exporting fbx format\f1 .\par
+\pard\ltrpar\nowidctlpar\par
+\lang1033\f0 ExportGBXMLData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data class which stores the information for exporting gbxml format\f1 .\par
+\par
+\pard\ltrpar\nowidctlpar\lang1033\f0 ExportDGNData.cs\par
+\pard\ltrpar\nowidctlpar\li360\lang1036 Data class which stores the information for exporting dgn format\f1 .\par
+\par
+\pard\ltrpar\nowidctlpar\lang1033\f0 ExportDGNOptionsForm.cs\par
+\pard\ltrpar\nowidctlpar\li360\lang1036 It contains a dialog which provides the options for exporting dgn format\f1 .\lang1033\par
+\par
+\pard\ltrpar\nowidctlpar\f0 ExportCivil3DData.cs\par
+\pard\ltrpar\nowidctlpar\li360\lang1036 Data class which stores the information for exporting Civil3D format\f1 .\par
+\par
+\pard\ltrpar\nowidctlpar\lang1033\f0 ExportCivil3DForm.cs\par
+\pard\ltrpar\nowidctlpar\li360\lang1036 It contains a dialog which provides the options for exporting Civil3D format\f1 .\lang1033\par
+\pard\ltrpar\nowidctlpar\lang1036\par
+\lang1033\f0 SelectViewsData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data\lang1033  class\lang1036  which stores information of views for export\f1 .\par
+\lang1033\par
+\pard\ltrpar\nowidctlpar\f0 SelectViewsForm.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 It contains a dialog which lets users choose views to export.\lang1033\f1\par
+\pard\ltrpar\nowidctlpar\par
+\f0 ImportData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Base data class which stores the basic information for import\f1 .\par
+\pard\ltrpar\nowidctlpar\par
+\lang1033\f0 ImportDWGData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data\lang1033  class\lang1036  which stores the information for importing dwg format\f1 .\lang1033\par
+\pard\ltrpar\nowidctlpar\par
+\f0 ImportDWGForm.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\f0 It \lang1036 contains a dialog which provides the options of importing dwg format\f1 .\lang1033\par
+\pard\ltrpar\nowidctlpar\par
+\f0 ImportImageData.cs\f1\par
+\pard\ltrpar\nowidctlpar\li360\lang1036\f0 Data\lang1033  class\lang1036  which stores the information for importing image format\f1 .\par
+\par
+\pard\ltrpar\nowidctlpar\lang1033\f0 ImportGBXMLData.cs\par
+\pard\ltrpar\nowidctlpar\li360\lang1036 Data\lang1033  class\lang1036  which stores the information for importing GBXML format\f1 .\lang1033\par
+\par
+\pard\ltrpar\nowidctlpar\f0 ImportInventorData.cs\par
+\pard\ltrpar\nowidctlpar\li360\lang1036 Data\lang1033  class\lang1036  which stores the information for importing Inventor format\f1 .\lang1033\par
+\par
+\pard\ltrpar\nowidctlpar\b\par
+\f0 Description:\b0  \f1\par
+\f0 This sample provides following functionalities.\f1\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360\f0 -\tab Let users specify the export options and export the current project to dwg, dwf(x), gbxml, fbx, \lang1036 dgn or Civil3D \lang1033 files\f1 .\par
+\f0 -\tab Let users specify the import options and import a dwg, image, \lang1036 GBXML or Inventor\lang1033  file into Revit. \f1\par
+\pard\ltrpar\nowidctlpar\f0\par
+\b Instructions:\cf1\b0  \f1\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360\cf0\f0 1.\tab Open Revit application and execute the command\f1 .\f0\par
+\pard\ltrpar\nowidctlpar\fi-360\li360 2.\tab To export, check the radio button \ldblquote export\rdblquote , select the format to export and click \ldblquote OK\rdblquote  button\f1 .\f0  The 3D DWF(x) and fbx formats will be available only when current view is a 3D view.\par
+\pard\ltrpar\nowidctlpar\fi-420\li780\f2 -\tab\f0 To export dwg, 2D DWF(x) or dgn formats\par
+\pard\ltrpar\nowidctlpar\li720 Specify the file name to export to, set the common options and click \ldblquote Option\'85\rdblquote  button to set the \lang1036 lower priority\lang1033  options, click \ldblquote Select\'85\rdblquote  button to select multi-views to export. Then click \ldblquote Save\rdblquote  button to perform export.\f1\par
+\pard\ltrpar\nowidctlpar\fi-420\li780\f2 -\tab\f0 To export 3D DWF(x), gbxml or fbx formats\par
+\pard\ltrpar\nowidctlpar\li720 Specify the file name to export to and click \ldblquote Save\rdblquote  button to perform export.\par
+[\b NOTE\b0 ]To export fbx format successfully, the Revit render appearance library must have been installed\f1 .\par
+\pard\ltrpar\nowidctlpar\fi-420\li780\f2 -\tab\f0 To export Civil3D formats\par
+\pard\ltrpar\nowidctlpar\li720 Specify the file name to export to, the 3D view for export, the view plan on which all the areas will be exported, the optional property line to be exported and the property line offset. Then click \ldblquote Save\rdblquote  button to perform export.\f1\par
+\pard\ltrpar\nowidctlpar   \f0\par
+\pard\ltrpar\nowidctlpar\fi-360\li360\tx360 3.\tab To import, check the radio button \ldblquote import\rdblquote  and click \ldblquote OK\rdblquote  button. The image format will be available only when current view is not 3D view.\par
+\pard\ltrpar\nowidctlpar\fi-420\li780\f2 -\tab\f0 To import dwg format\par
+\pard\ltrpar\nowidctlpar\li720 Specify the dwg file to import and set the other options. Then click \ldblquote Open\rdblquote  button to perform import\f1 .\par
+\pard\ltrpar\nowidctlpar\fi-420\li780\f2 -\tab\f0 To Import image,\lang1036  GBXML or Inventor\lang1033  format\par
+\pard\ltrpar\nowidctlpar\li720 Specify the file to import and click \ldblquote Open\rdblquote  button to perform import.\par
+}
+ 

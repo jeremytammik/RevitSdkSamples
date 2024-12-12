@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>GenerateFloor.dll</Assembly>
+    <ClientId>541f100c-ccb9-44fa-b3ae-407ec992dc2e</ClientId>
+    <FullClassName>Revit.SDK.Samples.GenerateFloor.CS.Command</FullClassName>
+    <Text>GenerateFloor</Text>
+    <Description>Generate a floor using a selection of walls that make a closed outline.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

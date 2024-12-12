@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+
+  <AddIn Type="Command">
+    <Assembly>C:\Revit SDK 2011\Family Labs\FamilyLabsCS\bin\Debug\FamilyLabsCS.dll</Assembly>
+    <AddInId>98F162FC-90E3-411e-BEC8-75D403BBF11A</AddInId>
+    <FullClassName>FamilyLabsCS.RvtCmd_FamilyCreateColumnRectangle</FullClassName>
+    <Text>Family API 1 CS - Create Rectangular Column</Text>
+    <Description>Family API lab 1 to create rectangular column</Description>
+    <VisibilityMode>NotVisibleInProject</VisibilityMode>
+    <AccessibilityClassName>Revit.Samples.SampleAccessibilityCheck </AccessibilityClassName>
+  </AddIn>
+
+
+  <AddIn Type="Command">
+    <Assembly>C:\Revit SDK 2011\Family Labs\FamilyLabsCS\bin\Debug\FamilyLabsCS.dll</Assembly>
+    <AddInId>FC5E150A-967B-4cc9-A7B0-3AA29C5DA9D9</AddInId>
+    <FullClassName>FamilyLabsCS.RvtCmd_FamilyCreateColumnLShape</FullClassName>
+    <Text>Family API 2 CS - Create L-Shape Column</Text>
+    <Description>Family API lab 2 to create L-shaped column</Description>
+    <VisibilityMode>NotVisibleInProject</VisibilityMode>
+    <AccessibilityClassName>Revit.Samples.SampleAccessibilityCheck </AccessibilityClassName>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Assembly>C:\Revit SDK 2011\Family Labs\FamilyLabsCS\bin\Debug\FamilyLabsCS.dll</Assembly>
+    <AddInId>74FEF9E3-81E2-44c8-B137-0C9EE48F68A4</AddInId>
+    <FullClassName>FamilyLabsCS.RvtCmd_FamilyCreateColumnFormulaMaterial</FullClassName>
+    <Text>Family API 3 CS - Define Formula and Material</Text>
+    <Description>Family API lab 3 to create L-shaped column with formula and material</Description>
+    <VisibilityMode>NotVisibleInProject</VisibilityMode>
+    <AccessibilityClassName>Revit.Samples.SampleAccessibilityCheck </AccessibilityClassName>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Assembly>C:\Revit SDK 2011\Family Labs\FamilyLabsCS\bin\Debug\FamilyLabsCS.dll</Assembly>
+    <AddInId>943A6BDC-2D64-4033-A3B0-E18BF3598006</AddInId>
+    <FullClassName>FamilyLabsCS.RvtCmd_FamilyCreateColumnVisibility</FullClassName>
+    <Text>Family API 4 CS - Define Visibility</Text>
+    <Description>Family API lab 4 to create L-shaped column with visibility settings</Description>
+    <VisibilityMode>NotVisibleInProject</VisibilityMode>
+    <AccessibilityClassName>Revit.Samples.SampleAccessibilityCheck </AccessibilityClassName>
+  </AddIn>
+
+</RevitAddIns>

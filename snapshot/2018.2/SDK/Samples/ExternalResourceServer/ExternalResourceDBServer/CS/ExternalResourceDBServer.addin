@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="DBApplication">
+    <Name>ExternalResourceDBServer</Name>
+    <Assembly>ExternalResourceDBServer.dll</Assembly>
+    <ClientId>90360a3e-3ecb-43a7-ae2b-6f8e5081594e</ClientId>
+    <FullClassName>Revit.SDK.Samples.ExternalResourceDBServer.CS.DBApplication</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

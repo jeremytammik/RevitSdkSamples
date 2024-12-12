@@ -1,0 +1,24 @@
+[ExternalCommands]
+ECCount=4
+
+ECName1=Family API 1 - Create Rectangular Column
+ECDescription1=Family API lab 1 to create rectangular column
+ECClassName1=FamilyLabsVB.RvtCmd_FamilyCreateColumnRectangle
+ECAssembly1=...\LabsVb.dll 
+
+ECName2=Family API 2 - Create L-Shape Column
+ECDescription2=Family API lab 2 to create L-shaped column
+ECClassName2=FamilyLabsVB.RvtCmd_FamilyCreateColumnLShape
+ECAssembly2=...\LabsVb.dll 
+
+ECName3=Family API 3 - Define Formula and Material
+ECDescription3=Family API lab 3 to create L-shaped column with formula and material
+ECClassName3=FamilyLabsVB.RvtCmd_FamilyCreateColumnFormulaMaterial
+ECAssembly3=...\LabsVb.dll  
+
+ECName4=Family API 4 - Define Visibility
+ECDescription4=Family API lab 4 to create L-shaped column with visibility settings
+ECClassName4=FamilyLabsVB.RvtCmd_FamilyCreateColumnVisibility
+ECAssembly4=...\LabsVb.dll  
+
+

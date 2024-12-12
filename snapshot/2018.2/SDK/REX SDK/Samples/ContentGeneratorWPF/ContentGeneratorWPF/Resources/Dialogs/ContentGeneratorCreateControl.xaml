@@ -1,0 +1,92 @@
+<rexf:REXExtensionControl x:Class="REX.ContentGeneratorWPF.Resources.Dialogs.ContentGeneratorCreateControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:rexf="clr-namespace:REX.Common;assembly=REX.Foundation.WPF"
+    xmlns:rexc="clr-namespace:REX.Controls.WPF;assembly=REX.Controls.WPF" 
+    xmlns:local="clr-namespace:REX.ContentGeneratorWPF.Resources.Dialogs"
+    Height="454" Width="638">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <RadioButton Name="radioParametric" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Content="Parametric" Checked="radioParametric_Checked" Unchecked="radioParametric_Checked" IsChecked="True"></RadioButton>
+        <RadioButton Name="radioDatabase" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Content="Database" Checked="radioParametric_Checked" Unchecked="radioParametric_Checked" IsChecked="False"></RadioButton>
+
+        <Border Margin="2"  Name="paramGroupBox" Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="Gray">
+            <Grid Name="gridParam">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <local:PolygonViewer x:Name="viewer" Grid.Column="0" Grid.Row="0"></local:PolygonViewer>
+                <Grid x:Name="gridParametric" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="1">
+                        <Grid Height="74">
+                            <TextBlock Margin="19,39.001,0,0" Name="textBlock1" Text="Type=" HorizontalAlignment="Left" Width="56" Height="16.12" VerticalAlignment="Top" />
+                            <rexc:REXImageComboBox Name="comboParametricTypes" Margin="81,2,6,0" Height="69.12" VerticalAlignment="Top" SelectionChanged="comboParametricTypes_SelectionChanged"></rexc:REXImageComboBox>
+                        </Grid>
+
+                        <Grid Height="28">
+                            <TextBlock HorizontalAlignment="Left" Margin="19,6,0,8" Name="textBlock2" Text="h=" Width="72" />
+                            <rexc:REXUnitEditBox Margin="0,3,6,1" Name="editBoxH" Power="1" UnitType="Dimensions_SectionDim" RememberCorrect="True" HorizontalAlignment="Right" Width="142" OnDisableAction="eHIDE_FOREGROUND" LostKeyboardFocus="editBoxH_LostKeyboardFocus" />
+                        </Grid>
+                        <Grid Height="28">
+                            <TextBlock Height="15" HorizontalAlignment="Left" Margin="19,6,0,8" Name="textBlock3" Text="b=" VerticalAlignment="Top" Width="72" />
+                            <rexc:REXUnitEditBox Margin="0,2,6,2" Name="editBoxB" Power="1" UnitType="Dimensions_SectionDim" RememberCorrect="True" HorizontalAlignment="Right" Width="142"  OnDisableAction="eHIDE_FOREGROUND" LostKeyboardFocus="editBoxH_LostKeyboardFocus"/>
+                        </Grid>
+                        <Grid Height="28">
+                            <rexc:REXIndexLabel Height="15" HorizontalAlignment="Left" Margin="19,6,0,8" Name="textBlock4" Text="t{f}=" VerticalAlignment="Bottom" Width="72" />
+                            <rexc:REXUnitEditBox Margin="0,2,6,2" Name="editBoxTW" Power="1" UnitType="Dimensions_SectionDim" RememberCorrect="True" HorizontalAlignment="Right" Width="142"  OnDisableAction="eHIDE_FOREGROUND" LostKeyboardFocus="editBoxH_LostKeyboardFocus"/>
+                        </Grid>
+                        <Grid Height="28">
+                            <rexc:REXIndexLabel HorizontalAlignment="Left" Margin="19,6,0,8" Name="textBlock5" Text="t{w}=" Width="72" Height="15" VerticalAlignment="Bottom" />
+                            <rexc:REXUnitEditBox Margin="0,2,6,2" Name="editBoxTF" Power="1" UnitType="Dimensions_SectionDim" RememberCorrect="True" HorizontalAlignment="Right" Width="142"  OnDisableAction="eHIDE_FOREGROUND" LostKeyboardFocus="editBoxH_LostKeyboardFocus"/>
+                        </Grid>
+                        <Grid Height="28">
+                            <rexc:REXIndexLabel Height="15" HorizontalAlignment="Left" Margin="19,6,0,8" Name="rEXIndexLabel1" Text="A=" VerticalAlignment="Bottom" Width="72" />
+                            <rexc:REXUnitEditBox Margin="0,2,6,2" Name="editBoxA" Power="2" RememberCorrect="True" UnitType="Dimensions_SectionDim" IsEnabled="False" BackgroundDisabledStandard="White" HorizontalAlignment="Right" Width="142" />
+                        </Grid>
+                        <Grid Height="28">
+                            <rexc:REXIndexLabel Height="15" HorizontalAlignment="Left" Margin="19,6,0,8"  Text="I{y}=" VerticalAlignment="Bottom" Width="72" />
+                            <rexc:REXUnitEditBox Margin="0,2,6,2" Name="editBoxIy" Power="4" RememberCorrect="True" UnitType="Dimensions_SectionDim" IsEnabled="False" BackgroundDisabledStandard="White" HorizontalAlignment="Right" Width="142" />
+                        </Grid>
+                        <Grid Height="28">
+                            <rexc:REXIndexLabel Height="15" HorizontalAlignment="Left" Margin="19,6,0,8"  Text="I{z}=" VerticalAlignment="Bottom" Width="72" />
+                            <rexc:REXUnitEditBox Margin="0,2,6,2" Name="editBoxIz" Power="4" RememberCorrect="True" UnitType="Dimensions_SectionDim" IsEnabled="False" BackgroundDisabledStandard="White" HorizontalAlignment="Right" Width="142" />
+                        </Grid>
+
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Margin="2"  Name="dbGroupBox" Grid.Column="1" Grid.Row="1" BorderThickness="1" BorderBrush="Gray">
+            <Grid Name="gridDB" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="buttonDBSelect" Content="Select" Width="100" Height="24" VerticalAlignment="Center" HorizontalAlignment="Left" Click="buttonDBSelect_Click"></Button>
+                <TextBlock Name="textDBSelected" Margin="103,1,1,1" VerticalAlignment="Center" Height="20"></TextBlock>
+                <local:PropertiesControl x:Name="databasesProperties" Grid.Column="0" Grid.Row="1"></local:PropertiesControl>
+            </Grid>
+        </Border>
+
+    </Grid>
+</rexf:REXExtensionControl>

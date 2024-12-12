@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>TypeRegeneration.dll</Assembly>
+    <ClientId>74177539-f9ef-4d2b-83c0-2403640699a5</ClientId>
+    <FullClassName>Revit.SDK.Samples.TypeRegeneration.CS.Command</FullClassName>
+    <Text>TypeRegeneration</Text>
+    <Description>The command check every type regeneration without any error</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

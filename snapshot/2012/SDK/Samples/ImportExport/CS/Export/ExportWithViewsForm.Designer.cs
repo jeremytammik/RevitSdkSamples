@@ -1,0 +1,342 @@
+//
+// (C) Copyright 2003-2011 by Autodesk, Inc.
+//
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appears in all copies and
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS.
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. AUTODESK, INC.
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+//
+// Use, duplication, or disclosure by the U.S. Government is subject to
+// restrictions set forth in FAR 52.227-19 (Commercial Computer
+// Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+// (Rights in Technical Data and Computer Software), as applicable.
+// 
+
+namespace Revit.SDK.Samples.ImportExport.CS
+{
+    /// <summary>
+    /// It contains a dialog which provides the options of common information for export
+    /// </summary>
+    partial class ExportWithViewsForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.textBoxSaveAs = new System.Windows.Forms.TextBox();
+            this.labelSaveAs = new System.Windows.Forms.Label();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonOptions = new System.Windows.Forms.Button();
+            this.buttonBrowser = new System.Windows.Forms.Button();
+            this.groupBoxRange = new System.Windows.Forms.GroupBox();
+            this.buttonSelectViews = new System.Windows.Forms.Button();
+            this.radioButtonSelectView = new System.Windows.Forms.RadioButton();
+            this.radioButtonCurrentView = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.groupBoxRange.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // textBoxSaveAs
+            // 
+            this.textBoxSaveAs.Location = new System.Drawing.Point(67, 19);
+            this.textBoxSaveAs.Name = "textBoxSaveAs";
+            this.textBoxSaveAs.Size = new System.Drawing.Size(308, 20);
+            this.textBoxSaveAs.TabIndex = 1;
+            // 
+            // labelSaveAs
+            // 
+            this.labelSaveAs.AutoSize = true;
+            this.labelSaveAs.Location = new System.Drawing.Point(14, 23);
+            this.labelSaveAs.Name = "labelSaveAs";
+            this.labelSaveAs.Size = new System.Drawing.Size(50, 13);
+            this.labelSaveAs.TabIndex = 1;
+            this.labelSaveAs.Text = "Save As:";
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(235, 265);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 21);
+            this.buttonSave.TabIndex = 0;
+            this.buttonSave.Text = "&Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Location = new System.Drawing.Point(320, 265);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 21);
+            this.buttonCancel.TabIndex = 6;
+            this.buttonCancel.Text = "&Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonOptions
+            // 
+            this.buttonOptions.Location = new System.Drawing.Point(150, 265);
+            this.buttonOptions.Name = "buttonOptions";
+            this.buttonOptions.Size = new System.Drawing.Size(75, 21);
+            this.buttonOptions.TabIndex = 5;
+            this.buttonOptions.Text = "&Options...";
+            this.buttonOptions.UseVisualStyleBackColor = true;
+            this.buttonOptions.Click += new System.EventHandler(this.buttonOptions_Click);
+            // 
+            // buttonBrowser
+            // 
+            this.buttonBrowser.Location = new System.Drawing.Point(375, 19);
+            this.buttonBrowser.Name = "buttonBrowser";
+            this.buttonBrowser.Size = new System.Drawing.Size(24, 20);
+            this.buttonBrowser.TabIndex = 2;
+            this.buttonBrowser.Text = "...";
+            this.buttonBrowser.UseVisualStyleBackColor = true;
+            this.buttonBrowser.Click += new System.EventHandler(this.buttonBrowser_Click);
+            // 
+            // groupBoxRange
+            // 
+            this.groupBoxRange.Controls.Add(this.buttonSelectViews);
+            this.groupBoxRange.Controls.Add(this.radioButtonSelectView);
+            this.groupBoxRange.Controls.Add(this.radioButtonCurrentView);
+            this.groupBoxRange.Location = new System.Drawing.Point(17, 58);
+            this.groupBoxRange.Name = "groupBoxRange";
+            this.groupBoxRange.Size = new System.Drawing.Size(378, 73);
+            this.groupBoxRange.TabIndex = 4;
+            this.groupBoxRange.TabStop = false;
+            this.groupBoxRange.Text = "Range";
+            // 
+            // buttonSelectViews
+            // 
+            this.buttonSelectViews.Enabled = false;
+            this.buttonSelectViews.Location = new System.Drawing.Point(145, 42);
+            this.buttonSelectViews.Name = "buttonSelectViews";
+            this.buttonSelectViews.Size = new System.Drawing.Size(27, 21);
+            this.buttonSelectViews.TabIndex = 2;
+            this.buttonSelectViews.Text = "...";
+            this.buttonSelectViews.UseVisualStyleBackColor = true;
+            this.buttonSelectViews.Click += new System.EventHandler(this.buttonSelectViews_Click);
+            // 
+            // radioButtonSelectView
+            // 
+            this.radioButtonSelectView.AutoSize = true;
+            this.radioButtonSelectView.Checked = true;
+            this.radioButtonSelectView.Location = new System.Drawing.Point(9, 44);
+            this.radioButtonSelectView.Name = "radioButtonSelectView";
+            this.radioButtonSelectView.Size = new System.Drawing.Size(133, 17);
+            this.radioButtonSelectView.TabIndex = 1;
+            this.radioButtonSelectView.TabStop = true;
+            this.radioButtonSelectView.Text = "Selected views/sheets";
+            this.radioButtonSelectView.UseVisualStyleBackColor = true;
+            this.radioButtonSelectView.CheckedChanged += new System.EventHandler(this.radioButtonSelectView_CheckedChanged);
+            // 
+            // radioButtonCurrentView
+            // 
+            this.radioButtonCurrentView.AutoSize = true;
+            this.radioButtonCurrentView.Location = new System.Drawing.Point(9, 20);
+            this.radioButtonCurrentView.Name = "radioButtonCurrentView";
+            this.radioButtonCurrentView.Size = new System.Drawing.Size(84, 17);
+            this.radioButtonCurrentView.TabIndex = 0;
+            this.radioButtonCurrentView.Text = "Current view";
+            this.radioButtonCurrentView.UseVisualStyleBackColor = true;
+            this.radioButtonCurrentView.CheckedChanged += new System.EventHandler(this.radioButtonCurrentView_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(131, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Note: Filename doesn\'t matter.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 164);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Company:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 190);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Discipline:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 216);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Version:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 138);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Project:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(78, 161);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(318, 20);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "CMP";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(77, 187);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(318, 20);
+            this.textBox2.TabIndex = 9;
+            this.textBox2.Text = "DSP";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(77, 213);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(318, 20);
+            this.textBox3.TabIndex = 9;
+            this.textBox3.Text = "VER";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(78, 135);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(318, 20);
+            this.textBox4.TabIndex = 9;
+            this.textBox4.Text = "PRJ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 242);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Date:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(77, 239);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(318, 20);
+            this.textBox5.TabIndex = 9;
+            this.textBox5.Text = "YYMMDD";
+            // 
+            // ExportWithViewsForm
+            // 
+            this.AcceptButton = this.buttonSave;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
+            this.ClientSize = new System.Drawing.Size(411, 295);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBoxRange);
+            this.Controls.Add(this.buttonOptions);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonBrowser);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.labelSaveAs);
+            this.Controls.Add(this.textBoxSaveAs);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ExportWithViewsForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Export";
+            this.Load += new System.EventHandler(this.ExportWithViewsForm_Load);
+            this.groupBoxRange.ResumeLayout(false);
+            this.groupBoxRange.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox textBoxSaveAs;
+        private System.Windows.Forms.Label labelSaveAs;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonOptions;
+        private System.Windows.Forms.Button buttonBrowser;
+        private System.Windows.Forms.GroupBox groupBoxRange;
+        private System.Windows.Forms.Button buttonSelectViews;
+        private System.Windows.Forms.RadioButton radioButtonSelectView;
+        private System.Windows.Forms.RadioButton radioButtonCurrentView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox5;
+    }
+}

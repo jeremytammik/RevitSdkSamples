@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>BrowseBindings.dll</Assembly>
+    <ClientId>eed1d1cf-ab6b-4e81-aeee-4ea25931aa45</ClientId>
+    <FullClassName>Revit.SDK.Samples.BrowseBindings.VB.NET.Command</FullClassName>
+    <Text>Browse Parameter Bindings</Text>
+    <Description>Browse all the shared parameters bindings used in this project.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

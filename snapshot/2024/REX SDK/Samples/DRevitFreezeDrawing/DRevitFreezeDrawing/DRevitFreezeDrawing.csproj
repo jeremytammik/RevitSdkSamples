@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82D1D741-1B5B-4F49-BBAF-E7C27EBF8DEF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>REX.DRevitFreezeDrawing</RootNamespace>
+    <AssemblyName>DRevitFreezeDrawing</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;REVIT;DRevitFreezeDrawing</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;REVIT;DFreezeDrawing</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autodesk.Common.AResourcesControl, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=ff3304d4f320ee59, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>Autodesk.Common.AResourcesControl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Autodesk.REX.Framework, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=51e16e3b26b42eda, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <HintPath>Autodesk.REX.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="REX.Controls">
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Engine\REX.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="REX.Controls.Forms, Version=2024.0.0.0, Culture=neutral, PublicKeyToken=2b04aac23d4a9e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Engine\REX.Controls.Forms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="REX.Foundation">
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.Foundation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="REX.Foundation.Forms">
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.Foundation.Forms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="REX.Geometry">
+      <HintPath>C:\Program Files\Common Files\Autodesk Shared\Extensions 2024\Framework\Foundation\REX.Geometry.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main\Application.cs" />
+    <Compile Include="Main\Data.cs" />
+    <Compile Include="Main\DirectAccess.cs" />
+    <Compile Include="Main\Foundation.cs" />
+    <Compile Include="Main\REXExpImpMng.cs" />
+    <Compile Include="Main\REXRevitData.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Dialogs\DialogExportOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\DialogExportOptions.Designer.cs">
+      <DependentUpon>DialogExportOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Dialogs\DialogMessageExists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\DialogMessageExists.Designer.cs">
+      <DependentUpon>DialogMessageExists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Dialogs\DialogOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\DialogOptions.Designer.cs">
+      <DependentUpon>DialogOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Dialogs\DialogViewSel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\DialogViewSel.Designer.cs">
+      <DependentUpon>DialogViewSel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Dialogs\FreezeMainCtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\FreezeMainCtr.Designer.cs">
+      <DependentUpon>FreezeMainCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Dialogs\MainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\MainControl.Designer.cs">
+      <DependentUpon>MainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Extension.cs" />
+    <Compile Include="Resources\Dialogs\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Dialogs\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Strings\Texts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Texts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Results.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\DialogExportOptions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogExportOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\DialogMessageExists.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogMessageExists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\DialogOptions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\DialogViewSel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogViewSel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\FreezeMainCtr.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FreezeMainCtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\MainControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dialogs\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings\Texts.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Texts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOOLBAR_help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOOLBAR_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\TOOLBAR_calculate.png" />
+    <Content Include="Resources\TOOLBAR_close.png" />
+    <Content Include="Resources\TOOLBAR_open.png" />
+    <Content Include="Resources\TOOLBAR_print.png" />
+    <Content Include="Resources\TOOLBAR_save.png" />
+    <Content Include="Resources\TOOLBAR_save_as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Additional\buildevents.bat" />
+    <Content Include="Additional\DRevitFreezeDrawing.addin">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\settings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configuration\DRevitFreezeDrawing.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configuration\DRevitFreezeDrawing_small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configuration\exportlayers-dwg-AIA.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configuration\exportlayers-dwg-BS1192.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configuration\exportlayers-dwg-CP83.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configuration\exportlayers-dwg-ISO13567.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en-US\DRevitFreezeDrawing.Resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\DRevitFreezeDrawing_revit.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en-US\Help\contents.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\contents-data.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\favorites.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\indexes.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\indexes-data.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\left_tab.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\search.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\indexes-data.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en-US\Help\contexthelp\DREVITFREEZEDRAWING.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\contexthelp\IDD_EXPORT_OPTIONS.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\contexthelp\IDD_LICENCE.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\contexthelp\IDD_MAIN_DIALOG_BOX_FOR_FREEZE_DRAWINGS.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\contexthelp\IDD_OPTIONS.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\contexthelp\IDD_SAVE_FREEZE_DRAWINGS.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\contexthelp\IDD_SELECTED_VIEWS_SHEETS.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en-US\Help\files\GUID-0413D00C-339F-41DD-9B6B-A52D2ED4C0E8.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\files\GUID-74862A86-8591-48E1-9E3C-A54816B9456F.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\files\GUID-7547A20F-5CE1-4824-9B62-C61034C2190B.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\files\GUID-7D98DB2E-5D91-49B3-B364-0740C1B0B08C.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\files\GUID-7DC56634-17C4-4171-BF0A-D98425162DE7.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\files\GUID-BF60DBE9-5DE7-42D2-B287-7C19DABD1E5A.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\files\GUID-F40FC4B3-4F97-43F1-9692-474A65D02FFB.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\files\GUID-F8FA3E3C-A759-47D8-AE2F-6F17B47F2A9F.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\files\topichead_0.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en-US\Help\html\ac.cmtdialog.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en-US\Help\images\A.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.chickletred.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.chickletred2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.cmdaccess_blank.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.down.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.hlp_page.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.keyboard.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.mainback.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.menuaro.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.mouse.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.pg_end.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.pg_next.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.pg_prev.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.pg_up.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.right.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.tabs_c.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.tabs_not.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.tabs_p.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.tabs_r.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\ac.tabs_x.GIF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\add_favorite.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\A-M.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\A-S.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\book-closed.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\book-opened.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\forward.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\head_graphic.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\home.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\loading.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\M.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\minus.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\nav-home-xp.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\nav-next-xp.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\nav-null-xp.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\nav-prev-xp.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\nav-print.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\nav-share.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\nav-up-xp.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\next.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\page.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\plus.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\previous.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\Revit.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\S.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\show_in_contents.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\S-M.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-bkg.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-bkg2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-bkg-o.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-bkg-x.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-bkg-xn.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-left.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-left-o.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-left-x.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-right.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-right-o.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab-right-x.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\void.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\GUID-644CE80E-2EF9-4778-B340-5D6AF13A4851-low.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\GUID-7D66A050-F3AC-4F40-A90B-BB8C7BE024E5-low.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\GUID-D2024833-2D44-4377-BC03-0E6EE7944808-low.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\GUID-EC47AD73-1B0C-4B0D-915B-ED16B6EE8150-low.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\GUID-FCEBD8FA-FCA3-46E0-8943-500654C0EF4A-low.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab.active.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\tab.inactive.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\dlg_launcher.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\panel_expander.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\task-arrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\task-button-bottom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\task-button-middle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\task-button-top.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\images\task-link.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en-US\Help\scripts\adsk.common.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\adsk.favorites.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\adsk.highlight.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\adsk.strings.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\common-processing.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\cookies-worker.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\index-processing.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-apollo.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-clj.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-css.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-go.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-hs.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-lisp.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-lua.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-ml.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-n.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-proto.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-scala.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-sql.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-tex.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-vb.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-vhdl.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-wiki.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-xq.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\lang-yaml.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\prettify.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\root.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\search-data.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\search-entries0.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\search-processing.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\search-results-provider.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\toc-processing.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\scripts\toc-treedata.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="en-US\Help\style\adsk.cpm.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\style\adsk.panels.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="en-US\Help\style\prettify.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+if not exist "q:\exe.$(ConfigurationName)" goto InstalledSDK
+
+md "q:\exe.$(ConfigurationName)"
+md "q:\exe.$(ConfigurationName)\Modules"
+md "q:\exe.$(ConfigurationName)\Modules\$(ProjectName)"
+
+del "q:\exe.$(ConfigurationName)\Modules\$(ProjectName)\$(TargetFileName)"
+
+copy "$(TargetPath)" "q:\exe.$(ConfigurationName)\Modules\$(ProjectName)\$(TargetFileName)"
+copy "$(TargetDir)Interop.*.dll" "q:\exe.$(ConfigurationName)\Modules\$(ProjectName)\"
+
+goto END
+
+:InstalledSDK
+
+:END
+
+if exist "$(ProjectDir)Additional\buildevents.bat" call "$(ProjectDir)Additional\buildevents.bat"
+
+xcopy "$(ProjectDir)Additional\*.addin" "%ProgramData%\Autodesk\Revit\Addins\2024" /S /R /K /V /I /F /C /Y    
+
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

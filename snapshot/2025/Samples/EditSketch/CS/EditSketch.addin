@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+    <Assembly>EditSketch.dll</Assembly>
+    <ClientId>f0bf6172-92ad-4464-93a0-be58b704c5a7</ClientId>
+    <FullClassName>Revit.SDK.Samples.EditSketch.CS.Command</FullClassName>
+    <Text>SketchEditScope</Text>
+    <Description>An example of how to edit curves in sketches and add dimensions to the sketch using SketchEditScope. </Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+   
+</RevitAddIns>

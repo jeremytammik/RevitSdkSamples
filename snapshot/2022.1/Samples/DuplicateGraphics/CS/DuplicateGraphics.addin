@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>DuplicateGraphics.dll</Assembly>
+    <ClientId>21b56ded-52b6-4136-8813-30487f3133a9</ClientId>
+    <FullClassName>Revit.SDK.Samples.DuplicateGraphics.CS.CommandDuplicateGraphics</FullClassName>
+    <Text>Display graphics using DirectContext3D</Text>
+    <Description>Select elements whose graphics should be redrawn using DirectContext3D.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DuplicateGraphics.dll</Assembly>
+    <ClientId>16995844-d7a3-41cf-829a-7c20b269327e</ClientId>
+    <FullClassName>Revit.SDK.Samples.DuplicateGraphics.CS.CommandClearExternalGraphics</FullClassName>
+    <Text>Clear DirectContext3D graphics</Text>
+    <Description>Remove external graphics.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>DuplicateGraphics</Name>
+    <Assembly>DuplicateGraphics.dll</Assembly>
+    <ClientId>ccca05df-4309-4bb9-8cf7-cd1d0f98dc96</ClientId>
+    <FullClassName>Revit.SDK.Samples.DuplicateGraphics.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

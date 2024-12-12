@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+      <Text>Find Columns Embedded In Walls</Text>
+      <Assembly>FindColumns.dll</Assembly>
+      <ClientId>50408829-F922-4a3a-98AA-844FDFEE2C7B</ClientId>
+      <FullClassName>Revit.SDK.Samples.FindColumns.CS.Command</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+   </AddIn>
+</RevitAddIns>

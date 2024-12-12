@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>P:\Serialization\Serialization\bin\Release\Serialization.dll</Assembly>
+    <ClientId>35964c5b-6b27-4ca8-8da6-d0898f158a34</ClientId>
+    <FullClassName>REX.Serialization.DirectRevitAccess</FullClassName>
+    <Text>Serialization</Text>
+    <Description>Serialization</Description>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

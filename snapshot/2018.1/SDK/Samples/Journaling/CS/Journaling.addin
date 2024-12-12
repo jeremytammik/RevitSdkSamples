@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Journaling.dll</Assembly>
+    <ClientId>12dae19d-edec-423c-bf70-293db65e04fd</ClientId>
+    <FullClassName>Revit.SDK.Samples.Journaling.CS.Command</FullClassName>
+    <Text>Journaling</Text>
+    <Description>Show how an external application can participate in the journaling mechanism.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

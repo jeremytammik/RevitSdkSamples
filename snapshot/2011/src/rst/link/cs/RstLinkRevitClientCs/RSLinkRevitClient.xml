@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RstLinkRevitClient</name>
+    </assembly>
+    <members>
+        <member name="T:RstLinkRevitClient.RsLinkExport">
+            <summary>
+            Export all structural elements to the RstLink intermediate file.
+            Currently, only columns and framing is implemented - skeleton code is in place for others.
+            </summary>
+        </member>
+        <member name="M:RstLinkRevitClient.RsLinkExport.GetStructuralElements(Autodesk.Revit.DB.Document)">
+            <summary>
+            Retrieve all structural elements in the given document.
+            
+            In addition to the explicit filtering demonstrated here, 
+            the StructuralInstanceUsageFilter might also retrieve
+            exactly the desired elements with no further ado. 
+            
+            The StructuralMaterialTypeFilter might also be useful.
+            </summary>
+        </member>
+        <member name="M:RstLinkRevitClient.RsLinkExport.CreateRSMember(Autodesk.Revit.DB.FamilyInstance,Autodesk.Revit.DB.Structure.AnalyticalModel)">
+            <summary>
+            Export helper to create an RSMember instance from a 
+            family instance representing a structural member.
+            </summary>
+        </member>
+        <member name="M:RstLinkRevitClient.RsLinkExport.ExportMembers(Autodesk.Revit.DB.Document,System.String)">
+            <summary>
+            Export all structural members in the iven document 
+            to an external file and return the user selected filename.
+            </summary>
+        </member>
+        <member name="T:RstLinkRevitClient.RsLinkImport">
+            <summary>
+            Import incremental changes from the RstLink intermediate XML file
+            </summary>
+            
+        </member>
+        <member name="M:RstLinkRevitClient.RsLinkImport.GetFamilySymbol(Autodesk.Revit.DB.Document,Autodesk.Revit.DB.BuiltInCategory,System.String)">
+            <summary>
+            Helper to get specified type for a given category.
+            Return a family symbol for a given category name and type.
+            (in theory, we can have non-unique solution, i.e. the same 
+            type name for more than one family from this category!)
+            </summary>
+        </member>
+        <member name="M:RstLinkRevitClient.RsLinkImport.ImportMembers(System.String,Autodesk.Revit.DB.Document,System.Boolean)">
+            <summary>
+            Import all structural members from a given 
+            external file into the document.
+            </summary>
+        </member>
+    </members>
+</doc>

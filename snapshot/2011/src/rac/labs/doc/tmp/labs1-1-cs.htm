@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css"/>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Hello World C#</div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs1-2.htm">next</a>
+<a class="j" href="labs1-1-vb.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>This lab will focus on creating a C# Revit application project, referencing appropriate assemblies, implementing required interfaces and setting up the project. Consequently, we shall also write our first "Hello World" program</p>
+<p>Start Microsoft Visual Studio .NET 2008, select File > New > Project..., select Visual C# as project type and use the Class Library template. Name the project 'LabsCode' and select a suitable directory.</p>
+<img src="img/labs1-1-06.jpg" alt="Create new Visual Studio project"/>
+<p>Visual Studio will automatically create a class and display its code.</p>
+<p>Add a reference to the Revit API .NET assembly by right clicking on the 'References' item in the solution explorer, selecting 'Add References...' and then the 'Add...' button.</p>
+<img src="img/labs1-1-07.jpg" alt="Add a reference to RevitAPI.dll"/>
+<p>You can select the 'Browse' tab and navigate to 'RevitAPI.dll' in the 'Program' subfolder of the Revit installation folder, typically something like 'C:\Program Files\Autodesk Revit Architecture 2010\Program\RevitAPI.dll'.</p>
+<img src="img/labs1-1-08.jpg" alt="Add a reference to RevitAPI.dll"/>
+<p>After adding the reference, right click on it to display its properties. Make sure that the 'Copy Local' property is set to False and 'Specific Version' to True (both defaults are opposite). Otherwise, the wrong version of the DLL may be loaded on machines with side-by-side Revit installations. You can normally remove the references to <code>System.Data</code> and <code>System.Xml</code>, which are added by default but often not required.</p>
+<img src="img/labs1-1-09.jpg" alt="Set 'Copy Local' to false"/>
+<p>We will also need a reference to <code>System.Windows.Forms</code> to display a dialogue box. That is found in the list of .NET assemblies in the first tab of the 'Add Reference' dialogue.</p>
+<p>Rename the Class1.cs file, for example by right-clicking on it in the solution explorer, e.g. to Lab1_1_HelloWorld.cs, for consistency with the later command paths, and clear all the file contents.</p>
+<p>We need to make use of some namespaces from the referenced assemblies by adding some <code>using</code> statements at the top of each file.
+For this lab, we only need the <code>Autodesk.Revit</code> namespace. We will be adding others in later labs.</p>
+<pre>using System;
+using System.Windows.Forms;
+using Autodesk.Revit;
+</pre>
+<p>Now we implement the Revit external command. A Revit external command is implemented in a class using any name which implements the Revit API <code>IExternalCommand</code> interface and its <code>Execute()</code> method.</p>
+<p>In this lab, we only display a typical message and return a successful return code:</p>
+<pre>namespace LabsCode
+{
+  public class Lab1_1_HelloWorld : IExternalCommand
+  {
+    public IExternalCommand.Result Execute(
+      Autodesk.Revit.ExternalCommandData commandData,
+      ref string message,
+      Autodesk.Revit.ElementSet elements )
+    {
+      MessageBox.Show( "Hello world!", "Revit API C# Sample" );
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+}
+</pre>
+<p>The project should now compile and link properly.</p>
+<p>Finally, we need to let Revit know how to load this command. By design, Revit reads such information only once from the Revit.ini file when the application is started. So, before starting Revit, locate this file in your Revit installation folder Program subdirectory, open it in a text editor (e.g. in Notepad or Visual Studio) and add the following section at the end:</p>
+<pre>[ExternalCommands]
+ECCount=1
+
+ECName1=Lab 1-1 Hello World
+ECDescription1=Basic VB.NET sample that displays a message box in Revit
+ECClassName1=LabsCode.Lab1_1_HelloWorld
+ECAssembly1=C:\tmp\revit\LabsCode\LabsCode\bin\Debug\LabsCode.dll
+</pre>
+<p>You <em>must</em> adjust the above full assembly path and fully qualified class name Namespace.Class settings to match your project or the application cannot be loaded by Revit.</p>
+<p>The specified name is displayed in the Revit external tools menu, and the description is displayed in the status bar when that menu entry is highlighted.</p>
+<p>You can set up Revit.exe to be the program to debug your application with.</p>
+<img src="img/labs1-1-10.jpg" alt="Set the debugging program to Revit.exe"/>
+<p>Start Revit in the debugger by hitting F5 and look at the External Tools submenu under the Tools menu. The command should be accessible and the message box should display when it is selected.</p>
+<img src="img/labs1-1-05.jpg" alt="Your new command in Revit"/>
+<p>Congratulations on completing your first C# Revit application!</p>
+
+<a class="j" href="labs1-2.htm">next</a>
+<a class="j" href="labs1-1-vb.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+
+</body>
+
+</html>

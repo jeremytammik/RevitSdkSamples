@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wizard>
+  <template name="CodeChecking" description="Visual Studio Wizard for Code Checking 2014">
+    <option name="$CC_UPDATER">
+      <file mode="include">Updater</file>
+      <file mode="include">Updater\Updater.cs</file>
+    </option>
+    <option name="$CC_ENGINEERING">
+      <file mode="reference">CodeChecking.Engineering.dll</file>
+    </option>
+  </template>
+  <template name="ExtensibleStorageFramework" description="Visual Studio Wizard for Extensible Storage Framework 2014"></template>
+  <template name="CodeCheckingConcrete" description="Visual Studio Wizard for Code Checking 2014 - Concrete">
+    <option name="$MAIN_LOOP">
+      <file mode="include">Engine\CommonParametersBase.cs</file>
+      <file mode="include">Engine\ElementDataBase.cs</file>
+      <file mode="include">Engine\Engine.cs</file>
+      <file mode="include">Engine\ICalculationObject.cs</file>
+      <file mode="include">Engine\ICalculationScenario.cs</file>
+      <file mode="include">Engine\IEngineData.cs</file>
+      <file mode="include">Engine\ObjectDataBase.cs</file>
+      <file mode="include">Engine\SectionDataBase.cs</file>
+      <file mode="include">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="include">Main\Calculation\CalculationScenario.cs</file>
+      <file mode="include">Main\Calculation\CommonParameters.cs</file>
+      <file mode="include">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Server/Server.cs</file>
+    </option>
+    <option name="$SYSTEM">
+      <file mode="unknown">Properties\AssemblyInfo.cs</file>
+      <file mode="unknown">Application\RevitApplicationDB.cs</file>
+      <file mode="unknown">Application\RevitApplicationUI.cs</file>
+      <file mode="unknown">Main\Updater.cs</file>
+      <file mode="include">Main\CalculationParameter.cs</file>
+      <file mode="include">Server/Server.cs</file>
+      <file mode="include">Server/ServerUI.cs</file>
+    </option>
+    <option name="$RC_FORCE">
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="reference">CodeChecking.Engineering.dll</file>
+      <file mode="modify">Main\CalculationParameter.cs</file>
+    </option>
+    <option name="$RC_CALCPOINTSSELECTION">
+      <file mode="include">Concrete\RcTypes.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="include">UIComponents\CalculationPointsSelector\CalculationPointsSelectorAttribute.cs</file>
+      <file mode="include">UIComponents\CalculationPointsSelector\CalculationPointsSelectorSchema.cs</file>
+      <file mode="include">UIComponents\CalculationPointsSelector\CalculationPointsSelectorServerUI.cs</file>
+      <file mode="modify">Main\CalculationParameter.cs</file>
+    </option>
+    <option name="$RC_REINF_TO_RB">
+      <file mode="modify">Engine\Engine.cs</file>
+      <file mode="modify">Engine\IEngineData.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="reference">CodeChecking.Engineering.dll</file>
+    </option>
+    <option name="&#xA;$RC_REINF_TO_NOTE">
+      <file mode="modify">Main\ResultLinearElement.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="include">Utility\MapDataGenerator.cs</file>
+      <file mode="include">Utility\ResultInPointLinear.cs</file>
+      <file mode="include">Utility\ResultInPointSurface.cs</file>
+      <file mode="include">Utility\UnitsConverter.cs</file>
+      <file mode="modify">Server/Server.cs</file>
+    </option>
+    <option name="$RC_GEOMETRY">
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Main\Calculation\BeamElement.cs</file>
+      <file mode="modify">Main\Calculation\BeamSection.cs</file>
+      <file mode="modify">Main\Calculation\ColumnElement.cs</file>
+      <file mode="modify">Main\Calculation\ColumnSection.cs</file>
+      <file mode="reference">CodeChecking.Engineering.dll</file>
+    </option>
+    <option name="$RC_GEOMETRY_T_SECTION">
+      <file mode="modify">Main\LabelBeam.cs</file>
+    </option>
+    <option name="$RC_RCUAPI">
+      <file mode="include">Concrete\RcVerificationHelperUtility.cs</file>
+    </option>
+    <option name="$RC_BEAM">
+      <file mode="include">Main\LabelBeam.cs</file>
+      <file mode="include">Main\ResultBeam.cs</file>
+      <file mode="include">Main\ResultLinearElement.cs</file>
+      <file mode="include">Main\Calculation\BeamElement.cs</file>
+      <file mode="include">Main\Calculation\BeamSection.cs</file>
+      <file mode="include">Main\Calculation\LinearSection.cs</file>
+      <file mode="include">UIComponents\ICons\BeamSlabFalse.png</file>
+      <file mode="include">UIComponents\ICons\BeamSlabTrue.png</file>
+      <file mode="include">UIComponents\ICons\BFY.png</file>
+      <file mode="include">UIComponents\ICons\BFZ.png</file>
+      <file mode="include">UIComponents\ICons\BMX.png</file>
+      <file mode="include">UIComponents\ICons\BMY.png</file>
+      <file mode="include">UIComponents\ICons\BMZ.png</file>
+      <file mode="include">UIComponents\ICons\BN.png</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+      <file mode="modify">Server\ServerUI.cs</file>
+    </option>
+    <option name="$RC_BEAM_LONG_REINF">
+      <file mode="modify">Main\LabelBeam.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersAttribute.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersSchema.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersServerUI.cs</file>
+    </option>
+    <option name="$RC_BEAM_TRAN_REINF">
+      <file mode="modify">Main\LabelBeam.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersAttribute.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersSchema.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersServerUI.cs</file>
+    </option>
+    <option name="$RC_BEAM_CREEP">
+      <file mode="modify">Main\LabelBeam.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+    </option>
+    <option name="$RC_BEAM_DIM_TYPE">
+      <file mode="modify">Main\LabelBeam.cs</file>
+    </option>
+    <option name="$RC_COLUMN">
+      <file mode="include">Main\LabelColumn.cs</file>
+      <file mode="include">Main\ResultColumn.cs</file>
+      <file mode="include">Main\ResultLinearElement.cs</file>
+      <file mode="include">Main\Calculation\ColumnElement.cs</file>
+      <file mode="include">Main\Calculation\ColumnSection.cs</file>
+      <file mode="include">Main\Calculation\LinearSection.cs</file>
+      <file mode="include">UIComponents\Icons\CFY.png</file>
+      <file mode="include">UIComponents\Icons\CFZ.png</file>
+      <file mode="include">UIComponents\Icons\CMX.png</file>
+      <file mode="include">UIComponents\Icons\CMY.png</file>
+      <file mode="include">UIComponents\Icons\CMZ.png</file>
+      <file mode="include">UIComponents\Icons\CN.png</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+      <file mode="modify">Server\ServerUI.cs</file>
+    </option>
+    <option name="$RC_COLUMN_LONG_REINF">
+      <file mode="modify">Main\LabelColumn.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersAttribute.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersSchema.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersServerUI.cs</file>
+    </option>
+    <option name="$RC_COLUMN_TRANS_REINF">
+      <file mode="modify">Main\LabelColumn.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersAttribute.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersSchema.cs</file>
+      <file mode="include">UIComponents\RCSteelParameters\RCSteelParametersServerUI.cs</file>
+    </option>
+    <option name="$RC_COLUMN_CREEP">
+      <file mode="modify">Main\LabelColumn.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+    </option>
+    <option name="$RC_COLUMN_DIM_TYPE">
+      <file mode="modify">Main\LabelColumn.cs</file>
+    </option>
+    <option name="$RC_COLUMN_BUCKLING">
+      <file mode="modify">Main\LabelColumn.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\CalculationScenario.cs</file>
+      <file mode="modify">Server\Server.cs</file>
+      <file mode="modify">Server\ServerUI.cs</file>
+    </option>
+    <option name="$RC_WALL">
+      <file mode="include">Main\LabelWall.cs</file>
+      <file mode="include">Main\ResultWall.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="include">Main\Calculation\WallElement.cs</file>
+      <file mode="include">Main\Calculation\WallSection.cs</file>
+      <file mode="modify">Server/Server.cs</file>
+      <file mode="modify">Server/ServerUI.cs</file>
+    </option>
+    <option name="$RC_FLOOR">
+      <file mode="include">Main\LabelFloor.cs</file>
+      <file mode="include">Main\ResultFloor.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="include">Main\Calculation\FloorElement.cs</file>
+      <file mode="include">Main\Calculation\FloorSection.cs</file>
+      <file mode="modify">Server/Server.cs</file>
+      <file mode="modify">Server/ServerUI.cs</file>
+    </option>
+    <option name="$RC_WALL_FOUNDATION">
+      <file mode="include">Main\LabelWallFoundation .cs</file>
+      <file mode="include">Main\ResultWallFoundation .cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="include">Main\Calculation\WallFoundationElement.cs</file>
+      <file mode="include">Main\Calculation\WallFoundationSection.cs</file>
+      <file mode="include">Main\Calculation\LinearSection.cs</file>
+      <file mode="modify">Server/Server.cs</file>
+      <file mode="modify">Server/ServerUI.cs</file>
+    </option>
+    <option name="$RC_ISOLATED_FOUNDATION">
+      <file mode="include">Main\LabelIsolatedFoundation .cs</file>
+      <file mode="include">Main\ResultIsolatedFoundation .cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="include">Main\Calculation\IsolatedFoundationElement.cs</file>
+      <file mode="include">Main\Calculation\IsolatedFoundationSection.cs</file>
+      <file mode="modify">Server/Server.cs</file>
+      <file mode="modify">Server/ServerUI.cs</file>
+    </option>
+    <option name="$RC_FOUNDATION_SLAB">
+      <file mode="include">Main\LabelFoundationSlab .cs</file>
+      <file mode="include">Main\ResultFoundationSlab .cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="include">Main\Calculation\FoundationSlabElement.cs</file>
+      <file mode="include">Main\Calculation\FoundationSlabSection.cs</file>
+      <file mode="modify">Server/Server.cs</file>
+      <file mode="modify">Server/ServerUI.cs</file>
+    </option>
+    <option name="$RC_BRACE">
+      <file mode="include">Main\LabelBrace .cs</file>
+      <file mode="include">Main\ResultBrace .cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="include">Main\Calculation\BraceElement.cs</file>
+      <file mode="include">Main\Calculation\BraceSection.cs</file>
+      <file mode="modify">Server/Server.cs</file>
+      <file mode="modify">Server/ServerUI.cs</file>
+    </option>
+    <option name="$RC_EXAMPLE">
+      <file mode="include">Concrete\ConcreteSectionDesign.cs</file>
+      <file mode="modify">Concrete\ConcreteSectionDesign.cs</file>
+      <file mode="modify">Concrete\RcTypes.cs</file>
+      <file mode="modify">Concrete\RcVerificationHelperUtility.cs</file>
+      <file mode="modify">Main\LabelBeam.cs</file>
+      <file mode="modify">Main\LabelColumn.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\CalculationScenario.cs</file>
+    </option>
+    <option name="$RC_PLATE">
+      <file mode="include">Concrete\InternalForcesSurface.cs</file>
+      <file mode="modify">Concrete\RcTypes.cs</file>
+      <file mode="modify">Main\Calculation\CalculationObjects.cs</file>
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+      <file mode="include">Utility\MapDataGenerator.cs</file>
+      <file mode="include">Utility\ResultInPointSurface.cs</file>
+      <file mode="modify">Server/Server.cs</file>
+      <file mode="modify">Server/ServerUI.cs</file>
+    </option>
+    <option name="$PARALLEL_UI">
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+    </option>
+    <option name="$PARALLEL">
+      <file mode="modify">Main\Calculation\EngineData.cs</file>
+    </option>
+    <option name="noOption">
+      <file mode="unknown">Concrete\CalculationUtility.cs</file>
+      <file mode="unknown">Concrete\InternalForces.cs</file>
+      <file mode="unknown">Concrete\InternalForcesBase.cs</file>
+      <file mode="unknown">Concrete\InternalForcesLinear.cs</file>
+      <file mode="unknown">Concrete\Reinforcement.cs</file>
+      <file mode="unknown">rcuapiNET.dll</file>
+    </option>
+  </template>
+</wizard>

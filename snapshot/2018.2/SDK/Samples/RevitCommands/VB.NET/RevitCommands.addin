@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>RevitCommands.dll</Assembly>
+    <ClientId>07f80cfc-ff8a-462c-8165-d7c01385f718</ClientId>
+    <FullClassName>Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LibraryPaths</FullClassName>
+    <Text>RvtCmd_LibraryPaths</Text>
+    <Description>List the Revit library paths.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>RevitCommands.dll</Assembly>
+    <ClientId>92a73c14-b5d8-4bde-99e6-14740f3657ae</ClientId>
+    <FullClassName>Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamilySymbol</FullClassName>
+    <Text>RvtCmd_LoadFamilySymbol</Text>
+    <Description>Load a family symbol/type.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>RevitCommands.dll</Assembly>
+    <ClientId>7f300cbe-8b8e-41d8-967e-c12c8dddaccf</ClientId>
+    <FullClassName>Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_LoadFamily</FullClassName>
+    <Text>RvtCmd_LoadFamily</Text>
+    <Description>Load a family.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>RevitCommands.dll</Assembly>
+    <ClientId>519c35fc-b485-4ac7-a37d-7d7c3021de3c</ClientId>
+    <FullClassName>Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_Selection</FullClassName>
+    <Text>RvtCmd_Selection</Text>
+    <Description>show how to use selection set.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>RevitCommands.dll</Assembly>
+    <ClientId>3f905f59-5f0f-4692-802e-3cb73287949a</ClientId>
+    <FullClassName>Revit.SDK.Samples.RevitCommands.VB.NET.RvtCmd_ShowElementData</FullClassName>
+    <Text>RvtCmd_ShowElementData</Text>
+    <Description>show parameters in selected entities.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

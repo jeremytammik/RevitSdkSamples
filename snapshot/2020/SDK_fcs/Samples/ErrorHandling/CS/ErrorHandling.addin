@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>External Tool</Name>
+    <Assembly>ErrorHandling.dll</Assembly>
+    <ClientId>5173fedd-fdfd-4a52-8319-cb956bc3263e</ClientId>
+    <FullClassName>Revit.SDK.Samples.ErrorHandling.CS.Command</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>ErrorHandling.dll</Assembly>
+    <ClientId>931e878f-635f-4163-b9c8-fd2dc59a3f7c</ClientId>
+    <FullClassName>Revit.SDK.Samples.ErrorHandling.CS.Command</FullClassName>
+    <Text>ErrorHandling</Text>
+    <Description>Demonstrates how to use the error handling framework..</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

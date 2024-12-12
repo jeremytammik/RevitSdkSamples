@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>NewRstLab.dll</Assembly>
+    <ClientId>bcd26c17-6317-4491-a7f3-e841889d8e66</ClientId>
+    <FullClassName>NewRstLab.RstLab1_1_LoadCase</FullClassName>
+    <Text>RstLab1_1_LoadCase</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewRstLab.dll</Assembly>
+    <ClientId>000a19ca-7f3f-4cb7-8fbc-6e7c7cd5db71</ClientId>
+    <FullClassName>NewRstLab.RstLab1_2_LoadsOperation</FullClassName>
+    <Text>RstLab1_2_LoadsOperation</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewRstLab.dll</Assembly>
+    <ClientId>d3208bdc-33e2-41db-bd20-2b7a20d74f47</ClientId>
+    <FullClassName>NewRstLab.RstLab2_1_ListStructuralColumns</FullClassName>
+    <Text>RstLab2_1_ListStructuralColumns</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewRstLab.dll</Assembly>
+    <ClientId>f8d181b3-484e-4d85-91b4-20a7d836df69</ClientId>
+    <FullClassName>NewRstLab.RstLab2_2_ListStructuralWalls</FullClassName>
+    <Text>RstLab2_2_ListStructuralWalls</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewRstLab.dll</Assembly>
+    <ClientId>2176f47d-aadb-4076-86f0-7e61fc2dce15</ClientId>
+    <FullClassName>NewRstLab.RstLab2_3_ListBoundaryConditions</FullClassName>
+    <Text>RstLab2_3_ListBoundaryConditions</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewRstLab.dll</Assembly>
+    <ClientId>417bd651-7f55-405c-8f90-8a297a35b489</ClientId>
+    <FullClassName>NewRstLab.RstLab3_1_GetAnalyticalModel</FullClassName>
+    <Text>RstLab3_1_GetAnalyticalModel</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewRstLab.dll</Assembly>
+    <ClientId>15d397df-ed38-4e0a-938a-20ff5828ed0b</ClientId>
+    <FullClassName>NewRstLab.RstLab3_2_GetBeamRigidLink</FullClassName>
+    <Text>RstLab3_2_GetBeamRigidLink</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>NewRstLab.dll</Assembly>
+    <ClientId>2af0ae47-c353-4e4c-94e9-f1df6f3f5f49</ClientId>
+    <FullClassName>NewRstLab.RstLab3_3_EditAnalyticalModel</FullClassName>
+    <Text>RstLab3_3_EditAnalyticalModel</Text>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

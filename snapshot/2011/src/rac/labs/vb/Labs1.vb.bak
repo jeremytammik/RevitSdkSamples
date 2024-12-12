@@ -1,0 +1,286 @@
+#Region "Header"
+' Revit API .NET Labs
+'
+' Copyright (C) 2006-2010 by Autodesk, Inc.
+'
+' Permission to use, copy, modify, and distribute this software
+' for any purpose and without fee is hereby granted, provided
+' that the above copyright notice appears in all copies and
+' that both that copyright notice and the limited warranty and
+' restricted rights notice below appear in all supporting
+' documentation.
+'
+' AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS.
+' AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+' MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC.
+' DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+' UNINTERRUPTED OR ERROR FREE.
+'
+' Use, duplication, or disclosure by the U.S. Government is subject to
+' restrictions set forth in FAR 52.227-19 (Commercial Computer
+' Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+' (Rights in Technical Data and Computer Software), as applicable.
+#End Region
+
+#Region "Namespaces"
+Imports Autodesk.Revit.ApplicationServices
+Imports Autodesk.Revit.Attributes
+Imports Autodesk.Revit.DB
+Imports Autodesk.Revit.UI
+Imports Autodesk.Revit.UI.Selection
+Imports Microsoft.VisualBasic.Constants
+' please help remove these stupid workarounds:
+'Imports Element2 = Autodesk.Revit.DB.Element
+'Imports LanguageType2 = Autodesk.Revit.ApplicationServices.LanguageType
+'Imports Selection2 = Autodesk.Revit.UI.Selection.Selection
+#End Region
+
+Namespace Labs
+
+#Region "Lab1_1_HelloWorld"
+    ''' <summary>
+    ''' Say hello.
+    ''' 
+    ''' <para>Explain the development environment, transaction modes 
+    ''' and regeneration options, and the addin manifest information defining
+    ''' the link between Revit and the external command. Also, how the external command
+    ''' can be hooked up with a custom user interface by an external application.</para>
+    ''' 
+    ''' <para>To complete this lab, look at the developer guide in the Revit SDK, in the file
+    ''' Revit 2011 API Developer Guide.pdf, and work through the walkthroughs described in 
+    ''' Chapter 2, especially 2.2 Hello World and 2.3 Ribbon Panel.</para>
+    ''' 
+    ''' <para>They show how to:</para>
+    ''' 
+    ''' <list type="bullet">
+    ''' <item><description>Set up a new add-in project.</description></item>
+    ''' <item><description>Add the Revit API references.</description></item>
+    ''' <item><description>Edit the add-in source code.</description></item>
+    ''' <item><description>Create an add-in manifest.</description></item>
+    ''' <item><description>Load and debug the add-in.</description></item>
+    ''' <item><description>Create a custom ribbon panel.</description></item>
+    ''' </list>
+    ''' 
+    ''' <para>The client id for the add-in manifest can be generated using the 
+    ''' Visual Studio GuidGen tool or the Guidizer rpovided by ADN.</para>
+    ''' 
+    ''' <para>Also explain the TaskDialog class provided for Revit-style message boxes.
+    ''' Please also refer to the HelloRevit SDK sample demonstrating more TaskDialog 
+    ''' features.</para>
+    ''' </summary>
+    <Transaction(TransactionMode.Automatic)> _
+    <Regeneration(RegenerationOption.Manual)> _
+    Public Class Lab1_1_HelloWorld
+        Implements IExternalCommand
+
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+            As Result _
+            Implements IExternalCommand.Execute
+
+            LabUtils.InfoMsg("Hello World")
+            Return Result.Failed
+
+        End Function
+
+    End Class
+#End Region
+
+#Region "Lab1_2_CommandArguments"
+    ''' <summary>
+    ''' Demonstrate contents and usage of the Execute() method's 
+    ''' command data input argument and the meaning of the result
+    ''' return code and the message and element set return arguments.
+    ''' The details are discussed in the developer guide, 
+    ''' chapter 3.2 External Commands.
+    ''' 
+    ''' <para>The first argument is the command data object which is 
+    ''' used to access the application object, from it the current 
+    ''' view and document, and from it in turn all or the currently 
+    ''' selected elements.</para>
+    ''' 
+    ''' <para>Let's first report some data about the current application, 
+    ''' document and view. Add something like the following to the Execute() 
+    ''' function body. We make use of the LabUtils InfoMsg method, which
+    ''' simply provides various wrappers for the Revit task dialogue that 
+    ''' we used in Lab 1-1:</para>
+    ''' 
+    ''' <code source="../cs/Labs1.cs" region="1.2.a. Examine command data input argument"/>
+    ''' 
+    ''' <code lang="vb">
+    ''' '
+    ''' ' access application, document, and current view:
+    ''' '
+    ''' Dim uiapp As UIApplication = commandData.Application
+    ''' Dim app As Application = uiapp.Application
+    ''' Dim uidoc As UIDocument = uiapp.ActiveUIDocument
+    ''' Dim doc As Document = uidoc.Document
+    ''' Dim view As View = commandData.View
+    ''' Dim lt As LanguageType = app.Language
+    ''' Dim pt As ProductType = app.Product
+    ''' Dim s As String = "Application = " + app.VersionName _
+    '''     + vbCrLf + "Language = " + lt.ToString() _
+    '''     + vbCrLf + "Product = " + pt.ToString() _
+    '''     + vbCrLf + "Version = " + app.VersionNumber _
+    '''     + vbCrLf + "Document path = " + doc.PathName _
+    '''     + vbCrLf + "Document title = " + doc.Title _
+    '''     + vbCrLf + "View name = " + view.Name
+    ''' LabUtils.InfoMsg(s)
+    ''' </code>
+    ''' 
+    ''' <para>We can use the System.Windows.Forms MessageBox.Show() method
+    ''' to display meassages to users, or the Revit task dialogue like in
+    ''' Lab 1-1. Since it is cumbersome to add an additional argument for 
+    ''' the caption each time we call it, we implement some message box 
+    ''' helper methods in a separate class LabUtils and call thos instead.</para>
+    ''' 
+    ''' <para>To list all the currently selected elements, we can use the 
+    ''' Selection property on the UIDocument object. This property further 
+    ''' exposes an Elements property which returns an element set containing 
+    ''' the selected elements. This provided access to the predefined element 
+    ''' selection set. We use another LabUtils task dialogue wrapper which 
+    ''' populates the main instruction with a message and the contents with
+    ''' a list of strings:</para>
+    ''' 
+    ''' <code source="../cs/Labs1.cs" region="1.2.b. List selection set content"/>
+    ''' 
+    ''' <code lang="vb">
+    ''' '
+    ''' ' list the current selection set:
+    ''' '
+    ''' Dim sel As Selection = uidoc.Selection
+    '''
+    ''' s = "There are " + sel.Elements.Size.ToString() + " elements in the selection:"
+    '''
+    ''' For Each elem As Element In sel.Elements
+    '''     s += vbCrLf + "  " + elem.Category.Name
+    '''     s += " Id=" + elem.Id.IntegerValue.ToString()
+    ''' Next
+    '''
+    ''' LabUtils.InfoMsg(s)
+    ''' </code>
+    ''' 
+    ''' <para>The last two arguments to the Execute method are return arguments 
+    ''' and used only when returning a Cancelled or Failed status to Revit, so 
+    ''' that a meaningful message can be displayed in the standard user interface 
+    ''' dialogue box and the relevant elements can be highlighted on the graphics 
+    ''' screen. To simulate an error condition and display the result of populating 
+    ''' these, add the following code:</para>
+    ''' 
+    ''' <code source="../cs/Labs1.cs" region="1.2.c. Populate return arguments"/>
+    ''' 
+    ''' <code lang="vb">
+    ''' '
+    ''' ' we pretend that something is wrong with the first element in the selection.
+    ''' ' pass a message back to the Revit user and indicate the error result:
+    ''' '
+    ''' If Not sel.Elements.IsEmpty Then
+    '''     Dim iter As ElementSetIterator = sel.Elements.ForwardIterator
+    '''     iter.MoveNext()
+    '''     Dim errElem As Element = iter.Current
+    '''     elements.Clear()
+    '''     elements.Insert(errElem)
+    '''     message = "We pretend something is wrong with this" _
+    '''         + " element and pass back this message to user"
+    '''     Return Result.Failed
+    ''' Else
+    '''     '
+    '''     ' we return failed here as well, actually.
+    '''     ' as long as the message string and element set are empty,
+    '''     ' it makes no difference to the user.
+    '''     ' it also aborts the automatic transaction, avoiding marking
+    '''     ' the database as dirty.
+    '''     '
+    '''     Return Result.Failed
+    ''' End If
+    ''' </code>
+    ''' 
+    ''' <para>Build the project and adjust the add-in manifest file to include 
+    ''' the new command, e.g. by adding the following entries in addition to 
+    ''' the existing ones from the Hello World walkthrough:</para>
+    ''' 
+    ''' <code lang="xml" source="../Labs.addin" region="Lab 1-2"/>
+    ''' 
+    ''' <para>If you now start Revit, pre-select some elements and then run the 
+    ''' new Lab 1-2 command. It will display the app, doc and view data, then 
+    ''' the currently selected elements, and finally an error reported on the 
+    ''' first one of the elements in this set.</para>
+    ''' </summary>
+    <Transaction(TransactionMode.Automatic)> _
+    <Regeneration(RegenerationOption.Manual)> _
+    Public Class Lab1_2_CommandArguments
+        Implements IExternalCommand
+
+        Public Function Execute( _
+            ByVal commandData As ExternalCommandData, _
+            ByRef message As String, _
+            ByVal elements As ElementSet) _
+            As Result _
+            Implements IExternalCommand.Execute
+
+            '#region 1.2.a. Examine command data input argument
+            '
+            ' access application, document, and current view:
+            '
+            Dim uiapp As UIApplication = commandData.Application
+            Dim app As Application = uiapp.Application
+            Dim uidoc As UIDocument = uiapp.ActiveUIDocument
+            Dim doc As Document = uidoc.Document
+            Dim view As View = commandData.View
+            Dim lt As LanguageType = app.Language
+            Dim pt As ProductType = app.Product
+            Dim s As String = "Application = " + app.VersionName _
+                + vbCrLf + "Language = " + lt.ToString() _
+                + vbCrLf + "Product = " + pt.ToString() _
+                + vbCrLf + "Version = " + app.VersionNumber _
+                + vbCrLf + "Document path = " + doc.PathName _
+                + vbCrLf + "Document title = " + doc.Title _
+                + vbCrLf + "View name = " + view.Name
+            LabUtils.InfoMsg(s)
+            '#endregion // 1.2.a. Examine command data input argument
+
+            '
+            ' list the current selection set:
+            '
+            Dim sel As Selection = uidoc.Selection
+
+            s = "There are " + sel.Elements.Size.ToString() + " elements in the selection:"
+
+            For Each elem As Element In sel.Elements
+                s += vbCrLf + "  " + elem.Category.Name
+                s += " Id=" + elem.Id.IntegerValue.ToString()
+            Next
+
+            LabUtils.InfoMsg(s)
+            '
+            ' we pretend that something is wrong with the first element in the selection.
+            ' pass a message back to the Revit user and indicate the error result:
+            '
+            If Not sel.Elements.IsEmpty Then
+                Dim iter As ElementSetIterator = sel.Elements.ForwardIterator
+                iter.MoveNext()
+                Dim errElem As Element = iter.Current
+                elements.Clear()
+                elements.Insert(errElem)
+                message = "We pretend something is wrong with this" _
+                    + " element and pass back this message to user"
+                Return Result.Failed
+            Else
+                '
+                ' we return failed here as well, actually.
+                ' as long as the message string and element set are empty,
+                ' it makes no difference to the user.
+                ' it also aborts the automatic transaction, avoiding marking
+                ' the database as dirty.
+                '
+                Return Result.Failed
+            End If
+
+        End Function
+
+    End Class
+#End Region
+
+End Namespace

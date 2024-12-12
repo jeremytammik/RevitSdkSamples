@@ -1,0 +1,399 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Revit Programming Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" type="text/css" href="rac_api.css"/>
+<link rel="StyleSheet" href="ac.acad_ak.css" type="text/css">
+<script type='text/javascript' src='jtcollapse.js'></script>
+</head>
+
+<body>
+
+<div class="HeadingDiv">
+<table width=103% cellpadding=0 cellspacing=0 border=0 class="HeadingTable">
+<tr valign=top>
+ <td height=29 class=BookTitleCell>
+  <div class=BookTitle><a href=""><span class="BookTitleLink"></span></a>&nbsp;</div>
+ </td>
+ <td align=right>
+  <table class=HeadNavTable cellpadding=0 cellspacing=0 border=0>
+   <tr >
+    <td align=right id="infoline" class="InfoLine">&nbsp;</td>
+    <td>&nbsp;</td>
+   </tr>
+  </table> </td>
+</tr>
+<tr>
+ <td colspan=2>
+  <div class="TopHead" title="Setting the Environment Variables">
+Create and Bind Shared Parameter </div>
+ </td>
+</tr>
+<tr valign=bottom>
+ <td colspan=2 height=33>
+ </td>
+</tr>
+</table>
+</div>
+
+<a class="j" href="labs4-3-2.htm">next</a>
+<a class="j" href="labs4-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+
+<p>In this section, we create and bind a new shared FireRating parameter to
+all doors.</p>
+
+<p>It is likely that you will be adding shared parameters programmatically
+in other situations as well, so it makes sense to factor out some common
+helper utilities. Add the following shared functions to the
+<code>LabUtils</code> class:</p>
+
+<pre title="C# Helpers for shared parameters" class="jtcollapse">
+#region Helpers for shared parameters
+/// &lt;summary&gt;
+/// Helper to get shared parameters file.
+/// &lt;/summary&gt;
+public static DefinitionFile GetSharedParamsFile( Application app )
+{
+  // Get current shared params file name
+  string sharedParamsFileName;
+  try
+  {
+    sharedParamsFileName = app.Options.SharedParametersFilename;
+  }
+  catch( Exception )
+  {
+    ErrorMsg( "No shared params file set." );
+    return null;
+  }
+  if( 0 == sharedParamsFileName.Length )
+  {
+    string fullPath = LabConstants.gsSharedParamFilePath;
+    StreamWriter stream;
+    stream = new StreamWriter( fullPath );
+    stream.Close();
+    app.Options.SharedParametersFilename = fullPath;
+    sharedParamsFileName = app.Options.SharedParametersFilename;
+  }
+  // Get the current file object and return it
+  DefinitionFile sharedParametersFile;
+  try
+  {
+    sharedParametersFile = app.OpenSharedParameterFile();
+  }
+  catch( Exception )
+  {
+    ErrorMsg( "Cannnot open shared params file." );
+    sharedParametersFile = null;
+  }
+  return sharedParametersFile;
+}
+
+/// &lt;summary&gt;
+/// Helper to get shared params group.
+/// &lt;/summary&gt;
+public static DefinitionGroup GetOrCreateSharedParamsGroup(
+ DefinitionFile sharedParametersFile,
+ string groupName )
+{
+  DefinitionGroup g = sharedParametersFile.Groups.get_Item( groupName );
+  if( null == g )
+  {
+    try
+    {
+      g = sharedParametersFile.Groups.Create( groupName );
+    }
+    catch( Exception )
+    {
+      g = null;
+    }
+  }
+  return g;
+}
+
+/// &lt;summary&gt;
+/// Helper to get shared params definition.
+/// &lt;/summary&gt;
+public static Definition GetOrCreateSharedParamsDefinition(
+  DefinitionGroup defGroup,
+  ParameterType defType,
+  string defName,
+  bool visible )
+{
+  Definition definition = defGroup.Definitions.get_Item( defName );
+  if( null == definition )
+  {
+    try
+    {
+      definition = defGroup.Definitions.Create( defName, defType, visible );
+    }
+    catch( Exception )
+    {
+      definition = null;
+    }
+  }
+  return definition;
+}
+#endregion // Helpers for shared parameters
+</pre>
+
+<pre title="VB Helpers for shared parameters" class="jtcollapse">
+#Region "Helpers for shared parameters"
+
+        ''' &lt;summary&gt;
+        ''' Helper to get shared parameters file.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetSharedParamsFile(ByVal app As Revit.Application) _
+                    As Parameters.DefinitionFile
+            ' Get current shared params file name
+            Dim sharedParamsFileName As String
+            Try
+                sharedParamsFileName = app.Options.SharedParametersFilename
+            Catch
+                MsgBox("No Shared params file set !?")
+                Return Nothing
+            End Try
+
+            If "" = sharedParamsFileName Then
+                Dim fullPath As String = gsSharedParamFilePath
+
+                Dim stream As StreamWriter
+                stream = New StreamWriter(fullPath)
+                stream.Close()
+
+                app.Options.SharedParametersFilename = fullPath
+                sharedParamsFileName = app.Options.SharedParametersFilename
+            End If
+
+            ' Get the current file object and return it
+            Dim sharedParametersFile As Autodesk.Revit.Parameters.DefinitionFile
+            Try
+                sharedParametersFile = app.OpenSharedParameterFile
+            Catch
+                MsgBox("Cannnot open Shared Params file !?")
+                sharedParametersFile = Nothing
+            End Try
+            Return sharedParametersFile
+
+        End Function
+
+        ''' &lt;summary&gt;
+        ''' Helper to get shared params group.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetOrCreateSharedParamsGroup( _
+             ByVal sharedParametersFile As Parameters.DefinitionFile, _
+             ByVal groupName As String) _
+             As Parameters.DefinitionGroup
+
+            Dim msProjectGroup As Autodesk.Revit.Parameters.DefinitionGroup
+            'Get Shared Parameter group
+            msProjectGroup = sharedParametersFile.Groups.Item(groupName)
+            If (msProjectGroup Is Nothing) Then
+                Try
+                    'create shared paramteter group
+                    msProjectGroup = sharedParametersFile.Groups.Create(groupName)
+                Catch
+                    msProjectGroup = Nothing
+                End Try
+            End If
+
+            Return msProjectGroup
+
+        End Function
+
+        ''' &lt;summary&gt;
+        ''' Helper to get shared params definition.
+        ''' &lt;/summary&gt;
+        Public Shared Function GetOrCreateSharedParamsDefinition( _
+         ByVal defGroup As Parameters.DefinitionGroup, _
+         ByVal defType As Parameters.ParameterType, _
+         ByVal defName As String, _
+         ByVal visible As Boolean) As Parameters.Definition
+
+            'Get parameter definition
+            Dim definition As Parameters.Definition = defGroup.Definitions.Item(defName)
+            If definition Is Nothing Then
+                Try
+                    'create parameter definition
+                    definition = defGroup.Definitions.Create(defName, defType, visible)
+                Catch
+                    definition = Nothing
+                End Try
+            End If
+
+            Return definition
+        End Function
+
+#End Region
+</pre>
+
+<p>For clarity, we add the group and definition name constants
+to the <code>LabConstants</code> module:</p>
+
+<pre title="C# Group and definition name constants" class="jtcollapse">
+    // Lab 4_3
+    public const string gsSharedParamFilePath = _temp_dir + "SharedParams.txt";
+    public const string gsSharedParamsGroupAPI = "API Parameters";
+    public const string gsSharedParamsDefFireRating = "API FireRating";
+</pre>
+
+<pre title="VB Group and definition name constants" class="jtcollapse">
+    ' Lab 4_3
+    Public Const gsSharedParamFilePath As String = _temp_dir + "SharedParams.txt"
+    Public Const gsSharedParamsGroupAPI As String = "API Parameters"
+    Public Const gsSharedParamsDefFireRating As String = "API FireRating"
+</pre>
+
+<p>Now we can add a new command class to <code>Labs4</code>.
+All the above helpers are first utilised and then the newly created parameter
+is bound to the doors category for the current Revit document:</p>
+
+<pre title="C# Create and bind shared parameter" class="jtcollapse">
+  /// &lt;summary&gt;
+  /// 4.3.1 Create and bind shared parameter.
+  /// &lt;/summary&gt;
+  public class Lab4_3_1_CreateAndBindSharedParam : IExternalCommand
+  {
+
+    // what element type are we interested in?
+    // standard sample uses BuiltInCategory.OST_Doors, we can also test using
+    // BuiltInCategory.OST_Walls to demonstrate that the same technique
+    // works with system families just as well as with standard ones:
+    static public BuiltInCategory Bic = BuiltInCategory.OST_Doors;
+    //static public BuiltInCategory Bic = BuiltInCategory.OST_Walls;
+
+    public IExternalCommand.Result Execute(
+      ExternalCommandData commandData,
+      ref string message,
+      ElementSet elements )
+    {
+      Application app = commandData.Application;
+      Document doc = app.ActiveDocument;
+      // Get the current Shared Params Definition File
+      DefinitionFile sharedParamsFile = LabUtils.GetSharedParamsFile( app );
+      if( null == sharedParamsFile )
+      {
+        LabUtils.ErrorMsg( "Error getting the shared params file." );
+        return IExternalCommand.Result.Failed;
+      }
+      // Get or Create the Shared Params Group
+      DefinitionGroup sharedParamsGroup = LabUtils.GetOrCreateSharedParamsGroup(
+                        sharedParamsFile, LabConstants.gsSharedParamsGroupAPI );
+      if( null == sharedParamsGroup )
+      {
+        LabUtils.ErrorMsg( "Error getting the shared params group." );
+        return IExternalCommand.Result.Failed;
+      }
+      // Get or Create the Shared Params Definition
+      Definition fireRatingParamDef = LabUtils.GetOrCreateSharedParamsDefinition( sharedParamsGroup,
+                            ParameterType.Number, LabConstants.gsSharedParamsDefFireRating, true );
+      if( null == fireRatingParamDef )
+      {
+        LabUtils.ErrorMsg( "Error in creating shared parameter." );
+        return IExternalCommand.Result.Failed;
+      }
+      // create the category set for binding and add the category we are
+      // interested in, doors or walls or whatever:
+      CategorySet catSet = app.Create.NewCategorySet();
+      Category cat = doc.Settings.Categories.get_Item( Bic );
+      try
+      {
+        catSet.Insert( cat );
+      }
+      catch( Exception )
+      {
+        LabUtils.ErrorMsg( string.Format(
+          "Error adding '{0}' category to parameters binding set.", cat.Name ) );
+        return IExternalCommand.Result.Failed;
+      }
+      // Bind the Param
+      try
+      {
+        Binding binding = app.Create.NewInstanceBinding( catSet );
+        // We could check if already bound, but looks like Insert will just ignore it in such case
+        doc.ParameterBindings.Insert( fireRatingParamDef, binding );
+      }
+      catch( Exception )
+      {
+        LabUtils.ErrorMsg( "Error binding shared parameter" );
+        return IExternalCommand.Result.Failed;
+      }
+      return IExternalCommand.Result.Succeeded;
+    }
+  }
+</pre>
+
+<pre title="VB Create and bind shared parameter" class="jtcollapse">
+''' &lt;summary&gt;
+''' 4.3.1 Create and bind shared parameter.
+''' &lt;/summary&gt;
+Public Class Lab4_3_1_CreateAndBindSharedParam
+    Implements IExternalCommand
+
+    Public Shared Bic As BuiltInCategory = BuiltInCategory.OST_Doors
+
+    Public Function Execute(ByVal commandData As Autodesk.Revit.ExternalCommandData, _
+                           ByRef message As String, _
+                           ByVal elements As Autodesk.Revit.ElementSet) As Autodesk.Revit.IExternalCommand.Result _
+                 Implements Autodesk.Revit.IExternalCommand.Execute
+
+        Dim app As Revit.Application = commandData.Application
+
+        ' Get the current Shared Params Definition File
+        Dim sharedParamsFile As DefinitionFile = LabUtils.GetSharedParamsFile(app)
+        If (sharedParamsFile Is Nothing) Then
+            MsgBox("Error in getting the Shared Params File?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' Get or Create the Shared Params Group
+        Dim sharedParamsGroup As Parameters.DefinitionGroup
+        sharedParamsGroup = LabUtils.GetOrCreateSharedParamsGroup(sharedParamsFile, gsSharedParamsGroupAPI)
+        If (sharedParamsGroup Is Nothing) Then
+            MsgBox("Error in getting the Shared Params Group?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' Get or Create the Shared Params Definition
+        Dim fireRatingParamDef As Parameters.Definition = LabUtils.GetOrCreateSharedParamsDefinition( _
+         sharedParamsGroup, ParameterType.Number, gsSharedParamsDefFireRating, True)
+        If (fireRatingParamDef Is Nothing) Then
+            MsgBox("Error in creating 'API Added' parameter?")
+            Return IExternalCommand.Result.Failed
+        End If
+
+        ' Create the Category Set for binding and add "Doors"
+        Dim catSet As CategorySet = app.Create.NewCategorySet()
+        Try
+            catSet.Insert(app.ActiveDocument.Settings.Categories.Item(Bic))
+        Catch
+            MsgBox("Error when adding 'Doors' category to parameters binding set?")
+            Return IExternalCommand.Result.Failed
+        End Try
+
+        ' Bind the Param
+        Try
+            Dim binding As Parameters.Binding = app.Create.NewInstanceBinding(catSet)
+            ' We could check if already bound, but looks like Insert will just ignore it in such case
+            app.ActiveDocument.ParameterBindings.Insert(fireRatingParamDef, binding)
+        Catch
+            MsgBox("Error in binding shared parameter !?")
+            Return IExternalCommand.Result.Failed
+        End Try
+
+        MsgBox("Parameter binding Successful!")
+        Return IExternalCommand.Result.Succeeded
+
+    End Function
+End Class
+</pre>
+
+<p>Compile the code, update Revit.ini and test the command. Examine the outcome.</p>
+
+
+<a class="j" href="labs4-3-2.htm">next</a>
+<a class="j" href="labs4-3.htm">previous</a>
+<a class="j" href="index.htm">home</a>
+<span class="j2">copyright &copy; 2007-2009 jeremy tammik, autodesk inc. all rights reserved.</span>
+</body>
+</html>

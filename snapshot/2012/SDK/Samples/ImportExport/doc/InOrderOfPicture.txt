@@ -1,0 +1,49 @@
+private void buttonOptions_Click( object sender, EventArgs e )
+{
+  // Export dwg
+  if (m_exportData.ExportFormat == ExportFormat.DWG)
+  {
+    bool contain3DView = false;
+
+    if (radioButtonCurrentView.Checked)
+    {
+      if (m_exportData.Is3DView)
+      {
+    contain3DView = true;
+      }
+    }
+    else
+    {
+      if (m_exportData.SelectViewsData.Contain3DView)
+      {
+    contain3DView = true;
+      }
+    }
+
+    ExportDWGData exportDWGData = m_exportData as ExportDWGData;
+    using (ExportDWGOptionsForm exportOptionsForm = new ExportDWGOptionsForm(exportDWGData.ExportOptionsData,
+      contain3DView))
+    {
+      exportOptionsForm.ShowDialog();
+    }
+  }
+}
+
+//parameter : DWGExportOptions dwgExportOptions
+
+DWGExportOptions dwgExportOptions = new DWGExportOptions();
+dwgExportOptions.ExportingAreas = m_exportOptionsData.ExportAreas;
+dwgExportOptions.ExportOfSolids = m_exportOptionsData.ExportSolid;
+dwgExportOptions.FileVersion = m_exportFileVersion;
+dwgExportOptions.LayerMapping = m_exportOptionsData.ExportLayerMapping;
+dwgExportOptions.LineScaling = m_exportOptionsData.ExportLineScaling;
+dwgExportOptions.MergedViews = m_exportOptionsData.ExportMergeFiles;
+dwgExportOptions.PropOverrides = m_exportOptionsData.ExportLayersAndProperties;
+dwgExportOptions.SharedCoords = m_exportOptionsData.ExportCoorSystem;
+dwgExportOptions.TargetUnit = m_exportOptionsData.ExportUnit;
+
+These properties aren't set until this window initializes. So unless you click the "Options" button on the previous form, the values are null, thus throwing the exception.
+
+So all I did was make it so the options form comes up as soon as the export form comes up, setting the defaults immediately.
+
+Last bit of code is exactly the same as the first bit, except with a comment above and below.

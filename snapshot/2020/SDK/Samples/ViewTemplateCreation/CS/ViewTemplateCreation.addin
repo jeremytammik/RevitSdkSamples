@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ViewTemplateCreation.dll</Assembly>
+    <ClientId>ef1c699e-d038-4335-9721-d6c52b285ed0</ClientId>
+    <FullClassName>Revit.SDK.Samples.ViewTemplateCreation.CS.Command</FullClassName>
+    <Text>Create and configure new view template</Text>
+    <Description>Demonstrates the process of creating a new view template from a regular view.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>CS</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

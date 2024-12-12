@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184371-265B-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.PointsParabola</FullClassName>
+		<Text>Points - Parabola</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF181371-E65B-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.PointsOnCurve</FullClassName>
+		<Text>Points - Curve Driven</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184371-E65B-4a35-BF7F-2959CA87142D</AddInId>
+		<FullClassName>DevCamp_Massing.PointsFromExcel</FullClassName>
+		<Text>Points - Excel</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184371-E65B-4a35-B37F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.PointsFromTextFile</FullClassName>
+		<Text>Points - Text File</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF124371-E65B-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.SineCurve</FullClassName>
+		<Text>Curve - Sine</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184371-E65B-4a34-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.CyclicSurface</FullClassName>
+		<Text>Surface - Cyclic</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184371-E65B-4a35-BF7F-2959CA86A42D</AddInId>
+		<FullClassName>DevCamp_Massing.DividedSurfaceCreation</FullClassName>
+		<Text>Divided Surface</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184371-E65B-4a35-BF7F-2959CA87A12D</AddInId>
+		<FullClassName>DevCamp_Massing.TilePatternIteration</FullClassName>
+		<Text>Tile Pattern Iteration</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184371-E65B-4a35-BF7F-1959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.AlternateStripesOfTiles</FullClassName>
+		<Text>Alternate Stripes of Tiles</Text>
+	</AddIn>
+
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184371-E653-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.SetDistanceParam</FullClassName>
+		<Text>Parameter by distance</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184361-E65B-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.SetParamFromImage</FullClassName>
+		<Text>Parameter from image</Text>
+	</AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF182371-E65B-4a35-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.CappedFormFromRoomShell</FullClassName>
+		<Text>Shell from Room Geometry</Text>
+	</AddIn>
+
+	<AddIn Type="Command">
+    <Assembly>DevCamp_Massing.dll</Assembly>
+    <AddInId>cf184391-e65b-4a35-bf7f-2959ca87a42d</AddInId>
+    <FullClassName>DevCamp_Massing.ParameterRandomizer_Basic</FullClassName>
+    <Text>Randomizer</Text>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DevCamp_Massing.dll</Assembly>
+    <AddInId>cf184291-e65b-4a35-bf7f-2959ca87a42d</AddInId>
+    <FullClassName>DevCamp_Massing.ParameterRandomizer_with_Solar</FullClassName>
+    <Text>Randomizer with Solar</Text>
+  </AddIn>
+  <AddIn Type="Command">
+    <Assembly>DevCamp_Massing.dll</Assembly>
+    <AddInId>c2181371-e65b-4a35-bf7f-2959ca87a42d</AddInId>
+    <FullClassName>DevCamp_Massing.ContextCreator</FullClassName>
+    <Text>Context Creator</Text>
+  </AddIn>
+	<AddIn Type="Command">
+		<Assembly>DevCamp_Massing.dll</Assembly>
+		<AddInId>CF184371-E65B-4435-BF7F-2959CA87A42D</AddInId>
+		<FullClassName>DevCamp_Massing.RefPointOffset</FullClassName>
+		<Text>Reference Point Offset</Text>
+	</AddIn>
+</RevitAddIns>

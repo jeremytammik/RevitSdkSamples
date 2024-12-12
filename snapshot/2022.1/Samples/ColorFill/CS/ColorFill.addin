@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+    <Assembly>ColorFill.dll</Assembly>
+    <ClientId>a3933885-b773-48ce-8b84-ef7eb608c1f4</ClientId>
+    <FullClassName>Revit.SDK.Samples.ColorFill.CS.Command</FullClassName>
+    <Text>ColorFill Scheme and Legend creation and modification.</Text>
+    <Description>This sample demonstrates how to create ColorFill scheme, add entries and modify entries for colorFill scheme. It also demonstrates how to create colorFill legend with scheme and modify its appearance.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+   
+</RevitAddIns>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsTest", "FsTest\FsTest.fsproj", "{C5F74062-80F3-4682-83D5-CF38C3B8AC2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsCommand", "..\CsCommand\CsCommand\CsCommand.csproj", "{F56E287C-326F-4180-A1CF-676B89E405D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5F74062-80F3-4682-83D5-CF38C3B8AC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F74062-80F3-4682-83D5-CF38C3B8AC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F74062-80F3-4682-83D5-CF38C3B8AC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F74062-80F3-4682-83D5-CF38C3B8AC2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F56E287C-326F-4180-A1CF-676B89E405D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F56E287C-326F-4180-A1CF-676B89E405D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F56E287C-326F-4180-A1CF-676B89E405D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F56E287C-326F-4180-A1CF-676B89E405D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

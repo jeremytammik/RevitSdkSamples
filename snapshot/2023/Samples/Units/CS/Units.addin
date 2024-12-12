@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Units.dll</Assembly>
+    <ClientId>82497ead-cc71-4550-8e23-2b62a1bfa334</ClientId>
+    <FullClassName>Revit.SDK.Samples.Units.CS.Command</FullClassName>
+    <Text>Units API</Text>
+    <Description>The sample of Revit Units API.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+	<LanguageType>Unknown</LanguageType>
+	<VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

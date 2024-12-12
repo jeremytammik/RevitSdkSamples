@@ -1,0 +1,182 @@
+Control of the Idling event repetition
+Idling event with no active document
+New external events framework
+RevitWebcam revisited
+Use of OpenAndActivateDocument in event handlers 
+
+default mode: raise one event per idle session
+non-default mode: keeps idling session open and make repeated calls
+SetRaiseWithoutDelay
+
+Interface IExternalEventHandler
+Implement Execute and GetName methods
+Static ExternalEvent.Create method with event handler instance returns event
+Event.Raise signals something to do
+
+ExternalEvent exEvent = ExternalEvent.Create(handler);
+
+
+Presentations, hand-outs, sample code and lab exercises
+CP4451_tammik_estorage.pptx
+CP4451_tammik_estorage.pdf
+CP4451_tammik_estorage.zip
+Estorage  C# sample code
+EstorageVb  VB sample code
+FamilyStorage
+UpgradeSchema
+Hands-on lab exercises
+Hands-on lab CP6760-L  Autodesk Revit 2012 API Extensible Storage
+CP6760-L_tammik_estorage_lab.zip
+
+
+
+CP4451_tammik_estorage.pdf
+CP4451_tammik_estorage.zip
+CP6760-L_tammik_estorage.pdf
+CP6760-L_tammik_estorage_lab.zip
+
+http://www.typepad.com/site/blogs/6a00e553e16897883300e553fcc7418834/posts?filter.q=Extensible%20Storage
+
+567_extensible_storage.htm
+587_extensible_storage_map.htm
+604_estorage_element_id.htm
+
+
+Revit Developer Center
+http://www.autodesk.com/developrevit
+Revit SDK, Samples, API Help File , Developer's Guide and Online Help
+http://www.autodesk.com/revitapi-wikihelp
+DevTV Introduction to Revit Programming
+Revit API Webcasts and Trainings
+http://www.adskconsulting.com/adn/cs/api_course_sched.php > Revit API
+Discussion Group
+http://discussion.autodesk.com > Revit Architecture > Revit API
+API Training Classes
+http://www.autodesk.com/apitraining
+The Building Coder, Jeremy Tammik's Revit API Blog
+http://thebuildingcoder.typepad.com
+ADN, The Autodesk Developer Network
+http://www.autodesk.com/joinadn
+DevHelp Online for ADN members
+http://adn.autodesk.com
+
+Autodesk Revit 2010 Families Guide 
+http://usa.autodesk.com/adsk/servlet/index?siteID=123112&id=13080413&linkID=9243097
+
+Learning Autodesk Revit MEP 2012 video training 
+http://cad-notes.com/2011/12/learning-autodesk-revit-mep-2012-training-video-is-available
+
+Access to routing preferences, selection of pipe sizes, materials, fitting types, and the RoutingPreferenceTools SDK sample demonstrating its use
+Pipe and duct friction factors
+MEPSection base class for duct and pipe sections
+Viscosity and density at specified temperatures, new FluidType and enhanced FluidTemperature classes
+Read and write access to panel schedule spare circuit values
+Access to localized user-visible display strings for enumeration values via new LabelUtils.GetLabelFor overloads
+ConnectorProfileType and PartType enumeration changes
+ConnectorElement changes in the family environment, and new static creation methods replacing the obsolete ones on the FamilyItemFactory class.
+A new ThermalProperties class, thermal material assets, thermal information in gbXML
+New calculation functionality and the external services framework
+MEP piping, system routing and centre line functionality
+A new Light and Light Group API
+ReferenceIntersector class 
+
+Product 
+Construction, fabrication and engineering process
+Platform scalability
+Countrification 
+Interoperability 
+Analysis and simulation
+
+Product Features
+
+Parts and assemblies
+Precast elements 
+Reinforcement detailing
+Point clouds
+MEP piping system routing 
+
+Revit Server 
+
+stair and railing elements 
+MEP centerlines
+IFC API
+
+Revit One Box 
+Runtime discipline switch
+Translation fidelity 
+Inventor interoperability 
+Add-in integration 
+View and visualization APIs
+
+New physical properties
+structural analysis and code checking
+Analysis visualization
+Analytical volumes
+MEP properties and calculation functionality 
+
+    Integration
+    Analysis
+    Modelling
+    Interoperability
+    Miscellaneous 
+
+Integration
+
+Discipline control, contextual help, keyboard shortcuts, quick access toolbar, replace commands, embed view, drag and drop, custom Options dialogue extensions, progress bar events, view creation and access, access to rendering settings schedule API, DataStorage element, external event framework
+
+Modelling
+
+Stairs and railings, new construction modeling and assembly functionality, Ceiling element, filled regions 
+
+Interoperability
+
+More generic IFC toolkit, IFC exporter open source, ability to create Revit links, document and worksharing changes, detaching from central, BasicFileInfo class, dimension pre- and suffixes are accessible
+
+All information above and more is provided in the Whats New section of the Revit API help file RevitAPI.chm included with the Revit SDK. 
+
+2012-05-17:
+
+DevDays Online recording demonstrates the actions of the UIAPI SDK samples for the contextual help F1, WPF preview control, drag and drop, customize options dialogue last four options including IFC command override and switching button availability based on discipline
+is also demos the schedule sample
+MEP routing preferences
+stairs and railings
+all without looking at any code
+here we will examine the code as well.
+
+point out that the DoDragDrop cannot be called asyncronously, nor you need a valid Revit API context.
+
+
+Stairs and railings, Schedule API sample, MEP routing preferences, UIAPI SDK sample with contextual F1 help, WPF preview control, drag and drop, customisation of the Options dialogue, IFC command override, switching button availability based on discipline, 
+
+
+poll results:
+
+1 33% engineer, 33% programmer, 15% manager, rest other
+2 7 13 10
+3 2 8 20
+4 18 11 8 1 1
+
+53 attendees in live meeting
+
+shared params values are not stored in text files, just the shared param definition can be imported from them. the values are stored in the project
+extensible storage, not external
+
+Dominique Gladeau: hi i missed the first part of the class?
+Dominique Gladeau: can you help me retake it from the start?
+Jeremy Tammik: oh dear. well the recording will become available in a few days
+Jeremy Tammik: just look at the recording.
+Dominique Gladeau: not sure how. in a few days or can i do it now?
+Jeremy Tammik: ?
+Dominique Gladeau: does the first part of the class show how to build and load code?
+Dominique Gladeau: I really need the class please email me the link for me to review.
+Dominique Gladeau: thanks my email is gladeau@live.ca
+Jeremy Tammik: no not really. look at the revit developer center for that, it tells you all: http://www.autodesk.com/developrevit
+Dominique Gladeau: can the api allow me to make text the same height in my drawings?
+Dominique Gladeau: what is the difference between api and sdk?
+Dominique Gladeau: got it thanks
+Dominique Gladeau: can I code in c# or C++ or both?
+Jeremy Tammik: look at the material on the develoepr center
+Jeremy Tammik: http://www.autodesk.com/developrevit
+Dominique Gladeau: bye thanks!
+Dominique Gladeau leaves.
+*** Dominique Gladeau left this private chat. ***

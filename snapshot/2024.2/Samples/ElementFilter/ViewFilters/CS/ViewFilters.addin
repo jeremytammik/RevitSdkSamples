@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>ViewFilters.dll</Assembly>
+    <ClientId>0f866b30-65e2-4f39-8d72-4faa1319a0ff</ClientId>
+    <FullClassName>Revit.SDK.Samples.ViewFilters.CS.Command</FullClassName>
+    <Text>Create and modify view filters.</Text>
+    <Description>Create and modify view filters.</Description>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

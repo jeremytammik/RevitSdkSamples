@@ -1,0 +1,53 @@
+Nr  Name             Company     Email
+ 1  Ben deVries      Aurecon     Ben.deVries@aurecongroup.com
+ 2  Rob McMillan     Aurecon     Robert.McMillan@aurecongroup.com
+ 3  Adrian Esdaile   Woolworths  aesdaile@woolworths.com.au
+ 4  Simon Hall       Cardno      simon.hall@cardno.com.au
+ 5  Brenton Yewdall  Cardno      Brenton.yewdall@cardno.com.au
+ 6  Dan Jurgens      Cox         Dan.Jurgens@cox.com.au
+ 7  one other        Cox
+ 8  Steve Fiorio     Hassell     sfiorio@hassellstudio.com
+ 9  Aaron Cass       SMEC        Aaron.Cass@smec.com
+10  Mark Hatton      SMEC        mark.hatton@smec.com
+11  Brett            Autodesk
+12  Brett Burling    BG&E        brett.burling@bgeeng.com
+
+From: Arvind Thangli <arvind.thangli@autodesk.com>
+Cc: Johnny Tulloch <johnny.tulloch@autodesk.com>
+
+
+Philip Smith Beca CAD Systems manager philip.smith@beca.com
+David Morrison Honeywell Director Engineering information flow
+Sunil Honeywell
+Brett Burling BG&E some API experience brett.burling@bgeeng.com
+Aren Cass Smeck Aaron.Cass@smec.com
+Robert McMillan Robert.McMillan@aurecongroup.com
+Brenton Yawdall integrate Brenton.yewdall@cardno.com.au
+Ben deVries Aurecon Ben.deVries@aurecongroup.com
+Adrian Esdaile Woolworths Ltd. aesdaile@woolworths.com.au
+Sunil Hargunani <Sunil.Hargunani@Honeywell.com>
+David Morrison <David.Morrison@honeywell.com>
+
+Arvind Thangli <arvind.thangli@autodesk.com>; brett.burling@bgeeng.com; Philip Smith <philip.smith@beca.com>; Robert.McMillan@aurecongroup.com; Aaron.Cass@smec.com; Brenton.yewdall@cardno.com.au; Ben.deVries@aurecongroup.com; Adrian Esdaile <aesdaile@woolworths.com.au>; Sunil Hargunani <Sunil.Hargunani@Honeywell.com>; David Morrison <David.Morrison@honeywell.com>
+
+- filtered element collector and linq: delete redundant spaces, purge: PurgeRooms, PurgeSpaces
+- FireRating
+- link external data to family instances: FireRating
+- how can Excel update database: FireRating
+- database functionality, external DB import export, project level, family level,
+- address, project name, Excel, SQL, etc.
+- simple ribbon with an icon: simple add-in sample
+- prepare model for issue, strip out everything except model: custom exporter
+- generate floor plans, e.g. large PNG: cloud-based room editor
+- filtered element collectors
+- batching through files, e.g. import IFC
+- batching, e.g. make changes to font in family libraries
+- revit model checking: revit model review
+- family API: define and use a family
+- filter for all tags: iterate built-in categories, search for *tag*, feed into LogicalOrFilter
+- electrical loading and circuit design, non-US rules: UK panel schedule (2009), schedule API
+- filtered element collector and geometry: pivot table lookup, info from a revit schedule read and used in a second schedule, e.g. measure floor footprint of obj in space and compare sum to total floor space
+- select a tag, find element that it displays info from, read params on it and update the tag text
+- because tag text not modifiable: create a new TextNote, define a source element to display info from, read params on it and set the text: ParamDrivenTag.addin CommandSingle
+- DWFx
+- create extensible storage schema for list of element ids: ParamDrivenTag.addin CommandMulti

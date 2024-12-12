@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+   <AddIn Type="Command">
+      <Assembly>DynamicModelUpdate.dll</Assembly>
+      <ClientId>FBF3F6B2-4C06-42d4-97C1-D1B4EB593EFF</ClientId>
+      <FullClassName>Revit.SDK.Samples.DynamicModelUpdate.CS.AssociativeSectionUpdater</FullClassName>
+      <Name>Associative Section Updater</Name>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+   </AddIn>
+</RevitAddIns>

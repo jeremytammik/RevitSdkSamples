@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>StructSample.dll</Assembly>
+    <ClientId>bd65a6d5-370a-4a66-b658-018e9f16383d</ClientId>
+    <FullClassName>Revit.SDK.Samples.StructSample.CS.Command</FullClassName>
+    <Text>StructSample - Frame Wall</Text>
+    <Description>Add columns to the selected walls.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="Revit.SDK.Samples.SelectionChanged.CS.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SelectionChanged Event Monitor" Height="370" Width="650" Topmost="True" ShowInTaskbar="False" ResizeMode="NoResize" Loaded="Window_Loaded" Closed="Window_Closed">
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="30"></RowDefinition>
+         <RowDefinition></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition></ColumnDefinition>
+         <ColumnDefinition></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Label Name="label_log" Grid.Row="0" Grid.Column="0" Content="Log"></Label>
+      <Button Grid.Row="0" Grid.Column="1" Click="Button_Click" Content="Clear"/>
+      <TextBox Name="textBox_log" Grid.Row="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" IsReadOnly="True" TextChanged="textBox_log_TextChanged"></TextBox>
+   </Grid>
+</Window>

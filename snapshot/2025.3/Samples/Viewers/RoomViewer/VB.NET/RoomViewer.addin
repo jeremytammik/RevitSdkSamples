@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>RoomViewer.dll</Assembly>
+    <ClientId>aca40010-f295-4a7e-a042-218fc21c363f</ClientId>
+    <FullClassName>Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer</FullClassName>
+    <Text>Room Viewer</Text>
+    <Description>Wireframe viewer for the selected room.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

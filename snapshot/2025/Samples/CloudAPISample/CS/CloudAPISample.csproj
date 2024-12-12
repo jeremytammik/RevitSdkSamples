@@ -1,0 +1,34 @@
+﻿<Project Sdk="">
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.props" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\CloudAPISample.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Release\CloudAPISample.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="View\ViewInputMigrationInfo.xaml" />
+    <None Remove="View\ViewMigrationToBim360.xaml" />
+    <None Remove="View\ViewSamplePortal.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\ViewInputMigrationInfo.xaml" />
+    <Page Include="View\ViewMigrationToBim360.xaml" />
+    <Page Include="View\ViewSamplePortal.xaml" />
+  </ItemGroup>
+  <Import Project="$(SolutionDir)VSProps\SDKSamples.Sdk.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set FILEFORSAMPLEREG="$(SolutionDir)..\..\..\..\Regression\API\SDKSamples\UpdateSampleDllForRegression.py"
+if exist %25FILEFORSAMPLEREG%25 py -3 %25FILEFORSAMPLEREG%25  "$(ProjectPath)" "$(TargetPath)" "$(SolutionDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>PostCommandWorkflow</Name>
+    <Assembly>PostCommandWorkflow.dll</Assembly>
+    <ClientId>9bf45a0b-c480-4fa4-ae9f-f5b60722cef9</ClientId>
+    <FullClassName>Revit.SDK.Samples.PostCommandWorkflow.CS.Application</FullClassName>
+	<VendorId>ADSK</VendorId>
+	<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

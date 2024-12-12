@@ -1,0 +1,484 @@
+#
+# AdnSamples.txt - additional input file for RvtSamples Revit menu generator
+#
+# Copyright (C) 2007-2008 by Jeremy Tammik, Autodesk Inc. All Rights Reserved.
+#
+# History:
+#
+# 2007-11-14 initial version
+# 2008-02-20 updated for Revit 2009
+# 2008-02-21 renamed from AU to ADN
+# 2008-05-07 renamed RSSolvedLabs to RstLabs and switched from VB to C# version
+# 2008-05-07 renamed RSLink to RstLink
+# 2008-05-09 switched from VB to C# version of RstLink
+# 2008-05-30 added menu entry for RME electrical sample
+# 2008-11-03 added menu entries for The Building Coder blog samples
+# 2008-11-04 implemented #include statement for RvtSamples application
+# 2008-11-05 removed The Building Coder blog samples
+#
+# This file is read by the Revit external application RvtSamples, which is 
+# discussed in the class on the Revit SDK samples. From Revit 2009 onwards, 
+# the RvtSamples source code is included in the standard Revit SDK.
+#
+# Defines menu entries for the sample applications discussed in the classes
+#
+#   Revit API Intro
+#   Revit SDK Samples
+#   Revit API Database
+#   Revit API Tips
+#   RME API
+#   RST Link
+#   RST Rebar
+#
+# Top level menu title is "ADN", with submenus
+# 
+# ADN
+#   Abc
+#   Tip
+#   Geo
+#   Rme
+#   Rst
+#
+# The menu entries for the Revit SDK samples are defined separately in RvtSamples.txt.
+#
+
+#
+#
+# /ADN/Abc/
+#
+/&ADN/Abc/1-1 Hello &World
+Basic sample that displays a message box from Revit!
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab1_1_HelloWorld
+
+/&ADN/Abc/1-2 Command &Arguments
+Lists the app, doc and view data; then the current selection set and finally simulates an error condition on return
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab1_2_CommandArguments
+
+/&ADN/Abc/2-0 Create Little &House
+Create a little house consisting of four walls, a door, three windows, a floor and a room
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab2_0_CreateLittleHouse
+
+/&ADN/Abc/2-1 List all &Elements
+Outputs info on each element to a text file line
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab2_1_Elements
+
+/&ADN/Abc/2-2 List all &Model Elements
+Outputs info on each model-element instance to a mesage box
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab2_2_ModelElements
+
+/&ADN/Abc/2-3 List all Walls and Doors
+Outputs some info on each instance of walls and doors to a message box
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab2_3_AllWallsAndFamilyInstances
+
+/&ADN/Abc/2-4 Add Columns and Move Wall
+Frames a wall with timber-columns and then moves the wall
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab2_4_AddColumnsAndMoveWall
+
+/&ADN/Abc/2-5 Categories
+List categories
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab2_5_Categories
+
+/&ADN/Abc/2-7 Linked files
+List linked files
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab2_7_LinkedFiles
+
+/&ADN/Abc/3-1 List all Standard Families and Types
+First lists all Standard Family Names and (unsuccessfully) their Category. Then lists them one-by-one with all children Types
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab3_1_StandardFamiliesAndTypes
+
+/&ADN/Abc/3-2 Load whole Family and single Symbol
+Loads a whole Family with corresponding catalog file and also a single specified Symbol (Type) from another family
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab3_2_LoadStandardFamilies
+
+/&ADN/Abc/3-3 Determining Type and Family for selected standard Instances
+First list all Windows Family Types (Symbols), then Type and Family for any Windows in the selection set
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab3_3_DetermineInstanceTypeAndFamily
+
+/&ADN/Abc/3-4 Change Type for the selected standard Instance
+Displays a form with all available Families and Types for the category of selected Instance
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab3_4_ChangeSelectedInstanceType
+
+/&ADN/Abc/3-5 Wall and Floor Types
+List all Wall and Floor Types/Families and then change Type/Family for the selected Walls and Floors
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab3_5_WallAndFloorTypes
+
+/&ADN/Abc/4-1 Parameters for selected Elements
+First list all parameters from the standard collection, then looks for a specific param via built-in params and the standard collection
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab4_1_ParametersForSelectedObjects
+
+/&ADN/Abc/4-2 Export Parameters to Excel
+Exports all parameter values for each model element to Excel: one sheet per category, one row per element
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab4_2_ExportParametersToExcel
+
+/&ADN/Abc/4-3-1 FireRating: Create and Bind Shared Parameter
+Get-or-create shared parameters group, create shared parm definition within and bind it to Doors
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab4_3_1_CreateAndBindSharedParam
+
+/&ADN/Abc/4-3-2 FireRating: Export to Excel
+Exports one row per each door with its values (Id, Level, Tag and FireRating) to Excel
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab4_3_2_ExportSharedParamToExcel
+
+/&ADN/Abc/4-3-3 FireRating: Import from Excel
+Imports updated FireRating values for each door from Excel
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab4_3_3_ImportSharedParamFromExcel
+
+/&ADN/Abc/4-4-1 Create and Bind per-Doc Params
+Create and Bind two per-Doc Params, one visible one invisible
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab4_4_1_PerDocParams
+
+/&ADN/Abc/4-4-2 Increment Invisible per-Doc Param
+Increment the invisible per-Doc Params and shows the values before and after the command
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab4_4_2_PerDocParams
+
+/&ADN/Abc/Built-In Parameters Checker
+Uses reflection to check for all built-in params enumeration values on the selected element
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.BuiltInParamsChecker
+
+/&ADN/Abc/5-1 Groups and Group Types
+Lists: all Groups details, all Group Types details and all 'Model' Family Group Types
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab5_1_GroupsAndGroupTypes
+
+/&ADN/Abc/5-2 Change Group Type
+Offers user to change Type for any Group in the selection to any other Model Group Type
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab5_2_SwapGroupTypes
+
+/&ADN/Abc/5-3 List Rooms
+Lists all Rooms in the model, including the Boundary information
+C:\a\j\adn\train\revit\2009\src\rac\labs\cs\bin\Debug\labs.dll
+Labs.Lab5_3_Rooms
+
+/&ADN/Abc/Analytical Viewer
+Display analytical model of one or more selected elements
+C:\a\lib\revit\2009\SDK\Samples\Viewers\AnalyticalViewer\VB.NET\bin\AnalyticalViewer.dll
+Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+
+/&ADN/Abc/Element Viewer
+Display wireframe model of one or more selected elements
+C:\a\lib\revit\2009\SDK\Samples\Viewers\ElementViewer\VB.NET\bin\debug\ElementViewer.dll
+Revit.SDK.Samples.ElementViewer.VB.NET.ElementViewer
+
+/&ADN/Abc/Room Viewer
+Wireframe viewer of the selected room
+C:\a\lib\revit\2009\SDK\Samples\Viewers\RoomViewer\VB.NET\bin\RoomViewer.dll
+Revit.SDK.Samples.RoomViewer.VB.NET.RoomViewer
+#
+#
+# /ADN/Tip/
+#
+/&ADN/Tip/0 - Element Filters
+Element Filters
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandElementFilters
+
+/&ADN/Tip/1 - Namespaces
+Namespaces, Alises, and Regions
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandNamespaces
+
+/&ADN/Tip/2 - Version Checking
+Version Checking - Create a wall according to the Revit application version
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandVersionChecking
+
+/&ADN/Tip/3 - Error Handling
+Error Handling
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandErrorHandling
+
+/&ADN/Tip/3 - Transactions
+Transactions
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandTransaction
+
+/&ADN/Tip/3 - Additional Document Transaction
+Additional Document Transaction
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandDocumentTransaction
+
+/&ADN/Tip/4 - Language Independence
+Language Independence - Element Checking With Language Independent Built-in Category Name
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandLanguageIndependent
+
+/&ADN/Tip/4 - Language Dependent
+Language Dependent
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandLanguageDependent
+
+/&ADN/Tip/4 - Determine Language
+Determine Language
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandLanguageCheck
+
+/&ADN/Tip/5 - Data Caching - Build Data Cache
+Data Caching - Build Data Cache
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandBuildDataCache
+
+/&ADN/Tip/5 - Data Caching - Access Cached Data
+Data Caching - Access Cached Data
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandUseDataCache
+
+/&ADN/Tip/6 - Journaling
+Show how an external application can be incorporated into the journaling mechanism
+C:\a\lib\revit\2009\SDK\Samples\Journaling\CS\bin\Debug\Journaling.dll
+Revit.SDK.Samples.Journaling.CS.Command
+
+/&ADN/Tip/7 - Assembly Information
+Assembly Information
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandAssemblyInfo
+
+/&ADN/Tip/8 - Suspend Updating
+Suspend Revit Model Updating
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandSuspendUpdating
+
+/&ADN/Tip/9 - Language Comparison - C#
+Language Comparison - List Wall Info with C#
+C:\a\j\adn\train\revit\2009\src\rac\tips\cs\bin\Debug\RevitCodingTips.dll
+RevitCodingTips.CommandListWallInfo
+
+/&ADN/Tip/9 - Language Comparison - VB
+Language Comparison - List Wall Info with VB
+C:\a\j\adn\train\revit\2009\src\rac\tips\vb\bin\Debug\RevitCodingTips_vb.dll
+RevitCodingTips_vb.CommandListWallInfo
+
+/&ADN/Tip/9 - Language Comparison - C++
+Language Comparison - List Wall Info with Managed C++
+C:\a\j\adn\train\revit\2009\src\rac\tips\debug\RevitCodingTips_cpp.dll
+RevitCodingTips_cpp.CommandListWallInfo
+#
+#
+# /ADN/Geo/
+#
+/&ADN/Geo/XYZ and Transform
+Demonstrate point, vector and transform geometry types
+C:\a\j\adn\train\revit\2009\src\rac\tips\geo\bin\Debug\RevitGeometry.dll
+RevitGeometry.CmdXyzAndTransform
+
+/&ADN/Geo/Curve
+Demonstrate curve and line classes
+C:\a\j\adn\train\revit\2009\src\rac\tips\geo\bin\Debug\RevitGeometry.dll
+RevitGeometry.CmdCurve
+
+/&ADN/Geo/Circle
+Demonstrate creation of a circle
+C:\a\j\adn\train\revit\2009\src\rac\tips\geo\bin\Debug\RevitGeometry.dll
+RevitGeometry.CmdCircle
+
+/&ADN/Geo/Face
+Demonstrate wall geometry analysis, face class, and normal vectors
+C:\a\j\adn\train\revit\2009\src\rac\tips\geo\bin\Debug\RevitGeometry.dll
+RevitGeometry.CmdWallFace
+
+/&ADN/Geo/References and Dimensioning
+Demonstrate references and dimensioning, add dimensioning to architectural wall
+C:\a\j\adn\train\revit\2009\src\rac\tips\geo\bin\Debug\RevitGeometry.dll
+RevitGeometry.CmdAddDimensionForRacWall
+
+/&ADN/Geo/Is Dimension Locked
+Analyse whether dimension is locked
+C:\a\j\adn\train\revit\2009\src\rac\tips\geo\bin\Debug\RevitGeometry.dll
+RevitGeometry.CmdIsDimensionLocked
+#
+#
+# /ADN/Rme/
+#
+/&ADN/R&me/&Assign flow to terminals
+Assign flow to terminals
+C:\a\j\adn\train\revit\2009\src\rme\mep\bin\Debug\mep.dll
+mep.CmdAssignFlowToTerminals
+
+/&ADN/R&me/&Change size
+Change terminal sizes
+C:\a\j\adn\train\revit\2009\src\rme\mep\bin\Debug\mep.dll
+mep.CmdChangeSize
+
+/&ADN/R&me/&Populate CFM per SF on rooms
+Populate CFM per SF variable on rooms
+C:\a\j\adn\train\revit\2009\src\rme\mep\bin\Debug\mep.dll
+mep.CmdPopulateCfmPerSf
+
+/&ADN/R&me/&Unhosted elements
+List unhosted elementes
+C:\a\j\adn\train\revit\2009\src\rme\mep\bin\Debug\mep.dll
+mep.CmdUnhostedElements
+
+/&ADN/R&me/&Reset demo
+Reset ADN RME API Demo
+C:\a\j\adn\train\revit\2009\src\rme\mep\bin\Debug\mep.dll
+mep.CmdResetDemo
+
+/&ADN/R&me/Electrical &System Browser
+Inspect electrical systems in model and reproduce system browser info
+C:\a\j\adn\train\revit\2009\src\rme\mep\bin\Debug\mep.dll
+mep.CmdElectricalSystemBrowser
+
+/&ADN/R&me/Electrical &Hierarchy
+Inspect electrical systems in model and display full connection hierarchy tree structure
+C:\a\j\adn\train\revit\2009\src\rme\mep\bin\Debug\mep.dll
+mep.CmdElectricalHierarchy
+
+/&ADN/R&me/Electrical Hierarchy &2
+Inspect electrical systems in model and display full connection hierarchy tree structure
+C:\a\j\adn\train\revit\2009\src\rme\mep\bin\Debug\mep.dll
+mep.CmdElectricalHierarchy2
+
+/&ADN/R&me/A&bout...
+About ADN RME API Samples
+C:\a\j\adn\train\revit\2009\src\rme\mep\bin\Debug\mep.dll
+mep.CmdAbout
+#
+#
+# /ADN/Rst/
+#
+/&ADN/R&st/1-1 Load Natures, Cases and Combinations
+Lab 1-1 - List all load grouping objects, i.e. load natures, cases, and combinations
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab1_1_LoadGrouping
+
+/&ADN/R&st/1-2 Load Objects - List all
+Lab 1-2 - Demonstrate access to load objects and list all point, line and area loads
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab1_2_Loads
+
+/&ADN/R&st/1-3 Load Objects - Modify selected
+Lab 1-3 - More detailed info and modification of selected loads
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab1_3_ModifySelectedLoads
+
+/&ADN/R&st/1-4 Load Symbols
+Lab 1-4 - List load symbols
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab1_4_LoadSymbols
+
+/&ADN/R&st/1-5 Create New Point Loads
+Lab 1-5 - Create new point loads
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab1_5_CreateNewPointLoads
+
+/&ADN/R&st/2-1 Structural Columns
+Lab 2-1 - List all structural columns in the model
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab2_1_ListStructuralColumns
+
+/&ADN/R&st/2-2 Structural Framing
+Lab 2-2 - List all structural framing elements in the model
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab2_2_ListStructuralFraming
+
+/&ADN/R&st/2-3 Structural Foundations
+Lab 2-3 - List all structural foundation elements in the model
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab2_3_Foundations
+
+/&ADN/R&st/2-4 Structural Standard Family Instances
+Lab 2-4 - List all standard family instances with an analytical model
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab2_4_StandardFamilyInstances
+
+/&ADN/R&st/2-5 Structural System Family Instances
+Lab 2-5 - Retrieve structural system family instances: wall, floor, continuous footing
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab2_5_StructuralSystemFamilyInstances
+
+/&ADN/R&st/3 Analytical Model
+Lab 3 - List analytical model for selected or all structural elements
+C:\a\j\adn\train\revit\2009\src\rst\labs\cs\bin\Debug\RstLabsCs.dll
+RstLabs.Lab3_ListSelectedAnalyticalModels
+
+/&ADN/R&st/RstLink &Export
+Export to RstLink file (from Revit to Acad)
+C:\a\j\adn\train\revit\2009\src\rst\link\cs\RstLinkRevitClientCs\bin\RstLinkRevitClient.dll
+RstLinkRevitClient.RSLinkExport
+
+/&ADN/R&st/RstLink &Import
+Import from RstLink result file (from Acad to Revit)
+C:\a\j\adn\train\revit\2009\src\rst\link\cs\RstLinkRevitClientCs\bin\RstLinkRevitClient.dll
+RstLinkRevitClient.RSLinkImport
+
+/&ADN/R&st/Analytical Viewer
+Draws analytical model for selected or all elements in the viewer window
+C:\a\lib\revit\2009\SDK\Samples\Viewers\AnalyticalViewer\VB.NET\bin\AnalyticalViewer.dll
+Revit.SDK.Samples.AnalyticalViewer.VB.NET.AnalyticalViewer
+
+/&ADN/R&st/Create Beams Columns and Braces
+Create configurable multi-story Beams Columns and Braces using simple dialog
+C:\a\lib\revit\2009\SDK\Samples\CreateBeamsColumnsBraces\CS\bin\Debug\CreateBeamsColumnsBraces.dll
+Revit.SDK.Samples.CreateBeamsColumnsBraces.CS.CreateBeamsColumnsBraces
+
+/&ADN/R&st/Rebar - Create Reinforcement
+Create bar set in a selected concrete element (beam or column) that does not have any reinforcement.
+C:\a\lib\revit\2009\SDK\Samples\Reinforcement\CS\bin\Debug\Reinforcement.dll
+Revit.SDK.Samples.Reinforcement.CS.Command
+
+/&ADN/R&st/Rebar - Edit AreaReinforcement Parameters
+Show parameters of selected AreaReinforcement and allow user to modify
+C:\a\lib\revit\2009\SDK\Samples\AreaReinParameters\CS\bin\Debug\AreaReinParameters.dll
+Revit.SDK.Samples.AreaReinParameters.CS.Command
+
+/&ADN/R&st/Rebar - List Rebar Parameters
+Show parameters of selected AreaReinforcement and allow user to modify
+C:\a\lib\revit\2009\SDK\Samples\AreaReinParameters\CS\bin\Debug\AreaReinParameters.dll
+Revit.SDK.Samples.AreaReinParameters.CS.RebarParas
+
+/&ADN/R&st/Rebar - Create Section View
+Create a section view across the midpoint of the selected wall, floor or beam
+C:\a\lib\revit\2009\SDK\Samples\CreateViewSection\CS\bin\Debug\CreateViewSection.dll
+Revit.SDK.Samples.CreateViewSection.CS.Command
+
+/&ADN/R&st/Rebar - Create Drafting View
+Create a new empty drafting view
+C:\a\lib\revit\2009\SDK\Samples\CreateViewSection\CS\bin\Debug\CreateViewSection.dll
+Revit.SDK.Samples.CreateViewSection.CS.CreateDraftingView
+
+/&ADN/R&st/Rebar - Import And Export DWG
+Export current project to dwg files and import a dwg file into revit
+C:\a\lib\revit\2009\SDK\Samples\ImportExport\CS\bin\Debug\ImportExport.dll
+Revit.SDK.Samples.ImportAndExportForDWG.CS.Command
+
+/&ADN/R&st/Rebar - Create Dimension
+Add a dimension to a selected structure wall from its start to its end
+C:\a\lib\revit\2009\SDK\Samples\CreateDimensions\CS\bin\Debug\CreateDimensions.dll
+Revit.SDK.Samples.CreateDimensions.CS.Command
+
+/&ADN/R&st/Rebar - Tag Beam
+Tag beam's start and end
+C:\a\lib\revit\2009\SDK\Samples\TagBeam\CS\bin\Debug\TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.Command
+
+/&ADN/R&st/Rebar - Tag Rebar
+Tag selected Rebar
+C:\a\lib\revit\2009\SDK\Samples\TagBeam\CS\bin\Debug\TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.TagRebar
+
+/&ADN/R&st/Rebar - Create Text
+Create a new TextNote instance for selected Rebar
+C:\a\lib\revit\2009\SDK\Samples\TagBeam\CS\bin\Debug\TagBeam.dll
+Revit.SDK.Samples.TagBeam.CS.CreateText

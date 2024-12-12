@@ -1,0 +1,114 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12EEC978-8661-44F1-A4BF-B3A1A29DA6AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildingCoder</RootNamespace>
+    <AssemblyName>BuildingCoder</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI, Version=2009.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\Revit Architecture 2009\Program\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CmdAzimuth.cs" />
+    <Compile Include="CmdBoundingBox.cs" />
+    <Compile Include="CmdColumnRound.cs" />
+    <Compile Include="CmdLinkedFileElements.cs" />
+    <Compile Include="CmdLinkedFileElementsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdLinkedFileElementsForm.Designer.cs">
+      <DependentUpon>CmdLinkedFileElementsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdListRailingTypes.cs" />
+    <Compile Include="CmdNestedInstanceGeo.cs" />
+    <Compile Include="CmdNewArea.cs" />
+    <Compile Include="CmdNewBeamTypeInstance.cs" />
+    <Compile Include="CmdNewColumnTypeInstance.cs" />
+    <Compile Include="CmdEditFloor.cs" />
+    <Compile Include="CmdFilterPerformance.cs" />
+    <Compile Include="CmdGetMaterials.cs" />
+    <Compile Include="CmdLinkedFiles.cs" />
+    <Compile Include="CmdListViews.cs" />
+    <Compile Include="CmdNewRailing.cs" />
+    <Compile Include="CmdOmniClassParams.cs" />
+    <Compile Include="CmdPlanTopology.cs" />
+    <Compile Include="CmdRoomWallAdjacency.cs" />
+    <Compile Include="CmdSlabBoundaryArea.cs" />
+    <Compile Include="CmdSlopedWall.cs" />
+    <Compile Include="CmdTransformedCoords.cs" />
+    <Compile Include="CmdWallLayerVolumes.cs" />
+    <Compile Include="CmdWallProfileArea.cs" />
+    <Compile Include="CmdListWalls.cs" />
+    <Compile Include="CmdRelationshipInverter.cs" />
+    <Compile Include="CmdSlabSides.cs" />
+    <Compile Include="CmdSlabBoundary.cs" />
+    <Compile Include="CmdWallDimensions.cs" />
+    <Compile Include="CmdWallLayers.cs" />
+    <Compile Include="CmdWallProfile.cs" />
+    <Compile Include="CmdWindowHandle.cs" />
+    <Compile Include="CmdWindowHandleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CmdWindowHandleForm.Designer.cs">
+      <DependentUpon>CmdWindowHandleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="CmdWallNeighbours.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\BcSamples.txt">
+      <Link>BcSamples.txt</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CmdLinkedFileElementsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CmdLinkedFileElementsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CmdWindowHandleForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CmdWindowHandleForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

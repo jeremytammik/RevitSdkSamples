@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>RoutingPreferenceTools.Analyzer</Text>
+    <Assembly>D:\Revit\dev-0\ThirdParty\InstallerExtra\RevitSDK\Software Development Kit\Samples\RoutingPreferenceTools\CS\bin\Debug\RoutingPreferenceTools.dll</Assembly>
+    <ClientId>E6976BBA-FA1E-4F56-A178-A248B9AA9F81</ClientId>
+    <FullClassName>Revit.SDK.Samples.RoutingPreferenceTools.CS.Command</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  
+  <AddIn Type="Command">
+    <Text>RoutingPreferenceTools.Builder.CommandReadPreferences</Text>
+    <Assembly>D:\Revit\dev-0\ThirdParty\InstallerExtra\RevitSDK\Software Development Kit\Samples\RoutingPreferenceTools\CS\bin\Debug\RoutingPreferenceTools.dll</Assembly>
+    <ClientId>E6976BBA-FA1E-4F56-A178-A248B9AA9F82</ClientId>
+    <FullClassName>Revit.SDK.Samples.RoutingPreferenceTools.CS.CommandReadPreferences</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+
+  <AddIn Type="Command">
+    <Text>RoutingPreferenceTools.Builder.CommandWritePreferences</Text>
+    <Assembly>D:\Revit\dev-0\ThirdParty\InstallerExtra\RevitSDK\Software Development Kit\Samples\RoutingPreferenceTools\CS\bin\Debug\RoutingPreferenceTools.dll</Assembly>
+    <ClientId>E6976BBA-FA1E-4F56-A178-A248B9AA9F83</ClientId>
+    <FullClassName>Revit.SDK.Samples.RoutingPreferenceTools.CS.CommandWritePreferences</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>CreateBeamSystem.dll</Assembly>
+    <ClientId>058c25ff-22bc-4203-8e12-3a09639c21c4</ClientId>
+    <FullClassName>Revit.SDK.Samples.CreateBeamSystem.CS.Command</FullClassName>
+    <Text>Create Beam System</Text>
+    <Description>Create beam system according to the profile made of selected beams.</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

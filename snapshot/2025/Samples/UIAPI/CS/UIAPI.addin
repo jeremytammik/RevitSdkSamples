@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>UIAPI Application</Name>
+    <Assembly>UIAPI.dll</Assembly>
+    <AddInId>054e0e25-adc5-4657-b0e0-d831ac1c40c0</AddInId>
+    <FullClassName>Revit.SDK.Samples.UIAPI.CS.ExternalApp</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
