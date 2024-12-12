@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RevitAddIns>
-  <AddIn Type="Application">
-    <Name>External Tool</Name>
-    <Assembly>C:\a\lib\revit\2011\SDK\RevitLookup\CS\bin\Debug\RevitLookup.dll</Assembly>
-    <ClientId>9631d07b-ade1-4ea1-b566-049161afcc4c</ClientId>
-    <FullClassName>RvtMgdDbg.App</FullClassName>
-  </AddIn>
-</RevitAddIns>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<RevitAddIns>
-   <AddIn Type="Command">
-      <Text>Measure Height of Skylight</Text>
-      <Assembly>MeasureHeight.dll</Assembly>
-      <ClientId>67A85B97-CF6C-4e3e-AA92-B32E33535BCB</ClientId>
-      <FullClassName>Revit.SDK.Samples.MeasureHeight.CS.Command</FullClassName>
-   </AddIn>
-</RevitAddIns>

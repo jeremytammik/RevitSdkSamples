@@ -1,7 +1,0 @@
-CurveCatenary
-SurfaceCyclic
-PointsExcel
-PointsText
-PointsCurve
-PointsParabola
-CurveSine

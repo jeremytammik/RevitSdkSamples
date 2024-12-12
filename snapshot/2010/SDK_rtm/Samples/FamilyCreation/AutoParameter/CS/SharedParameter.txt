@@ -1,9 +1,0 @@
-# This is a Revit shared parameter file.
-# Do not edit manually.
-*META	VERSION	MINVERSION
-META	2	1
-*GROUP	ID	NAME
-GROUP	1	Group1
-*PARAM	GUID	NAME	DATATYPE	DATACATEGORY	GROUP	VISIBLE
-PARAM	858bd7ed-5acf-4d20-9d7c-31269a0c0e9a	Shared_Length	LENGTH		1	1
-PARAM	daa0f4f1-3281-418f-8b17-3667601c5fb2	Shared_Number	NUMBER		1	1
