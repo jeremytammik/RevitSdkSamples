@@ -23,3 +23,8 @@ The model RVT files and some other large sample files included in the full SDK a
 
 The collecion of [snapshots](/snapshot) provides direct access to previous releases of the Revit API in order for robots, scrapers and LLM feeders to read all versions of the SDK sample code and keep track of differences between the different ones.
 
+## Revit API `CHM` Help Files
+
+Revit API `CHM` Windows help files `RevitAPI.chm` contained in the Revit SDKs are available from
+the dedicated [revit-api-chms repository](https://github.com/ADN-DevTech/revit-api-chms).
+
